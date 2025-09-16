@@ -23418,3 +23418,69 @@ Source:	SWbemObjectEx
 2025-09-16 19:24:45 - TEXT_SHORTCUT: Triggered 'venice' -> 'VENICE_CHAT_WEB'
 2025-09-16 19:24:45 - WEB: Opening Venice Chat - Venice Uncensored AI in Chrome
 2025-09-16 19:24:45 - WEB: Venice Chat - Venice Uncensored AI opened in Chrome successfully
+2025-09-16 19:28:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 19:28:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 19:31:50 - FULLSIZE: Triple-tap E detected
+2025-09-16 19:31:50 - FULLSIZE: Processing window - Code.exe (final-sync.ps1 - aaaa - Visual Studio Code [Administrator])
+2025-09-16 19:31:50 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-16 19:31:50 - FULLSIZE: Applied windowed style with borders
+2025-09-16 19:31:51 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-16 19:31:51 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-16 19:33:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 19:33:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 19:38:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 19:38:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 19:41:15 - FULLSIZE: Triple-tap E detected
+2025-09-16 19:41:15 - FULLSIZE: Processing window - Code.exe (codeberg-sync.ps1 - aaaa - Visual Studio Code [Administrator])
+2025-09-16 19:41:15 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-16 19:41:15 - FULLSIZE: Applied windowed style with borders
+2025-09-16 19:41:15 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-16 19:41:15 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-16 19:42:37 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-16 19:42:37 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-16 19:42:38 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-16 19:42:46 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-16 19:42:46 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-16 19:42:47 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-16 19:43:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 19:43:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 19:48:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 19:48:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 19:53:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 19:53:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 19:58:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 19:58:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:03:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:03:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:08:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:08:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:13:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:13:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:18:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:18:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:21:59 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-16 20:21:59 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-16 20:23:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:23:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:24:45 - FULLSIZE: Triple-tap E detected
+2025-09-16 20:24:45 - FULLSIZE: Processing window - Code.exe (codeberg-sync.ps1 - aaaa - Visual Studio Code [Administrator])
+2025-09-16 20:24:45 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-16 20:24:45 - FULLSIZE: Applied windowed style with borders
+2025-09-16 20:24:46 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-16 20:24:46 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-16 20:28:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:28:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:33:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:33:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:38:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:38:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:43:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:43:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:47:40 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-16 20:47:40 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-16 20:47:40 - QWE: qwe command launched in PowerShell
+2025-09-16 20:48:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:48:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:51:52 - DESKTOP: Switched to Desktop 2
+2025-09-16 20:53:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:53:54 - CLEANUP: Completed, 0 entries removed
