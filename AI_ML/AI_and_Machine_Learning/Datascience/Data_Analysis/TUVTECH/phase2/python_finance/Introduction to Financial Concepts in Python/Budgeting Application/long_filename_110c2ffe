@@ -1,0 +1,24 @@
+Transcript
+1. Net worth and valuation in your personal financial life
+00:00 - 00:22
+Perhaps you are building a budgeting application like we are now and you want to examine the effect of your budget over time if all goes well, or perhaps you simply have a personal financial goal which you'd like to reach at some point in life. Whatever the reason, if you want to calculate your net worth, you're going to have to treat yourself the same way you'd treat a business.
+
+2. Net Worth
+00:22 - 00:44
+Just like valuing a business, your net worth is the sum of all you own minus all you owe. In financial terms, this is your Assets - Liabilities = Equity. This equation is the fundamental basis of all accounting, and can be applied to your own financial life in addition to the balance sheets of companies. But this doesn't take into account your future earnings potential.
+
+3. Valuation
+00:44 - 01:11
+Now perhaps you have a great career ahead of you as a data scientist and you can expect to be earning an increasing salary over time for the next 30 years. If you wanted to calculate your total wealth after 30 years, you could treat it as a net present value problem. You could sum up everything you own, subtract everything you owe, and add the discounted values of all your futures earnings, adjusted for inflation, and subtract all your future expenses, adjusted for inflation.
+
+4. Reaching financial goals
+01:11 - 01:50
+But perhaps there is a specific financial goal you're trying to reach - you're trying to become a millionaire in the next 15 years by saving and investing. If you saved up 1,000,000 dollars over 15 years, but by the time you retire, that 1,000,000 dollars is only worth 300,000 dollars in inflation adjusted terms, and if it's supposed to last for the rest of your retirement, that's not good. Unfortunately, stashing all of your money in the bank alone isn't going to help either. It may seem safe, but the lower interest rates that banks offer will not be enough to combat inflation, and you will often end up losing money over time. In order to plan successfully, you're going to have to run simulations.
+
+5. The basics of investing
+01:50 - 02:46
+While there is a risk to savings due to inflation, the risk is far lower than investing in the stock market. Once again, this isn't a portfolio construction course, but most people will mix their investments in equities and fixed income, also known as bonds, which are essentially loans to corporations. This will lower your risk, but will also tend to lower your returns over time. What I'm getting at, is that investing is a risk-reward tradeoff. While diversification can help, you are going to need to plan for the worst. You will want to invest as early in your life as possible and invest continuously in small portions over time to minimize your risk. A simple way to do this is to invest a percentage of your income each month, and put a portion of your income into savings as well. Even if your investments do terribly, your savings should ideally be enough to sustain you for 6-12 months at a minimum if you happen to lose your job.
+
+6. Let's simulate it!
+02:46 - 02:58
+We can simulate this process over time, and experiment with different parameters to see how you budget performs under different scenarios.

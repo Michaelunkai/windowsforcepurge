@@ -1,0 +1,40 @@
+Transcript
+1. Case study: S&P500 price simulation
+00:00 - 00:08
+You have already come across the idea of a random walk in the 'Intermediate Python' class.
+
+2. Random walks & simulations
+00:08 - 00:53
+Daily stock returns are notoriously hard to predict, and models often assume they follow a random walk You'll again use numpy to generate random numbers, but this time in a time series context. You'll also use the cumulative product again to create a series of prices from a series of returns. In the first example, you'll generate random numbers from the bell-shaped normal distribution. This means that values around the average are more likely than extremes, as tends to be the case with stock returns. In the second example, you will randomly select actual S&P 500 returns to then simulate S&P 500 prices.
+
+3. Generate random numbers
+00:53 - 01:31
+To generate random numbers, first import the normal distribution and the seed functions from numpy's module random. Also import the norm package from scipy to compare the normal distribution alongside your random samples. Generate 1000 random returns from numpy's normal function, and divide by 100 to scale the values appropriately. Let's plot the distribution of the 1,000 random returns, and fit a normal distribution to your sample. You see that the sample closely matches the shape of the normal distribution.
+
+4. Create a random price path
+01:31 - 01:57
+To create a random price path from your random returns, follow the procedure from the last video, after converting the numpy array to a pandas Series. Add 1 to the period returns, calculate the cumulative product, and subtract 1. Plot the cumulative returns, multiplied by 100, and you see the resulting prices.
+
+5. S&P 500 prices & returns
+01:57 - 02:27
+Let's now simulate the SP500 using a random expanding walk. Import the last 10 years of the index, drop missing values, and add the daily returns as a new column to the DataFrame. A plot of the index and return series shows the typical daily return range between +/2-3 percent, as well as a few outliers during the 2008 crisis. A comparison of the S&P 500 return distribution to the normal distribution
+
+6. S&P return distribution
+02:27 - 02:41
+shows that the shapes don't match very well. This is a typical finding ' daily stock returns tend to have outliers more often than the normal distribution would suggest.
+
+7. Generate random S&P 500 returns
+02:41 - 03:21
+Now let's randomly select from the actual S&P 500 returns. You'll be using the choice function from numpy's random module. It returns a numpy array with a random sample from a list of numbers ' in our case, the S&P 500 returns. Just provide the return sample and the number of observations you want to the choice function. Next, convert the numpy array to a pandas series, and set the index to the dates of the S&P 500 returns. Your random walk will start at the first S&P 500 price.
+
+8. Random S&P 500 prices (1)
+03:21 - 03:43
+Use the 'first' method with calendar day offset to select the first S&P 500 price. Then add 1 to the random returns, and append the return series to the start value. Now you are ready to calculate the cumulative return given the actual S&P 500 start value.
+
+9. Random S&P 500 prices (2)
+03:43 - 03:55
+Add 1, calculate the cumulative product, and subtract one. The result is a random walk for the SP500 based on random samples form actual returns.
+
+10. Let's practice!
+03:55 - 04:01
+Time to practice your own random walk simulation!

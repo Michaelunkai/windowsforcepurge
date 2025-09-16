@@ -1,0 +1,40 @@
+Transcript
+1. Select index components & import data
+00:00 - 00:25
+In this chapter, you will begin to work on a case study that requires many of your new time series skills. You will build an important tool to measure aggregate stock performance, used by stock exchanges (like the S&P 500) or for investor portfolios.
+
+2. Market value-weighted index
+00:25 - 01:12
+More specifically, you will build an index that will be composed of several stock prices, and each component of the index will be weighted by its market capitalization. The market capitalization is the the value of all the stocks of a company: just multiply the stock price by the number of stocks in the market. So each stock is weighted by the value of the company on the stock market. This is called a value-weighted index. As a result, larger companies receive a larger weight, and their price changes will have a larger impact on the index performance. Many key indexes are based on market capitalization, including the S&P 500, the NASDAQ composite, or the Hang Seng index of the Hong Kong stock exchange.
+
+3. Build a cap-weighted Index
+01:12 - 01:45
+To build a value based index, you will take several steps: You will select the largest company from each sector using actual stock exchange data as index components. Then, you'll calculate the number of shares for each company, and select the matching stock price series from an file. Next, you'll compute the weights for each company, and based on these the index for each period. You will also evaluate and compare the index performance.
+
+4. Load stock listing data
+01:45 - 02:01
+First, let's import company data using pandas' read_excel function. You will import the worksheet with listing info from a particular exchange while making sure missing values are properly recognized.
+
+5. Load & prepare listing data
+02:01 - 02:39
+Next, move the stock ticker into the index. Since you'll select the largest company from each sector, remove companies without sector information. You can use the 'subset' keyword to identify one or several columns to filter out missing values. You have already seen the keyword 'inplace' to avoid creating a copy of the DataFrame. Finally, divide the market capitalization by 1 million to express the values in million USD. The result are 2177 companies from the NYSE stock exchange.
+
+6. Select index components
+02:39 - 03:07
+To pick the largest company in each sector, group these companies by sector, select the column market capitalization, and apply the method nlargest with parameter 1. The result is a Series with the market cap in millions with a MultiIndex. The first index level contains the sector, and the second the stock ticker. To select the tickers from the second index level,
+
+7. Import & prepare listing data
+03:07 - 03:34
+select the series index, and apply the method 'get_level_values' with the name of the index 'Stock Symbol'. You can also use the value 1 to select the second index level. Print the tickers, and you see that the result is a single DataFrame index. Use the method dot-tolist to obtain the result as a list. To take a closer look at your selection,
+
+8. Stock index components
+03:34 - 03:57
+use dot-loc on the nyse dataframe. Use the ticker list to select rows from the index, andProvide three columns to display name, market cap, and last_price for each company. You can set display options to show only two decimals, and also use a thousand separator as illustrated. Finally,
+
+9. Import & prepare listing data
+03:57 - 04:05
+use the ticker list to select your stocks from a broader set of recent price time series imported using read_csv.
+
+10. Let's practice!
+04:05 - 04:12
+Now you'll get started on creating a value weighted index!

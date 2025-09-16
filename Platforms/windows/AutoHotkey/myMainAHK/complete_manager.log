@@ -23484,3 +23484,19 @@ Source:	SWbemObjectEx
 2025-09-16 20:51:52 - DESKTOP: Switched to Desktop 2
 2025-09-16 20:53:54 - CLEANUP: Starting suspended list cleanup
 2025-09-16 20:53:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 20:58:54 - CLEANUP: Starting suspended list cleanup
+2025-09-16 20:58:54 - CLEANUP: Completed, 0 entries removed
+2025-09-16 21:00:08 - TEXT_SHORTCUT: Triggered 'logout' -> 'refresh2'
+2025-09-16 21:00:08 - TERMINAL_CMD: Executing command - refresh2
+2025-09-16 21:00:10 - TERMINAL_CMD: Executed 'refresh2' with self-terminating PowerShell
+2025-09-16 21:00:10 - SHUTDOWN: Script exiting - Reason: Logoff
+2025-09-16 21:00:10 - SHUTDOWN: All processes resumed before exit
+2025-09-16 21:00:28 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-16 21:05:27 - CLEANUP: Starting suspended list cleanup
+2025-09-16 21:05:27 - CLEANUP: Completed, 0 entries removed
+2025-09-16 21:10:27 - CLEANUP: Starting suspended list cleanup
+2025-09-16 21:10:27 - CLEANUP: Completed, 0 entries removed
+2025-09-16 21:15:27 - CLEANUP: Starting suspended list cleanup
+2025-09-16 21:15:27 - CLEANUP: Completed, 0 entries removed
+2025-09-16 21:20:27 - CLEANUP: Starting suspended list cleanup
+2025-09-16 21:20:27 - CLEANUP: Completed, 0 entries removed

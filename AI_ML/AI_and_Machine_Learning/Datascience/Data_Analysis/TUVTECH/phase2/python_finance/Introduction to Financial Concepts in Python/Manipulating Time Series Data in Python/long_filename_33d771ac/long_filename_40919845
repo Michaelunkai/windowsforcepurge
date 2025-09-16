@@ -1,0 +1,40 @@
+Transcript
+1. Expanding window functions with pandas
+00:00 - 00:06
+In this video, you will move on from rolling to expanding windows.
+
+2. Expanding windows in pandas
+00:06 - 00:46
+You will now calculate metrics for groups that get larger to exclude all data up to the current date. Each data point of the resulting time series reflects all historical values up to that point. Expanding windows are useful to calculate for instance a cumulative rate of return, or a running maximum or minimum. In pandas, you can use either the method expanding, which works just like rolling, or in a few cases shorthand methods for the cumulative sum, product, min and max. To understand the basic idea,
+
+3. The basic idea
+00:46 - 01:10
+take a look at this simple example: We start with a list of numbers from 0 to 4. You can calculate the same result using either the method expanding followed by the sum method, or apply the cumulative sum method directly You simply get a list where each number is the sum of all preceding values. In this video,
+
+4. Get data for the S&P 500
+01:10 - 01:19
+you'll be using the S&P500 for the past 10 years. Let's first take a look at how to calculate returns:
+
+5. How to calculate a running return
+01:19 - 01:52
+The simple period return is just the current price divided by the last price minus 1. The return over several periods is the product of all period returns after adding 1, and then subtracting 1 from the product. Pandas makes these calculations easy ' you have already seen the methods for percent change and basic math, and now you'll learn about the cumulative product. To get the cumulative or running rate of return on the SP500,
+
+6. Running rate of return in practice
+01:52 - 02:23
+just follow the steps described above: Calculate the period return with percent change, and add 1 Calculate the cumulative product, and subtract one. You can multiply the result by 100, and plot the result in percentage terms. Looks like the SP500 is up 60% since 2007, despite being down 60% in 2009. You can also easily calculate
+
+7. Getting the running min & max
+02:23 - 02:41
+the running min and max of a time series: Just apply the expanding method and the respective aggregation method. The red and green line outline the min and max up to the current date for each day. You can also combine the concept
+
+8. Rolling annual rate of return
+02:41 - 03:49
+of a rolling window with a cumulative calculation. Let's calculate the rolling annual rate of return, that is, the cumulative return for all 360 calendar day periods over the ten year period covered by the data. This cumulative calculation is not available as a built-in method. But no problem just define your own multiperiod function, and use apply to run it on the data in the rolling window. The data in the rolling window is available to your multi_period_return function as a numpy array. Add 1 to increment all returns, apply the numpy product function, and subtract one to implement the formula from above. Just pass this function to apply after creating a 360 calendar day window for the daily returns. Multiply the rolling 1 year return by 100 to show them in percentage terms, and plot alongside the index using subplots equals True.
+
+9. Rolling annual rate of return
+03:49 - 03:55
+The result shows the large annual return swings following the 2008 crisis.
+
+10. Let's practice!
+03:55 - 04:01
+Let's now practice your new expanding window skills!

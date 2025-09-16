@@ -1,0 +1,105 @@
+Transcript
+00:00
+We will now explore some of the lessons we have learned from operationalizing our AI Principles and how these led us to develop a set of best practices.
+00:09
+We encourage you to select, adapt, and evolve these best practices to fit the needs of your organization.
+00:16
+(1) Research shows the benefit of assembling a review committee that is diverse in cultural identity, expertise and seniority, and at Google, we have found this to be key.
+00:28
+All AI principles require interpretation, making it important to have a review committee that more closely represents your current, or potential, user base.
+00:37
+It's critical to include Diversity, Equity & Inclusion (or DEI) considerations when building our multidisciplinary teams.
+00:47
+Bringing together a diverse group encourages more informed decisions, which in turn, results in more actionable, and feasible solutions.
+00:55
+(2) With regard to the adoption of our AI Principles, we learned that it is important to get both top-down and bottom-up support and engagement.
+01:04
+A top-down mandate where senior leadership endorses the adoption of AI Principles is necessary, but it’s not enough.
+01:12
+We’ve learned that a true cultural transformation requires organization-wide adoption.
+01:18
+Our experience is that bottom-up engagement from teams helps normalize it and is a critical step when embedding responsible AI into a company’s culture.
+01:27
+It’s also our experience that teams are likely to be very interested in the topic of responsible AI— often with their own opinions and beliefs on the topic.
+01:37
+Harnessing that drive and knowledge is beneficial to overall adoption.
+01:41
+(3) At Google, responsible AI adoption comes from educating our teams.
+01:47
+Therefore, we suggest that you train your product and technical teams on tech ethics, and
+01:52
+encourage non-technical stakeholders to develop an understanding of the technological, business and societal impacts of AI.
+01:59
+This helps to build a company culture that embraces responsible AI, where ethics are directly tied to technology development and product excellence.
+02:07
+(4) It's important to recognize that the goals and motivations of the business and the responsible AI team align, since responsible AI equals successful AI.
+02:20
+Building responsible AI products means confronting ethical issues and dilemmas and, at times, slowing down to find the right path forward.
+02:28
+Here the motivations of the business and responsible AI could be perceived to be in conflict, when in
+02:34
+reality releasing a product that works well for everyone is good for business and good for the world.
+02:40
+(5) We strive for transparency in our responsible AI governance process.
+02:46
+We believe that transparency around our process, and the people involved, builds trust.
+02:51
+Confidentiality on the details of individual reviews is often required but transparency in the governance process can help build trust and credibility.
+02:59
+(6) At Google we’ve also learned that the work we do now can affect our future decisions.
+03:05
+Therefore, we suggest developing a system to keep track of alignment plans including issues, mitigations and precedents.
+03:14
+One specific goal of Google’s review team is to identify patterns and maintain records to track decisions and how they were made to inform future work and reviews.
+03:24
+This system also helps provide transparency to stakeholders that the review team followed a tried and trusted path to reach their decisions.
+03:33
+With this kind of documentation that provides consistent information throughout an organization, we found that a responsible AI initiative can scale to reach more people.
+03:41
+(7) On our responsible AI journey, we’ve also recognized the importance of a humble approach.
+03:48
+AI is changing rapidly and our world is not static.
+03:52
+We try to consciously remember we are always learning and we can always improve.
+03:58
+We believe we must maintain a delicate balance between ensuring consistency in our interpretations and remaining open and responsive to new research and inputs.
+04:06
+As we implement our responsible AI practices, we believe an openness to evolve will allow us to make the best, most informed decisions.
+04:14
+(8) We’ve learned the benefit of investing in psychological safety.
+04:19
+When a team has psychological safety, they often feel safe to take risks and be vulnerable with one another.
+04:24
+In the review process, teams need to feel comfortable to explore “what if” questions [magnifying glass
+04:28
+moves around the screen] and areas of misuse in order to work together to surface potential issues.
+04:33
+[magnifying glass stops moving, an ! appears] However, while exploring all potential issues is an important step in this process, in order
+04:38
+to avoid analysis paralysis you must ground your issue spotting in technical, business and societal realities before developing a comprehensive set of guardrails.
+04:47
+(9) Another best practice is that efficiency is not the primary goal of an AI principles process.
+04:56
+A balance is needed between the product development goals and the time needed for a comprehensive AI review.
+05:03
+If you focus too much on being efficient, you may miss potential issues that cause downstream harms for your customers.
+05:09
+While our AI Principles require interpretation and an element of trial and error, they still need to support the speed and scale of the business.
+05:18
+Deliberation and healthy disagreement allows people the space to explore risks and mitigations, but a thoughtful and robust ethical process also means supporting product development goals.
+05:29
+(10)
+05:29
+Start with the assumption that each AI application needs attention.
+05:34
+Ethical issues do not always arise from the most obvious controversial use cases and AI products.
+05:40
+Even seemingly beneficial or innocuous AI use cases can have issues and risks associated with them.
+05:47
+This assumption pushes us to imagine “what if” and explore all the possible scenarios in order to develop a comprehensive set of mitigations.
+05:56
+Our AI Principles reviews are a framework to guide those conversations.
+06:01
+These are some of the best practices Google has learned from operationalizing our AI Principles, and we know these will evolve further with time.
+06:10
+We hope that these best practices can be helpful as you create and implement your own responsible AI process.

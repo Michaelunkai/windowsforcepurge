@@ -1,0 +1,40 @@
+Transcript
+1. Rolling window functions with pandas
+00:00 - 00:09
+In this video, you will begin to learn about window functions for time series in pandas.
+
+2. Window functions in pandas
+00:09 - 01:04
+Window functions are useful because they allow you to operate on sub periods of your time series. In particular, window functions calculate metrics for the data inside the window. Then, the result of this calculation forms a new time series, where each data point represents a summary of several data points of the original time series. We will discuss two main types of windows: Rolling windows maintain the same size while they slide over the time series, so each new data point is the result of a given number of observations. Expanding windows grow with the time series, so that the calculation that produces a new data point is the result of all previous data points. Let's calculate a simple moving average to see how this works in practice.
+
+3. Calculating a rolling average
+01:04 - 01:14
+Let's again use google stock price data for the last several years. Now you'll see two ways to define the rolling window: First,
+
+4. Calculating a rolling average
+01:14 - 01:43
+we apply rolling with an integer window size of 30. This means that the window will contain the previous 30 observations, or trading days. When you choose an integer-based window size, pandas will only calculate the mean if the window has no missing values. You can change this default by setting the min_periods parameter to a value smaller than the window size of 30. Next,
+
+5. Calculating a rolling average
+01:43 - 02:08
+you can also create windows based on a date offset. If you choose 30D, for instance, the window will contain the days when stocks were traded during the last 30 calendar days. While the window is fixed in terms of period length, the number of observations will vary. Let's take a look at what the rolling mean looks like.
+
+6. 90 day rolling mean
+02:08 - 02:44
+Calculate a 90 calendar day rolling mean, and join it to the stock price. The join method allows you to concatenate a Series or DataFrame along axis 1, that is, horizontally. It's just a different way of using the pddot-concat function you've seen before. You can see how the new time series is much smoother because every data point is now the average of the preceding 90 calendar days. To see how extending the time horizon affects the moving average,
+
+7. 90 & 360 day rolling means
+02:44 - 03:06
+let's add the 360 calendar day moving average. The series now appears smoother still, and you can more clearly see when short term trends deviate from longer term trends, for instance when the 90 day average dips below the 360 day average in 2015. Similar to groupby,
+
+8. Multiple rolling metrics (1)
+03:06 - 03:23
+you can also calculate multiple metrics at the same time, using the agg method. With a 90-day moving average and standard deviation you can easily discern periods of heightened volatility. Finally,
+
+9. Multiple rolling metrics (2)
+03:23 - 03:41
+let's display a 360 calendar day rolling median, or 50 percent quantile, alongside the 10 and 90 percent quantiles. Again you can see how the ranges for the stock price have evolved over time, with some periods more volatile than others.
+
+10. Let's practice!
+03:41 - 03:48
+Now you can practice with rolling window functions in the exercises.

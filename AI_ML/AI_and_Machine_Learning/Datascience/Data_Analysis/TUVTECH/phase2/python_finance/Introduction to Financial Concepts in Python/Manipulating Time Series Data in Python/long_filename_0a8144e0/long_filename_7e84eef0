@@ -1,0 +1,40 @@
+Transcript
+1. Evaluate index performance
+00:00 - 00:07
+Now that you have built a weighted index, you can analyze its performance.
+
+2. Evaluate your value-weighted index
+00:07 - 00:41
+Important elements of your analysis will be: First, take a look at the index return, and the contribution of each component to the result. Next, compare the performance of your index to a benchmark like the S&P 500, which covers the wider market, and is also value weighted. You can compare the overall performance or rolling returns for sub periods. We'll start with the index from the last video.
+
+3. Value-based index - recap
+00:41 - 00:50
+First, let's look at the contribution of each stock to the total value added over the year.
+
+4. Value contribution by stock
+00:50 - 01:02
+Subtract the last value of the aggregate market cap from the first to see that the companies in the index added 315 billion dollars in market cap.
+
+5. Value contribution by stock
+01:02 - 01:37
+To see how much each company contributed to the total change, apply the diff method to the last and first value of the series of market capitalization per company and period. The last row now contains the total change in market cap since the first day. You can select the last row using dot-loc and the date pertaining to the last row, or iloc with the parameter -1. To compute the contribution of each component to the index return,
+
+6. Market-cap based weights
+01:37 - 02:09
+let's first calculate the component weights. Select the market capitalization for the index components. Calculate the component weights by dividing their market cap by the sum of the market cap of all components. As you can see, the weights vary between 2 and 13%. Now calculate the total index return by dividing the last index value by the first value, subtract 1 and multiply by 100.
+
+7. Value-weighted component returns
+02:09 - 02:35
+When you select individual values from a series using loc or iloc, the return value is just a number, hence the calculations require basic math and no pandas methods. The total index return is about 14% Multiply the weights by the total return, and you get the contribution of each stock to the index return. Let's now move on
+
+8. Performance vs benchmark
+02:35 - 03:09
+and compare the composite index performance to the S&P 500 for the same period. Convert the index series to a DataFrame so you can insert a new column. Import the data from the Federal Reserve as before. Then normalize the S&P 500 to start at 100 just like your index, and insert as a new column, then plot both time series. You can see that you index did a couple percentage points better for the period.
+
+9. Performance vs benchmark: 30D rolling return
+03:09 - 03:47
+Lastly, to compare the performance over various subperiods, create a multi-period-return function that compounds a numpy array of period returns to a multi period return as you did in chapter 3. Create the daily returns of your index and the S&P 500, a 30 calendar day rolling window, and apply your new function. The plot shows all 30 day returns for either series, and illustrates when it was better to be invested in your index or the S&P 500 for a 30 day period.
+
+10. Let's practice!
+03:47 - 03:53
+And now you'll practice these time series techniques!

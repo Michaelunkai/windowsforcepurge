@@ -1,0 +1,40 @@
+Transcript
+1. Downsampling & aggregation
+00:00 - 00:05
+So far, we have focused on up-sampling, that is,
+
+2. Downsampling & aggregation methods
+00:05 - 00:47
+increasing the frequency of a time series, and how to fill or interpolate any missing values. In this video, you will learn how to down-sample, that is, how to reduce the frequency of your time series. This includes, for instance, converting hourly data to daily data, or daily data to monthly data. In this case, you need to decide how to summarize the existing data as 24 hours become a single day. Your options are familiar aggregation metrics like the mean or median, or simply the last value, and you choice will depend on the context.
+
+3. Air quality: daily ozone levels
+00:47 - 01:19
+Let's first use read_csv to import air quality data from the Environmental Protection Agency. It contains the average daily ozone concentration for New York City starting in 2000. Since the imported DateTimeIndex has no frequency, let's first assign calendar day frequency using dot-resample. The resulting DateTimeIndex has additional entries, as well as the expected frequency information.
+
+4. Creating monthly ozone data
+01:19 - 01:57
+To convert daily ozone data to monthly frequency, just apply the resample method with the new sampling period and offset. We are choosing monthly frequency with default month-end offset. Next, apply the mean method to aggregate the daily data to a single monthly value. You can see that the monthly average has been assigned to the last day of the calendar month. You can apply the median in the exact same fashion. Similar to the the groupby method, you can also apply multiple aggregations at once.
+
+5. Creating monthly ozone data
+01:57 - 02:12
+Just use the dot-agg method and pass a list of aggregation functions like the mean and the standard deviation. Let's visualize the resampled, aggregated Series relative to the original data at calendar-daily frequency.
+
+6. Plotting resampled ozone data
+02:12 - 02:51
+We'll plot the data starting 2016 so you can see more detail. Matplotlib allows you to plot several times on the same object by referencing the axes object that contains the plot. The first plot is the original series, and the second plot contains the resampled series with a suffix so that the legend reflects the difference. You see that the resampled data are much smoother since the monthly volatility has been averaged out. Let's also take a look at how to resample several series.
+
+7. Resampling multiple time series
+02:51 - 03:07
+We'll include pm2-point-5, which measures the presence of small particles, and resample the data from 2000 until recently to daily frequency. Resampling with several series again works very similar to groupby:
+
+8. Resampling multiple time series
+03:07 - 03:25
+The first example uses business month end frequency. You can select any of the columns and apply any appropriate method. Pandas provides first and last methods that allow you to select the first or last value from the resampling period to represent the group.
+
+9. Resampling multiple time series
+03:25 - 03:34
+The second example shows month end and month start, and selects the first data point from each resampling period.
+
+10. Let's practice!
+03:34 - 03:38
+Let's practice.

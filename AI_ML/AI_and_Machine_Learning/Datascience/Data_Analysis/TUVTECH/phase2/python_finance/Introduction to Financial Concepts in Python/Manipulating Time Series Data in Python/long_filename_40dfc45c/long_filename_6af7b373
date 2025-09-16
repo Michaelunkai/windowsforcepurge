@@ -1,0 +1,44 @@
+Transcript
+1. Compare time series growth rates
+00:00 - 00:10
+In this chapter, you will learn how to compare time series growth rates. While this is useful for any time series,
+
+2. Comparing stock performance
+00:10 - 01:07
+as a concrete example, you'll be analyzing the performance of various stocks relative to each other, and against a benchmark. You often want to compare time series trends. However, because they start at different levels, it's not always easy to do so from a simple chart. A simple solution is to normalize all price series so that they start at the same value. You achieve this by dividing each time series by its first value. As a result, the first value equals one, and each subsequent price now reflects the relative change to the initial price. Multiply the normalized series by 100, and you get the relative change to the initial price in percentage points: a price change from 100 to 120 implies a 20 percentage point increase.
+
+3. Normalizing a single series (1)
+01:07 - 01:36
+Let's practice this using Google's stock price over the last several years. Let's take a look at the first few prices for the period using the method dot-head. To select the first price, select the column and use dot-xiloc for integer based selection with the value 0. You could have used dot-loc[] with the label of the first date, but iloc is easier because you don't have to know the first available date.
+
+4. Normalizing a single series (2)
+01:36 - 02:02
+You can now divide the price series by its first price using dot-div, and multiply the result by 100. Plot this normalized series, and you see that it starts at 100. You also see that Google's stock increased by 150 percentage points to around 2-point-5 times its original value. Now let's compare several stocks:
+
+5. Normalizing multiple series (1)
+02:02 - 02:26
+Let's use Google, Yahoo, and Apple, and again import prices from 2010 through 2016. For each of the three stocks, there are 1761 prices for this period. If you select the first price with iloc and the value 0, you obtain a Series that represents the first row of the DataFrame.
+
+6. Normalizing multiple series (2)
+02:26 - 03:00
+You can again use dot-div to divide the three price series by their respective first prices. If you divide a DataFrame by a Series using the div method, pandas makes sure that the row labels of the Series align with the column headers of the DataFrame By relying on pandas' capability to align index and column labels, you can easily scale up your computations from single values to entire Series and DataFrames.
+
+7. Comparing with a benchmark (1)
+03:00 - 03:32
+Before plotting the result, let's add a benchmark to compare the performance of the stocks not only to each other, but also against the broader stock market. You can use the S&P 500, which reflects the performance of the 500 largest listed companies in the US. As before, you can combine the series using pddot-concat. Since the series come from different sources, use dropna to make sure there are no missing values
+
+8. Comparing with a benchmark (2)
+03:32 - 03:53
+You can divide the four series by their respective first prices, multiply by 100, and easily see how each performed against the S&P 500 and relative to each other. To show the performance difference for each stock relative to the benchmark in percentage points,
+
+9. Plotting performance difference
+03:53 - 04:11
+you can subtract the normalized SP500 from the normalized stock prices. Use dot-sub with the keyword axis equals 0 to align the Series index with the DataFrame index. This causes Pandas to subtract the Series from each column.
+
+10. Plotting performance difference
+04:11 - 04:18
+As a result, you can now see how each stock performed relative to the benchmark.
+
+11. Let's practice!
+04:18 - 04:25
+Let's now go ahead and practice your new time series skills in the exercises!

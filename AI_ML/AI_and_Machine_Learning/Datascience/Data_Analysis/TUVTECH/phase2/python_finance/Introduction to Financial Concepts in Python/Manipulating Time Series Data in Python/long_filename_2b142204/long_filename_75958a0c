@@ -1,0 +1,47 @@
+1. How to use dates & times with pandas
+00:00 - 00:15
+In this chapter you will learn about using dates with python pandas. Pandas was developed to analyze financial data that often come as time series, and has powerful functionality to make your life easier
+
+2. Date & time series functionality
+00:15 - 00:52
+The key to this are data types tailored to managing date and time information. These data types represent either points in time, or periods of time. They have attributes and methods that allow you to access and manipulate the time dimension of your data. Any column can contain date or time information, but it is most important as a DataFrame index, because this converts the entire DataFrame into a time series. You will also learn to use many DataFrame methods that leverage date information stored in the index.
+
+3. Basic building block: pd.Timestamp
+00:52 - 01:16
+Let's first take a look at these data types. Using the pandas library and python's builtin datetime class, you can create a pandas Timestamp. You can also use a date string instead of a datetime object, both produce the same result. If you display the timestamp, you'll notice that the time has been automatically set to midnight.
+
+4. Basic building block: pd.Timestamp
+01:16 - 01:32
+The pandas TimeStamp has attributes so you can access various time aspects of your data. You can, for instance, retrieve the year or the name of the weekday. pandas also has a data type for time periods.
+
+5. More building blocks: pd.Period & freq
+01:32 - 01:55
+The period object always has a frequency, with months as the default. It also has a method to convert between frequencies, for instance from monthly to daily frequency. You can convert a period to a timestamp object, and a timestamp back to a period object. You can also do basic date arithmetic.
+
+6. More building blocks: pd.Period & freq
+01:55 - 02:24
+Starting with a period object for January 2017 at monthly frequency, just add the number 2 to get a monthly period for March 2017. Time stamps can also have frequency information. If you create the timestamp for Jan 31 2017 with monthly frequency and add 1, you get a timestamp for February 28th. To create a time series,
+
+7. Sequences of dates & times
+02:24 - 02:52
+you need a sequence of dates. To create a sequence of Timestamps, use the pandas function date_range. You need to specify a start date, and either and end date, or a number of periods. The default is daily frequency. The function returns the sequence of dates as a DateTimeindex with frequency information. You will recognize the first element as a pandas Timestamp.
+
+8. Sequences of dates & times
+02:52 - 03:06
+You can convert the index to a PeriodIndex, just like you could Timestamps to Period objects. Now you can create a time series by setting the DateTimeIndex as the index of your DataFrame.
+
+9. Create a time series: pd.DateTimeIndex
+03:06 - 03:15
+DataFrame columns containing dates will be assigned the datetime64 data type, where 'ns' means nanoseconds.
+
+10. Create a time series: pd.DateTimeIndex
+03:15 - 03:35
+Let's create 12 rows with two columns of random data to match the DateTimeindex. Provide the dates to the DataFrame constructor, and you have created your first time series with 12 monthly timestamps. Pandas allows you to create and convert between many different frequencies.
+
+11. Frequency aliases & time info
+03:35 - 03:48
+Here are the most important ones. Some may also be set to the beginning or end of the period, or use business instead of calendar periods. There are also numerous Timestamp attributes.
+
+12. Let's practice!
+03:48 - 03:54
+Let's now practice your new time series skills!

@@ -1,0 +1,48 @@
+Transcript
+1. Lags, changes, and returns for stock price series
+00:00 - 00:06
+In this video, you will begin to manipulate time series data.
+
+2. Basic time series calculations
+00:06 - 00:46
+In particular, you will learn how to move your data across time so that you can compare values at different points in time. This involves shifting values into the future, or creating lags by moving data into the past. You will also learn how to calculate changes between values at different points in time. Lastly, you will see how to calculate the change between values in percentage terms, also called the rate of growth. Pandas has builtin methods for these calculations that leverage the DateTimeIndex you learned about in the last segment.
+
+3. Getting GOOG stock prices
+00:46 - 01:17
+Let's again import a recent stock price time series for Google. You can let the read_csv function do the date parsing for you. Instead of using the to_datetime function, you can tell read_csv to parse certain columns as dates ' just provide one or more target labels as a list. You can also let read_csv set a column as index by providing the index_col parameter.
+
+4. Getting GOOG stock prices
+01:17 - 01:21
+As a result, you get a properly formatted time series.
+
+5. .shift(): Moving data between past & future
+01:21 - 01:45
+Your first time series method is dot-shift. It allows you to move all data in a Series or DataFrame into the past or future. The 'shifted' version of the stock price has all prices moved by 1 period into the future. As a result, the first value in the series is now missing.
+
+6. .shift(): Moving data between past & future
+01:45 - 02:06
+In contrast, the lagged version of the stock price is moved 1 period into the past. In this case, the last value is now missing. To shift data into the past, use negative period numbers. Shifting data is useful to compare data at different points in time.
+
+7. Calculate one-period percent change
+02:06 - 02:47
+You can, for instance, calculate the rate of change from period to period, which is also called financial return in finance. The method dot-div allows you not only to divide a Series by a value, but by an entire Series, for instance by another column in the same DataFrame. pandas makes sure the dates for both series match up, and will divide the aligned values accordingly. As a result, you get the relative change from the last period for every price, that is, the factor by which you need to multiply the last price to get the current price.
+
+8. Calculate one-period percent change
+02:47 - 03:11
+As you have seen before, you can chain all DataFrame methods that return a DataFrame. The returned DataFrame will be used as input for the next calculation. Here, we are subtracting 1 and multiplying the result by 100 to obtain the relative change in percentage terms.
+
+9. .diff(): built-in time-series change
+03:11 - 03:46
+Another time series method is dot-diff, which calculates the change between values at different points in time. By default, the 'diff' version of the close price is the difference in value since the last day stocks were traded. You can use this information to also calculate oneperiod returns: just divide the absolute change by the shifted price, and then multiply by 100 to get the same result as before.
+
+10. .pct_change(): built-in time-series % change
+03:46 - 04:06
+Finally, since it is such a common operation, pandas has a builtin method for you to calculate the percent change directly. Just select a column and call pct_change. Multiply by 100 to get the same result as before.
+
+11. Looking ahead: Get multi-period returns
+04:06 - 04:25
+All these methods have a 'periods' keyword that you have already seen for dot-shift and that defaults to the value 1. If you provide a higher value, you can calculate returns for data points several periods apart, as in this example, for prices three trading days apart.
+
+12. Let's practice!
+04:25 - 04:32
+Now, let's practice these new time series methods!

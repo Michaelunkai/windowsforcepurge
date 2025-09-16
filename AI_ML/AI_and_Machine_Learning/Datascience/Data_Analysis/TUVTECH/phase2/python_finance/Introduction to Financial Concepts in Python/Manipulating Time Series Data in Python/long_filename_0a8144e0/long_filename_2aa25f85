@@ -1,0 +1,32 @@
+Transcript
+1. Index correlation & exporting to Excel
+00:00 - 00:08
+In addition to the index performance, you can also analyze the relationships among its constituents. To this end,
+
+2. Some additional analysis of your index
+00:08 - 00:35
+calculate the daily return correlations among all index components, and then visualize the result as a heatmap. Next, learn how to store your results to an excel workbook in either xls or xlsx formats: You can save one DataFrame to a single worksheet, or You can also save several DataFrames to multiple Excel worksheets.
+
+3. Index components - price data
+00:35 - 00:41
+Let's start again with the price data for the index components you have worked with so far in this chapter.
+
+4. Index components: return correlations
+00:41 - 01:08
+Now calculate the daily returns for the annual price series of all components. Then,, and apply the dot-corr method to the daily returns to obtain the correlation matrix among all index constituents. Since the matrix is fairly large with 12 x 12, ie, 144 entries, it is useful to visualize the results so you can quickly spot trends and outliers.
+
+5. Index components: return correlations
+01:08 - 01:27
+Just pass the correlations to the seaborn heatmap function with the annot keyword. Rotate the labels on the x axis and set a title to get a correlation heatmap with a color scale that informs you which color codes belong to which correlation values.
+
+6. Saving to a single Excel worksheet
+01:27 - 02:16
+Let's now look at storing your data in excel. Now it's time to learn the counterpart to read_excel, the to_excel method. To store a single DataFrame in a single worksheet, just pass the path to the file and a sheetname to the to_excel method. For this example, we are saving to a workbook in the older dot-xls format. You can choose among various options to fine tune the storage result. Set values for startrow and startcol different from 0 to leave space between the DataFrame and the margin. You can see from the screenshot that the result is a worksheet with matching sheetname. You can also store several DataFrame's in a single workbook.
+
+7. Saving to multiple Excel worksheets
+02:16 - 03:02
+We'll use the price data alongside the correlations, and first adjust the DateTimeIndex to remove the time and only keep the date information. Next, define the path to create an ExcelWriter object. Here, we are using the newer xlsx format for illustration. The with keyword is called a context manager. The workbook remains open and writable while the write commands are indented. Simply use the writer object as path, and write multiple dataFrames to the object, varying the sheetnames to store the result on separate sheets. As you can see from the screenshot, the result is a workbook with multiple sheets.
+
+8. Let's practice!
+03:02 - 03:09
+Let's now practice your new skills from this last segment of the course!

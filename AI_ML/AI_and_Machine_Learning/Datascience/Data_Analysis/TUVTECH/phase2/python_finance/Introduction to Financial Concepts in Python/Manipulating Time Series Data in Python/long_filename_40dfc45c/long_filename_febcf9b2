@@ -1,0 +1,32 @@
+Transcript
+1. Changing the time series frequency: resampling
+00:00 - 00:23
+In this chapter, you will begin to learn how to change the frequency of a time series. This is a very common operation because you often need to convert two time series to a common frequency to analyze them together. Since this topic is so important, you will continue to learn about it in the following two videos.
+
+2. Changing the frequency: resampling
+00:23 - 01:20
+You can build on what you've learned about to the DateTimeIndex and the frequency information it may store. You have seen how you can set and change the frequency attribute of a DateTimeIndex When you change the frequency, it also impacts the values in the DataFrame. When you upsample by converting the data to a higher frequency, you create new rows and need to tell pandas how to fill or interpolate the missing values in these rows. When you downsample, you reduce the number of rows, and need to tell pandas how to aggregate existing data. In this video, we will explore a few basic options that pandas provides to address resampling with asfreq() and reindex, before diving deeper into the resample method in the following two videos.
+
+3. Getting started: quarterly data
+01:20 - 01:46
+To illustrate what happens when you up-sample your data, let's create a Series at a relatively low quarterly frequency for the year 2016 with the integer values 1-4. When you choose quarterly frequency, pandas defaults to December for the end of the fourth quarter, which you could modify by using a different month with the quarter alias.
+
+4. Upsampling: quarter => month
+01:46 - 02:38
+Next, let's see what happens when you up-sample your time series by converting the frequency from quarterly to monthly using asfreq(). Pandas adds new month-end dates to the DateTimeIndex between the existing dates. As a result, there are now several months with missing data between March and December. You may also consider the first two months as missing. Let's compare three ways that pandas offers to fill missing values when upsampling. We'll create a DataFrame that contains all alternatives to the baseline, our first column. You can convert a Series to a DataFrame by applying the to_frame() method, passing a column name as parameter.
+
+5. Upsampling: fill methods
+02:38 - 02:49
+The first two options involve choosing a fill method, either forward fill or backfill. The third option is to provide a fill value.
+
+6. Upsampling: fill methods
+02:49 - 03:07
+If you compare the results, you see that forward fill propagates any value into the future if the future contains missing values. Backfill does the same for the past, and fill_value just substitutes missing values.
+
+7. Add missing months: .reindex()
+03:07 - 03:28
+If you want a monthly DateTimeIndex that covers the full year, you can use reindex. Pandas aligns existing data with the new monthly values, and produces missing values elsewhere. You can use the exact same fill options for reindex as you just did for asfreq.
+
+8. Let's practice!
+03:28 - 03:35
+Now you can practice these new methods in the exercises

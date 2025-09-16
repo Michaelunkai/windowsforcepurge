@@ -1,0 +1,63 @@
+/
+
+
+
+
+Connected
+Exercise
+Exercise
+Create a time series of air quality data
+You have seen in the video how to deal with dates that are not in the correct format, but instead are provided as string types, represented as dtype object in pandas.
+
+We have prepared a data set with air quality data (ozone, pm25, and carbon monoxide for NYC, 2000-2017) for you to practice the use of pd.to_datetime().
+
+Instructions
+100 XP
+We have already imported pandas as pd and matplotlib.pyplot as plt for you, and loaded the air quality DataFrame into the variable data.
+
+Inspect data using .info().
+Use pd.to_datetime to convert the column 'date' to dtype datetime64.
+Set the 'date' column as index.
+Validate the changes by inspecting data using .info() again.
+Plot data using subplots=True.
+
+Take Hint (-30 XP)
+script.py
+12345678910111213
+data = pd.read_csv('nyc.csv')
+
+# Inspect data
+print(____)
+
+# Convert the date column to datetime64
+
+
+# Set date column as index
+
+IPython Shell
+Slides
+In [1]:
+Your recent learnings
+When you left 17 hours ago, you worked on Working with Time Series in Pandas, chapter 1 of the course Manipulating Time Series Data in Python. Here is what you covered in your last lesson:
+
+You learned about the essentials of working with time series data in Pandas, a powerful tool for time series analysis especially useful in financial data analysis. Key points covered include:
+
+Pandas Time Series Data Types: You discovered that Pandas has specific data types for managing dates and times, such as Timestamps and Periods. These types are crucial for handling time series data efficiently.
+
+Creating Time Series: Using pd.date_range(), you learned how to create a sequence of dates, which can be used as an index in a DataFrame to create a time series. This function allows specifying a start date, end date, or number of periods, with a daily frequency by default.
+
+Timestamps and Periods: You explored how to create and manipulate Timestamp and Period objects, including converting between them. This is useful for accessing and modifying specific time periods within your data.
+
+DataFrame Time Series Operations: You saw how setting a DateTimeIndex on a DataFrame enables a wealth of time series functionality, such as shifting data in time or calculating period-specific returns.
+
+Practical Example: You practiced creating a week-long time series using pd.date_range(), iterating over each date to print the day of the week and its name, like so:
+
+# Create the range of dates here
+seven_days = pd.date_range('2017-1-1', periods=7)
+
+# Iterate over the dates and print the number and name of the weekday
+for day in seven_days:
+    print(day.dayofweek, day.day_name())
+This lesson laid the foundation for advanced time series analysis with Pandas, demonstrating how to manipulate and analyze time-based data effectively.
+
+The goal of the next lesson is to introduce you to advanced techniques for analyzing and forecasting with time series data, building on your understanding of indexing, resampling, and frequency manipulation.

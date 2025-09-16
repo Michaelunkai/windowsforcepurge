@@ -1,0 +1,36 @@
+Your recent learnings
+When you left 2 days ago, you worked on Window Functions: Rolling & Expanding Metrics, chapter 3 of the course Manipulating Time Series Data in Python. Here is what you covered in your last lesson:
+
+You learned about the significance of correlation in understanding the relationships between time series, especially in financial markets for predictive modeling and risk management. Correlation measures the linear relationship between two variables, quantifying how closely their movements are related around their respective means. This concept is crucial when analyzing asset returns, where:
+
+A positive correlation indicates that the variables tend to move in the same direction.
+A negative correlation suggests that they move in opposite directions.
+The correlation coefficient ranges between -1 and +1, with values close to these extremes indicating a stronger linear relationship.
+You also explored how to calculate and visualize correlations using Python's Pandas and Seaborn libraries. Key points included:
+
+Using .corr() in Pandas to compute pairwise correlation coefficients among variables in a DataFrame.
+Visualizing these correlations with Seaborn's heatmap, enhancing interpretability by annotating the heatmap with the correlation values.
+In the practical exercise, you applied these concepts to analyze annual return correlations among several stocks, including Apple (AAPL), Amazon (AMZN), and IBM. You learned to:
+
+Resample time series data to obtain year-end prices using .resample('A').last().
+Calculate annual returns from these prices with .pct_change().
+Use the .corr() method to find pairwise correlations among the stocks' annual returns.
+Visualize the correlation matrix as an annotated heatmap using Seaborn, making it easier to identify the strength and direction of relationships between stocks.
+The code snippet provided demonstrated how to implement these steps:
+
+# Calculate year-end prices
+annual_prices = data.resample('A').last()
+
+# Calculate annual returns
+annual_returns = annual_prices.pct_change()
+
+# Calculate and print the correlation matrix
+correlations = annual_returns.corr()
+print(correlations)
+
+# Visualize the correlations as heatmap
+sns.heatmap(correlations, annot=True)
+plt.show();
+This lesson equipped you with the knowledge to analyze and interpret the linear relationships between time series data, a skill valuable in many analytical and financial contexts.
+
+The goal of the next lesson is to learn how to build and evaluate a value-weighted index by selecting, cleaning, and analyzing stock data using pandas.

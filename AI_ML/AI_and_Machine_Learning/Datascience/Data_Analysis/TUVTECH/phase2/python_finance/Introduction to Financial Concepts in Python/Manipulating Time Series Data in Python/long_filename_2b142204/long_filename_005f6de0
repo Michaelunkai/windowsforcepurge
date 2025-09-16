@@ -1,0 +1,52 @@
+Transcript
+1. Indexing & resampling time series
+00:00 - 00:07
+In this chapter, you will learn about basic time series methods and transformations.
+
+2. Time series transformation
+00:07 - 00:49
+These basic methods include: parsing dates provided as strings, and converting the result into the matching pandas data type called datetime64. They also include selecting subperiods of your time series, and setting or changing the frequency of the DateTimeIndex. You can change the frequency to a higher or lower value: upsampling involves increasing the time frequency, which requires generating new data. Downsampling means decreasing the time frequency, which requires aggregating data. We'll discuss this in the next chapter.
+
+3. Getting GOOG stock prices
+00:49 - 01:19
+Our first data set is a time series with two years of daily Google stock prices. You will often have to deal with dates that are of type object, or string. You'll notice a column called 'date' that is of data type 'object'. However, when you print the first few rows using the dot-head method, you see that it contains dates. To convert the strings to the correct datatype,
+
+4. Converting string dates to datetime64
+01:19 - 01:33
+pandas has the to_datetime function. Just pass a data column or series to this function, and it will parse the string as datetime64 type. You can now set the
+
+5. Converting string dates to datetime64
+01:33 - 01:50
+'repaired' column as index using set_index. The resulting DateTimeIndex lets you treat the entire DataFrame as time series data. Plotting the stock price price shows that Google has been doing well over the two years.
+
+6. Plotting the Google stock time series
+01:50 - 02:03
+It also shows that with a DateTimeIndex, pandas automatically creates reasonably spaced date labels for the x axis. To select subsets of your time series,
+
+7. Partial string indexing
+02:03 - 02:33
+you can use strings that represent a complete date, or relevant parts of a date. If you just pass a string representing a year, pandas returns all dates within this year. If you pass a slice that starts with one month and ends at another, you get all dates within that range. Note that the date range will be inclusive of the end date, different from other intervals in python.
+
+8. Partial string indexing
+02:33 - 02:42
+You can also use dot-loc[] with a complete date and a column label to select a specific stock price.
+
+9. .asfreq(): set frequency
+02:42 - 03:04
+You may have noticed that our DateTimeIndex did not have frequency information. You can set the frequency information using dot-asfreq. The alias 'D' stands for calendar day frequency. As a result, the DateTimeIndex now contains many dates where stock wasn't bought or sold.
+
+10. .asfreq(): set frequency
+03:04 - 03:21
+These new dates have missing values. This is also called upsampling, because the new DataFrame is of higher frequency as the original version. In the next chapter, you will learn to create data points for the missing values.
+
+11. .asfreq(): reset frequency
+03:21 - 03:39
+You can also convert the DateTimeIndex to business day frequency. Pandas has a list of days commonly considered business days. The alias for business day frequency is 'B'. You now see a smaller number of additional dates created.
+
+12. .asfreq(): reset frequency
+03:39 - 03:52
+You can use the method dot-isnull to select the missing values and check which dates are considered business days, but have no stock prices because no stocks were traded.
+
+13. Let's practice!
+03:52 - 03:57
+Let's now practice your new time series skills.

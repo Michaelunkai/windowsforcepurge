@@ -1,0 +1,38 @@
+Transcript
+1. Build a market-cap weighted index
+00:00 - 00:04
+To construct the index, you need
+
+2. Build your value-weighted index
+00:04 - 00:09
+to calculate the number of shares using both market capitalization and latest stock price,
+
+3. Build your value-weighted index
+00:09 - 00:45
+because the market capitalization is just the product of the number of shares and the price of each share. Next you'll use the historical stock prices to convert it into a series of market value. Then convert it to an index by normalizing the series to start at 100, similar to when you normalized time series in chapter 1 of this course. You'll also take a look at the index return, and the contribution of each component to the result. We're starting again with the stock index components from the last video '
+
+4. Stock index components
+00:45 - 00:54
+here they are again with stock ticker and company name, market cap and last price. To calculate the number of shares,
+
+5. Number of shares outstanding
+00:54 - 01:10
+just divide the market capitalization by the last price. Since we are measuring market cap in million USD, you obtain the shares in millions as well. You can now multiply your historical stock price series by the number of shares.
+
+6. Historical stock prices
+01:10 - 01:29
+The result is a time series of the market capitalization, ie, the stock market value of each company. By selecting the first and the last day from this series, you can compare how each company's market value has evolved over the year.
+
+7. From stock prices to market value
+01:29 - 01:45
+Notice how you can use dot-append to concatenate two DataFrames vertically. Similar to the join method, dot-append is an alternative to the concat function. Now you almost have your index: just get the market value
+
+8. Aggregate market value per period
+01:45 - 01:59
+for all companies per period using the sum method with the parameter axis equals 1 to sum each row. Now you just need to normalize this series to start at 1 by dividing the series by its first value, which you get
+
+9. Value-based index
+01:59 - 02:12
+using dot-iloc. Multiply the result by 100 and you get the convenient start value of 100 where differences from the start values are changes in percentage terms.
+
+10. Let's practice!

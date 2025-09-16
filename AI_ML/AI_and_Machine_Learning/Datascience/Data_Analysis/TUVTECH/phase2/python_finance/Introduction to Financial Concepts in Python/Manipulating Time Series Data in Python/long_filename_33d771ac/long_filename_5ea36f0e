@@ -1,0 +1,32 @@
+Transcript
+1. Relationships between time series: correlation
+00:00 - 00:12
+So far, you have focused on characteristics of individual time series. Now, you'll switch to relationships between time series.
+
+2. Correlation & relations between series
+00:12 - 00:32
+Correlation is the key measure of linear relationships between two variables. In financial markets, correlations between asset returns are important for predictive models and risk management, for instance. Pandas and seaborn have various tools to help you compute and visualize these relationships.
+
+3. Correlation & linear relationships
+00:32 - 01:42
+Let's take a more detailed look at correlations and linear relationships between variables. The correlation coefficient looks at pairwise relations between variables, and measures the similarity of the pairwise movements of two variables around their respective means. This pairwise co-movement is called covariance. The correlation coefficient divides this measure by the product of the standard deviations for each variable. As a result, the coefficient varies between -1 and +1. The closer the correlation coefficient to plus or 1 or minus 1, the more does a plot of the pairs of the two series resemble a straight line. The sign of the coefficient implies a positive or negative relationship. A positive relationship means that when one variable is above its mean, the other is likely also above its mean, and vice versa for a negative relationship. There are, however, numerous types of non-linear relationships that the correlation coefficient does not capture.
+
+4. Importing five price time series
+01:42 - 01:58
+Let's import a csv file containing price series for five assets to analyze their relationships. You now have 10 years worth of data for two stock indices, a bond index, oil and gold.
+
+5. Visualize pairwise linear relationships
+01:58 - 02:51
+Seaborn has a jointplot that makes it very easy to display the distribution of each variable together with the a scatter plot that show the joint distribution. We'll use the daily returns for our analysis. The jointplot takes a DataFrame, and then two column labels for each axis. The example code uses both stock indexes; You can also see the plot for sp500 and bonds for comparison. The S&P 500 and Nasdaq stock indexes are highly and positively correlated with a correlation coefficient near 1. The S&P 500 and the bond index, in contrast, have much lower correlation given the more diffuse point cloud, and negative correlation as suggested by the slight downward trend of the data points.
+
+6. Calculate all correlations
+02:51 - 03:16
+Pandas allows you to calculate all pairwise correlation coefficients with a single method called dot-corr. Apply it to the returns DataFrame, and you get a new DataFrame with the pairwise coefficients. The data are naturally symmetric around the diagonal, which contains only values of 1 because the correlation of a variable with itself is of course 1.
+
+7. Visualize all correlations
+03:16 - 03:49
+Seaborn again offers a neat tool to visualize pairwise correlation coefficients. The heatmap takes the DataFrame with the correlation coefficients as inputs, and visualizes each value on a color scale that reflects the range of relevant values. The parameter annot equals True ensures that the values of the correlation coefficients are displayed as well. You can see that the correlations of daily returns among the various asset classes varies quite a bit.
+
+8. Let's practice!
+03:49 - 03:56
+Now you'll practice finding correlations of time series in the exercises.

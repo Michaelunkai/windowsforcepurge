@@ -1,0 +1,28 @@
+Your recent learnings
+When you left 13 hours ago, you worked on Factor Investing, chapter 3 of the course Introduction to Portfolio Risk Management in Python. Here is what you covered in your last lesson:
+
+You learned about the Fama-French 3-factor model, which extends the CAPM model by adding two additional factors: SMB (small minus big) and HML (high minus low). This model helps explain more of the variance in portfolio returns compared to the CAPM model.
+
+Key points covered:
+
+Fama-French 3-Factor Model: This model includes the market excess return, SMB, and HML factors to better explain portfolio returns.
+SMB Factor: Represents the size premium, calculated as the return of small-cap stocks minus large-cap stocks.
+HML Factor: Represents the value premium, calculated as the return of value stocks minus growth stocks.
+Alpha: The unexplained portion of the portfolio's return, often interpreted as outperformance due to skill, luck, or timing.
+You also practiced implementing the Fama-French model in Python:
+
+import statsmodels.formula.api as smf
+
+# Define the regression formula
+FamaFrench_model = smf.ols(formula='Portfolio_Excess ~ Market_Excess + SMB + HML', data=FamaFrenchData)
+
+# Fit the regression
+FamaFrench_fit = FamaFrench_model.fit()
+
+# Extract the adjusted r-squared
+regression_adj_rsq = FamaFrench_fit.rsquared_adj
+print(regression_adj_rsq)
+Additionally, you learned how to extract p-values and coefficients from the regression model to interpret factor significance and exposure.
+
+The goal of the next lesson is to understand how adding more factors to a financial model can improve its ability to explain portfolio returns.
+
