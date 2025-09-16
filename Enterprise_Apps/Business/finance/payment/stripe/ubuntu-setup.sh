@@ -1,0 +1,1 @@
+sudo apt update && sudo apt install -y curl && curl -sL https://github.com/stripe/stripe-cli/releases/latest/download/stripe_linux_amd64.tar.gz | tar -xz && sudo install stripe /usr/local/bin

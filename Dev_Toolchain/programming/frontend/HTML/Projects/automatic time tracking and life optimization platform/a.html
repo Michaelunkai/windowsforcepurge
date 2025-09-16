@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeFlow - Intelligent Life Optimization</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: #f8f9fa; }
+        
+        .card { 
+            background: white; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08); 
+            transition: all 0.3s ease;
+        }
+        .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+        
+        .dashboard-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 20px; 
+            padding: 20px; 
+        }
+        
+        .chart-container { 
+            height: 250px; 
+            position: relative; 
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .metric-card { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            border-radius: 12px;
+        }
+        
+        .insight-card { 
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); 
+            color: white; 
+            border-radius: 12px; 
+            padding: 20px; 
+        }
+        
+        .goal-progress { 
+            background: #f5f5f5; 
+            border-radius: 8px; 
+            height: 8px; 
+            overflow: hidden; 
+            margin: 8px 0; 
+        }
+        
+        .goal-fill { 
+            height: 100%; 
+            background: linear-gradient(90deg, #4caf50, #8bc34a); 
+            transition: width 0.3s; 
+        }
+        
+        .floating-action { 
+            position: fixed; 
+            bottom: 24px; 
+            right: 24px; 
+            z-index: 1000; 
+        }
+        
+        .sidebar { 
+            width: 280px; 
+            background: #1a1a1a; 
+            color: white; 
+            height: 100vh; 
+            overflow-y: auto; 
+            flex-shrink: 0;
+        }
+        
+        .main-content { 
+            flex: 1; 
+            background: #f8f9fa; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .app-container { 
+            display: flex; 
+            min-height: 100vh; 
+        }
+        
+        .nav-item { 
+            padding: 12px 24px; 
+            cursor: pointer; 
+            transition: background 0.2s; 
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-item:hover, .nav-item.active { 
+            background: rgba(255,255,255,0.1); 
+        }
+        
+        .mood-tracker { 
+            display: flex; 
+            gap: 8px; 
+            justify-content: center; 
+            margin: 16px 0; 
+        }
+        
+        .mood-icon { 
+            font-size: 2em; 
+            cursor: pointer; 
+            opacity: 0.3; 
+            transition: all 0.2s; 
+        }
+        
+        .mood-icon.active { 
+            opacity: 1; 
+            transform: scale(1.1);
+        }
+        
+        .btn { 
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-family: inherit; 
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary { 
+            background: #1976d2; 
+            color: white; 
+        }
+        
+        .btn-primary:hover { 
+            background: #1565c0; 
+            transform: translateY(-1px);
+        }
+        
+        .input { 
+            padding: 12px; 
+            border: 2px solid #e0e0e0; 
+            border-radius: 6px; 
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        
+        .input:focus { 
+            outline: none; 
+            border-color: #1976d2; 
+        }
+        
+        .select { 
+            padding: 12px; 
+            border: 2px solid #e0e0e0; 
+            border-radius: 6px; 
+            font-family: inherit;
+            background: white;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 0.3s;
+        }
+        
+        .fade-enter-from, .fade-leave-to {
+            opacity: 0;
+        }
+        
+        .stats-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 16px; 
+            margin-bottom: 24px;
+        }
+        
+        .content-grid {
+            display: grid; 
+            grid-template-columns: 2fr 1fr; 
+            gap: 24px;
+        }
+
+        .activity-bar {
+            display: flex;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .activity-segment {
+            transition: all 0.3s ease;
+        }
+
+        .work-segment { background: #1976d2; }
+        .health-segment { background: #388e3c; }
+        .learning-segment { background: #f57c00; }
+        .social-segment { background: #7b1fa2; }
+        .entertainment-segment { background: #c2185b; }
+
+        .heatmap-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            margin: 16px 0;
+        }
+
+        .heatmap-cell {
+            height: 20px;
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+
+        .heatmap-cell:hover {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .app-container { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; }
+            .content-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="app-container">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar">
+                <div style="padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="margin: 0; color: #4fc3f7;">⏱️ TimeFlow</h3>
+                    <p style="margin: 4px 0 0 0; color: #999; font-size: 0.9em;">Intelligent Life Optimization</p>
+                </div>
+                
+                <div style="padding: 16px 0;">
+                    <div class="nav-item" :class="{active: currentView === 'dashboard'}" @click="currentView = 'dashboard'">
+                        <i class="material-icons" style="margin-right: 12px;">dashboard</i>
+                        Dashboard
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'tracking'}" @click="currentView = 'tracking'">
+                        <i class="material-icons" style="margin-right: 12px;">access_time</i>
+                        Live Tracking
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'analytics'}" @click="currentView = 'analytics'">
+                        <i class="material-icons" style="margin-right: 12px;">analytics</i>
+                        Analytics
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'goals'}" @click="currentView = 'goals'">
+                        <i class="material-icons" style="margin-right: 12px;">flag</i>
+                        Goals & Habits
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'insights'}" @click="currentView = 'insights'">
+                        <i class="material-icons" style="margin-right: 12px;">lightbulb</i>
+                        AI Insights
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'team'}" @click="currentView = 'team'">
+                        <i class="material-icons" style="margin-right: 12px;">group</i>
+                        Team & Family
+                    </div>
+                </div>
+
+                <!-- Real-time Activity Status -->
+                <div style="padding: 16px 24px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="margin: 0 0 12px 0; color: #4fc3f7;">Current Activity</h4>
+                    <div style="background: rgba(76, 175, 80, 0.2); padding: 12px; border-radius: 8px; border-left: 4px solid #4caf50;">
+                        <div style="font-weight: 500;">{{ currentActivity.name }}</div>
+                        <div style="font-size: 0.9em; color: #bbb;">{{ currentActivity.duration }}</div>
+                        <div style="font-size: 0.8em; color: #999; margin-top: 4px;">{{ currentActivity.location }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-content">
+                <!-- Dashboard View -->
+                <transition name="fade" mode="out-in">
+                    <div v-if="currentView === 'dashboard'" key="dashboard" style="padding: 24px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+                            <div>
+                                <h1 style="margin: 0; color: #1a1a1a;">Good {{ timeOfDay }}, {{ userName }}! 👋</h1>
+                                <p style="margin: 4px 0 0 0; color: #666;">Your day is {{ todayProgress }}% complete. Here's how you're doing:</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 2.5em; font-weight: 300; color: #1976d2;">{{ currentTime }}</div>
+                                <div style="color: #666;">{{ currentDate }}</div>
+                            </div>
+                        </div>
+
+                        <!-- Key Metrics Row -->
+                        <div class="stats-grid">
+                            <div class="card metric-card" style="padding: 20px; text-align: center;">
+                                <div style="font-size: 2.5em; margin-bottom: 8px;">⚡</div>
+                                <div style="font-size: 2em; font-weight: 300;">{{ todayStats.productivityScore }}%</div>
+                                <div style="opacity: 0.9;">Productivity Score</div>
+                            </div>
+                            <div class="card metric-card" style="padding: 20px; text-align: center;">
+                                <div style="font-size: 2.5em; margin-bottom: 8px;">🎯</div>
+                                <div style="font-size: 2em; font-weight: 300;">{{ todayStats.focusTime }}h</div>
+                                <div style="opacity: 0.9;">Deep Work</div>
+                            </div>
+                            <div class="card metric-card" style="padding: 20px; text-align: center;">
+                                <div style="font-size: 2.5em; margin-bottom: 8px;">⚖️</div>
+                                <div style="font-size: 2em; font-weight: 300;">{{ todayStats.balanceScore }}/10</div>
+                                <div style="opacity: 0.9;">Life Balance</div>
+                            </div>
+                            <div class="card metric-card" style="padding: 20px; text-align: center;">
+                                <div style="font-size: 2.5em; margin-bottom: 8px;">🌟</div>
+                                <div style="font-size: 2em; font-weight: 300;">{{ todayStats.wellnessScore }}%</div>
+                                <div style="opacity: 0.9;">Wellness</div>
+                            </div>
+                        </div>
+
+                        <!-- Main Dashboard Grid -->
+                        <div class="dashboard-grid">
+                            <!-- Today's Time Flow -->
+                            <div class="card" style="padding: 20px;">
+                                <h3 style="margin: 0 0 16px 0; color: #1a1a1a;">Today's Time Flow</h3>
+                                <div class="chart-container">
+                                    <div style="text-align: center;">
+                                        <div style="font-size: 3em; margin-bottom: 16px;">📈</div>
+                                        <div style="color: #666;">Productivity trends throughout the day</div>
+                                        <div style="margin-top: 12px;">
+                                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                                <span style="font-size: 0.9em;">6 AM</span>
+                                                <span style="font-size: 0.9em;">9 AM</span>
+                                                <span style="font-size: 0.9em;">12 PM</span>
+                                                <span style="font-size: 0.9em;">3 PM</span>
+                                                <span style="font-size: 0.9em;">6 PM</span>
+                                                <span style="font-size: 0.9em;">9 PM</span>
+                                            </div>
+                                            <div class="activity-bar">
+                                                <div class="activity-segment work-segment" style="width: 15%;"></div>
+                                                <div class="activity-segment health-segment" style="width: 10%;"></div>
+                                                <div class="activity-segment work-segment" style="width: 35%;"></div>
+                                                <div class="activity-segment learning-segment" style="width: 15%;"></div>
+                                                <div class="activity-segment social-segment" style="width: 10%;"></div>
+                                                <div class="activity-segment entertainment-segment" style="width: 15%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Activity Breakdown -->
+                            <div class="card" style="padding: 20px;">
+                                <h3 style="margin: 0 0 16px 0; color: #1a1a1a;">Activity Breakdown</h3>
+                                <div class="chart-container">
+                                    <div style="width: 100%; text-align: center;">
+                                        <div style="font-size: 3em; margin-bottom: 16px;">🍰</div>
+                                        <div v-for="activity in activityData" :key="activity.name" 
+                                             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding: 8px; background: #f8f9fa; border-radius: 6px;">
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <div :style="{width: '12px', height: '12px', borderRadius: '50%', background: activity.color}"></div>
+                                                <span>{{ activity.name }}</span>
+                                            </div>
+                                            <span style="font-weight: 500;">{{ activity.hours }}h</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Productivity Trends -->
+                            <div class="card" style="padding: 20px;">
+                                <h3 style="margin: 0 0 16px 0; color: #1a1a1a;">Weekly Productivity</h3>
+                                <div class="chart-container">
+                                    <div style="width: 100%; text-align: center;">
+                                        <div style="font-size: 3em; margin-bottom: 16px;">📊</div>
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
+                                            <div v-for="day in weeklyData" :key="day.day" style="text-align: center; flex: 1;">
+                                                <div style="font-size: 0.8em; color: #666; margin-bottom: 4px;">{{ day.day }}</div>
+                                                <div :style="{height: (day.score * 2) + 'px', background: '#4caf50', margin: '0 auto', width: '20px', borderRadius: '2px'}"></div>
+                                                <div style="font-size: 0.8em; margin-top: 4px;">{{ day.score }}%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Life Balance -->
+                            <div class="card" style="padding: 20px;">
+                                <h3 style="margin: 0 0 16px 0; color: #1a1a1a;">Life Balance</h3>
+                                <div class="chart-container">
+                                    <div style="width: 100%; text-align: center;">
+                                        <div style="font-size: 3em; margin-bottom: 16px;">⚖️</div>
+                                        <div v-for="area in balanceData" :key="area.name" style="margin-bottom: 12px;">
+                                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                                <span style="font-size: 0.9em;">{{ area.name }}</span>
+                                                <span style="font-size: 0.9em; color: #666;">{{ area.score }}/10</span>
+                                            </div>
+                                            <div class="goal-progress">
+                                                <div class="goal-fill" :style="{width: (area.score * 10) + '%'}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Today's Goals -->
+                            <div class="card" style="padding: 20px;">
+                                <h3 style="margin: 0 0 16px 0; color: #1a1a1a;">Today's Goals</h3>
+                                <div v-for="goal in todayGoals" :key="goal.id" style="margin-bottom: 16px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                        <span>{{ goal.name }}</span>
+                                        <span style="color: #666;">{{ goal.progress }}%</span>
+                                    </div>
+                                    <div class="goal-progress">
+                                        <div class="goal-fill" :style="{width: goal.progress + '%'}"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AI Insights -->
+                            <div class="insight-card">
+                                <h3 style="margin: 0 0 16px 0;">🤖 AI Insight</h3>
+                                <p style="margin: 0; line-height: 1.5;">{{ latestInsight.text }}</p>
+                                <div style="margin-top: 12px; font-size: 0.9em; opacity: 0.8;">
+                                    Impact: {{ latestInsight.impact }} | Confidence: {{ latestInsight.confidence }}%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Tracking View -->
+                    <div v-else-if="currentView === 'tracking'" key="tracking" style="padding: 24px;">
+                        <h2 style="margin: 0 0 24px 0; color: #1a1a1a;">Live Activity Tracking</h2>
+                        
+                        <div class="content-grid">
+                            <div class="card" style="padding: 24px;">
+                                <h3 style="margin: 0 0 16px 0;">Automatic Activity Detection</h3>
+                                <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div class="pulse" style="width: 12px; height: 12px; background: #4caf50; border-radius: 50%;"></div>
+                                        <span style="font-weight: 500;">Currently tracking: {{ currentActivity.name }}</span>
+                                    </div>
+                                    <div style="margin-top: 8px; color: #666; font-size: 0.9em;">
+                                        Duration: {{ currentActivity.duration }} | Confidence: 95%
+                                    </div>
+                                </div>
+
+                                <h4>Recent Activities</h4>
+                                <div style="max-height: 300px; overflow-y: auto;">
+                                    <div v-for="activity in recentActivities" :key="activity.id" 
+                                         style="display: flex; justify-content: space-between; align-items: center; padding: 12px; border-bottom: 1px solid #eee;">
+                                        <div>
+                                            <div style="font-weight: 500;">{{ activity.name }}</div>
+                                            <div style="font-size: 0.9em; color: #666;">{{ activity.category }}</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div>{{ activity.duration }}</div>
+                                            <div style="font-size: 0.8em; color: #999;">{{ activity.time }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <!-- Quick Log -->
+                                <div class="card" style="padding: 20px; margin-bottom: 16px;">
+                                    <h4 style="margin: 0 0 16px 0;">Quick Log</h4>
+                                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                                        <input type="text" placeholder="What are you doing?" class="input" v-model="quickLogActivity">
+                                        <select class="select" v-model="quickLogCategory">
+                                            <option>Work</option>
+                                            <option>Learning</option>
+                                            <option>Health</option>
+                                            <option>Social</option>
+                                            <option>Entertainment</option>
+                                        </select>
+                                        <button class="btn btn-primary" @click="startTracking">Start Tracking</button>
+                                    </div>
+                                </div>
+
+                                <!-- Mood Tracker -->
+                                <div class="card" style="padding: 20px;">
+                                    <h4 style="margin: 0 0 16px 0;">How are you feeling?</h4>
+                                    <div class="mood-tracker">
+                                        <span class="mood-icon" :class="{active: currentMood === 'great'}" @click="currentMood = 'great'">😄</span>
+                                        <span class="mood-icon" :class="{active: currentMood === 'good'}" @click="currentMood = 'good'">🙂</span>
+                                        <span class="mood-icon" :class="{active: currentMood === 'okay'}" @click="currentMood = 'okay'">😐</span>
+                                        <span class="mood-icon" :class="{active: currentMood === 'low'}" @click="currentMood = 'low'">🙁</span>
+                                        <span class="mood-icon" :class="{active: currentMood === 'bad'}" @click="currentMood = 'bad'">😢</span>
+                                    </div>
+                                    <div style="margin-top: 16px;">
+                                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Energy Level</label>
+                                        <input type="range" min="1" max="10" v-model="energyLevel" style="width: 100%; margin-bottom: 8px;">
+                                        <div style="text-align: center; color: #666;">{{ energyLevel }}/10</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics View -->
+                    <div v-else-if="currentView === 'analytics'" key="analytics" style="padding: 24px;">
+                        <h2 style="margin: 0 0 24px 0; color: #1a1a1a;">Advanced Analytics</h2>
+                        
+                        <div class="dashboard-grid">
+                            <div class="card" style="padding: 20px;">
+                                <h3 style="margin: 0 0 16px 0;">Activity Heatmap</h3>
+                                <div class="heatmap-grid">
+                                    <div v-for="day in heatmapData" :key="day.date" 
+                                         class="heatmap-cell"
+                                         :style="{background: day.color}"
+                                         :title="day.date + ': ' + day.hours + 'h productive'"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: #666;">
+                                    <span>Less</span>
+                                    <span>More</span>
+                                </div>
+                            </div>
+
+                            <div class="card" style="padding: 20px;">
+                                <h3 style="margin: 0 0 16px 0;">Peak Performance Hours</h3>
+                                <div style="text-align: center; padding: 20px;">
+                                    <div style="font-size: 3em; margin-bottom: 16px;">🕐</div>
+                                    <div style="font-size: 1.5em; color: #1976d2; margin-bottom: 8px;">10:00 AM - 12:00 PM</div>
+                                    <div style="color: #666;">Your most productive hours</div>
+                                    <div style="margin-top: 16px; font-size: 0.9em;">
+                                        <div>Average productivity: <strong>94%</strong></div>
+                                        <div>Focus quality: <strong>Excellent</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="padding: 20px;">
+                                <h3 style="margin: 0 0 16px 0;">Weekly Overview</h3>
+                                <div style="text-align: center; padding: 20px;">
+                                    <div style="font-size: 3em; margin-bottom: 16px;">📅</div>
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center;">
+                                        <div>
+                                            <div style="font-size: 1.2em; color: #4caf50;">52h</div>
+                                            <div style="font-size: 0.9em; color: #666;">Total Work</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 1.2em; color: #ff9800;">87%</div>
+                                            <div style="font-size: 0.9em; color: #666;">Avg Productivity</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 1.2em; color: #2196f3;">8.2</div>
+                                            <div style="font-size: 0.9em; color: #666;">Balance Score</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="padding: 20px;">
+                                <h3 style="margin: 0 0 16px 0;">Focus Session Quality</h3>
+                                <div style="text-align: center; padding: 20px;">
+                                    <div style="font-size: 3em; margin-bottom: 16px;">🎯</div>
+                                    <div style="margin-bottom: 16px;">
+                                        <div style="font-size: 1.8em; color: #4caf50; margin-bottom: 4px;">92%</div>
+                                        <div style="color: #666;">Average Focus Quality</div>
+                                    </div>
+                                    <div style="font-size: 0.9em; line-height: 1.4;">
+                                        Your focus sessions are <strong>18% above average</strong>. 
+                                        Best performance between 9-11 AM.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other Views -->
+                    <div v-else style="padding: 24px;">
+                        <h2 style="margin: 0 0 24px 0; color: #1a1a1a;">{{ currentView.charAt(0).toUpperCase() + currentView.slice(1) }}</h2>
+                        <div class="card" style="padding: 40px; text-align: center;">
+                            <div style="font-size: 4em; margin-bottom: 16px;">🚧</div>
+                            <h3 style="color: #666;">Coming Soon</h3>
+                            <p style="font-size: 1.2em; color: #666;">This section is under development. More features coming soon!</p>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+        </div>
+
+        <!-- Floating Action Button -->
+        <div class="floating-action">
+            <button style="width: 56px; height: 56px; border-radius: 50%; background: #1976d2; color: white; border: none; font-size: 24px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.2s;" 
+                    @mouseover="$event.target.style.transform = 'scale(1.1)'"
+                    @mouseleave="$event.target.style.transform = 'scale(1)'"
+                    @click="showQuickAdd = !showQuickAdd">
+                +
+            </button>
+        </div>
+    </div>
+
+    <!-- Vue 3 Only -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.min.js"></script>
+
+    <script>
+        const { createApp, ref, onMounted } = Vue;
+
+        createApp({
+            setup() {
+                // Core state
+                const currentView = ref('dashboard');
+                const currentTime = ref('');
+                const currentDate = ref('');
+                const timeOfDay = ref('');
+                const userName = ref('Alex');
+                const todayProgress = ref(67);
+                const currentMood = ref('good');
+                const energyLevel = ref(7);
+                const quickLogActivity = ref('');
+                const quickLogCategory = ref('Work');
+                const showQuickAdd = ref(false);
+
+                // Current activity
+                const currentActivity = ref({
+                    name: 'Deep Work - Project Planning',
+                    duration: '45m',
+                    location: 'Home Office'
+                });
+
+                // Today's stats
+                const todayStats = ref({
+                    productivityScore: 87,
+                    focusTime: 5.2,
+                    balanceScore: 8.3,
+                    wellnessScore: 92
+                });
+
+                // Goals data
+                const todayGoals = ref([
+                    { id: 1, name: 'Deep Work Sessions', progress: 75 },
+                    { id: 2, name: 'Exercise', progress: 100 },
+                    { id: 3, name: 'Learning Time', progress: 45 },
+                    { id: 4, name: 'Family Time', progress: 30 }
+                ]);
+
+                // AI insight
+                const latestInsight = ref({
+                    text: "Your productivity peaks at 10 AM. Consider scheduling important tasks during this window for optimal results.",
+                    impact: "High",
+                    confidence: 94
+                });
+
+                // Recent activities
+                const recentActivities = ref([
+                    { id: 1, name: 'Project Planning', category: 'Work', duration: '45m', time: '9:15 AM' },
+                    { id: 2, name: 'Email Review', category: 'Work', duration: '20m', time: '8:45 AM' },
+                    { id: 3, name: 'Morning Exercise', category: 'Health', duration: '30m', time: '7:30 AM' },
+                    { id: 4, name: 'Team Meeting', category: 'Work', duration: '60m', time: '10:00 AM' },
+                    { id: 5, name: 'Lunch Break', category: 'Personal', duration: '30m', time: '12:30 PM' }
+                ]);
+
+                // Activity breakdown data
+                const activityData = ref([
+                    { name: 'Work', hours: 6.5, color: '#1976d2' },
+                    { name: 'Health', hours: 1.5, color: '#388e3c' },
+                    { name: 'Learning', hours: 2, color: '#f57c00' },
+                    { name: 'Social', hours: 1, color: '#7b1fa2' },
+                    { name: 'Entertainment', hours: 2, color: '#c2185b' }
+                ]);
+
+                // Weekly productivity data
+                const weeklyData = ref([
+                    { day: 'Mon', score: 85 },
+                    { day: 'Tue', score: 92 },
+                    { day: 'Wed', score: 78 },
+                    { day: 'Thu', score: 88 },
+                    { day: 'Fri', score: 95 },
+                    { day: 'Sat', score: 70 },
+                    { day: 'Sun', score: 65 }
+                ]);
+
+                // Life balance data
+                const balanceData = ref([
+                    { name: 'Work', score: 8.5 },
+                    { name: 'Health', score: 9.0 },
+                    { name: 'Relationships', score: 7.5 },
+                    { name: 'Learning', score: 8.0 },
+                    { name: 'Personal', score: 7.0 }
+                ]);
+
+                // Heatmap data
+                const heatmapData = ref([]);
+
+                // Generate heatmap
+                const generateHeatmapData = () => {
+                    const data = [];
+                    for (let i = 0; i < 49; i++) {
+                        const intensity = Math.random();
+                        const date = new Date();
+                        date.setDate(date.getDate() - (48 - i));
+                        data.push({
+                            date: date.toLocaleDateString(),
+                            hours: Math.round(intensity * 8),
+                            color: `rgba(76, 175, 80, ${0.1 + intensity * 0.9})`
+                        });
+                    }
+                    heatmapData.value = data;
+                };
+
+                // Update time
+                const updateTime = () => {
+                    const now = new Date();
+                    currentTime.value = now.toLocaleTimeString('en-US', { 
+                        hour: '2-digit', 
+                        minute: '2-digit'
+                    });
+                    currentDate.value = now.toLocaleDateString('en-US', { 
+                        weekday: 'long', 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    });
+                    
+                    const hour = now.getHours();
+                    if (hour < 12) timeOfDay.value = 'morning';
+                    else if (hour < 17) timeOfDay.value = 'afternoon';
+                    else timeOfDay.value = 'evening';
+                };
+
+                // Start tracking function
+                const startTracking = () => {
+                    if (quickLogActivity.value.trim()) {
+                        currentActivity.value = {
+                            name: quickLogActivity.value,
+                            duration: '0m',
+                            location: 'Current Location'
+                        };
+                        quickLogActivity.value = '';
+                        
+                        // Add to recent activities
+                        recentActivities.value.unshift({
+                            id: Date.now(),
+                            name: currentActivity.value.name,
+                            category: quickLogCategory.value,
+                            duration: '0m',
+                            time: new Date().toLocaleTimeString('en-US', { 
+                                hour: '2-digit', 
+                                minute: '2-digit' 
+                            })
+                        });
+                    }
+                };
+
+                onMounted(() => {
+                    updateTime();
+                    setInterval(updateTime, 1000);
+                    generateHeatmapData();
+                });
+
+                return {
+                    currentView,
+                    currentTime,
+                    currentDate,
+                    timeOfDay,
+                    userName,
+                    todayProgress,
+                    currentActivity,
+                    todayStats,
+                    todayGoals,
+                    latestInsight,
+                    recentActivities,
+                    currentMood,
+                    energyLevel,
+                    quickLogActivity,
+                    quickLogCategory,
+                    showQuickAdd,
+                    activityData,
+                    weeklyData,
+                    balanceData,
+                    heatmapData,
+                    startTracking
+                };
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

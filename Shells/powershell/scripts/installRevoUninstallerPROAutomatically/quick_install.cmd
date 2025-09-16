@@ -1,0 +1,4 @@
+@echo off
+REM One-liner command to quickly install Revo Uninstaller Pro
+
+robocopy "F:\backup\windowsapps\install\cracked\Revo Uninstaller Pro 5.4 Multilingual" "F:\backup\windowsapps\installed\RevoUninstallerPro" /E /COPY:DAT /R:3 /W:5 /MT:8 && echo Installation completed! && echo Copying license file... && if exist "F:\backup\windowsapps\install\cracked\Revo Uninstaller Pro 5.4 Multilingual\revouninstallerpro5.lic" (mkdir "C:\ProgramData\VS Revo Group\Revo Uninstaller Pro" 2>nul && copy "F:\backup\windowsapps\install\cracked\Revo Uninstaller Pro 5.4 Multilingual\revouninstallerpro5.lic" "C:\ProgramData\VS Revo Group\Revo Uninstaller Pro\" >nul 2>&1 && echo License file copied!) && start "" "F:\backup\windowsapps\installed\RevoUninstallerPro"

@@ -1,0 +1,61 @@
+The `pywin32.pth` file is corrupted and breaking your entire Python installation. Here's how to fix it:
+
+## **Immediate Fix: Remove the corrupted .pth file**
+
+Run this in **Administrator PowerShell**:
+
+```bash
+# Remove the corrupted .pth file
+Remove-Item "C:\Users\micha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pywin32.pth" -Force
+
+# Remove all pywin32 files
+Remove-Item "C:\Users\micha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pywin32*" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item "C:\Users\micha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\win32*" -Recurse -Force -ErrorAction SilentlyContinue
+```
+
+Then test if Python works:
+```bash
+python -c "print('Python is working!')"
+```
+
+If that works, install the alternative:
+```bash
+pip install psutil matplotlib pywin32-ctypes
+```
+
+## **If the above doesn't work, here's the nuclear option:**
+
+**Step 1: Kill all Python processes**
+```bash
+taskkill /F /IM python.exe /T 2>$null
+taskkill /F /IM pythonw.exe /T 2>$null
+```
+
+**Step 2: Reset Python completely**
+```bash
+# Go to the site-packages directory
+cd "C:\Users\micha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages"
+
+# Remove ALL win32/pywin32 related files and folders
+Get-ChildItem -Path . -Name "*win32*" -Recurse | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+Get-ChildItem -Path . -Name "*pywin32*" -Recurse | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+
+# List and remove any .pth files that mention pywin32
+Get-Content *.pth 2>$null | Select-String "pywin32" -Context 0,0
+Remove-Item "pywin32.pth" -Force -ErrorAction SilentlyContinue
+```
+
+## **Permanent Solution: Switch to Regular Python**
+
+**The Microsoft Store Python is fundamentally broken for this use case.** Here's the 5-minute fix:
+
+1. **Uninstall Microsoft Store Python:** Settings → Apps → Python 3.13 → Uninstall
+2. **Download from [python.org](https://www.python.org/downloads/windows/)**
+3. **Install with "Add Python to PATH" checked**
+4. **Open NEW PowerShell:**
+   ```bash
+   python -c "print('Fresh Python!')"
+   pip install psutil matplotlib pywin32
+   ```
+
+**Try the first fix first** - removing the corrupted `.pth` file should resolve the immediate error.

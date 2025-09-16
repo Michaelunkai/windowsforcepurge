@@ -1,0 +1,1 @@
+powercfg /setdcvalueindex [SCHEME-GUID] [SUB-GUID] [SETTING-GUID] [VALUE]

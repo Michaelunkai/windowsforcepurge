@@ -1,0 +1,22 @@
+Emulators
+Note: Some of these sites may require BIOS/key files. They're marked with * .
+
+GameTechWiki - The Emulation Wiki - You can find BIOS files for these emulators on this site
+ares * | MAME * | Mednafen * | RetroArch * - Multi-system Emulators
+bsnes | Snes9x - for SNES games.
+Project64 | RMG | simple64 - for Nintendo 64 games.
+Dolphin Emulator - for GameCube / Wii games.
+mGBA | VBA-M - for GBA games.
+DeSmuME | melonDS - for DS games.
+Cemu - for Wii U games.
+DuckStation * | ePSXe * - for PlayStation 1 games.
+PCSX2 * - for PS2 games.
+PPSSPP - for PSP games.
+Vita3K - for PSVita games.
+RCPS3 - for PS3 games.
+Xemu * - for original XBOX games.
+Xenia - for XBOX 360 games.
+KEGA Fusion * - for SEGA Genesis / Mega Drive games.
+Mesen2 | puNes - for NES games.
+Flycast | redream - for Dreamcast games.
+* May require additional BIOS/Key files to play games

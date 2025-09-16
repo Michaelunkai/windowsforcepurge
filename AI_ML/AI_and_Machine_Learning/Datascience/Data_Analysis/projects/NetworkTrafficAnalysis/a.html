@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetOps Command Center</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #000813;
+            color: #00f5ff;
+            overflow-x: hidden;
+        }
+
+        .orbitron {
+            font-family: 'Orbitron', monospace;
+        }
+
+        /* Particle Background */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Glowing effects */
+        .glow {
+            text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+        }
+
+        .glow-box {
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3), inset 0 0 20px rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            background: rgba(0, 20, 40, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .glow-green {
+            color: #00ff88;
+            text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+        }
+
+        .glow-orange {
+            color: #ff8800;
+            text-shadow: 0 0 10px #ff8800, 0 0 20px #ff8800;
+        }
+
+        .glow-red {
+            color: #ff0066;
+            text-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
+        }
+
+        /* Animation keyframes */
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 245, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 245, 255, 0.6); }
+        }
+
+        .animate-pulse-glow {
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        .slide-in-up {
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        /* Network visualization styles */
+        .network-container {
+            background: radial-gradient(circle at center, rgba(0, 245, 255, 0.1), transparent 70%);
+        }
+
+        .node {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .node:hover {
+            r: 12;
+        }
+
+        .link {
+            stroke-width: 2;
+            opacity: 0.6;
+        }
+
+        .traffic-flow {
+            r: 3;
+            opacity: 0.8;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 20, 40, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 245, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 245, 255, 0.5);
+        }
+
+        /* Responsive grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metric-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.4);
+        }
+
+        /* Alert animations */
+        .alert-slide {
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .alert-slide.show {
+            transform: translateX(0);
+        }
+
+        /* Network topology specific styles */
+        .topology-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .status-online {
+            background: #00ff88;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        .status-warning {
+            background: #ff8800;
+            box-shadow: 0 0 10px #ff8800;
+        }
+
+        .status-critical {
+            background: #ff0066;
+            box-shadow: 0 0 10px #ff0066;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <!-- Particle Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Header -->
+    <header class="glow-box p-4 mb-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold orbitron glow">NetOps Command Center</h1>
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center">
+                    <span class="status-indicator status-online"></span>
+                    <span class="text-sm">System Online</span>
+                </div>
+                <div class="text-sm">
+                    <span class="glow-green">24/7 Monitoring Active</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4">
+        <!-- Real-time Metrics Dashboard -->
+        <div class="dashboard-grid mb-8 slide-in-up">
+            <!-- Network Traffic Card -->
+            <div class="glow-box p-6 rounded-lg metric-card">
+                <h3 class="text-lg font-semibold mb-4 glow">Network Traffic</h3>
+                <div class="flex items-center justify-between mb-2">
+                    <span>Inbound</span>
+                    <span class="glow-green font-bold" id="inbound-traffic">2.4 Gbps</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2 mb-4">
+                    <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full animate-pulse" style="width: 75%"></div>
+                </div>
+                <div class="flex items-center justify-between mb-2">
+                    <span>Outbound</span>
+                    <span class="glow-green font-bold" id="outbound-traffic">1.8 Gbps</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-gradient-to-r from-green-400 to-cyan-500 h-2 rounded-full animate-pulse" style="width: 60%"></div>
+                </div>
+            </div>
+
+            <!-- Active Connections -->
+            <div class="glow-box p-6 rounded-lg metric-card">
+                <h3 class="text-lg font-semibold mb-4 glow">Active Connections</h3>
+                <div class="text-4xl font-bold glow-green mb-2" id="active-connections">47,392</div>
+                <div class="text-sm text-gray-400">+12% from last hour</div>
+                <div class="mt-4">
+                    <canvas id="connections-chart" width="250" height="80"></canvas>
+                </div>
+            </div>
+
+            <!-- Security Alerts -->
+            <div class="glow-box p-6 rounded-lg metric-card">
+                <h3 class="text-lg font-semibold mb-4 glow">Security Status</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span>Threats Blocked</span>
+                        <span class="glow-red font-bold">23</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Suspicious Activity</span>
+                        <span class="glow-orange font-bold">5</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>System Health</span>
+                        <span class="glow-green font-bold">98.7%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bandwidth Usage -->
+            <div class="glow-box p-6 rounded-lg metric-card">
+                <h3 class="text-lg font-semibold mb-4 glow">Bandwidth Usage</h3>
+                <div class="relative">
+                    <svg width="100%" height="120" id="bandwidth-chart"></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Topology Visualization -->
+        <div class="glow-box p-6 rounded-lg mb-8 slide-in-up relative">
+            <div class="topology-controls">
+                <button class="btn btn-sm btn-outline border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black mr-2" onclick="toggleSimulation()">
+                    <span id="sim-toggle">Pause</span>
+                </button>
+                <button class="btn btn-sm btn-outline border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black" onclick="resetTopology()">
+                    Reset
+                </button>
+            </div>
+            <h2 class="text-2xl font-bold mb-6 glow orbitron">Network Topology</h2>
+            <div class="network-container rounded-lg" style="height: 600px;">
+                <svg id="network-topology" width="100%" height="600"></svg>
+            </div>
+        </div>
+
+        <!-- Alert Panel -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-6 glow orbitron">Recent Alerts</h2>
+            <div id="alerts-container" class="space-y-3">
+                <!-- Alerts will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let simulation;
+        let simulationRunning = true;
+        let alertCount = 0;
+
+        // Initialize particle background
+        function initParticles() {
+            const canvas = document.getElementById('particles');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const particles = [];
+            const particleCount = 100;
+            
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 2 + 1
+                });
+            }
+            
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'rgba(0, 245, 255, 0.3)';
+                
+                particles.forEach(particle => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+                    if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+                    
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                
+                // Draw connections between nearby particles
+                ctx.strokeStyle = 'rgba(0, 245, 255, 0.1)';
+                ctx.lineWidth = 1;
+                
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 100) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                
+                requestAnimationFrame(animateParticles);
+            }
+            
+            animateParticles();
+        }
+
+        // Initialize network topology visualization
+        function initNetworkTopology() {
+            const width = document.getElementById('network-topology').clientWidth;
+            const height = 600;
+            
+            const svg = d3.select('#network-topology')
+                .attr('width', width)
+                .attr('height', height);
+            
+            // Sample network data
+            const nodes = [
+                { id: 'core-1', type: 'core', x: width/2, y: height/2, status: 'online' },
+                { id: 'edge-1', type: 'edge', status: 'online' },
+                { id: 'edge-2', type: 'edge', status: 'online' },
+                { id: 'edge-3', type: 'edge', status: 'warning' },
+                { id: 'edge-4', type: 'edge', status: 'online' },
+                { id: 'server-1', type: 'server', status: 'online' },
+                { id: 'server-2', type: 'server', status: 'online' },
+                { id: 'server-3', type: 'server', status: 'critical' },
+                { id: 'client-1', type: 'client', status: 'online' },
+                { id: 'client-2', type: 'client', status: 'online' },
+                { id: 'client-3', type: 'client', status: 'online' },
+                { id: 'client-4', type: 'client', status: 'online' }
+            ];
+            
+            const links = [
+                { source: 'core-1', target: 'edge-1', traffic: Math.random() },
+                { source: 'core-1', target: 'edge-2', traffic: Math.random() },
+                { source: 'core-1', target: 'edge-3', traffic: Math.random() },
+                { source: 'core-1', target: 'edge-4', traffic: Math.random() },
+                { source: 'edge-1', target: 'server-1', traffic: Math.random() },
+                { source: 'edge-1', target: 'server-2', traffic: Math.random() },
+                { source: 'edge-2', target: 'server-3', traffic: Math.random() },
+                { source: 'edge-3', target: 'client-1', traffic: Math.random() },
+                { source: 'edge-3', target: 'client-2', traffic: Math.random() },
+                { source: 'edge-4', target: 'client-3', traffic: Math.random() },
+                { source: 'edge-4', target: 'client-4', traffic: Math.random() }
+            ];
+            
+            // Create force simulation
+            simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id).distance(100))
+                .force('charge', d3.forceManyBody().strength(-300))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .force('collision', d3.forceCollide().radius(30));
+            
+            // Create links
+            const link = svg.append('g')
+                .selectAll('line')
+                .data(links)
+                .enter()
+                .append('line')
+                .attr('class', 'link')
+                .style('stroke', d => {
+                    const intensity = d.traffic;
+                    return `rgba(0, 245, 255, ${0.3 + intensity * 0.7})`;
+                })
+                .style('stroke-width', d => 2 + d.traffic * 4);
+            
+            // Create nodes
+            const node = svg.append('g')
+                .selectAll('circle')
+                .data(nodes)
+                .enter()
+                .append('circle')
+                .attr('class', 'node')
+                .attr('r', d => d.type === 'core' ? 15 : d.type === 'edge' ? 10 : 8)
+                .style('fill', d => {
+                    if (d.status === 'online') return '#00ff88';
+                    if (d.status === 'warning') return '#ff8800';
+                    if (d.status === 'critical') return '#ff0066';
+                })
+                .style('stroke', '#00f5ff')
+                .style('stroke-width', 2)
+                .call(drag());
+            
+            // Add labels
+            const labels = svg.append('g')
+                .selectAll('text')
+                .data(nodes)
+                .enter()
+                .append('text')
+                .text(d => d.id)
+                .style('fill', '#00f5ff')
+                .style('font-size', '12px')
+                .style('text-anchor', 'middle')
+                .attr('dy', 4);
+            
+            // Add traffic flow animation
+            function animateTraffic() {
+                const traffics = [];
+                links.forEach(link => {
+                    if (Math.random() > 0.7) {
+                        traffics.push({
+                            link: link,
+                            progress: 0
+                        });
+                    }
+                });
+                
+                const trafficCircles = svg.append('g')
+                    .selectAll('circle')
+                    .data(traffics)
+                    .enter()
+                    .append('circle')
+                    .attr('class', 'traffic-flow')
+                    .style('fill', '#00f5ff')
+                    .style('opacity', 0.8);
+                
+                const duration = 2000;
+                trafficCircles
+                    .transition()
+                    .duration(duration)
+                    .ease(d3.easeLinear)
+                    .attrTween('cx', d => {
+                        const sourceNode = nodes.find(n => n.id === d.link.source.id);
+                        const targetNode = nodes.find(n => n.id === d.link.target.id);
+                        return t => sourceNode.x + t * (targetNode.x - sourceNode.x);
+                    })
+                    .attrTween('cy', d => {
+                        const sourceNode = nodes.find(n => n.id === d.link.source.id);
+                        const targetNode = nodes.find(n => n.id === d.link.target.id);
+                        return t => sourceNode.y + t * (targetNode.y - sourceNode.y);
+                    })
+                    .remove();
+                
+                setTimeout(animateTraffic, 1000);
+            }
+            
+            // Update positions on tick
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+                
+                node
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
+                
+                labels
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y + 25);
+            });
+            
+            // Start traffic animation
+            animateTraffic();
+            
+            // Drag functionality
+            function drag() {
+                return d3.drag()
+                    .on('start', (event, d) => {
+                        if (!event.active) simulation.alphaTarget(0.3).restart();
+                        d.fx = d.x;
+                        d.fy = d.y;
+                    })
+                    .on('drag', (event, d) => {
+                        d.fx = event.x;
+                        d.fy = event.y;
+                    })
+                    .on('end', (event, d) => {
+                        if (!event.active) simulation.alphaTarget(0);
+                        d.fx = null;
+                        d.fy = null;
+                    });
+            }
+        }
+
+        // Initialize bandwidth chart
+        function initBandwidthChart() {
+            const svg = d3.select('#bandwidth-chart');
+            const width = svg.node().clientWidth;
+            const height = 120;
+            
+            const data = Array.from({length: 20}, (_, i) => ({
+                time: i,
+                value: Math.random() * 100
+            }));
+            
+            const xScale = d3.scaleLinear()
+                .domain([0, 19])
+                .range([0, width - 40]);
+            
+            const yScale = d3.scaleLinear()
+                .domain([0, 100])
+                .range([height - 20, 20]);
+            
+            const line = d3.line()
+                .x(d => xScale(d.time))
+                .y(d => yScale(d.value))
+                .curve(d3.curveMonotoneX);
+            
+            const path = svg.append('path')
+                .datum(data)
+                .attr('fill', 'none')
+                .attr('stroke', '#00f5ff')
+                .attr('stroke-width', 2)
+                .attr('d', line)
+                .attr('transform', 'translate(20, 0)');
+            
+            // Animate the line
+            const totalLength = path.node().getTotalLength();
+            path
+                .attr('stroke-dasharray', totalLength + ' ' + totalLength)
+                .attr('stroke-dashoffset', totalLength)
+                .transition()
+                .duration(2000)
+                .ease(d3.easeLinear)
+                .attr('stroke-dashoffset', 0);
+        }
+
+        // Generate random alerts
+        function generateAlert() {
+            const alerts = [
+                { type: 'warning', message: 'High CPU usage detected on Server-3', time: new Date().toLocaleTimeString() },
+                { type: 'critical', message: 'Network intrusion attempt blocked', time: new Date().toLocaleTimeString() },
+                { type: 'info', message: 'Backup completed successfully', time: new Date().toLocaleTimeString() },
+                { type: 'warning', message: 'Bandwidth threshold exceeded', time: new Date().toLocaleTimeString() },
+                { type: 'critical', message: 'Service outage detected', time: new Date().toLocaleTimeString() }
+            ];
+            
+            const alert = alerts[Math.floor(Math.random() * alerts.length)];
+            const alertElement = document.createElement('div');
+            alertElement.className = `alert-slide glow-box p-4 rounded-lg flex items-center justify-between ${
+                alert.type === 'critical' ? 'border-red-500' : 
+                alert.type === 'warning' ? 'border-orange-500' : 
+                'border-cyan-500'
+            }`;
+            
+            alertElement.innerHTML = `
+                <div class="flex items-center">
+                    <span class="status-indicator ${
+                        alert.type === 'critical' ? 'status-critical' : 
+                        alert.type === 'warning' ? 'status-warning' : 
+                        'status-online'
+                    }"></span>
+                    <div>
+                        <div class="font-semibold">${alert.message}</div>
+                        <div class="text-sm text-gray-400">${alert.time}</div>
+                    </div>
+                </div>
+                <button class="btn btn-sm btn-ghost" onclick="this.parentElement.remove()">×</button>
+            `;
+            
+            const container = document.getElementById('alerts-container');
+            container.insertBefore(alertElement, container.firstChild);
+            
+            // Trigger slide animation
+            setTimeout(() => {
+                alertElement.classList.add('show');
+            }, 100);
+            
+            // Remove old alerts
+            const alerts_elements = container.children;
+            if (alerts_elements.length > 5) {
+                container.removeChild(alerts_elements[alerts_elements.length - 1]);
+            }
+        }
+
+        // Update metrics dynamically
+        function updateMetrics() {
+            document.getElementById('inbound-traffic').textContent = (2.0 + Math.random() * 1.0).toFixed(1) + ' Gbps';
+            document.getElementById('outbound-traffic').textContent = (1.5 + Math.random() * 0.8).toFixed(1) + ' Gbps';
+            document.getElementById('active-connections').textContent = (45000 + Math.floor(Math.random() * 5000)).toLocaleString();
+        }
+
+        // Control functions
+        function toggleSimulation() {
+            const toggle = document.getElementById('sim-toggle');
+            if (simulationRunning) {
+                simulation.stop();
+                toggle.textContent = 'Resume';
+                simulationRunning = false;
+            } else {
+                simulation.restart();
+                toggle.textContent = 'Pause';
+                simulationRunning = true;
+            }
+        }
+
+        function resetTopology() {
+            simulation.alpha(1).restart();
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            initParticles();
+            initNetworkTopology();
+            initBandwidthChart();
+            
+            // Start periodic updates
+            setInterval(updateMetrics, 3000);
+            setInterval(generateAlert, 8000);
+            
+            // Generate initial alert
+            setTimeout(generateAlert, 2000);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('particles');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>

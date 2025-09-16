@@ -1,0 +1,2 @@
+Invoke-WebRequest -Uri "https://dot.net/v1/dotnet-install.ps1" -OutFile "$env:TEMP\dotnet-install.ps1"; & "$env:TEMP\dotnet-install.ps1" -Runtime windowsdesktop -Version 9.0.7 -InstallDir "$env:TEMP\dotnet-install" -Verbose
+

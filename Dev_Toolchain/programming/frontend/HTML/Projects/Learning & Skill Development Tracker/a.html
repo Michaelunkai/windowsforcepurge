@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillForge - Personal Learning & Development Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5a6fd8;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1a1a2e;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --card-bg: #ffffff;
+            --sidebar-bg: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--dark);
+        }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--sidebar-bg);
+            color: white;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            padding: 1rem 0;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: rgba(255,255,255,0.1);
+            border-left-color: var(--accent);
+        }
+
+        .nav-item.active {
+            background: rgba(102, 126, 234, 0.2);
+            border-left-color: var(--primary);
+        }
+
+        .nav-icon {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            background: var(--light);
+            overflow-y: auto;
+        }
+
+        .header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .content-area {
+            padding: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* Statistics Cards */
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Progress Bars */
+        .progress-container {
+            margin: 1rem 0;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        /* Skill Cards */
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .skill-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .skill-level {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .skill-xp {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--gray);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        /* Learning Path */
+        .learning-path {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .path-node {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .path-node.completed {
+            background: var(--success);
+            color: white;
+        }
+
+        .path-node.current {
+            background: var(--primary);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        .path-connector {
+            flex: 1;
+            height: 2px;
+            background: var(--border);
+            margin: 0 0.5rem;
+        }
+
+        .path-connector.completed {
+            background: var(--success);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Achievements */
+        .achievement {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            animation: slideIn 0.5s ease;
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .achievement-text {
+            flex: 1;
+        }
+
+        .achievement-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .achievement-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Charts */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 1rem 0;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+        }
+
+        /* Modals */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 260px;
+                margin-left: -260px;
+            }
+            
+            .sidebar.open {
+                margin-left: 0;
+            }
+            
+            .content-area {
+                padding: 1rem;
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Skill Radar Chart */
+        .radar-chart {
+            width: 100%;
+            height: 300px;
+        }
+
+        /* Learning Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gamification Elements */
+        .xp-bar {
+            background: var(--border);
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .xp-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success), #34d399);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .xp-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .level-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--warning), #fbbf24);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">🎯 SkillForge</div>
+                <div style="font-size: 0.9rem; opacity: 0.7; margin-top: 0.5rem;">Personal Learning Hub</div>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-item active" data-view="dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item" data-view="skills">
+                    <span class="nav-icon">🎯</span>
+                    <span>Skills</span>
+                </div>
+                <div class="nav-item" data-view="learning">
+                    <span class="nav-icon">📚</span>
+                    <span>Learning</span>
+                </div>
+                <div class="nav-item" data-view="goals">
+                    <span class="nav-icon">🏆</span>
+                    <span>Goals</span>
+                </div>
+                <div class="nav-item" data-view="analytics">
+                    <span class="nav-icon">📈</span>
+                    <span>Analytics</span>
+                </div>
+                <div class="nav-item" data-view="achievements">
+                    <span class="nav-icon">🏅</span>
+                    <span>Achievements</span>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="header">
+                <h1 id="page-title">Dashboard</h1>
+                <div class="user-info">
+                    <div class="user-avatar">JD</div>
+                    <div>
+                        <div style="font-weight: 600;">John Doe</div>
+                        <div style="font-size: 0.8rem; color: var(--gray);">Level 47 • 12,350 XP</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Dashboard View -->
+                <div id="dashboard-view" class="view">
+                    <div class="grid grid-4">
+                        <div class="stat-card">
+                            <div class="stat-value">47</div>
+                            <div class="stat-label">Current Level</div>
+                        </div>
+                        <div class="stat-card" style="background: linear-gradient(135deg, var(--success), #10b981);">
+                            <div class="stat-value">23</div>
+                            <div class="stat-label">Skills Mastered</div>
+                        </div>
+                        <div class="stat-card" style="background: linear-gradient(135deg, var(--warning), #f59e0b);">
+                            <div class="stat-value">127</div>
+                            <div class="stat-label">Hours This Month</div>
+                        </div>
+                        <div class="stat-card" style="background: linear-gradient(135deg, var(--accent), #f093fb);">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Active Goals</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Learning Progress</h3>
+                            </div>
+                            <div class="level-badge">🔥 Level 47 - Expert Learner</div>
+                            <div class="xp-bar">
+                                <div class="xp-fill" style="width: 68%"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.9rem; color: var(--gray);">
+                                <span>12,350 XP</span>
+                                <span>18,200 XP</span>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <div class="progress-container">
+                                    <div class="progress-header">
+                                        <span>JavaScript Mastery</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-container">
+                                    <div class="progress-header">
+                                        <span>React Development</span>
+                                        <span>72%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 72%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-container">
+                                    <div class="progress-header">
+                                        <span>Machine Learning</span>
+                                        <span>45%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Skill Radar</h3>
+                            </div>
+                            <canvas id="skillRadarChart" class="radar-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Recent Achievements</h3>
+                            </div>
+                            <div class="achievement">
+                                <div class="achievement-icon">🏆</div>
+                                <div class="achievement-text">
+                                    <div class="achievement-title">JavaScript Master</div>
+                                    <div class="achievement-desc">Completed 50 JS challenges</div>
+                                </div>
+                            </div>
+                            <div class="achievement">
+                                <div class="achievement-icon">📚</div>
+                                <div class="achievement-text">
+                                    <div class="achievement-title">Bookworm</div>
+                                    <div class="achievement-desc">Read 10 technical books</div>
+                                </div>
+                            </div>
+                            <div class="achievement">
+                                <div class="achievement-icon">⚡</div>
+                                <div class="achievement-text">
+                                    <div class="achievement-title">Speed Learner</div>
+                                    <div class="achievement-desc">Completed course in record time</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Learning Activity</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="activityChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills View -->
+                <div id="skills-view" class="view" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h2>My Skills</h2>
+                        <button class="btn btn-primary" onclick="openAddSkillModal()">+ Add Skill</button>
+                    </div>
+
+                    <div class="grid grid-3" id="skills-container">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-level">Expert</div>
+                            </div>
+                            <div class="skill-xp">8,500 / 10,000 XP</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <div class="skill-name">React</div>
+                                <div class="skill-level">Advanced</div>
+                            </div>
+                            <div class="skill-xp">5,400 / 7,500 XP</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 72%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <div class="skill-name">Python</div>
+                                <div class="skill-level">Intermediate</div>
+                            </div>
+                            <div class="skill-xp">2,800 / 5,000 XP</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 56%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <div class="skill-name">Machine Learning</div>
+                                <div class="skill-level">Beginner</div>
+                            </div>
+                            <div class="skill-xp">1,125 / 2,500 XP</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <div class="skill-name">UI/UX Design</div>
+                                <div class="skill-level">Intermediate</div>
+                            </div>
+                            <div class="skill-xp">3,200 / 5,000 XP</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 64%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <div class="skill-name">Node.js</div>
+                                <div class="skill-level">Advanced</div>
+                            </div>
+                            <div class="skill-xp">6,750 / 7,500 XP</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning View -->
+                <div id="learning-view" class="view" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h2>Learning Resources</h2>
+                        <button class="btn btn-primary" onclick="openAddLearningModal()">+ Add Resource</button>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Current Learning Path</h3>
+                            </div>
+                            <div class="learning-path">
+                                <div class="path-node completed">✓</div>
+                                <div class="path-connector completed"></div>
+                                <div class="path-node completed">✓</div>
+                                <div class="path-connector completed"></div>
+                                <div class="path-node current">3</div>
+                                <div class="path-connector"></div>
+                                <div class="path-node">4</div>
+                                <div class="path-connector"></div>
+                                <div class="path-node">5</div>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <h4>React Advanced Patterns</h4>
+                                <p style="color: var(--gray); margin: 0.5rem 0;">Progress: 60% complete</p>
+                                <button class="btn btn-primary">Continue Learning</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Learning Timeline</h3>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">Today</div>
+                                        <div>Completed "React Hooks Deep Dive" - 2 hours</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">Yesterday</div>
+                                        <div>Read "Clean Code" Chapter 5 - 1.5 hours</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">3 days ago</div>
+                                        <div>Finished JavaScript Algorithm Challenge Set - 3 hours</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recommended Resources</h3>
+                        </div>
+                        <div class="grid grid-3">
+                            <div style="border: 2px solid var(--border); border-radius: 8px; padding: 1rem;">
+                                <h4>Advanced React Patterns</h4>
+                                <p style="color: var(--gray); margin: 0.5rem 0;">Master advanced React concepts and patterns</p>
+                                <div style="margin: 1rem 0;">
+                                    <span style="background: var(--primary); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Course</span>
+                                    <span style="background: var(--success); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin-left: 0.5rem;">Intermediate</span>
+                                </div>
+                                <button class="btn btn-primary">Start Learning</button>
+                            </div>
+
+                            <div style="border: 2px solid var(--border); border-radius: 8px; padding: 1rem;">
+                                <h4>TypeScript Fundamentals</h4>
+                                <p style="color: var(--gray); margin: 0.5rem 0;">Learn type-safe JavaScript development</p>
+                                <div style="margin: 1rem 0;">
+                                    <span style="background: var(--warning); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Book</span>
+                                    <span style="background: var(--accent); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin-left: 0.5rem;">Beginner</span>
+                                </div>
+                                <button class="btn btn-primary">Start Learning</button>
+                            </div>
+
+                            <div style="border: 2px solid var(--border); border-radius: 8px; padding: 1rem;">
+                                <h4>System Design Interview</h4>
+                                <p style="color: var(--gray); margin: 0.5rem 0;">Prepare for technical interviews</p>
+                                <div style="margin: 1rem 0;">
+                                    <span style="background: var(--secondary); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Practice</span>
+                                    <span style="background: var(--danger); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin-left: 0.5rem;">Advanced</span>
+                                </div>
+                                <button class="btn btn-primary">Start Learning</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals View -->
+                <div id="goals-view" class="view" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h2>Learning Goals</h2>
+                        <button class="btn btn-primary" onclick="openAddGoalModal()">+ Set Goal</button>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">🎯 Master React Advanced Patterns</h3>
+                                <span style="background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">In Progress</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-header">
+                                    <span>Progress</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <p style="color: var(--gray); margin: 1rem 0;">Target: Complete by March 2025</p>
+                            <div style="display: flex; gap: 1rem;">
+                                <button class="btn btn-primary">Update Progress</button>
+                                <button class="btn btn-secondary">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">📚 Read 24 Technical Books</h3>
+                                <span style="background: var(--success); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">On Track</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-header">
+                                    <span>Books Read</span>
+                                    <span>8/24</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 33%"></div>
+                                </div>
+                            </div>
+                            <p style="color: var(--gray); margin: 1rem 0;">Target: 2 books per month</p>
+                            <div style="display: flex; gap: 1rem;">
+                                <button class="btn btn-primary">Add Book</button>
+                                <button class="btn btn-secondary">View List</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">💻 Build 5 Portfolio Projects</h3>
+                                <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Active</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-header">
+                                    <span>Projects Completed</span>
+                                    <span>2/5</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <p style="color: var(--gray); margin: 1rem 0;">Target: Complete by June 2025</p>
+                            <div style="display: flex; gap: 1rem;">
+                                <button class="btn btn-primary">Add Project</button>
+                                <button class="btn btn-secondary">View Portfolio</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">🧠 Master Machine Learning</h3>
+                                <span style="background: var(--gray); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Planned</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-header">
+                                    <span>Progress</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <p style="color: var(--gray); margin: 1rem 0;">Target: Start in April 2025</p>
+                            <div style="display: flex; gap: 1rem;">
+                                <button class="btn btn-primary">Start Goal</button>
+                                <button class="btn btn-secondary">Plan Learning</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics View -->
+                <div id="analytics-view" class="view" style="display: none;">
+                    <h2 style="margin-bottom: 2rem;">Learning Analytics</h2>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Weekly Learning Hours</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="weeklyHoursChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Skill Distribution</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="skillDistributionChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Learning Velocity</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="velocityChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Performance Insights</h3>
+                            </div>
+                            <div style="padding: 1rem 0;">
+                                <div style="margin-bottom: 1.5rem;">
+                                    <h4 style="color: var(--success); margin-bottom: 0.5rem;">🎯 Peak Performance Times</h4>
+                                    <p style="color: var(--gray);">You learn best between 9 AM - 11 AM with 85% retention rate</p>
+                                </div>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <h4 style="color: var(--warning); margin-bottom: 0.5rem;">⚡ Improvement Areas</h4>
+                                    <p style="color: var(--gray);">Consider increasing hands-on practice time by 20%</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">📈 Learning Streak</h4>
+                                    <p style="color: var(--gray);">Current streak: 12 days • Best streak: 28 days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements View -->
+                <div id="achievements-view" class="view" style="display: none;">
+                    <h2 style="margin-bottom: 2rem;">Achievements & Badges</h2>
+
+                    <div class="grid grid-3">
+                        <div class="card" style="text-align: center; background: linear-gradient(135deg, #ffeaa7, #fdcb6e);">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">🏆</div>
+                            <h3>JavaScript Master</h3>
+                            <p style="color: rgba(0,0,0,0.7); margin: 0.5rem 0;">Completed 100 JavaScript challenges</p>
+                            <div style="font-size: 0.8rem; font-weight: 600;">EARNED: March 15, 2025</div>
+                        </div>
+
+                        <div class="card" style="text-align: center; background: linear-gradient(135deg, #a8e6cf, #7fcdcd);">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">📚</div>
+                            <h3>Bookworm</h3>
+                            <p style="color: rgba(0,0,0,0.7); margin: 0.5rem 0;">Read 25 technical books</p>
+                            <div style="font-size: 0.8rem; font-weight: 600;">EARNED: February 28, 2025</div>
+                        </div>
+
+                        <div class="card" style="text-align: center; background: linear-gradient(135deg, #ff9a9e, #fecfef);">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">⚡</div>
+                            <h3>Speed Learner</h3>
+                            <p style="color: rgba(0,0,0,0.7); margin: 0.5rem 0;">Completed course 50% faster than average</p>
+                            <div style="font-size: 0.8rem; font-weight: 600;">EARNED: March 10, 2025</div>
+                        </div>
+
+                        <div class="card" style="text-align: center; background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">🔥</div>
+                            <h3>Learning Streak</h3>
+                            <p style="color: white; margin: 0.5rem 0;">Maintained 30-day learning streak</p>
+                            <div style="font-size: 0.8rem; font-weight: 600; color: white;">EARNED: March 1, 2025</div>
+                        </div>
+
+                        <div class="card" style="text-align: center; background: linear-gradient(135deg, #a8edea, #fed6e3);">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">🎯</div>
+                            <h3>Goal Crusher</h3>
+                            <p style="color: rgba(0,0,0,0.7); margin: 0.5rem 0;">Achieved 5 learning goals</p>
+                            <div style="font-size: 0.8rem; font-weight: 600;">EARNED: February 15, 2025</div>
+                        </div>
+
+                        <div class="card" style="text-align: center; background: linear-gradient(135deg, #ffecd2, #fcb69f); opacity: 0.6;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">🌟</div>
+                            <h3>Perfectionist</h3>
+                            <p style="color: rgba(0,0,0,0.7); margin: 0.5rem 0;">Score 100% on 10 assessments</p>
+                            <div style="font-size: 0.8rem; font-weight: 600;">PROGRESS: 7/10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Skill Modal -->
+    <div id="addSkillModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Add New Skill</h3>
+                <button class="close-btn" onclick="closeModal('addSkillModal')">&times;</button>
+            </div>
+            <form onsubmit="addSkill(event)">
+                <div class="form-group">
+                    <label class="form-label">Skill Name</label>
+                    <input type="text" class="form-input" id="skillName" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-select" id="skillCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="programming">Programming</option>
+                        <option value="design">Design</option>
+                        <option value="data">Data Science</option>
+                        <option value="business">Business</option>
+                        <option value="languages">Languages</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Current Level</label>
+                    <select class="form-select" id="skillLevel" required>
+                        <option value="">Select Level</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                        <option value="expert">Expert</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Add Skill</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('addSkillModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Learning Resource Modal -->
+    <div id="addLearningModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Add Learning Resource</h3>
+                <button class="close-btn" onclick="closeModal('addLearningModal')">&times;</button>
+            </div>
+            <form onsubmit="addLearningResource(event)">
+                <div class="form-group">
+                    <label class="form-label">Resource Title</label>
+                    <input type="text" class="form-input" id="resourceTitle" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Type</label>
+                    <select class="form-select" id="resourceType" required>
+                        <option value="">Select Type</option>
+                        <option value="course">Course</option>
+                        <option value="book">Book</option>
+                        <option value="video">Video</option>
+                        <option value="article">Article</option>
+                        <option value="practice">Practice</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">URL (optional)</label>
+                    <input type="url" class="form-input" id="resourceUrl">
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Add Resource</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('addLearningModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Goal Modal -->
+    <div id="addGoalModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Set Learning Goal</h3>
+                <button class="close-btn" onclick="closeModal('addGoalModal')">&times;</button>
+            </div>
+            <form onsubmit="addGoal(event)">
+                <div class="form-group">
+                    <label class="form-label">Goal Title</label>
+                    <input type="text" class="form-input" id="goalTitle" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-input" id="goalDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Target Date</label>
+                    <input type="date" class="form-input" id="goalDate" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Priority</label>
+                    <select class="form-select" id="goalPriority" required>
+                        <option value="">Select Priority</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Set Goal</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('addGoalModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentView = 'dashboard';
+        let skillRadarChart, activityChart, weeklyHoursChart, skillDistributionChart, velocityChart;
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            initializeNavigation();
+        });
+
+        // Navigation
+        function initializeNavigation() {
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const view = this.getAttribute('data-view');
+                    switchView(view);
+                });
+            });
+        }
+
+        function switchView(view) {
+            // Update active nav item
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`[data-view="${view}"]`).classList.add('active');
+
+            // Hide all views
+            document.querySelectorAll('.view').forEach(viewEl => {
+                viewEl.style.display = 'none';
+            });
+
+            // Show selected view
+            document.getElementById(`${view}-view`).style.display = 'block';
+            
+            // Update page title
+            const titles = {
+                dashboard: 'Dashboard',
+                skills: 'My Skills',
+                learning: 'Learning Resources',
+                goals: 'Learning Goals',
+                analytics: 'Learning Analytics',
+                achievements: 'Achievements & Badges'
+            };
+            document.getElementById('page-title').textContent = titles[view];
+
+            currentView = view;
+        }
+
+        // Initialize Charts
+        function initializeCharts() {
+            initializeSkillRadarChart();
+            initializeActivityChart();
+            initializeWeeklyHoursChart();
+            initializeSkillDistributionChart();
+            initializeVelocityChart();
+        }
+
+        function initializeSkillRadarChart() {
+            const ctx = document.getElementById('skillRadarChart').getContext('2d');
+            skillRadarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['JavaScript', 'React', 'Python', 'UI/UX', 'Node.js', 'ML'],
+                    datasets: [{
+                        label: 'Current Level',
+                        data: [85, 72, 56, 64, 90, 45],
+                        backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                        borderColor: 'rgba(102, 126, 234, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(102, 126, 234, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(102, 126, 234, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                stepSize: 20
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        function initializeActivityChart() {
+            const ctx = document.getElementById('activityChart').getContext('2d');
+            activityChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Learning Hours',
+                        data: [3, 4, 2, 5, 3, 6, 4],
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        borderColor: 'rgba(102, 126, 234, 1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: 'rgba(102, 126, 234, 1)',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 8
+                        }
+                    }
+                }
+            });
+        }
+
+        function initializeWeeklyHoursChart() {
+            const ctx = document.getElementById('weeklyHoursChart');
+            if (!ctx) return;
+            
+            weeklyHoursChart = new Chart(ctx.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                    datasets: [{
+                        label: 'Hours Learned',
+                        data: [28, 32, 25, 35],
+                        backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        function initializeSkillDistributionChart() {
+            const ctx = document.getElementById('skillDistributionChart');
+            if (!ctx) return;
+            
+            skillDistributionChart = new Chart(ctx.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Programming', 'Design', 'Data Science', 'Business'],
+                    datasets: [{
+                        data: [45, 25, 20, 10],
+                        backgroundColor: [
+                            'rgba(102, 126, 234, 0.8)',
+                            'rgba(240, 147, 251, 0.8)',
+                            'rgba(16, 185, 129, 0.8)',
+                            'rgba(245, 158, 11, 0.8)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        function initializeVelocityChart() {
+            const ctx = document.getElementById('velocityChart');
+            if (!ctx) return;
+            
+            velocityChart = new Chart(ctx.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Learning Velocity',
+                        data: [65, 72, 78, 85, 82, 88],
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        borderColor: 'rgba(16, 185, 129, 1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            min: 60,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // Modal functions
+        function openAddSkillModal() {
+            document.getElementById('addSkillModal').classList.add('active');
+        }
+
+        function openAddLearningModal() {
+            document.getElementById('addLearningModal').classList.add('active');
+        }
+
+        function openAddGoalModal() {
+            document.getElementById('addGoalModal').classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Form handlers
+        function addSkill(event) {
+            event.preventDefault();
+            
+            const skillName = document.getElementById('skillName').value;
+            const skillCategory = document.getElementById('skillCategory').value;
+            const skillLevel = document.getElementById('skillLevel').value;
+            
+            // Create new skill card
+            const skillsContainer = document.getElementById('skills-container');
+            const newSkillCard = document.createElement('div');
+            newSkillCard.className = 'skill-card fade-in';
+            
+            const levelColors = {
+                beginner: 'var(--gray)',
+                intermediate: 'var(--warning)',
+                advanced: 'var(--primary)',
+                expert: 'var(--success)'
+            };
+            
+            newSkillCard.innerHTML = `
+                <div class="skill-header">
+                    <div class="skill-name">${skillName}</div>
+                    <div class="skill-level" style="background: ${levelColors[skillLevel]};">${skillLevel.charAt(0).toUpperCase() + skillLevel.slice(1)}</div>
+                </div>
+                <div class="skill-xp">0 / 1,000 XP</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+            `;
+            
+            skillsContainer.appendChild(newSkillCard);
+            
+            // Reset form and close modal
+            event.target.reset();
+            closeModal('addSkillModal');
+            
+            // Show success message
+            showNotification('Skill added successfully!', 'success');
+        }
+
+        function addLearningResource(event) {
+            event.preventDefault();
+            
+            const title = document.getElementById('resourceTitle').value;
+            const type = document.getElementById('resourceType').value;
+            const url = document.getElementById('resourceUrl').value;
+            
+            // Here you would typically save to a database
+            console.log('New learning resource:', { title, type, url });
+            
+            // Reset form and close modal
+            event.target.reset();
+            closeModal('addLearningModal');
+            
+            showNotification('Learning resource added successfully!', 'success');
+        }
+
+        function addGoal(event) {
+            event.preventDefault();
+            
+            const title = document.getElementById('goalTitle').value;
+            const description = document.getElementById('goalDescription').value;
+            const date = document.getElementById('goalDate').value;
+            const priority = document.getElementById('goalPriority').value;
+            
+            // Here you would typically save to a database
+            console.log('New goal:', { title, description, date, priority });
+            
+            // Reset form and close modal
+            event.target.reset();
+            closeModal('addGoalModal');
+            
+            showNotification('Goal set successfully!', 'success');
+        }
+
+        // Notification system
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? 'var(--success)' : 'var(--danger)'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                z-index: 1001;
+                animation: slideIn 0.3s ease;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+
+        // Simulate real-time updates
+        setInterval(() => {
+            // Update XP randomly for demonstration
+            const xpFills = document.querySelectorAll('.xp-fill');
+            xpFills.forEach(fill => {
+                const currentWidth = parseInt(fill.style.width) || 0;
+                const newWidth = Math.min(currentWidth + Math.random() * 2, 100);
+                fill.style.width = newWidth + '%';
+            });
+        }, 5000);
+
+        // Add some interactive features
+        document.addEventListener('click', function(event) {
+            if (event.target.closest('.achievement')) {
+                event.target.closest('.achievement').style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    event.target.closest('.achievement').style.transform = 'scale(1)';
+                }, 150);
+            }
+        });
+    </script>
+</body>
+</html>

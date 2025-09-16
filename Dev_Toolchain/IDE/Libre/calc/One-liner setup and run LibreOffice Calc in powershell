@@ -1,0 +1,1 @@
+winget install --id TheDocumentFoundation.LibreOffice -e --silent; & "C:\Program Files\LibreOffice\program\scalc.exe" "your-file.csv"

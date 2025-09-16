@@ -1,0 +1,1 @@
+mkdir -p ~/.docker/cli-plugins && curl -L "$(curl -s https://api.github.com/repos/docker/buildx/releases/latest | grep -o 'https://github.com/docker/buildx/releases/download/[^"]*linux-amd64' | head -1)" -o ~/.docker/cli-plugins/docker-buildx && chmod +x ~/.docker/cli-plugins/docker-buildx

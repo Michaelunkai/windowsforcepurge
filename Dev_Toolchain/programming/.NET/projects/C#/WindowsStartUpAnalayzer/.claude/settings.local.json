@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet restore:*)",
+      "Bash(dotnet --list-sdks)",
+      "Bash(dotnet nuget sources:*)",
+      "Bash(dotnet nuget list:*)",
+      "Bash(dotnet nuget add source:*)",
+      "Bash(dotnet build)",
+      "Bash(dotnet run:*)",
+      "Bash(mkdir:*)",
+      "Bash(xcopy:*)",
+      "Bash(robocopy:*)",
+      "Bash(cp:*)"
+    ],
+    "defaultMode": "acceptEdits"
+  }
+}

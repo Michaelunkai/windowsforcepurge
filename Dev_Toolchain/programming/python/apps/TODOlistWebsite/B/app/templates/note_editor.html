@@ -1,0 +1,332 @@
+{% extends "base.html" %}
+
+{% block title %}{% if note %}Edit Note{% else %}New Note{% endif %} - TodoNotes{% endblock %}
+
+{% block extra_css %}
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="editor-container">
+    <div class="editor-header">
+        <div class="editor-nav">
+            <a href="/notes" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Notes
+            </a>
+        </div>
+        <div class="editor-actions">
+            <button type="button" class="btn btn-secondary" onclick="saveDraft()">
+                <i class="fas fa-save"></i> Save Draft
+            </button>
+            <button type="submit" form="note-form" class="btn btn-primary">
+                <i class="fas fa-check"></i> {% if note %}Update Note{% else %}Create Note{% endif %}
+            </button>
+        </div>
+    </div>
+
+    <div class="editor-content">
+        <form id="note-form" action="/notes/save" method="post" enctype="multipart/form-data">
+            {% if note %}
+            <input type="hidden" name="note_id" value="{{ note.id }}">
+            {% endif %}
+            
+            <div class="form-group">
+                <input type="text" name="title" placeholder="Note title..." class="title-input" 
+                       value="{% if note %}{{ note.title }}{% endif %}" required>
+            </div>
+            
+            <div class="form-group">
+                <select name="folder_id" class="form-select folder-select">
+                    <option value="">No Folder</option>
+                    {% for folder in folders %}
+                    <option value="{{ folder.id }}" 
+                            {% if note and note.folder_id == folder.id %}selected{% endif %}>
+                        {{ folder.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="editor-toolbar">
+                <div class="toolbar-section">
+                    <button type="button" class="toolbar-btn" onclick="insertImage()" title="Insert Image">
+                        <i class="fas fa-image"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" onclick="insertFile()" title="Attach File">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" onclick="insertTable()" title="Insert Table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" onclick="insertCode()" title="Code Block">
+                        <i class="fas fa-code"></i>
+                    </button>
+                </div>
+                
+                <div class="toolbar-section">
+                    <span class="word-count" id="word-count">0 words</span>
+                </div>
+            </div>
+            
+            <!-- Rich Text Editor -->
+            <div id="editor" class="note-editor">
+                {% if note %}{{ note.content|safe }}{% endif %}
+            </div>
+            
+            <!-- Hidden textarea to store content -->
+            <textarea name="content" id="content-input" style="display: none;"></textarea>
+            
+            <!-- File upload for attachments -->
+            <input type="file" id="file-input" multiple style="display: none;" onchange="handleFileUpload(event)">
+            <input type="file" id="image-input" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
+        </form>
+    </div>
+</div>
+
+<!-- Image Upload Modal -->
+<div id="imageModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Insert Image</h3>
+            <button class="modal-close" onclick="hideImageModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="upload-area" onclick="document.getElementById('image-input').click()">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <p>Click to upload image or drag and drop</p>
+                <p class="upload-info">Supports JPG, PNG, GIF up to 10MB</p>
+            </div>
+            
+            <div id="image-preview" class="image-preview" style="display: none;">
+                <img id="preview-img" src="" alt="Preview">
+                <div class="image-actions">
+                    <button type="button" class="btn btn-secondary" onclick="removeImage()">Remove</button>
+                    <button type="button" class="btn btn-primary" onclick="insertSelectedImage()">Insert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script>
+// Initialize Quill editor
+const quill = new Quill('#editor', {
+    theme: 'snow',
+    placeholder: 'Start writing your note...',
+    modules: {
+        toolbar: [
+            [{ 'header': [1, 2, 3, false] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ 'color': [] }, { 'background': [] }],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            [{ 'align': [] }],
+            ['blockquote', 'code-block'],
+            ['link'],
+            ['clean']
+        ]
+    }
+});
+
+// Word count
+function updateWordCount() {
+    const text = quill.getText();
+    const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+    document.getElementById('word-count').textContent = `${words.length} words`;
+}
+
+quill.on('text-change', updateWordCount);
+updateWordCount(); // Initial count
+
+// Auto-save functionality
+let autoSaveTimeout;
+function autoSave() {
+    clearTimeout(autoSaveTimeout);
+    autoSaveTimeout = setTimeout(() => {
+        saveDraft();
+    }, 30000); // Auto-save every 30 seconds
+}
+
+quill.on('text-change', autoSave);
+
+// Save draft
+function saveDraft() {
+    const content = quill.root.innerHTML;
+    localStorage.setItem('note-draft', content);
+    
+    // Show save indicator
+    const saveIndicator = document.createElement('div');
+    saveIndicator.className = 'save-indicator';
+    saveIndicator.textContent = 'Draft saved';
+    document.body.appendChild(saveIndicator);
+    
+    setTimeout(() => {
+        saveIndicator.remove();
+    }, 2000);
+}
+
+// Load draft on page load
+window.addEventListener('load', () => {
+    const draft = localStorage.getItem('note-draft');
+    if (draft && !document.querySelector('[name="note_id"]')) {
+        quill.root.innerHTML = draft;
+    }
+});
+
+// Form submission
+document.getElementById('note-form').addEventListener('submit', (e) => {
+    // Update hidden textarea with editor content
+    document.getElementById('content-input').value = quill.root.innerHTML;
+    
+    // Clear draft after successful save
+    localStorage.removeItem('note-draft');
+});
+
+// Image handling
+let selectedImageFile = null;
+
+function insertImage() {
+    document.getElementById('imageModal').style.display = 'flex';
+}
+
+function hideImageModal() {
+    document.getElementById('imageModal').style.display = 'none';
+    document.getElementById('image-preview').style.display = 'none';
+    selectedImageFile = null;
+}
+
+async function handleImageUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+        alert('Please select an image file');
+        return;
+    }
+    
+    // Validate file size (10MB)
+    if (file.size > 10 * 1024 * 1024) {
+        alert('Image size must be less than 10MB');
+        return;
+    }
+    
+    selectedImageFile = file;
+    
+    // Show preview
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        document.getElementById('preview-img').src = e.target.result;
+        document.getElementById('image-preview').style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+}
+
+async function insertSelectedImage() {
+    if (!selectedImageFile) return;
+    
+    try {
+        const formData = new FormData();
+        formData.append('file', selectedImageFile);
+        
+        const response = await fetch('/upload', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            const imageUrl = result.url;
+            
+            // Insert image into editor
+            const range = quill.getSelection(true);
+            quill.insertEmbed(range.index, 'image', imageUrl);
+            quill.setSelection(range.index + 1);
+            
+            hideImageModal();
+        } else {
+            alert('Error uploading image');
+        }
+    } catch (error) {
+        console.error('Error uploading image:', error);
+        alert('Error uploading image');
+    }
+}
+
+function removeImage() {
+    document.getElementById('image-preview').style.display = 'none';
+    selectedImageFile = null;
+}
+
+function insertFile() {
+    document.getElementById('file-input').click();
+}
+
+async function handleFileUpload(event) {
+    const files = event.target.files;
+    if (!files.length) return;
+    
+    for (const file of files) {
+        try {
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (response.ok) {
+                const result = await response.json();
+                const fileUrl = result.url;
+                const fileName = file.name;
+                
+                // Insert file link into editor
+                const range = quill.getSelection(true);
+                quill.insertText(range.index, `📎 ${fileName}`, 'link', fileUrl);
+                quill.setSelection(range.index + fileName.length + 2);
+            }
+        } catch (error) {
+            console.error('Error uploading file:', error);
+        }
+    }
+}
+
+function insertTable() {
+    const range = quill.getSelection(true);
+    const tableHTML = `
+        <table>
+            <tr><td>Cell 1</td><td>Cell 2</td></tr>
+            <tr><td>Cell 3</td><td>Cell 4</td></tr>
+        </table>
+    `;
+    quill.clipboard.dangerouslyPasteHTML(range.index, tableHTML);
+}
+
+function insertCode() {
+    const range = quill.getSelection(true);
+    quill.insertText(range.index, '\n```\n// Your code here\n```\n');
+    quill.setSelection(range.index + 5);
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.metaKey) {
+        switch (e.key) {
+            case 's':
+                e.preventDefault();
+                saveDraft();
+                break;
+            case 'Enter':
+                e.preventDefault();
+                document.getElementById('note-form').dispatchEvent(new Event('submit'));
+                break;
+        }
+    }
+});
+</script>
+{% endblock %}

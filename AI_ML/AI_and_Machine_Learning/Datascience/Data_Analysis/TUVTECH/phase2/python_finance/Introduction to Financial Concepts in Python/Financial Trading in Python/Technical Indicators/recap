@@ -1,0 +1,38 @@
+When you left 15 hours ago, you worked on Technical Indicators, chapter 2 of the course Financial Trading in Python. Here is what you covered in your last lesson:
+
+You learned about technical indicators, which are calculations based on historical market data used to analyze price patterns and predict future movements. You focused on trend indicators, specifically Moving Averages (MAs), which help identify the direction of a trend.
+
+Key points covered:
+
+Types of Indicators:
+
+Trend Indicators: Measure the direction or strength of a trend (e.g., Moving Average).
+Momentum Indicators: Measure the rate of price change (e.g., Relative Strength Index).
+Volatility Indicators: Measure the magnitude of price deviations (e.g., Bollinger Bands).
+Simple Moving Average (SMA):
+
+An arithmetic mean of the past n prices.
+Calculated using talib.SMA with the timeperiod parameter.
+Exponential Moving Average (EMA):
+
+An exponentially weighted average of the last n prices, giving more weight to recent data.
+Calculated using talib.EMA with the timeperiod parameter.
+Python Implementation:
+
+Import the TA Lib package: import talib.
+Example code to calculate and plot EMAs:
+# Calculate 12-day EMA
+stock_data['EMA_12'] = talib.EMA(stock_data['Close'], timeperiod=12)
+# Calculate 26-day EMA
+stock_data['EMA_26'] = talib.EMA(stock_data['Close'], timeperiod=26)
+
+# Plot the EMAs with price
+plt.plot(stock_data['EMA_12'], label='EMA_12')
+plt.plot(stock_data['EMA_26'], label='EMA_26')
+plt.plot(stock_data['Close'], label='Close')
+
+# Customize and show the plot
+plt.legend()
+plt.title('EMAs')
+plt.show()
+The goal of the next lesson is to learn how to interpret ADX values to make better trading decisions.

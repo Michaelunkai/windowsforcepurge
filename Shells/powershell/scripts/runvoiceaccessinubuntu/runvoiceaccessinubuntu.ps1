@@ -1,0 +1,1 @@
+Start-Process "C:\Windows\WinSxS\amd64_microsoft-windows-voiceaccessstub_31bf3856ad364e35_10.0.26100.4202_none_12b63ff30898b80e\VoiceAccess.exe"; Start-Sleep 2; Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")

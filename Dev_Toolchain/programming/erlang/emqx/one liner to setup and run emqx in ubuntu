@@ -1,0 +1,1 @@
+wget https://repos.emqx.io/emqx-ce/ubuntu/jammy/amd64/emqx_latest.deb && sudo dpkg -i emqx_latest.deb && sudo systemctl enable --now emqx

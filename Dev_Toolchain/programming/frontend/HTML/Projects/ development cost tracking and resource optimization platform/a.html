@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevCost Intelligence - Development Cost Optimization Platform</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary-color: #059669;
+            --accent-color: #f59e0b;
+            --danger-color: #dc2626;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: var(--surface);
+            border-right: 1px solid var(--border-color);
+            padding: 24px 0;
+            box-shadow: var(--shadow);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .logo {
+            padding: 0 24px 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            padding: 24px 0;
+        }
+
+        .nav-item {
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            background: #f3f4f6;
+            border-left-color: var(--primary-light);
+        }
+
+        .nav-item.active {
+            background: #eff6ff;
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 24px;
+        }
+
+        .header {
+            background: var(--surface);
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .metric-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .metric-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .metric-icon.cost {
+            background: linear-gradient(135deg, var(--danger-color), #fca5a5);
+        }
+
+        .metric-icon.savings {
+            background: linear-gradient(135deg, var(--success-color), #86efac);
+        }
+
+        .metric-icon.efficiency {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        }
+
+        .metric-icon.growth {
+            background: linear-gradient(135deg, var(--accent-color), #fde047);
+        }
+
+        .metric-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .metric-change {
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 4px;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        .metric-change.positive {
+            color: var(--success-color);
+            background: #ecfdf5;
+        }
+
+        .metric-change.negative {
+            color: var(--danger-color);
+            background: #fef2f2;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-top: 16px;
+        }
+
+        .large-card {
+            grid-column: 1 / -1;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .cost-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .cost-item {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .cost-item h4 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .cost-amount {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .cost-details {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .subscription-list {
+            margin-top: 24px;
+        }
+
+        .subscription-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            background: var(--surface);
+        }
+
+        .subscription-info h4 {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .subscription-details {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .subscription-cost {
+            text-align: right;
+        }
+
+        .subscription-cost .amount {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .subscription-cost .period {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: #ecfdf5;
+            color: var(--success-color);
+        }
+
+        .status-warning {
+            background: #fffbeb;
+            color: var(--warning-color);
+        }
+
+        .status-unused {
+            background: #fef2f2;
+            color: var(--danger-color);
+        }
+
+        .optimization-suggestions {
+            margin-top: 24px;
+        }
+
+        .suggestion-item {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .suggestion-item h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .suggestion-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .savings-amount {
+            font-weight: 700;
+            color: var(--success-color);
+            font-size: 16px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .project-name {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .project-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: #ecfdf5;
+            color: var(--success-color);
+        }
+
+        .status-planning {
+            background: #fff7ed;
+            color: var(--warning-color);
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .project-metric {
+            text-align: center;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .project-metric .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .project-metric .label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 1000;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 16px;
+            }
+
+            .mobile-menu {
+                display: block;
+                position: fixed;
+                top: 16px;
+                left: 16px;
+                z-index: 1001;
+                background: var(--surface);
+                border: none;
+                border-radius: 8px;
+                padding: 12px;
+                box-shadow: var(--shadow);
+                cursor: pointer;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alert-warning {
+            background: #fffbeb;
+            border: 1px solid #fed7aa;
+            color: #92400e;
+        }
+
+        .alert-info {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tab-container {
+            margin-bottom: 24px;
+        }
+
+        .tab-nav {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .tab-button {
+            padding: 12px 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .tab-button:hover {
+            color: var(--primary-color);
+        }
+
+        .prediction-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .prediction-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .prediction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .prediction-item {
+            text-align: center;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .prediction-item .value {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .prediction-item .label {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <button class="mobile-menu" onclick="toggleSidebar()">☰</button>
+        
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <h1>
+                    <div class="logo-icon">DC</div>
+                    DevCost Intelligence
+                </h1>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-item active" onclick="showSection('dashboard')">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </div>
+                <div class="nav-item" onclick="showSection('cloud-costs')">
+                    <span class="nav-icon">☁️</span>
+                    Cloud Costs
+                </div>
+                <div class="nav-item" onclick="showSection('subscriptions')">
+                    <span class="nav-icon">📱</span>
+                    Subscriptions
+                </div>
+                <div class="nav-item" onclick="showSection('projects')">
+                    <span class="nav-icon">🎯</span>
+                    Project Costs
+                </div>
+                <div class="nav-item" onclick="showSection('predictions')">
+                    <span class="nav-icon">🔮</span>
+                    Predictions
+                </div>
+                <div class="nav-item" onclick="showSection('optimization')">
+                    <span class="nav-icon">⚡</span>
+                    Optimization
+                </div>
+                <div class="nav-item" onclick="showSection('analytics')">
+                    <span class="nav-icon">📈</span>
+                    Analytics
+                </div>
+                <div class="nav-item" onclick="showSection('taxes')">
+                    <span class="nav-icon">📋</span>
+                    Tax Assistant
+                </div>
+                <div class="nav-item" onclick="showSection('team')">
+                    <span class="nav-icon">👥</span>
+                    Team Costs
+                </div>
+                <div class="nav-item" onclick="showSection('vendors')">
+                    <span class="nav-icon">🏢</span>
+                    Vendors
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="header">
+                    <h2>Cost Intelligence Dashboard</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            📤 Export Report
+                        </button>
+                        <button class="btn btn-primary">
+                            ➕ Add Expense
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card metric-card">
+                        <div class="metric-icon cost">💰</div>
+                        <div class="metric-content">
+                            <h3>$12,847</h3>
+                            <div class="metric-label">Monthly Costs</div>
+                            <div class="metric-change negative">↑ 12% vs last month</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon savings">💎</div>
+                        <div class="metric-content">
+                            <h3>$3,241</h3>
+                            <div class="metric-label">Potential Savings</div>
+                            <div class="metric-change positive">↑ 8% identified</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon efficiency">📊</div>
+                        <div class="metric-content">
+                            <h3>87%</h3>
+                            <div class="metric-label">Cost Efficiency</div>
+                            <div class="metric-change positive">↑ 5% improved</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon growth">📈</div>
+                        <div class="metric-content">
+                            <h3>$2.15</h3>
+                            <div class="metric-label">Cost per Line of Code</div>
+                            <div class="metric-change negative">↓ 3% optimized</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>Cost Trends</h3>
+                        <div class="chart-container">
+                            <canvas id="costTrendChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Cost Breakdown</h3>
+                        <div class="chart-container">
+                            <canvas id="costBreakdownChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card large-card">
+                    <h3>Recent Cost Activity</h3>
+                    <div class="cost-breakdown">
+                        <div class="cost-item">
+                            <h4>AWS EC2</h4>
+                            <div class="cost-amount">$2,847</div>
+                            <div class="cost-details">23 instances • 87% utilized</div>
+                        </div>
+                        <div class="cost-item">
+                            <h4>GitHub Enterprise</h4>
+                            <div class="cost-amount">$840</div>
+                            <div class="cost-details">28 seats • Full utilization</div>
+                        </div>
+                        <div class="cost-item">
+                            <h4>Azure DevOps</h4>
+                            <div class="cost-amount">$420</div>
+                            <div class="cost-details">Pipeline minutes • 67% used</div>
+                        </div>
+                        <div class="cost-item">
+                            <h4>Monitoring Tools</h4>
+                            <div class="cost-amount">$385</div>
+                            <div class="cost-details">DataDog + New Relic</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cloud Costs Section -->
+            <section id="cloud-costs" class="section">
+                <div class="header">
+                    <h2>Cloud Cost Optimization</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            📊 View Reports
+                        </button>
+                        <button class="btn btn-primary">
+                            🔄 Sync Accounts
+                        </button>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning">
+                    <span>⚠️</span>
+                    <div>
+                        <strong>High Cost Alert:</strong> Your AWS costs increased by 23% this week. Review rightsizing recommendations below.
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>AWS Costs</h3>
+                        <div class="cost-amount" style="font-size: 32px; color: #f59e0b; margin: 16px 0;">$8,247</div>
+                        <p style="color: #6b7280;">Current month</p>
+                        <div class="chart-container" style="height: 200px;">
+                            <canvas id="awsCostChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Azure Costs</h3>
+                        <div class="cost-amount" style="font-size: 32px; color: #3b82f6; margin: 16px 0;">$3,142</div>
+                        <p style="color: #6b7280;">Current month</p>
+                        <div class="chart-container" style="height: 200px;">
+                            <canvas id="azureCostChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>GCP Costs</h3>
+                        <div class="cost-amount" style="font-size: 32px; color: #10b981; margin: 16px 0;">$1,458</div>
+                        <p style="color: #6b7280;">Current month</p>
+                        <div class="chart-container" style="height: 200px;">
+                            <canvas id="gcpCostChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Optimization Recommendations</h3>
+                    <div class="optimization-suggestions">
+                        <div class="suggestion-item">
+                            <h4>🔧 Rightsize EC2 Instances</h4>
+                            <p>12 instances are over-provisioned and can be downsized without performance impact.</p>
+                            <div class="savings-amount">Potential savings: $847/month</div>
+                        </div>
+                        <div class="suggestion-item">
+                            <h4>⏰ Schedule Development Environments</h4>
+                            <p>Auto-shutdown dev/test environments during off-hours (nights and weekends).</p>
+                            <div class="savings-amount">Potential savings: $523/month</div>
+                        </div>
+                        <div class="suggestion-item">
+                            <h4>💾 Optimize Storage Classes</h4>
+                            <p>Move infrequently accessed data to cheaper storage tiers.</p>
+                            <div class="savings-amount">Potential savings: $234/month</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Subscriptions Section -->
+            <section id="subscriptions" class="section">
+                <div class="header">
+                    <h2>Subscription Management</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            📊 Usage Analysis
+                        </button>
+                        <button class="btn btn-primary">
+                            ➕ Add Subscription
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card metric-card">
+                        <div class="metric-icon cost">📱</div>
+                        <div class="metric-content">
+                            <h3>47</h3>
+                            <div class="metric-label">Active Subscriptions</div>
+                            <div class="metric-change positive">↓ 3 optimized</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon warning">⚠️</div>
+                        <div class="metric-content">
+                            <h3>8</h3>
+                            <div class="metric-label">Underutilized</div>
+                            <div class="metric-change negative">Review needed</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon savings">💰</div>
+                        <div class="metric-content">
+                            <h3>$1,247</h3>
+                            <div class="metric-label">Potential Savings</div>
+                            <div class="metric-change positive">Cancel unused</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Subscription Overview</h3>
+                    <div class="subscription-list">
+                        <div class="subscription-item">
+                            <div class="subscription-info">
+                                <h4>GitHub Enterprise</h4>
+                                <div class="subscription-details">28 seats • 100% utilization • Renews Feb 15</div>
+                                <span class="status-badge status-active">Active</span>
+                            </div>
+                            <div class="subscription-cost">
+                                <div class="amount">$840</div>
+                                <div class="period">/month</div>
+                            </div>
+                        </div>
+
+                        <div class="subscription-item">
+                            <div class="subscription-info">
+                                <h4>JetBrains IntelliJ Ultimate</h4>
+                                <div class="subscription-details">15 licenses • 87% utilization • Renews Mar 8</div>
+                                <span class="status-badge status-active">Active</span>
+                            </div>
+                            <div class="subscription-cost">
+                                <div class="amount">$495</div>
+                                <div class="period">/month</div>
+                            </div>
+                        </div>
+
+                        <div class="subscription-item">
+                            <div class="subscription-info">
+                                <h4>Figma Professional</h4>
+                                <div class="subscription-details">12 seats • 45% utilization • Renews Jan 22</div>
+                                <span class="status-badge status-warning">Underused</span>
+                            </div>
+                            <div class="subscription-cost">
+                                <div class="amount">$180</div>
+                                <div class="period">/month</div>
+                            </div>
+                        </div>
+
+                        <div class="subscription-item">
+                            <div class="subscription-info">
+                                <h4>Sketch Enterprise</h4>
+                                <div class="subscription-details">5 licenses • 12% utilization • Renews Next Week</div>
+                                <span class="status-badge status-unused">Consider Canceling</span>
+                            </div>
+                            <div class="subscription-cost">
+                                <div class="amount">$240</div>
+                                <div class="period">/year</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <div class="header">
+                    <h2>Project Cost Attribution</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            📊 Profitability Report
+                        </button>
+                        <button class="btn btn-primary">
+                            ➕ New Project
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">E-Commerce Platform</div>
+                            <span class="project-status status-active">Active</span>
+                        </div>
+                        <div class="cost-amount" style="font-size: 24px; margin: 16px 0;">$4,892</div>
+                        <p style="color: #6b7280; margin-bottom: 16px;">Total project cost</p>
+                        <div class="project-metrics">
+                            <div class="project-metric">
+                                <div class="value">$2,340</div>
+                                <div class="label">Cloud Costs</div>
+                            </div>
+                            <div class="project-metric">
+                                <div class="value">$1,456</div>
+                                <div class="label">Tools & Licenses</div>
+                            </div>
+                            <div class="project-metric">
+                                <div class="value">$896</div>
+                                <div class="label">Third-party APIs</div>
+                            </div>
+                            <div class="project-metric">
+                                <div class="value">$200</div>
+                                <div class="label">Other Expenses</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">Mobile App Redesign</div>
+                            <span class="project-status status-active">Active</span>
+                        </div>
+                        <div class="cost-amount" style="font-size: 24px; margin: 16px 0;">$2,156</div>
+                        <p style="color: #6b7280; margin-bottom: 16px;">Total project cost</p>
+                        <div class="project-metrics">
+                            <div class="project-metric">
+                                <div class="value">$890</div>
+                                <div class="label">Design Tools</div>
+                            </div>
+                            <div class="project-metric">
+                                <div class="value">$567</div>
+                                <div class="label">Testing Services</div>
+                            </div>
+                            <div class="project-metric">
+                                <div class="value">$445</div>
+                                <div class="label">Cloud Costs</div>
+                            </div>
+                            <div class="project-metric">
+                                <div class="value">$254</div>
+                                <div class="label">Analytics Tools</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">AI Integration Project</div>
+                            <span class="project-status status-planning">Planning</span>
+                        </div>
+                        <div class="cost-amount" style="font-size: 24px; margin: 16px 0;">$892</div>
+                        <p style="color: #6b7280; margin-bottom: 16px;">Projected costs</p>
+                        <div class="project-metrics">
+                            <div class="project-metric">
+                                <div class="value">$450</div>
+                                <div class="label">AI/ML APIs</div>
+                            </div>
+                            <div class="project-metric">
+                                <div class="value">$267</div>
+                                <div class="label">Compute Resources</div>
+                            </div>
+                            <div class="project-metric">
+                                <div class="value">$125</div>
+                                <div class="label">Data Storage</div>
+                            </div>
+                            <div class="project-metric">
+                                <div class="value">$50</div>
+                                <div class="label">Monitoring</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Project ROI Analysis</h3>
+                    <div class="chart-container">
+                        <canvas id="projectRoiChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Predictions Section -->
+            <section id="predictions" class="section">
+                <div class="header">
+                    <h2>Predictive Cost Management</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            📊 Scenario Planning
+                        </button>
+                        <button class="btn btn-primary">
+                            🔮 Run Prediction
+                        </button>
+                    </div>
+                </div>
+
+                <div class="prediction-card">
+                    <h3>🔮 AI-Powered Cost Predictions</h3>
+                    <p>Based on historical data, current trends, and project pipeline analysis</p>
+                    <div class="prediction-grid">
+                        <div class="prediction-item">
+                            <div class="value">$15,247</div>
+                            <div class="label">Next Month</div>
+                        </div>
+                        <div class="prediction-item">
+                            <div class="value">$42,890</div>
+                            <div class="label">Next Quarter</div>
+                        </div>
+                        <div class="prediction-item">
+                            <div class="value">$167,234</div>
+                            <div class="label">Next Year</div>
+                        </div>
+                        <div class="prediction-item">
+                            <div class="value">87%</div>
+                            <div class="label">Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>Cost Forecast</h3>
+                        <div class="chart-container">
+                            <canvas id="forecastChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Seasonal Trends</h3>
+                        <div class="chart-container">
+                            <canvas id="seasonalChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Scenario Analysis</h3>
+                    <div class="tab-container">
+                        <div class="tab-nav">
+                            <button class="tab-button active">Conservative Growth</button>
+                            <button class="tab-button">Aggressive Expansion</button>
+                            <button class="tab-button">Cost Optimization</button>
+                        </div>
+                        <div class="cost-breakdown">
+                            <div class="cost-item">
+                                <h4>Cloud Infrastructure</h4>
+                                <div class="cost-amount">$8,450</div>
+                                <div class="cost-details">+15% projected growth</div>
+                            </div>
+                            <div class="cost-item">
+                                <h4>Development Tools</h4>
+                                <div class="cost-amount">$3,240</div>
+                                <div class="cost-details">+8% new team members</div>
+                            </div>
+                            <div class="cost-item">
+                                <h4>Third-party Services</h4>
+                                <div class="cost-amount">$2,890</div>
+                                <div class="cost-details">+12% usage increase</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Optimization Section -->
+            <section id="optimization" class="section">
+                <div class="header">
+                    <h2>Cost Optimization Engine</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            🔄 Run Analysis
+                        </button>
+                        <button class="btn btn-primary">
+                            ⚡ Auto-Optimize
+                        </button>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <span>💡</span>
+                    <div>
+                        <strong>Optimization Tip:</strong> Your development environments are running 24/7. Enable automatic scheduling to save ~$2,400/month.
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card metric-card">
+                        <div class="metric-icon savings">⚡</div>
+                        <div class="metric-content">
+                            <h3>$4,892</h3>
+                            <div class="metric-label">Total Savings Identified</div>
+                            <div class="metric-change positive">This month</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon efficiency">📊</div>
+                        <div class="metric-content">
+                            <h3>23</h3>
+                            <div class="metric-label">Optimization Opportunities</div>
+                            <div class="metric-change positive">Auto-fixable: 16</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon growth">🎯</div>
+                        <div class="metric-content">
+                            <h3>38%</h3>
+                            <div class="metric-label">Potential Cost Reduction</div>
+                            <div class="metric-change positive">If all applied</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Automated Optimization Actions</h3>
+                    <div class="optimization-suggestions">
+                        <div class="suggestion-item">
+                            <h4>🤖 Auto-Schedule Dev Environments</h4>
+                            <p>Automatically shut down development and staging environments during off-hours (8 PM - 8 AM) and weekends.</p>
+                            <div class="savings-amount">Estimated savings: $2,400/month</div>
+                            <button class="btn btn-primary" style="margin-top: 12px;">Enable Auto-Scheduling</button>
+                        </div>
+                        <div class="suggestion-item">
+                            <h4>📦 Container Right-sizing</h4>
+                            <p>Automatically adjust container resources based on actual usage patterns over the last 30 days.</p>
+                            <div class="savings-amount">Estimated savings: $890/month</div>
+                            <button class="btn btn-primary" style="margin-top: 12px;">Apply Right-sizing</button>
+                        </div>
+                        <div class="suggestion-item">
+                            <h4>🗄️ Storage Optimization</h4>
+                            <p>Move old logs and backups to cheaper storage classes. Compress development databases.</p>
+                            <div class="savings-amount">Estimated savings: $445/month</div>
+                            <button class="btn btn-primary" style="margin-top: 12px;">Optimize Storage</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="section">
+                <div class="header">
+                    <h2>Advanced Financial Analytics</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            📤 Export Data
+                        </button>
+                        <button class="btn btn-primary">
+                            📊 Custom Report
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>Efficiency Metrics</h3>
+                        <div class="chart-container">
+                            <canvas id="efficiencyChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Technology Investment ROI</h3>
+                        <div class="chart-container">
+                            <canvas id="techRoiChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>Cost per Developer</h3>
+                        <div class="cost-amount" style="font-size: 32px; color: var(--primary-color); margin: 16px 0; text-align: center;">$2,847</div>
+                        <p style="text-align: center; color: #6b7280;">Monthly average</p>
+                        <div class="cost-breakdown">
+                            <div class="cost-item">
+                                <h4>Tools & Licenses</h4>
+                                <div class="cost-amount">$890</div>
+                            </div>
+                            <div class="cost-item">
+                                <h4>Cloud Resources</h4>
+                                <div class="cost-amount">$1,240</div>
+                            </div>
+                            <div class="cost-item">
+                                <h4>Infrastructure</h4>
+                                <div class="cost-amount">$717</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Productivity Correlation</h3>
+                        <div class="chart-container">
+                            <canvas id="productivityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tax Assistant Section -->
+            <section id="taxes" class="section">
+                <div class="header">
+                    <h2>Tax Optimization Assistant</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            📊 Generate Report
+                        </button>
+                        <button class="btn btn-primary">
+                            📋 Tax Summary
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card metric-card">
+                        <div class="metric-icon savings">💰</div>
+                        <div class="metric-content">
+                            <h3>$34,592</h3>
+                            <div class="metric-label">Deductible Expenses</div>
+                            <div class="metric-change positive">2024 YTD</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon efficiency">📊</div>
+                        <div class="metric-content">
+                            <h3>$8,648</h3>
+                            <div class="metric-label">Estimated Tax Savings</div>
+                            <div class="metric-change positive">25% tax bracket</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon growth">📈</div>
+                        <div class="metric-content">
+                            <h3>247</h3>
+                            <div class="metric-label">Tracked Expenses</div>
+                            <div class="metric-change positive">Auto-categorized</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Tax-Deductible Categories</h3>
+                    <div class="cost-breakdown">
+                        <div class="cost-item">
+                            <h4>Software & Tools</h4>
+                            <div class="cost-amount">$14,250</div>
+                            <div class="cost-details">100% business use</div>
+                        </div>
+                        <div class="cost-item">
+                            <h4>Cloud Services</h4>
+                            <div class="cost-amount">$12,890</div>
+                            <div class="cost-details">Development infrastructure</div>
+                        </div>
+                        <div class="cost-item">
+                            <h4>Education & Training</h4>
+                            <div class="cost-amount">$3,450</div>
+                            <div class="cost-details">Professional development</div>
+                        </div>
+                        <div class="cost-item">
+                            <h4>Hardware & Equipment</h4>
+                            <div class="cost-amount">$4,002</div>
+                            <div class="cost-details">Depreciation & purchases</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section id="team" class="section">
+                <div class="header">
+                    <h2>Team Cost Management</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            📊 Team Analytics
+                        </button>
+                        <button class="btn btn-primary">
+                            👥 Add Member
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card metric-card">
+                        <div class="metric-icon cost">👥</div>
+                        <div class="metric-content">
+                            <h3>28</h3>
+                            <div class="metric-label">Team Members</div>
+                            <div class="metric-change positive">+3 this month</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon savings">💰</div>
+                        <div class="metric-content">
+                            <h3>$459</h3>
+                            <div class="metric-label">Cost per Member</div>
+                            <div class="metric-change negative">↓ 8% optimized</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon efficiency">📊</div>
+                        <div class="metric-content">
+                            <h3>89%</h3>
+                            <div class="metric-label">Resource Utilization</div>
+                            <div class="metric-change positive">↑ 12% improved</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Team Cost Breakdown</h3>
+                    <div class="chart-container">
+                        <canvas id="teamCostChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Cost Optimization Opportunities</h3>
+                    <div class="optimization-suggestions">
+                        <div class="suggestion-item">
+                            <h4>🔄 License Optimization</h4>
+                            <p>5 team members have unused premium licenses. Consider downgrading to basic plans.</p>
+                            <div class="savings-amount">Potential savings: $125/month</div>
+                        </div>
+                        <div class="suggestion-item">
+                            <h4>☁️ Shared Development Resources</h4>
+                            <p>Create shared development environments for similar projects to reduce individual costs.</p>
+                            <div class="savings-amount">Potential savings: $340/month</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vendors Section -->
+            <section id="vendors" class="section">
+                <div class="header">
+                    <h2>Vendor Management</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            📊 Vendor Analysis
+                        </button>
+                        <button class="btn btn-primary">
+                            🏢 Add Vendor
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card metric-card">
+                        <div class="metric-icon cost">🏢</div>
+                        <div class="metric-content">
+                            <h3>23</h3>
+                            <div class="metric-label">Active Vendors</div>
+                            <div class="metric-change positive">Consolidated from 31</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon savings">💰</div>
+                        <div class="metric-content">
+                            <h3>$2,340</h3>
+                            <div class="metric-label">Negotiated Savings</div>
+                            <div class="metric-change positive">This quarter</div>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-icon efficiency">📊</div>
+                        <div class="metric-content">
+                            <h3>4</h3>
+                            <div class="metric-label">Contracts Up for Renewal</div>
+                            <div class="metric-change warning">Next 30 days</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Vendor Performance & Costs</h3>
+                    <div class="subscription-list">
+                        <div class="subscription-item">
+                            <div class="subscription-info">
+                                <h4>Amazon Web Services</h4>
+                                <div class="subscription-details">Cloud Infrastructure • Contract ends Dec 2024</div>
+                                <span class="status-badge status-active">Excellent</span>
+                            </div>
+                            <div class="subscription-cost">
+                                <div class="amount">$8,247</div>
+                                <div class="period">/month</div>
+                            </div>
+                        </div>
+
+                        <div class="subscription-item">
+                            <div class="subscription-info">
+                                <h4>GitHub Enterprise</h4>
+                                <div class="subscription-details">Version Control & CI/CD • Contract ends Feb 2025</div>
+                                <span class="status-badge status-active">Excellent</span>
+                            </div>
+                            <div class="subscription-cost">
+                                <div class="amount">$840</div>
+                                <div class="period">/month</div>
+                            </div>
+                        </div>
+
+                        <div class="subscription-item">
+                            <div class="subscription-info">
+                                <h4>JetBrains</h4>
+                                <div class="subscription-details">Development Tools • Contract ends Mar 2024</div>
+                                <span class="status-badge status-warning">Renewal Due</span>
+                            </div>
+                            <div class="subscription-cost">
+                                <div class="amount">$495</div>
+                                <div class="period">/month</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Contract Renewal Recommendations</h3>
+                    <div class="optimization-suggestions">
+                        <div class="suggestion-item">
+                            <h4>💬 Negotiate JetBrains Renewal</h4>
+                            <p>Current contract expires next month. Usage analytics show opportunity for volume discount.</p>
+                            <div class="savings-amount">Potential savings: $89/month</div>
+                        </div>
+                        <div class="suggestion-item">
+                            <h4>🔄 Consolidate Monitoring Tools</h4>
+                            <p>You're using DataDog and New Relic. Consider consolidating to one platform.</p>
+                            <div class="savings-amount">Potential savings: $245/month</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Global variables for charts
+        let charts = {};
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            setupEventListeners();
+        });
+
+        // Chart initialization
+        function initializeCharts() {
+            // Cost Trend Chart
+            const costTrendCtx = document.getElementById('costTrendChart');
+            if (costTrendCtx) {
+                charts.costTrend = new Chart(costTrendCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                        datasets: [{
+                            label: 'Monthly Costs',
+                            data: [8500, 9200, 8800, 10200, 11500, 12100, 12847],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Cost Breakdown Chart
+            const costBreakdownCtx = document.getElementById('costBreakdownChart');
+            if (costBreakdownCtx) {
+                charts.costBreakdown = new Chart(costBreakdownCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Cloud Services', 'Software Licenses', 'Third-party APIs', 'Infrastructure', 'Other'],
+                        datasets: [{
+                            data: [6450, 3240, 1890, 890, 377],
+                            backgroundColor: [
+                                '#3b82f6',
+                                '#10b981',
+                                '#f59e0b',
+                                '#ef4444',
+                                '#8b5cf6'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // AWS Cost Chart
+            const awsCostCtx = document.getElementById('awsCostChart');
+            if (awsCostCtx) {
+                charts.awsCost = new Chart(awsCostCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                        datasets: [{
+                            label: 'AWS Costs',
+                            data: [1890, 2150, 2240, 1967],
+                            backgroundColor: '#f59e0b'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Azure Cost Chart
+            const azureCostCtx = document.getElementById('azureCostChart');
+            if (azureCostCtx) {
+                charts.azureCost = new Chart(azureCostCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                        datasets: [{
+                            label: 'Azure Costs',
+                            data: [745, 890, 823, 684],
+                            backgroundColor: '#3b82f6'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // GCP Cost Chart
+            const gcpCostCtx = document.getElementById('gcpCostChart');
+            if (gcpCostCtx) {
+                charts.gcpCost = new Chart(gcpCostCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                        datasets: [{
+                            label: 'GCP Costs',
+                            data: [334, 389, 367, 368],
+                            backgroundColor: '#10b981'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Project ROI Chart
+            const projectRoiCtx = document.getElementById('projectRoiChart');
+            if (projectRoiCtx) {
+                charts.projectRoi = new Chart(projectRoiCtx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [{
+                            label: 'Projects',
+                            data: [
+                                {x: 4892, y: 245, label: 'E-Commerce Platform'},
+                                {x: 2156, y: 189, label: 'Mobile App Redesign'},
+                                {x: 892, y: 0, label: 'AI Integration (Projected)'}
+                            ],
+                            backgroundColor: '#3b82f6',
+                            pointRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Total Cost ($)'
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'ROI (%)'
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Forecast Chart
+            const forecastCtx = document.getElementById('forecastChart');
+            if (forecastCtx) {
+                charts.forecast = new Chart(forecastCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+                        datasets: [{
+                            label: 'Predicted Costs',
+                            data: [13500, 14200, 14800, 15200, 15800, 15247, 15900],
+                            borderColor: '#8b5cf6',
+                            backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                            fill: true,
+                            tension: 0.4,
+                            borderDash: [5, 5]
+                        }, {
+                            label: 'Historical Costs',
+                            data: [8500, 9200, 8800, 10200, 11500, 12100, 12847],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            fill: false,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Seasonal Chart
+            const seasonalCtx = document.getElementById('seasonalChart');
+            if (seasonalCtx) {
+                charts.seasonal = new Chart(seasonalCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                        datasets: [{
+                            label: '2023',
+                            data: [85, 92, 88, 95],
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            pointBackgroundColor: '#10b981'
+                        }, {
+                            label: '2024',
+                            data: [90, 97, 93, 100],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            pointBackgroundColor: '#3b82f6'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Efficiency Chart
+            const efficiencyCtx = document.getElementById('efficiencyChart');
+            if (efficiencyCtx) {
+                charts.efficiency = new Chart(efficiencyCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                        datasets: [{
+                            label: 'Cost Efficiency %',
+                            data: [78, 82, 79, 85, 88, 90, 87],
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: {
+                                min: 70,
+                                max: 100,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Tech ROI Chart
+            const techRoiCtx = document.getElementById('techRoiChart');
+            if (techRoiCtx) {
+                charts.techRoi = new Chart(techRoiCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['IDE Tools', 'Cloud Platform', 'CI/CD', 'Monitoring', 'Testing'],
+                        datasets: [{
+                            label: 'ROI %',
+                            data: [245, 189, 167, 134, 98],
+                            backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#ef4444', '#8b5cf6']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Productivity Chart
+            const productivityCtx = document.getElementById('productivityChart');
+            if (productivityCtx) {
+                charts.productivity = new Chart(productivityCtx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [{
+                            label: 'Team Members',
+                            data: [
+                                {x: 2400, y: 85},
+                                {x: 2800, y: 92},
+                                {x: 3200, y: 88},
+                                {x: 2600, y: 78},
+                                {x: 3000, y: 94}
+                            ],
+                            backgroundColor: '#3b82f6',
+                            pointRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Monthly Cost per Developer ($)'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Productivity Score'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Team Cost Chart
+            const teamCostCtx = document.getElementById('teamCostChart');
+            if (teamCostCtx) {
+                charts.teamCost = new Chart(teamCostCtx, {
+                    type: 'horizontalBar',
+                    data: {
+                        labels: ['Frontend Team', 'Backend Team', 'DevOps Team', 'QA Team', 'Design Team'],
+                        datasets: [{
+                            label: 'Monthly Cost',
+                            data: [3450, 4200, 2890, 1980, 1350],
+                            backgroundColor: ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // Navigation functions
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked nav item
+            event.target.closest('.nav-item').classList.add('active');
+
+            // Add fade-in animation
+            document.getElementById(sectionId).classList.add('fade-in');
+            setTimeout(() => {
+                document.getElementById(sectionId).classList.remove('fade-in');
+            }, 500);
+
+            // Close mobile sidebar if open
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebar').classList.remove('open');
+            }
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function setupEventListeners() {
+            // Tab functionality
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    this.parentElement.querySelectorAll('.tab-button').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                });
+            });
+
+            // Button hover effects
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Card hover effects
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                    this.style.boxShadow = '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)';
+                });
+            });
+
+            // Responsive handling
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    document.getElementById('sidebar').classList.remove('open');
+                }
+            });
+        }
+
+        // Utility functions for real-world integration
+        function exportReport() {
+            alert('Exporting financial report... (This would generate a PDF/Excel file in a real implementation)');
+        }
+
+        function addExpense() {
+            alert('Opening expense entry form... (This would show a modal or navigate to an expense form)');
+        }
+
+        function syncAccounts() {
+            alert('Syncing cloud accounts... (This would trigger API calls to fetch latest billing data)');
+        }
+
+        function runOptimization() {
+            alert('Running cost optimization analysis... (This would execute optimization algorithms)');
+        }
+
+        // Simulated real-time updates
+        function simulateRealTimeUpdates() {
+            setInterval(() => {
+                // Update random metrics with small variations
+                const metrics = document.querySelectorAll('.metric-content h3');
+                metrics.forEach(metric => {
+                    const currentValue = parseFloat(metric.textContent.replace(/[^\d.]/g, ''));
+                    const variation = (Math.random() - 0.5) * 0.02; // ±1% variation
+                    const newValue = currentValue * (1 + variation);
+                    
+                    if (metric.textContent.includes('$')) {
+                        metric.textContent = '$' + Math.round(newValue).toLocaleString();
+                    } else if (metric.textContent.includes('%')) {
+                        metric.textContent = Math.round(newValue) + '%';
+                    } else {
+                        metric.textContent = Math.round(newValue).toLocaleString();
+                    }
+                });
+            }, 30000); // Update every 30 seconds
+        }
+
+        // Initialize real-time updates
+        simulateRealTimeUpdates();
+    </script>
+</body>
+</html>

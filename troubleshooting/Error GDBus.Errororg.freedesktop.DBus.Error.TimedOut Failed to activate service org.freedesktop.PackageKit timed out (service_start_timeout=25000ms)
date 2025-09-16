@@ -1,0 +1,13 @@
+To fix the `GDBus.Error:org.freedesktop.DBus.Error.TimedOut` issue related to `org.freedesktop.PackageKit` in WSL2 Ubuntu (where systemd and D-Bus often have issues), you can use this one-liner to disable `PackageKit` and avoid the timeout error:
+
+```bash
+sudo apt purge -y packagekit && echo "✔ PackageKit removed to avoid D-Bus timeout issue"
+```
+
+### Why this works:
+
+* WSL2 doesn't support `systemd` fully by default unless explicitly enabled.
+* `PackageKit` relies on D-Bus and systemd services which can hang or fail in WSL2.
+* Removing `packagekit` eliminates the dependency on a service that won't work properly in this environment.
+
+Let me know if you want a solution that enables `systemd` properly inside WSL2 instead.

@@ -1,0 +1,6 @@
+ sudo apt update && sudo apt install -y curl ca-certificates gnupg lsb-release && curl -fsSL https://get.docker.com | sudo sh && sudo usermod -aG docker "$USER" && sg docker -c 'docker run --rm -it --privileged \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$PWD":/workspace \
+  --entrypoint /bin/sh \
+  quay.io/singularity/singularity:v3.11.4 \
+  -c "singularity --help && exec /bin/sh"'

@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVault Pro - Digital Security Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0f62fe;
+            --primary-dark: #0043ce;
+            --secondary-color: #8a3ffc;
+            --success-color: #42be65;
+            --warning-color: #f1c21b;
+            --danger-color: #da1e28;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f4f4f4;
+            --bg-tertiary: #e0e0e0;
+            --text-primary: #161616;
+            --text-secondary: #525252;
+            --text-tertiary: #8d8d8d;
+            --border-color: #e0e0e0;
+            --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #161616;
+            --bg-secondary: #262626;
+            --bg-tertiary: #393939;
+            --text-primary: #ffffff;
+            --text-secondary: #c6c6c6;
+            --text-tertiary: #8d8d8d;
+            --border-color: #393939;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-primary);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.mobile-hidden {
+            transform: translateX(-100%);
+        }
+
+        .sidebar-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-section {
+            padding: 16px 0;
+        }
+
+        .nav-section-title {
+            padding: 8px 24px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            cursor: pointer;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-badge {
+            margin-left: auto;
+            background: var(--danger-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.sidebar-collapsed {
+            margin-left: 0;
+        }
+
+        .header {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        .search-bar {
+            position: relative;
+            width: 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px 12px 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-tertiary);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .security-score {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--success-color);
+            color: white;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--bg-secondary);
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .user-menu:hover {
+            background: var(--bg-secondary);
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Page Content */
+        .page-content {
+            padding: 24px;
+            max-width: 1200px;
+        }
+
+        .page-header {
+            margin-bottom: 32px;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .page-subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .card-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            line-height: 1;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .btn-danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--bg-primary);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .stat-trend {
+            margin-top: 8px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .trend-up {
+            color: var(--success-color);
+        }
+
+        .trend-down {
+            color: var(--danger-color);
+        }
+
+        /* Progress Bars */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 12px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        /* Password Items */
+        .password-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .password-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .password-item:hover {
+            box-shadow: var(--shadow-light);
+            transform: translateY(-1px);
+        }
+
+        .password-favicon {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .password-info {
+            flex: 1;
+        }
+
+        .password-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .password-email {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .password-strength {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 16px;
+        }
+
+        .strength-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+        }
+
+        .strength-weak .strength-indicator:nth-child(1) {
+            background: var(--danger-color);
+        }
+
+        .strength-medium .strength-indicator:nth-child(-n+2) {
+            background: var(--warning-color);
+        }
+
+        .strength-strong .strength-indicator {
+            background: var(--success-color);
+        }
+
+        /* Security Alerts */
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alert-danger {
+            background: rgba(218, 30, 40, 0.1);
+            border: 1px solid rgba(218, 30, 40, 0.2);
+            color: var(--danger-color);
+        }
+
+        .alert-warning {
+            background: rgba(241, 194, 27, 0.1);
+            border: 1px solid rgba(241, 194, 27, 0.2);
+            color: #b28600;
+        }
+
+        .alert-success {
+            background: rgba(66, 190, 101, 0.1);
+            border: 1px solid rgba(66, 190, 101, 0.2);
+            color: var(--success-color);
+        }
+
+        /* Biometric Setup */
+        .biometric-setup {
+            text-align: center;
+            padding: 32px;
+        }
+
+        .biometric-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.mobile-visible {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .search-bar {
+                width: 200px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .page-content {
+                padding: 16px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Custom Components */
+        .security-meter {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(15, 98, 254, 0.1), rgba(138, 63, 252, 0.1));
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .meter-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: conic-gradient(var(--success-color) 85%, var(--bg-secondary) 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .meter-circle::before {
+            content: '';
+            width: 44px;
+            height: 44px;
+            background: var(--bg-primary);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .meter-score {
+            position: relative;
+            z-index: 1;
+            font-weight: 700;
+            color: var(--success-color);
+        }
+
+        .meter-info h3 {
+            margin: 0 0 4px 0;
+            font-size: 18px;
+        }
+
+        .meter-info p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .tab-item {
+            padding: 12px 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .tab-item.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-primary);
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.2);
+        }
+
+        /* Hidden class for page routing */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">SV</div>
+                    SecureVault Pro
+                </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Overview</div>
+                <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                    <div class="nav-icon">🏠</div>
+                    Dashboard
+                </a>
+                <a href="#passwords" class="nav-item" data-page="passwords">
+                    <div class="nav-icon">🔑</div>
+                    Passwords
+                    <div class="nav-badge">5</div>
+                </a>
+                <a href="#security" class="nav-item" data-page="security">
+                    <div class="nav-icon">🛡️</div>
+                    Security Center
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Protection</div>
+                <a href="#identity" class="nav-item" data-page="identity">
+                    <div class="nav-icon">👤</div>
+                    Identity Shield
+                </a>
+                <a href="#monitoring" class="nav-item" data-page="monitoring">
+                    <div class="nav-icon">📊</div>
+                    Breach Monitor
+                    <div class="nav-badge">2</div>
+                </a>
+                <a href="#privacy" class="nav-item" data-page="privacy">
+                    <div class="nav-icon">🔒</div>
+                    Privacy Center
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Advanced</div>
+                <a href="#biometric" class="nav-item" data-page="biometric">
+                    <div class="nav-icon">👆</div>
+                    Biometric Auth
+                </a>
+                <a href="#family" class="nav-item" data-page="family">
+                    <div class="nav-icon">👨‍👩‍👧‍👦</div>
+                    Family & Teams
+                </a>
+                <a href="#education" class="nav-item" data-page="education">
+                    <div class="nav-icon">🎓</div>
+                    Security Training
+                </a>
+                <a href="#legacy" class="nav-item" data-page="legacy">
+                    <div class="nav-icon">📜</div>
+                    Digital Legacy
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Search passwords, sites, or security...">
+                        <div class="search-icon">🔍</div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="security-score">
+                        <span>🛡️</span>
+                        Security Score: 85/100
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">🌙</button>
+                    <div class="user-menu">
+                        <div class="user-avatar">JD</div>
+                        <span>John Doe</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Page -->
+            <div class="page active" id="dashboard">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Security Dashboard</h1>
+                        <p class="page-subtitle">Comprehensive overview of your digital security posture</p>
+                    </div>
+
+                    <div class="security-meter">
+                        <div class="meter-circle">
+                            <div class="meter-score">85</div>
+                        </div>
+                        <div class="meter-info">
+                            <h3>Excellent Security Health</h3>
+                            <p>Your security posture is strong. Consider enabling 2FA on remaining accounts.</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">247</div>
+                            <div class="stat-label">Passwords Secured</div>
+                            <div class="stat-trend trend-up">↗ +12 this month</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Weak Passwords</div>
+                            <div class="stat-trend trend-down">↘ -3 this month</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Breach Alerts</div>
+                            <div class="stat-trend trend-up">↗ New today</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">98%</div>
+                            <div class="stat-label">Privacy Score</div>
+                            <div class="stat-trend trend-up">↗ Excellent</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Recent Security Activity</h3>
+                                <button class="btn btn-secondary">View All</button>
+                            </div>
+                            <div class="card-content">
+                                <div class="alert alert-warning">
+                                    <span>⚠️</span>
+                                    <div>
+                                        <strong>Weak password detected</strong><br>
+                                        Update your Netflix password for better security
+                                    </div>
+                                </div>
+                                <div class="alert alert-success">
+                                    <span>✅</span>
+                                    <div>
+                                        <strong>2FA enabled</strong><br>
+                                        Two-factor authentication activated for GitHub
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger">
+                                    <span>🚨</span>
+                                    <div>
+                                        <strong>Data breach detected</strong><br>
+                                        Adobe breach affects your account - password changed
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Quick Actions</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <button class="btn btn-primary">🔐 Generate Secure Password</button>
+                                    <button class="btn btn-primary">🔍 Run Security Scan</button>
+                                    <button class="btn btn-secondary">👆 Setup Biometric Auth</button>
+                                    <button class="btn btn-secondary">📊 Download Security Report</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Passwords Page -->
+            <div class="page" id="passwords">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Password Manager</h1>
+                        <p class="page-subtitle">Manage and secure all your passwords with military-grade encryption</p>
+                    </div>
+
+                    <div class="grid grid-2" style="margin-bottom: 24px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Password Generator</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="form-group">
+                                    <label class="form-label">Generated Password</label>
+                                    <div style="display: flex; gap: 8px;">
+                                        <input type="text" class="form-input" value="Kx9#mP$7nQ2@wR8%" readonly>
+                                        <button class="btn btn-secondary">📋</button>
+                                        <button class="btn btn-primary">🔄</button>
+                                    </div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                    <div class="form-group">
+                                        <label class="form-label">Length: 16</label>
+                                        <input type="range" min="8" max="64" value="16" style="width: 100%;">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Entropy: 84 bits</label>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 84%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Password Health</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                                    <div style="flex: 1;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                            <span>Strong</span>
+                                            <span style="color: var(--success-color); font-weight: 600;">189</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 76%; background: var(--success-color);"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                                    <div style="flex: 1;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                            <span>Medium</span>
+                                            <span style="color: var(--warning-color); font-weight: 600;">53</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 21%; background: var(--warning-color);"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 16px;">
+                                    <div style="flex: 1;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                            <span>Weak</span>
+                                            <span style="color: var(--danger-color); font-weight: 600;">5</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 3%; background: var(--danger-color);"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Your Passwords</h3>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn btn-secondary">🔍 Search</button>
+                                <button class="btn btn-primary">+ Add Password</button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="password-list">
+                                <div class="password-item">
+                                    <div class="password-favicon">G</div>
+                                    <div class="password-info">
+                                        <div class="password-title">Google</div>
+                                        <div class="password-email">john.doe@gmail.com</div>
+                                    </div>
+                                    <div class="password-strength strength-strong">
+                                        <div class="strength-indicator"></div>
+                                        <div class="strength-indicator"></div>
+                                        <div class="strength-indicator"></div>
+                                        <span style="margin-left: 8px; font-size: 12px; color: var(--success-color);">Strong</span>
+                                    </div>
+                                </div>
+
+                                <div class="password-item">
+                                    <div class="password-favicon">🏦</div>
+                                    <div class="password-info">
+                                        <div class="password-title">Bank of America</div>
+                                        <div class="password-email">john.doe@gmail.com</div>
+                                    </div>
+                                    <div class="password-strength strength-strong">
+                                        <div class="strength-indicator"></div>
+                                        <div class="strength-indicator"></div>
+                                        <div class="strength-indicator"></div>
+                                        <span style="margin-left: 8px; font-size: 12px; color: var(--success-color);">Strong</span>
+                                    </div>
+                                </div>
+
+                                <div class="password-item">
+                                    <div class="password-favicon">N</div>
+                                    <div class="password-info">
+                                        <div class="password-title">Netflix</div>
+                                        <div class="password-email">john.doe@gmail.com</div>
+                                    </div>
+                                    <div class="password-strength strength-weak">
+                                        <div class="strength-indicator"></div>
+                                        <div class="strength-indicator"></div>
+                                        <div class="strength-indicator"></div>
+                                        <span style="margin-left: 8px; font-size: 12px; color: var(--danger-color);">Weak</span>
+                                    </div>
+                                </div>
+
+                                <div class="password-item">
+                                    <div class="password-favicon">A</div>
+                                    <div class="password-info">
+                                        <div class="password-title">Amazon</div>
+                                        <div class="password-email">john.doe@gmail.com</div>
+                                    </div>
+                                    <div class="password-strength strength-medium">
+                                        <div class="strength-indicator"></div>
+                                        <div class="strength-indicator"></div>
+                                        <div class="strength-indicator"></div>
+                                        <span style="margin-left: 8px; font-size: 12px; color: var(--warning-color);">Medium</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Page -->
+            <div class="page" id="security">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Security Center</h1>
+                        <p class="page-subtitle">Real-time monitoring and advanced security controls</p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">24/7</div>
+                            <div class="stat-label">Active Monitoring</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Suspicious Activity</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Protected Devices</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">2FA</div>
+                            <div class="stat-label">Enabled Accounts</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Device Security</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">MacBook Pro</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Last active: 2 minutes ago</div>
+                                        </div>
+                                        <div style="color: var(--success-color);">✅ Trusted</div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">iPhone 15 Pro</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Last active: 1 hour ago</div>
+                                        </div>
+                                        <div style="color: var(--success-color);">✅ Trusted</div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">Chrome (Unknown Location)</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Last active: 3 days ago</div>
+                                        </div>
+                                        <div style="color: var(--warning-color);">⚠️ Review</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Security Events</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border-color);">
+                                        <div style="color: var(--success-color);">🛡️</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-size: 14px;">Successful login from trusted device</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">2 minutes ago</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border-color);">
+                                        <div style="color: var(--warning-color);">⚠️</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-size: 14px;">Login from new location detected</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">3 days ago</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 8px 0;">
+                                        <div style="color: var(--success-color);">✅</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-size: 14px;">2FA verification successful</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">1 week ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Identity Page -->
+            <div class="page" id="identity">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Identity Shield</h1>
+                        <p class="page-subtitle">Comprehensive identity monitoring and protection</p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-header">
+                            <h3 class="card-title">Identity Health Score</h3>
+                            <button class="btn btn-primary">Run Full Scan</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="security-meter">
+                                <div class="meter-circle">
+                                    <div class="meter-score">92</div>
+                                </div>
+                                <div class="meter-info">
+                                    <h3>Excellent Identity Protection</h3>
+                                    <p>Your personal information is well protected across the web. No recent exposures detected.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Dark Web Monitoring</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="text-align: center; padding: 20px;">
+                                    <div style="font-size: 48px; color: var(--success-color); margin-bottom: 16px;">🛡️</div>
+                                    <div style="font-size: 18px; font-weight: 600; color: var(--success-color);">All Clear</div>
+                                    <div style="color: var(--text-secondary); margin-top: 8px;">No personal data found on dark web</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Credit Monitoring</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="text-align: center; padding: 20px;">
+                                    <div style="font-size: 48px; color: var(--success-color); margin-bottom: 16px;">📊</div>
+                                    <div style="font-size: 18px; font-weight: 600;">Score: 785</div>
+                                    <div style="color: var(--success-color); margin-top: 8px;">Excellent Credit Health</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Social Media Privacy</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="text-align: center; padding: 20px;">
+                                    <div style="font-size: 48px; color: var(--warning-color); margin-bottom: 16px;">🔍</div>
+                                    <div style="font-size: 18px; font-weight: 600;">3 Recommendations</div>
+                                    <div style="color: var(--text-secondary); margin-top: 8px;">Privacy settings need review</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monitoring Page -->
+            <div class="page" id="monitoring">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Breach Monitor</h1>
+                        <p class="page-subtitle">Real-time breach detection and impact analysis</p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Breach Alerts</h3>
+                            <button class="btn btn-secondary">View History</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="alert alert-danger">
+                                <span>🚨</span>
+                                <div>
+                                    <strong>Adobe Data Breach - HIGH RISK</strong><br>
+                                    Your email and password were exposed. We've automatically updated your password.
+                                    <div style="margin-top: 8px;">
+                                        <button class="btn btn-danger">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert alert-warning">
+                                <span>⚠️</span>
+                                <div>
+                                    <strong>LastPass Security Incident - MEDIUM RISK</strong><br>
+                                    Encrypted vault data was accessed. Your vault remains secure due to strong master password.
+                                    <div style="margin-top: 8px;">
+                                        <button class="btn btn-secondary">Review Impact</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Monitoring Coverage</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <div>
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                            <span>Email Addresses</span>
+                                            <span style="color: var(--success-color);">3 monitored</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                            <span>Phone Numbers</span>
+                                            <span style="color: var(--success-color);">2 monitored</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                            <span>Credit Cards</span>
+                                            <span style="color: var(--success-color);">4 monitored</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Breach Timeline</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 12px; height: 12px; background: var(--danger-color); border-radius: 50%;"></div>
+                                        <div>
+                                            <div style="font-weight: 600;">Adobe Breach</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Today</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 12px; height: 12px; background: var(--warning-color); border-radius: 50%;"></div>
+                                        <div>
+                                            <div style="font-weight: 600;">LastPass Incident</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">2 days ago</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 12px; height: 12px; background: var(--success-color); border-radius: 50%;"></div>
+                                        <div>
+                                            <div style="font-weight: 600;">No Issues</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Last 30 days</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Page -->
+            <div class="page" id="privacy">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Privacy Center</h1>
+                        <p class="page-subtitle">Comprehensive privacy control and optimization</p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-header">
+                            <h3 class="card-title">Privacy Health Score</h3>
+                            <button class="btn btn-primary">Optimize Privacy</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="security-meter">
+                                <div class="meter-circle" style="background: conic-gradient(var(--success-color) 98%, var(--bg-secondary) 0);">
+                                    <div class="meter-score">98</div>
+                                </div>
+                                <div class="meter-info">
+                                    <h3>Outstanding Privacy Protection</h3>
+                                    <p>Your privacy settings are optimized across all platforms. Minimal data exposure detected.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Data Broker Removal</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="margin-bottom: 16px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span>Removal Progress</span>
+                                        <span>47/52 sites</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 8px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span>Whitepages</span>
+                                        <span style="color: var(--success-color);">✅ Removed</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span>Spokeo</span>
+                                        <span style="color: var(--success-color);">✅ Removed</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span>BeenVerified</span>
+                                        <span style="color: var(--warning-color);">🔄 In Progress</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Social Media Privacy</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">Facebook</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Profile visibility: Friends only</div>
+                                        </div>
+                                        <div style="color: var(--success-color);">🔒 Secure</div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">Instagram</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Account: Private</div>
+                                        </div>
+                                        <div style="color: var(--success-color);">🔒 Secure</div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">LinkedIn</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Profile: Public with limits</div>
+                                        </div>
+                                        <div style="color: var(--warning-color);">⚠️ Review</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biometric Page -->
+            <div class="page" id="biometric">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Biometric Authentication</h1>
+                        <p class="page-subtitle">Advanced biometric security for seamless access</p>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Facial Recognition</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="biometric-setup">
+                                    <div class="biometric-icon">👤</div>
+                                    <h4>Face ID Setup</h4>
+                                    <p style="color: var(--text-secondary); margin: 16px 0;">Secure access using facial recognition technology</p>
+                                    <button class="btn btn-primary">Setup Face ID</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Fingerprint</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="biometric-setup">
+                                    <div class="biometric-icon">👆</div>
+                                    <h4>Touch ID Configured</h4>
+                                    <p style="color: var(--success-color); margin: 16px 0;">✅ Active and working</p>
+                                    <button class="btn btn-secondary">Manage Fingerprints</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Voice Recognition</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="biometric-setup">
+                                    <div class="biometric-icon">🎤</div>
+                                    <h4>Voice Authentication</h4>
+                                    <p style="color: var(--text-secondary); margin: 16px 0;">Secure access using voice patterns</p>
+                                    <button class="btn btn-primary">Setup Voice ID</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Behavioral Biometrics</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="biometric-setup">
+                                    <div class="biometric-icon">⌨️</div>
+                                    <h4>Typing Pattern Analysis</h4>
+                                    <p style="color: var(--warning-color); margin: 16px 0;">🔄 Learning your patterns</p>
+                                    <button class="btn btn-secondary">View Progress</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Family Page -->
+            <div class="page" id="family">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Family & Teams</h1>
+                        <p class="page-subtitle">Collaborative security management for families and organizations</p>
+                    </div>
+
+                    <div class="grid grid-2" style="margin-bottom: 24px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Family Members</h3>
+                                <button class="btn btn-primary">+ Invite Member</button>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div class="user-avatar" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">JD</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">John Doe (You)</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Administrator</div>
+                                        </div>
+                                        <div style="color: var(--success-color);">Admin</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div class="user-avatar" style="background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));">SD</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">Sarah Doe</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Full Access</div>
+                                        </div>
+                                        <div style="color: var(--primary-color);">Member</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div class="user-avatar" style="background: linear-gradient(135deg, var(--warning-color), var(--primary-color));">ED</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">Emma Doe</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">Limited Access</div>
+                                        </div>
+                                        <div style="color: var(--text-tertiary);">Child</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Shared Vaults</h3>
+                                <button class="btn btn-primary">+ Create Vault</button>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div style="font-size: 20px;">👨‍👩‍👧‍👦</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">Family Shared</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">32 passwords • 3 members</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div style="font-size: 20px;">🏠</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">Home & Utilities</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">18 passwords • 2 members</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div style="font-size: 20px;">🎮</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">Kids Entertainment</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary);">12 passwords • 1 member</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Emergency Access</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="grid grid-2">
+                                <div>
+                                    <h4 style="margin-bottom: 16px;">Trusted Contacts</h4>
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border-color);">
+                                            <span>Sarah Doe (Spouse)</span>
+                                            <span style="color: var(--success-color);">Active</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
+                                            <span>Michael Smith (Brother)</span>
+                                            <span style="color: var(--success-color);">Active</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 16px;">Access Conditions</h4>
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <div style="padding: 8px 0; border-bottom: 1px solid var(--border-color);">
+                                            <div style="font-weight: 600;">Waiting Period</div>
+                                            <div style="color: var(--text-secondary); font-size: 14px;">72 hours after request</div>
+                                        </div>
+                                        <div style="padding: 8px 0;">
+                                            <div style="font-weight: 600;">Notification Method</div>
+                                            <div style="color: var(--text-secondary); font-size: 14px;">Email + SMS verification</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Page -->
+            <div class="page" id="education">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Security Training</h1>
+                        <p class="page-subtitle">Interactive security education and best practices</p>
+                    </div>
+
+                    <div class="grid grid-3" style="margin-bottom: 24px;">
+                        <div class="stat-card">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Courses Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">89%</div>
+                            <div class="stat-label">Knowledge Score</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">Gold</div>
+                            <div class="stat-label">Security Badge</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Available Courses</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div style="font-size: 24px;">🎯</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">Phishing Defense Mastery</div>
+                                            <div style="color: var(--text-secondary); font-size: 14px;">Learn to identify and avoid phishing attacks</div>
+                                            <div class="progress-bar" style="margin-top: 8px;">
+                                                <div class="progress-fill" style="width: 75%;"></div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary">Continue</button>
+                                    </div>
+
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div style="font-size: 24px;">🔐</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">Password Security Fundamentals</div>
+                                            <div style="color: var(--text-secondary); font-size: 14px;">Best practices for creating strong passwords</div>
+                                            <div style="color: var(--success-color); font-size: 14px; margin-top: 4px;">✅ Completed</div>
+                                        </div>
+                                        <button class="btn btn-secondary">Review</button>
+                                    </div>
+
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div style="font-size: 24px;">📱</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">Mobile Security Essentials</div>
+                                            <div style="color: var(--text-secondary); font-size: 14px;">Secure your mobile devices and apps</div>
+                                        </div>
+                                        <button class="btn btn-primary">Start</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Phishing Simulation</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="text-align: center; padding: 20px;">
+                                    <div style="font-size: 48px; margin-bottom: 16px;">🎣</div>
+                                    <h4>Weekly Phishing Test</h4>
+                                    <p style="color: var(--text-secondary); margin: 16px 0;">Test your ability to spot suspicious emails</p>
+                                    <div style="display: flex; justify-content: space-between; margin: 16px 0; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <span>Last Score:</span>
+                                        <span style="color: var(--success-color); font-weight: 600;">9/10</span>
+                                    </div>
+                                    <button class="btn btn-primary">Take Test</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legacy Page -->
+            <div class="page" id="legacy">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1 class="page-title">Digital Legacy</h1>
+                        <p class="page-subtitle">Secure management of your digital assets and inheritance</p>
+                    </div>
+
+                    <div class="grid grid-2" style="margin-bottom: 24px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Digital Asset Inventory</h3>
+                                <button class="btn btn-primary">+ Add Asset</button>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">Bank Accounts</div>
+                                            <div style="color: var(--text-secondary); font-size: 12px;">3 accounts catalogued</div>
+                                        </div>
+                                        <div style="color: var(--success-color);">✅</div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">Social Media Accounts</div>
+                                            <div style="color: var(--text-secondary); font-size: 12px;">8 platforms documented</div>
+                                        </div>
+                                        <div style="color: var(--success-color);">✅</div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">Digital Assets</div>
+                                            <div style="color: var(--text-secondary); font-size: 12px;">Photos, documents, crypto</div>
+                                        </div>
+                                        <div style="color: var(--warning-color);">⚠️</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Beneficiary Access</h3>
+                            </div>
+                            <div class="card-content">
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">Sarah Doe</div>
+                                            <div style="color: var(--text-secondary); font-size: 12px;">Primary Beneficiary</div>
+                                        </div>
+                                        <div style="color: var(--success-color);">Full Access</div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">Emma Doe</div>
+                                            <div style="color: var(--text-secondary); font-size: 12px;">Secondary Beneficiary</div>
+                                        </div>
+                                        <div style="color: var(--primary-color);">Limited Access</div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                        <div>
+                                            <div style="font-weight: 600;">Verification Period</div>
+                                            <div style="color: var(--text-secondary); font-size: 12px;">180 days waiting period</div>
+                                        </div>
+                                        <div style="color: var(--text-tertiary);">Configured</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Legacy Instructions</h3>
+                            <button class="btn btn-secondary">Edit Instructions</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="tab-nav">
+                                <button class="tab-item active" data-tab="financial">Financial</button>
+                                <button class="tab-item" data-tab="personal">Personal</button>
+                                <button class="tab-item" data-tab="legal">Legal</button>
+                            </div>
+                            <div class="tab-content active" id="financial">
+                                <p>Detailed instructions for managing financial accounts, including bank accounts, investment portfolios, and cryptocurrency holdings. Contact financial advisor John Smith at...</p>
+                            </div>
+                            <div class="tab-content" id="personal">
+                                <p>Personal messages and instructions for family members regarding social media accounts, personal files, and digital memories...</p>
+                            </div>
+                            <div class="tab-content" id="legal">
+                                <p>Legal documentation and important papers location. Contact attorney Jane Wilson for estate matters...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('mobile-visible');
+            sidebar.classList.toggle('mobile-hidden');
+        });
+
+        // Navigation
+        const navItems = document.querySelectorAll('.nav-item');
+        const pages = document.querySelectorAll('.page');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all nav items and pages
+                navItems.forEach(nav => nav.classList.remove('active'));
+                pages.forEach(page => page.classList.remove('active'));
+                
+                // Add active class to clicked nav item
+                item.classList.add('active');
+                
+                // Show corresponding page
+                const pageId = item.getAttribute('data-page');
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                }
+
+                // Close mobile menu if open
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('mobile-visible');
+                    sidebar.classList.add('mobile-hidden');
+                }
+            });
+        });
+
+        // Tab Navigation
+        const tabItems = document.querySelectorAll('.tab-item');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                tabItems.forEach(tab => tab.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                item.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = item.getAttribute('data-tab');
+                const targetContent = document.getElementById(tabId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+
+        // Password Generator
+        function generatePassword() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+            let password = '';
+            for (let i = 0; i < 16; i++) {
+                password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return password;
+        }
+
+        // Add some interactivity to buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-primary') && e.target.textContent.includes('Generate')) {
+                const passwordInput = document.querySelector('input[value="Kx9#mP$7nQ2@wR8%"]');
+                if (passwordInput) {
+                    passwordInput.value = generatePassword();
+                }
+            }
+        });
+
+        // Responsive behavior
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                sidebar.classList.remove('mobile-visible', 'mobile-hidden');
+                mainContent.classList.remove('sidebar-collapsed');
+            } else {
+                sidebar.classList.add('mobile-hidden');
+                mainContent.classList.add('sidebar-collapsed');
+            }
+        });
+
+        // Initialize responsive state
+        if (window.innerWidth <= 768) {
+            sidebar.classList.add('mobile-hidden');
+            mainContent.classList.add('sidebar-collapsed');
+        }
+
+        // Simulated real-time updates
+        setInterval(() => {
+            // Update security score randomly
+            const scoreElements = document.querySelectorAll('.meter-score');
+            scoreElements.forEach(el => {
+                const currentScore = parseInt(el.textContent);
+                const newScore = Math.max(80, Math.min(100, currentScore + (Math.random() - 0.5) * 2));
+                el.textContent = Math.round(newScore);
+            });
+        }, 30000);
+
+        // Add loading states and animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in');
+            });
+        });
+    </script>
+</body>
+</html>

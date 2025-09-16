@@ -1,0 +1,1 @@
+nvm23 && npm install -g 8base-cli && 8base login && 8base init my-app

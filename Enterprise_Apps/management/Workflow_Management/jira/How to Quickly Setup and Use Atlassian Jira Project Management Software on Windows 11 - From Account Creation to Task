@@ -1,0 +1,26 @@
+# **Complete Step-by-Step Tutorial: How to Quickly Setup and Use Atlassian Jira Project Management Software on Windows 11 - From Account Creation to Task Management in Under 10 Minutes**
+
+## **Phase 1: Account Setup (3 minutes)**
+1. Open any browser (Chrome, Edge, Firefox)
+2. Navigate to **atlassian.com/software/jira**
+3. Click **"Get it free"** 
+4. Enter your email address → Click **"Sign up"**
+5. Check email → Click verification link
+6. Create password → Enter your name
+
+## **Phase 2: Jira Configuration (2 minutes)**
+1. Choose **"Jira Software"** (not Service Management)
+2. Name your site: **yourname.atlassian.net**
+3. **Template Selection: Choose KANBAN** (blue highlighted option)
+   - Marked "POPULAR" - best for beginners
+   - Simple workflow visualization
+4. Click **"Next"** → Name your first project
+5. Click **"Create project"**
+
+## **Phase 3: Basic Usage (5 minutes)**
+1. **Create Tasks:** Click **"Create"** → Add issue title/description
+2. **Organize Work:** Drag cards between "To Do" → "In Progress" → "Done"
+3. **Add Team:** Click **"Project settings"** → **"People"** → Invite members
+4. **Track Progress:** Use **"Reports"** tab for insights
+
+**You're now ready to manage projects in Jira!**

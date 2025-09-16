@@ -1,0 +1,242 @@
+[2025-09-04 02:14:42] Starting automated Windows 11 upgrade process
+[2025-09-04 02:14:42] ISO file found: F:\isos\win11latest.iso
+[2025-09-04 02:14:42] Mounting ISO using multiple fallback methods...
+[2025-09-04 02:14:42] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-04 02:14:51] Method 2: Using Shell.Application COM object
+[2025-09-04 02:14:53] Mounting win11latest.iso from F:\isos
+[2025-09-04 02:14:58] Checking drive: D:\
+[2025-09-04 02:14:58] Found Windows setup at drive: D
+[2025-09-04 02:14:58] ISO successfully available at drive: D:
+[2025-09-04 02:14:58] Found setup.exe at: D:\setup.exe
+[2025-09-04 02:14:58] ERROR: Could not find a part of the path 'F:\Downloads\upgrade\PostRebootCleanup.ps1'.
+[2025-09-04 02:14:58] Stack trace: at <ScriptBlock>, F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\AutoUpgradeWindows11.ps1: line 368
+at upgrade, C:\Users\micha\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1: line 8316
+at <ScriptBlock>, <No file>: line 1
+[2025-09-04 02:14:58] Could not re-enable Windows Defender
+[2025-09-04 02:14:58] Unmounting ISO...
+[2025-09-04 02:14:58] ISO unmounted using Shell.Application
+[2025-09-04 02:16:06] Starting automated Windows 11 upgrade process
+[2025-09-04 02:16:06] ISO file found: F:\isos\win11latest.iso
+[2025-09-04 02:16:06] Mounting ISO using multiple fallback methods...
+[2025-09-04 02:16:06] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-04 02:16:13] Method 2: Using Shell.Application COM object
+[2025-09-04 02:16:15] Mounting win11latest.iso from F:\isos
+[2025-09-04 02:16:20] Checking drive: I:\
+[2025-09-04 02:16:20] Found Windows setup at drive: I
+[2025-09-04 02:16:20] ISO successfully available at drive: I:
+[2025-09-04 02:16:20] Found setup.exe at: I:\setup.exe
+[2025-09-04 02:16:20] ERROR: Could not find a part of the path 'F:\Downloads\upgrade\PostRebootCleanup.ps1'.
+[2025-09-04 02:16:20] Stack trace: at <ScriptBlock>, F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\AutoUpgradeWindows11.ps1: line 368
+at upgrade, C:\Users\micha\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1: line 8316
+at <ScriptBlock>, <No file>: line 1
+[2025-09-04 02:16:20] Could not re-enable Windows Defender
+[2025-09-04 02:16:20] Unmounting ISO...
+[2025-09-04 02:16:20] ISO unmounted using Shell.Application
+[2025-09-04 02:17:54] Starting automated Windows 11 upgrade process
+[2025-09-04 02:17:54] ISO file found: F:\isos\win11latest.iso
+[2025-09-04 02:17:54] Mounting ISO using multiple fallback methods...
+[2025-09-04 02:17:54] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-04 02:18:01] Method 2: Using Shell.Application COM object
+[2025-09-04 02:18:03] Mounting win11latest.iso from F:\isos
+[2025-09-04 02:18:08] Checking drive: D:\
+[2025-09-04 02:18:08] Found Windows setup at drive: D
+[2025-09-04 02:18:08] ISO successfully available at drive: D:
+[2025-09-04 02:18:08] Found setup.exe at: D:\setup.exe
+[2025-09-04 02:18:08] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-04 02:18:08] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-04 02:18:08] Scheduled task created successfully
+[2025-09-04 02:18:08] Applying performance optimizations...
+[2025-09-04 02:18:08] Set high performance power plan
+[2025-09-04 02:18:08] Could not disable Windows Defender (may require manual intervention)
+[2025-09-04 02:18:09] Stopped service: wuauserv
+[2025-09-04 02:18:10] Stopped service: BITS
+[2025-09-04 02:18:10] Stopped service: CryptSvc
+[2025-09-04 02:18:10] Stopped service: TrustedInstaller
+[2025-09-04 02:18:10] Starting Windows 11 setup with maximum automation...
+[2025-09-04 02:18:10] Created setup logs directory
+[2025-09-04 02:18:10] Preparing to launch Windows 11 setup...
+[2025-09-04 02:18:10] Executing setup with arguments: /auto upgrade /quiet /norestart /compat ignorewarning
+[2025-09-04 02:18:10] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-04 02:18:10] You may see a setup window appear, but no interaction is required.
+[2025-09-04 02:18:10] Setup process started with PID: 10500
+[2025-09-04 02:18:10] Monitoring setup progress...
+[2025-09-04 02:18:40] Setup still running... (0.5 minutes elapsed)
+[2025-09-04 02:18:40] Setup process completed with exit code: 0
+[2025-09-04 02:18:40] Setup completed successfully.
+[2025-09-04 02:18:40] Scheduling system restart in 60 seconds...
+[2025-09-04 02:18:40] Unmounting ISO...
+[2025-09-04 02:18:40] ISO unmounted using Shell.Application
+[2025-09-04 02:18:42] Automated upgrade script completed. System will restart in 60 seconds to continue the upgrade process.
+[2025-09-04 02:18:42] After restart, Windows 11 setup will continue automatically.
+[2025-09-04 02:18:42] Once the upgrade is complete, the system will restart again and then run DISM cleanup and install all available Windows Updates.
+[2025-09-11 10:01:28] Starting automated Windows 11 upgrade process
+[2025-09-11 10:01:28] ERROR: ISO file not found at: F:\isos\win11latest.iso
+[2025-09-11 10:01:28] Stack trace: at <ScriptBlock>, F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\AutoUpgradeWindows11.ps1: line 38
+at upgrade, C:\Users\micha\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1: line 8324
+at <ScriptBlock>, <No file>: line 1
+[2025-09-11 10:01:28] Could not re-enable Windows Defender
+[2025-09-11 10:03:26] Starting automated Windows 11 upgrade process
+[2025-09-11 10:03:26] ERROR: ISO file not found at: F:\isos\win11latest.iso
+[2025-09-11 10:03:26] Stack trace: at <ScriptBlock>, F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\AutoUpgradeWindows11.ps1: line 38
+at upgrade, C:\Users\micha\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1: line 8324
+at <ScriptBlock>, <No file>: line 1
+[2025-09-11 10:03:26] Could not re-enable Windows Defender
+[2025-09-11 17:09:30] Starting automated Windows 11 upgrade process
+[2025-09-11 17:09:30] ISO file found: F:\isos\windows.iso
+[2025-09-11 17:09:30] Mounting ISO using multiple fallback methods...
+[2025-09-11 17:09:30] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-11 17:09:40] Checking drive: E:\
+[2025-09-11 17:09:40] Found Windows setup at drive: E
+[2025-09-11 17:09:40] ISO successfully available at drive: E:
+[2025-09-11 17:09:40] Found setup.exe at: E:\setup.exe
+[2025-09-11 17:09:40] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-11 17:09:40] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-11 17:09:42] Scheduled task created successfully
+[2025-09-11 17:09:42] Applying performance optimizations...
+[2025-09-11 17:09:43] Set high performance power plan
+[2025-09-11 17:09:43] Could not disable Windows Defender (may require manual intervention)
+[2025-09-11 17:09:44] Stopped service: wuauserv
+[2025-09-11 17:09:44] Stopped service: BITS
+[2025-09-11 17:09:45] Stopped service: CryptSvc
+[2025-09-11 17:09:45] Stopped service: TrustedInstaller
+[2025-09-11 17:09:45] Starting Windows 11 setup with maximum automation...
+[2025-09-11 17:09:45] Created setup logs directory
+[2025-09-11 17:09:45] Preparing to launch Windows 11 setup...
+[2025-09-11 17:09:45] Executing setup with arguments: /auto upgrade /quiet /norestart /compat ignorewarning
+[2025-09-11 17:09:45] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-11 17:09:45] You may see a setup window appear, but no interaction is required.
+[2025-09-11 17:09:46] Setup process started with PID: 73536
+[2025-09-11 17:09:46] Monitoring setup progress...
+[2025-09-11 17:10:16] Setup still running... (0.5 minutes elapsed)
+[2025-09-11 17:10:46] Setup still running... (1 minutes elapsed)
+[2025-09-11 17:10:46] Setup process completed with exit code: 0
+[2025-09-11 17:10:46] Setup completed successfully.
+[2025-09-11 17:10:46] Scheduling system restart in 60 seconds...
+[2025-09-11 17:10:46] Unmounting ISO...
+[2025-09-11 17:10:47] ISO unmounted using Shell.Application
+[2025-09-11 17:10:49] Automated upgrade script completed. System will restart in 60 seconds to continue the upgrade process.
+[2025-09-11 17:10:49] After restart, Windows 11 setup will continue automatically.
+[2025-09-11 17:10:49] Once the upgrade is complete, the system will restart again and then run DISM cleanup and install all available Windows Updates.
+[2025-09-11 17:21:26] Starting automated Windows 11 upgrade process
+[2025-09-11 17:21:26] Checking Windows 11 system requirements...
+[2025-09-11 17:21:27] System meets Windows 11 upgrade requirements
+[2025-09-11 17:21:27] ISO file found: F:\isos\windows.iso
+[2025-09-11 17:21:27] Mounting ISO using multiple fallback methods...
+[2025-09-11 17:21:27] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-11 17:21:36] Checking drive: E:\
+[2025-09-11 17:21:36] Found Windows setup at drive: E
+[2025-09-11 17:21:36] ISO successfully available at drive: E:
+[2025-09-11 17:21:36] Found setup.exe at: E:\setup.exe
+[2025-09-11 17:21:36] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-11 17:21:37] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-11 17:21:37] Scheduled task created successfully
+[2025-09-11 17:21:37] Applying performance optimizations...
+[2025-09-11 17:21:37] Set high performance power plan
+[2025-09-11 17:21:37] Could not disable Windows Defender (may require manual intervention)
+[2025-09-11 17:21:37] Stopped service: wuauserv
+[2025-09-11 17:21:38] Stopped service: BITS
+[2025-09-11 17:21:39] Stopped service: CryptSvc
+[2025-09-11 17:21:39] Stopped service: TrustedInstaller
+[2025-09-11 17:21:39] Starting Windows 11 setup with maximum automation...
+[2025-09-11 17:21:39] Created setup logs directory
+[2025-09-11 17:21:39] Preparing to launch Windows 11 setup...
+[2025-09-11 17:21:39] Executing setup with arguments: /auto upgrade /quiet /noreboot /compat ignorewarning /migrate drivers /copylogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs
+[2025-09-11 17:21:39] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-11 17:21:39] Setup will run completely in the background with no user interaction required.
+[2025-09-11 17:21:39] Launching Windows 11 setup with arguments: /auto upgrade /quiet /noreboot /compat ignorewarning /migrate drivers /copylogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs
+[2025-09-11 17:21:39] Setup process started with PID: 18224
+[2025-09-11 17:21:39] Windows 11 upgrade is now running in the background.
+[2025-09-11 17:21:39] The system will automatically restart when needed to continue the upgrade process.
+[2025-09-11 17:21:49] Confirmed: Windows 11 setup is running in the background.
+[2025-09-11 17:21:49] Continuing with scheduled restart to ensure upgrade process continues...
+[2025-09-11 17:21:49] Scheduling system restart in 30 seconds to continue Windows 11 upgrade...
+[2025-09-11 17:21:49] Unmounting ISO...
+[2025-09-11 17:21:50] ISO unmounted using Shell.Application
+[2025-09-11 17:21:52] Automated upgrade script completed. System will restart in 60 seconds to continue the upgrade process.
+[2025-09-11 17:21:52] After restart, Windows 11 setup will continue automatically.
+[2025-09-11 17:21:52] Once the upgrade is complete, the system will restart again and then run DISM cleanup and install all available Windows Updates.
+[2025-09-13 13:05:03] Starting automated Windows 11 upgrade process
+[2025-09-13 13:05:03] Checking Windows 11 system requirements...
+[2025-09-13 13:05:05] System meets Windows 11 upgrade requirements
+[2025-09-13 13:05:05] ISO file found: F:\isos\windows.iso
+[2025-09-13 13:05:05] Mounting ISO using multiple fallback methods...
+[2025-09-13 13:05:05] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-13 13:05:16] Checking drive: H:\
+[2025-09-13 13:05:16] Found Windows setup at drive: H
+[2025-09-13 13:05:16] ISO successfully available at drive: H:
+[2025-09-13 13:05:16] Found setup.exe at: H:\setup.exe
+[2025-09-13 13:05:16] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-13 13:05:17] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-13 13:05:17] Scheduled task created successfully
+[2025-09-13 13:05:17] Applying performance optimizations...
+[2025-09-13 13:05:17] Set high performance power plan
+[2025-09-13 13:05:18] Could not disable Windows Defender (may require manual intervention)
+[2025-09-13 13:05:18] Stopped service: wuauserv
+[2025-09-13 13:05:18] Stopped service: BITS
+[2025-09-13 13:05:19] Stopped service: CryptSvc
+[2025-09-13 13:05:19] Stopped service: TrustedInstaller
+[2025-09-13 13:05:19] Starting Windows 11 setup with maximum automation...
+[2025-09-13 13:05:19] Created setup logs directory
+[2025-09-13 13:05:19] Preparing to launch Windows 11 setup...
+[2025-09-13 13:05:19] Executing setup with arguments: /auto upgrade /quiet /noreboot /compat ignorewarning /migrate drivers /copylogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs
+[2025-09-13 13:05:19] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-13 13:05:19] Setup will run completely in the background with no user interaction required.
+[2025-09-13 13:05:19] Launching Windows 11 setup with arguments: /auto upgrade /quiet /noreboot /compat ignorewarning /migrate drivers /copylogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs
+[2025-09-13 13:05:19] Setup process started with PID: 11472
+[2025-09-13 13:05:19] Windows 11 upgrade is now running in the background.
+[2025-09-13 13:05:19] The system will automatically restart when needed to continue the upgrade process.
+[2025-09-13 13:05:29] Confirmed: Windows 11 setup is running in the background.
+[2025-09-13 13:05:29] Continuing with scheduled restart to ensure upgrade process continues...
+[2025-09-13 13:05:29] Scheduling system restart in 30 seconds to continue Windows 11 upgrade...
+[2025-09-13 13:05:29] Unmounting ISO...
+[2025-09-13 13:11:20] Starting automated Windows 11 upgrade process
+[2025-09-13 13:11:20] Checking Windows 11 system requirements...
+[2025-09-13 13:11:21] System meets Windows 11 upgrade requirements
+[2025-09-13 13:11:21] ISO file found: F:\isos\windows.iso
+[2025-09-13 13:11:21] Mounting ISO using multiple fallback methods...
+[2025-09-13 13:11:21] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-13 13:11:31] Checking drive: H:\
+[2025-09-13 13:11:31] Found Windows setup at drive: H
+[2025-09-13 13:11:31] ISO successfully available at drive: H:
+[2025-09-13 13:11:31] Found setup.exe at: H:\setup.exe
+[2025-09-13 13:11:32] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-13 13:11:32] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-13 13:11:32] Scheduled task created successfully
+[2025-09-13 13:11:32] Applying performance optimizations...
+[2025-09-13 13:11:33] Set high performance power plan
+[2025-09-13 13:11:33] Could not disable Windows Defender (may require manual intervention)
+[2025-09-13 13:11:54] Unmounting ISO...
+[2025-09-13 13:21:42] Starting automated Windows 11 upgrade process
+[2025-09-13 13:21:42] Checking Windows 11 system requirements...
+[2025-09-13 13:21:44] System meets Windows 11 upgrade requirements
+[2025-09-13 13:21:44] ISO file found: F:\isos\windows.iso
+[2025-09-13 13:21:44] Mounting ISO using multiple fallback methods...
+[2025-09-13 13:21:44] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-13 13:21:53] Checking drive: H:\
+[2025-09-13 13:21:53] Found Windows setup at drive: H
+[2025-09-13 13:21:53] ISO successfully available at drive: H:
+[2025-09-13 13:21:53] Found setup.exe at: H:\setup.exe
+[2025-09-13 13:21:53] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-13 13:21:53] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-13 13:21:54] Scheduled task created successfully
+[2025-09-13 13:21:54] Applying performance optimizations...
+[2025-09-13 13:21:54] Set high performance power plan
+[2025-09-13 13:21:54] Could not disable Windows Defender (may require manual intervention)
+[2025-09-13 13:21:56] Stopped service: wuauserv
+[2025-09-13 13:21:56] Stopped service: BITS
+[2025-09-13 13:21:57] Stopped service: CryptSvc
+[2025-09-13 13:21:57] Stopped service: TrustedInstaller
+[2025-09-13 13:21:57] Starting Windows 11 setup with maximum automation...
+[2025-09-13 13:21:57] Created setup logs directory
+[2025-09-13 13:21:57] Preparing to launch Windows 11 setup...
+[2025-09-13 13:21:57] Executing setup with arguments: /Auto Upgrade /Quiet /NoReboot /Compat IgnoreWarning /MigrateDrivers /CopyLogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs
+[2025-09-13 13:21:57] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-13 13:21:57] Setup will run completely in the background with no user interaction required.
+[2025-09-13 13:21:57] Launching Windows 11 setup with arguments: /Auto Upgrade /Quiet /NoReboot /Compat IgnoreWarning /MigrateDrivers /CopyLogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs
+[2025-09-13 13:21:57] Setup process started with PID: 19380
+[2025-09-13 13:21:57] Windows 11 upgrade is now running in the background.
+[2025-09-13 13:21:57] The system will automatically restart when needed to continue the upgrade process.
+[2025-09-13 13:22:07] Warning: Setup process may have already taken over the system.
+[2025-09-13 13:22:08] Continuing with scheduled restart to ensure upgrade process continues...
+[2025-09-13 13:22:08] Scheduling system restart in 30 seconds to continue Windows 11 upgrade...
+[2025-09-13 13:22:08] Unmounting ISO...

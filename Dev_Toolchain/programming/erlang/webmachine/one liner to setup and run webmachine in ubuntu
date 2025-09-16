@@ -1,0 +1,1 @@
+sudo apt-get update && sudo apt-get install -y libwebmachine-dev && erl -eval 'application:ensure_all_started(webmachine), halt().' -noshell

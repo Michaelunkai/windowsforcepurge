@@ -1,0 +1,1 @@
+Install-Module -Name AuthorizeNetSDK -Force

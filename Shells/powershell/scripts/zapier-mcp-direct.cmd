@@ -1,0 +1,2 @@
+@echo off
+curl -X POST -H "Content-Type: application/json" -H "Accept: application/json,text/event-stream" -d @- https://mcp.zapier.com/api/mcp/s/NDc0NGUxZmQtNjZmMi00NGRjLWJjZDEtN2ZlYzZlMDhlZjI2OmY4M2U3ZTRlLTA4OTQtNGM3OS05MTM4LWQxOTY1MTFmM2EzMg==/mcp

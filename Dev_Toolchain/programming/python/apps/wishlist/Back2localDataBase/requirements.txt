@@ -1,0 +1,14 @@
+# Common requirements
+requests
+beautifulsoup4
+firebase-admin
+paramiko
+urllib3
+
+# Windows-specific
+tkinter
+
+# Android-specific
+kivy
+pyjnius
+android

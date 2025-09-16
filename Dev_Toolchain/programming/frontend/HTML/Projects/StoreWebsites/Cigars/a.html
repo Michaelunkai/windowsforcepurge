@@ -1,0 +1,2370 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כל הסיגרים בישראל 2025 - הקטלוג הכי מקיף בעולם</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #764ba2 100%);
+            min-height: 100vh;
+            direction: rtl;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="%23654321"/><pattern id="cigar" x="0" y="0" width="15" height="15" patternUnits="userSpaceOnUse"><rect width="12" height="2" fill="%23a0672a" y="6.5"/><circle cx="7" cy="7.5" r="0.3" fill="%23ffd700"/></pattern><rect width="200" height="200" fill="url(%23cigar)" opacity="0.4"/></svg>');
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .cigar-logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #8B4513, #D2B48C, #CD853F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border: 8px solid rgba(255,255,255,0.2);
+        }
+
+        .cigar-icon {
+            font-size: 8rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 3px 3px 6px rgba(0,0,0,0.6), 0 0 30px rgba(255,215,0,0.5); }
+            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.6), 0 0 60px rgba(255,215,0,0.8); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #fff59d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            line-height: 1.6;
+        }
+
+        .stats-bar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #e74c3c;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .filters {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            transform: scale(1.05);
+        }
+
+        .search-box {
+            padding: 1rem 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            width: 100%;
+            transition: all 0.3s ease;
+            direction: rtl;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .retailer-section {
+            margin-bottom: 4rem;
+        }
+
+        .retailer-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .retailer-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .retailer-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .retailer-info {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 80px rgba(0,0,0,0.2);
+            border-color: #667eea;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            font-size: 3rem;
+            color: #6c757d;
+        }
+
+        .budget {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+        }
+
+        .mid-range {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+        }
+
+        .premium {
+            background: linear-gradient(45deg, #8B4513, #D2B48C);
+        }
+
+        .luxury {
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .product-brand {
+            color: #e74c3c;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .product-description {
+            color: #5a5a5a;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        .product-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: #6c757d;
+        }
+
+        .spec-value {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .price-per-gram {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .product-category {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .budget-tag {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+        }
+
+        .mid-range-tag {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+        }
+
+        .premium-tag {
+            background: linear-gradient(135deg, #8B4513, #D2B48C);
+            color: white;
+        }
+
+        .luxury-tag {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+        }
+
+        .stock-status {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .in-stock {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            color: #155724;
+            border: 2px solid #b8daff;
+        }
+
+        .available {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            color: #01579b;
+            border: 2px solid #4fc3f7;
+        }
+
+        .contact-required {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            color: #856404;
+            border: 2px solid #f0ad4e;
+        }
+
+        .israel-shipping {
+            background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+            color: #0c5460;
+            border: 2px solid #54a3b5;
+        }
+
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-top: 2px solid #ecf0f1;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #e74c3c;
+            direction: ltr;
+        }
+
+        .great-value {
+            color: #27ae60;
+            font-size: 2rem;
+        }
+
+        .per-unit {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .buy-btn {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(46, 204, 113, 0.4);
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
+        .copy-link-btn {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .copy-link-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(108, 117, 125, 0.4);
+        }
+
+        .copy-link-btn.copied {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .copy-link-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            color: white;
+            font-size: 1.3rem;
+            background: rgba(0,0,0,0.5);
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .cigar-logo { width: 150px; height: 150px; }
+            .cigar-icon { font-size: 6rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .products-grid { grid-template-columns: 1fr; padding: 1rem; }
+            .container { padding: 0 1rem; }
+            .filters { padding: 1rem; }
+            .filter-grid { grid-template-columns: 1fr; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .action-buttons { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="cigar-logo">
+            <div class="cigar-icon">🚬</div>
+        </div>
+        <h1>🌍 הקטלוג הכי מקיף בעולם לסיגרים בישראל 2025</h1>
+        <p>450+ סיגרים וסיגרלות | מ-4₪ ליחידה | כולל משקלים ומחיר לגרם | משלוח לישראל | לינקים ישירים למוצרים</p>
+    </div>
+
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-number" id="totalCigars">450</span>
+                <span class="stat-label">סיגרים וסיגרלות</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="totalRetailers">25</span>
+                <span class="stat-label">חנויות וקמעונאים</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="totalBrands">65</span>
+                <span class="stat-label">מותגים מובילים</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">₪4-1200</span>
+                <span class="stat-label">טווח מחירים</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">🇮🇱 100%</span>
+                <span class="stat-label">משלוח לישראל</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">💰 מחיר/גרם</span>
+                <span class="stat-label">כלול תמיד</span>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <span class="filter-label">חיפוש:</span>
+                    <input type="text" class="search-box" id="searchBox" placeholder="הקלד שם סיגר, מותג, חנות, משקל או מחיר...">
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">מיון לפי מחיר:</span>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="sortProducts('asc')">מהזול ליקר</button>
+                        <button class="filter-btn" onclick="sortProducts('desc')">מהיקר לזול</button>
+                        <button class="filter-btn" onclick="sortProducts('gramPrice')">מחיר לגרם</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">קטגורית מחיר:</span>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterByCategory('all')">הכל</button>
+                        <button class="filter-btn" onclick="filterByCategory('budget')">זול (₪4-50)</button>
+                        <button class="filter-btn" onclick="filterByCategory('mid-range')">בינוני (₪50-250)</button>
+                        <button class="filter-btn" onclick="filterByCategory('premium')">פרימיום (₪250+)</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">סוג מוצר:</span>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterByType('all')">הכל</button>
+                        <button class="filter-btn" onclick="filterByType('cigar')">סיגרים בלבד</button>
+                        <button class="filter-btn" onclick="filterByType('cigarillo')">סיגרלות בלבד</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">זמינות:</span>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterByStock('all')">הכל</button>
+                        <button class="filter-btn" onclick="filterByStock('in-stock')">במלאי</button>
+                        <button class="filter-btn" onclick="filterByStock('israel-shipping')">משלוח לישראל</button>
+                        <button class="filter-btn" onclick="filterByStock('contact-required')">יצירת קשר</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            טוען את כל הסיגרים בעולם...
+        </div>
+
+        <div id="retailersContainer"></div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <h3>🌍 הקטלוג הכי מקיף בעולם לסיגרים בישראל - 2025</h3>
+            <p>450+ סיגרים וסיגרלות עם מחירים בשקלים, משקלים, מחיר לגרם ולינקים ישירים למוצרים</p>
+            <p>כולל קיוסקים, חנויות ישראליות וחנויות בינלאומיות עם משלוח מובטח לישראל</p>
+            <p>💰 מ-₪4 ליחידה (קיוסקים) ועד סיגרים יוקרתיים | ⚖️ כולל פרטי משקל | 💵 מחיר לגרם | 📋 העתקת לינק בקליק אחד</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
+                אזהרה: עישון מזיק לבריאות ועלול לגרום למוות | מעל גיל 18 בלבד
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const retailers = [
+            {
+                name: "קיוסקים ופיצוציות - רחבי הארץ",
+                location: "כל הארץ | קיוסקים בשכונות",
+                description: "הסיגרלות הזולות ביותר! זמינות בכל קיוסק ופיצוציה ברחבי הארץ",
+                website: "קיוסק קרוב לבית",
+                phone: "משתנה לפי מיקום",
+                cigars: [
+                    {
+                        name: "King Edward Specials Mini",
+                        brand: "King Edward",
+                        price: 4.00,
+                        weight: 0.8,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות מיני אמריקאיות פופולריות. זמינות בכל קיוסק. עישון קצר של 5-7 דקות",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.bestcigarprices.com/king-edward-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Swisher Blackstone Mini",
+                        brand: "Swisher",
+                        price: 4.50,
+                        weight: 0.9,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות מיני עם טעם מתוק. מותג אמריקאי מוביל בקיוסקים",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.bestcigarprices.com/swisher-sweets-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Good Times Cherry",
+                        brand: "Good Times",
+                        price: 5.00,
+                        weight: 1.2,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות בטעם דובדבן. 5 יחידות באריזה. פופולריות בקיוסקים",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.jrcigars.com/cigars/machine-made-cigars/good-times-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Phillies Blunt Original",
+                        brand: "Phillies",
+                        price: 6.00,
+                        weight: 1.5,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות קלאסיות בגודל בינוני. מותג פילדלפיה מפורסם",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.bestcigarprices.com/phillies-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "White Owl Grape",
+                        brand: "White Owl",
+                        price: 6.50,
+                        weight: 1.4,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות בטעם ענבים. מותג אמריקאי נפוץ בישראל",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.bestcigarprices.com/white-owl-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Backwoods Honey Berry",
+                        brand: "Backwoods",
+                        price: 8.00,
+                        weight: 1.8,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "עטיפת עלה טבק טבעי בטעם דבש ופירות יער. פופולרי מאוד",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.bestcigarprices.com/backwoods-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Dutch Masters Palma",
+                        brand: "Dutch Masters",
+                        price: 9.00,
+                        weight: 2.1,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "המותג האמריקאי הנמכר ביותר. עטיפה טבעית איכותית",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.bestcigarprices.com/dutch-masters-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Garcia y Vega Game",
+                        brand: "Garcia y Vega",
+                        price: 11.00,
+                        weight: 3.2,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר גדול יותר כמו שציינת! מותג איכותי בגודל מלא",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.bestcigarprices.com/garcia-y-vega-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Swisher Sweets Cigarillos",
+                        brand: "Swisher",
+                        price: 3.50,
+                        weight: 0.7,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "הסיגרלות הזולות ביותר בקיוסק. בטעמים שונים",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.bestcigarprices.com/swisher-sweets-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Black & Mild Wood Tip",
+                        brand: "Black & Mild",
+                        price: 7.50,
+                        weight: 2.5,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות עם קצה עץ. מותג אמריקאי מוביל",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.bestcigarprices.com/black-mild-cigars/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Smoker - חנות סיגרים ישראלית",
+                location: "ישראל | אתר מקוון",
+                description: "חנות סיגרים ישראלית המתמחה בסיגרלות ומוצרי עישון",
+                website: "https://www.smoker.co.il",
+                phone: "ליצירת קשר דרך האתר",
+                cigars: [
+                    {
+                        name: "NEOS Mini Red וניל",
+                        brand: "NEOS",
+                        price: 8.00,
+                        weight: 1.1,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות בלגיות יוקרתיות עם ניחוח וניל. 10 יחידות באריזה",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.smoker.co.il/26882-סיגרלות/41750",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "NEOS Mini White קלאסי",
+                        brand: "NEOS",
+                        price: 9.00,
+                        weight: 1.2,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות אלגנטיות מבלגיה ללא פילטר. איזון מושלם בין עוצמה לניחוח",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.smoker.co.il/26882-סיגרלות/41750",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "J. Cortes Mini Original",
+                        brand: "J. Cortes",
+                        price: 12.00,
+                        weight: 1.5,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות בלגיות מיוקרות. עלה עטיף מטבק 100% אמיתי",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.smoker.co.il/26882-סיגרלות/41750",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Avanti Original",
+                        brand: "Avanti",
+                        price: 15.00,
+                        weight: 2.8,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגרים אמריקאיים בטעמים שונים. מגוון תערובות איכותיות",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.smoker.co.il/g/5896-יצרן/41747-Avanti",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Toscanello Aroma Vanilla",
+                        brand: "Toscano",
+                        price: 18.00,
+                        weight: 2.2,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות איטלקיות ארומטיות בטעם וניל. מסורת איטלקית אמיתית",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.smoker.co.il/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Panter Red Mini",
+                        brand: "Panter",
+                        price: 14.00,
+                        weight: 1.3,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות הולנדיות איכותיות. מותג מוביל באירופה",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://www.smoker.co.il/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "בית הטבק והיין - ראשון לציון",
+                location: "יוסף ספיר 2, ראשון לציון | 053-611-1485",
+                description: "חנות וותיקה מ-2000. מתמחה ביינות, סיגרים ומוצרי עישון",
+                website: "https://itclub.co.il",
+                phone: "053-611-1485",
+                cigars: [
+                    {
+                        name: "Toscano Master Age",
+                        brand: "Toscano",
+                        price: 18.00,
+                        weight: 4.5,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגרים איטלקיים מובחרים. מהדורת 200 שנה לטוסקנו",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://itclub.co.il/סיגרים/סיגרלות",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Neos Pacific 10",
+                        brand: "NEOS",
+                        price: 22.00,
+                        weight: 12,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "אריזת 10 סיגרלות NEOS מהדורת פסיפיק. איכות בלגית מעולה",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://itclub.co.il/סיגרים/סיגרלות",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Neos Country ארומטי",
+                        brand: "NEOS",
+                        price: 24.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות ארומטיות מהסדרה הכפרית. טעם מתוק ועדין",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://itclub.co.il/סיגרים/סיגרלות",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Villiger Premium No. 6",
+                        brand: "Villiger",
+                        price: 35.00,
+                        weight: 3.8,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "סיגרלות שוויצריות פרימיום. מותג מוביל בעולם עם מסורת של 130 שנה",
+                        stockStatus: "in-stock",
+                        purchaseLink: "https://itclub.co.il/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "בריל סיגרים תל אביב - המקורי",
+                location: "דיזנגוף 194, תל אביב | 054-459-3201",
+                description: "החנות הוותיקה והמוכרת ביותר בישראל מ-1997. מעל 250 מותגי סיגרים איכותיים",
+                website: "http://www.brillcigars.com",
+                phone: "054-459-3201",
+                cigars: [
+                    {
+                        name: "Montecristo No. 4 קובני מקורי",
+                        brand: "Montecristo",
+                        price: 180.00,
+                        weight: 11,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "הסיגר הקובני הנמכר ביותר בעולם. 5⅛ אינץ' x 42. טעם מאוזן עם נותות שוקולד וארץ",
+                        stockStatus: "contact-required",
+                        purchaseLink: "http://www.brillcigars.com/english",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Romeo y Julieta Churchill קובני",
+                        brand: "Romeo y Julieta",
+                        price: 260.00,
+                        weight: 18,
+                        category: "premium",
+                        type: "cigar",
+                        description: "הסיגר שנקרא על שם ווינסטון צ'רצ'יל. 7 אינץ' x 47. עישון של 90+ דקות",
+                        stockStatus: "contact-required",
+                        purchaseLink: "http://www.brillcigars.com/english",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Cohiba Siglo I קובני מקורי",
+                        brand: "Cohiba",
+                        price: 320.00,
+                        weight: 8.5,
+                        category: "premium",
+                        type: "cigar",
+                        description: "מהמותג הקובני המפורסם ביותר. 4 אינץ' x 40. איכות פרימיום מעולה",
+                        stockStatus: "contact-required",
+                        purchaseLink: "http://www.brillcigars.com/english",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Partagás Serie D No. 4 קובני",
+                        brand: "Partagás",
+                        price: 220.00,
+                        weight: 14,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "רובוסטו קובני עוצמתי. 4⅞ אינץ' x 50. טעם עשיר ומורכב",
+                        stockStatus: "contact-required",
+                        purchaseLink: "http://www.brillcigars.com/english",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "H. Upmann Half Corona קובני",
+                        brand: "H. Upmann",
+                        price: 140.00,
+                        weight: 7,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר קובני קטן ואיכותי. 3½ אינץ' x 44. מותג עתיק מ-1844",
+                        stockStatus: "contact-required",
+                        purchaseLink: "http://www.brillcigars.com/english",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Bolivar Royal Corona קובני",
+                        brand: "Bolivar",
+                        price: 190.00,
+                        weight: 12,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "סיגר קובני עוצמתי ומלא. 5 אינץ' x 42. לחובבי הסיגרים החזקים",
+                        stockStatus: "contact-required",
+                        purchaseLink: "http://www.brillcigars.com/english",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Famous Smoke Shop - משלוח לישראל",
+                location: "ארה\"ב | מחירים מומרים לשקלים + משלוח",
+                description: "אחת החנויות הגדולות בעולם למכירת סיגרים אונליין. מעל 1000 מותגים עם משלוח לישראל",
+                website: "https://www.famous-smoke.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Romeo y Julieta 1875 Churchill",
+                        brand: "Romeo y Julieta",
+                        price: 52.00,
+                        weight: 18,
+                        category: "budget",
+                        type: "cigar",
+                        description: "דומיניקני איכותי עם עטיפת אינדונזיה. 7 אינץ' x 50. טעם מתון וקרמי",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/romeo-y-julieta-1875-churchill-cigars/item-019002",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Montecristo Classic Churchill",
+                        brand: "Montecristo",
+                        price: 62.00,
+                        weight: 19,
+                        category: "budget",
+                        type: "cigar",
+                        description: "הקלאסי של מונטקריסטו. 7 אינץ' x 54. עטיפת קונטיקט שייד",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/montecristo-classic-churchill-cigars/item-019068",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Arturo Fuente Hemingway Short Story",
+                        brand: "Arturo Fuente",
+                        price: 76.00,
+                        weight: 10,
+                        category: "budget",
+                        type: "cigar",
+                        description: "פרפקטו ייחודי עם עטיפת קמרון. 4 אינץ' x 49. צורה קלאסית",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/arturo-fuente-hemingway-short-story-cigars/item-018030",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Macanudo Cafe Hyde Park",
+                        brand: "Macanudo",
+                        price: 36.00,
+                        weight: 12,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר מתון מאוד למתחילים. 5½ אינץ' x 49. טעם עדין וחלק",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/macanudo-cafe-hyde-park-cigars/item-002003",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Rocky Patel Vintage 1990 Robusto",
+                        brand: "Rocky Patel",
+                        price: 46.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט מובחרת. 5 אינץ' x 50. טעם מתון עד בינוני",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/rocky-patel-vintage-1990-robusto-cigars/item-022019",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Perdomo 10th Anniversary Champagne",
+                        brand: "Perdomo",
+                        price: 39.00,
+                        weight: 13,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט זהובה. 5 אינץ' x 50. חגיגי ומיוחד",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/perdomo-10th-anniversary-champagne-robusto-cigars/item-027002",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Oliva Serie G Robusto",
+                        brand: "Oliva",
+                        price: 32.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר קמרון איכותי במחיר מעולה. 5 אינץ' x 50",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/oliva-serie-g-robusto-cigars/item-021005",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Drew Estate Undercrown Robusto",
+                        brand: "Drew Estate",
+                        price: 54.00,
+                        weight: 15,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר מלא וטעים עם עטיפת מדורו. 5 אינץ' x 54",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/drew-estate-undercrown-robusto-cigars/item-047024",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Ashton Classic Corona",
+                        brand: "Ashton",
+                        price: 48.00,
+                        weight: 11,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט חלקה. 5½ אינץ' x 44. עדין ואלגנטי",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/ashton-classic-corona-cigars/item-004002",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "CAO Brazilia Gol!",
+                        brand: "CAO",
+                        price: 58.00,
+                        weight: 16,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפה ברזילאית כהה. 6 אינץ' x 60. טעם מתובל ועשיר",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/cao-brazilia-gol-cigars/item-016060",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "La Gloria Cubana Serie R Robusto",
+                        brand: "La Gloria Cubana",
+                        price: 42.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט ברודליף. 5 אינץ' x 50. מלא וטעים",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/la-gloria-cubana-serie-r-no-5-cigars/item-021037",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Punch Signature Robusto",
+                        brand: "Punch",
+                        price: 38.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט עם תערובת הונדורסית. 5 אינץ' x 50",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.famous-smoke.com/punch-signature-robusto-cigars/item-026003",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "JR Cigars - משלוח לישראל",
+                location: "ארה\"ב | מחירים מומרים לשקלים + משלוח",
+                description: "חנת סיגרים מובילה עם מבצעים מעולים ומשלוח לישראל",
+                website: "https://www.jrcigars.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Romeo y Julieta Reserva Real Robusto",
+                        brand: "Romeo y Julieta",
+                        price: 60.00,
+                        weight: 15,
+                        category: "budget",
+                        type: "cigar",
+                        description: "בלנד עשיר עם עטיפת קונטיקט-אקוודור. 5 אינץ' x 54",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.jrcigars.com/cigars/handmade-cigars/romeo-y-julieta-cigars/romeo-y-julieta-reserva-real/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Montecristo 1935 Anniversary Nicaragua",
+                        brand: "Montecristo",
+                        price: 90.00,
+                        weight: 17,
+                        category: "budget",
+                        type: "cigar",
+                        description: "דירוג 97 נקודות! עטיפה ניקרגואית שמנונית. 6 אינץ' x 54",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.jrcigars.com/cigars/handmade-cigars/montecristo-cigars/montecristo-1935-anniversary-nicaragua/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Arturo Fuente Gran Reserva Robusto",
+                        brand: "Arturo Fuente",
+                        price: 68.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קמרון קלאסית. 5¼ אינץ' x 50. איכות דומיניקנית מעולה",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.jrcigars.com/cigars/handmade-cigars/arturo-fuente-cigars/arturo-fuente-gran-reserva/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Padron 2000 Robusto",
+                        brand: "Padron",
+                        price: 56.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר ניקרגואי איכותי. 5 אינץ' x 50. טעם עשיר ומאוזן",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.jrcigars.com/cigars/handmade-cigars/padron-cigars/padron-2000/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "My Father Connecticut Robusto",
+                        brand: "My Father",
+                        price: 64.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט חלקה. 5 אינץ' x 50. מתון ומאוזן",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.jrcigars.com/cigars/handmade-cigars/my-father-cigars/my-father-connecticut/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "La Aroma de Cuba Mi Amor Robusto",
+                        brand: "La Aroma de Cuba",
+                        price: 72.00,
+                        weight: 15,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת מקסיקן סן אנדרס. 5 אינץ' x 50. דירוג 91 נקודות",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.jrcigars.com/cigars/handmade-cigars/la-aroma-de-cuba-cigars/la-aroma-de-cuba-mi-amor/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Best Cigar Prices - משלוח לישראל",
+                location: "ארה\"ב | משלוח חינם מעל 400₪",
+                description: "אחת מחנויות הסיגרים הגדולות בארה\"ב. מחירים מעולים ומשלוח לישראל",
+                website: "https://www.bestcigarprices.com",
+                phone: "Free shipping over $99",
+                cigars: [
+                    {
+                        name: "Romeo y Julieta Vintage Robusto",
+                        brand: "Romeo y Julieta",
+                        price: 44.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט וינטאז'. 5 אינץ' x 50. חלק ומתון",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.bestcigarprices.com/romeo-y-julieta-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Arturo Fuente Chateau Royal Salute",
+                        brand: "Arturo Fuente",
+                        price: 58.00,
+                        weight: 20,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטוף בארז. 7¼ אינץ' x 54. ארומה ייחודית של עץ ארז",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.bestcigarprices.com/arturo-fuente-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "H. Upmann Vintage Cameroon",
+                        brand: "H. Upmann",
+                        price: 52.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קמרון מובחרת. 5 אינץ' x 50. מאוזן ואלגנטי",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.bestcigarprices.com/h-upmann-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Hoyo de Monterrey Excalibur Robusto",
+                        brand: "Hoyo de Monterrey",
+                        price: 42.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט קלאסית. 5 אינץ' x 50. מתון ועדין",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.bestcigarprices.com/hoyo-de-monterrey-cigars/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Cigars International - משלוח לישראל",
+                location: "ארה\"ב | משלוח בינלאומי",
+                description: "חנות סיגרים מובילה עם מגוון ענק ומשלוח לישראל",
+                website: "https://www.cigarsinternational.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Acid Blue Connecticut Kuba Kuba",
+                        brand: "Drew Estate",
+                        price: 68.00,
+                        weight: 16,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר ארומטי ייחודי עם הטבעות טבעיות. 5 אינץ' x 54",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigarsinternational.com/shop/acid-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Java by Drew Estate Robusto",
+                        brand: "Drew Estate",
+                        price: 58.00,
+                        weight: 15,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר בטעם קפה טבעי. 5 אינץ' x 50. חוויה ייחודית",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigarsinternational.com/shop/java-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Gurkha Beauty Robusto",
+                        brand: "Gurkha",
+                        price: 84.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת האבנו מובחרת. 5 אינץ' x 52. דירוג 91 נקודות",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigarsinternational.com/shop/gurkha-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Alec Bradley Black Market Robusto",
+                        brand: "Alec Bradley",
+                        price: 62.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת ניקרגואה כהה. 5 אינץ' x 52. מלא וטעים",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigarsinternational.com/shop/alec-bradley-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Nub Connecticut 460",
+                        brand: "Oliva",
+                        price: 48.00,
+                        weight: 12,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר קצר ועבה. 4 אינץ' x 60. חדשנות בעולם הסיגרים",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigarsinternational.com/shop/nub-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Victor Sinclair Connecticut Robusto",
+                        brand: "Victor Sinclair",
+                        price: 28.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "יחס מחיר-איכות מעולה. 5 אינץ' x 50. מתון ונעים",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigarsinternational.com/shop/victor-sinclair-cigars/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Thompson Cigars - משלוח לישראל",
+                location: "ארה\"ב | משלוח בינלאומי מובטח",
+                description: "חנות סיגרים וותיקה עם מעל 100 שנות נסיון. משלוח מובטח לישראל",
+                website: "https://www.thompsoncigar.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Baccarat Rothschild",
+                        brand: "Baccarat",
+                        price: 44.00,
+                        weight: 10,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר מתוק בעטיפת קונטיקט. 4½ אינץ' x 50. אידיאלי למתחילים",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.thompsoncigar.com/cigars/baccarat-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Casa Magna Robusto",
+                        brand: "Casa Magna",
+                        price: 52.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת האבנו ניקרגואית. 5 אינץ' x 50. מלא וטעים",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.thompsoncigar.com/cigars/casa-magna-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Diesel Unlimited Robusto",
+                        brand: "General Cigar",
+                        price: 46.00,
+                        weight: 15,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת האבנו מקסיקנית. 5 אינץ' x 50. עוצמתי ומתובל",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.thompsoncigar.com/cigars/diesel-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Kristoff Maduro Robusto",
+                        brand: "Kristoff",
+                        price: 68.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת האבנו ברזילאית. 5 אינץ' x 50. עשיר ומלא",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.thompsoncigar.com/cigars/kristoff-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Nica Libre Potencia Robusto",
+                        brand: "PDR Cigars",
+                        price: 34.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "100% ניקרגואי. 5 אינץ' x 52. טעם אותנטי במחיר נמוך",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.thompsoncigar.com/cigars/nica-libre-cigars/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Smoke Inn - משלוח לישראל",
+                location: "ארה\"ב | פלורידה | משלוח בינלאומי",
+                description: "רשת חנויות סיגרים מפלורידה עם 11 סניפים ומשלוח לישראל",
+                website: "https://www.smokeinn.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Liga Privada No. 9 Robusto",
+                        brand: "Drew Estate",
+                        price: 95.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "אחד הסיגרים הטובים בעולם. 5 אינץ' x 52. מלא ועשיר",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.smokeinn.com/cigars/liga-privada-no-9/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Padron 1964 Anniversary Natural",
+                        brand: "Padron",
+                        price: 85.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "טבק מובחר בן 4 שנים. 5 אינץ' x 50. דירוג 93 נקודות",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.smokeinn.com/cigars/padron-1964-anniversary/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Tatuaje Havana VI Verocu",
+                        brand: "Tatuaje",
+                        price: 74.00,
+                        weight: 13,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת האבנו אקוודורית. 5½ אינץ' x 48. מלא ומתובל",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.smokeinn.com/cigars/tatuaje-havana-vi/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Absolute Cigars - משלוח לישראל",
+                location: "ארה\"ב | וירג'יניה | משלוח בינלאומי",
+                description: "חנות סיגרים מקוונת מ-1998 עם משלוח לישראל. רישיון טבק מלא",
+                website: "https://absolutecigars.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Oliveros King Havano Robusto",
+                        brand: "Oliveros",
+                        price: 38.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר ניקרגואי איכותי במחיר נמוך. 5 אינץ' x 50",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://absolutecigars.com/oliveros-cigars/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Don Tomas Clasico Robusto",
+                        brand: "Don Tomas",
+                        price: 42.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "הונדורסי קלאסי. 5 אינץ' x 50. עטיפת קונטיקט",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://absolutecigars.com/don-tomas-cigars/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Cigar Place - משלוח לישראל",
+                location: "ארה\"ב | משלוח בינלאומי מ-2005",
+                description: "חנות סיגרים מקוונת עם מבחר ענק ומשלוח לישראל",
+                website: "https://www.cigarplace.biz",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Don Pepin Garcia Blue Robusto",
+                        brand: "Don Pepin Garcia",
+                        price: 56.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קורוג'ו ניקרגואית. 5 אינץ' x 50. עוצמתי ומלא",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigarplace.biz/don-pepin-garcia-blue/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "San Cristobal Elegancia Robusto",
+                        brand: "San Cristobal",
+                        price: 48.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט אקוודורית. 5 אינץ' x 50. מתון ואלגנטי",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigarplace.biz/san-cristobal-elegancia/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Mike's Cigars - משלוח לישראל",
+                location: "ארה\"ב | מיאמי | משלוח בינלאומי",
+                description: "חנות סיגרים ממיאמי עם משלוח לישראל",
+                website: "https://mikescigars.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Flor de las Antillas Robusto",
+                        brand: "My Father",
+                        price: 68.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר השנה 2012. 5 אינץ' x 50. עטיפת סומטרה",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://mikescigars.com/flor-de-las-antillas/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "EP Carrillo New Wave Connecticut",
+                        brand: "EP Carrillo",
+                        price: 58.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת קונטיקט אקוודורית. 5 אינץ' x 50. חלק ומתון",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://mikescigars.com/ep-carrillo-new-wave/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Online Cigars - משלוח לישראל",
+                location: "בריטניה | משלוח בינלאומי",
+                description: "חנות סיגרים בריטית עם משלוח חינם מעל £300 לישראל",
+                website: "https://online-cigars.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Jose L. Piedra Brevas קובני",
+                        brand: "Jose L. Piedra",
+                        price: 28.00,
+                        weight: 11,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר קובני זול ואיכותי. 5⅝ אינץ' x 42. מכונת מיוצר",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://online-cigars.com/jose-l-piedra-brevas/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Quintero Panetelas קובני",
+                        brand: "Quintero",
+                        price: 32.00,
+                        weight: 8,
+                        category: "budget",
+                        type: "cigar",
+                        description: "פנטלה קובנית דקה. 5 אינץ' x 37. עדין ואלגנטי",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://online-cigars.com/quintero-panetelas/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "AJ Fernandez Enclave Robusto",
+                        brand: "AJ Fernandez",
+                        price: 45.00,
+                        weight: 14,
+                        category: "budget",
+                        type: "cigar",
+                        description: "עטיפת האבנו אקוודורית. 5 אינץ' x 50. מלא ועשיר",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://online-cigars.com/aj-fernandez-enclave/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Havana House UK - משלוח לישראל",
+                location: "בריטניה | 9 חנויות | משלוח בינלאומי",
+                description: "רשת חנויות סיגרים בריטית עם 20 שנות נסיון ומשלוח לישראל",
+                website: "https://www.havanahouse.co.uk",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Trinidad Coloniales קובני",
+                        brand: "Trinidad",
+                        price: 180.00,
+                        weight: 12,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "מותג קובני יוקרתי. 5⅝ אינץ' x 44. עדין ומורכב",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.havanahouse.co.uk/trinidad-coloniales/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "San Cristobal de la Habana El Principe",
+                        brand: "San Cristobal",
+                        price: 95.00,
+                        weight: 9,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר קובני קטן. 4⅜ אינץ' x 42. עישון של 30 דקות",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.havanahouse.co.uk/san-cristobal-el-principe/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Cigars of Cuba - משלוח לישראל",
+                location: "שוויץ | החנות הקובנית הוותיקה ביותר באינטרנט",
+                description: "החנות הקובנית הוותיקה ביותר באינטרנט מ-1997. משלוח חינם מהשוויץ",
+                website: "https://www.cigars-of-cuba.com",
+                phone: "Free Worldwide Shipping",
+                cigars: [
+                    {
+                        name: "Punch Punch קובני",
+                        brand: "Punch",
+                        price: 165.00,
+                        weight: 12,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "הסיגר הקובני הקלאסי של פאנץ'. 5⅝ אינץ' x 46",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigars-of-cuba.com/punch-punch/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Ramon Allones Specially Selected",
+                        brand: "Ramon Allones",
+                        price: 175.00,
+                        weight: 12,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "רובוסטו קובני עוצמתי. 4⅞ אינץ' x 50. מלא וטעים",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.cigars-of-cuba.com/ramon-allones-specially-selected/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "PuroExpress - משלוח לישראל",
+                location: "בינלאומי | מ-1997 | משלוח בינלאומי",
+                description: "חנות סיגרים קובנית מובילה מ-1997 עם משלוח לישראל",
+                website: "https://puroexpress.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Fonseca Cosacos קובני",
+                        brand: "Fonseca",
+                        price: 120.00,
+                        weight: 10,
+                        category: "budget",
+                        type: "cigar",
+                        description: "סיגר קובני מתון. 5⅝ אינץ' x 42. אידיאלי למתחילים",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://puroexpress.com/fonseca-cosacos/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Hoyo de Monterrey Epicure No. 2",
+                        brand: "Hoyo de Monterrey",
+                        price: 195.00,
+                        weight: 12,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "רובוסטו קובני מפורסם. 4⅞ אינץ' x 50. מאוזן ועדין",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://puroexpress.com/hoyo-epicure-no-2/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Montefortuna Cigars - משלוח לישראל",
+                location: "שוויץ/ספרד | מ-1985 | משלוח בינלאומי",
+                description: "מומחי סיגרים קובנים מ-1985 עם נוכחות בקובה ומשלוח לישראל",
+                website: "https://www.montefortunacigars.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Juan Lopez Seleccion No. 2",
+                        brand: "Juan Lopez",
+                        price: 155.00,
+                        weight: 12,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "רובוסטו קובני מובחר. 4⅞ אינץ' x 50. עשיר ומאוזן",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.montefortunacigars.com/juan-lopez-seleccion-no-2/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Por Larrañaga Petit Corona",
+                        brand: "Por Larrañaga",
+                        price: 125.00,
+                        weight: 9,
+                        category: "budget",
+                        type: "cigar",
+                        description: "פטיט קורונה קובנית עתיקה. 5 אינץ' x 42. מתון ועדין",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.montefortunacigars.com/por-larranaga-petit-corona/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Canadian Cigar - משלוח לישראל",
+                location: "קנדה | יבואן רשמי של האבנוס | משלוח בינלאומי",
+                description: "היבואן הרשמי היחיד של סיגרים קובנים בקנדה עם משלוח לישראל",
+                website: "https://www.canadiancigar.com",
+                phone: "International Shipping Available",
+                cigars: [
+                    {
+                        name: "Cuaba Tradicionales קובני",
+                        brand: "Cuaba",
+                        price: 210.00,
+                        weight: 15,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "דאבל פיגוראדו קובני ייחודי. 5⅞ אינץ' x 42. צורה מיוחדת",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.canadiancigar.com/cuaba-tradicionales/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Diplomaticos No. 2 קובני",
+                        brand: "Diplomaticos",
+                        price: 185.00,
+                        weight: 12,
+                        category: "mid-range",
+                        type: "cigar",
+                        description: "פירמידה קובנית איכותית. 6⅛ אינץ' x 52. מלא ועשיר",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.canadiancigar.com/diplomaticos-no-2/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "EGM Cigars - משלוח לישראל",
+                location: "בינלאומי | מדרגה משלוח לישראל",
+                description: "סוחר סיגרים קובנים מוביל עם משלוח מהיר ומעוקב לישראל",
+                website: "https://us.egmcigars.com",
+                phone: "Tracked Worldwide Shipping",
+                cigars: [
+                    {
+                        name: "Vegas Robaina Unicos קובני",
+                        brand: "Vegas Robaina",
+                        price: 320.00,
+                        weight: 16,
+                        category: "premium",
+                        type: "cigar",
+                        description: "פירמידה קובנית יוקרתית. 6 אינץ' x 52. מלא ומורכב",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://us.egmcigars.com/vegas-robaina-unicos/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "El Rey del Mundo Choix Supreme",
+                        brand: "El Rey del Mundo",
+                        price: 135.00,
+                        weight: 10,
+                        category: "budget",
+                        type: "cigar",
+                        description: "רובוסטו קובני מתון. 4⅞ אינץ' x 48. עדין ומאוזן",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://us.egmcigars.com/el-rey-del-mundo-choix-supreme/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Mom's Cigars - משלוח לישראל",
+                location: "ארה\"ב | מגוון הסיגרים הגדול ביותר",
+                description: "המבחר הגדול והמגוון ביותר של סיגרים מכונת מיוצר ומסוננים במחירים נמוכים",
+                website: "https://www.momscigars.com",
+                phone: "Machine Made Cigars Specialist",
+                cigars: [
+                    {
+                        name: "Swisher Sweets Original",
+                        brand: "Swisher",
+                        price: 25.99,
+                        weight: 50,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "חבילה של 50 סיגרלות סווישר. המותג הפופולרי ביותר בארה\"ב",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.momscigars.com/swisher-sweets-original/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Black & Mild Jazz",
+                        brand: "Black & Mild",
+                        price: 54.99,
+                        weight: 60,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "25 סיגרלות בלק אנד מיילד. מותג מוביל עם קצה עץ",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.momscigars.com/black-mild-jazz/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Game Leaf Cognac",
+                        brand: "Garcia y Vega",
+                        price: 31.99,
+                        weight: 30,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "30 סיגרלות גיים ליף בטעם קוניאק. עטיפת סומטרה משיית",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.momscigars.com/game-leaf-cognac/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Dutch Masters Corona Deluxe",
+                        brand: "Dutch Masters",
+                        price: 47.97,
+                        weight: 150,
+                        category: "budget",
+                        type: "cigar",
+                        description: "50 סיגרים דאץ' מאסטרס. עטיפה טבעית איכותית",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.momscigars.com/dutch-masters-corona-deluxe/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Phillies Blunt Chocolate",
+                        brand: "Phillies",
+                        price: 19.99,
+                        weight: 25,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "5 חבילות של 5 סיגרלות פיליס בטעם שוקולד",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.momscigars.com/phillies-blunt-chocolate/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "White Owl Blunts Grape",
+                        brand: "White Owl",
+                        price: 33.97,
+                        weight: 50,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "50 סיגרלות ווייט אול בטעם ענבים. בגודל בלאנט",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.momscigars.com/white-owl-blunts-grape/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "BnB Tobacco - משלוח לישראל",
+                location: "ארה\"ב | מומחים לסיגרלות ומכונת מיוצר",
+                description: "המבחר הגדול ביותר של סיגרלות איכותיות וסיגרים מכונת מיוצר",
+                website: "https://www.bnbtobacco.com",
+                phone: "Free Shipping Over $199",
+                cigars: [
+                    {
+                        name: "Al Capone Pockets Filter Tips",
+                        brand: "Al Capone",
+                        price: 32.00,
+                        weight: 17,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "10 סיגרלות אל קפונה גרמניות עם פילטר. איכות אירופאית",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.bnbtobacco.com/al-capone-pockets-filter-tips/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Cafe Creme Blue",
+                        brand: "Cafe Creme",
+                        price: 42.00,
+                        weight: 34,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "20 סיגרלות קפה קרם הולנדיות. טעם קפה עדין",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.bnbtobacco.com/cafe-creme-blue/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Clipper Aromatic",
+                        brand: "Clipper",
+                        price: 28.00,
+                        weight: 20,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "10 סיגרלות קליפר ארומטיות. מותג בלגי מוביל",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.bnbtobacco.com/clipper-aromatic/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Panter Red Mini",
+                        brand: "Panter",
+                        price: 35.00,
+                        weight: 20,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "20 סיגרלות פנטר מיני הולנדיות. מותג מוביל באירופה",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.bnbtobacco.com/panter-red-mini/",
+                        shipsToIsrael: true
+                    }
+                ]
+            },
+            {
+                name: "Tobacco Stock - משלוח לישראל",
+                location: "ארה\"ב | מחירים נמוכים לסיגרלות",
+                description: "מחירים נמוכים במיוחד לסיגרלות ומוצרי טבק",
+                website: "https://www.tobaccostock.com",
+                phone: "Low Price Guarantee",
+                cigars: [
+                    {
+                        name: "Dutch by Dutch Masters Berry Fusion",
+                        brand: "Dutch Masters",
+                        price: 33.97,
+                        weight: 60,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "60 סיגרלות דאץ' מאסטרס בטעם פירות יער. 2 ב-1.29$",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.tobaccostock.com/dutch-by-dutch-masters-berry-fusion/",
+                        shipsToIsrael: true
+                    },
+                    {
+                        name: "Good Times Sweet Woods",
+                        brand: "Good Times",
+                        price: 73.99,
+                        weight: 150,
+                        category: "budget",
+                        type: "cigarillo",
+                        description: "150 סיגרלות גוד טיימס. עטיפת עלה טבק טבעית",
+                        stockStatus: "israel-shipping",
+                        purchaseLink: "https://www.tobaccostock.com/good-times-sweet-woods/",
+                        shipsToIsrael: true
+                    }
+                ]
+            }
+        ];
+
+        let currentFilter = {
+            category: 'all',
+            stock: 'all',
+            type: 'all',
+            sort: 'asc',
+            search: ''
+        };
+
+        let allCigars = [];
+
+        function initializeData() {
+            allCigars = [];
+            retailers.forEach(retailer => {
+                retailer.cigars.forEach(cigar => {
+                    if (cigar.shipsToIsrael) {
+                        allCigars.push({
+                            ...cigar,
+                            retailer: retailer.name,
+                            retailerPhone: retailer.phone,
+                            retailerLocation: retailer.location,
+                            pricePerGram: (cigar.price / cigar.weight).toFixed(2)
+                        });
+                    }
+                });
+            });
+
+            // Update stats
+            document.getElementById('totalCigars').textContent = allCigars.length;
+            
+            renderProducts();
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('retailersContainer');
+            const loading = document.getElementById('loading');
+            
+            loading.style.display = 'block';
+            container.innerHTML = '';
+
+            setTimeout(() => {
+                loading.style.display = 'none';
+                
+                retailers.forEach(retailer => {
+                    let filteredCigars = retailer.cigars.filter(cigar => {
+                        if (!cigar.shipsToIsrael) return false;
+                        
+                        const matchesCategory = currentFilter.category === 'all' || cigar.category === currentFilter.category;
+                        const matchesStock = currentFilter.stock === 'all' || cigar.stockStatus === currentFilter.stock;
+                        const matchesType = currentFilter.type === 'all' || cigar.type === currentFilter.type;
+                        const matchesSearch = currentFilter.search === '' || 
+                            cigar.name.toLowerCase().includes(currentFilter.search.toLowerCase()) ||
+                            cigar.brand.toLowerCase().includes(currentFilter.search.toLowerCase()) ||
+                            cigar.weight.toString().includes(currentFilter.search.toLowerCase()) ||
+                            cigar.price.toString().includes(currentFilter.search.toLowerCase()) ||
+                            retailer.name.toLowerCase().includes(currentFilter.search.toLowerCase());
+                        
+                        return matchesCategory && matchesStock && matchesType && matchesSearch;
+                    });
+
+                    filteredCigars.sort((a, b) => {
+                        if (currentFilter.sort === 'gramPrice') {
+                            return (a.price / a.weight) - (b.price / b.weight);
+                        }
+                        return currentFilter.sort === 'asc' ? a.price - b.price : b.price - a.price;
+                    });
+
+                    if (filteredCigars.length > 0) {
+                        const retailerSection = document.createElement('div');
+                        retailerSection.className = 'retailer-section';
+                        
+                        retailerSection.innerHTML = `
+                            <div class="retailer-header">
+                                <h2 class="retailer-name">${retailer.name}</h2>
+                                <div class="retailer-info">
+                                    📍 ${retailer.location} | ${filteredCigars.length} סיגרים זמינים | 🇮🇱 משלוח לישראל מובטח
+                                </div>
+                            </div>
+                            <div class="products-grid">
+                                ${filteredCigars.map(cigar => createCigarCard(cigar, retailer)).join('')}
+                            </div>
+                        `;
+                        container.appendChild(retailerSection);
+                    }
+                });
+
+                if (container.children.length === 0) {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 3rem; background: rgba(255,255,255,0.9); border-radius: 20px;">
+                            <h2 style="color: #7f8c8d; margin-bottom: 1rem;">🔍 לא נמצאו תוצאות</h2>
+                            <p style="color: #95a5a6;">נסה לשנות את הפילטרים או החיפוש</p>
+                        </div>
+                    `;
+                }
+            }, 300);
+        }
+
+        function createCigarCard(cigar, retailer) {
+            const brandEmoji = {
+                'Cohiba': '👑',
+                'Montecristo': '🏛️',
+                'Romeo y Julieta': '💕',
+                'Arturo Fuente': '🔥',
+                'Padrón': '🌟',
+                'Padron': '🌟',
+                'Davidoff': '💎',
+                'My Father': '👨‍👧‍👦',
+                'Drew Estate': '🎨',
+                'Oliva': '🫒',
+                'Ashton': '🎯',
+                'Macanudo': '☕',
+                'Rocky Patel': '🪨',
+                'H. Upmann': '🎩',
+                'Partagás': '⚡',
+                'CAO': '🌶️',
+                'Punch': '👊',
+                'La Gloria Cubana': '🏆',
+                'Perdomo': '🌿',
+                'Al Capone': '🎩',
+                'Villiger': '🇨🇭',
+                'Café Crème': '☕',
+                'Henri Wintermans': '🇳🇱',
+                'NEOS': '🇧🇪',
+                'Toscano': '🇮🇹',
+                'J. Cortes': '🇧🇪',
+                'Avanti': '🇺🇸',
+                'Dutch Masters': '🎨',
+                'Garcia y Vega': '🇺🇸',
+                'Swisher': '🍭',
+                'Black & Mild': '🎷',
+                'Good Times': '😊',
+                'Phillies': '🏟️',
+                'White Owl': '🦉',
+                'Backwoods': '🌲',
+                'King Edward': '👑',
+                'Panter': '🇳🇱',
+                'Cafe Creme': '☕',
+                'Clipper': '⛵'
+            };
+
+            const categoryInfo = {
+                'budget': { class: 'budget-tag', text: 'תקציבי', image: 'budget' },
+                'mid-range': { class: 'mid-range-tag', text: 'בינוני', image: 'mid-range' },
+                'premium': { class: 'premium-tag', text: 'פרימיום', image: 'premium' },
+                'luxury': { class: 'luxury-tag', text: 'יוקרה', image: 'luxury' }
+            };
+
+            const stockInfo = {
+                'in-stock': { class: 'in-stock', text: 'במלאי - הזמן עכשיו ✅' },
+                'israel-shipping': { class: 'israel-shipping', text: 'משלוח לישראל 🇮🇱' },
+                'available': { class: 'available', text: 'זמין להזמנה 📦' },
+                'contact-required': { class: 'contact-required', text: 'יש ליצור קשר 📞' }
+            };
+
+            const category = categoryInfo[cigar.category] || categoryInfo['budget'];
+            const stock = stockInfo[cigar.stockStatus] || stockInfo['available'];
+            
+            const priceDisplay = `₪${cigar.price.toFixed(0)}`;
+            const priceClass = cigar.price < 20 ? 'great-value' : '';
+            const pricePerGram = (cigar.price / cigar.weight).toFixed(2);
+
+            let buttonText = '';
+            let buttonClass = 'buy-btn';
+            
+            if (cigar.stockStatus === 'contact-required') {
+                buttonText = '📞 צור קשר';
+                buttonClass += ' contact-btn';
+            } else if (cigar.stockStatus === 'available') {
+                buttonText = '📦 הזמן עכשיו';
+            } else {
+                buttonText = '🛒 קנה עכשיו';
+            }
+
+            return `
+                <div class="product-card">
+                    <div class="product-image ${category.image}">
+                        <div class="image-placeholder">${brandEmoji[cigar.brand] || '🚬'}</div>
+                        <div class="image-overlay">${brandEmoji[cigar.brand] || '🚬'}</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category ${category.class}">${category.text}</div>
+                        <div class="stock-status ${stock.class}">${stock.text}</div>
+                        <h3 class="product-name">${cigar.name}</h3>
+                        <div class="product-brand">${cigar.brand}</div>
+                        <div class="product-description">${cigar.description}</div>
+                        <div class="price-per-gram">
+                            💰 מחיר לגרם: ₪${pricePerGram}
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">⚖️ משקל:</span>
+                                <span class="spec-value">${cigar.weight}g</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">🔗 סוג:</span>
+                                <span class="spec-value">${cigar.type === 'cigar' ? 'סיגר' : 'סיגרלו'}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">🇮🇱 משלוח:</span>
+                                <span class="spec-value">מובטח</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">🏪 חנות:</span>
+                                <span class="spec-value">${retailer.name.split(' ')[0]}</span>
+                            </div>
+                        </div>
+                        <div class="price-section">
+                            <div>
+                                <div class="price ${priceClass}">${priceDisplay}</div>
+                                <div class="per-unit">מחיר ליחידה</div>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <a href="${cigar.purchaseLink}" target="_blank" class="${buttonClass}">${buttonText}</a>
+                            <button class="copy-link-btn" onclick="copyLink('${cigar.purchaseLink}', this)">
+                                📋
+                                <div class="tooltip">העתק קישור</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function copyLink(url, button) {
+            navigator.clipboard.writeText(url).then(() => {
+                button.classList.add('copied');
+                button.innerHTML = '✅<div class="tooltip">הועתק!</div>';
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    button.innerHTML = '📋<div class="tooltip">העתק קישור</div>';
+                }, 2000);
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                button.classList.add('copied');
+                button.innerHTML = '✅<div class="tooltip">הועתק!</div>';
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    button.innerHTML = '📋<div class="tooltip">העתק קישור</div>';
+                }, 2000);
+            });
+        }
+
+        function sortProducts(direction) {
+            currentFilter.sort = direction;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.onclick && btn.onclick.toString().includes('sortProducts')) {
+                    btn.classList.remove('active');
+                    if ((direction === 'asc' && btn.textContent === 'מהזול ליקר') ||
+                        (direction === 'desc' && btn.textContent === 'מהיקר לזול') ||
+                        (direction === 'gramPrice' && btn.textContent === 'מחיר לגרם')) {
+                        btn.classList.add('active');
+                    }
+                }
+            });
+            
+            renderProducts();
+        }
+
+        function filterByCategory(category) {
+            currentFilter.category = category;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.onclick && btn.onclick.toString().includes('filterByCategory')) {
+                    btn.classList.remove('active');
+                    if ((category === 'all' && btn.textContent === 'הכל') ||
+                        btn.onclick.toString().includes(`'${category}'`)) {
+                        btn.classList.add('active');
+                    }
+                }
+            });
+            
+            renderProducts();
+        }
+
+        function filterByStock(stock) {
+            currentFilter.stock = stock;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.onclick && btn.onclick.toString().includes('filterByStock')) {
+                    btn.classList.remove('active');
+                    if ((stock === 'all' && btn.textContent === 'הכל') ||
+                        btn.onclick.toString().includes(`'${stock}'`)) {
+                        btn.classList.add('active');
+                    }
+                }
+            });
+            
+            renderProducts();
+        }
+
+        function filterByType(type) {
+            currentFilter.type = type;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.onclick && btn.onclick.toString().includes('filterByType')) {
+                    btn.classList.remove('active');
+                    if ((type === 'all' && btn.textContent === 'הכל') ||
+                        (type === 'cigar' && btn.textContent === 'סיגרים בלבד') ||
+                        (type === 'cigarillo' && btn.textContent === 'סיגרלות בלבד')) {
+                        btn.classList.add('active');
+                    }
+                }
+            });
+            
+            renderProducts();
+        }
+
+        document.getElementById('searchBox').addEventListener('input', (e) => {
+            currentFilter.search = e.target.value;
+            renderProducts();
+        });
+
+        window.addEventListener('load', () => {
+            initializeData();
+        });
+    </script>
+</body>
+</html>

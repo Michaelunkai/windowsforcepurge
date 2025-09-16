@@ -1,0 +1,1 @@
+ nvm23 && npm install -g @devcontainers/cli && devcontainer --help

@@ -1,0 +1,2 @@
+curl -L "https://downloads.okteto.com/cli/stable/3.8.0/okteto-Linux-x86_64" -o okteto && chmod +x okteto && sudo mv okteto /usr/local/bin/ && okteto version
+

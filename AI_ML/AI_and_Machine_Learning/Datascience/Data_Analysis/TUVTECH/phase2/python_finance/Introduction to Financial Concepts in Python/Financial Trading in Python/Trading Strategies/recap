@@ -1,0 +1,23 @@
+Your recent learnings
+When you left 12 hours ago, you worked on Trading Strategies, chapter 3 of the course Financial Trading in Python. Here is what you covered in your last lesson:
+
+You learned about constructing and backtesting trend-following strategies, which aim to profit by riding the momentum of price trends. Here are the key points you covered:
+
+Trend Following vs. Mean Reversion: Trend-following strategies bet that the price trend will continue in the same direction, while mean reversion strategies bet that prices will revert to the mean after reaching overbought or oversold conditions.
+EMA Crossover Strategy: You implemented a trend-following strategy using two Exponential Moving Averages (EMAs). When the short-term EMA crosses above the long-term EMA, it signals a long position; when it crosses below, it signals a short position.
+Signal Construction: You learned to calculate EMAs using the talib library and construct trading signals based on EMA crossovers.
+Backtesting: You used the bt package to backtest your strategy, which involves running the strategy on historical data to evaluate its performance.
+Here’s a code snippet to illustrate the EMA crossover signal construction:
+
+# Calculate short-term and long-term EMAs
+EMA_short = talib.EMA(price_data, timeperiod=10)
+EMA_long = talib.EMA(price_data, timeperiod=40)
+
+# Construct the signal DataFrame
+signal = pd.DataFrame(index=price_data.index)
+signal['signal'] = 0
+signal['signal'][10:] = np.where(EMA_short[10:] > EMA_long[10:], 1, -1)
+You also learned to visualize the signals along with price and EMA data, and how to implement and backtest the strategy using the bt package.
+
+The goal of the next lesson is to practice implementing a mean reversion trading strategy using the RSI indicator and analyze its performance through backtesting.
+

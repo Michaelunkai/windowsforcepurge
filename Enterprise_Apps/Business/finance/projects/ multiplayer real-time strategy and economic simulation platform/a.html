@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civilization RTS - Advanced Multiplayer Strategy Platform</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        #gameContainer {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #threejsCanvas {
+            display: block;
+            background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
+        }
+
+        .ui-panel {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid #4a9eff;
+            border-radius: 8px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .ui-panel:hover {
+            background: rgba(0, 0, 0, 0.95);
+            border-color: #66b3ff;
+        }
+
+        #resourcePanel {
+            top: 10px;
+            left: 10px;
+            min-width: 300px;
+        }
+
+        #diplomacyPanel {
+            top: 10px;
+            right: 10px;
+            width: 250px;
+        }
+
+        #techPanel {
+            bottom: 120px;
+            left: 10px;
+            width: 200px;
+        }
+
+        #militaryPanel {
+            bottom: 10px;
+            left: 10px;
+            width: 300px;
+        }
+
+        #minimapPanel {
+            bottom: 10px;
+            right: 10px;
+            width: 200px;
+            height: 150px;
+        }
+
+        #economicPanel {
+            top: 150px;
+            left: 10px;
+            width: 280px;
+        }
+
+        .panel-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #4a9eff;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #4a9eff;
+            padding-bottom: 5px;
+        }
+
+        .resource-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+        .resource-value {
+            color: #66ff66;
+            font-weight: bold;
+        }
+
+        .tech-item, .unit-item, .diplomacy-item {
+            background: rgba(74, 158, 255, 0.1);
+            border: 1px solid #4a9eff;
+            border-radius: 4px;
+            padding: 8px;
+            margin: 5px 0;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tech-item:hover, .unit-item:hover, .diplomacy-item:hover {
+            background: rgba(74, 158, 255, 0.3);
+            transform: translateX(3px);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 3px;
+            margin: 5px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4a9eff, #66b3ff);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        #minimap {
+            width: 100%;
+            height: 120px;
+            background: rgba(0, 50, 0, 0.8);
+            border: 1px solid #4a9eff;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .minimap-dot {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #ff6b6b;
+        }
+
+        .control-buttons {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-btn {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #4a9eff, #357abd);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 158, 255, 0.3);
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(135deg, #357abd, #2c5f8f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 158, 255, 0.5);
+        }
+
+        .notification {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #4a9eff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 999;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(74, 158, 255, 0.3);
+            border-top: 5px solid #4a9eff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .weather-indicator {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #66b3ff;
+        }
+
+        .battle-indicator {
+            position: absolute;
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 10px;
+            font-weight: bold;
+            animation: pulse 1s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .trade-route {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #ffff66, #66ff66);
+            opacity: 0.6;
+            z-index: 10;
+            animation: flow 2s linear infinite;
+        }
+
+        @keyframes flow {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <div class="loading" id="loadingScreen">
+            <div class="spinner"></div>
+            <h2>Initializing Civilization Engine...</h2>
+            <p>Loading advanced AI systems, economic models, and 3D world...</p>
+        </div>
+
+        <div class="weather-indicator" id="weatherIndicator">
+            🌤️ Clear Weather - Trade Efficiency: +15%
+        </div>
+
+        <!-- Resource Management Panel -->
+        <div class="ui-panel" id="resourcePanel">
+            <div class="panel-title">⚡ Civilization Resources</div>
+            <div class="resource-item">
+                <span>🍞 Food:</span>
+                <span class="resource-value" id="foodValue">15,420</span>
+            </div>
+            <div class="resource-item">
+                <span>🏭 Production:</span>
+                <span class="resource-value" id="productionValue">8,750</span>
+            </div>
+            <div class="resource-item">
+                <span>🪙 Gold:</span>
+                <span class="resource-value" id="goldValue">42,890</span>
+            </div>
+            <div class="resource-item">
+                <span>🔬 Science:</span>
+                <span class="resource-value" id="scienceValue">3,240</span>
+            </div>
+            <div class="resource-item">
+                <span>🎭 Culture:</span>
+                <span class="resource-value" id="cultureValue">1,680</span>
+            </div>
+            <div class="resource-item">
+                <span>⚡ Energy:</span>
+                <span class="resource-value" id="energyValue">28,500</span>
+            </div>
+            <div class="resource-item">
+                <span>👥 Population:</span>
+                <span class="resource-value" id="populationValue">847,392</span>
+            </div>
+        </div>
+
+        <!-- Economic Simulation Panel -->
+        <div class="ui-panel" id="economicPanel">
+            <div class="panel-title">📈 Economic Intelligence</div>
+            <div class="resource-item">
+                <span>GDP Growth:</span>
+                <span class="resource-value">+4.2%</span>
+            </div>
+            <div class="resource-item">
+                <span>Inflation Rate:</span>
+                <span class="resource-value">2.8%</span>
+            </div>
+            <div class="resource-item">
+                <span>Trade Volume:</span>
+                <span class="resource-value" id="tradeVolume">₦1.2M</span>
+            </div>
+            <div class="resource-item">
+                <span>Market Demand:</span>
+                <span class="resource-value">High</span>
+            </div>
+            <div style="margin-top: 10px;">
+                <div style="font-size: 10px; color: #4a9eff;">Active Trade Routes:</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 76%"></div>
+                </div>
+                <div style="font-size: 9px; color: #aaa;">12 of 16 routes operational</div>
+            </div>
+        </div>
+
+        <!-- Technology Research Panel -->
+        <div class="ui-panel" id="techPanel">
+            <div class="panel-title">🔬 Research Tree</div>
+            <div class="tech-item" onclick="advanceTech('fusion')">
+                <div>⚛️ Fusion Power</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 67%"></div>
+                </div>
+                <div style="font-size: 9px; color: #aaa;">18 turns remaining</div>
+            </div>
+            <div class="tech-item" onclick="advanceTech('quantum')">
+                <div>🖥️ Quantum Computing</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 23%"></div>
+                </div>
+                <div style="font-size: 9px; color: #aaa;">42 turns remaining</div>
+            </div>
+            <div class="tech-item" onclick="advanceTech('space')">
+                <div>🚀 Space Colonization</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 5%"></div>
+                </div>
+                <div style="font-size: 9px; color: #aaa;">78 turns remaining</div>
+            </div>
+        </div>
+
+        <!-- Military Command Panel -->
+        <div class="ui-panel" id="militaryPanel">
+            <div class="panel-title">⚔️ Military Command</div>
+            <div style="display: flex; gap: 10px;">
+                <div class="unit-item" onclick="deployUnit('infantry')">
+                    <div>🪖 Infantry: 2,450</div>
+                    <div style="font-size: 9px;">Morale: High</div>
+                </div>
+                <div class="unit-item" onclick="deployUnit('tank')">
+                    <div>🛡️ Armor: 180</div>
+                    <div style="font-size: 9px;">Fuel: 85%</div>
+                </div>
+                <div class="unit-item" onclick="deployUnit('air')">
+                    <div>✈️ Air Force: 45</div>
+                    <div style="font-size: 9px;">Combat Ready</div>
+                </div>
+            </div>
+            <div style="margin-top: 8px; font-size: 10px;">
+                <span style="color: #ff6b6b;">⚡ Active Battles: 2</span>
+                <span style="margin-left: 15px; color: #66ff66;">🛡️ Defense Status: Secure</span>
+            </div>
+        </div>
+
+        <!-- Diplomacy Panel -->
+        <div class="ui-panel" id="diplomacyPanel">
+            <div class="panel-title">🤝 Diplomatic Relations</div>
+            <div class="diplomacy-item" onclick="manageDiplomacy('romans')">
+                <div style="display: flex; justify-content: space-between;">
+                    <span>🏛️ Roman Empire</span>
+                    <span style="color: #66ff66;">Allied</span>
+                </div>
+                <div style="font-size: 9px; color: #aaa;">Trade Agreement Active</div>
+            </div>
+            <div class="diplomacy-item" onclick="manageDiplomacy('vikings')">
+                <div style="display: flex; justify-content: space-between;">
+                    <span>⚔️ Viking Clans</span>
+                    <span style="color: #ffaa33;">Neutral</span>
+                </div>
+                <div style="font-size: 9px; color: #aaa;">Non-Aggression Pact</div>
+            </div>
+            <div class="diplomacy-item" onclick="manageDiplomacy('persians')">
+                <div style="display: flex; justify-content: space-between;">
+                    <span>🏺 Persian Empire</span>
+                    <span style="color: #ff6b6b;">Hostile</span>
+                </div>
+                <div style="font-size: 9px; color: #aaa;">Border Tension</div>
+            </div>
+        </div>
+
+        <!-- Minimap -->
+        <div class="ui-panel" id="minimapPanel">
+            <div class="panel-title">🗺️ Strategic Overview</div>
+            <div id="minimap"></div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="control-buttons">
+            <button class="control-btn" onclick="togglePause()">⏸️ Pause</button>
+            <button class="control-btn" onclick="speedUp()">⏩ Speed x2</button>
+            <button class="control-btn" onclick="openDiplomacy()">🤝 Diplomacy</button>
+            <button class="control-btn" onclick="openTech()">🔬 Research</button>
+            <button class="control-btn" onclick="openEconomy()">💰 Economy</button>
+        </div>
+
+        <!-- Notification System -->
+        <div class="notification" id="gameNotification">
+            <h3 id="notificationTitle">System Alert</h3>
+            <p id="notificationMessage">Game event notification</p>
+            <button class="control-btn" onclick="closeNotification()" style="margin-top: 15px;">Acknowledge</button>
+        </div>
+    </div>
+
+    <script>
+        // Advanced Game State Management
+        class CivilizationGame {
+            constructor() {
+                this.gameState = {
+                    turn: 1,
+                    year: 4000,
+                    era: 'Ancient',
+                    paused: false,
+                    speed: 1,
+                    weather: 'clear',
+                    season: 'spring'
+                };
+
+                this.resources = {
+                    food: 15420,
+                    production: 8750,
+                    gold: 42890,
+                    science: 3240,
+                    culture: 1680,
+                    energy: 28500,
+                    population: 847392
+                };
+
+                this.economy = {
+                    gdpGrowth: 4.2,
+                    inflationRate: 2.8,
+                    tradeVolume: 1200000,
+                    marketDemand: 'High',
+                    tradeRoutes: [],
+                    bankingSystem: new BankingSystem()
+                };
+
+                this.military = {
+                    infantry: { count: 2450, morale: 0.9, experience: 0.7 },
+                    armor: { count: 180, fuel: 0.85, maintenance: 0.95 },
+                    airForce: { count: 45, readiness: 1.0, range: 1000 }
+                };
+
+                this.diplomacy = {
+                    relations: {
+                        romans: { status: 'allied', trust: 0.85, tradeAgreement: true },
+                        vikings: { status: 'neutral', trust: 0.5, nonAggression: true },
+                        persians: { status: 'hostile', trust: 0.2, borderTension: true }
+                    }
+                };
+
+                this.technology = {
+                    researching: ['fusion', 'quantum', 'space'],
+                    completed: ['agriculture', 'writing', 'metalworking', 'steam'],
+                    progress: { fusion: 0.67, quantum: 0.23, space: 0.05 }
+                };
+
+                this.world = null;
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.units = [];
+                this.cities = [];
+                this.aiPlayers = [];
+
+                this.initializeGame();
+            }
+
+            async initializeGame() {
+                console.log('Initializing Advanced Civilization Engine...');
+                
+                // Initialize 3D world
+                await this.init3DWorld();
+                
+                // Initialize AI systems
+                this.initializeAI();
+                
+                // Initialize economic models
+                this.initializeEconomicSystems();
+                
+                // Initialize multiplayer infrastructure
+                this.initializeMultiplayer();
+                
+                // Start game loops
+                this.startGameLoop();
+                
+                // Hide loading screen
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                    this.showNotification('Welcome to Civilization RTS', 'Advanced multiplayer strategy simulation initialized. Begin building your empire!');
+                }, 2000);
+            }
+
+            async init3DWorld() {
+                const container = document.getElementById('gameContainer');
+                
+                // Initialize Three.js scene
+                this.scene = new THREE.Scene();
+                this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+                this.renderer = new THREE.WebGLRenderer({ 
+                    canvas: document.getElementById('threejsCanvas') || this.createCanvas(),
+                    antialias: true,
+                    alpha: true 
+                });
+                
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+                this.renderer.shadowMap.enabled = true;
+                this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+                
+                if (!document.getElementById('threejsCanvas')) {
+                    this.renderer.domElement.id = 'threejsCanvas';
+                    container.appendChild(this.renderer.domElement);
+                }
+
+                // Create procedurally generated terrain
+                this.generateTerrain();
+                
+                // Add lighting system
+                this.setupLighting();
+                
+                // Initialize camera position
+                this.camera.position.set(0, 200, 300);
+                this.camera.lookAt(0, 0, 0);
+                
+                // Add camera controls
+                this.setupCameraControls();
+                
+                // Generate initial world objects
+                this.populateWorld();
+            }
+
+            createCanvas() {
+                const canvas = document.createElement('canvas');
+                canvas.id = 'threejsCanvas';
+                return canvas;
+            }
+
+            generateTerrain() {
+                // Procedural terrain generation using Perlin noise concepts
+                const geometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
+                const vertices = geometry.attributes.position;
+                
+                // Simulate height variations
+                for (let i = 0; i < vertices.count; i++) {
+                    const x = vertices.getX(i);
+                    const y = vertices.getY(i);
+                    const height = Math.sin(x * 0.01) * Math.cos(y * 0.01) * 50 + 
+                                  Math.random() * 20;
+                    vertices.setZ(i, height);
+                }
+                
+                geometry.attributes.position.needsUpdate = true;
+                geometry.computeVertexNormals();
+                
+                const material = new THREE.MeshLambertMaterial({ 
+                    color: 0x4a7c59,
+                    wireframe: false 
+                });
+                
+                const terrain = new THREE.Mesh(geometry, material);
+                terrain.rotation.x = -Math.PI / 2;
+                terrain.receiveShadow = true;
+                this.scene.add(terrain);
+            }
+
+            setupLighting() {
+                // Ambient lighting
+                const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+                this.scene.add(ambientLight);
+                
+                // Directional light (sun)
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+                directionalLight.position.set(100, 200, 50);
+                directionalLight.castShadow = true;
+                directionalLight.shadow.mapSize.width = 2048;
+                directionalLight.shadow.mapSize.height = 2048;
+                this.scene.add(directionalLight);
+                
+                // Dynamic day/night cycle
+                this.setupDayNightCycle();
+            }
+
+            setupDayNightCycle() {
+                setInterval(() => {
+                    const time = Date.now() * 0.0001;
+                    const intensity = Math.abs(Math.sin(time)) * 0.8 + 0.2;
+                    
+                    if (this.scene.children.find(child => child.type === 'DirectionalLight')) {
+                        const light = this.scene.children.find(child => child.type === 'DirectionalLight');
+                        light.intensity = intensity;
+                    }
+                    
+                    // Update weather indicator
+                    this.updateWeatherSystem();
+                }, 5000);
+            }
+
+            updateWeatherSystem() {
+                const weathers = [
+                    { icon: '☀️', name: 'Sunny', effect: 'Production +10%' },
+                    { icon: '🌤️', name: 'Clear Weather', effect: 'Trade Efficiency +15%' },
+                    { icon: '🌧️', name: 'Rain', effect: 'Agriculture +20%' },
+                    { icon: '❄️', name: 'Winter', effect: 'Movement -25%' },
+                    { icon: '⛈️', name: 'Storm', effect: 'Naval Combat -30%' }
+                ];
+                
+                if (Math.random() < 0.3) {
+                    const weather = weathers[Math.floor(Math.random() * weathers.length)];
+                    document.getElementById('weatherIndicator').innerHTML = 
+                        `${weather.icon} ${weather.name} - ${weather.effect}`;
+                    this.gameState.weather = weather.name.toLowerCase();
+                }
+            }
+
+            setupCameraControls() {
+                let isDragging = false;
+                let previousMousePosition = { x: 0, y: 0 };
+                
+                this.renderer.domElement.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    previousMousePosition = { x: e.clientX, y: e.clientY };
+                });
+                
+                this.renderer.domElement.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        const deltaX = e.clientX - previousMousePosition.x;
+                        const deltaY = e.clientY - previousMousePosition.y;
+                        
+                        this.camera.position.x -= deltaX * 0.5;
+                        this.camera.position.z -= deltaY * 0.5;
+                        
+                        previousMousePosition = { x: e.clientX, y: e.clientY };
+                    }
+                });
+                
+                this.renderer.domElement.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+                
+                this.renderer.domElement.addEventListener('wheel', (e) => {
+                    this.camera.position.y += e.deltaY * 0.1;
+                    this.camera.position.y = Math.max(50, Math.min(800, this.camera.position.y));
+                });
+            }
+
+            populateWorld() {
+                // Create cities
+                for (let i = 0; i < 5; i++) {
+                    this.createCity(
+                        (Math.random() - 0.5) * 1500,
+                        (Math.random() - 0.5) * 1500,
+                        `City ${i + 1}`
+                    );
+                }
+                
+                // Create units
+                for (let i = 0; i < 20; i++) {
+                    this.createUnit(
+                        (Math.random() - 0.5) * 1000,
+                        (Math.random() - 0.5) * 1000,
+                        'infantry'
+                    );
+                }
+                
+                // Create trade routes
+                this.generateTradeRoutes();
+            }
+
+            createCity(x, z, name) {
+                const geometry = new THREE.BoxGeometry(30, 40, 30);
+                const material = new THREE.MeshLambertMaterial({ color: 0x8B4513 });
+                const city = new THREE.Mesh(geometry, material);
+                
+                city.position.set(x, 20, z);
+                city.castShadow = true;
+                city.userData = { type: 'city', name, population: Math.floor(Math.random() * 100000) + 50000 };
+                
+                this.scene.add(city);
+                this.cities.push(city);
+            }
+
+            createUnit(x, z, type) {
+                const geometry = new THREE.ConeGeometry(3, 8, 8);
+                const colors = {
+                    infantry: 0x00ff00,
+                    armor: 0x0000ff,
+                    air: 0xff0000
+                };
+                
+                const material = new THREE.MeshLambertMaterial({ color: colors[type] || 0x00ff00 });
+                const unit = new THREE.Mesh(geometry, material);
+                
+                unit.position.set(x, 4, z);
+                unit.castShadow = true;
+                unit.userData = { 
+                    type: 'unit', 
+                    unitType: type, 
+                    health: 100,
+                    experience: Math.random() * 50,
+                    destination: null 
+                };
+                
+                this.scene.add(unit);
+                this.units.push(unit);
+            }
+
+            generateTradeRoutes() {
+                for (let i = 0; i < this.cities.length - 1; i++) {
+                    if (Math.random() > 0.5) {
+                        this.createTradeRoute(this.cities[i], this.cities[i + 1]);
+                    }
+                }
+            }
+
+            createTradeRoute(cityA, cityB) {
+                const distance = cityA.position.distanceTo(cityB.position);
+                const midPoint = new THREE.Vector3().addVectors(cityA.position, cityB.position).multiplyScalar(0.5);
+                
+                // Visual trade route representation
+                const geometry = new THREE.CylinderGeometry(0.5, 0.5, distance);
+                const material = new THREE.MeshBasicMaterial({ 
+                    color: 0xffff00, 
+                    transparent: true, 
+                    opacity: 0.6 
+                });
+                
+                const route = new THREE.Mesh(geometry, material);
+                route.position.copy(midPoint);
+                route.lookAt(cityB.position);
+                route.rotateX(Math.PI / 2);
+                
+                this.scene.add(route);
+                this.economy.tradeRoutes.push({ from: cityA, to: cityB, volume: Math.random() * 1000 });
+            }
+
+            initializeAI() {
+                // Advanced AI system initialization
+                for (let i = 0; i < 3; i++) {
+                    this.aiPlayers.push(new AdvancedAI(`AI_Player_${i + 1}`, this));
+                }
+                console.log('AI systems initialized with personality matrices and behavioral learning');
+            }
+
+            initializeEconomicSystems() {
+                // Complex economic modeling
+                setInterval(() => {
+                    this.updateEconomicSimulation();
+                }, 3000);
+                
+                console.log('Economic simulation engines started');
+            }
+
+            initializeMultiplayer() {
+                // Multiplayer infrastructure simulation
+                this.networkManager = {
+                    connections: [],
+                    latency: 45,
+                    syncState: 'synchronized',
+                    playerCount: Math.floor(Math.random() * 500) + 100
+                };
+                
+                console.log(`Multiplayer infrastructure ready - ${this.networkManager.playerCount} players online`);
+            }
+
+            startGameLoop() {
+                const animate = () => {
+                    requestAnimationFrame(animate);
+                    
+                    if (!this.gameState.paused) {
+                        this.updateGameLogic();
+                        this.updateUI();
+                        this.updateAI();
+                        this.processMultiplayerEvents();
+                    }
+                    
+                    this.renderer.render(this.scene, this.camera);
+                };
+                
+                animate();
+                
+                // Turn-based game progression
+                setInterval(() => {
+                    if (!this.gameState.paused) {
+                        this.processTurn();
+                    }
+                }, 5000 / this.gameState.speed);
+            }
+
+            updateGameLogic() {
+                // Update unit movements
+                this.units.forEach(unit => {
+                    if (unit.userData.destination && Math.random() > 0.98) {
+                        const direction = new THREE.Vector3()
+                            .subVectors(unit.userData.destination, unit.position)
+                            .normalize()
+                            .multiplyScalar(0.5);
+                        unit.position.add(direction);
+                    }
+                });
+                
+                // Update resource generation
+                if (Math.random() > 0.95) {
+                    this.generateResources();
+                }
+                
+                // Process economic transactions
+                this.processTradeRoutes();
+                
+                // Update military operations
+                this.updateMilitaryOperations();
+            }
+
+            generateResources() {
+                const baseGeneration = {
+                    food: 50 + Math.random() * 100,
+                    production: 30 + Math.random() * 80,
+                    gold: 20 + Math.random() * 60,
+                    science: 15 + Math.random() * 40,
+                    culture: 10 + Math.random() * 30,
+                    energy: 40 + Math.random() * 120
+                };
+
+                // Apply weather and seasonal modifiers
+                const weatherMultiplier = this.getWeatherMultiplier();
+                
+                Object.keys(baseGeneration).forEach(resource => {
+                    this.resources[resource] += Math.floor(baseGeneration[resource] * weatherMultiplier);
+                });
+            }
+
+            getWeatherMultiplier() {
+                const multipliers = {
+                    'sunny': 1.1,
+                    'clear weather': 1.15,
+                    'rain': 1.2,
+                    'winter': 0.75,
+                    'storm': 0.6
+                };
+                return multipliers[this.gameState.weather] || 1.0;
+            }
+
+            processTradeRoutes() {
+                this.economy.tradeRoutes.forEach(route => {
+                    const tradeValue = route.volume * (0.8 + Math.random() * 0.4);
+                    this.resources.gold += Math.floor(tradeValue * 0.1);
+                    this.economy.tradeVolume += tradeValue;
+                });
+            }
+
+            updateMilitaryOperations() {
+                // Simulate ongoing battles
+                if (Math.random() > 0.98) {
+                    this.createBattleIndicator();
+                }
+                
+                // Update unit experience and morale
+                this.units.forEach(unit => {
+                    if (Math.random() > 0.99) {
+                        unit.userData.experience += 0.1;
+                    }
+                });
+            }
+
+            createBattleIndicator() {
+                const battleDiv = document.createElement('div');
+                battleDiv.className = 'battle-indicator';
+                battleDiv.innerHTML = '⚔️ BATTLE';
+                battleDiv.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+                battleDiv.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+                
+                document.body.appendChild(battleDiv);
+                
+                setTimeout(() => {
+                    battleDiv.remove();
+                }, 3000);
+            }
+
+            updateUI() {
+                // Update resource displays
+                Object.keys(this.resources).forEach(resource => {
+                    const element = document.getElementById(`${resource}Value`);
+                    if (element) {
+                        element.textContent = this.formatNumber(this.resources[resource]);
+                    }
+                });
+                
+                // Update trade volume
+                const tradeElement = document.getElementById('tradeVolume');
+                if (tradeElement) {
+                    tradeElement.textContent = `₦${this.formatNumber(this.economy.tradeVolume)}`;
+                }
+                
+                // Update minimap
+                this.updateMinimap();
+            }
+
+            updateMinimap() {
+                const minimap = document.getElementById('minimap');
+                
+                // Clear existing dots
+                minimap.innerHTML = '';
+                
+                // Add city dots
+                this.cities.forEach(city => {
+                    const dot = document.createElement('div');
+                    dot.className = 'minimap-dot';
+                    dot.style.background = '#66b3ff';
+                    dot.style.left = ((city.position.x + 1000) / 2000 * 100) + '%';
+                    dot.style.top = ((city.position.z + 1000) / 2000 * 100) + '%';
+                    minimap.appendChild(dot);
+                });
+                
+                // Add unit dots
+                this.units.slice(0, 10).forEach(unit => {
+                    const dot = document.createElement('div');
+                    dot.className = 'minimap-dot';
+                    dot.style.left = ((unit.position.x + 1000) / 2000 * 100) + '%';
+                    dot.style.top = ((unit.position.z + 1000) / 2000 * 100) + '%';
+                    minimap.appendChild(dot);
+                });
+            }
+
+            updateAI() {
+                this.aiPlayers.forEach(ai => {
+                    ai.processDecisions();
+                });
+            }
+
+            processMultiplayerEvents() {
+                // Simulate multiplayer synchronization
+                if (Math.random() > 0.995) {
+                    this.networkManager.latency = 30 + Math.random() * 50;
+                    this.networkManager.playerCount += Math.floor((Math.random() - 0.5) * 10);
+                }
+            }
+
+            updateEconomicSimulation() {
+                // Advanced economic modeling
+                const marketForces = Math.random() * 0.1 - 0.05;
+                this.economy.gdpGrowth += marketForces;
+                this.economy.inflationRate += marketForces * 0.5;
+                
+                // Supply and demand calculations
+                this.economy.marketDemand = this.calculateMarketDemand();
+                
+                // Currency fluctuations
+                this.processCurrencyExchange();
+            }
+
+            calculateMarketDemand() {
+                const demandFactors = [
+                    this.resources.population / 1000000,
+                    this.economy.tradeVolume / 1000000,
+                    this.gameState.turn / 100
+                ];
+                
+                const demand = demandFactors.reduce((a, b) => a + b, 0) / demandFactors.length;
+                
+                if (demand > 1.5) return 'Very High';
+                if (demand > 1.0) return 'High';
+                if (demand > 0.5) return 'Medium';
+                return 'Low';
+            }
+
+            processCurrencyExchange() {
+                // Simulate international trade effects
+                const exchangeRate = 0.95 + Math.random() * 0.1;
+                this.economy.tradeVolume *= exchangeRate;
+            }
+
+            processTurn() {
+                this.gameState.turn++;
+                this.gameState.year += 10;
+                
+                // Era progression
+                this.checkEraProgression();
+                
+                // Technology advancement
+                this.advanceTechnologies();
+                
+                // AI diplomatic actions
+                this.processAIDiplomacy();
+                
+                // Random events
+                this.triggerRandomEvents();
+                
+                console.log(`Turn ${this.gameState.turn} - Year ${this.gameState.year} - Era: ${this.gameState.era}`);
+            }
+
+            checkEraProgression() {
+                const eras = [
+                    { name: 'Ancient', year: 4000 },
+                    { name: 'Classical', year: 500 },
+                    { name: 'Medieval', year: 1000 },
+                    { name: 'Renaissance', year: 1500 },
+                    { name: 'Industrial', year: 1800 },
+                    { name: 'Modern', year: 1950 },
+                    { name: 'Information', year: 2000 },
+                    { name: 'Future', year: 2100 }
+                ];
+                
+                for (let i = eras.length - 1; i >= 0; i--) {
+                    if (this.gameState.year >= eras[i].year) {
+                        if (this.gameState.era !== eras[i].name) {
+                            this.gameState.era = eras[i].name;
+                            this.showNotification(`Era Advanced!`, `Welcome to the ${eras[i].name} Era!`);
+                        }
+                        break;
+                    }
+                }
+            }
+
+            advanceTechnologies() {
+                Object.keys(this.technology.progress).forEach(tech => {
+                    this.technology.progress[tech] += (Math.random() * 0.05 + 0.01);
+                    
+                    if (this.technology.progress[tech] >= 1.0) {
+                        this.completeTechnology(tech);
+                    }
+                });
+            }
+
+            completeTechnology(tech) {
+                this.technology.completed.push(tech);
+                this.technology.progress[tech] = 0;
+                
+                const techNames = {
+                    fusion: 'Fusion Power',
+                    quantum: 'Quantum Computing',
+                    space: 'Space Colonization'
+                };
+                
+                this.showNotification('Technology Complete!', `${techNames[tech]} research completed! New capabilities unlocked.`);
+            }
+
+            processAIDiplomacy() {
+                if (Math.random() > 0.9) {
+                    const civilizations = Object.keys(this.diplomacy.relations);
+                    const civ = civilizations[Math.floor(Math.random() * civilizations.length)];
+                    const relation = this.diplomacy.relations[civ];
+                    
+                    // AI diplomatic action
+                    const actions = ['trade_offer', 'alliance_proposal', 'declaration_of_war', 'peace_treaty'];
+                    const action = actions[Math.floor(Math.random() * actions.length)];
+                    
+                    this.showNotification('Diplomatic Message', `The ${civ} civilization has sent a ${action.replace('_', ' ')} proposal.`);
+                }
+            }
+
+            triggerRandomEvents() {
+                if (Math.random() > 0.95) {
+                    const events = [
+                        { title: 'Natural Disaster', message: 'Earthquake strikes! -10% production for 3 turns.' },
+                        { title: 'Great Discovery', message: 'Scientists make breakthrough! +500 science points.' },
+                        { title: 'Trade Boom', message: 'Economic prosperity! +1000 gold from trade.' },
+                        { title: 'Rebellion', message: 'Civil unrest in the provinces. Military needed.' },
+                        { title: 'Golden Age', message: 'Your civilization enters a golden age! +25% to all yields.' }
+                    ];
+                    
+                    const event = events[Math.floor(Math.random() * events.length)];
+                    this.showNotification(event.title, event.message);
+                }
+            }
+
+            formatNumber(num) {
+                if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+                if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+                return num.toLocaleString();
+            }
+
+            showNotification(title, message) {
+                const notification = document.getElementById('gameNotification');
+                document.getElementById('notificationTitle').textContent = title;
+                document.getElementById('notificationMessage').textContent = message;
+                notification.style.display = 'block';
+            }
+        }
+
+        // Advanced AI Class
+        class AdvancedAI {
+            constructor(name, game) {
+                this.name = name;
+                this.game = game;
+                this.personality = {
+                    aggression: Math.random(),
+                    diplomacy: Math.random(),
+                    economy: Math.random(),
+                    expansion: Math.random()
+                };
+                this.memory = [];
+                this.strategies = ['military', 'economic', 'diplomatic', 'technological'];
+                this.currentStrategy = this.strategies[Math.floor(Math.random() * this.strategies.length)];
+            }
+
+            processDecisions() {
+                // AI decision making with machine learning concepts
+                if (Math.random() > 0.98) {
+                    this.makeStrategicDecision();
+                }
+                
+                if (Math.random() > 0.95) {
+                    this.adaptPersonality();
+                }
+            }
+
+            makeStrategicDecision() {
+                const decisions = [
+                    'Build new city',
+                    'Research technology',
+                    'Train military units',
+                    'Establish trade route',
+                    'Diplomatic negotiation'
+                ];
+                
+                const decision = decisions[Math.floor(Math.random() * decisions.length)];
+                this.memory.push({ turn: this.game.gameState.turn, decision, outcome: 'pending' });
+                
+                console.log(`${this.name} AI Decision: ${decision}`);
+            }
+
+            adaptPersonality() {
+                // Adaptive AI that learns from game state
+                const gameStateInfluence = {
+                    aggression: this.game.military.infantry.count / 10000,
+                    diplomacy: Object.keys(this.game.diplomacy.relations).length / 10,
+                    economy: this.game.resources.gold / 100000,
+                    expansion: this.game.cities.length / 10
+                };
+                
+                Object.keys(this.personality).forEach(trait => {
+                    this.personality[trait] = Math.max(0, Math.min(1, 
+                        this.personality[trait] * 0.95 + gameStateInfluence[trait] * 0.05
+                    ));
+                });
+            }
+        }
+
+        // Banking and Economic System
+        class BankingSystem {
+            constructor() {
+                this.loans = [];
+                this.investments = [];
+                this.interestRate = 0.05;
+                this.creditRating = 'AAA';
+            }
+
+            processLoan(amount, terms) {
+                const loan = {
+                    amount,
+                    terms,
+                    interest: amount * this.interestRate,
+                    issued: Date.now()
+                };
+                this.loans.push(loan);
+                return loan;
+            }
+
+            calculateROI(investment) {
+                return investment.amount * (0.03 + Math.random() * 0.1);
+            }
+        }
+
+        // Global Game Functions
+        let game;
+
+        function togglePause() {
+            game.gameState.paused = !game.gameState.paused;
+            const btn = event.target;
+            btn.textContent = game.gameState.paused ? '▶️ Resume' : '⏸️ Pause';
+        }
+
+        function speedUp() {
+            game.gameState.speed = game.gameState.speed === 1 ? 2 : 1;
+            const btn = event.target;
+            btn.textContent = game.gameState.speed === 1 ? '⏩ Speed x2' : '▶️ Speed x1';
+        }
+
+        function openDiplomacy() {
+            game.showNotification('Diplomacy Center', 'Advanced diplomatic negotiations interface would open here with treaty management, spy networks, and international relations.');
+        }
+
+        function openTech() {
+            game.showNotification('Technology Tree', 'Comprehensive research interface showing all available technologies, collaborative research projects, and technology trading options.');
+        }
+
+        function openEconomy() {
+            game.showNotification('Economic Dashboard', 'Detailed economic analysis with trade route management, market manipulation tools, and financial modeling systems.');
+        }
+
+        function advanceTech(techType) {
+            game.technology.progress[techType] += 0.1;
+            if (game.technology.progress[techType] >= 1.0) {
+                game.completeTechnology(techType);
+            }
+        }
+
+        function deployUnit(unitType) {
+            const x = (Math.random() - 0.5) * 500;
+            const z = (Math.random() - 0.5) * 500;
+            game.createUnit(x, z, unitType);
+            game.showNotification('Unit Deployed', `New ${unitType} unit deployed to the battlefield!`);
+        }
+
+        function manageDiplomacy(civilization) {
+            const relation = game.diplomacy.relations[civilization];
+            game.showNotification(`Diplomacy: ${civilization}`, `Current status: ${relation.status}. Trust level: ${(relation.trust * 100).toFixed(0)}%. Advanced diplomatic options available.`);
+        }
+
+        function closeNotification() {
+            document.getElementById('gameNotification').style.display = 'none';
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (game && game.camera && game.renderer) {
+                game.camera.aspect = window.innerWidth / window.innerHeight;
+                game.camera.updateProjectionMatrix();
+                game.renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+        });
+
+        // Initialize the game when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            game = new CivilizationGame();
+        });
+
+        console.log('Advanced Multiplayer RTS & Economic Simulation Platform Loaded');
+        console.log('Features: 3D World, AI Systems, Economic Modeling, Diplomacy, Technology Trees, Military Combat');
+    </script>
+</body>
+</html>

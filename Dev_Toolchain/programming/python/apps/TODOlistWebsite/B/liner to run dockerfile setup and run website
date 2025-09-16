@@ -1,0 +1,2 @@
+ocker build -t todonotes .; docker run -d --name todonotes -p 7777:7777 -v "$(pwd)/backend/uploads:/app/backend/uploads" todonotes; docker logs todonotes; ws 'gc http://localhost:7777/'
+

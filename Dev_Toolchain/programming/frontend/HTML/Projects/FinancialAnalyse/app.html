@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Financial Analysis Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: scale(1.05);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .input-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .input-group input {
+            padding: 12px;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-table th,
+        .portfolio-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .portfolio-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .portfolio-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .positive {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .negative {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-top: 20px;
+        }
+
+        .analysis-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .risk-indicator {
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .risk-low {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .risk-medium {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .risk-high {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Advanced Financial Analysis Dashboard</h1>
+            <p>Comprehensive Portfolio Management & Risk Analysis Platform</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value" id="totalValue">$0</div>
+                <div class="metric-label">Total Portfolio Value</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="totalReturn">0%</div>
+                <div class="metric-label">Total Return</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="sharpeRatio">0.00</div>
+                <div class="metric-label">Sharpe Ratio</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="volatility">0%</div>
+                <div class="metric-label">Portfolio Volatility</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="betaValue">0.00</div>
+                <div class="metric-label">Portfolio Beta</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="maxDrawdown">0%</div>
+                <div class="metric-label">Max Drawdown</div>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <h3>Add Stock to Portfolio</h3>
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="stockSymbol">Stock Symbol</label>
+                    <input type="text" id="stockSymbol" placeholder="e.g., AAPL">
+                </div>
+                <div class="input-group">
+                    <label for="shares">Shares</label>
+                    <input type="number" id="shares" placeholder="100">
+                </div>
+                <div class="input-group">
+                    <label for="purchasePrice">Purchase Price</label>
+                    <input type="number" id="purchasePrice" step="0.01" placeholder="150.50">
+                </div>
+                <div class="input-group">
+                    <label for="currentPrice">Current Price</label>
+                    <input type="number" id="currentPrice" step="0.01" placeholder="155.25">
+                </div>
+            </div>
+            <button class="btn" onclick="addStock()">Add Stock to Portfolio</button>
+            <button class="btn" onclick="generateSampleData()" style="margin-left: 10px;">Load Sample Portfolio</button>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>Portfolio Holdings</h3>
+                <table class="portfolio-table" id="portfolioTable">
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Shares</th>
+                            <th>Purchase Price</th>
+                            <th>Current Price</th>
+                            <th>Market Value</th>
+                            <th>P&L</th>
+                            <th>Return %</th>
+                        </tr>
+                    </thead>
+                    <tbody id="portfolioBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Portfolio Allocation</h3>
+                <div class="chart-container">
+                    <canvas id="allocationChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Performance Over Time</h3>
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Risk-Return Analysis</h3>
+                <div class="chart-container">
+                    <canvas id="riskReturnChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <h3>Advanced Financial Analysis</h3>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Risk Assessment</h3>
+                    <div id="riskAssessment">
+                        <div class="risk-indicator" id="riskLevel">Calculating...</div>
+                        <p id="riskDescription">Portfolio risk analysis will appear here.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Performance Metrics</h3>
+                    <div id="performanceMetrics">
+                        <p><strong>Annual Return:</strong> <span id="annualReturn">--</span></p>
+                        <p><strong>Monthly Return:</strong> <span id="monthlyReturn">--</span></p>
+                        <p><strong>Information Ratio:</strong> <span id="informationRatio">--</span></p>
+                        <p><strong>Calmar Ratio:</strong> <span id="calmarRatio">--</span></p>
+                        <p><strong>Sortino Ratio:</strong> <span id="sortinoRatio">--</span></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Correlation Matrix</h3>
+                    <div class="chart-container">
+                        <canvas id="correlationChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Monte Carlo Simulation</h3>
+                    <div class="chart-container">
+                        <canvas id="monteCarloChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Advanced Financial Analysis Dashboard. Built with modern web technologies.</p>
+        </div>
+    </div>
+
+    <script>
+        // Portfolio data structure
+        let portfolio = [];
+        let charts = {};
+
+        // Sample market data for demonstration
+        const marketData = {
+            'AAPL': { volatility: 0.25, beta: 1.2, correlation: 0.8 },
+            'GOOGL': { volatility: 0.28, beta: 1.1, correlation: 0.75 },
+            'MSFT': { volatility: 0.22, beta: 0.9, correlation: 0.82 },
+            'AMZN': { volatility: 0.32, beta: 1.3, correlation: 0.7 },
+            'TSLA': { volatility: 0.55, beta: 1.8, correlation: 0.6 },
+            'NVDA': { volatility: 0.45, beta: 1.6, correlation: 0.65 },
+            'META': { volatility: 0.38, beta: 1.4, correlation: 0.68 },
+            'NFLX': { volatility: 0.42, beta: 1.5, correlation: 0.62 }
+        };
+
+        // Add stock to portfolio
+        function addStock() {
+            const symbol = document.getElementById('stockSymbol').value.toUpperCase();
+            const shares = parseFloat(document.getElementById('shares').value);
+            const purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
+            const currentPrice = parseFloat(document.getElementById('currentPrice').value);
+
+            if (!symbol || !shares || !purchasePrice || !currentPrice) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const stock = {
+                symbol,
+                shares,
+                purchasePrice,
+                currentPrice,
+                marketValue: shares * currentPrice,
+                pnl: (currentPrice - purchasePrice) * shares,
+                returnPercent: ((currentPrice - purchasePrice) / purchasePrice) * 100
+            };
+
+            portfolio.push(stock);
+            updatePortfolioDisplay();
+            updateCharts();
+            updateMetrics();
+
+            // Clear inputs
+            document.getElementById('stockSymbol').value = '';
+            document.getElementById('shares').value = '';
+            document.getElementById('purchasePrice').value = '';
+            document.getElementById('currentPrice').value = '';
+        }
+
+        // Generate sample portfolio data
+        function generateSampleData() {
+            portfolio = [
+                { symbol: 'AAPL', shares: 100, purchasePrice: 145.50, currentPrice: 175.20, marketValue: 17520, pnl: 2970, returnPercent: 20.4 },
+                { symbol: 'GOOGL', shares: 50, purchasePrice: 2400.00, currentPrice: 2650.75, marketValue: 132537.5, pnl: 12537.5, returnPercent: 10.4 },
+                { symbol: 'MSFT', shares: 75, purchasePrice: 320.25, currentPrice: 345.80, marketValue: 25935, pnl: 1916.25, returnPercent: 7.98 },
+                { symbol: 'AMZN', shares: 25, purchasePrice: 3200.50, currentPrice: 3450.25, marketValue: 86256.25, pnl: 6243.75, returnPercent: 7.8 },
+                { symbol: 'TSLA', shares: 30, purchasePrice: 850.00, currentPrice: 925.50, marketValue: 27765, pnl: 2265, returnPercent: 8.88 },
+                { symbol: 'NVDA', shares: 40, purchasePrice: 450.75, currentPrice: 520.30, marketValue: 20812, pnl: 2782, returnPercent: 15.43 }
+            ];
+
+            updatePortfolioDisplay();
+            updateCharts();
+            updateMetrics();
+        }
+
+        // Update portfolio display table
+        function updatePortfolioDisplay() {
+            const tbody = document.getElementById('portfolioBody');
+            tbody.innerHTML = '';
+
+            portfolio.forEach(stock => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${stock.symbol}</td>
+                    <td>${stock.shares}</td>
+                    <td>$${stock.purchasePrice.toFixed(2)}</td>
+                    <td>$${stock.currentPrice.toFixed(2)}</td>
+                    <td>$${stock.marketValue.toFixed(2)}</td>
+                    <td class="${stock.pnl >= 0 ? 'positive' : 'negative'}">$${stock.pnl.toFixed(2)}</td>
+                    <td class="${stock.returnPercent >= 0 ? 'positive' : 'negative'}">${stock.returnPercent.toFixed(2)}%</td>
+                `;
+            });
+        }
+
+        // Update key metrics
+        function updateMetrics() {
+            const totalValue = portfolio.reduce((sum, stock) => sum + stock.marketValue, 0);
+            const totalCost = portfolio.reduce((sum, stock) => sum + (stock.shares * stock.purchasePrice), 0);
+            const totalReturn = totalCost > 0 ? ((totalValue - totalCost) / totalCost) * 100 : 0;
+
+            // Calculate portfolio volatility (weighted average)
+            let portfolioVolatility = 0;
+            let portfolioBeta = 0;
+            
+            if (portfolio.length > 0) {
+                portfolio.forEach(stock => {
+                    const weight = stock.marketValue / totalValue;
+                    const volatility = marketData[stock.symbol]?.volatility || 0.25;
+                    const beta = marketData[stock.symbol]?.beta || 1.0;
+                    
+                    portfolioVolatility += weight * volatility;
+                    portfolioBeta += weight * beta;
+                });
+            }
+
+            // Calculate Sharpe ratio (assuming risk-free rate of 2%)
+            const riskFreeRate = 0.02;
+            const excessReturn = (totalReturn / 100) - riskFreeRate;
+            const sharpeRatio = portfolioVolatility > 0 ? excessReturn / portfolioVolatility : 0;
+
+            // Calculate max drawdown (simplified)
+            const maxDrawdown = Math.max(...portfolio.map(stock => 
+                stock.returnPercent < 0 ? Math.abs(stock.returnPercent) : 0
+            ));
+
+            // Update display
+            document.getElementById('totalValue').textContent = `$${totalValue.toLocaleString()}`;
+            document.getElementById('totalReturn').textContent = `${totalReturn.toFixed(2)}%`;
+            document.getElementById('totalReturn').className = totalReturn >= 0 ? 'positive' : 'negative';
+            document.getElementById('sharpeRatio').textContent = sharpeRatio.toFixed(2);
+            document.getElementById('volatility').textContent = `${(portfolioVolatility * 100).toFixed(2)}%`;
+            document.getElementById('betaValue').textContent = portfolioBeta.toFixed(2);
+            document.getElementById('maxDrawdown').textContent = `${maxDrawdown.toFixed(2)}%`;
+
+            updateAdvancedMetrics(totalReturn, portfolioVolatility, maxDrawdown);
+            updateRiskAssessment(portfolioVolatility, portfolioBeta);
+        }
+
+        // Update advanced performance metrics
+        function updateAdvancedMetrics(totalReturn, volatility, maxDrawdown) {
+            const annualReturn = totalReturn * (252/30); // Annualized
+            const monthlyReturn = totalReturn / 12;
+            const riskFreeRate = 2.0;
+            
+            const informationRatio = volatility > 0 ? (totalReturn - 8.5) / (volatility * 100) : 0; // Assuming benchmark return of 8.5%
+            const calmarRatio = maxDrawdown > 0 ? annualReturn / maxDrawdown : 0;
+            const sortinoRatio = volatility > 0 ? (totalReturn - riskFreeRate) / (volatility * 100 * 0.7) : 0; // Simplified
+
+            document.getElementById('annualReturn').textContent = `${annualReturn.toFixed(2)}%`;
+            document.getElementById('monthlyReturn').textContent = `${monthlyReturn.toFixed(2)}%`;
+            document.getElementById('informationRatio').textContent = informationRatio.toFixed(2);
+            document.getElementById('calmarRatio').textContent = calmarRatio.toFixed(2);
+            document.getElementById('sortinoRatio').textContent = sortinoRatio.toFixed(2);
+        }
+
+        // Update risk assessment
+        function updateRiskAssessment(volatility, beta) {
+            const riskLevel = document.getElementById('riskLevel');
+            const riskDescription = document.getElementById('riskDescription');
+
+            let level, description, className;
+
+            if (volatility < 0.2 && beta < 1.2) {
+                level = 'Low Risk';
+                className = 'risk-low';
+                description = 'Portfolio shows conservative risk characteristics with low volatility and market sensitivity.';
+            } else if (volatility < 0.35 && beta < 1.5) {
+                level = 'Medium Risk';
+                className = 'risk-medium';
+                description = 'Portfolio has moderate risk with balanced volatility and market correlation.';
+            } else {
+                level = 'High Risk';
+                className = 'risk-high';
+                description = 'Portfolio exhibits high risk characteristics with significant volatility and market sensitivity.';
+            }
+
+            riskLevel.textContent = level;
+            riskLevel.className = `risk-indicator ${className}`;
+            riskDescription.textContent = description;
+        }
+
+        // Update all charts
+        function updateCharts() {
+            updateAllocationChart();
+            updatePerformanceChart();
+            updateRiskReturnChart();
+            updateCorrelationChart();
+            updateMonteCarloChart();
+        }
+
+        // Portfolio allocation pie chart
+        function updateAllocationChart() {
+            const ctx = document.getElementById('allocationChart').getContext('2d');
+            
+            if (charts.allocation) {
+                charts.allocation.destroy();
+            }
+
+            const totalValue = portfolio.reduce((sum, stock) => sum + stock.marketValue, 0);
+            const data = portfolio.map(stock => stock.marketValue);
+            const labels = portfolio.map(stock => stock.symbol);
+            const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF'];
+
+            charts.allocation = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: colors.slice(0, portfolio.length),
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const percentage = ((context.parsed / totalValue) * 100).toFixed(1);
+                                    return `${context.label}: $${context.parsed.toLocaleString()} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Performance chart (simulated historical data)
+        function updatePerformanceChart() {
+            const ctx = document.getElementById('performanceChart').getContext('2d');
+            
+            if (charts.performance) {
+                charts.performance.destroy();
+            }
+
+            // Generate simulated performance data
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const portfolioData = [];
+            const benchmarkData = [];
+            
+            let portfolioValue = 100;
+            let benchmarkValue = 100;
+            
+            for (let i = 0; i < 12; i++) {
+                const portfolioReturn = (Math.random() - 0.4) * 15; // Random return between -6% and 9%
+                const benchmarkReturn = (Math.random() - 0.45) * 12; // Benchmark return
+                
+                portfolioValue *= (1 + portfolioReturn / 100);
+                benchmarkValue *= (1 + benchmarkReturn / 100);
+                
+                portfolioData.push(portfolioValue);
+                benchmarkData.push(benchmarkValue);
+            }
+
+            charts.performance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: months,
+                    datasets: [{
+                        label: 'Portfolio Performance',
+                        data: portfolioData,
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: 'S&P 500 Benchmark',
+                        data: benchmarkData,
+                        borderColor: '#f093fb',
+                        backgroundColor: 'rgba(240, 147, 251, 0.1)',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Value (Base 100)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Risk-Return scatter plot
+        function updateRiskReturnChart() {
+            const ctx = document.getElementById('riskReturnChart').getContext('2d');
+            
+            if (charts.riskReturn) {
+                charts.riskReturn.destroy();
+            }
+
+            const data = portfolio.map(stock => ({
+                x: (marketData[stock.symbol]?.volatility || 0.25) * 100, // Risk (volatility %)
+                y: stock.returnPercent, // Return %
+                label: stock.symbol
+            }));
+
+            charts.riskReturn = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Risk vs Return',
+                        data: data,
+                        backgroundColor: '#667eea',
+                        borderColor: '#764ba2',
+                        borderWidth: 2,
+                        pointRadius: 8,
+                        pointHoverRadius: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.raw.label}: Risk ${context.parsed.x.toFixed(1)}%, Return ${context.parsed.y.toFixed(1)}%`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Risk (Volatility %)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Return %'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Correlation matrix heatmap (simplified)
+        function updateCorrelationChart() {
+            const ctx = document.getElementById('correlationChart').getContext('2d');
+            
+            if (charts.correlation) {
+                charts.correlation.destroy();
+            }
+
+            if (portfolio.length < 2) {
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                ctx.font = '16px Arial';
+                ctx.fillStyle = '#666';
+                ctx.textAlign = 'center';
+                ctx.fillText('Add more stocks to see correlation matrix', ctx.canvas.width / 2, ctx.canvas.height / 2);
+                return;
+            }
+
+            // Generate correlation data (simplified)
+            const correlationData = [];
+            const labels = portfolio.map(stock => stock.symbol);
+            
+            for (let i = 0; i < portfolio.length; i++) {
+                for (let j = 0; j < portfolio.length; j++) {
+                    const correlation = i === j ? 1 : 
+                        (marketData[portfolio[i].symbol]?.correlation || 0.7) * 
+                        (marketData[portfolio[j].symbol]?.correlation || 0.7) * 
+                        (0.8 + Math.random() * 0.4); // Simulated correlation
+                    
+                    correlationData.push({
+                        x: j,
+                        y: i,
+                        v: correlation
+                    });
+                }
+            }
+
+            charts.correlation = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Correlation',
+                        data: correlationData,
+                        backgroundColor: function(context) {
+                            const value = context.parsed.v;
+                            const alpha = Math.abs(value);
+                            return value > 0 ? `rgba(102, 126, 234, ${alpha})` : `rgba(231, 76, 60, ${alpha})`;
+                        },
+                        pointRadius: 20
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function() {
+                                    return 'Correlation Matrix';
+                                },
+                                label: function(context) {
+                                    const i = context.parsed.y;
+                                    const j = context.parsed.x;
+                                    return `${labels[i]} vs ${labels[j]}: ${context.parsed.v.toFixed(2)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            min: -0.5,
+                            max: portfolio.length - 0.5,
+                            ticks: {
+                                stepSize: 1,
+                                callback: function(value) {
+                                    return labels[value] || '';
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Assets'
+                            }
+                        },
+                        y: {
+                            min: -0.5,
+                            max: portfolio.length - 0.5,
+                            ticks: {
+                                stepSize: 1,
+                                callback: function(value) {
+                                    return labels[value] || '';
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Assets'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Monte Carlo simulation chart
+        function updateMonteCarloChart() {
+            const ctx = document.getElementById('monteCarloChart').getContext('2d');
+            
+            if (charts.monteCarlo) {
+                charts.monteCarlo.destroy();
+            }
+
+            // Generate Monte Carlo simulation data
+            const simulations = 100;
+            const periods = 12;
+            const datasets = [];
+            
+            for (let sim = 0; sim < simulations; sim++) {
+                const data = [];
+                let value = 100;
+                
+                for (let period = 0; period <= periods; period++) {
+                    if (period === 0) {
+                        data.push(value);
+                    } else {
+                        const return_ = (Math.random() - 0.45) * 25; // Random return
+                        value *= (1 + return_ / 100);
+                        data.push(value);
+                    }
+                }
+                
+                datasets.push({
+                    data: data,
+                    borderColor: `rgba(102, 126, 234, ${0.1 + Math.random() * 0.1})`,
+                    backgroundColor: 'transparent',
+                    borderWidth: 1,
+                    pointRadius: 0,
+                    tension: 0.4
+                });
+            }
+
+            charts.monteCarlo = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: periods + 1}, (_, i) => i),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: '100 Portfolio Simulations (1 Year)'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Months'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Portfolio Value (Base 100)'
+                            }
+                        }
+                    },
+                    elements: {
+                        line: {
+                            borderJoinStyle: 'round'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize the dashboard
+        function initDashboard() {
+            // Load sample data on startup
+            generateSampleData();
+            
+            // Set up event listeners
+            document.getElementById('stockSymbol').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addStock();
+                }
+            });
+        }
+
+        // Initialize when page loads
+        window.addEventListener('load', initDashboard);
+
+        // Responsive chart resize
+        window.addEventListener('resize', function() {
+            Object.values(charts).forEach(chart => {
+                if (chart && typeof chart.resize === 'function') {
+                    chart.resize();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

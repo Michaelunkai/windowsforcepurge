@@ -1,0 +1,82 @@
+**🛠️ Ultimate Step-by-Step Guide to Fix File Explorer Freezes on Windows 11 Using ShellExView and Context Menu Shell Extension Cleanup**
+
+---
+
+### 🧊 Why File Explorer Freezes in Windows 11
+
+File Explorer often freezes due to **corrupt or buggy shell extensions**, especially those tied to third-party apps like WinRAR, OneDrive, antivirus software, or cloud drives. These extensions hook into the **context menu**, thumbnails, and Explorer features—causing slowdowns, freezes, or crashes.
+
+---
+
+### ✅ What You'll Use:
+
+**Tool:** [ShellExView by NirSoft](https://www.nirsoft.net/utils/shexview.html) (Free & portable)
+**Goal:** Disable non-Microsoft shell extensions to stop File Explorer freezes.
+
+---
+
+### 🪛 Step-by-Step Instructions to Fix the Freezes
+
+---
+
+#### **Step 1: Download ShellExView**
+
+* Visit: [https://www.nirsoft.net/utils/shexview.html](https://www.nirsoft.net/utils/shexview.html)
+* Scroll down and download the correct version (32-bit or 64-bit).
+* Extract the ZIP file and run `shexview.exe` as Administrator.
+
+---
+
+#### **Step 2: Configure ShellExView for Clarity**
+
+* Click **Options > Filter By Extension Type** → select **Context Menu** only.
+* Then click **Options > Hide All Microsoft Extensions** → this ensures you're only dealing with 3rd-party items.
+
+---
+
+#### **Step 3: Disable All Non-Microsoft Shell Extensions**
+
+* Select everything listed (Ctrl+A) after filtering.
+* Right-click > **Disable Selected Items**.
+* Confirm any prompts.
+
+---
+
+#### **Step 4: Restart File Explorer to Apply Fix**
+
+Open PowerShell or Command Prompt and run:
+
+```powershell
+taskkill /f /im explorer.exe && start explorer.exe
+```
+
+Alternatively, reboot your PC.
+
+---
+
+#### **Step 5: Test File Explorer Behavior**
+
+* Try opening folders, right-clicking files, and browsing drives.
+* If **Explorer no longer freezes**, one of the disabled extensions was the cause.
+
+---
+
+#### **Step 6: (Optional) Narrow Down the Problem**
+
+* Re-enable shell extensions **one-by-one** or in small groups.
+* After each re-enable, test Explorer again.
+* When the freeze returns, you’ve found the problematic extension—**leave it disabled permanently**.
+
+---
+
+### 🧠 Expert Tip:
+
+ShellExView also works for **thumbnail handler crashes**, **slow file navigation**, and **random Windows 11 UI hangs** tied to shell interaction.
+
+---
+
+### 🎯 Summary:
+
+> By disabling problematic third-party shell extensions using **ShellExView**, you can **completely eliminate File Explorer freezes** in Windows 11—without reinstalling Windows, modifying the registry, or using complex tools.
+
+Want a script that automatically disables all non-Microsoft shell extensions safely? Let me know!

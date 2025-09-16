@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  todonotes:
+    build: .
+    container_name: todonotes-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/uploads:/app/backend/uploads
+      - ./backend/logs:/app/backend/logs
+      - ./app/static/uploads:/app/app/static/uploads
+      - todonotes_data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:///./data/todonotesapp.db
+      - PYTHONPATH=/app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  todonotes_data:
+    driver: local

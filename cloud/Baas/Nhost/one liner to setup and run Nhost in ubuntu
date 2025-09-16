@@ -1,0 +1,1 @@
+nvm22 && npm install -g @nhost/cli && nhost init my-app && cd my-app && nhost dev

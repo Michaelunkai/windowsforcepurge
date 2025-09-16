@@ -1,0 +1,1 @@
+curl -sL "https://github.com/stripe/stripe-cli/releases/download/v1.29.0/stripe_1.29.0_linux_x86_64.tar.gz" | sudo tar -xz -C /usr/local/bin && echo "Stripe CLI installed. Running 'stripe login' for authentication..." && stripe login

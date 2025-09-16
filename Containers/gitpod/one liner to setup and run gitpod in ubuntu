@@ -1,0 +1,1 @@
+curl -fsSL https://releases.gitpod.io/cli/stable/gitpod-linux-amd64 -o gitpod && chmod +x gitpod && sudo mv gitpod /usr/local/bin && gitpod version && echo "Done."

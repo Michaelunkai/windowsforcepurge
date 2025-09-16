@@ -1,0 +1,2616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Master - Comprehensive API Testing & Documentation Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --background: #0f1419;
+            --surface: #1a202c;
+            --surface-light: #2d3748;
+            --text-primary: #f7fafc;
+            --text-secondary: #a0aec0;
+            --text-muted: #718096;
+            --border: #2d3748;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .sidebar-nav {
+            padding: 1rem 0;
+        }
+
+        .nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .nav-section-title {
+            padding: 0 1.5rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .nav-item:hover {
+            background: var(--surface-light);
+            color: var(--text-primary);
+        }
+
+        .nav-item.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-item .material-icons {
+            font-size: 20px;
+        }
+
+        .badge {
+            margin-left: auto;
+            background: var(--accent);
+            color: var(--background);
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            background: var(--background);
+        }
+
+        .top-bar {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 500px;
+            margin: 0 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.75rem 1rem 0.75rem 3rem;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .top-bar-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--surface-light);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--background);
+        }
+
+        .content-area {
+            padding: 2rem;
+            max-width: 100%;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: between;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        .api-list {
+            list-style: none;
+        }
+
+        .api-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            background: var(--surface);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .api-item:hover {
+            border-color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .api-status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .status-healthy {
+            background: var(--success);
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        .status-warning {
+            background: var(--warning);
+            box-shadow: 0 0 8px var(--warning);
+        }
+
+        .status-error {
+            background: var(--error);
+            box-shadow: 0 0 8px var(--error);
+        }
+
+        .api-info {
+            flex: 1;
+        }
+
+        .api-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .api-url {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+
+        .api-metrics {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .metric {
+            color: var(--text-muted);
+        }
+
+        .test-suite {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .test-suite-header {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .test-suite-name {
+            font-weight: 600;
+        }
+
+        .test-suite-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .test-item {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .test-item:last-child {
+            border-bottom: none;
+        }
+
+        .test-status-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+        }
+
+        .test-passed {
+            background: var(--success);
+        }
+
+        .test-failed {
+            background: var(--error);
+        }
+
+        .test-skipped {
+            background: var(--text-muted);
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.875rem;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .request-builder {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .request-header {
+            background: var(--surface-light);
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .method-url-container {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .method-select {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            min-width: 80px;
+        }
+
+        .url-input {
+            flex: 1;
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+
+        .send-button {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .send-button:hover {
+            background: #059669;
+        }
+
+        .response-viewer {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .response-header {
+            background: var(--surface-light);
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status-code {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .status-200 {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        .status-400 {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--error);
+        }
+
+        .response-time {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 1rem 0;
+        }
+
+        .notification {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            max-width: 300px;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .notification-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+        }
+
+        .notification-success .notification-icon {
+            background: var(--success);
+        }
+
+        .notification-error .notification-icon {
+            background: var(--error);
+        }
+
+        .notification-warning .notification-icon {
+            background: var(--warning);
+        }
+
+        .floating-action {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .floating-action:hover {
+            transform: scale(1.1);
+            background: var(--primary-dark);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.show .modal {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-input {
+            width: 100%;
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.75rem;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-top: 2px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-in {
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .top-bar {
+                padding: 1rem;
+            }
+
+            .search-container {
+                margin: 0 1rem;
+            }
+
+            .content-area {
+                padding: 1rem;
+            }
+
+            .method-url-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .method-select,
+            .url-input,
+            .send-button {
+                width: 100%;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">AM</div>
+                <div>
+                    <h3>API Master</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-secondary);">v2.1.0</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Overview</div>
+                    <button class="nav-item active" data-view="dashboard">
+                        <span class="material-icons">dashboard</span>
+                        Dashboard
+                    </button>
+                    <button class="nav-item" data-view="discovery">
+                        <span class="material-icons">explore</span>
+                        API Discovery
+                        <span class="badge">12</span>
+                    </button>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Testing</div>
+                    <button class="nav-item" data-view="testing">
+                        <span class="material-icons">science</span>
+                        API Testing
+                    </button>
+                    <button class="nav-item" data-view="automation">
+                        <span class="material-icons">smart_toy</span>
+                        Test Automation
+                    </button>
+                    <button class="nav-item" data-view="collections">
+                        <span class="material-icons">folder</span>
+                        Collections
+                    </button>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Documentation</div>
+                    <button class="nav-item" data-view="docs">
+                        <span class="material-icons">description</span>
+                        Living Docs
+                    </button>
+                    <button class="nav-item" data-view="schemas">
+                        <span class="material-icons">schema</span>
+                        API Schemas
+                    </button>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Monitoring</div>
+                    <button class="nav-item" data-view="monitoring">
+                        <span class="material-icons">monitor</span>
+                        Real-time Monitor
+                    </button>
+                    <button class="nav-item" data-view="analytics">
+                        <span class="material-icons">analytics</span>
+                        Performance Analytics
+                    </button>
+                    <button class="nav-item" data-view="alerts">
+                        <span class="material-icons">notifications</span>
+                        Alerts & Incidents
+                        <span class="badge">3</span>
+                    </button>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Collaboration</div>
+                    <button class="nav-item" data-view="team">
+                        <span class="material-icons">group</span>
+                        Team Workspace
+                    </button>
+                    <button class="nav-item" data-view="security">
+                        <span class="material-icons">security</span>
+                        Security Center
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <button class="btn-secondary" id="sidebar-toggle" style="display: none;">
+                    <span class="material-icons">menu</span>
+                </button>
+
+                <div class="search-container">
+                    <span class="material-icons search-icon">search</span>
+                    <input type="text" class="search-input" placeholder="Search APIs, tests, documentation...">
+                </div>
+
+                <div class="top-bar-actions">
+                    <button class="btn-secondary">
+                        <span class="material-icons">notifications</span>
+                    </button>
+                    <button class="btn-primary" id="new-api-btn">
+                        <span class="material-icons">add</span>
+                        New API
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard View -->
+                <div id="dashboard-view" class="view-content">
+                    <div class="page-header">
+                        <h1 class="page-title">API Dashboard</h1>
+                        <p class="page-subtitle">Comprehensive overview of your API ecosystem</p>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">47</div>
+                            <div class="stat-label">Active APIs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">98.7%</div>
+                            <div class="stat-label">Uptime</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">234ms</div>
+                            <div class="stat-label">Avg Response</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">1.2M</div>
+                            <div class="stat-label">Requests Today</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- API Health Overview -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">monitor_heart</span>
+                                </div>
+                                <h3 class="card-title">API Health Status</h3>
+                            </div>
+                            <ul class="api-list">
+                                <li class="api-item">
+                                    <div class="api-status status-healthy"></div>
+                                    <div class="api-info">
+                                        <div class="api-name">User Authentication API</div>
+                                        <div class="api-url">https://api.myapp.com/auth</div>
+                                    </div>
+                                    <div class="api-metrics">
+                                        <span class="metric">142ms</span>
+                                        <span class="metric">99.9%</span>
+                                    </div>
+                                </li>
+                                <li class="api-item">
+                                    <div class="api-status status-warning"></div>
+                                    <div class="api-info">
+                                        <div class="api-name">Payment Processing API</div>
+                                        <div class="api-url">https://api.payments.com/v2</div>
+                                    </div>
+                                    <div class="api-metrics">
+                                        <span class="metric">456ms</span>
+                                        <span class="metric">98.2%</span>
+                                    </div>
+                                </li>
+                                <li class="api-item">
+                                    <div class="api-status status-healthy"></div>
+                                    <div class="api-info">
+                                        <div class="api-name">Product Catalog API</div>
+                                        <div class="api-url">https://api.catalog.com/v1</div>
+                                    </div>
+                                    <div class="api-metrics">
+                                        <span class="metric">89ms</span>
+                                        <span class="metric">99.8%</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Performance Trends -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">trending_up</span>
+                                </div>
+                                <h3 class="card-title">Performance Trends</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- Recent Test Results -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">fact_check</span>
+                                </div>
+                                <h3 class="card-title">Recent Test Results</h3>
+                            </div>
+                            <div class="test-suite">
+                                <div class="test-suite-header">
+                                    <div class="test-suite-name">Authentication Flow Tests</div>
+                                    <div class="test-suite-stats">
+                                        <span style="color: var(--success);">8 passed</span>
+                                        <span style="color: var(--error);">1 failed</span>
+                                    </div>
+                                </div>
+                                <div class="test-item">
+                                    <div class="test-status-icon test-passed">✓</div>
+                                    <span>Login with valid credentials</span>
+                                </div>
+                                <div class="test-item">
+                                    <div class="test-status-icon test-passed">✓</div>
+                                    <span>Token refresh mechanism</span>
+                                </div>
+                                <div class="test-item">
+                                    <div class="test-status-icon test-failed">✗</div>
+                                    <span>Password reset flow</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Security Insights -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">shield</span>
+                                </div>
+                                <h3 class="card-title">Security Insights</h3>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>SSL Certificate Health</span>
+                                    <span style="color: var(--success);">100%</span>
+                                </div>
+                                <div style="background: var(--border); height: 8px; border-radius: 4px;">
+                                    <div style="background: var(--success); height: 100%; width: 100%; border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>Rate Limiting Coverage</span>
+                                    <span style="color: var(--warning);">87%</span>
+                                </div>
+                                <div style="background: var(--border); height: 8px; border-radius: 4px;">
+                                    <div style="background: var(--warning); height: 100%; width: 87%; border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>Authentication Coverage</span>
+                                    <span style="color: var(--success);">95%</span>
+                                </div>
+                                <div style="background: var(--border); height: 8px; border-radius: 4px;">
+                                    <div style="background: var(--success); height: 100%; width: 95%; border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Testing View -->
+                <div id="testing-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">API Testing</h1>
+                        <p class="page-subtitle">Comprehensive API testing with intelligent automation</p>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- Request Builder -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">build</span>
+                                </div>
+                                <h3 class="card-title">Request Builder</h3>
+                            </div>
+                            
+                            <div class="request-builder">
+                                <div class="request-header">
+                                    <div class="method-url-container">
+                                        <select class="method-select">
+                                            <option>GET</option>
+                                            <option>POST</option>
+                                            <option>PUT</option>
+                                            <option>DELETE</option>
+                                            <option>PATCH</option>
+                                        </select>
+                                        <input type="text" class="url-input" placeholder="https://api.example.com/endpoint" value="https://jsonplaceholder.typicode.com/posts/1">
+                                        <button class="send-button" id="send-request">
+                                            <span class="material-icons">send</span>
+                                            Send
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="tabs">
+                                    <button class="tab active" data-tab="headers">Headers</button>
+                                    <button class="tab" data-tab="body">Body</button>
+                                    <button class="tab" data-tab="auth">Auth</button>
+                                    <button class="tab" data-tab="params">Params</button>
+                                </div>
+
+                                <div class="tab-content active" id="headers-tab">
+                                    <div style="padding: 1rem;">
+                                        <div class="form-group">
+                                            <label class="form-label">Content-Type</label>
+                                            <input type="text" class="form-input" value="application/json">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content" id="body-tab">
+                                    <div style="padding: 1rem;">
+                                        <textarea class="form-input form-textarea" placeholder='{"key": "value"}'></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content" id="auth-tab">
+                                    <div style="padding: 1rem;">
+                                        <div class="form-group">
+                                            <label class="form-label">Authorization Type</label>
+                                            <select class="form-input">
+                                                <option>Bearer Token</option>
+                                                <option>API Key</option>
+                                                <option>Basic Auth</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content" id="params-tab">
+                                    <div style="padding: 1rem;">
+                                        <div class="form-group">
+                                            <label class="form-label">Query Parameters</label>
+                                            <input type="text" class="form-input" placeholder="key=value">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Response Viewer -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">code</span>
+                                </div>
+                                <h3 class="card-title">Response</h3>
+                            </div>
+
+                            <div class="response-viewer">
+                                <div class="response-header">
+                                    <div>
+                                        <span class="status-code status-200">200 OK</span>
+                                    </div>
+                                    <div class="response-time">Response time: 142ms</div>
+                                </div>
+                                <div class="code-block" id="response-body">
+                                    <pre><code class="language-json">{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Automation -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">smart_toy</span>
+                            </div>
+                            <h3 class="card-title">Intelligent Test Generation</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                            AI-powered test generation based on API specifications and usage patterns
+                        </p>
+                        <div class="grid grid-3">
+                            <div class="card" style="border: 1px solid var(--primary); background: rgba(99, 102, 241, 0.05);">
+                                <h4 style="margin-bottom: 0.5rem;">Edge Case Detection</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.875rem;">
+                                    Automatically identifies boundary values and potential failure scenarios
+                                </p>
+                            </div>
+                            <div class="card" style="border: 1px solid var(--secondary); background: rgba(16, 185, 129, 0.05);">
+                                <h4 style="margin-bottom: 0.5rem;">Load Testing</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.875rem;">
+                                    Realistic traffic simulation with performance bottleneck detection
+                                </p>
+                            </div>
+                            <div class="card" style="border: 1px solid var(--accent); background: rgba(245, 158, 11, 0.05);">
+                                <h4 style="margin-bottom: 0.5rem;">Regression Analysis</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.875rem;">
+                                    Continuous monitoring for API changes and compatibility issues
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Discovery View -->
+                <div id="discovery-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">API Discovery</h1>
+                        <p class="page-subtitle">Intelligent API discovery and ecosystem mapping</p>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- Discovery Sources -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">search</span>
+                                </div>
+                                <h3 class="card-title">Discovery Sources</h3>
+                            </div>
+                            <div class="grid grid-2">
+                                <div class="card" style="background: var(--surface-light);">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <span class="material-icons" style="color: var(--primary);">web</span>
+                                        <strong>Network Traffic</strong>
+                                    </div>
+                                    <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        Real-time browser network monitoring
+                                    </p>
+                                </div>
+                                <div class="card" style="background: var(--surface-light);">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <span class="material-icons" style="color: var(--secondary);">code</span>
+                                        <strong>Code Scanning</strong>
+                                    </div>
+                                    <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        IDE and project repository analysis
+                                    </p>
+                                </div>
+                                <div class="card" style="background: var(--surface-light);">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <span class="material-icons" style="color: var(--accent);">cloud</span>
+                                        <strong>Cloud Services</strong>
+                                    </div>
+                                    <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        AWS, Azure, GCP API discovery
+                                    </p>
+                                </div>
+                                <div class="card" style="background: var(--surface-light);">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <span class="material-icons" style="color: var(--error);">hub</span>
+                                        <strong>API Registries</strong>
+                                    </div>
+                                    <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        OpenAPI spec repositories
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- API Dependency Graph -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">account_tree</span>
+                                </div>
+                                <h3 class="card-title">API Dependency Graph</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="dependencyChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Discovered APIs -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">inventory</span>
+                            </div>
+                            <h3 class="card-title">Discovered APIs</h3>
+                        </div>
+                        <div class="grid grid-3">
+                            <div class="api-item" style="flex-direction: column; align-items: stretch;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                    <div class="api-status status-healthy"></div>
+                                    <div class="api-info">
+                                        <div class="api-name">Stripe Payments API</div>
+                                        <div class="api-url">https://api.stripe.com/v1</div>
+                                    </div>
+                                </div>
+                                <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                                    Auto-discovered from network traffic. 15 endpoints identified.
+                                </div>
+                                <button class="btn-primary" style="margin-top: 1rem; align-self: flex-start;">
+                                    Import & Analyze
+                                </button>
+                            </div>
+                            <div class="api-item" style="flex-direction: column; align-items: stretch;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                    <div class="api-status status-warning"></div>
+                                    <div class="api-info">
+                                        <div class="api-name">Internal User Service</div>
+                                        <div class="api-url">https://users.internal.com</div>
+                                    </div>
+                                </div>
+                                <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                                    Found in codebase. Missing OpenAPI specification.
+                                </div>
+                                <button class="btn-secondary" style="margin-top: 1rem; align-self: flex-start;">
+                                    Generate Spec
+                                </button>
+                            </div>
+                            <div class="api-item" style="flex-direction: column; align-items: stretch;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                    <div class="api-status status-healthy"></div>
+                                    <div class="api-info">
+                                        <div class="api-name">SendGrid Email API</div>
+                                        <div class="api-url">https://api.sendgrid.com/v3</div>
+                                    </div>
+                                </div>
+                                <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                                    External dependency. Complete documentation available.
+                                </div>
+                                <button class="btn-primary" style="margin-top: 1rem; align-self: flex-start;">
+                                    Add to Suite
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monitoring View -->
+                <div id="monitoring-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">Real-time Monitoring</h1>
+                        <p class="page-subtitle">Live API health monitoring and performance analytics</p>
+                    </div>
+
+                    <!-- Real-time Stats -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value pulse">1,247</div>
+                            <div class="stat-label">Requests/min</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">189ms</div>
+                            <div class="stat-label">Avg Response Time</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">0.12%</div>
+                            <div class="stat-label">Error Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">99.97%</div>
+                            <div class="stat-label">Current Uptime</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- Live Performance Chart -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">timeline</span>
+                                </div>
+                                <h3 class="card-title">Live Performance</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="liveChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Geographic Distribution -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">public</span>
+                                </div>
+                                <h3 class="card-title">Geographic Performance</h3>
+                            </div>
+                            <div style="margin: 1rem 0;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🇺🇸 US East</span>
+                                    <span style="color: var(--success);">145ms</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🇪🇺 Europe</span>
+                                    <span style="color: var(--success);">198ms</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🇯🇵 Asia Pacific</span>
+                                    <span style="color: var(--warning);">342ms</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🇧🇷 South America</span>
+                                    <span style="color: var(--error);">567ms</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Alerts -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">warning</span>
+                            </div>
+                            <h3 class="card-title">Active Alerts</h3>
+                        </div>
+                        <div class="grid grid-3">
+                            <div class="card" style="border-left: 4px solid var(--warning);">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <span class="material-icons" style="color: var(--warning);">schedule</span>
+                                    <strong>High Response Time</strong>
+                                </div>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                    Payment API response time exceeded 500ms threshold
+                                </p>
+                                <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">
+                                    5 minutes ago
+                                </div>
+                            </div>
+                            <div class="card" style="border-left: 4px solid var(--error);">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <span class="material-icons" style="color: var(--error);">error</span>
+                                    <strong>Increased Error Rate</strong>
+                                </div>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                    User service showing 3.2% error rate (threshold: 1%)
+                                </p>
+                                <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">
+                                    12 minutes ago
+                                </div>
+                            </div>
+                            <div class="card" style="border-left: 4px solid var(--primary);">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <span class="material-icons" style="color: var(--primary);">info</span>
+                                    <strong>Certificate Expiry</strong>
+                                </div>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                    SSL certificate expires in 7 days
+                                </p>
+                                <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">
+                                    1 hour ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics View -->
+                <div id="analytics-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">Performance Analytics</h1>
+                        <p class="page-subtitle">Deep insights into API usage patterns and optimization opportunities</p>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- Usage Patterns -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">insights</span>
+                                </div>
+                                <h3 class="card-title">Usage Patterns</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="usageChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Performance Optimization -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">speed</span>
+                                </div>
+                                <h3 class="card-title">Optimization Opportunities</h3>
+                            </div>
+                            <div style="margin: 1rem 0;">
+                                <div style="padding: 1rem; background: var(--surface-light); border-radius: 8px; margin-bottom: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <span class="material-icons" style="color: var(--warning);">cache</span>
+                                        <strong>Caching Opportunity</strong>
+                                    </div>
+                                    <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        User profile endpoint has 94% cache hit potential. Implementing Redis could reduce response time by 67%.
+                                    </p>
+                                </div>
+                                <div style="padding: 1rem; background: var(--surface-light); border-radius: 8px; margin-bottom: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <span class="material-icons" style="color: var(--primary);">tune</span>
+                                        <strong>Query Optimization</strong>
+                                    </div>
+                                    <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        Product search API shows N+1 query pattern. Database optimization could improve performance by 45%.
+                                    </p>
+                                </div>
+                                <div style="padding: 1rem; background: var(--surface-light); border-radius: 8px;">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <span class="material-icons" style="color: var(--secondary);">compress</span>
+                                        <strong>Payload Compression</strong>
+                                    </div>
+                                    <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        Large response payloads detected. Gzip compression could reduce bandwidth by 78%.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cost Analysis -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">account_balance</span>
+                            </div>
+                            <h3 class="card-title">Cost Analysis & Optimization</h3>
+                        </div>
+                        <div class="grid grid-4">
+                            <div class="stat-card">
+                                <div class="stat-value">$2,847</div>
+                                <div class="stat-label">Monthly API Costs</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">$423</div>
+                                <div class="stat-label">Potential Savings</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">15%</div>
+                                <div class="stat-label">Cost Reduction</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">23</div>
+                                <div class="stat-label">Unused Endpoints</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team View -->
+                <div id="team-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">Team Workspace</h1>
+                        <p class="page-subtitle">Collaborative API development and knowledge sharing</p>
+                    </div>
+
+                    <div class="grid grid-3">
+                        <!-- Team Members -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">group</span>
+                                </div>
+                                <h3 class="card-title">Team Members</h3>
+                            </div>
+                            <div style="margin: 1rem 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                    <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                                        JD
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600;">John Doe</div>
+                                        <div style="font-size: 0.875rem; color: var(--text-secondary);">Lead Developer</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                    <div style="width: 40px; height: 40px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                                        AS
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600;">Alice Smith</div>
+                                        <div style="font-size: 0.875rem; color: var(--text-secondary);">QA Engineer</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                                        BJ
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600;">Bob Johnson</div>
+                                        <div style="font-size: 0.875rem; color: var(--text-secondary);">DevOps Engineer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">history</span>
+                                </div>
+                                <h3 class="card-title">Recent Activity</h3>
+                            </div>
+                            <div style="margin: 1rem 0;">
+                                <div style="border-left: 2px solid var(--primary); padding-left: 1rem; margin-bottom: 1rem;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">API Test Suite Updated</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary);">Alice added 5 new test cases</div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">2 hours ago</div>
+                                </div>
+                                <div style="border-left: 2px solid var(--secondary); padding-left: 1rem; margin-bottom: 1rem;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Documentation Updated</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary);">John improved API endpoint docs</div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">4 hours ago</div>
+                                </div>
+                                <div style="border-left: 2px solid var(--accent); padding-left: 1rem;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Monitoring Alert</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary);">Bob resolved performance issue</div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">6 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Knowledge Base -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">library_books</span>
+                                </div>
+                                <h3 class="card-title">Knowledge Base</h3>
+                            </div>
+                            <div style="margin: 1rem 0;">
+                                <div style="background: var(--surface-light); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Rate Limiting Best Practices</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        Comprehensive guide to implementing rate limiting across APIs
+                                    </div>
+                                </div>
+                                <div style="background: var(--surface-light); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Error Handling Patterns</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        Standard error response formats and retry strategies
+                                    </div>
+                                </div>
+                                <div style="background: var(--surface-light); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Security Checklists</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        Authentication, authorization, and security scanning procedures
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shared Collections -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">folder_shared</span>
+                            </div>
+                            <h3 class="card-title">Shared Collections</h3>
+                        </div>
+                        <div class="grid grid-3">
+                            <div class="card" style="background: var(--surface-light);">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                                    <span class="material-icons" style="color: var(--primary);">folder</span>
+                                    <strong>Authentication APIs</strong>
+                                </div>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                                    15 endpoints for user authentication and session management
+                                </p>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Owner: John D.</span>
+                                    <span style="background: var(--success); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Public</span>
+                                </div>
+                            </div>
+                            <div class="card" style="background: var(--surface-light);">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                                    <span class="material-icons" style="color: var(--secondary);">folder</span>
+                                    <strong>Payment Processing</strong>
+                                </div>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                                    Payment gateway integration tests and examples
+                                </p>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Owner: Alice S.</span>
+                                    <span style="background: var(--warning); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Team</span>
+                                </div>
+                            </div>
+                            <div class="card" style="background: var(--surface-light);">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                                    <span class="material-icons" style="color: var(--accent);">folder</span>
+                                    <strong>Data Analytics</strong>
+                                </div>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                                    Analytics and reporting API collection with sample queries
+                                </p>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Owner: Bob J.</span>
+                                    <span style="background: var(--error); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Private</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden views for other navigation items -->
+                <div id="automation-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">Test Automation</h1>
+                        <p class="page-subtitle">Intelligent test automation and maintenance</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">smart_toy</span>
+                            </div>
+                            <h3 class="card-title">Automation Engine</h3>
+                        </div>
+                        <p>Advanced test automation features coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="collections-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">API Collections</h1>
+                        <p class="page-subtitle">Organize and manage your API test collections</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">folder</span>
+                            </div>
+                            <h3 class="card-title">Collections Manager</h3>
+                        </div>
+                        <p>Collection management features coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="docs-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">Living Documentation</h1>
+                        <p class="page-subtitle">Auto-generated and synchronized API documentation</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">description</span>
+                            </div>
+                            <h3 class="card-title">Documentation Engine</h3>
+                        </div>
+                        <p>Living documentation features coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="schemas-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">API Schemas</h1>
+                        <p class="page-subtitle">Manage OpenAPI specifications and schemas</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">schema</span>
+                            </div>
+                            <h3 class="card-title">Schema Manager</h3>
+                        </div>
+                        <p>Schema management features coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="alerts-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">Alerts & Incidents</h1>
+                        <p class="page-subtitle">Manage API alerts and incident response</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">notifications</span>
+                            </div>
+                            <h3 class="card-title">Alert Management</h3>
+                        </div>
+                        <p>Alert management features coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="security-view" class="view-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">Security Center</h1>
+                        <p class="page-subtitle">API security testing and vulnerability management</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <span class="material-icons">security</span>
+                            </div>
+                            <h3 class="card-title">Security Dashboard</h3>
+                        </div>
+                        <p>Security features coming soon...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="floating-action" id="quick-test-btn">
+        <span class="material-icons">bolt</span>
+    </button>
+
+    <!-- New API Modal -->
+    <div class="modal-overlay" id="new-api-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Add New API</h3>
+                <button class="modal-close" id="close-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">API Name</label>
+                    <input type="text" class="form-input" placeholder="e.g., User Authentication API">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Base URL</label>
+                    <input type="text" class="form-input" placeholder="https://api.example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-input form-textarea" placeholder="Brief description of the API..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">OpenAPI Specification URL (Optional)</label>
+                    <input type="text" class="form-input" placeholder="https://api.example.com/swagger.json">
+                </div>
+                <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 2rem;">
+                    <button class="btn-secondary" id="cancel-modal">Cancel</button>
+                    <button class="btn-primary" id="save-api">
+                        <span class="material-icons">add</span>
+                        Add API
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification notification-success" id="notification">
+        <div class="notification-header">
+            <div class="notification-icon">✓</div>
+            <strong>Success</strong>
+        </div>
+        <p>API has been successfully added to your workspace!</p>
+    </div>
+
+    <script>
+        // Application State
+        const app = {
+            currentView: 'dashboard',
+            charts: {},
+            sidebarOpen: true
+        };
+
+        // Initialize Application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeNavigation();
+            initializeCharts();
+            initializeModals();
+            initializeTabs();
+            initializeAPITesting();
+            initializeResponsive();
+            showNotification('Welcome to API Master!', 'success');
+        });
+
+        // Navigation System
+        function initializeNavigation() {
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const viewName = this.getAttribute('data-view');
+                    if (viewName) {
+                        switchView(viewName);
+                        setActiveNavItem(this);
+                    }
+                });
+            });
+        }
+
+        function switchView(viewName) {
+            // Hide all views
+            const views = document.querySelectorAll('.view-content');
+            views.forEach(view => view.classList.add('hidden'));
+            
+            // Show selected view
+            const targetView = document.getElementById(viewName + '-view');
+            if (targetView) {
+                targetView.classList.remove('hidden');
+                targetView.classList.add('fade-in');
+                app.currentView = viewName;
+                
+                // Update charts if needed
+                setTimeout(() => {
+                    updateChartsForView(viewName);
+                }, 100);
+            }
+        }
+
+        function setActiveNavItem(activeItem) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            activeItem.classList.add('active');
+        }
+
+        // Chart System
+        function initializeCharts() {
+            initializePerformanceChart();
+            initializeLiveChart();
+            initializeUsageChart();
+            initializeDependencyChart();
+        }
+
+        function initializePerformanceChart() {
+            const ctx = document.getElementById('performanceChart');
+            if (!ctx) return;
+
+            app.charts.performance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+                    datasets: [{
+                        label: 'Response Time (ms)',
+                        data: [120, 185, 320, 240, 190, 150],
+                        borderColor: '#6366f1',
+                        backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }, {
+                        label: 'Error Rate (%)',
+                        data: [0.1, 0.3, 0.8, 0.5, 0.2, 0.1],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#f7fafc'
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#a0aec0' },
+                            grid: { color: '#2d3748' }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            ticks: { color: '#a0aec0' },
+                            grid: { color: '#2d3748' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            ticks: { color: '#a0aec0' },
+                            grid: { drawOnChartArea: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initializeLiveChart() {
+            const ctx = document.getElementById('liveChart');
+            if (!ctx) return;
+
+            const data = {
+                labels: [],
+                datasets: [{
+                    label: 'Requests/sec',
+                    data: [],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            };
+
+            app.charts.live = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#f7fafc'
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#a0aec0' },
+                            grid: { color: '#2d3748' }
+                        },
+                        y: {
+                            ticks: { color: '#a0aec0' },
+                            grid: { color: '#2d3748' }
+                        }
+                    }
+                }
+            });
+
+            // Simulate real-time data
+            setInterval(() => {
+                if (app.currentView === 'monitoring') {
+                    updateLiveChart();
+                }
+            }, 2000);
+        }
+
+        function initializeUsageChart() {
+            const ctx = document.getElementById('usageChart');
+            if (!ctx) return;
+
+            app.charts.usage = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Authentication', 'User Management', 'Payments', 'Analytics', 'Other'],
+                    datasets: [{
+                        data: [35, 25, 20, 15, 5],
+                        backgroundColor: [
+                            '#6366f1',
+                            '#10b981',
+                            '#f59e0b',
+                            '#ef4444',
+                            '#8b5cf6'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#f7fafc',
+                                padding: 20
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initializeDependencyChart() {
+            const ctx = document.getElementById('dependencyChart');
+            if (!ctx) return;
+
+            // Simple visualization - in a real app, this would be a network graph
+            app.charts.dependency = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'API Dependencies',
+                        data: [
+                            {x: 10, y: 20},
+                            {x: 30, y: 40},
+                            {x: 50, y: 10},
+                            {x: 70, y: 35},
+                            {x: 20, y: 60}
+                        ],
+                        backgroundColor: '#6366f1',
+                        borderColor: '#4f46e5',
+                        pointRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#f7fafc'
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#a0aec0' },
+                            grid: { color: '#2d3748' }
+                        },
+                        y: {
+                            ticks: { color: '#a0aec0' },
+                            grid: { color: '#2d3748' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateLiveChart() {
+            const chart = app.charts.live;
+            if (!chart) return;
+
+            const now = new Date();
+            const timeLabel = now.toLocaleTimeString();
+            const value = Math.floor(Math.random() * 50) + 20;
+
+            chart.data.labels.push(timeLabel);
+            chart.data.datasets[0].data.push(value);
+
+            if (chart.data.labels.length > 20) {
+                chart.data.labels.shift();
+                chart.data.datasets[0].data.shift();
+            }
+
+            chart.update('none');
+        }
+
+        function updateChartsForView(viewName) {
+            // Update charts when view changes
+            Object.values(app.charts).forEach(chart => {
+                if (chart) chart.resize();
+            });
+        }
+
+        // Modal System
+        function initializeModals() {
+            const newApiBtn = document.getElementById('new-api-btn');
+            const newApiModal = document.getElementById('new-api-modal');
+            const closeModal = document.getElementById('close-modal');
+            const cancelModal = document.getElementById('cancel-modal');
+            const saveApi = document.getElementById('save-api');
+
+            newApiBtn.addEventListener('click', () => {
+                newApiModal.classList.add('show');
+            });
+
+            [closeModal, cancelModal].forEach(btn => {
+                btn.addEventListener('click', () => {
+                    newApiModal.classList.remove('show');
+                });
+            });
+
+            newApiModal.addEventListener('click', (e) => {
+                if (e.target === newApiModal) {
+                    newApiModal.classList.remove('show');
+                }
+            });
+
+            saveApi.addEventListener('click', () => {
+                // Simulate API creation
+                setTimeout(() => {
+                    newApiModal.classList.remove('show');
+                    showNotification('API has been successfully added to your workspace!', 'success');
+                }, 500);
+            });
+        }
+
+        // Tab System
+        function initializeTabs() {
+            const tabs = document.querySelectorAll('.tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active from all tabs and contents
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Add active to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const content = document.getElementById(tabId + '-tab');
+                    if (content) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // API Testing
+        function initializeAPITesting() {
+            const sendButton = document.getElementById('send-request');
+            
+            sendButton.addEventListener('click', function() {
+                const button = this;
+                const originalText = button.innerHTML;
+                
+                // Show loading state
+                button.innerHTML = '<div class="loading-spinner"></div> Sending...';
+                button.disabled = true;
+                
+                // Simulate API request
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                    showNotification('Request completed successfully!', 'success');
+                    
+                    // Update response viewer with new data
+                    updateResponseViewer();
+                }, 2000);
+            });
+        }
+
+        function updateResponseViewer() {
+            const responseBody = document.getElementById('response-body');
+            if (responseBody) {
+                const sampleResponse = {
+                    "userId": 1,
+                    "id": 1,
+                    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+                    "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
+                };
+                
+                responseBody.innerHTML = `<pre><code class="language-json">${JSON.stringify(sampleResponse, null, 2)}</code></pre>`;
+                
+                // Re-highlight syntax
+                if (window.Prism) {
+                    Prism.highlightAll();
+                }
+            }
+        }
+
+        // Notification System
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            const icon = notification.querySelector('.notification-icon');
+            const messageEl = notification.querySelector('p');
+            
+            // Update notification content
+            messageEl.textContent = message;
+            
+            // Update notification type
+            notification.className = `notification notification-${type}`;
+            
+            // Update icon based on type
+            switch(type) {
+                case 'success':
+                    icon.textContent = '✓';
+                    break;
+                case 'error':
+                    icon.textContent = '✗';
+                    break;
+                case 'warning':
+                    icon.textContent = '⚠';
+                    break;
+                default:
+                    icon.textContent = 'ℹ';
+            }
+            
+            // Show notification
+            notification.classList.add('show');
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Responsive Design
+        function initializeResponsive() {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            function checkScreenSize() {
+                if (window.innerWidth <= 768) {
+                    sidebarToggle.style.display = 'block';
+                    app.sidebarOpen = false;
+                } else {
+                    sidebarToggle.style.display = 'none';
+                    sidebar.classList.remove('open');
+                    app.sidebarOpen = true;
+                }
+            }
+            
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+                app.sidebarOpen = !app.sidebarOpen;
+            });
+            
+            window.addEventListener('resize', checkScreenSize);
+            checkScreenSize();
+        }
+
+        // Quick Test Feature
+        document.getElementById('quick-test-btn').addEventListener('click', function() {
+            // Quick test functionality
+            showNotification('Quick test initiated!', 'success');
+            
+            // Switch to testing view
+            switchView('testing');
+            setActiveNavItem(document.querySelector('[data-view="testing"]'));
+        });
+
+        // Search Functionality
+        document.querySelector('.search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            if (searchTerm.length > 2) {
+                // Simulate search
+                console.log('Searching for:', searchTerm);
+                // In a real app, this would trigger API search
+            }
+        });
+
+        // Real-time Data Updates
+        function startRealTimeUpdates() {
+            setInterval(() => {
+                if (app.currentView === 'dashboard' || app.currentView === 'monitoring') {
+                    updateRealtimeStats();
+                }
+            }, 5000);
+        }
+
+        function updateRealtimeStats() {
+            // Update request counter with animation
+            const requestsElement = document.querySelector('.stats-grid .stat-value');
+            if (requestsElement && requestsElement.textContent.includes('1,247')) {
+                const currentValue = parseInt(requestsElement.textContent.replace(',', ''));
+                const newValue = currentValue + Math.floor(Math.random() * 20) + 1;
+                requestsElement.textContent = newValue.toLocaleString();
+                requestsElement.parentElement.classList.add('pulse');
+                
+                setTimeout(() => {
+                    requestsElement.parentElement.classList.remove('pulse');
+                }, 1000);
+            }
+        }
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl + K for search
+            if (e.ctrlKey && e.key === 'k') {
+                e.preventDefault();
+                document.querySelector('.search-input').focus();
+            }
+            
+            // Ctrl + N for new API
+            if (e.ctrlKey && e.key === 'n') {
+                e.preventDefault();
+                document.getElementById('new-api-modal').classList.add('show');
+            }
+            
+            // Escape to close modals
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.show').forEach(modal => {
+                    modal.classList.remove('show');
+                });
+            }
+        });
+
+        // Theme Management
+        function initializeTheme() {
+            // Dark theme is default, but this could be expanded for theme switching
+            document.body.setAttribute('data-theme', 'dark');
+        }
+
+        // API Health Simulation
+        function simulateAPIHealth() {
+            setInterval(() => {
+                const statusElements = document.querySelectorAll('.api-status');
+                statusElements.forEach(status => {
+                    const rand = Math.random();
+                    if (rand > 0.95) {
+                        // Occasionally show warning/error states
+                        status.className = 'api-status status-warning';
+                    } else if (rand > 0.98) {
+                        status.className = 'api-status status-error';
+                    } else {
+                        status.className = 'api-status status-healthy';
+                    }
+                });
+            }, 10000);
+        }
+
+        // Performance Monitoring
+        function trackPerformance() {
+            // Monitor page performance
+            if ('performance' in window) {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+            }
+        }
+
+        // Error Handling
+        window.addEventListener('error', function(e) {
+            console.error('Application error:', e.error);
+            showNotification('An error occurred. Please try again.', 'error');
+        });
+
+        // Initialize additional features
+        setTimeout(() => {
+            startRealTimeUpdates();
+            simulateAPIHealth();
+            trackPerformance();
+            initializeTheme();
+        }, 1000);
+
+        // Service Worker Registration (for offline capabilities)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // In a real app, you'd register a service worker here
+                console.log('Service Worker support detected');
+            });
+        }
+
+        // Advanced Features Simulation
+        function simulateMLInsights() {
+            // Simulate machine learning insights
+            setTimeout(() => {
+                if (app.currentView === 'analytics') {
+                    showNotification('ML analysis complete: 3 optimization opportunities found', 'success');
+                }
+            }, 3000);
+        }
+
+        function simulateSecurityScan() {
+            // Simulate security scanning
+            setTimeout(() => {
+                if (app.currentView === 'security') {
+                    showNotification('Security scan completed: No vulnerabilities detected', 'success');
+                }
+            }, 5000);
+        }
+
+        // Auto-save functionality
+        function enableAutoSave() {
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    // Simulate auto-save
+                    console.log('Auto-saving:', this.name || this.placeholder);
+                });
+            });
+        }
+
+        // Collaborative features simulation
+        function simulateCollaboration() {
+            setInterval(() => {
+                if (app.currentView === 'team' && Math.random() > 0.7) {
+                    const activities = [
+                        'John updated the authentication API documentation',
+                        'Alice added new test cases to the payment flow',
+                        'Bob resolved a performance alert',
+                        'Sarah shared a new API collection'
+                    ];
+                    
+                    const activity = activities[Math.floor(Math.random() * activities.length)];
+                    console.log('Team activity:', activity);
+                }
+            }, 30000);
+        }
+
+        // Initialize advanced features
+        document.addEventListener('DOMContentLoaded', function() {
+            enableAutoSave();
+            simulateCollaboration();
+            
+            // Simulate ML insights after page load
+            setTimeout(simulateMLInsights, 8000);
+            setTimeout(simulateSecurityScan, 12000);
+        });
+
+        // Export functionality for sharing
+        function exportData(type) {
+            const exportData = {
+                timestamp: new Date().toISOString(),
+                version: '2.1.0',
+                type: type
+            };
+            
+            switch(type) {
+                case 'api-report':
+                    exportData.apis = [
+                        { name: 'User Authentication API', status: 'healthy', uptime: '99.9%' },
+                        { name: 'Payment Processing API', status: 'warning', uptime: '98.2%' },
+                        { name: 'Product Catalog API', status: 'healthy', uptime: '99.8%' }
+                    ];
+                    break;
+                case 'test-results':
+                    exportData.tests = [
+                        { suite: 'Authentication Flow', passed: 8, failed: 1, total: 9 }
+                    ];
+                    break;
+            }
+            
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `api-master-${type}-${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showNotification(`${type} exported successfully!`, 'success');
+        }
+
+        // Add export buttons functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.textContent === 'Export Report') {
+                exportData('api-report');
+            } else if (e.target.textContent === 'Export Tests') {
+                exportData('test-results');
+            }
+        });
+
+        console.log('🚀 API Master Platform initialized successfully!');
+        console.log('💡 Press Ctrl+K to search, Ctrl+N for new API');
+        console.log('🔧 Advanced features: AI insights, real-time monitoring, collaborative tools');
+    </script>
+</body>
+</html>

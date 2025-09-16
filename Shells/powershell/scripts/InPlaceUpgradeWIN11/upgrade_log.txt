@@ -1,0 +1,173 @@
+[2025-09-03 15:18:42] Starting automated Windows 11 upgrade process
+[2025-09-03 15:18:42] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 15:18:42] Mounting ISO...
+[2025-09-03 15:18:43] ERROR: Invalid property 
+[2025-09-03 15:18:43] Stack trace: 
+[2025-09-03 15:18:43] Warning: Could not unmount ISO: The variable '$mountResult' cannot be retrieved because it has not been set.
+[2025-09-03 15:18:52] Starting automated Windows 11 upgrade process
+[2025-09-03 15:18:52] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 15:18:52] Mounting ISO...
+[2025-09-03 15:18:53] ERROR: Invalid property 
+[2025-09-03 15:18:53] Stack trace: 
+[2025-09-03 15:18:53] Warning: Could not unmount ISO: The variable '$mountResult' cannot be retrieved because it has not been set.
+[2025-09-03 15:19:07] Starting automated Windows 11 upgrade process
+[2025-09-03 15:19:07] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 15:19:07] Mounting ISO...
+[2025-09-03 15:19:07] ERROR: The property 'DriveLetter' cannot be found on this object. Verify that the property exists.
+[2025-09-03 15:19:07] Stack trace: at <ScriptBlock>, F:\Downloads\upgrade\AutoUpgradeWindows11.ps1: line 41
+at <ScriptBlock>, <No file>: line 1
+[2025-09-03 15:49:13] Starting automated Windows 11 upgrade process
+[2025-09-03 15:49:13] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 15:49:13] Mounting ISO...
+[2025-09-03 15:49:13] ERROR: The property 'DriveLetter' cannot be found on this object. Verify that the property exists.
+[2025-09-03 15:49:13] Stack trace: at <ScriptBlock>, F:\Downloads\UPGRADE\AutoUpgradeWindows11.ps1: line 44
+at <ScriptBlock>, <No file>: line 1
+[2025-09-03 15:49:13] ISO unmounted
+[2025-09-03 15:52:02] Starting automated Windows 11 upgrade process
+[2025-09-03 15:52:02] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 15:52:02] Mounting ISO...
+[2025-09-03 15:52:02] Standard mount method failed: Invalid property 
+[2025-09-03 15:52:02] Trying alternative mount method...
+[2025-09-03 15:52:05] Alternative mount method failed: Invalid property 
+[2025-09-03 15:52:05] Trying WMI method to find mounted ISO...
+[2025-09-03 15:52:05] WMI method failed: Invalid class "Win32_DiskImage"
+[2025-09-03 15:52:05] ERROR: Failed to mount ISO or determine drive letter. Please check the ISO file and try manually mounting it.
+[2025-09-03 15:52:05] Stack trace: at <ScriptBlock>, F:\Downloads\upgrade\AutoUpgradeWindows11.ps1: line 112
+[2025-09-03 15:52:05] Could not re-enable Windows Defender
+[2025-09-03 15:53:35] Starting automated Windows 11 upgrade process
+[2025-09-03 15:53:35] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 15:53:35] Mounting ISO using Shell.Application method...
+[2025-09-03 15:53:42] Trying final method - checking all CD-ROM drives...
+[2025-09-03 15:55:07] Starting automated Windows 11 upgrade process
+[2025-09-03 15:55:07] ISO file found: F:\\isos\\win11latest.iso
+[2025-09-03 15:55:07] Mounting ISO using multiple fallback methods...
+[2025-09-03 15:55:07] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-03 15:55:10] Method 1 failed: Invalid property 
+[2025-09-03 15:55:10] Method 2: Using Shell.Application COM object
+[2025-09-03 15:55:12] Mounting win11latest.iso from F:\\isos\
+[2025-09-03 15:55:12] Method 2 failed: You cannot call a method on a null-valued expression.
+[2025-09-03 15:55:12] Method 3: Manual drive detection
+[2025-09-03 15:55:15] Checking CD-ROM drive: J:\\
+[2025-09-03 15:55:15] Found Windows setup at drive: J
+[2025-09-03 15:55:15] ISO successfully available at drive: J:
+[2025-09-03 15:55:15] Found setup.exe at: J:\\setup.exe
+[2025-09-03 15:55:15] Created post-reboot script: F:\\Downloads\\upgrade\\PostRebootCleanup.ps1
+[2025-09-03 15:55:15] Creating scheduled task for post-reboot DISM cleanup
+[2025-09-03 15:55:15] Scheduled task created successfully
+[2025-09-03 15:55:15] Applying performance optimizations...
+[2025-09-03 15:55:15] Set high performance power plan
+[2025-09-03 15:55:15] Could not disable Windows Defender (may require manual intervention)
+[2025-09-03 15:55:15] Stopped service: wuauserv
+[2025-09-03 15:55:15] Stopped service: BITS
+[2025-09-03 15:55:15] Stopped service: CryptSvc
+[2025-09-03 15:55:15] Stopped service: TrustedInstaller
+[2025-09-03 15:55:15] Starting Windows 11 setup with maximum automation...
+[2025-09-03 15:55:15] Created setup logs directory
+[2025-09-03 15:55:15] Executing setup with arguments: /auto upgrade /quiet /norestart /dynamicupdate disable /compat ignorewarning /migratedrivers all /installfrom J:\\ /telemetry disable /copylogs F:\\Downloads\\upgrade\\setup_logs
+[2025-09-03 15:55:15] Launching Windows 11 setup (this will take 30-60 minutes)...
+[2025-09-03 15:55:15] You will see the setup window, but no interaction is required...
+[2025-09-03 15:55:16] Setup process completed with exit code: -2147024809
+[2025-09-03 15:55:16] Setup completed with code -2147024809. Check setup logs for details.
+[2025-09-03 15:55:16] System will restart in 60 seconds. Please save any work.
+[2025-09-03 15:55:16] Unmounting ISO...
+[2025-09-03 15:55:17] ISO unmounted using Shell.Application
+[2025-09-03 15:55:19] Automated upgrade script completed
+[2025-09-03 15:57:06] Starting automated Windows 11 upgrade process
+[2025-09-03 15:57:06] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 15:57:06] Mounting ISO using multiple fallback methods...
+[2025-09-03 15:57:06] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-03 15:57:09] Method 1 failed: Invalid property 
+[2025-09-03 15:57:09] Method 2: Using Shell.Application COM object
+[2025-09-03 15:57:11] Mounting win11latest.iso from F:\isos
+[2025-09-03 15:57:17] Checking drive: D:\
+[2025-09-03 15:57:17] Found Windows setup at drive: D
+[2025-09-03 15:57:17] ISO successfully available at drive: D:
+[2025-09-03 15:57:17] Found setup.exe at: D:\setup.exe
+[2025-09-03 15:57:17] Created post-reboot script: F:\Downloads\upgrade\PostRebootCleanup.ps1
+[2025-09-03 15:57:17] Creating scheduled task for post-reboot DISM cleanup
+[2025-09-03 15:57:17] Scheduled task created successfully
+[2025-09-03 15:57:17] Applying performance optimizations...
+[2025-09-03 15:57:17] Set high performance power plan
+[2025-09-03 15:57:17] Could not disable Windows Defender (may require manual intervention)
+[2025-09-03 15:57:17] Stopped service: wuauserv
+[2025-09-03 15:57:17] Stopped service: BITS
+[2025-09-03 15:57:18] Stopped service: CryptSvc
+[2025-09-03 15:57:18] Stopped service: TrustedInstaller
+[2025-09-03 15:57:18] Starting Windows 11 setup with maximum automation...
+[2025-09-03 15:57:18] Created setup logs directory
+[2025-09-03 15:57:18] Preparing to launch Windows 11 setup...
+[2025-09-03 15:57:18] Executing setup with arguments: /auto upgrade /quiet /norestart /compat ignorewarning
+[2025-09-03 15:57:18] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-03 15:57:18] You may see a setup window appear, but no interaction is required.
+[2025-09-03 15:57:18] Setup process started with PID: 2320
+[2025-09-03 15:57:18] Monitoring setup progress...
+[2025-09-03 15:57:48] Setup still running... (0.5 minutes elapsed)
+[2025-09-03 15:57:48] Setup process completed with exit code: 0
+[2025-09-03 15:57:48] Setup completed successfully.
+[2025-09-03 15:57:48] Scheduling system restart in 60 seconds...
+[2025-09-03 15:57:48] Unmounting ISO...
+[2025-09-03 15:57:48] ISO unmounted using Shell.Application
+[2025-09-03 15:57:50] Automated upgrade script completed. System will restart in 60 seconds to continue the upgrade process.
+[2025-09-03 15:57:50] After restart, Windows 11 setup will continue automatically.
+[2025-09-03 15:57:50] Once the upgrade is complete, the system will restart again and then run DISM cleanup.
+[2025-09-03 22:39:03] Starting automated Windows 11 upgrade process
+[2025-09-03 22:39:03] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 22:39:03] Mounting ISO using multiple fallback methods...
+[2025-09-03 22:39:03] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-03 22:39:04] Method 1 failed: The 'Dismount-DiskImage' command was found in the module 'Storage', but the module could not be loaded. For more information, run 'Import-Module Storage'.
+[2025-09-03 22:39:04] Method 2: Using Shell.Application COM object
+[2025-09-03 22:39:04] Method 2 failed: The 'Dismount-DiskImage' command was found in the module 'Storage', but the module could not be loaded. For more information, run 'Import-Module Storage'.
+[2025-09-03 22:39:04] Method 3: Manual drive detection
+[2025-09-03 22:39:04] ERROR: Failed to mount ISO or determine drive letter after all methods. Please check the ISO file and try manually mounting it.
+[2025-09-03 22:39:04] Stack trace: at <ScriptBlock>, F:\Downloads\upgrade\AutoUpgradeWindows11.ps1: line 138
+at <ScriptBlock>, <No file>: line 1
+[2025-09-03 22:39:04] Could not re-enable Windows Defender
+[2025-09-03 22:41:26] Starting automated Windows 11 upgrade process
+[2025-09-03 22:41:26] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 22:41:26] Mounting ISO using multiple fallback methods...
+[2025-09-03 22:41:26] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-03 22:41:27] Method 1 failed: The 'Dismount-DiskImage' command was found in the module 'Storage', but the module could not be loaded. For more information, run 'Import-Module Storage'.
+[2025-09-03 22:41:27] Method 2: Using Shell.Application COM object
+[2025-09-03 22:41:27] Method 2 failed: The 'Dismount-DiskImage' command was found in the module 'Storage', but the module could not be loaded. For more information, run 'Import-Module Storage'.
+[2025-09-03 22:41:27] Method 3: Manual drive detection
+[2025-09-03 22:41:28] ERROR: Failed to mount ISO or determine drive letter after all methods. Please check the ISO file and try manually mounting it.
+[2025-09-03 22:41:28] Stack trace: at <ScriptBlock>, F:\Downloads\upgrade\AutoUpgradeWindows11.ps1: line 138
+at <ScriptBlock>, <No file>: line 1
+[2025-09-03 22:41:28] Could not re-enable Windows Defender
+[2025-09-03 22:49:29] Starting automated Windows 11 upgrade process
+[2025-09-03 22:49:29] ISO file found: F:\isos\win11latest.iso
+[2025-09-03 22:49:29] Mounting ISO using multiple fallback methods...
+[2025-09-03 22:49:29] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-03 22:49:38] Method 2: Using Shell.Application COM object
+[2025-09-03 22:49:40] Mounting win11latest.iso from F:\isos
+[2025-09-03 22:49:45] Checking drive: D:\
+[2025-09-03 22:49:45] Found Windows setup at drive: D
+[2025-09-03 22:49:45] ISO successfully available at drive: D:
+[2025-09-03 22:49:45] Found setup.exe at: D:\setup.exe
+[2025-09-03 22:49:45] Created post-reboot script: F:\Downloads\upgrade\PostRebootCleanup.ps1
+[2025-09-03 22:49:45] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-03 22:49:45] Scheduled task created successfully
+[2025-09-03 22:49:45] Applying performance optimizations...
+[2025-09-03 22:49:46] Set high performance power plan
+[2025-09-03 22:49:46] Could not disable Windows Defender (may require manual intervention)
+[2025-09-03 22:49:47] Stopped service: wuauserv
+[2025-09-03 22:49:47] Stopped service: BITS
+[2025-09-03 22:49:47] Stopped service: CryptSvc
+[2025-09-03 22:49:47] Stopped service: TrustedInstaller
+[2025-09-03 22:49:47] Starting Windows 11 setup with maximum automation...
+[2025-09-03 22:49:47] Created setup logs directory
+[2025-09-03 22:49:47] Preparing to launch Windows 11 setup...
+[2025-09-03 22:49:47] Executing setup with arguments: /auto upgrade /quiet /norestart /compat ignorewarning
+[2025-09-03 22:49:47] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-03 22:49:47] You may see a setup window appear, but no interaction is required.
+[2025-09-03 22:49:47] Setup process started with PID: 20520
+[2025-09-03 22:49:47] Monitoring setup progress...
+[2025-09-03 22:50:17] Setup still running... (0.5 minutes elapsed)
+[2025-09-03 22:50:17] Setup process completed with exit code: 0
+[2025-09-03 22:50:17] Setup completed successfully.
+[2025-09-03 22:50:17] Scheduling system restart in 60 seconds...
+[2025-09-03 22:50:17] Unmounting ISO...
+[2025-09-03 22:50:17] ISO unmounted using Shell.Application
+[2025-09-03 22:50:19] Automated upgrade script completed. System will restart in 60 seconds to continue the upgrade process.
+[2025-09-03 22:50:19] After restart, Windows 11 setup will continue automatically.
+[2025-09-03 22:50:19] Once the upgrade is complete, the system will restart again and then run DISM cleanup and install all available Windows Updates.

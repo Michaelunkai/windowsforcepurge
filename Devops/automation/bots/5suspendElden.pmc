@@ -1,0 +1,88 @@
+﻿[PMC Globals]|None||
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Macro1
+Context=None|
+Groups=Start:1
+1|WinActivate||1|333|WinActivate||Lands Between Map for ELDEN RING  WeMod ahk_class Chrome_WidgetWin_1|||1|
+2|[Pause]||1|2219|Sleep|||||3|
+3|LWin Down|{LWin Down}|1|0|Send|||||4|
+4|[Pause]||1|47|Sleep|||||5|
+5|Move|1448, -538, 0|1|0|Click|||||6|
+6|[Pause]||1|15|Sleep|||||7|
+7|WinActivate||1|0|WinActivate|| ahk_class Shell_TrayWnd|||8|
+8|x|{x}|1|0|Send|||||9|
+9|[Pause]||1|188|Sleep|||||10|
+10|LWin Up|{LWin Up}|1|0|Send|||||11|
+11|[Pause]||1|844|Sleep|||||12|
+12|Up|{Up}|1|0|Send|||||13|
+13|[Pause]||1|297|Sleep|||||14|
+14|Up|{Up}|1|0|Send|||||15|
+15|[Pause]||1|453|Sleep|||||16|
+16|Up|{Up}|1|0|Send|||||17|
+17|[Pause]||1|281|Sleep|||||18|
+18|Up|{Up}|1|0|Send|||||19|
+19|[Pause]||1|375|Sleep|||||20|
+20|Up|{Up}|1|0|Send|||||21|
+21|[Pause]||1|281|Sleep|||||22|
+22|Up|{Up}|1|0|Send|||||23|
+23|[Pause]||1|375|Sleep|||||24|
+24|Up|{Up}|1|0|Send|||||25|
+25|[Pause]||1|266|Sleep|||||26|
+26|Up|{Up}|1|0|Send|||||27|
+27|[Pause]||1|390|Sleep|||||28|
+28|Enter|{Enter}|1|0|Send|||||29|
+29|[Pause]||1|360|Sleep|||||30|
+30|Move|1216, 721, 0|1|0|Click|||||31|
+31|[Pause]||1|969|Sleep|||||32|
+32|WinActivate||1|0|WinActivate||Administrator: Windows PowerShell ahk_class CASCADIA_HOSTING_WINDOW_CLASS|||33|
+33|Left Move & Click|1216, 721 Left, Down|1|0|Click|||||34|
+34|Left Move & Click|1216, 721 Left, Up|1|0|Click|||||35|
+35|[Pause]||1|1093|Sleep|||||36|
+36|s|{s}|1|0|Send|||||37|
+37|WinActivate||1|333|WinActivate||Administrator: Windows PowerShell ahk_class CASCADIA_HOSTING_WINDOW_CLASS|||38|
+38|[Pause]||1|937|Sleep|||||40|
+39|Backspace|{Backspace}|1|0|Send|||||41|
+40|[Pause]||1|188|Sleep|||||42|
+41|Backspace|{Backspace}|1|0|Send|||||43|
+42|[Pause]||1|218|Sleep|||||44|
+43|Move|1004, 630, 0|1|0|Click|||||45|
+44|[Pause]||1|16|Sleep|||||46|
+45|Move|988, 623, 0|1|0|Click|||||47|
+46|Move|974, 619, 0|1|0|Click|||||48|
+47|[Pause]||1|16|Sleep|||||49|
+48|Move|969, 618, 0|1|0|Click|||||50|
+49|Move|965, 615, 0|1|0|Click|||||51|
+50|[Pause]||1|15|Sleep|||||52|
+51|Move|965, 614, 0|1|0|Click|||||53|
+52|[Pause]||1|63|Sleep|||||54|
+53|Move|966, 614, 0|1|0|Click|||||55|
+54|[Pause]||1|15|Sleep|||||56|
+55|Move|967, 614, 0|1|0|Click|||||57|
+56|[Pause]||1|16|Sleep|||||58|
+57|Move|968, 614, 0|1|0|Click|||||59|
+58|[Pause]||1|109|Sleep|||||60|
+59|Move|968, 613, 0|1|0|Click|||||61|
+60|[Pause]||1|16|Sleep|||||62|
+61|Left Move & Click|968, 613 Left, Down|1|0|Click|||||63|
+62|[Pause]||1|78|Sleep|||||64|
+63|Left Move & Click|968, 613 Left, Up|1|0|Click|||||65|
+64|[Pause]||1|109|Sleep|||||66|
+65|Backspace|{Backspace}|1|0|Send|||||67|
+66|[Pause]||1|204|Sleep|||||68|
+67|Backspace|{Backspace}|1|0|Send|||||69|
+68|[Pause]||1|562|Sleep|||||70|
+69|Backspace|{Backspace}|1|0|Send|||||71|
+70|[Pause]||1|516|Sleep|||||72|
+71|s|{s}|1|0|Send|||||73|
+72|[Pause]||1|609|Sleep|||||74|
+73|u|{u}|1|0|Send|||||75|
+74|[Pause]||1|797|Sleep|||||76|
+75|s|{s}|1|0|Send|||||77|
+76|[Pause]||1|312|Sleep|||||78|
+77|e|{e}|1|0|Send|||||79|
+78|[Pause]||1|313|Sleep|||||80|
+79|l|{l}|1|0|Send|||||81|
+80|[Pause]||1|406|Sleep|||||82|
+81|Enter|{Enter}|1|0|Send|||||83|
+82|[Pause]||1|94|Sleep|||||84|
+83|Move|1249, 907, 0|1|0|Click|||||85|
+

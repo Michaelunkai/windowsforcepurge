@@ -1,0 +1,11 @@
+Required Components
+You will need to install some/all of these before downloading any games (legitimate or pirated!) to stop games crashing due to missing software on your computer:
+
+DirectX
+VisualCppRedist AIO
+XNA Framework
+.NET
+To extract games, use either of these two:
+
+7-Zip - for opening 7z/Rar archives.
+WinRAR - for opening Rar archives. Has better compatibility with RAR archives. Use this if you have compatibility issues with RAR files, specially for multipart files.

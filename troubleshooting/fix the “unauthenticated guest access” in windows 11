@@ -1,0 +1,13 @@
+To fix the **“unauthenticated guest access”** issue shown in the screenshot, run this **one-liner** in an elevated PowerShell terminal on your **Windows 11** machine:
+
+```powershell
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" -Name AllowInsecureGuestAuth -Value 1 -Force
+```
+
+Then **restart your PC** or run:
+
+```powershell
+Restart-Computer
+```
+
+💡 This enables access to SMB shares that allow guest authentication (like some Proxmox shares). Be aware: it lowers security, so only use this in trusted local networks.

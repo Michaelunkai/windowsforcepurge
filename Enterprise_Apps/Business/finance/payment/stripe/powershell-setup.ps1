@@ -1,0 +1,1 @@
+Invoke-WebRequest -Uri "https://github.com/stripe/stripe-cli/releases/latest/download/stripe_windows_amd64.zip" -OutFile "stripe.zip"; Expand-Archive -Path "stripe.zip" -DestinationPath "."; Copy-Item "stripe.exe" -Destination "C:\Windows\System32\"

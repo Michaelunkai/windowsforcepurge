@@ -1,0 +1,20 @@
+# The Ultimate Complete Step-by-Step PowerShell Tutorial for Automatically Converting Multiple Scattered File Explorer Windows into One Unified Tabbed Interface Using ExplorerTabUtility with Automated Installation, Path Preservation, and Window Management
+
+## Installation and Window Consolidation One-Liner
+
+```powershell
+$paths = (New-Object -ComObject Shell.Application).Windows() | Where-Object {$_.Name -eq "Windows Explorer"} | ForEach-Object {$_.LocationURL -replace "file:///",""} | Where-Object {$_ -ne $null}; Get-Process explorer | Where-Object {$_.MainWindowTitle -ne ""} | Stop-Process -Force; winget install w4po.ExplorerTabUtility --interactive --accept-source-agreements --accept-package-agreements; Start-Sleep 3; if($paths) { explorer ($paths[0] -replace "%20"," "); Start-Sleep 2; $paths[1..($paths.Count-1)] | ForEach-Object { Start-Sleep 800; explorer ($_ -replace "%20"," ") } } else { explorer }
+```
+
+**What this does:**
+1. Captures all current File Explorer window paths
+2. Closes all existing File Explorer windows
+3. Installs ExplorerTabUtility automatically
+4. Reopens all your previous locations (ExplorerTabUtility will convert them to tabs)
+5. If no previous windows existed, just opens File Explorer
+
+## Uninstall and Disable One-Liner
+
+```powershell
+winget uninstall w4po.ExplorerTabUtility; Get-Process "ExplorerTabUtility" -ErrorAction SilentlyContinue | Stop-Process -Force
+```

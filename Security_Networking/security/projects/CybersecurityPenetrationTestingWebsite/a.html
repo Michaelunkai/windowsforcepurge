@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSec Pro - Penetration Testing Suite</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #00ff41;
+            --secondary-green: #008f11;
+            --dark-bg: #0d1117;
+            --darker-bg: #010409;
+            --terminal-bg: rgba(0, 255, 65, 0.05);
+            --border-glow: rgba(0, 255, 65, 0.3);
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --danger-red: #ff4757;
+            --warning-yellow: #ffa502;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--darker-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Particle Background */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary-green);
+            opacity: 0.3;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-10px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Header */
+        .header {
+            background: rgba(13, 17, 23, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glow);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-shadow: 0 0 10px var(--primary-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+            text-shadow: 0 0 5px var(--primary-green);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 5px var(--primary-green);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Dashboard Grid */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Terminal Window */
+        .terminal {
+            background: var(--terminal-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .terminal:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+        }
+
+        .terminal-header {
+            background: rgba(0, 255, 65, 0.1);
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-glow);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--danger-red);
+        }
+
+        .dot:nth-child(2) { background: var(--warning-yellow); }
+        .dot:nth-child(3) { background: var(--primary-green); }
+
+        .terminal-title {
+            color: var(--primary-green);
+            font-weight: 500;
+            margin-left: 1rem;
+        }
+
+        .terminal-content {
+            padding: 1rem;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .terminal-line {
+            display: flex;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .prompt {
+            color: var(--primary-green);
+            margin-right: 0.5rem;
+        }
+
+        .command {
+            color: var(--text-primary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Typing Animation */
+        .typing::after {
+            content: '█';
+            color: var(--primary-green);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Progress Bars */
+        .progress-container {
+            margin: 1rem 0;
+        }
+
+        .progress-label {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(0, 255, 65, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-green), var(--primary-green));
+            transition: width 2s ease;
+            position: relative;
+            box-shadow: 0 0 10px var(--primary-green);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--terminal-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        /* Status Indicators */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .status.critical {
+            background: rgba(255, 71, 87, 0.2);
+            color: var(--danger-red);
+            border: 1px solid var(--danger-red);
+        }
+
+        .status.warning {
+            background: rgba(255, 165, 2, 0.2);
+            color: var(--warning-yellow);
+            border: 1px solid var(--warning-yellow);
+        }
+
+        .status.secure {
+            background: rgba(0, 255, 65, 0.2);
+            color: var(--primary-green);
+            border: 1px solid var(--primary-green);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Vulnerability List */
+        .vuln-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .vuln-item {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .vuln-item:hover {
+            background: rgba(0, 255, 65, 0.05);
+            border-left: 3px solid var(--primary-green);
+        }
+
+        .vuln-title {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .vuln-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--dark-bg);
+            border: 1px solid var(--primary-green);
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0, 255, 65, 0.3);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-glow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            color: var(--primary-green);
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--primary-green);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            border: none;
+            color: var(--darker-bg);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .header-content {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--darker-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-glow);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-green);
+        }
+
+        /* Custom Grid for Reports */
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Scan Animation */
+        .scan-animation {
+            position: relative;
+            height: 200px;
+            background: rgba(0, 255, 65, 0.02);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+            animation: scanMove 3s infinite linear;
+        }
+
+        @keyframes scanMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(200px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles"></div>
+    
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">CyberSec Pro</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#scans">Scans</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="terminal-title">Active Scan Monitor</div>
+                </div>
+                <div class="terminal-content" id="terminal-content">
+                    <!-- Terminal content will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">System Status</h3>
+                <div class="scan-animation">
+                    <div class="scan-line"></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Network Scan</span>
+                        <span id="network-progress">73%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="network-bar" style="width: 73%"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Vulnerability Assessment</span>
+                        <span id="vuln-progress">45%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="vuln-bar" style="width: 45%"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Port Analysis</span>
+                        <span id="port-progress">89%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="port-bar" style="width: 89%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reports-grid">
+            <div class="card">
+                <h3 class="card-title">Threat Overview</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <div class="status critical">
+                        <div class="status-dot"></div>
+                        Critical: 3
+                    </div>
+                    <div class="status warning">
+                        <div class="status-dot"></div>
+                        High: 7
+                    </div>
+                    <div class="status secure">
+                        <div class="status-dot"></div>
+                        Secure: 15
+                    </div>
+                </div>
+                <button class="btn" onclick="startNewScan()">Initiate Deep Scan</button>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Recent Vulnerabilities</h3>
+                <div class="vuln-list">
+                    <div class="vuln-item" onclick="openModal('SQL Injection', 'Critical vulnerability found in login form allowing unauthorized database access.')">
+                        <div class="vuln-title">SQL Injection - Login Form</div>
+                        <div class="vuln-desc">Critical severity • Detected 2 hours ago</div>
+                    </div>
+                    <div class="vuln-item" onclick="openModal('XSS Vulnerability', 'Cross-site scripting vulnerability in user input fields.')">
+                        <div class="vuln-title">XSS in User Comments</div>
+                        <div class="vuln-desc">High severity • Detected 4 hours ago</div>
+                    </div>
+                    <div class="vuln-item" onclick="openModal('Outdated SSL', 'SSL certificate expiring soon and using deprecated protocols.')">
+                        <div class="vuln-title">SSL Certificate Issues</div>
+                        <div class="vuln-desc">Medium severity • Detected 1 day ago</div>
+                    </div>
+                    <div class="vuln-item" onclick="openModal('Open Port', 'Unnecessary open ports detected that could pose security risks.')">
+                        <div class="vuln-title">Unnecessary Open Ports</div>
+                        <div class="vuln-desc">Low severity • Detected 2 days ago</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Network Topology</h3>
+                <div style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Active hosts discovered: <span style="color: var(--primary-green);">127</span>
+                </div>
+                <div style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Open services: <span style="color: var(--warning-yellow);">43</span>
+                </div>
+                <div style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Suspicious traffic: <span style="color: var(--danger-red);">2</span>
+                </div>
+                <button class="btn" onclick="generateReport()">Generate Report</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="vulnModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Vulnerability Details</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalBody">Detailed information about the vulnerability will appear here.</p>
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="color: var(--primary-green); margin-bottom: 0.5rem;">Recommended Actions:</h4>
+                    <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
+                        <li>Update affected systems immediately</li>
+                        <li>Implement input validation</li>
+                        <li>Deploy security patches</li>
+                        <li>Monitor for suspicious activity</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <button class="btn" onclick="closeModal()">Mark as Reviewed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Particle System
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Terminal Animation
+        function typeText(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            element.classList.add('typing');
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    element.classList.remove('typing');
+                }
+            }
+            type();
+        }
+
+        function addTerminalLine(prompt, command, delay = 0) {
+            setTimeout(() => {
+                const terminal = document.getElementById('terminal-content');
+                const line = document.createElement('div');
+                line.className = 'terminal-line';
+                line.style.animationDelay = '0s';
+                
+                const promptSpan = document.createElement('span');
+                promptSpan.className = 'prompt';
+                promptSpan.textContent = prompt;
+                
+                const commandSpan = document.createElement('span');
+                commandSpan.className = 'command';
+                
+                line.appendChild(promptSpan);
+                line.appendChild(commandSpan);
+                terminal.appendChild(line);
+                
+                typeText(commandSpan, command);
+                
+                // Auto-scroll
+                terminal.scrollTop = terminal.scrollHeight;
+            }, delay);
+        }
+
+        // Initialize Terminal
+        function initTerminal() {
+            const commands = [
+                ['root@cyberlab:~$', 'nmap -sS -O target_network'],
+                ['[SCAN]', 'Discovering hosts... 127 active hosts found'],
+                ['[SCAN]', 'Port scanning in progress...'],
+                ['[VULN]', 'SQL injection detected on port 80'],
+                ['[VULN]', 'XSS vulnerability found in form inputs'],
+                ['[INFO]', 'Generating detailed vulnerability report...'],
+                ['root@cyberlab:~$', 'python exploit_scanner.py --deep'],
+                ['[EXPLOIT]', 'Testing known exploits against targets...'],
+                ['[WARNING]', 'Potential backdoor detected'],
+                ['root@cyberlab:~$', 'systemctl status firewall']
+            ];
+
+            commands.forEach((cmd, index) => {
+                addTerminalLine(cmd[0], cmd[1], index * 1500);
+            });
+        }
+
+        // Progress Bar Animation
+        function animateProgress() {
+            const bars = [
+                { element: 'network-bar', target: 73, label: 'network-progress' },
+                { element: 'vuln-bar', target: 45, label: 'vuln-progress' },
+                { element: 'port-bar', target: 89, label: 'port-progress' }
+            ];
+
+            bars.forEach(bar => {
+                let current = 0;
+                const increment = bar.target / 100;
+                const interval = setInterval(() => {
+                    current += increment;
+                    if (current >= bar.target) {
+                        current = bar.target;
+                        clearInterval(interval);
+                    }
+                    document.getElementById(bar.element).style.width = current + '%';
+                    document.getElementById(bar.label).textContent = Math.round(current) + '%';
+                }, 50);
+            });
+        }
+
+        // Modal Functions
+        function openModal(title, description) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalBody').textContent = description;
+            document.getElementById('vulnModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('vulnModal').classList.remove('active');
+        }
+
+        // Interactive Functions
+        function startNewScan() {
+            addTerminalLine('[SYSTEM]', 'Initiating comprehensive security scan...', 0);
+            addTerminalLine('[SCAN]', 'Deep packet inspection started', 1000);
+            addTerminalLine('[SCAN]', 'Behavioral analysis in progress...', 2000);
+            
+            // Reset and animate progress bars
+            setTimeout(() => {
+                animateProgress();
+            }, 500);
+        }
+
+        function generateReport() {
+            addTerminalLine('[REPORT]', 'Compiling security assessment report...', 0);
+            addTerminalLine('[REPORT]', 'Generating executive summary...', 1000);
+            addTerminalLine('[REPORT]', 'Report saved to /reports/security_assessment.pdf', 2000);
+        }
+
+        // Click outside modal to close
+        document.getElementById('vulnModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            initTerminal();
+            setTimeout(animateProgress, 2000);
+            
+            // Add some dynamic behavior
+            setInterval(() => {
+                const particles = document.querySelectorAll('.particle');
+                particles.forEach(particle => {
+                    if (Math.random() > 0.98) {
+                        particle.style.opacity = Math.random() * 0.5 + 0.3;
+                    }
+                });
+            }, 1000);
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+            if (e.ctrlKey && e.key === 'Enter') {
+                startNewScan();
+            }
+        });
+    </script>
+</body>
+</html>

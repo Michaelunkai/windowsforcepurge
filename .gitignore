@@ -1,0 +1,9 @@
+﻿*.tmp
+*.temp
+~*
+Thumbs.db
+.DS_Store
+**/long_filename_*
+**/nul
+**/.git
+**/mem-agent-mcp/

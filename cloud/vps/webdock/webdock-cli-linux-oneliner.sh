@@ -1,0 +1,1 @@
+curl -fsSL 'https://cli-src.webdock.tech/install/linux.sh' | sudo bash

@@ -1,0 +1,9 @@
+getmongo \
+&& git clone https://github.com/btdig/dhtcrawler2.git ~/dhtcrawler2 \
+&& mkdir -p ~/dhtcrawler2/dbdata \
+&& sleep 5 \
+&& cd ~/dhtcrawler2 \
+&& erl -noshell -pa ebin \
+     -s dhtcrawler start \
+     -s hash_reader start \
+     -s crawler_http start

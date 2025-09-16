@@ -1,0 +1,1 @@
+sudo rm -rf /var/lib/dpkg/info/* && sudo apt-get clean && sudo apt-get update && sudo apt-get install --reinstall -y dpkg apt coreutils bash sed && sudo dpkg --configure -a && sudo apt-get install -f -y && echo "Fix complete. Please restart WSL using 'wsl.exe --terminate <distro>' from PowerShell."

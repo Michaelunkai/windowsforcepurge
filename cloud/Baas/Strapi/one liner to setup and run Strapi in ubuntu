@@ -1,0 +1,1 @@
+nvm22 && npx create-strapi-app@latest my-project --quickstart

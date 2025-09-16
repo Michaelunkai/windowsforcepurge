@@ -1,0 +1,1 @@
+Register-ScheduledTask -Action (New-ScheduledTaskAction -Execute "C:\Program Files\Docker\Docker\Docker Desktop.exe") -Trigger (New-ScheduledTaskTrigger -AtLogOn) -TaskName "StartDockerDesktop" -Description "Start Docker Desktop and Engine on login" -User "$env:USERNAME" -RunLevel Highest -Force

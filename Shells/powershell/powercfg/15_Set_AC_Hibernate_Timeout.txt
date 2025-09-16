@@ -1,0 +1,1 @@
+powercfg /change hibernate-timeout-ac 60

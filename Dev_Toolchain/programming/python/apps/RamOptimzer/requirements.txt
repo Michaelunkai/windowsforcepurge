@@ -1,0 +1,4 @@
+psutil>=5.9.0
+pywin32>=307
+customtkinter>=5.0.0
+matplotlib>=3.6.0 

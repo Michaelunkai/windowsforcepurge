@@ -1,0 +1,1 @@
+sudo apt-get update && sudo apt-get install -y rebar3 && rebar3 --version

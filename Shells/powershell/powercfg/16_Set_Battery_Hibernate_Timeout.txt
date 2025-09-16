@@ -1,0 +1,1 @@
+powercfg /change hibernate-timeout-dc 30

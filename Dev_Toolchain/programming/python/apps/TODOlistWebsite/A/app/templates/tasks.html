@@ -1,0 +1,270 @@
+{% extends "base.html" %}
+
+{% block title %}Tasks - TodoNotes{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-content">
+            <h1><i class="fas fa-check-circle"></i> Tasks</h1>
+            <p>Manage your tasks and stay productive</p>
+        </div>
+        <div class="header-actions">
+            <div class="filter-dropdown">
+                <select id="project-filter" class="form-select" onchange="filterByProject()">
+                    <option value="">All Projects</option>
+                    {% for project in projects %}
+                    <option value="{{ project.id }}" {% if selected_project_id == project.id %}selected{% endif %}>
+                        {{ project.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class="btn btn-primary" onclick="showTaskModal()">
+                <i class="fas fa-plus"></i> New Task
+            </button>
+        </div>
+    </div>
+
+    <div class="tasks-container">
+        <div class="tasks-grid">
+            <!-- Pending Tasks -->
+            <div class="task-column">
+                <div class="column-header">
+                    <h3><i class="fas fa-clock"></i> Pending</h3>
+                    <span class="task-count">{{ tasks|selectattr('completed', 'equalto', false)|list|length }}</span>
+                </div>
+                <div class="task-list">
+                    {% for task in tasks %}
+                        {% if not task.completed %}
+                        <div class="task-card" data-project="{{ task.project_id or '' }}">
+                            <div class="task-header">
+                                <div class="task-checkbox">
+                                    <input type="checkbox" id="task-{{ task.id }}" onchange="toggleTask({{ task.id }})">
+                                    <label for="task-{{ task.id }}"></label>
+                                </div>
+                                <div class="task-priority priority-{{ task.priority }}">
+                                    {% if task.priority == 4 %}
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    {% elif task.priority == 3 %}
+                                        <i class="fas fa-arrow-up"></i>
+                                    {% elif task.priority == 2 %}
+                                        <i class="fas fa-minus"></i>
+                                    {% else %}
+                                        <i class="fas fa-arrow-down"></i>
+                                    {% endif %}
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn-icon" onclick="editTask({{ task.id }})">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon delete" onclick="deleteTask({{ task.id }})">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="task-content">
+                                <h4>{{ task.title }}</h4>
+                                {% if task.description %}
+                                <p>{{ task.description }}</p>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="task-footer">
+                                <div class="task-meta">
+                                    {% if task.project %}
+                                    <span class="project-tag" style="background-color: {{ task.project.color }}20; color: {{ task.project.color }}">
+                                        <i class="fas fa-folder"></i> {{ task.project.name }}
+                                    </span>
+                                    {% endif %}
+                                    
+                                    {% if task.due_date %}
+                                    <span class="due-date {% if task.due_date.date() < today %}overdue{% elif task.due_date.date() == today %}today{% endif %}">
+                                        <i class="fas fa-calendar"></i> {{ task.due_date.strftime('%b %d') }}
+                                    </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if tasks|selectattr('completed', 'equalto', false)|list|length == 0 %}
+                    <div class="empty-column">
+                        <i class="fas fa-check-circle"></i>
+                        <p>No pending tasks</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Completed Tasks -->
+            <div class="task-column">
+                <div class="column-header">
+                    <h3><i class="fas fa-check"></i> Completed</h3>
+                    <span class="task-count">{{ tasks|selectattr('completed', 'equalto', true)|list|length }}</span>
+                </div>
+                <div class="task-list">
+                    {% for task in tasks %}
+                        {% if task.completed %}
+                        <div class="task-card completed" data-project="{{ task.project_id or '' }}">
+                            <div class="task-header">
+                                <div class="task-checkbox">
+                                    <input type="checkbox" id="task-{{ task.id }}" checked onchange="toggleTask({{ task.id }})">
+                                    <label for="task-{{ task.id }}"></label>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn-icon delete" onclick="deleteTask({{ task.id }})">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="task-content">
+                                <h4 class="completed">{{ task.title }}</h4>
+                                {% if task.description %}
+                                <p class="completed">{{ task.description }}</p>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="task-footer">
+                                <div class="task-meta">
+                                    {% if task.project %}
+                                    <span class="project-tag" style="background-color: {{ task.project.color }}20; color: {{ task.project.color }}">
+                                        <i class="fas fa-folder"></i> {{ task.project.name }}
+                                    </span>
+                                    {% endif %}
+                                    
+                                    {% if task.completed_at %}
+                                    <span class="completed-date">
+                                        <i class="fas fa-check"></i> {{ task.completed_at.strftime('%b %d') }}
+                                    </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if tasks|selectattr('completed', 'equalto', true)|list|length == 0 %}
+                    <div class="empty-column">
+                        <i class="fas fa-tasks"></i>
+                        <p>No completed tasks</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Task Modal (same as dashboard) -->
+<div id="taskModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Create New Task</h3>
+            <button class="modal-close" onclick="hideTaskModal()">&times;</button>
+        </div>
+        <form action="/tasks/create" method="post" class="modal-form">
+            <div class="form-group">
+                <label for="task-title">Task Title</label>
+                <input type="text" id="task-title" name="title" required class="form-input">
+            </div>
+            
+            <div class="form-group">
+                <label for="task-description">Description</label>
+                <textarea id="task-description" name="description" class="form-textarea" rows="3"></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="task-priority">Priority</label>
+                    <select id="task-priority" name="priority" class="form-select">
+                        <option value="1">Low</option>
+                        <option value="2" selected>Medium</option>
+                        <option value="3">High</option>
+                        <option value="4">Urgent</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="task-project">Project</label>
+                    <select id="task-project" name="project_id" class="form-select">
+                        <option value="">No Project</option>
+                        {% for project in projects %}
+                        <option value="{{ project.id }}" {% if selected_project_id == project.id %}selected{% endif %}>{{ project.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="task-due-date">Due Date</label>
+                <input type="date" id="task-due-date" name="due_date" class="form-input">
+            </div>
+            
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="hideTaskModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Create Task</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function showTaskModal() {
+    document.getElementById('taskModal').style.display = 'flex';
+}
+
+function hideTaskModal() {
+    document.getElementById('taskModal').style.display = 'none';
+}
+
+async function toggleTask(taskId) {
+    try {
+        const response = await fetch(`/tasks/${taskId}/toggle`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        
+        if (response.ok) {
+            location.reload();
+        }
+    } catch (error) {
+        console.error('Error toggling task:', error);
+    }
+}
+
+async function deleteTask(taskId) {
+    if (confirm('Are you sure you want to delete this task?')) {
+        try {
+            const response = await fetch(`/tasks/${taskId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            
+            if (response.ok) {
+                location.reload();
+            }
+        } catch (error) {
+            console.error('Error deleting task:', error);
+        }
+    }
+}
+
+function filterByProject() {
+    const projectId = document.getElementById('project-filter').value;
+    const url = projectId ? `/tasks?project_id=${projectId}` : '/tasks';
+    window.location.href = url;
+}
+
+const today = new Date().toDateString();
+</script>
+{% endblock %}

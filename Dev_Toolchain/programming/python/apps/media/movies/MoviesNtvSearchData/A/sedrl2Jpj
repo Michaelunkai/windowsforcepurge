@@ -1,0 +1,758 @@
+import sys
+import difflib
+import requests
+import urllib.parse
+import json
+import os
+import threading
+from datetime import datetime
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import QUrl, QTimer, QObject, QPropertyAnimation, pyqtProperty
+from PyQt5.QtWebEngineWidgets import QWebEngineView
+
+# YOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HERE----------------
+# TMDB API configuration and cache
+TMDB_API_KEY = "YOUR_CLIENT_SECRET_HERE681f11"
+TMDB_ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiJ9.YOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HERELIENT_SECRET_HERExfQ.YOUR_CLIENT_SECRET_HERE-zlXWYLWB4iYtH-qo"
+TMDB_BASE_URL = "https://api.themoviedb.org/3"
+HEADERS = {
+    "User-Agent": "MovieTVInsightApp/1.0",
+    "Authorization": f"Bearer {TMDB_ACCESS_TOKEN}"
+}
+details_cache = {}
+
+# YOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HERE----------------
+# OMDB API configuration
+OMDB_API_KEY = "6bbc1115"  # Use your provided OMDB API key for faster/better results
+OMDB_BASE_URL = "http://www.omdbapi.com/"
+
+# YOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HERE----------------
+# Add search results caching to speed up repeat searches
+search_cache = {}
+imdb_id_cache = {}
+imdb_rating_cache = {}
+
+# Set higher timeout for TMDB API requests to prevent timeouts
+DEFAULT_TIMEOUT = 10
+
+# YOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HERE----------------
+# Add persistent storage for watchlist and history
+USER_DATA_DIR = os.path.join(os.path.expanduser("~"), ".movietv_insight")
+WATCHLIST_FILE = os.path.join(USER_DATA_DIR, "watchlist.json")
+HISTORY_FILE = os.path.join(USER_DATA_DIR, "history.json")
+
+# Ensure user data directory exists
+if not os.path.exists(USER_DATA_DIR):
+    try:
+        os.makedirs(USER_DATA_DIR)
+    except Exception as e:
+        print(f"Error creating user data directory: {e}")
+
+# Load watchlist from file
+def load_watchlist():
+    if os.path.exists(WATCHLIST_FILE):
+        try:
+            with open(WATCHLIST_FILE, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Error loading watchlist: {e}")
+    return []
+
+# Save watchlist to file
+def save_watchlist(watchlist):
+    try:
+        with open(WATCHLIST_FILE, 'w') as f:
+            json.dump(watchlist, f)
+    except Exception as e:
+        print(f"Error saving watchlist: {e}")
+
+# Load history from file
+def load_history():
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Error loading history: {e}")
+    return []
+
+# Save history to file
+def save_history(history):
+    try:
+        with open(HISTORY_FILE, 'w') as f:
+            json.dump(history, f)
+    except Exception as e:
+        print(f"Error saving history: {e}")
+
+# Add item to history
+def add_to_history(item):
+    history = load_history()
+    # Remove existing entries for this item to avoid duplicates
+    history = [h for h in history if h.get('id') != item.get('id') or h.get('media_type') != item.get('media_type')]
+    # Add new entry at the beginning
+    history.insert(0, item)
+    # Keep only the last 50 items
+    if len(history) > 50:
+        history = history[:50]
+    save_history(history)
+
+# YOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HERE----------------
+# Helper functions for API calls
+
+def search_tmdb(query, content_type="multi"):
+    """Search TMDB for movies/TV shows matching 'query'."""
+    # Check cache first for faster results
+    cache_key = f"{content_type}_{query.lower().strip()}"
+    if cache_key in search_cache:
+        print("Using cached search results")
+        return search_cache[cache_key]
+    
+    url = f"{TMDB_BASE_URL}/search/{content_type}"
+    params = {
+        "api_key": TMDB_API_KEY,
+        "query": query,
+        "language": "en-US",
+        "page": 1,
+        "include_adult": "false"
+    }
+    try:
+        response = requests.get(url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+        response.raise_for_status()
+        data = response.json()
+        results = data.get("results", [])
+        
+        # Cache the results for future use
+        search_cache[cache_key] = results
+        return results
+    except Exception as e:
+        print(f"Error searching TMDB: {e}")
+    return []
+
+def get_tmdb_details(item_id, media_type):
+    """Fetch detailed info for a movie/TV show from TMDB by ID (using caching)."""
+    cache_key = f"{media_type}_{item_id}"
+    if cache_key in details_cache:
+        return details_cache[cache_key]
+    
+    url = f"{TMDB_BASE_URL}/{media_type}/{item_id}"
+    params = {
+        "api_key": TMDB_API_KEY, 
+        "language": "en-US",
+        "append_to_response": "credits,videos,images,similar,recommendations,reviews"
+    }
+    try:
+        response = requests.get(url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+        response.raise_for_status()
+        details = response.json()
+        details_cache[cache_key] = details
+        return details
+    except Exception as e:
+        print(f"Error fetching details: {e}")
+    return {}
+
+def get_media_credits(item_id, media_type):
+    """Get cast and crew information."""
+    url = f"{TMDB_BASE_URL}/{media_type}/{item_id}/credits"
+    params = {"api_key": TMDB_API_KEY, "language": "en-US"}
+    try:
+        response = requests.get(url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+        response.raise_for_status()
+        return response.json()
+    except Exception as e:
+        print(f"Error fetching credits: {e}")
+    return {"cast": [], "crew": []}
+
+def get_tmdb_ratings(title, year=None, media_type="movie"):
+    """Get ratings from various sources via OMDB API."""
+    params = {
+        "apikey": OMDB_API_KEY,
+        "t": title,
+        "type": "movie" if media_type == "movie" else "series",
+        "r": "json"
+    }
+    if year:
+        params["y"] = year
+        
+    try:
+        response = requests.get(OMDB_BASE_URL, params=params, timeout=DEFAULT_TIMEOUT)
+        response.raise_for_status()
+        data = response.json()
+        
+        if data.get("Response") == "True":
+            ratings = {}
+            for source in data.get("Ratings", []):
+                ratings[source.get("Source", "Unknown")] = source.get("Value", "N/A")
+            
+            return {
+                "IMDB": data.get("imdbRating", "N/A"),
+                "Metascore": data.get("Metascore", "N/A"),
+                "Rotten Tomatoes": ratings.get("Rotten Tomatoes", "N/A"),
+                "Metacritic": ratings.get("Metacritic", "N/A")
+            }
+    except Exception as e:
+        print(f"Error fetching OMDB ratings: {e}")
+    
+    return {
+        "IMDB": "N/A",
+        "Metascore": "N/A",
+        "Rotten Tomatoes": "N/A",
+        "Metacritic": "N/A"
+    }
+
+def get_imdb_id_for_tmdb(tmdb_id, media_type):
+    """Get IMDB ID from TMDB ID to enable direct IMDB ratings lookup."""
+    cache_key = f"{media_type}_{tmdb_id}"
+    
+    # Check cache first
+    if cache_key in imdb_id_cache:
+        return imdb_id_cache[cache_key]
+        
+    try:
+        url = f"{TMDB_BASE_URL}/{media_type}/{tmdb_id}/external_ids"
+        params = {"api_key": TMDB_API_KEY}
+        
+        response = requests.get(url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+        response.raise_for_status()
+        data = response.json()
+        
+        imdb_id = data.get("imdb_id", "")
+        imdb_id_cache[cache_key] = imdb_id
+        return imdb_id
+    except Exception as e:
+        print(f"Error fetching IMDB ID: {e}")
+        return ""
+
+def get_quick_imdb_rating(imdb_id):
+    """Get IMDB rating directly by ID for faster results."""
+    if not imdb_id:
+        return "N/A"
+        
+    # Check cache first
+    if imdb_id in imdb_rating_cache:
+        return imdb_rating_cache[imdb_id]
+    
+    try:
+        params = {
+            "apikey": OMDB_API_KEY,
+            "i": imdb_id,
+            "r": "json"
+        }
+        
+        response = requests.get(OMDB_BASE_URL, params=params, timeout=DEFAULT_TIMEOUT)
+        response.raise_for_status()
+        data = response.json()
+        
+        if data.get("Response") == "True":
+            rating = data.get("imdbRating", "N/A")
+            imdb_rating_cache[imdb_id] = rating
+            return rating
+    except Exception as e:
+        print(f"Error fetching quick IMDB rating: {e}")
+    
+    return "N/A"
+
+def fetch_image(url):
+    """Download an image and return it as QPixmap with error handling and retry."""
+    if not url:
+        return None
+        
+    # Implement retry logic for images
+    max_retries = 2
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(url, timeout=DEFAULT_TIMEOUT)
+            response.raise_for_status()
+            pixmap = QtGui.QPixmap()
+            success = pixmap.loadFromData(response.content)
+            
+            if success and not pixmap.isNull():
+                return pixmap
+            elif attempt < max_retries - 1:
+                print(f"Retrying image download for: {url}")
+                continue
+        except Exception as e:
+            if attempt < max_retries - 1:
+                print(f"Error downloading image (retry {attempt+1}): {e}")
+            else:
+                print(f"Final error downloading image: {e}")
+    
+    # If we get here, we've failed - create a placeholder image
+    placeholder = QtGui.QPixmap(100, 150)
+    placeholder.fill(QtGui.QColor("#f0f0f0"))
+    painter = QtGui.QPainter(placeholder)
+    painter.setPen(QtGui.QColor("#999999"))
+    painter.drawText(placeholder.rect(), QtCore.Qt.AlignCenter, "No Image")
+    painter.end()
+    return placeholder
+
+def get_tmdb_suggestions(query):
+    """Get search suggestions as you type."""
+    if not query or len(query) < 2:
+        return []
+    
+    url = f"{TMDB_BASE_URL}/search/multi"
+    params = {
+        "api_key": TMDB_API_KEY,
+        "query": query,
+        "language": "en-US",
+        "page": 1,
+        "include_adult": "false"
+    }
+    try:
+        response = requests.get(url, headers=HEADERS, params=params, timeout=2)
+        response.raise_for_status()
+        data = response.json()
+        results = data.get("results", [])[:10]  # Limit to top 10 suggestions
+        
+        suggestions = []
+        for item in results:
+            if item.get("media_type") in ["movie", "tv"]:
+                title = item.get("title", item.get("name", ""))
+                year = ""
+                if item.get("media_type") == "movie" and item.get("release_date"):
+                    year = f" ({item['release_date'][:4]})"
+                elif item.get("media_type") == "tv" and item.get("first_air_date"):
+                    year = f" ({item['first_air_date'][:4]})"
+                
+                media_type = "Movie" if item.get("media_type") == "movie" else "TV Show"
+                suggestions.append(f"{title}{year} - {media_type}")
+        
+        return suggestions
+    except Exception as e:
+        print(f"Error fetching suggestions: {e}")
+    return []
+
+def get_trending_movies(limit=20):
+    """Get currently trending/popular movies from TMDB."""
+    cache_key = f"trending_movies_{datetime.now().strftime('%Y-%m-%d')}"
+    if cache_key in search_cache:
+        print("Using cached trending movies")
+        return search_cache[cache_key][:limit]
+    
+    try:
+        # First try trending movies for today
+        url = f"{TMDB_BASE_URL}/trending/movie/day"
+        params = {
+            "api_key": TMDB_API_KEY,
+            "language": "en-US"
+        }
+        response = requests.get(url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+        response.raise_for_status()
+        data = response.json()
+        results = data.get("results", [])
+        
+        # If we want more than 20 results (TMDB's default page size),
+        # we need to fetch additional pages of popular movies
+        if limit > 20:
+            # Get total number of pages needed (TMDB returns 20 per page)
+            pages_needed = min(10, (limit // 20) + 1)  # Limit to 10 pages max to avoid abuse
+            
+            # Fetch popular movies from multiple pages
+            popular_url = f"{TMDB_BASE_URL}/movie/popular"
+            
+            for page in range(1, pages_needed + 1):
+                params = {
+                    "api_key": TMDB_API_KEY,
+                    "language": "en-US",
+                    "page": page
+                }
+                
+                popular_response = requests.get(popular_url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+                popular_response.raise_for_status()
+                popular_data = popular_response.json()
+                
+                # Add only new movies not already in results
+                existing_ids = {movie['id'] for movie in results}
+                for movie in popular_data.get("results", []):
+                    if movie['id'] not in existing_ids and len(results) < limit:
+                        # Mark this as coming from popular rather than trending
+                        movie['source'] = 'popular'
+                        results.append(movie)
+            
+            # If still not enough, add upcoming and top rated movies
+            if len(results) < limit:
+                # Try upcoming movies
+                upcoming_url = f"{TMDB_BASE_URL}/movie/upcoming"
+                params = {
+                    "api_key": TMDB_API_KEY,
+                    "language": "en-US",
+                    "page": 1
+                }
+                
+                try:
+                    upcoming_response = requests.get(upcoming_url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+                    upcoming_response.raise_for_status()
+                    upcoming_data = upcoming_response.json()
+                    
+                    # Add only new movies not already in results
+                    existing_ids = {movie['id'] for movie in results}
+                    for movie in upcoming_data.get("results", []):
+                        if movie['id'] not in existing_ids and len(results) < limit:
+                            movie['source'] = 'upcoming'
+                            results.append(movie)
+                except Exception as e:
+                    print(f"Error fetching upcoming movies: {e}")
+                
+                # Try top rated movies
+                top_rated_url = f"{TMDB_BASE_URL}/movie/top_rated"
+                params = {
+                    "api_key": TMDB_API_KEY,
+                    "language": "en-US",
+                    "page": 1
+                }
+                
+                try:
+                    top_rated_response = requests.get(top_rated_url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+                    top_rated_response.raise_for_status()
+                    top_rated_data = top_rated_response.json()
+                    
+                    # Add only new movies not already in results
+                    existing_ids = {movie['id'] for movie in results}
+                    for movie in top_rated_data.get("results", []):
+                        if movie['id'] not in existing_ids and len(results) < limit:
+                            movie['source'] = 'top_rated'
+                            results.append(movie)
+                except Exception as e:
+                    print(f"Error fetching top rated movies: {e}")
+        
+        # Cache the results with today's date as cache key
+        search_cache[cache_key] = results
+        return results[:limit]
+    except Exception as e:
+        print(f"Error fetching trending movies: {e}")
+        return []
+
+def get_trending_tv_shows(limit=20):
+    """Get currently trending/popular TV shows from TMDB."""
+    cache_key = f"trending_tv_{datetime.now().strftime('%Y-%m-%d')}"
+    if cache_key in search_cache:
+        print("Using cached trending TV shows")
+        return search_cache[cache_key][:limit]
+    
+    try:
+        # First try trending TV shows for today
+        url = f"{TMDB_BASE_URL}/trending/tv/day"
+        params = {
+            "api_key": TMDB_API_KEY,
+            "language": "en-US"
+        }
+        response = requests.get(url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+        response.raise_for_status()
+        data = response.json()
+        results = data.get("results", [])
+        
+        # If we want more than 20 results (TMDB's default page size),
+        # we need to fetch additional pages of popular TV shows
+        if limit > 20:
+            # Get total number of pages needed (TMDB returns 20 per page)
+            pages_needed = min(10, (limit // 20) + 1)  # Limit to 10 pages max to avoid abuse
+            
+            # Fetch popular TV shows from multiple pages
+            popular_url = f"{TMDB_BASE_URL}/tv/popular"
+            
+            for page in range(1, pages_needed + 1):
+                params = {
+                    "api_key": TMDB_API_KEY,
+                    "language": "en-US",
+                    "page": page
+                }
+                
+                popular_response = requests.get(popular_url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+                popular_response.raise_for_status()
+                popular_data = popular_response.json()
+                
+                # Add only new TV shows not already in results
+                existing_ids = {show['id'] for show in results}
+                for show in popular_data.get("results", []):
+                    if show['id'] not in existing_ids and len(results) < limit:
+                        # Mark this as coming from popular rather than trending
+                        show['source'] = 'popular'
+                        results.append(show)
+            
+            # If still not enough, add top rated and on the air TV shows
+            if len(results) < limit:
+                # Try top rated TV shows
+                top_rated_url = f"{TMDB_BASE_URL}/tv/top_rated"
+                params = {
+                    "api_key": TMDB_API_KEY,
+                    "language": "en-US",
+                    "page": 1
+                }
+                
+                try:
+                    top_rated_response = requests.get(top_rated_url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+                    top_rated_response.raise_for_status()
+                    top_rated_data = top_rated_response.json()
+                    
+                    # Add only new TV shows not already in results
+                    existing_ids = {show['id'] for show in results}
+                    for show in top_rated_data.get("results", []):
+                        if show['id'] not in existing_ids and len(results) < limit:
+                            show['source'] = 'top_rated'
+                            results.append(show)
+                except Exception as e:
+                    print(f"Error fetching top rated TV shows: {e}")
+                
+                # Try on the air TV shows
+                on_air_url = f"{TMDB_BASE_URL}/tv/on_the_air"
+                params = {
+                    "api_key": TMDB_API_KEY,
+                    "language": "en-US",
+                    "page": 1
+                }
+                
+                try:
+                    on_air_response = requests.get(on_air_url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+                    on_air_response.raise_for_status()
+                    on_air_data = on_air_response.json()
+                    
+                    # Add only new TV shows not already in results
+                    existing_ids = {show['id'] for show in results}
+                    for show in on_air_data.get("results", []):
+                        if show['id'] not in existing_ids and len(results) < limit:
+                            show['source'] = 'on_air'
+                            results.append(show)
+                except Exception as e:
+                    print(f"Error fetching on the air TV shows: {e}")
+        
+        # Cache the results with today's date as cache key
+        search_cache[cache_key] = results
+        return results[:limit]
+    except Exception as e:
+        print(f"Error fetching trending TV shows: {e}")
+        return []
+    
+# YOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HERE----------------
+# Enhanced API calls for better similar content and ratings
+
+def YOUR_CLIENT_SECRET_HEREnt(item_id, media_type):
+    """Get better similar content recommendations with weighted scoring."""
+    similar_key = f"{media_type}_{item_id}_similar_enhanced"
+    if similar_key in search_cache:
+        return search_cache[similar_key]
+        
+    try:
+        # Get similar and recommended content
+        similar_url = f"{TMDB_BASE_URL}/{media_type}/{item_id}/similar"
+        recommend_url = f"{TMDB_BASE_URL}/{media_type}/{item_id}/recommendations"
+        
+        params = {
+            "api_key": TMDB_API_KEY,
+            "language": "en-US",
+            "page": 1
+        }
+        
+        similar_response = requests.get(similar_url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+        similar_response.raise_for_status()
+        similar_data = similar_response.json().get("results", [])
+        
+        recommend_response = requests.get(recommend_url, headers=HEADERS, params=params, timeout=DEFAULT_TIMEOUT)
+        recommend_response.raise_for_status()
+        recommend_data = recommend_response.json().get("results", [])
+        
+        # Get the original item's details for better comparison
+        original_details = get_tmdb_details(item_id, media_type)
+        original_genres = set(g.get('id') for g in original_details.get('genres', []))
+        
+        # Combine and score results
+        seen_ids = set()
+        enhanced_results = []
+        
+        for item in similar_data + recommend_data:
+            if item['id'] in seen_ids:
+                continue
+            seen_ids.add(item['id'])
+            
+            # Calculate relevance score based on various factors
+            score = 0
+            
+            # Genre matching (up to +3.0)
+            item_genres = set(g.get('genre_id') for g in item.get('genre_ids', []))
+            matching_genres = len(original_genres.intersection(item_genres)) if original_genres and item_genres else 0
+            genre_score = min(3.0, matching_genres * 1.0)
+            score += genre_score
+            
+            # Vote count weight (up to +2.0) - more votes = more reliable recommendation
+            vote_count = item.get('vote_count', 0)
+            vote_score = min(2.0, vote_count / 1000)
+            score += vote_score
+            
+            # Vote average (up to +3.0)
+            vote_avg = item.get('vote_average', 0)
+            avg_score = min(3.0, vote_avg / 3.33)
+            score += avg_score
+            
+            # Popularity boost (up to +2.0)
+            popularity = item.get('popularity', 0)
+            pop_score = min(2.0, popularity / 50)
+            score += pop_score
+            
+            # Add the score to the item
+            item['relevance_score'] = round(score, 1)
+            enhanced_results.append(item)
+        
+        # Sort by relevance score
+        enhanced_results.sort(key=lambda x: x.get('relevance_score', 0), reverse=True)
+        
+        # Cache the results
+        search_cache[similar_key] = enhanced_results
+        return enhanced_results
+        
+    except Exception as e:
+        print(f"Error getting enhanced similar content: {e}")
+        return []
+
+def YOUR_CLIENT_SECRET_HERE(imdb_id, title, year=None, media_type="movie"):
+    """Get comprehensive ratings from multiple sources with cache."""
+    cache_key = f"ratings_{imdb_id}_{title}_{year}_{media_type}"
+    if cache_key in search_cache:
+        return search_cache[cache_key]
+    
+    all_ratings = {
+        "TMDB": {"value": "N/A", "source": "TMDB", "icon": "🌟"},
+        "IMDB": {"value": "N/A", "source": "IMDB", "icon": "⭐"},
+        "Rotten Tomatoes": {"value": "N/A", "source": "Rotten Tomatoes", "icon": "🍅"},
+        "Metacritic": {"value": "N/A", "source": "Metacritic", "icon": "Ⓜ️"}
+    }
+    
+    try:
+        # Get OMDB ratings which include RT, Metacritic and IMDB
+        params = {
+            "apikey": OMDB_API_KEY,
+            "i": imdb_id if imdb_id else None,
+            "t": None if imdb_id else title,
+            "y": year,
+            "type": "movie" if media_type == "movie" else "series",
+            "r": "json"
+        }
+        
+        # Remove None values
+        params = {k: v for k, v in params.items() if v is not None}
+        
+        response = requests.get(OMDB_BASE_URL, params=params, timeout=DEFAULT_TIMEOUT)
+        response.raise_for_status()
+        data = response.json()
+        
+        if data.get("Response") == "True":
+            # IMDB rating
+            if data.get("imdbRating") and data.get("imdbRating") != "N/A":
+                all_ratings["IMDB"]["value"] = f"{data['imdbRating']}/10"
+                all_ratings["IMDB"]["votes"] = data.get("imdbVotes", "N/A")
+            
+            # Metacritic
+            if data.get("Metascore") and data.get("Metascore") != "N/A":
+                all_ratings["Metacritic"]["value"] = f"{data['Metascore']}/100"
+            
+            # Extract other ratings
+            for rating in data.get("Ratings", []):
+                source = rating.get("Source")
+                value = rating.get("Value")
+                
+                if source == "Rotten Tomatoes" and value:
+                    all_ratings["Rotten Tomatoes"]["value"] = value
+    
+    except Exception as e:
+        print(f"Error fetching OMDB ratings: {e}")
+    
+    # Cache the results
+    search_cache[cache_key] = all_ratings
+    return all_ratings
+
+# YOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HERE----------------
+# Worker Threads for nonblocking network calls
+
+class SearchThread(QtCore.QThread):
+    results_signal = QtCore.pyqtSignal(list)
+    error_signal = QtCore.pyqtSignal(str)
+
+    def __init__(self, query, content_type="multi"):
+        super().__init__()
+        self.query = query
+        self.content_type = content_type
+
+    def run(self):
+        try:
+            results = search_tmdb(self.query, self.content_type)
+            self.results_signal.emit(results)
+        except Exception as e:
+            self.error_signal.emit(str(e))
+
+class DetailThread(QtCore.QThread):
+    detail_signal = QtCore.pyqtSignal(dict, dict)
+    error_signal = QtCore.pyqtSignal(str)
+
+    def __init__(self, item_id, media_type, title, year=None):
+        super().__init__()
+        self.item_id = item_id
+        self.media_type = media_type
+        self.title = title
+        self.year = year
+
+    def run(self):
+        try:
+            details = get_tmdb_details(self.item_id, self.media_type)
+            ratings = get_tmdb_ratings(self.title, self.year, self.media_type)
+            self.detail_signal.emit(details, ratings)
+        except Exception as e:
+            self.error_signal.emit(str(e))
+
+# Create a worker thread for fetching search results with IMDB data
+class EnhancedSearchThread(QtCore.QThread):
+    results_signal = QtCore.pyqtSignal(list)
+    error_signal = QtCore.pyqtSignal(str)
+
+    def __init__(self, query, content_type="multi"):
+        super().__init__()
+        self.query = query
+        self.content_type = content_type
+
+    def run(self):
+        try:
+            results = search_tmdb(self.query, self.content_type)
+            
+            # Add IMDB IDs and ratings for faster display
+            enhanced_results = []
+            
+            # Process in batches for better responsiveness
+            batch_size = 5
+            for i in range(0, len(results), batch_size):
+                batch = results[i:i+batch_size]
+                for item in batch:
+                    if item.get("media_type") in ["movie", "tv"] or self.content_type in ["movie", "tv"]:
+                        media_type = item.get("media_type", self.content_type)
+                        imdb_id = get_imdb_id_for_tmdb(item.get("id"), media_type)
+                        imdb_rating = get_quick_imdb_rating(imdb_id) if imdb_id else "N/A"
+                        item["imdb_id"] = imdb_id
+                        item["imdb_rating"] = imdb_rating
+                    enhanced_results.append(item)
+            
+            self.results_signal.emit(enhanced_results)
+        except Exception as e:
+            self.error_signal.emit(str(e))
+
+# YOUR_CLIENT_SECRET_HEREYOUR_CLIENT_SECRET_HERE----------------
+# Class for rotatable label (fixes QPropertyAnimation rotation issue)
+class RotatableLabel(QtWidgets.QLabel):
+    def __init__(self, text=""):
+        super().__init__(text)
+        self._rotation = 0
+        
+    @pyqtProperty(float)
+    def rotation(self):
+        return self._rotation
+        
+    @rotation.setter
+    def rotation(self, value):
+        self._rotation = value
+        # Create transform
+        transform = QtGui.QTransform()
+        transform.translate(self.width() / 2, self.height() / 2)
+        transform.rotate(value)
+        transform.translate(-self.width() / 2, -self.height() / 2)
+        
+        # Apply rotation
+        self.setPixmap(self._base_pixmap.transformed(transform, QtCore.Qt.SmoothTransformation))
+        
+    def setPixmap(self, pixmap):
+        self._base_pixmap = pixmap
+        super(

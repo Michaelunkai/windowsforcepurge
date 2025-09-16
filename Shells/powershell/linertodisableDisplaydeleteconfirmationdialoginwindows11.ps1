@@ -1,0 +1,1 @@
+(New-Object -ComObject Shell.Application).NameSpace(10).Self.InvokeVerb("Properties") ; Start-Sleep -Seconds 1 ; Add-Type -AssemblyName PresentationFramework ; [System.Windows.MessageBox]::Show("Uncheck 'Display delete confirmation dialog' manually here. Windows doesn't allow toggling this via script directly.")

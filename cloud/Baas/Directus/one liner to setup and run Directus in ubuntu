@@ -1,0 +1,1 @@
+nvm22 && npx create-directus-project@latest my-project && cd my-project && npx directus start

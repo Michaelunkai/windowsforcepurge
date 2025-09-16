@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}Notes - TodoNotes{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-content">
+            <h1><i class="fas fa-sticky-note"></i> Notes</h1>
+            <p>Capture your thoughts and ideas</p>
+        </div>
+        <div class="header-actions">
+            <div class="filter-dropdown">
+                <select id="folder-filter" class="form-select" onchange="filterByFolder()">
+                    <option value="">All Folders</option>
+                    {% for folder in folders %}
+                    <option value="{{ folder.id }}" {% if selected_folder_id == folder.id %}selected{% endif %}>
+                        {{ folder.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class="btn btn-secondary" onclick="showFolderModal()">
+                <i class="fas fa-folder-plus"></i> New Folder
+            </button>
+            <a href="/notes/create" class="btn btn-primary">
+                <i class="fas fa-plus"></i> New Note
+            </a>
+        </div>
+    </div>
+
+    <div class="notes-container">
+        {% if notes %}
+        <div class="notes-grid">
+            {% for note in notes %}
+            <div class="note-card" data-folder="{{ note.folder_id or '' }}">
+                <div class="note-header">
+                    <h3>{{ note.title }}</h3>
+                    <div class="note-actions">
+                        <a href="/notes/{{ note.id }}/edit" class="btn-icon" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <button class="btn-icon delete" onclick="deleteNote({{ note.id }})" title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="note-content">
+                    <div class="note-preview">
+                        {{ note.content|striptags|truncate(150) }}
+                    </div>
+                </div>
+                
+                <div class="note-footer">
+                    <div class="note-meta">
+                        {% if note.folder %}
+                        <span class="folder-tag" style="background-color: {{ note.folder.color }}20; color: {{ note.folder.color }}">
+                            <i class="fas fa-folder"></i> {{ note.folder.name }}
+                        </span>
+                        {% endif %}
+                        
+                        <span class="note-date">
+                            <i class="fas fa-clock"></i> 
+                            {{ note.updated_at.strftime('%b %d, %Y') }}
+                        </span>
+                    </div>
+                    
+                    {% if note.attachments %}
+                    <div class="note-attachments">
+                        <i class="fas fa-paperclip"></i>
+                        <span>{{ note.attachments|length }} attachment(s)</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state-large">
+            <div class="empty-icon">
+                <i class="fas fa-sticky-note"></i>
+            </div>
+            <h3>No notes yet</h3>
+            <p>Start capturing your thoughts and ideas by creating your first note.</p>
+            <a href="/notes/create" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Create Your First Note
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Folder Modal -->
+<div id="folderModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Create New Folder</h3>
+            <button class="modal-close" onclick="hideFolderModal()">&times;</button>
+        </div>
+        <form action="/folders/create" method="post" class="modal-form">
+            <div class="form-group">
+                <label for="folder-name">Folder Name</label>
+                <input type="text" id="folder-name" name="name" required class="form-input">
+            </div>
+            
+            <div class="form-group">
+                <label for="folder-color">Color</label>
+                <div class="color-picker">
+                    <input type="radio" name="color" value="#e74c3c" id="color-red">
+                    <label for="color-red" class="color-option" style="background-color: #e74c3c"></label>
+                    
+                    <input type="radio" name="color" value="#2ecc71" id="color-green">
+                    <label for="color-green" class="color-option" style="background-color: #2ecc71"></label>
+                    
+                    <input type="radio" name="color" value="#3498db" id="color-blue">
+                    <label for="color-blue" class="color-option" style="background-color: #3498db"></label>
+                    
+                    <input type="radio" name="color" value="#9b59b6" id="color-purple" checked>
+                    <label for="color-purple" class="color-option" style="background-color: #9b59b6"></label>
+                    
+                    <input type="radio" name="color" value="#f39c12" id="color-orange">
+                    <label for="color-orange" class="color-option" style="background-color: #f39c12"></label>
+                    
+                    <input type="radio" name="color" value="#34495e" id="color-dark">
+                    <label for="color-dark" class="color-option" style="background-color: #34495e"></label>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="hideFolderModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Create Folder</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function showFolderModal() {
+    document.getElementById('folderModal').style.display = 'flex';
+}
+
+function hideFolderModal() {
+    document.getElementById('folderModal').style.display = 'none';
+}
+
+async function deleteNote(noteId) {
+    if (confirm('Are you sure you want to delete this note?')) {
+        try {
+            const response = await fetch(`/notes/${noteId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            
+            if (response.ok) {
+                location.reload();
+            }
+        } catch (error) {
+            console.error('Error deleting note:', error);
+        }
+    }
+}
+
+function filterByFolder() {
+    const folderId = document.getElementById('folder-filter').value;
+    const url = folderId ? `/notes?folder_id=${folderId}` : '/notes';
+    window.location.href = url;
+}
+</script>
+{% endblock %}

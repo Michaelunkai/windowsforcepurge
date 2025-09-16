@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Finder - Best Deals to Israel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .search-section {
+            padding: 40px;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            border-color: #667eea;
+        }
+        
+        .search-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .search-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .results {
+            padding: 0 40px 40px;
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .results-count {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .product-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f5f5f5;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .product-platform {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .product-prices {
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2e7d32;
+        }
+        
+        .currency {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .israeli-site {
+            background: #0040FF;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .product-link {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: opacity 0.3s;
+        }
+        
+        .product-link:hover {
+            opacity: 0.9;
+        }
+        
+        .shipping-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        .ships-yes {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        
+        .ships-no {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #d32f2f;
+        }
+        
+        .quick-search {
+            margin-bottom: 20px;
+        }
+        
+        .quick-search-label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .quick-search-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .quick-btn {
+            padding: 8px 16px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .quick-btn:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇮🇱 COMPREHENSIVE Israeli Price Finder</h1>
+            <p><strong>Searches ALL 50+ Israeli E-commerce Sites!</strong></p>
+            <p>📍 Ships to Bat Yam • Electronics, Fashion, Department Stores & More • Best Prices in ₪</p>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">KSP, Ivory, Bug, Zap, WinWin, Adika, Fox, Castro, Hamashbir, Rami Levy, IKEA, H&M, Zara & Many More!</p>
+        </div>
+        
+        <div class="search-section">
+            <div class="quick-search">
+                <div class="quick-search-label">Quick Search:</div>
+                <div class="quick-search-buttons">
+                    <button class="quick-btn" onclick="quickSearch('Samsung S25 Ultra')">Samsung S25 Ultra</button>
+                    <button class="quick-btn" onclick="quickSearch('iPhone 15 Pro')">iPhone 15 Pro</button>
+                    <button class="quick-btn" onclick="quickSearch('MacBook Pro')">MacBook Pro</button>
+                    <button class="quick-btn" onclick="quickSearch('AirPods Pro')">AirPods Pro</button>
+                    <button class="quick-btn" onclick="quickSearch('Sony WH-1000XM5')">Sony WH-1000XM5</button>
+                </div>
+            </div>
+            
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Enter product name (e.g., Samsung S25 Ultra, iPhone 15 Pro...)"
+                    onkeypress="handleEnter(event)"
+                >
+                <button class="search-btn" onclick="searchProducts()" id="searchBtn">
+                    🔍 Search
+                </button>
+            </div>
+        </div>
+        
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>מחפש באתרים הישראליים | Searching Israeli sites for exact matches...</p>
+        </div>
+        
+        <div id="results" class="results" style="display: none;">
+            <div class="results-header">
+                <div class="results-count" id="resultsCount"></div>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+        
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+        
+        function quickSearch(query) {
+            document.getElementById('searchInput').value = query;
+            searchProducts();
+        }
+        
+        function handleEnter(event) {
+            if (event.key === 'Enter') {
+                searchProducts();
+            }
+        }
+        
+        async function searchProducts() {
+            const query = document.getElementById('searchInput').value.trim();
+            
+            if (query.length < 2) {
+                alert('Please enter at least 2 characters');
+                return;
+            }
+            
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('searchBtn').disabled = true;
+            document.getElementById('searchBtn').textContent = 'Searching...';
+            
+            try {
+                const response = await fetch(`${API_BASE}/search/product`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                displayResults(data);
+                
+            } catch (error) {
+                console.error('Search error:', error);
+                document.getElementById('error').textContent = 'Failed to search products. Please try again.';
+                document.getElementById('error').style.display = 'block';
+            } finally {
+                // Hide loading
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('searchBtn').disabled = false;
+                document.getElementById('searchBtn').textContent = '🔍 Search';
+            }
+        }
+        
+        function displayResults(data) {
+            const resultsDiv = document.getElementById('results');
+            const countDiv = document.getElementById('resultsCount');
+            const gridDiv = document.getElementById('productGrid');
+            
+            countDiv.textContent = `Found ${data.totalResults} products for "${data.query}"`;
+            
+            gridDiv.innerHTML = '';
+            
+            if (data.results.length === 0) {
+                gridDiv.innerHTML = '<p style="text-align: center; grid-column: 1/-1; padding: 40px; color: #666;">No products found. Try a different search term.</p>';
+            } else {
+                data.results.forEach(product => {
+                    const productCard = createProductCard(product);
+                    gridDiv.appendChild(productCard);
+                });
+            }
+            
+            resultsDiv.style.display = 'block';
+        }
+        
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            
+            const currency = product.currency === 'ILS' ? '₪' : '$';
+            const formattedPrice = product.currency === 'ILS' ? 
+                product.price.toLocaleString('he-IL') : 
+                product.price.toFixed(2);
+            
+            card.innerHTML = `
+                ${product.image ? `<img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.style.display='none'">` : ''}
+                <div class="product-info">
+                    <div class="israeli-site">🇮🇱 ${product.platform}</div>
+                    <h3 class="product-title">${product.title}</h3>
+                    <div class="product-prices">
+                        <div class="product-price">${currency}${formattedPrice}</div>
+                        <div class="currency">${product.currency === 'ILS' ? 'שקל ישראלי' : 'Israeli Price'}</div>
+                    </div>
+                    <a href="${product.link}" target="_blank" class="product-link">
+                        🛒 View on ${product.platform}
+                    </a>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        // Auto-focus search input
+        window.onload = function() {
+            document.getElementById('searchInput').focus();
+        };
+    </script>
+</body>
+</html>

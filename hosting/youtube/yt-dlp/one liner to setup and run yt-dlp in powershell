@@ -1,0 +1,1 @@
+if (-not (Get-Command yt-dlp -ErrorAction SilentlyContinue)) { Invoke-WebRequest -UseBasicParsing -Uri 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe' -OutFile "$env:LOCALAPPDATA\Microsoft\WindowsApps\yt-dlp.exe" }; yt-dlp --version

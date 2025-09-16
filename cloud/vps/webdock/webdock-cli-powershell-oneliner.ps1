@@ -1,0 +1,1 @@
+irm 'https://cli-src.webdock.tech/install/windows.ps1' | iex

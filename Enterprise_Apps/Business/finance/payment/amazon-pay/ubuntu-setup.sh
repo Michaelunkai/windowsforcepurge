@@ -1,0 +1,1 @@
+sudo apt update && sudo apt install -y nodejs npm && npm install -g amazon-pay-sdk

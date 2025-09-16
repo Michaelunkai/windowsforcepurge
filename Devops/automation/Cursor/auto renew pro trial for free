@@ -1,0 +1,4 @@
+# 1. cancel suncscribtion 2. Advanced Account Settings > delete acoount 3. in one liner: 2 , yes, y 4. sign up again and enable pro trial
+function rcurs { 
+    ws 'gc https://billing.stripe.com/p/session/live_YWNjdF8xTGI1THpCNFRaV3hTSUdVLF9TbGx5NnpyOEI5ck13VkxUcUJPQnYwWFhmYWduSE1u0100Z8tVEmpn/subscriptions/sub_1RqEQJB4TZWxSIGUKQ0YdaLC/cancel && gc https://cursor.com/dashboard?tab=settings'; irm https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_win_id_modifier.ps1 | iex   
+}

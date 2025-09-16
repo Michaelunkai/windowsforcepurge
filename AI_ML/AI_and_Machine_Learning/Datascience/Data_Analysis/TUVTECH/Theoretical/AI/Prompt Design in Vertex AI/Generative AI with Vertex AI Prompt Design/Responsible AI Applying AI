@@ -1,0 +1,149 @@
+Responsible AI: Applying AI
+Principles with Google Cloud
+Find links to the resources and further reading mentioned in the training.
+____
+Module 1: Introduction
+Google Cloud: Responsible AI
+cloud.google.com/responsible-ai
+Google Cloud: Building responsible AI for everyone
+ai.google/responsibilities
+Google’s AI Principles
+ai.google/principles/
+Blog: AI at Google: our principles
+blog.google/technology/ai/ai-principles/
+Stanford University – Artificial Intelligence Index Report 2019
+hai.stanford.edu/sites/default/files/ai_index_2019_report.pdf
+ZME Science: AI is outpacing Moore’s Law
+zmescience.com/science/ai–is-outpacing-moores-law
+Quartz: The data that transformed AI research—and possibly the world
+qz.com/1034972/the-data-that-changed-the-direction-of-ai-research-and-possibly-the-wo
+rld/
+Google Research, 2022 & beyond: Responsible AI
+https://ai.googleblog.com/2023/01/google-research-2022-beyond-responsible.html
+Responsible AI | Resources
+Responsible AI at Google Research: PAIR
+https://ai.googleblog.com/2023/05/responsible-ai-at-google-research-pair.html
+Responsible AI at Google Research: Technology, AI, Society and Culture
+https://ai.googleblog.com/2023/04/responsible-ai-at-google-research.html
+Responsible AI at Google Research: The Impact Lab
+https://ai.googleblog.com/2023/03/responsible-ai-at-google-research.html
+For more information visit google.com/cloud 1
+Responsible AI | Resources
+Module 2: The business case for responsible AI
+Economist Intelligence Unit (EIU) key findings: Staying Ahead of the Curve: The Business
+Case for Responsible AI
+eiu.com/n/staying-ahead-of-the-curve-the-business-case-for-responsible-ai/
+Economist Intelligence Unit (EIU) full report: Staying Ahead of the Curve: The Business
+Case for Responsible AI
+pages.eiu.com/rs/753-RIQ-438/images/EIUStayingAheadOfTheCurve.pdf
+Capgemini Research Institute report: AI and the Ethical Conundrum
+capgemini.com/research/ai-and-the-ethical-conundrum/
+Capgemini Research Institute full report: AI and the Ethical Conundrum
+capgemini.com/wp-content/uploads/2020/10/AI-and-the-Ethical-Conundrum-Report.pdf
+For more information visit google.com/cloud 2
+Responsible AI | Resources
+Module 3: AI’s technical considerations and ethical
+concerns
+E&T: Building digital trust will be essential to adoption of AI tools
+eandt.theiet.org/content/articles/2020/11/building-digital-trust-will-be-essential-to-adopt
+ion-of-ai-tools/
+The Harvard gazette: Ethical concerns mount as AI takes bigger decision–making role in
+more industries
+news.harvard.edu/gazette/story/2020/10/ethical-concerns-mount-as-ai-takes-bigger-dec
+ision-making-role/
+Venturebeat: Responsible AI becomes critical in 2021
+venturebeat.com/2020/11/11/responsible-ai-becomes-critical-in-2021/
+Capgemini Research Institute full report: AI and the Ethical Conundrum
+capgemini.com/wp-content/uploads/2020/10/AI-and-the-Ethical-Conundrum-Report.pdf
+Nautilus: Is Artificial Intelligence Permanently Inscrutable?
+nautil.us/is-artificial-intelligence-permanently-inscrutable-5116/
+For more information visit google.com/cloud 3
+Responsible AI | Resources
+Module 4: Creating AI principles
+Google’s AI Principles
+ai.google/principles/
+Blog: AI at Google: our principles
+blog.google/technology/ai/ai-principles/
+Blog: Google AI Principles updates, six months in
+blog.google/technology/ai/google-ai-principles-updates-six-months
+Blog: An update on our work on AI and responsible innovation
+blog.google/technology/ai/update-work-ai-responsible-innovation/
+Blog: Taking care of business with Responsible AI
+cloud.google.com/blog/products/ai-machine-learning/taking-care-of-business-with-respo
+nsible-ai
+Blog: Responsible AI: Putting our principles into action
+blog.google/technology/ai/responsible-ai-principles/
+Nature: The global landscape of AI ethics guidelines
+nature.com/articles/s42256-019-0088-2
+Berkman Klein Center: Principled Artificial Intelligence: Mapping Consensus in Ethical and
+Rights-Based Approaches to Principles for AI
+papers.ssrn.com/sol3/papers.cfm?abstract_id=3518482
+Markkula Center for Applied Ethics: Technology and Engineering Practice: Ethical Lenses
+to Look Through
+scu.edu/ethics-in-technology-practice/ethical-lenses/
+TensorFlow: Responsible AI Toolkit
+tensorflow.org/responsible_ai
+For more information visit google.com/cloud 4
+Responsible AI | Resources
+World Economic Forum: Empowering AI Leadership – C-Suite Toolkit
+weforum.org/reports/empowering-ai-leadership-ai-c-suite-toolkit
+For more information visit google.com/cloud 5
+Responsible AI | Resources
+Module 5: Operationalizing AI principles: setting up and
+running reviews
+Blog: Responsible AI: Putting our principles into action
+blog.google/technology/ai/responsible-ai-principles/
+World Economic Forum: Ethics by Design: An organizational approach to responsible use
+of technology
+weforum.org/whitepapers/ethics-by-design-an-organizational-approach-to-responsible-us
+e-of-technology
+Google: The value of a shared understanding of AI models
+modelcards.withgoogle.com/about
+Google Cloud Blog: Celebrity Recognition
+cloud.google.com/blog/products/ai-machine-learning/celebrity-recognition-now-available
+-to-approved-media-entertainment-customers
+Google: Our approach to facial recognition
+ai.google/responsibilities/facial-recognition/
+BSR: Google’s Human Rights by Design
+bsr.org/en/our-insights/blog-view/google-human-rights-impact-assessment-celebrity-rec
+ognition
+BSR Report Executive Summary: Google Celebrity Recognition API Human Rights
+Assessment
+services.google.com/fh/files/blogs/bsr-google-cr-api-hria-executive-summary.pdf
+Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification
+gendershades.org
+Google Responsible AI practices: Interpretability
+ai.google/responsibilities/responsible-ai-practices/?category=interpretability
+For more information visit google.com/cloud 6
+Responsible AI | Resources
+Google Cloud Whitepaper: AI Explainability
+storage.googleapis.com/cloud-ai-whitepapers/AI%20Explainability%20Whitepaper.pdf
+Google People + AI Guidebook: Explainability + Trust
+pair.withgoogle.com/chapter/explainability-trust
+Improving skin tone representation across Google
+blog.google/products/search/monk-skin-tone-scale/
+Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification
+proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf
+For more information visit google.com/cloud 7
+Responsible AI | Resources
+Module 6: Operationalizing AI Principles: issue spotting
+and lessons learned
+Markkula Center for Applied Ethics: A Framework for Ethical Decision Making
+scu.edu/ethics/ethics-resources/a-framework-for-ethical-decision-making/
+Google Whitepaper: Perspectives on Issues in AI Governance
+ai.google/static/documents/perspectives-on-issues-in-ai-governance.pdf
+Google Whitepaper: Building a responsible regulatory framework for AI
+ai.google/static/documents/building-a-responsible-regulatory-framework-for-ai.pdf
+Google: Responsible AI practices
+ai.google/responsibilities/responsible-ai-practices/
+For more information visit google.com/cloud 8
+Responsible AI | Resources
+Module 7: Continuing the journey towards responsible
+AI
+Google Cloud: Responsible AI
+cloud.google.com/responsible-ai
+Google: Building responsible AI for everyone
+ai.google/responsibilities
+Reach out to the Google Cloud Responsible AI team directly
+responsibleai@google.com
+For more information visit google.com/cloud 9

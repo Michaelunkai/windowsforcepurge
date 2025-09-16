@@ -1,0 +1,38 @@
+{
+  /* ---------- CORE ---------- */
+  "settingsVersion": 35,                  // keep as-is for current DD builds
+  "wslEngineEnabled": false,              // use Hyper-V backend (not WSL2)
+  "autoStart": true,                      // start with Windows logon
+  "openUIOnStartupDisabled": true,        // skip opening Dashboard = faster boot
+  /* ---------- PERFORMANCE ---------- */
+  "cpus": 8,                              // adjust (≤ logical cores) for build speed
+  "memoryMiB": 8192,                      // 8 GB is plenty for most workloads
+  "swapMiB": 1024,
+  "diskSizeMiB": 65536,                   // 64 GB virtual disk
+  "diskTRIM": true,
+  "useContainerdSnapshotter": true,       // faster image pulls
+  "useBackgroundIndexing": false,         // avoid heavy indexing on boot
+  "useResourceSaver": false,              // keep engine fully alive
+  /* ---------- LIGHTWEIGHT GUI ---------- */
+  "disableHardwareAcceleration": true,    // fixes Electron-UI lag :contentReference[oaicite:0]{index=0}
+  "disableUpdate": true,                  // skip update check on startup
+  "analyticsEnabled": false,              // no telemetry → faster UI
+  "allowBetaFeatures": false,
+  "allowExperimentalFeatures": false,
+  "extensionsEnabled": false,             // disable Marketplace extensions
+  /* ---------- CLEAN BOOT ---------- */
+  "kubernetesEnabled": false,             // big startup drain
+  "sbomIndexing": false,                  // Scout background indexer off
+  "useBackgroundIndexing": false,
+  "showAnnouncementNotifications": false,
+  "showGeneralNotifications": false,
+  "showSurveyNotifications": false,
+  /* ---------- NETWORK / VM ---------- */
+  "networkType": "gvisor",
+  "useVpnkit": true,
+  "vpnkitCIDR": "192.168.65.0/24",
+  "useWindowsContainers": false,
+  /* ---------- MISC ---------- */
+  "displayedTutorial": true,              // keeps the intro pop-ups hidden
+  "containerTerminal": "integrated"
+}

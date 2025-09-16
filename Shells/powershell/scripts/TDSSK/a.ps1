@@ -1,0 +1,2 @@
+& "F:\backup\windowsapps\installed\TDSSK\TDSSKiller.exe" -l "$env:TEMP\tdss_results.log" -silent -accepteula -accepteulaksn -tdlfs -dcexact; Start-Sleep 15; if(Test-Path "$env:TEMP\tdss_results.log") { Write-Host "🔍 TDSSKiller Results:" -ForegroundColor Yellow; Get-Content "$env:TEMP\tdss_results.log" | Where-Object {$_ -match "(FOUND|Deleted|Cured|Suspicious|Threat)"} | ForEach-Object {Write-Host $_ -ForegroundColor Red}; Write-Host "Full log: $env:TEMP\tdss_results.log" -ForegroundColor Cyan } else { Write-Host "✅ No threats detected" -ForegroundColor Green }
+

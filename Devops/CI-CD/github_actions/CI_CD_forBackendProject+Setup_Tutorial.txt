@@ -1,0 +1,184 @@
+# Complete CI/CD Setup Tutorial for TovPlay Backend
+
+This tutorial will guide you through setting up a complete CI/CD pipeline for the TovPlay backend application using GitHub Actions.
+
+## Table of Contents
+1. [Prerequisites](#prerequisites)
+2. [Accessing GitHub Repository Settings](#accessing-github-repository-settings)
+3. [Adding Repository Secrets](#adding-repository-secrets)
+4. [Generating DockerHub Access Token](#generating-dockerhub-access-token)
+5. [Verifying the GitHub Actions Workflow](#verifying-the-github-actions-workflow)
+6. [Testing the Workflow](#testing-the-workflow)
+7. [Monitoring Workflow Execution](#monitoring-workflow-execution)
+8. [Verifying Docker Images](#verifying-docker-images)
+9. [Configuring Deployment](#configuring-deployment)
+10. [Setting Up Environments](#setting-up-environments)
+11. [Troubleshooting](#troubleshooting)
+12. [Next Steps](#next-steps)
+
+## Prerequisites
+
+Before starting, ensure you have:
+- Admin access to the GitHub repository (https://github.com/8GSean/tovplay-backend)
+- Access to the DockerHub account (tovtech)
+- Database connection details:
+  - Host: 45.148.28.196
+  - Port: 5432
+  - Database Name: TovPlay
+  - User: raz@tovtech.org
+  - Password: CaptainForgotCreatureBreak
+
+## Accessing GitHub Repository Settings
+
+1. Open your web browser and navigate to: https://github.com/8GSean/tovplay-backend
+2. Sign in to your GitHub account if prompted
+3. Click on the "Settings" tab (gear icon) in the repository navigation bar
+4. In the left sidebar, scroll down and click "Secrets and variables" then "Actions"
+
+## Adding Repository Secrets
+
+1. On the "Secrets" page, click the "New repository secret" button
+2. Add each of the following secrets by repeating this process:
+
+| Secret Name | Value |
+|-------------|-------|
+| `DB_HOST` | `45.148.28.196` |
+| `DB_PORT` | `5432` |
+| `DB_NAME` | `TovPlay` |
+| `DB_USER` | `raz@tovtech.org` |
+| `DB_PASSWORD` | `CaptainForgotCreatureBreak` |
+| `DOCKERHUB_USERNAME` | `tovtech` |
+
+Note: For `DOCKERHUB_TOKEN`, you'll need to generate a token first (see next section).
+
+## Generating DockerHub Access Token
+
+1. Open a new browser tab and navigate to: https://hub.docker.com
+2. Sign in with the DockerHub account (tovtech)
+3. Click on your profile icon in the top right corner
+4. Select "Account Settings" from the dropdown menu
+5. In the left sidebar, click "Security"
+6. Under "Access Tokens", click the "New Access Token" button
+7. In the modal that appears:
+   - Give it a description like "GitHub Actions for TovPlay"
+   - For Access permissions, select "Read & Write" (or "Read, Write, Delete" if available)
+8. Click "Generate"
+9. IMPORTANT: Copy the generated token immediately (this is your only chance to see it)
+10. Return to the GitHub repository secrets page (from step 2 in "Adding Repository Secrets")
+11. Click "New repository secret"
+12. Set Name to `DOCKERHUB_TOKEN`
+13. Paste the token you copied from DockerHub into the Value field
+14. Click "Add secret"
+
+## Verifying the GitHub Actions Workflow
+
+1. Ensure the workflow file exists at `.github/workflows/main.yml` in your repository
+2. If you need to add or update the file:
+   - Go to your repository on GitHub
+   - Click "Add file" then "Create new file"
+   - In the "Name your file..." field, enter `.github/workflows/main.yml`
+   - Copy and paste the workflow content into the file editor
+   - Add a commit message like "Add CI/CD workflow"
+   - Choose "Commit directly to the main branch"
+   - Click "Commit new file"
+
+## Testing the Workflow
+
+1. Navigate to your GitHub repository: https://github.com/8GSean/tovplay-backend
+2. Click on the "Actions" tab in the repository navigation bar
+3. You should see the "Backend CI/CD Pipeline" workflow in the left sidebar
+4. To trigger a test run:
+   - Option 1: Make a small change to any file and commit/push it to the `main` branch
+   - Option 2: In the Actions tab, click on "Backend CI/CD Pipeline", then click "Run workflow" dropdown and select "Run workflow"
+
+## Monitoring Workflow Execution
+
+1. In the Actions tab, click on the running workflow to view details
+2. The workflow consists of several jobs that will run in sequence:
+   - Quality Checks (code formatting, linting, type checking)
+   - Security Scans (vulnerability and security checks)
+   - Tests (unit and integration tests with coverage)
+   - Build and Push Images (creates and pushes Docker images)
+   - Deploy to Staging (only for `develop` branch)
+   - Deploy to Production (only for `main` branch)
+3. Click on any job to see detailed logs of each step
+
+## Verifying Docker Images
+
+After a successful workflow run, check that images were pushed to both registries:
+
+### GitHub Container Registry:
+1. Go to your GitHub profile: https://github.com/8GSean
+2. Click "Packages" in the top navigation bar
+3. You should see your container package listed
+
+### DockerHub:
+1. Go to DockerHub: https://hub.docker.com
+2. Navigate to your repositories page
+3. You should see the `tovplaybackend` repository with new images
+
+## Configuring Deployment
+
+The workflow includes deployment jobs, but the actual deployment commands are placeholders. You'll need to customize these sections:
+
+### For Staging Deployment:
+In the "deploy-staging" job, replace:
+```bash
+echo "Deploying to staging environment..."
+# Add your staging deployment commands here
+echo "Staging deployment completed"
+```
+
+With your actual staging deployment commands.
+
+### For Production Deployment:
+In the "deploy-production" job, replace:
+```bash
+echo "Deploying to production environment..."
+# Add your production deployment commands here
+echo "Production deployment completed"
+```
+
+With your actual production deployment commands.
+
+## Setting Up Environments (Optional but Recommended)
+
+1. In your GitHub repository, go to Settings > Environments
+2. Click "New environment"
+3. Create a "staging" environment
+4. Create a "production" environment
+5. For each environment, you can:
+   - Add environment-specific secrets
+   - Configure protection rules (required reviewers, etc.)
+   - Set up deployment branches
+
+## Troubleshooting
+
+If the workflow fails:
+
+1. Check the logs in the Actions tab to identify which step failed
+2. Common issues and solutions:
+   - Missing secrets: Ensure all required secrets are added
+   - DockerHub permissions: Verify your token has the right permissions
+   - Database connectivity: Confirm database credentials are correct
+   - Test failures: Check if tests pass locally using the same environment
+
+3. After fixing issues, push a new commit to trigger the workflow again
+
+## Next Steps
+
+Once your CI/CD pipeline is working:
+
+1. Monitor the pipeline for any failures
+2. Set up notifications for failed builds (in GitHub Settings > Webhooks & Events)
+3. Consider adding automated rollback procedures
+4. Add more comprehensive integration tests
+5. Set up monitoring and alerting for your deployed application
+6. Configure branch protection rules to require successful workflow runs before merging
+
+## Contact Information
+
+If you need help with this setup:
+- Repository owner: 8GSean
+- For database access issues: Contact the database administrator
+- For DockerHub access issues: Contact the DockerHub account owner (tovtech)

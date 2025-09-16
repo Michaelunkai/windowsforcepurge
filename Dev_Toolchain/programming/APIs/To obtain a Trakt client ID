@@ -1,0 +1,11 @@
+To obtain a Trakt client ID, you need to create a Trakt API application. This is done by visiting trakt.tv/oauth/applications/new and following the instructions. You'll need to provide details about your application, and upon creating it, you'll receive a unique Client ID and Client Secret. These credentials are essential for accessing the Trakt API. 
+Here's a more detailed breakdown:
+1. Create a Trakt Application:
+Go to https://trakt.tv/oauth/applications/new and fill out the required information, including the application name and redirect URI (which should be urn:ietf:wg:oauth:2.0:oob). 
+2. Save the Application:
+Click the "SAVE APP" button to finalize the creation of your application. 
+3. Retrieve Client ID and Secret:
+After saving, you will be given a Client ID and a Client Secret. These are unique to your application and are needed for authentication when interacting with the Trakt API. 
+4. Authorize the Application (if needed):
+Some applications may require you to authorize your application by entering a PIN. You can find this PIN on the Trakt website after completing the authorization process. 
+Once you have the Client ID and Client Secret, you can use them in your application to authenticate with the Trakt API. 
