@@ -23528,3 +23528,7 @@ Source:	SWbemObjectEx
 2025-09-16 21:46:04 - FULLSIZE: Applied windowed style with borders
 2025-09-16 21:46:04 - FULLSIZE: Positioned window at full screen size with borders
 2025-09-16 21:46:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-16 21:50:27 - CLEANUP: Starting suspended list cleanup
+2025-09-16 21:50:27 - CLEANUP: Completed, 0 entries removed
+2025-09-16 21:51:15 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-16 21:51:15 - CLIPBOARD: Copied text to clipboard (length: 23)
