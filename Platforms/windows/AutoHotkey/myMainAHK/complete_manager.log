@@ -23742,3 +23742,33 @@ Source:	SWbemObjectEx
 2025-09-17 00:51:05 - LAUNCHER: Samsung Notes launched via shell:AppsFolder
 2025-09-17 00:55:40 - CLEANUP: Starting suspended list cleanup
 2025-09-17 00:55:40 - CLEANUP: Completed, 0 entries removed
+2025-09-17 01:00:40 - CLEANUP: Starting suspended list cleanup
+2025-09-17 01:00:40 - CLEANUP: Completed, 0 entries removed
+2025-09-17 01:05:40 - CLEANUP: Starting suspended list cleanup
+2025-09-17 01:05:40 - CLEANUP: Completed, 0 entries removed
+2025-09-17 01:09:27 - TEXT_SHORTCUT: Triggered 'logout' -> 'refresh2'
+2025-09-17 01:09:27 - TERMINAL_CMD: Executing command - refresh2
+2025-09-17 01:09:28 - TERMINAL_CMD: Executed 'refresh2' with self-terminating PowerShell
+2025-09-17 01:09:28 - SHUTDOWN: Script exiting - Reason: Logoff
+2025-09-17 01:09:28 - SHUTDOWN: All processes resumed before exit
+2025-09-17 01:09:41 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 01:10:34 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 01:10:34 - TERMINAL: Attempting to open floating terminal
+2025-09-17 01:10:34 - FULLSIZE: Triple-tap E detected
+2025-09-17 01:10:34 - FULLSIZE: Processing window - WindowsTerminal.exe (Terminal)
+2025-09-17 01:10:34 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 01:10:34 - FULLSIZE: Applied windowed style with borders
+2025-09-17 01:10:35 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 01:10:35 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 01:10:35 - TERMINAL: PowerShell opened
+2025-09-17 01:10:47 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 01:10:47 - TERMINAL: Attempting to open floating terminal
+2025-09-17 01:10:47 - TERMINAL: PowerShell opened
+2025-09-17 01:10:53 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 01:10:53 - TERMINAL: Attempting to open floating terminal
+2025-09-17 01:10:54 - TERMINAL: PowerShell opened
+2025-09-17 01:11:04 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 01:11:04 - TERMINAL: Attempting to open floating terminal
+2025-09-17 01:11:04 - TERMINAL: PowerShell opened
+2025-09-17 01:13:50 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 01:13:50 - SHUTDOWN: All processes resumed before exit
