@@ -23557,3 +23557,36 @@ Source:	SWbemObjectEx
 2025-09-16 22:18:06 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
 2025-09-16 22:18:31 - CLEANUP: Starting suspended list cleanup
 2025-09-16 22:18:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 22:21:25 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-16 22:21:25 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-16 22:21:25 - QWE: qwe command launched in PowerShell
+2025-09-16 22:22:10 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-16 22:22:10 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-16 22:22:34 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-16 22:22:54 - TEXT_SHORTCUT: Triggered 'biu' -> 'ws 'backitup''
+2025-09-16 22:22:54 - TERMINAL_CMD: Executing command - ws 'backitup'
+2025-09-16 22:22:55 - TERMINAL_CMD: Executed 'ws 'backitup'' with self-terminating PowerShell
+2025-09-16 22:23:27 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-16 22:23:27 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-16 22:23:27 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-16 22:23:27 - FULLSIZE: Applied windowed style with borders
+2025-09-16 22:23:27 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-16 22:23:27 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-16 22:23:27 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-16 22:23:27 - FULLSIZE: Applied windowed style with borders
+2025-09-16 22:23:27 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-16 22:23:27 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-16 22:23:27 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-16 22:23:27 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-16 22:23:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 22:23:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 22:26:58 - FULLSIZE: Triple-tap E detected
+2025-09-16 22:26:58 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - Alias Function Directory Changes List - Grok)
+2025-09-16 22:26:58 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-16 22:26:58 - FULLSIZE: Applied windowed style with borders
+2025-09-16 22:26:58 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-16 22:26:58 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-16 22:28:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 22:28:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 22:33:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 22:33:31 - CLEANUP: Completed, 0 entries removed
