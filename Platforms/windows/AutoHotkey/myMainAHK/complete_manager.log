@@ -23711,3 +23711,26 @@ Source:	SWbemObjectEx
 2025-09-17 00:13:31 - CLEANUP: Completed, 0 entries removed
 2025-09-17 00:18:31 - CLEANUP: Starting suspended list cleanup
 2025-09-17 00:18:31 - CLEANUP: Completed, 0 entries removed
+2025-09-17 00:23:31 - CLEANUP: Starting suspended list cleanup
+2025-09-17 00:23:31 - CLEANUP: Completed, 0 entries removed
+2025-09-17 00:28:31 - CLEANUP: Starting suspended list cleanup
+2025-09-17 00:28:31 - CLEANUP: Completed, 0 entries removed
+2025-09-17 00:33:13 - FULLSIZE: Triple-tap E detected
+2025-09-17 00:33:13 - FULLSIZE: Processing window - WindowsTerminal.exe (? Command Execution)
+2025-09-17 00:33:13 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 00:33:13 - FULLSIZE: Applied windowed style with borders
+2025-09-17 00:33:13 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 00:33:13 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 00:33:31 - CLEANUP: Starting suspended list cleanup
+2025-09-17 00:33:31 - CLEANUP: Completed, 0 entries removed
+2025-09-17 00:37:48 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 00:37:48 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 00:37:48 - CLAU: clau command launched in PowerShell
+2025-09-17 00:38:31 - CLEANUP: Starting suspended list cleanup
+2025-09-17 00:38:31 - CLEANUP: Completed, 0 entries removed
+2025-09-17 00:42:15 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 00:42:15 - SHUTDOWN: All processes resumed before exit
+2025-09-17 00:45:40 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 00:48:31 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 00:48:31 - TERMINAL: Attempting to open floating terminal
+2025-09-17 00:48:32 - TERMINAL: PowerShell opened
