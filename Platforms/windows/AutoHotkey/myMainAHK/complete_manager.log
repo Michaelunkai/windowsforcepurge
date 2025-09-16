@@ -23775,3 +23775,33 @@ Source:	SWbemObjectEx
 2025-09-17 01:17:06 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
 2025-09-17 01:22:06 - CLEANUP: Starting suspended list cleanup
 2025-09-17 01:22:06 - CLEANUP: Completed, 0 entries removed
+2025-09-17 01:22:55 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 01:22:55 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 01:22:55 - REBOOT: Initiating immediate system reboot
+2025-09-17 01:22:55 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 01:22:55 - SHUTDOWN: All processes resumed before exit
+2025-09-17 01:24:34 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 01:29:34 - CLEANUP: Starting suspended list cleanup
+2025-09-17 01:29:34 - CLEANUP: Completed, 0 entries removed
+2025-09-17 01:34:34 - CLEANUP: Starting suspended list cleanup
+2025-09-17 01:34:34 - CLEANUP: Completed, 0 entries removed
+2025-09-17 01:36:43 - FULLSIZE: Triple-tap E detected
+2025-09-17 01:36:43 - FULLSIZE: Processing window - WindowsTerminal.exe (? DevOps Command)
+2025-09-17 01:36:43 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 01:36:43 - FULLSIZE: Applied windowed style with borders
+2025-09-17 01:36:43 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 01:36:43 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 01:37:23 - FULLSIZE: Triple-tap E detected
+2025-09-17 01:37:23 - FULLSIZE: Processing window - WindowsTerminal.exe (? Liner Request)
+2025-09-17 01:37:23 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 01:37:23 - FULLSIZE: Applied windowed style with borders
+2025-09-17 01:37:23 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 01:37:23 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 01:39:34 - CLEANUP: Starting suspended list cleanup
+2025-09-17 01:39:34 - CLEANUP: Completed, 0 entries removed
+2025-09-17 01:42:50 - TEXT_SHORTCUT: Triggered 'mreflect' -> 'MACRIUM_REFLECT_APP'
+2025-09-17 01:42:50 - LAUNCHER: Attempting to launch Macrium Reflect
+2025-09-17 01:42:50 - LAUNCHER: Macrium Reflect launched successfully from: F:\backup\windowsapps\installed\reflect\Reflect.exe
+2025-09-17 01:43:02 - WARNING: Macrium Reflect launched but window not detected within 10 seconds
+2025-09-17 01:44:34 - CLEANUP: Starting suspended list cleanup
+2025-09-17 01:44:34 - CLEANUP: Completed, 0 entries removed
