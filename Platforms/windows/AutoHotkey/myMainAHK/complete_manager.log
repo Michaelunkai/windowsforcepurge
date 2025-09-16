@@ -23621,3 +23621,93 @@ Source:	SWbemObjectEx
 2025-09-16 22:50:56 - LAUNCHER: Attempting to launch Macrium Reflect
 2025-09-16 22:50:56 - LAUNCHER: Macrium Reflect launched successfully from: F:\backup\windowsapps\installed\reflect\Reflect.exe
 2025-09-16 22:51:08 - WARNING: Macrium Reflect launched but window not detected within 10 seconds
+2025-09-16 22:53:17 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-16 22:53:17 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-16 22:53:17 - QWE: qwe command launched in PowerShell
+2025-09-16 22:53:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 22:53:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 22:57:50 - FULLSIZE: Triple-tap E detected
+2025-09-16 22:57:50 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - Alias Function Directory Changes List - Grok)
+2025-09-16 22:57:50 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-16 22:57:50 - FULLSIZE: Applied windowed style with borders
+2025-09-16 22:57:50 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-16 22:57:50 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-16 22:58:02 - FULLSIZE: Triple-tap E detected
+2025-09-16 22:58:02 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - Alias Function Directory Changes List - Grok)
+2025-09-16 22:58:02 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-16 22:58:02 - FULLSIZE: Applied windowed style with borders
+2025-09-16 22:58:03 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-16 22:58:03 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-16 22:58:11 - FULLSIZE: Triple-tap E detected
+2025-09-16 22:58:11 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - Alias Function Directory Changes List - Grok)
+2025-09-16 22:58:11 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-16 22:58:11 - FULLSIZE: Applied windowed style with borders
+2025-09-16 22:58:12 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-16 22:58:12 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-16 22:58:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 22:58:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:00:31 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-16 23:00:31 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-16 23:00:31 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-16 23:03:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:03:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:08:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:08:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:13:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:13:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:18:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:18:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:23:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:23:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:26:22 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-16 23:26:22 - TERMINAL: Attempting to open floating terminal
+2025-09-16 23:26:22 - TERMINAL: PowerShell opened
+2025-09-16 23:28:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:28:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:33:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:33:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:38:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:38:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:41:11 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-16 23:41:11 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-16 23:43:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:43:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:48:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:48:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:49:15 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-16 23:49:15 - FOLDER: Opening installed apps folder
+2025-09-16 23:49:15 - FOLDER: Successfully opened installed apps folder
+2025-09-16 23:53:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:53:31 - CLEANUP: Completed, 0 entries removed
+2025-09-16 23:53:34 - TEXT_SHORTCUT: Triggered 'refresh' -> 'refresh'
+2025-09-16 23:53:34 - TERMINAL_CMD: Executing command - refresh
+2025-09-16 23:53:35 - TERMINAL_CMD: Executed 'refresh' with self-terminating PowerShell
+2025-09-16 23:56:10 - DESKTOP: Switched to Desktop 2
+2025-09-16 23:56:14 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-16 23:56:14 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-16 23:56:14 - CLAU: clau command launched in PowerShell
+2025-09-16 23:58:31 - CLEANUP: Starting suspended list cleanup
+2025-09-16 23:58:31 - CLEANUP: Completed, 0 entries removed
+2025-09-17 00:03:31 - CLEANUP: Starting suspended list cleanup
+2025-09-17 00:03:31 - CLEANUP: Completed, 0 entries removed
+2025-09-17 00:03:38 - FULLSIZE: Triple-tap E detected
+2025-09-17 00:03:38 - FULLSIZE: Processing window - WindowsTerminal.exe (? Python Setup)
+2025-09-17 00:03:38 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 00:03:38 - FULLSIZE: Applied windowed style with borders
+2025-09-17 00:03:38 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 00:03:38 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 00:07:55 - TEXT_SHORTCUT: Triggered 'xcccc' -> 'CHROME_APP'
+2025-09-17 00:07:55 - LAUNCHER: Attempting to launch Chrome
+2025-09-17 00:07:55 - LAUNCHER: Chrome already running, activated window
+2025-09-17 00:08:31 - CLEANUP: Starting suspended list cleanup
+2025-09-17 00:08:31 - CLEANUP: Completed, 0 entries removed
+2025-09-17 00:09:22 - FULLSIZE: Triple-tap E detected
+2025-09-17 00:09:22 - FULLSIZE: Processing window - WindowsTerminal.exe (? Python Installation)
+2025-09-17 00:09:22 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 00:09:22 - FULLSIZE: Applied windowed style with borders
+2025-09-17 00:09:23 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 00:09:23 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 00:13:31 - CLEANUP: Starting suspended list cleanup
+2025-09-17 00:13:31 - CLEANUP: Completed, 0 entries removed
+2025-09-17 00:18:31 - CLEANUP: Starting suspended list cleanup
+2025-09-17 00:18:31 - CLEANUP: Completed, 0 entries removed
