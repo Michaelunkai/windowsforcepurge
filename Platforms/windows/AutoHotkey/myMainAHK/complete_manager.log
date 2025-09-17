@@ -24424,3 +24424,10 @@ Source:	SWbemObjectEx
 2025-09-17 13:48:08 - CLEANUP: Completed, 0 entries removed
 2025-09-17 13:53:08 - CLEANUP: Starting suspended list cleanup
 2025-09-17 13:53:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:54:43 - TEXT_SHORTCUT: Triggered 'gmail' -> 'GMAIL_WEB'
+2025-09-17 13:54:43 - WEB: Opening Gmail Account 0 in Chrome
+2025-09-17 13:54:43 - WEB: Gmail Account 0 opened in Chrome
+2025-09-17 13:58:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:58:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:03:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 14:03:08 - CLEANUP: Completed, 0 entries removed
