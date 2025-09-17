@@ -24885,3 +24885,75 @@ Source:	SWbemObjectEx
 2025-09-17 20:51:29 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
 2025-09-17 20:51:29 - CLAU: Opening Windows Terminal and running 'clau' command
 2025-09-17 20:51:29 - CLAU: clau command launched in PowerShell
+2025-09-17 20:53:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 20:53:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 20:53:39 - TEXT_SHORTCUT: Triggered 'mreflect' -> 'MACRIUM_REFLECT_APP'
+2025-09-17 20:53:39 - LAUNCHER: Attempting to launch Macrium Reflect
+2025-09-17 20:53:39 - LAUNCHER: Macrium Reflect launched successfully from: F:\backup\windowsapps\installed\reflect\Reflect.exe
+2025-09-17 20:53:51 - WARNING: Macrium Reflect launched but window not detected within 10 seconds
+2025-09-17 20:54:12 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-17 20:54:12 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-17 20:54:12 - QWE: qwe command launched in PowerShell
+2025-09-17 20:55:29 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-17 20:55:29 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-17 20:55:29 - QWE: qwe command launched in PowerShell
+2025-09-17 20:56:33 - TEXT_SHORTCUT: Triggered 'gccleaner' -> 'gccleaner'
+2025-09-17 20:56:33 - TERMINAL_CMD: Executing command - gccleaner
+2025-09-17 20:56:47 - TERMINAL_CMD: Executed 'gccleaner' with self-terminating PowerShell
+2025-09-17 20:58:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 20:58:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 21:03:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 21:03:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 21:08:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 21:08:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 21:12:16 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 21:12:16 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 21:12:16 - REBOOT: Initiating immediate system reboot
+2025-09-17 21:12:16 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 21:12:16 - SHUTDOWN: All processes resumed before exit
+2025-09-17 21:13:16 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 21:13:29 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-17 21:13:29 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-17 21:13:29 - QWE: qwe command launched in PowerShell
+2025-09-17 21:14:36 - TEXT_SHORTCUT: Triggered 'dddesk' -> 'ps7run dddesk'
+2025-09-17 21:14:36 - TERMINAL_CMD: Executing command - ps7run dddesk
+2025-09-17 21:14:41 - TERMINAL_CMD: Executed 'ps7run dddesk' with self-terminating PowerShell
+2025-09-17 21:18:16 - CLEANUP: Starting suspended list cleanup
+2025-09-17 21:18:16 - CLEANUP: Completed, 0 entries removed
+2025-09-17 21:20:16 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-17 21:20:16 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-17 21:20:17 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-17 21:22:55 - FULLSIZE: Triple-tap E detected
+2025-09-17 21:22:55 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 21:22:55 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 21:22:55 - FULLSIZE: Applied windowed style with borders
+2025-09-17 21:22:56 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 21:22:56 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 21:23:16 - CLEANUP: Starting suspended list cleanup
+2025-09-17 21:23:16 - CLEANUP: Completed, 0 entries removed
+2025-09-17 21:26:47 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-17 21:26:47 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-17 21:26:47 - QWE: qwe command launched in PowerShell
+2025-09-17 21:27:04 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 21:27:04 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 21:27:04 - REBOOT: Initiating immediate system reboot
+2025-09-17 21:27:04 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 21:27:04 - SHUTDOWN: All processes resumed before exit
+2025-09-17 21:27:57 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 21:32:29 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 21:32:29 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 21:32:29 - REBOOT: Initiating immediate system reboot
+2025-09-17 21:32:29 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 21:32:29 - SHUTDOWN: All processes resumed before exit
+2025-09-17 21:34:00 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 21:34:15 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 21:34:15 - TERMINAL: Attempting to open floating terminal
+2025-09-17 21:34:15 - TERMINAL: PowerShell opened
+2025-09-17 21:51:08 - TEXT_SHORTCUT: Triggered 'wall' -> 'WALLPAPER_APP'
+2025-09-17 21:51:08 - LAUNCHER: Attempting to launch WallPaper app
+2025-09-17 21:51:08 - ERROR: WallPaper app not found at: C:\Users\\micha\Desktop\WallPaper.lnk
+2025-09-17 21:54:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 21:54:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 21:55:21 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 21:55:21 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 21:55:21 - CLAU: clau command launched in PowerShell
