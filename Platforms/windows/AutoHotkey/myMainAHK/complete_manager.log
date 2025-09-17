@@ -24042,3 +24042,383 @@ Source:	SWbemObjectEx
 2025-09-17 10:10:34 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
 2025-09-17 10:10:34 - LAUNCHER: Attempting to launch Cursor IDE
 2025-09-17 10:10:34 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-17 10:13:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:13:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 10:14:36 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 10:14:36 - TERMINAL: Attempting to open floating terminal
+2025-09-17 10:14:37 - TERMINAL: PowerShell opened
+2025-09-17 10:14:46 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-17 10:14:46 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-17 10:14:46 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-17 10:17:17 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:17:17 - FULLSIZE: Processing window - WindowsTerminal.exe (? Speed Request)
+2025-09-17 10:17:17 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:17:17 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:17:17 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:17:17 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 10:17:20 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:17:20 - FULLSIZE: Processing window - WindowsTerminal.exe (? Speed Request)
+2025-09-17 10:17:20 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:17:20 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:17:21 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:17:21 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 10:18:01 - TEXT_SHORTCUT: Triggered 'www' -> ForceWindowedMode()
+2025-09-17 10:18:01 - WINDOWED: Processing window - WindowsTerminal.exe (? Server Paths)
+2025-09-17 10:18:01 - WINDOWED: Regular application, using 80% screen size
+2025-09-17 10:18:01 - WINDOWED: Applied windowed style and removed topmost
+2025-09-17 10:18:02 - TEXT_SHORTCUT: Triggered 'www' -> ForceWindowedMode()
+2025-09-17 10:18:02 - WINDOWED: Processing window - WindowsTerminal.exe (? Server Paths)
+2025-09-17 10:18:02 - WINDOWED: Regular application, using 80% screen size
+2025-09-17 10:18:02 - WINDOWED: Applied windowed style and removed topmost
+2025-09-17 10:18:02 - TEXT_SHORTCUT: Triggered 'www' -> ForceWindowedMode()
+2025-09-17 10:18:02 - WINDOWED: Processing window - WindowsTerminal.exe (? Server Paths)
+2025-09-17 10:18:02 - WINDOWED: Regular application, using 80% screen size
+2025-09-17 10:18:02 - WINDOWED: Applied windowed style and removed topmost
+2025-09-17 10:18:02 - TEXT_SHORTCUT: Triggered 'www' -> ForceWindowedMode()
+2025-09-17 10:18:02 - WINDOWED: Processing window - WindowsTerminal.exe (? Server Paths)
+2025-09-17 10:18:02 - WINDOWED: Regular application, using 80% screen size
+2025-09-17 10:18:02 - WINDOWED: Applied windowed style and removed topmost
+2025-09-17 10:18:02 - WINDOWED: Positioned window at 256.0,160.0 size 2048.0x1280.0
+2025-09-17 10:18:02 - WINDOWED: Successfully applied windowed mode to WindowsTerminal.exe
+2025-09-17 10:18:02 - WINDOWED: Positioned window at 256.0,160.0 size 2048.0x1280.0
+2025-09-17 10:18:02 - WINDOWED: Successfully applied windowed mode to WindowsTerminal.exe
+2025-09-17 10:18:02 - WINDOWED: Positioned window at 256.0,160.0 size 2048.0x1280.0
+2025-09-17 10:18:02 - WINDOWED: Successfully applied windowed mode to WindowsTerminal.exe
+2025-09-17 10:18:02 - WINDOWED: Positioned window at 256.0,160.0 size 2048.0x1280.0
+2025-09-17 10:18:02 - WINDOWED: Successfully applied windowed mode to WindowsTerminal.exe
+2025-09-17 10:18:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:18:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 10:19:38 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:19:39 - FULLSIZE: Processing window - WindowsTerminal.exe (? Grafana Overview)
+2025-09-17 10:19:39 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:19:39 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:19:39 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:19:39 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 10:20:30 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 10:20:30 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 10:20:30 - CLAU: clau command launched in PowerShell
+2025-09-17 10:23:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:23:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 10:26:56 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-17 10:26:56 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-17 10:26:56 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-17 10:26:58 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:26:58 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 10:26:58 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:26:58 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:26:58 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:26:58 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 10:27:52 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:27:52 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 10:27:52 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:27:52 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:27:53 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:27:53 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 10:28:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:28:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 10:28:23 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:28:23 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 10:28:23 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:28:23 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:28:23 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:28:23 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 10:29:20 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:29:20 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 10:29:20 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:29:20 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:29:20 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:29:20 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 10:33:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:33:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 10:38:07 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:38:07 - FULLSIZE: Processing window - WindowsTerminal.exe (? Task Progress)
+2025-09-17 10:38:07 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:38:07 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:38:07 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:38:07 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 10:38:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:38:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 10:39:20 - TEXT_SHORTCUT: Triggered 'gccleaner' -> 'gccleaner'
+2025-09-17 10:39:20 - TERMINAL_CMD: Executing command - gccleaner
+2025-09-17 10:39:36 - TERMINAL_CMD: Executed 'gccleaner' with self-terminating PowerShell
+2025-09-17 10:39:43 - TEXT_SHORTCUT: Triggered 'gccleaner' -> 'gccleaner'
+2025-09-17 10:39:43 - TERMINAL_CMD: Executing command - gccleaner
+2025-09-17 10:40:26 - TERMINAL_CMD: Executed 'gccleaner' with self-terminating PowerShell
+2025-09-17 10:40:51 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:40:51 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Claude)
+2025-09-17 10:40:51 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:40:51 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:40:52 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:40:52 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-17 10:43:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:43:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 10:47:10 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:47:10 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Windows 11 disk cleanup software - Claude)
+2025-09-17 10:47:10 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:47:10 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:47:11 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:47:11 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-17 10:48:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:48:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 10:53:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:53:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 10:57:26 - FULLSIZE: Triple-tap E detected
+2025-09-17 10:57:26 - FULLSIZE: Processing window - WindowsTerminal.exe (? CICD Workflow Instructions)
+2025-09-17 10:57:26 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 10:57:26 - FULLSIZE: Applied windowed style with borders
+2025-09-17 10:57:27 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 10:57:27 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 10:58:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 10:58:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:03:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:03:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:04:08 - FULLSIZE: Triple-tap E detected
+2025-09-17 11:04:08 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Deep system drive cleanup script - Claude)
+2025-09-17 11:04:08 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 11:04:08 - FULLSIZE: Applied windowed style with borders
+2025-09-17 11:04:08 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 11:04:08 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-17 11:07:11 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 11:07:11 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 11:07:11 - CLAU: clau command launched in PowerShell
+2025-09-17 11:08:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:08:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:13:21 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:13:21 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:17:53 - TEXT_SHORTCUT: Triggered 'logout' -> 'refresh2'
+2025-09-17 11:17:54 - TERMINAL_CMD: Executing command - refresh2
+2025-09-17 11:17:54 - TERMINAL_CMD: Executed 'refresh2' with self-terminating PowerShell
+2025-09-17 11:17:54 - SHUTDOWN: Script exiting - Reason: Logoff
+2025-09-17 11:17:54 - SHUTDOWN: All processes resumed before exit
+2025-09-17 11:18:08 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 11:22:57 - TEXT_SHORTCUT: Triggered 'xcccc' -> 'CHROME_APP'
+2025-09-17 11:22:57 - LAUNCHER: Attempting to launch Chrome
+2025-09-17 11:22:57 - LAUNCHER: Chrome already running, activated window
+2025-09-17 11:23:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:23:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:28:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:28:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:33:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:33:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:38:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:38:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:43:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:43:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:48:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:48:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:53:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:53:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 11:53:39 - TEXT_SHORTCUT: Triggered 'vvvvvv' -> 'volume'
+2025-09-17 11:53:39 - TERMINAL_CMD: Executing command - volume
+2025-09-17 11:53:42 - TERMINAL_CMD: Executed 'volume' with self-terminating PowerShell
+2025-09-17 11:58:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 11:58:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:03:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:03:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:04:04 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:04:04 - FULLSIZE: Processing window - WindowsTerminal.exe (? GitHub Connection)
+2025-09-17 12:04:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:04:04 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:04:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:04:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:04:36 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:04:36 - FULLSIZE: Processing window - WindowsTerminal.exe (? Repo Permissions)
+2025-09-17 12:04:36 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:04:36 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:04:36 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:04:36 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:04:54 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:04:54 - FULLSIZE: Processing window - WindowsTerminal.exe (? Repo Permissions)
+2025-09-17 12:04:54 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:04:54 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:04:54 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:04:54 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:06:03 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:06:03 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: ? GitHub Permissions Setup)
+2025-09-17 12:06:03 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:06:03 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:06:03 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:06:03 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:06:06 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:06:06 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: ? GitHub Permissions Setup)
+2025-09-17 12:06:06 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:06:06 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:06:06 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:06:06 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:06:14 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 12:06:14 - TERMINAL: Attempting to open floating terminal
+2025-09-17 12:06:15 - TERMINAL: PowerShell opened
+2025-09-17 12:07:03 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:07:03 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: ? GitHub Permissions Setup)
+2025-09-17 12:07:03 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:07:03 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:07:03 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:07:03 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:07:09 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:07:09 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: ? GitHub Permissions Setup)
+2025-09-17 12:07:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:07:09 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:07:10 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:07:10 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:07:15 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:07:15 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: ? GitHub Permissions Setup)
+2025-09-17 12:07:15 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:07:15 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:07:15 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:07:15 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:08:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:08:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:13:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:13:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:18:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:18:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:23:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:23:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:23:21 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:23:21 - FULLSIZE: Processing window - WindowsTerminal.exe (? SSH Repository Permissions)
+2025-09-17 12:23:21 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:23:21 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:23:21 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:23:21 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:27:25 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:27:25 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 12:27:25 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:27:25 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:27:25 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:27:25 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:28:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:28:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:29:54 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:29:54 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 12:29:54 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:29:54 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:29:55 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:29:55 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:30:09 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:30:09 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 12:30:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:30:09 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:30:09 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:30:09 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 12:33:02 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 12:33:02 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 12:33:02 - CLAU: clau command launched in PowerShell
+2025-09-17 12:33:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:33:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:38:03 - TEXT_SHORTCUT: Triggered 'slack' -> 'slack'
+2025-09-17 12:38:03 - TERMINAL_CMD: Executing command - slack
+2025-09-17 12:38:04 - TERMINAL_CMD: Executed 'slack' with self-terminating PowerShell
+2025-09-17 12:38:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:38:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:38:25 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-17 12:38:25 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-17 12:43:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:43:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:45:29 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:45:29 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - TovPlay DevOps Specialist Overview - Grok)
+2025-09-17 12:45:29 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:45:29 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:45:30 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:45:30 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-17 12:48:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:48:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:50:58 - FULLSIZE: Triple-tap E detected
+2025-09-17 12:50:58 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - TovPlay DevOps Specialist Overview - Grok)
+2025-09-17 12:50:58 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 12:50:58 - FULLSIZE: Applied windowed style with borders
+2025-09-17 12:50:58 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 12:50:58 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-17 12:53:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:53:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 12:58:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 12:58:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:03:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:03:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:08:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:08:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:10:08 - FULLSIZE: Triple-tap E detected
+2025-09-17 13:10:09 - FULLSIZE: Processing window - WindowsTerminal.exe (? Login Production)
+2025-09-17 13:10:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 13:10:09 - FULLSIZE: Applied windowed style with borders
+2025-09-17 13:10:09 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 13:10:09 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 13:12:17 - DESKTOP: Switched to Desktop 2
+2025-09-17 13:12:17 - DESKTOP: Switched to Desktop 1
+2025-09-17 13:13:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:13:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:18:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:18:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:23:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:23:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:23:08 - FULLSIZE: Triple-tap E detected
+2025-09-17 13:23:08 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - TovPlay DevOps Specialist Overview - Grok)
+2025-09-17 13:23:08 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 13:23:08 - FULLSIZE: Applied windowed style with borders
+2025-09-17 13:23:08 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 13:23:08 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-17 13:24:34 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 13:24:34 - TERMINAL: Attempting to open floating terminal
+2025-09-17 13:24:34 - TERMINAL: PowerShell opened
+2025-09-17 13:27:45 - FULLSIZE: Triple-tap E detected
+2025-09-17 13:27:45 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: ? Backend Folder)
+2025-09-17 13:27:45 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 13:27:45 - FULLSIZE: Applied windowed style with borders
+2025-09-17 13:27:45 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 13:27:45 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 13:28:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:28:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:30:23 - FULLSIZE: Triple-tap E detected
+2025-09-17 13:30:23 - FULLSIZE: Processing window - WindowsTerminal.exe (? Deployment Process)
+2025-09-17 13:30:23 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 13:30:23 - FULLSIZE: Applied windowed style with borders
+2025-09-17 13:30:23 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 13:30:23 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 13:33:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:33:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:36:00 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-17 13:36:00 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-17 13:36:00 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-17 13:36:01 - FULLSIZE: Triple-tap E detected
+2025-09-17 13:36:01 - FULLSIZE: Processing window - WindowsTerminal.exe (? Server Status)
+2025-09-17 13:36:01 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 13:36:01 - FULLSIZE: Applied windowed style with borders
+2025-09-17 13:36:01 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 13:36:01 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 13:36:04 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-17 13:36:04 - FULLSIZE: Processing window - WindowsTerminal.exe (? Server Status)
+2025-09-17 13:36:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 13:36:04 - FULLSIZE: Applied windowed style with borders
+2025-09-17 13:36:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 13:36:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 13:36:04 - FULLSIZE: Triple-tap E detected
+2025-09-17 13:36:04 - FULLSIZE: Processing window - WindowsTerminal.exe (? Server Status)
+2025-09-17 13:36:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 13:36:04 - FULLSIZE: Applied windowed style with borders
+2025-09-17 13:36:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 13:36:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 13:37:27 - FULLSIZE: Triple-tap E detected
+2025-09-17 13:37:27 - FULLSIZE: Processing window - WindowsTerminal.exe (? Server Container)
+2025-09-17 13:37:27 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 13:37:27 - FULLSIZE: Applied windowed style with borders
+2025-09-17 13:37:27 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 13:37:27 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 13:38:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:38:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:40:56 - TEXT_SHORTCUT: Triggered 'www' -> ForceWindowedMode()
+2025-09-17 13:40:56 - WINDOWED: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-17 13:40:56 - WINDOWED: Regular application, using 80% screen size
+2025-09-17 13:40:56 - WINDOWED: Applied windowed style and removed topmost
+2025-09-17 13:40:56 - WINDOWED: Positioned window at 256.0,160.0 size 2048.0x1280.0
+2025-09-17 13:40:56 - WINDOWED: Successfully applied windowed mode to WindowsTerminal.exe
+2025-09-17 13:40:56 - WINDOWED: Triple-tap W detected
+2025-09-17 13:40:56 - WINDOWED: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-17 13:40:56 - WINDOWED: Regular application, using 80% screen size
+2025-09-17 13:40:56 - WINDOWED: Applied windowed style and removed topmost
+2025-09-17 13:40:56 - WINDOWED: Positioned window at 256.0,160.0 size 2048.0x1280.0
+2025-09-17 13:40:56 - WINDOWED: Successfully applied windowed mode to WindowsTerminal.exe
+2025-09-17 13:43:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:43:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 13:45:55 - DESKTOP: Switched to Desktop 2
+2025-09-17 13:45:57 - DESKTOP: Switched to Desktop 1
+2025-09-17 13:48:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 13:48:08 - CLEANUP: Completed, 0 entries removed
