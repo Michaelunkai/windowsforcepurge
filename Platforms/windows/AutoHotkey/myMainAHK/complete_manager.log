@@ -25077,3 +25077,45 @@ Source:	SWbemObjectEx
 2025-09-18 00:40:05 - REBOOT: Initiating immediate system reboot
 2025-09-18 00:40:06 - SHUTDOWN: Script exiting - Reason: Shutdown
 2025-09-18 00:40:06 - SHUTDOWN: All processes resumed before exit
+2025-09-18 00:56:35 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 00:59:52 - FULLSIZE: Triple-tap E detected
+2025-09-18 00:59:52 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 00:59:52 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 00:59:52 - FULLSIZE: Applied windowed style with borders
+2025-09-18 00:59:52 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 00:59:52 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 01:01:19 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-18 01:01:19 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-18 01:01:19 - REBOOT: Initiating immediate system reboot
+2025-09-18 01:01:19 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 01:01:19 - SHUTDOWN: All processes resumed before exit
+2025-09-18 01:02:07 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 01:03:35 - TEXT_SHORTCUT: Triggered 'wall' -> 'WALLPAPER_APP'
+2025-09-18 01:03:35 - LAUNCHER: Attempting to launch WallPaper app
+2025-09-18 01:03:35 - ERROR: WallPaper app not found at: C:\Users\\micha\Desktop\WallPaper.lnk
+2025-09-18 01:03:46 - TEXT_SHORTCUT: Triggered 'wall' -> 'WALLPAPER_APP'
+2025-09-18 01:03:46 - LAUNCHER: Attempting to launch WallPaper app
+2025-09-18 01:03:46 - ERROR: WallPaper app not found at: C:\Users\\micha\Desktop\WallPaper.lnk
+2025-09-18 01:07:07 - CLEANUP: Starting suspended list cleanup
+2025-09-18 01:07:07 - CLEANUP: Completed, 0 entries removed
+2025-09-18 01:10:26 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-09-18 01:10:26 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 19368) - Days Gone
+2025-09-18 01:10:27 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-09-18 01:10:27 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-09-18 01:12:07 - CLEANUP: Starting suspended list cleanup
+2025-09-18 01:12:07 - CLEANUP: Completed, 0 entries removed
+2025-09-18 01:15:51 - TEXT_SHORTCUT: Triggered 'phonel' -> 'PHONE_LINK'
+2025-09-18 01:15:51 - PHONE_LINK: Opening PowerShell and running 'phonel' command
+2025-09-18 01:15:51 - PHONE_LINK: 'phonel' command launched in PowerShell
+2025-09-18 01:17:07 - CLEANUP: Starting suspended list cleanup
+2025-09-18 01:17:07 - CLEANUP: Completed, 0 entries removed
+2025-09-18 01:18:01 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-18 01:18:01 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-18 01:18:01 - REBOOT: Initiating immediate system reboot
+2025-09-18 01:18:01 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 01:18:01 - SHUTDOWN: All processes resumed before exit
+2025-09-18 01:22:45 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 01:27:45 - CLEANUP: Starting suspended list cleanup
+2025-09-18 01:27:45 - CLEANUP: Completed, 0 entries removed
+2025-09-18 01:32:45 - CLEANUP: Starting suspended list cleanup
+2025-09-18 01:32:45 - CLEANUP: Completed, 0 entries removed
