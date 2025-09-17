@@ -24957,3 +24957,80 @@ Source:	SWbemObjectEx
 2025-09-17 21:55:21 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
 2025-09-17 21:55:21 - CLAU: Opening Windows Terminal and running 'clau' command
 2025-09-17 21:55:21 - CLAU: clau command launched in PowerShell
+2025-09-17 21:59:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 21:59:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:04:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:04:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:09:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:09:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:14:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:14:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:19:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:19:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:21:45 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-17 22:21:45 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-17 22:21:45 - QWE: qwe command launched in PowerShell
+2025-09-17 22:24:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:24:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:29:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:29:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:34:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:34:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:39:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:39:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:44:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:44:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:49:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:49:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:51:39 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-17 22:51:39 - FOLDER: Opening installed apps folder
+2025-09-17 22:51:39 - FOLDER: Successfully opened installed apps folder
+2025-09-17 22:54:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:54:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 22:59:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 22:59:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:04:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:04:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:09:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:09:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:11:24 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 23:11:24 - TERMINAL: Attempting to open floating terminal
+2025-09-17 23:11:25 - TERMINAL: PowerShell opened
+2025-09-17 23:14:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:14:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:19:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:19:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:24:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:24:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:29:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:29:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:34:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:34:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:38:52 - TEXT_SHORTCUT: Triggered 'savegg' -> 'SAVEG_TERMINAL'
+2025-09-17 23:38:52 - SAVEGG: Launching Ludusavi backup tool
+2025-09-17 23:38:53 - SAVEGG: Ludusavi launched successfully from: F:\\backup\\windowsapps\\installed\\Ludosavi\\ludusavi.exe
+2025-09-17 23:39:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:39:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:40:27 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 23:40:27 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 23:40:27 - CLAU: clau command launched in PowerShell
+2025-09-17 23:43:28 - FULLSIZE: Triple-tap E detected
+2025-09-17 23:43:28 - FULLSIZE: Processing window - WindowsTerminal.exe (? Git Cloning)
+2025-09-17 23:43:28 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 23:43:28 - FULLSIZE: Applied windowed style with borders
+2025-09-17 23:43:28 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 23:43:28 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 23:44:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:44:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:49:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:49:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 23:50:21 - FULLSIZE: Triple-tap E detected
+2025-09-17 23:50:21 - FULLSIZE: Processing window - WindowsTerminal.exe (? Folder Skipping)
+2025-09-17 23:50:21 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 23:50:21 - FULLSIZE: Applied windowed style with borders
+2025-09-17 23:50:21 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 23:50:21 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 23:51:03 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-17 23:51:03 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-17 23:54:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 23:54:00 - CLEANUP: Completed, 0 entries removed
