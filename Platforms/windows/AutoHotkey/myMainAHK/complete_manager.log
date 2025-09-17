@@ -25058,3 +25058,9 @@ Source:	SWbemObjectEx
 2025-09-18 00:26:29 - CLEANUP: Completed, 0 entries removed
 2025-09-18 00:31:29 - CLEANUP: Starting suspended list cleanup
 2025-09-18 00:31:29 - CLEANUP: Completed, 0 entries removed
+2025-09-18 00:35:54 - FULLSIZE: Triple-tap E detected
+2025-09-18 00:35:54 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 00:35:54 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 00:35:54 - FULLSIZE: Applied windowed style with borders
+2025-09-18 00:35:54 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 00:35:54 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
