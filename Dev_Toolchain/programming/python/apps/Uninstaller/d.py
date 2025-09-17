@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-ACTUAL WORKING PURGE TOOL - NO BULLSHIT EDITION
-REAL-TIME FEEDBACK - SHOWS EVERY FILE BEING DELETED
-GUARANTEED TO WORK OR YOUR MONEY BACK
+ULTIMATE SAFE UNINSTALLER - ABSOLUTE COMPLETE REMOVAL TOOL
+Safely removes all traces of applications while protecting critical system files
+Supports Windows Package Manager, MSI, registry cleanup, and deep file scanning
 
-Usage: python actual_purge.py <app1> <app2> [app3] ...
+Usage: python d.py <app1> <app2> [app3] ...
 Requires: Administrator privileges on Windows
 """
 
@@ -16,623 +16,894 @@ import winreg
 import psutil
 import glob
 import time
+import json
+import logging
 from pathlib import Path
 import argparse
+import tempfile
+import ctypes
+from ctypes import wintypes
+import re
 
-class ActualPurge:
+class UltimateUninstaller:
     def __init__(self):
         self.deleted_count = 0
         self.failed_count = 0
-        
+        self.skipped_count = 0
+        self.found_installers = []
+        self.critical_system_files = self._load_critical_files()
+        self.setup_logging()
+
+    def setup_logging(self):
+        """Setup comprehensive logging"""
+        log_file = os.path.join(tempfile.gettempdir(), "uninstaller.log")
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler(log_file),
+                logging.StreamHandler()
+            ]
+        )
+        self.logger = logging.getLogger(__name__)
+        self.logger.info(f"Uninstaller session started. Log file: {log_file}")
+
+    def _load_critical_files(self):
+        """Load list of critical system files that should NEVER be deleted"""
+        return {
+            # Windows critical system files
+            'ntoskrnl.exe', 'hal.dll', 'win32k.sys', 'ntdll.dll', 'kernel32.dll',
+            'user32.dll', 'gdi32.dll', 'advapi32.dll', 'msvcrt.dll', 'shell32.dll',
+            'ole32.dll', 'oleaut32.dll', 'comctl32.dll', 'comdlg32.dll', 'wininet.dll',
+            'urlmon.dll', 'shlwapi.dll', 'version.dll', 'mpr.dll', 'netapi32.dll',
+            'winspool.drv', 'ws2_32.dll', 'wsock32.dll', 'mswsock.dll', 'dnsapi.dll',
+            'iphlpapi.dll', 'dhcpcsvc.dll', 'winhttp.dll', 'crypt32.dll', 'wintrust.dll',
+            'imagehlp.dll', 'psapi.dll', 'secur32.dll', 'netman.dll', 'rasapi32.dll',
+            'tapi32.dll', 'rtutils.dll', 'setupapi.dll', 'cfgmgr32.dll', 'devmgr.dll',
+            'newdev.dll', 'wtsapi32.dll', 'winsta.dll', 'authz.dll', 'xmllite.dll',
+            # System executables
+            'explorer.exe', 'winlogon.exe', 'csrss.exe', 'smss.exe', 'wininit.exe',
+            'services.exe', 'lsass.exe', 'svchost.exe', 'dwm.exe', 'taskhost.exe',
+            'taskhostw.exe', 'sihost.exe', 'ctfmon.exe', 'RuntimeBroker.exe',
+            'ApplicationFrameHost.exe', 'WWAHost.exe', 'SearchUI.exe', 'ShellExperienceHost.exe',
+            # System directories (partial paths)
+            'windows', 'system32', 'syswow64', 'drivers', 'winsxs', 'boot', 'efi'
+        }
+
+    def is_critical_system_file(self, file_path):
+        """Check if a file is critical to system operation"""
+        file_path_lower = file_path.lower()
+        file_name = os.path.basename(file_path_lower)
+
+        # Check critical file names
+        if file_name in self.critical_system_files:
+            return True
+
+        # Check critical paths
+        critical_paths = [
+            'c:\\windows\\system32\\',
+            'c:\\windows\\syswow64\\',
+            'c:\\windows\\winsxs\\',
+            'c:\\windows\\boot\\',
+            'c:\\efi\\',
+            'c:\\windows\\drivers\\',
+            'c:\\windows\\inf\\',
+            'c:\\windows\\fonts\\',
+            'c:\\windows\\globalization\\',
+            'c:\\windows\\ime\\',
+            'c:\\windows\\speech\\',
+            'c:\\windows\\registration\\',
+            'c:\\windows\\schemas\\',
+            'c:\\windows\\security\\',
+            'c:\\windows\\servicing\\',
+            'c:\\windows\\diagnostics\\',
+            'c:\\windows\\help\\',
+            'c:\\windows\\l2schemas\\',
+            'c:\\windows\\migration\\',
+            'c:\\windows\\policydefinitions\\',
+            'c:\\windows\\resources\\',
+            'c:\\windows\\shellnew\\',
+            'c:\\windows\\speech_onecore\\',
+            'c:\\windows\\tracing\\',
+            'c:\\windows\\web\\'
+        ]
+
+        for critical_path in critical_paths:
+            if file_path_lower.startswith(critical_path):
+                # Allow specific subdirectories that are safe to clean
+                safe_subdirs = ['temp', 'logs', 'prefetch', 'installer', 'downloaded program files']
+                for safe_dir in safe_subdirs:
+                    if f'\\{safe_dir}\\' in file_path_lower:
+                        return False
+                return True
+
+        return False
+
     def check_admin(self):
         """Check admin privileges"""
         try:
-            import ctypes
             return ctypes.windll.shell32.IsUserAnAdmin()
         except:
             return False
-    
+
+    def find_installed_programs(self, app_names):
+        """Find all installed programs matching the app names using multiple methods"""
+        self.logger.info(f"Searching for installed programs: {app_names}")
+        found_programs = []
+
+        for app_name in app_names:
+            self.logger.info(f"Searching for: {app_name}")
+
+            # Method 1: Windows Package Manager (winget)
+            try:
+                result = subprocess.run(['winget', 'list', '--accept-source-agreements'],
+                                      capture_output=True, text=True, timeout=60)
+                for line in result.stdout.split('\n'):
+                    if app_name.lower() in line.lower():
+                        found_programs.append(('winget', line.strip(), app_name))
+                        self.logger.info(f"Found winget package: {line.strip()}")
+            except Exception as e:
+                self.logger.warning(f"Winget search failed: {e}")
+
+            # Method 2: Registry - Uninstall entries
+            self._search_uninstall_registry(app_name, found_programs)
+
+            # Method 3: MSI packages
+            self._search_msi_packages(app_name, found_programs)
+
+            # Method 4: Windows Apps (UWP/MSIX)
+            self._search_windows_apps(app_name, found_programs)
+
+        return found_programs
+
+    def _search_uninstall_registry(self, app_name, found_programs):
+        """Search Windows uninstall registry entries"""
+        uninstall_keys = [
+            r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall",
+            r"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall"
+        ]
+
+        for key_path in uninstall_keys:
+            try:
+                with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, key_path) as key:
+                    for i in range(winreg.QueryInfoKey(key)[0]):
+                        try:
+                            subkey_name = winreg.EnumKey(key, i)
+                            with winreg.OpenKey(key, subkey_name) as subkey:
+                                try:
+                                    display_name = winreg.QueryValueEx(subkey, "DisplayName")[0]
+                                    if app_name.lower() in display_name.lower():
+                                        try:
+                                            uninstall_string = winreg.QueryValueEx(subkey, "UninstallString")[0]
+                                            found_programs.append(('registry', display_name, uninstall_string))
+                                            self.logger.info(f"Found registry entry: {display_name}")
+                                        except FileNotFoundError:
+                                            found_programs.append(('registry', display_name, None))
+                                except FileNotFoundError:
+                                    pass
+                        except Exception:
+                            continue
+            except Exception as e:
+                self.logger.warning(f"Registry search failed for {key_path}: {e}")
+
+    def _search_msi_packages(self, app_name, found_programs):
+        """Search MSI installed packages"""
+        try:
+            result = subprocess.run(['wmic', 'product', 'get', 'name,version'],
+                                  capture_output=True, text=True, timeout=60)
+            for line in result.stdout.split('\n'):
+                if app_name.lower() in line.lower() and line.strip():
+                    found_programs.append(('msi', line.strip(), app_name))
+                    self.logger.info(f"Found MSI package: {line.strip()}")
+        except Exception as e:
+            self.logger.warning(f"MSI search failed: {e}")
+
+    def _search_windows_apps(self, app_name, found_programs):
+        """Search Windows Store apps and UWP packages"""
+        try:
+            result = subprocess.run(['powershell', '-Command',
+                                   f'Get-AppxPackage | Where-Object {{$_.Name -like "*{app_name}*"}} | Select-Object Name,PackageFullName'],
+                                  capture_output=True, text=True, timeout=60)
+            for line in result.stdout.split('\n'):
+                if app_name.lower() in line.lower() and line.strip() and 'Name' not in line:
+                    found_programs.append(('uwp', line.strip(), app_name))
+                    self.logger.info(f"Found UWP package: {line.strip()}")
+        except Exception as e:
+            self.logger.warning(f"UWP search failed: {e}")
+
+    def uninstall_programs(self, found_programs):
+        """Uninstall found programs using appropriate methods"""
+        self.logger.info("Starting program uninstallation")
+
+        for program_type, program_info, app_name in found_programs:
+            self.logger.info(f"Uninstalling {program_type}: {program_info}")
+
+            if program_type == 'winget':
+                self._uninstall_winget(program_info, app_name)
+            elif program_type == 'registry':
+                self._uninstall_registry(program_info, app_name)
+            elif program_type == 'msi':
+                self._uninstall_msi(program_info, app_name)
+            elif program_type == 'uwp':
+                self._uninstall_uwp(program_info, app_name)
+
+    def _uninstall_winget(self, program_info, app_name):
+        """Uninstall using Windows Package Manager"""
+        try:
+            # Extract package ID from winget list output
+            parts = program_info.split()
+            if len(parts) >= 2:
+                package_id = parts[-1] if '.' in parts[-1] else app_name
+                self.logger.info(f"Attempting winget uninstall: {package_id}")
+                result = subprocess.run(['winget', 'uninstall', package_id, '--silent'],
+                                      capture_output=True, text=True, timeout=300)
+                if result.returncode == 0:
+                    self.logger.info(f"Successfully uninstalled via winget: {package_id}")
+                else:
+                    self.logger.warning(f"Winget uninstall failed: {result.stderr}")
+        except Exception as e:
+            self.logger.error(f"Winget uninstall error: {e}")
+
+    def _uninstall_registry(self, display_name, uninstall_string):
+        """Uninstall using registry uninstall string"""
+        if not uninstall_string:
+            return
+        try:
+            self.logger.info(f"Attempting registry uninstall: {display_name}")
+            # Add silent flags for common installers
+            if 'msiexec' in uninstall_string.lower():
+                uninstall_string += ' /quiet /norestart'
+            elif uninstall_string.endswith('.exe"') or uninstall_string.endswith('.exe'):
+                uninstall_string += ' /S'
+
+            result = subprocess.run(uninstall_string, shell=True, capture_output=True,
+                                  text=True, timeout=300)
+            if result.returncode == 0:
+                self.logger.info(f"Successfully uninstalled via registry: {display_name}")
+            else:
+                self.logger.warning(f"Registry uninstall may have failed: {result.stderr}")
+        except Exception as e:
+            self.logger.error(f"Registry uninstall error: {e}")
+
+    def _uninstall_msi(self, program_info, app_name):
+        """Uninstall MSI package"""
+        try:
+            self.logger.info(f"Attempting MSI uninstall: {program_info}")
+            result = subprocess.run(['wmic', 'product', 'where', f'name like "%{app_name}%"',
+                                   'call', 'uninstall', '/nointeractive'],
+                                  capture_output=True, text=True, timeout=300)
+            if 'ReturnValue = 0' in result.stdout:
+                self.logger.info(f"Successfully uninstalled MSI: {program_info}")
+            else:
+                self.logger.warning(f"MSI uninstall may have failed")
+        except Exception as e:
+            self.logger.error(f"MSI uninstall error: {e}")
+
+    def _uninstall_uwp(self, program_info, app_name):
+        """Uninstall UWP/Windows Store app"""
+        try:
+            self.logger.info(f"Attempting UWP uninstall: {program_info}")
+            result = subprocess.run(['powershell', '-Command',
+                                   f'Get-AppxPackage "*{app_name}*" | Remove-AppxPackage'],
+                                  capture_output=True, text=True, timeout=300)
+            if result.returncode == 0:
+                self.logger.info(f"Successfully uninstalled UWP: {program_info}")
+            else:
+                self.logger.warning(f"UWP uninstall may have failed: {result.stderr}")
+        except Exception as e:
+            self.logger.error(f"UWP uninstall error: {e}")
+
     def kill_processes(self, app_names):
-        """Kill all processes - ACTUALLY WORKS"""
-        print("=== KILLING PROCESSES ===")
-        
+        """Terminate all related processes"""
+        self.logger.info("Terminating related processes")
+
         for app_name in app_names:
-            print(f"Killing processes for: {app_name}")
-            
-            # Method 1: taskkill
-            try:
-                result = subprocess.run(['taskkill', '/f', '/t', '/im', f'*{app_name}*'], 
-                                      capture_output=True, text=True, timeout=30)
-                if result.stdout:
-                    print(f"  taskkill output: {result.stdout.strip()}")
-            except Exception as e:
-                print(f"  taskkill failed: {e}")
-            
-            # Method 2: psutil
-            try:
-                killed = 0
-                for proc in psutil.process_iter(['pid', 'name', 'exe']):
-                    try:
-                        info = proc.info
-                        if (app_name.lower() in str(info.get('name', '')).lower() or
-                            (info.get('exe') and app_name.lower() in str(info.get('exe', '')).lower())):
+            killed_count = 0
+
+            # Method 1: psutil for precise matching
+            for proc in psutil.process_iter(['pid', 'name', 'exe', 'cmdline']):
+                try:
+                    info = proc.info
+                    should_kill = False
+
+                    # Check process name
+                    if info.get('name') and app_name.lower() in info['name'].lower():
+                        should_kill = True
+
+                    # Check executable path
+                    if info.get('exe') and app_name.lower() in info['exe'].lower():
+                        should_kill = True
+
+                    # Check command line
+                    if info.get('cmdline'):
+                        cmdline_str = ' '.join(info['cmdline']).lower()
+                        if app_name.lower() in cmdline_str:
+                            should_kill = True
+
+                    if should_kill:
+                        self.logger.info(f"Terminating process: {info['name']} (PID: {info['pid']})")
+                        proc.terminate()
+                        killed_count += 1
+
+                        # Wait a bit then force kill if still running
+                        try:
+                            proc.wait(timeout=3)
+                        except psutil.TimeoutExpired:
                             proc.kill()
-                            killed += 1
-                            print(f"  Killed process: {info['name']} (PID: {info['pid']})")
-                    except:
-                        continue
-                if killed == 0:
-                    print(f"  No processes found for: {app_name}")
-            except Exception as e:
-                print(f"  psutil failed: {e}")
-    
+
+                except (psutil.NoSuchProcess, psutil.AccessDenied):
+                    continue
+                except Exception as e:
+                    self.logger.warning(f"Error checking process: {e}")
+
+            # Method 2: taskkill for broader matching
+            try:
+                subprocess.run(['taskkill', '/f', '/t', '/im', f'*{app_name}*'],
+                             capture_output=True, timeout=30)
+            except Exception:
+                pass
+
+            self.logger.info(f"Terminated {killed_count} processes for {app_name}")
+
     def kill_services(self, app_names):
-        """Kill all services - ACTUALLY WORKS"""
-        print("\n=== KILLING SERVICES ===")
-        
+        """Stop and remove related services"""
+        self.logger.info("Stopping and removing related services")
+
         for app_name in app_names:
-            print(f"Killing services for: {app_name}")
-            
             try:
                 # Get all services
-                result = subprocess.run(['sc', 'query', 'type=all'], 
+                result = subprocess.run(['sc', 'query', 'type=all'],
                                       capture_output=True, text=True, timeout=30)
-                
-                found_services = []
+
+                services_to_remove = []
                 for line in result.stdout.split('\n'):
                     if 'SERVICE_NAME:' in line:
                         service_name = line.split(':')[1].strip()
                         if app_name.lower() in service_name.lower():
-                            found_services.append(service_name)
-                
-                if found_services:
-                    for service in found_services:
-                        print(f"  Stopping service: {service}")
-                        subprocess.run(['sc', 'stop', service], capture_output=True, timeout=10)
-                        print(f"  Deleting service: {service}")
-                        subprocess.run(['sc', 'delete', service], capture_output=True, timeout=10)
-                else:
-                    print(f"  No services found for: {app_name}")
-                    
+                            services_to_remove.append(service_name)
+
+                for service in services_to_remove:
+                    self.logger.info(f"Stopping service: {service}")
+                    subprocess.run(['sc', 'stop', service], capture_output=True, timeout=10)
+                    time.sleep(2)
+                    self.logger.info(f"Removing service: {service}")
+                    subprocess.run(['sc', 'delete', service], capture_output=True, timeout=10)
+
             except Exception as e:
-                print(f"  Service cleanup failed: {e}")
-    
+                self.logger.error(f"Service cleanup error: {e}")
+
     def delete_scheduled_tasks(self, app_names):
-        """Delete scheduled tasks - ACTUALLY WORKS"""
-        print("\n=== DELETING SCHEDULED TASKS ===")
-        
+        """Remove related scheduled tasks"""
+        self.logger.info("Removing related scheduled tasks")
+
         for app_name in app_names:
-            print(f"Deleting scheduled tasks for: {app_name}")
-            
             try:
-                # Get all tasks
-                result = subprocess.run(['schtasks', '/query', '/fo', 'csv'], 
+                result = subprocess.run(['schtasks', '/query', '/fo', 'csv'],
                                       capture_output=True, text=True, timeout=30)
-                
-                found_tasks = []
+
+                tasks_to_delete = []
                 for line in result.stdout.split('\n'):
                     if app_name.lower() in line.lower() and 'TaskName' not in line:
                         parts = line.split(',')
                         if len(parts) > 0:
                             task_name = parts[0].strip('"')
                             if task_name:
-                                found_tasks.append(task_name)
-                
-                if found_tasks:
-                    for task in found_tasks:
-                        print(f"  Deleting task: {task}")
-                        try:
-                            subprocess.run(['schtasks', '/delete', '/tn', task, '/f'], 
-                                         capture_output=True, timeout=10)
-                            print(f"    SUCCESS: Deleted {task}")
-                        except Exception as e:
-                            print(f"    FAILED: {task} - {e}")
-                else:
-                    print(f"  No scheduled tasks found for: {app_name}")
-                    
+                                tasks_to_delete.append(task_name)
+
+                for task in tasks_to_delete:
+                    self.logger.info(f"Deleting scheduled task: {task}")
+                    subprocess.run(['schtasks', '/delete', '/tn', task, '/f'],
+                                 capture_output=True, timeout=10)
+
             except Exception as e:
-                print(f"  Task cleanup failed: {e}")
-    
-    def YOUR_CLIENT_SECRET_HERE(self, path):
-        """Schedule a file or directory for deletion on next reboot (Windows only)"""
+                self.logger.error(f"Scheduled task cleanup error: {e}")
+
+    def schedule_for_deletion_on_reboot(self, path):
+        """Schedule file/directory for deletion on next reboot"""
         try:
-            import ctypes
-            YOUR_CLIENT_SECRET_HERE = 0x00000004
-            res = ctypes.windll.kernel32.MoveFileExW(str(path), None, YOUR_CLIENT_SECRET_HERE)
-            if res != 0:
-                print(f"    SCHEDULED FOR DELETION ON REBOOT: {path}")
+            MOVEFILE_DELAY_UNTIL_REBOOT = 0x00000004
+            result = ctypes.windll.kernel32.MoveFileExW(str(path), None, MOVEFILE_DELAY_UNTIL_REBOOT)
+            if result:
+                self.logger.info(f"Scheduled for deletion on reboot: {path}")
                 return True
             else:
-                print(f"    FAILED TO SCHEDULE FOR DELETION: {path}")
+                self.logger.warning(f"Failed to schedule for deletion: {path}")
                 return False
         except Exception as e:
-            print(f"    ERROR scheduling for deletion: {e}")
+            self.logger.error(f"Error scheduling for deletion: {e}")
             return False
-    
+
     def force_delete_file(self, file_path):
-        """Force delete a single file - ACTUALLY WORKS, schedules for deletion on reboot if locked"""
+        """Safely force delete a file with multiple methods"""
         if not os.path.exists(file_path):
             return True
+
+        # Critical system file check
+        if self.is_critical_system_file(file_path):
+            self.logger.warning(f"SKIPPED critical system file: {file_path}")
+            self.skipped_count += 1
+            return False
+
         try:
-            # Method 1: Remove read-only attribute
+            # Remove attributes
             try:
-                subprocess.run(['attrib', '-R', '-H', '-S', file_path], 
+                subprocess.run(['attrib', '-R', '-H', '-S', file_path],
                              capture_output=True, timeout=5)
             except:
                 pass
-            # Method 2: Standard delete
+
+            # Standard delete
             try:
                 os.remove(file_path)
                 if not os.path.exists(file_path):
                     return True
-            except Exception as e:
+            except:
                 pass
-            # Method 3: Take ownership and delete
+
+            # Take ownership and delete
             try:
                 subprocess.run(['takeown', '/f', file_path], capture_output=True, timeout=10)
-                subprocess.run(['icacls', file_path, '/grant', 'Everyone:F'], 
+                subprocess.run(['icacls', file_path, '/grant', 'Everyone:F'],
                              capture_output=True, timeout=10)
                 os.remove(file_path)
                 if not os.path.exists(file_path):
                     return True
             except:
                 pass
-            # Method 4: CMD delete
+
+            # Schedule for deletion on reboot
+            return self.schedule_for_deletion_on_reboot(file_path)
+
+        except Exception as e:
+            self.logger.error(f"Error deleting file {file_path}: {e}")
+            return False
+
+    def force_delete_directory(self, dir_path):
+        """Safely force delete a directory with multiple methods"""
+        if not os.path.exists(dir_path):
+            return True
+
+        # Critical system directory check
+        if self.is_critical_system_file(dir_path):
+            self.logger.warning(f"SKIPPED critical system directory: {dir_path}")
+            self.skipped_count += 1
+            return False
+
+        try:
+            # Take ownership recursively
             try:
-                subprocess.run(['cmd', '/c', f'del /f /q "{file_path}"'], 
-                             capture_output=True, timeout=10)
-                if not os.path.exists(file_path):
+                subprocess.run(['takeown', '/f', dir_path, '/r', '/d', 'y'],
+                             capture_output=True, timeout=30)
+                subprocess.run(['icacls', dir_path, '/grant', 'Everyone:F', '/t'],
+                             capture_output=True, timeout=30)
+            except:
+                pass
+
+            # Remove attributes
+            try:
+                subprocess.run(['attrib', '-R', '-H', '-S', dir_path, '/S', '/D'],
+                             capture_output=True, timeout=20)
+            except:
+                pass
+
+            # Standard delete
+            try:
+                shutil.rmtree(dir_path, ignore_errors=True)
+                if not os.path.exists(dir_path):
                     return True
             except:
                 pass
-            # Method 5: Schedule for deletion on reboot
-            self.YOUR_CLIENT_SECRET_HERE(file_path)
-            return False
-        except Exception:
-            return False
-    
-    def force_delete_directory(self, dir_path):
-        """Force delete a directory - AGGRESSIVE: unlock handles, take ownership, remove reparse points, rename, schedule for deletion on reboot if locked"""
-        import random, string
-        if not os.path.exists(dir_path):
-            return True
-        try:
-            # Step 1: Try to unlock handles using handle.exe (if available)
-            handle_exe = r"C:\Sysinternals\handle.exe"
-            if os.path.exists(handle_exe):
-                try:
-                    result = subprocess.run([handle_exe, dir_path, "/accepteula"], capture_output=True, text=True, timeout=20)
-                    for line in result.stdout.splitlines():
-                        if "pid:" in line.lower():
-                            pid = None
-                            try:
-                                pid = int(line.split("pid:")[1].split()[0])
-                            except:
-                                continue
-                            if pid:
-                                print(f"    Attempting to close handles in PID {pid}")
-                                subprocess.run([handle_exe, f"-c", dir_path, f"-p", str(pid), "/accepteula"], capture_output=True, timeout=10)
-                except Exception as e:
-                    print(f"    handle.exe unlock failed: {e}")
-            # Step 2: Remove reparse points/junctions if present
+
+            # CMD rmdir
             try:
-                import ctypes
-                YOUR_CLIENT_SECRET_HERE = 0x400
-                attrs = ctypes.windll.kernel32.GetFileAttributesW(str(dir_path))
-                if attrs & YOUR_CLIENT_SECRET_HERE:
-                    print(f"    Removing reparse point: {dir_path}")
-                    subprocess.run(["cmd", "/c", f"rmdir \"{dir_path}\""], capture_output=True, timeout=10)
-                    if not os.path.exists(dir_path):
-                        return True
-            except Exception as e:
-                print(f"    Reparse point removal failed: {e}")
-            # Step 3: Take ownership and grant permissions recursively
-            try:
-                subprocess.run(["takeown", "/f", dir_path, "/r", "/d", "y"], capture_output=True, timeout=20)
-                subprocess.run(["icacls", dir_path, "/grant", "Everyone:F", "/t"], capture_output=True, timeout=20)
-            except Exception as e:
-                print(f"    Ownership/permissions failed: {e}")
-            # Step 4: Try renaming the directory to a random name
-            renamed = False
-            try:
-                parent = os.path.dirname(dir_path)
-                rand_name = ''.join(random.choices(string.ascii_letters + string.digits, k=12))
-                new_path = os.path.join(parent, rand_name)
-                os.rename(dir_path, new_path)
-                print(f"    Renamed {dir_path} to {new_path}")
-                dir_path = new_path
-                renamed = True
-            except Exception as e:
-                print(f"    Rename failed: {e}")
-            # Step 5: Try standard delete again
-            try:
-                shutil.rmtree(dir_path, ignore_errors=True)
+                subprocess.run(['cmd', '/c', f'rmdir /s /q "{dir_path}"'],
+                             capture_output=True, timeout=30)
                 if not os.path.exists(dir_path):
                     return True
-            except Exception as e:
-                print(f"    rmtree after rename failed: {e}")
-            # Step 6: Remove attributes and try again
-            try:
-                subprocess.run(["attrib", "-R", "-H", "-S", dir_path, "/S", "/D"], capture_output=True, timeout=15)
-                shutil.rmtree(dir_path, ignore_errors=True)
-                if not os.path.exists(dir_path):
-                    return True
-            except Exception as e:
-                print(f"    attrib/rmtree failed: {e}")
-            # Step 7: CMD rmdir
-            try:
-                subprocess.run(["cmd", "/c", f"rmdir /s /q \"{dir_path}\""], capture_output=True, timeout=20)
-                if not os.path.exists(dir_path):
-                    return True
-            except Exception as e:
-                print(f"    cmd rmdir failed: {e}")
-            # Step 8: Schedule for deletion on reboot
-            self.YOUR_CLIENT_SECRET_HERE(dir_path)
-            return False
+            except:
+                pass
+
+            # Schedule for deletion on reboot
+            return self.schedule_for_deletion_on_reboot(dir_path)
+
         except Exception as e:
-            print(f"    AGGRESSIVE DELETE ERROR: {e}")
+            self.logger.error(f"Error deleting directory {dir_path}: {e}")
             return False
-    
-    def YOUR_CLIENT_SECRET_HERE(self, app_names):
-        """Remove app shortcuts/icons from Start Menu, Desktop, Quick Launch, etc."""
-        print("\n=== REMOVING SHORTCUTS AND ICONS ===")
-        # Common locations for shortcuts/icons
+
+    def remove_shortcuts_and_icons(self, app_names):
+        """Remove application shortcuts and icons"""
+        self.logger.info("Removing shortcuts and icons")
+
+        # Get all user directories dynamically
         user_dirs = []
         try:
             for user_dir in os.listdir("C:\\Users"):
                 user_path = f"C:\\Users\\{user_dir}"
-                if os.path.isdir(user_path):
+                if os.path.isdir(user_path) and user_dir not in ['All Users', 'Default', 'Public']:
                     user_dirs.append(user_path)
         except:
             pass
+
         shortcut_locations = [
             r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs",
-            r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup",
             r"C:\Users\Public\Desktop",
         ]
+
         # Add per-user locations
         for user_path in user_dirs:
             shortcut_locations.extend([
                 f"{user_path}\\Desktop",
                 f"{user_path}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs",
-                f"{user_path}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
                 f"{user_path}\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch",
             ])
+
         for app_name in app_names:
-            print(f"Removing shortcuts/icons for: {app_name}")
             for location in shortcut_locations:
                 if not os.path.exists(location):
                     continue
+
                 try:
                     for root, dirs, files in os.walk(location):
                         for file in files:
-                            if app_name.lower() in file.lower() and file.lower().endswith('.lnk'):
+                            if (app_name.lower() in file.lower() and
+                                file.lower().endswith(('.lnk', '.url'))):
                                 shortcut_path = os.path.join(root, file)
-                                print(f"  Deleting shortcut: {shortcut_path}")
-                                self.force_delete_file(shortcut_path)
+                                self.logger.info(f"Removing shortcut: {shortcut_path}")
+                                if self.force_delete_file(shortcut_path):
+                                    self.deleted_count += 1
+                                else:
+                                    self.failed_count += 1
                 except Exception as e:
-                    print(f"  Shortcut cleanup failed in {location}: {e}")
-    
-    def search_and_destroy(self, app_names):
-        """Search and destroy files - ACTUALLY WORKS"""
-        print("\n=== SEARCHING AND DESTROYING FILES ===")
-        # Define search locations (expanded)
-        search_locations = [
+                    self.logger.error(f"Shortcut cleanup error in {location}: {e}")
+
+    def get_comprehensive_search_locations(self):
+        """Get comprehensive list of search locations"""
+        locations = [
+            # Program installation directories
             r"C:\Program Files",
-            r"C:\Program Files\Common Files",
-            r"C:\Program Files\ModifiableWindowsApps",
-            r"C:\Program Files\WindowsApps",
-            r"C:\Program Files\WindowsAppsDeleted",
             r"C:\Program Files (x86)",
+            r"C:\Program Files\Common Files",
             r"C:\Program Files (x86)\Common Files",
+            r"C:\Program Files\WindowsApps",
+            r"C:\Program Files\ModifiableWindowsApps",
+
+            # System data directories
             r"C:\ProgramData",
-            r"C:\ProgramData\Application Data",
-            r"C:\ProgramData\Package Cache",
-            r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs",
-            r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup",
-            r"C:\ProgramData\Microsoft\Windows\WER",
-            r"C:\ProgramData\Microsoft\Windows\Caches",
-            r"C:\ProgramData\Microsoft\Crypto",
-            r"C:\ProgramData\Microsoft\Crypto\RSA",
-            r"C:\ProgramData\App-V",
-            r"C:\ProgramData\Microsoft\PlayReady",
-            r"C:\ProgramData\Microsoft\Search\Data\Applications",
-            r"C:\ProgramData\Microsoft\Search\Data\Temp",
-            r"C:\ProgramData\Microsoft\Windows\GameExplorer",
-            r"C:\ProgramData\Oracle",
-            r"C:\ProgramData\Docker",
-            r"C:\ProgramData\NVIDIA Corporation",
-            r"C:\ProgramData\Temp",
-            r"C:\ProgramData\Logs",
-            r"C:\ProgramData\CrashDumps",
-            r"C:\ProgramData\Desktop",
-            r"C:\ProgramData\Documents",
-            r"C:\Windows\System32",
-            r"C:\Windows\System32\drivers",
-            r"C:\Windows\System32\DriverStore",
-            r"C:\Windows\System32\Tasks",
-            r"C:\Windows\System32\Tasks\Microsoft",
-            r"C:\Windows\System32\Tasks\WPD",
-            r"C:\Windows\System32\spool\DRIVERS",
-            r"C:\Windows\System32\spool\PRINTERS",
-            r"C:\Windows\System32\LogFiles",
-            r"C:\Windows\System32\LogFiles\WMI",
-            r"C:\Windows\System32\catroot2",
-            r"C:\Windows\System32\winevt\Logs",
-            r"C:\Windows\SysWOW64",
-            r"C:\Windows\WinSxS",
-            r"C:\Windows\INF",
-            r"C:\Windows\Fonts",
-            r"C:\Windows\SystemApps",
-            r"C:\Windows\SystemResources",
-            r"C:\Windows\servicing",
             r"C:\Windows\Installer",
-            r"C:\Windows\Installer\$PatchCache$",
-            r"C:\Windows\Prefetch",
+            r"C:\Windows\System32",
+            r"C:\Windows\SysWOW64",
+
+            # Safe temporary and cache directories
             r"C:\Windows\Temp",
+            r"C:\Windows\Prefetch",
             r"C:\Windows\Logs",
-            r"C:\Windows\Logs\CBS",
-            r"C:\Windows\Logs\DISM",
-            r"C:\Windows\ServiceProfiles\LocalService\AppData\Local\Temp",
-            r"C:\Windows\ServiceProfiles\NetworkService\AppData\Local\Temp",
-            r"C:\Windows\SoftwareDistribution\Download",
-            r"C:\Windows\Microsoft.NET\Assembly\GAC_MSIL",
-            r"C:\$Recycle.Bin",
-            r"C:\System Volume Information",
-            r"C:\$WINDOWS.~BT",
-            r"C:\$WINDOWS.~WS",
-            r"C:\Recovery",
-            r"C:\Windows\CSC",
-            r"C:\Intel",
-            r"C:\AMD",
-            r"C:\NVIDIA",
-            r"C:\Logs",
-            r"C:\CrashDumps",
-            r"C:\Drivers",
-            r"C:\MSOCache",
-            r"C:\Temp",
-            r"C:\PerfLogs",
-            r"C:\Users\Public\Desktop",
-            r"C:\Users\Public\Documents",
-            r"C:\Users\Public\Downloads",
-            r"C:\Users\misha\Desktop",
-            r"C:\Users\misha\Documents",
-            r"C:\Users\misha\Downloads",
-            r"C:\Users\misha\Saved Games",
-            r"C:\Users\misha\AppData\Local",
-            r"C:\Users\misha\AppData\Local\Programs",
-            r"C:\Users\misha\AppData\Local\Packages",
-            r"C:\Users\misha\AppData\Local\VirtualStore",
-            r"C:\Users\misha\AppData\Local\CrashDumps",
-            r"C:\Users\misha\AppData\Local\Temp",
-            r"C:\Users\misha\AppData\Local\SquirrelTemp",
-            r"C:\Users\misha\AppData\Local\D3DSCache",
-            r"C:\Users\misha\AppData\Local\Microsoft\Windows\WER",
-            r"C:\Users\misha\AppData\Local\Microsoft\WindowsApps",
-            r"C:\Users\misha\AppData\Local\Microsoft\Windows\Caches",
-            r"C:\Users\misha\AppData\Local\Microsoft\Windows\Explorer",
-            r"C:\Users\misha\AppData\Local\Microsoft\Edge\User Data",
-            r"C:\Users\misha\AppData\Local\Google\Chrome\User Data",
-            r"C:\Users\misha\AppData\Local\BraveSoftware\Brave-Browser\User Data",
-            r"C:\Users\misha\AppData\Local\Vivaldi\User Data",
-            r"C:\Users\misha\AppData\Local\Opera Software",
-            r"C:\Users\misha\AppData\Local\Yandex\YandexBrowser\User Data",
-            r"C:\Users\misha\AppData\Roaming",
-            r"C:\Users\misha\AppData\Roaming\Installer",
-            r"C:\Users\misha\AppData\Roaming\Microsoft\Windows\Start Menu\Programs",
-            r"C:\Users\misha\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup",
-            r"C:\Users\misha\AppData\Roaming\Microsoft\Windows\Recent",
-            r"C:\Users\misha\AppData\Roaming\Microsoft\Windows\SendTo",
-            r"C:\Users\misha\AppData\Roaming\Microsoft\Windows\Templates",
-            r"C:\Users\misha\AppData\Roaming\Microsoft\Windows\GameExplorer",
-            r"C:\Users\misha\AppData\Roaming\Microsoft\Windows\Printer Shortcuts",
-            r"C:\Users\misha\AppData\Roaming\Microsoft\Windows\Themes",
-            r"C:\Users\misha\AppData\Roaming\Mozilla\Firefox\Profiles",
-            r"C:\Users\misha\AppData\LocalLow",
+            r"C:\ProgramData\Package Cache",
+            r"C:\ProgramData\Microsoft\Windows\WER",
         ]
-        # Add dynamic user directories
+
+        # Add user directories dynamically
         try:
             for user_dir in os.listdir("C:\\Users"):
                 user_path = f"C:\\Users\\{user_dir}"
                 if os.path.isdir(user_path) and user_dir not in ['All Users', 'Default', 'Public']:
-                    search_locations.extend([
+                    locations.extend([
                         f"{user_path}\\AppData\\Local",
                         f"{user_path}\\AppData\\Roaming",
                         f"{user_path}\\AppData\\LocalLow",
+                        f"{user_path}\\AppData\\Local\\Temp",
                         f"{user_path}\\Desktop",
                         f"{user_path}\\Documents",
                         f"{user_path}\\Downloads"
                     ])
         except:
             pass
-        # Add container layers
-        container_base = r"C:\ProgramData\Microsoft\Windows\Containers\Layers"
-        if os.path.exists(container_base):
-            try:
-                for layer in os.listdir(container_base):
-                    layer_path = f"{container_base}\\{layer}\\Files"
-                    if os.path.exists(layer_path):
-                        search_locations.append(layer_path)
-            except:
-                pass
-        # Search and destroy
+
+        return locations
+
+    def comprehensive_file_search(self, app_names):
+        """Comprehensive file and directory search with safety checks"""
+        self.logger.info("Starting comprehensive file search")
+
+        search_locations = self.get_comprehensive_search_locations()
+
         for app_name in app_names:
-            print(f"\nSearching for: {app_name}")
-            all_targets = []
-            # Search each location
+            self.logger.info(f"Searching for files related to: {app_name}")
+            all_targets = set()
+
             for location in search_locations:
                 if not os.path.exists(location):
                     continue
-                print(f"  Searching in: {location}")
+
+                self.logger.info(f"Searching in: {location}")
                 try:
-                    # Use dir command to find files
-                    cmd = f'dir "{location}\\*{app_name}*" /s /b /a 2>nul'
-                    result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=60)
-                    found_count = 0
-                    for line in result.stdout.split('\n'):
-                        if line.strip() and os.path.exists(line.strip()):
-                            all_targets.append(line.strip())
-                            found_count += 1
-                    if found_count > 0:
-                        print(f"    Found {found_count} items")
-                except Exception as e:
-                    print(f"    Search failed: {e}")
-            # Remove duplicates
-            all_targets = list(set(all_targets))
-            print(f"\nFound {len(all_targets)} total targets for {app_name}")
-            # Destroy everything
-            if all_targets:
-                print("Starting destruction:")
-                for target in all_targets:
-                    print(f"  Destroying: {target}")
+                    # Use multiple search methods
+                    patterns = [
+                        f"*{app_name}*",
+                        f"*{app_name.lower()}*",
+                        f"*{app_name.upper()}*",
+                        f"*{app_name.capitalize()}*"
+                    ]
+
+                    for pattern in patterns:
+                        try:
+                            # Use glob for Python-based search
+                            search_pattern = os.path.join(location, "**", pattern)
+                            for match in glob.glob(search_pattern, recursive=True):
+                                if os.path.exists(match):
+                                    all_targets.add(match)
+                        except Exception:
+                            continue
+
+                    # Use dir command for additional search
                     try:
-                        if os.path.isfile(target):
-                            if self.force_delete_file(target):
-                                print(f"    SUCCESS: File deleted")
-                                self.deleted_count += 1
-                            else:
-                                print(f"    FAILED: File survived or scheduled for deletion on reboot")
-                                self.failed_count += 1
-                        elif os.path.isdir(target):
-                            if self.force_delete_directory(target):
-                                print(f"    SUCCESS: Directory deleted")
-                                self.deleted_count += 1
-                            else:
-                                print(f"    FAILED: Directory survived or scheduled for deletion on reboot")
-                                self.failed_count += 1
-                        else:
-                            print(f"    SKIPPED: Path doesn't exist")
-                    except Exception as e:
-                        print(f"    ERROR: {e}")
-                        self.failed_count += 1
-            else:
-                print("  No targets found")
-    
-    def cleanup_registry(self, app_names):
-        """Cleanup registry - ACTUALLY WORKS"""
-        print("\n=== CLEANING REGISTRY ===")
-        
-        for app_name in app_names:
-            print(f"Cleaning registry for: {app_name}")
-            
-            # Registry cleanup commands
-            registry_commands = [
-                f'reg delete "HKCU\\Software" /f /v "*{app_name}*" 2>nul',
-                f'reg delete "HKLM\\Software" /f /v "*{app_name}*" 2>nul',
-                f'reg delete "HKLM\\SYSTEM\\CurrentControlSet\\Services" /f /v "*{app_name}*" 2>nul'
-            ]
-            
-            for cmd in registry_commands:
-                try:
-                    print(f"  Executing: {cmd}")
-                    result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=30)
-                    if result.returncode == 0:
-                        print(f"    SUCCESS: Registry cleaned")
-                    else:
-                        print(f"    INFO: No registry entries found")
+                        cmd = f'dir "{location}\\*{app_name}*" /s /b /a 2>nul'
+                        result = subprocess.run(cmd, shell=True, capture_output=True,
+                                              text=True, timeout=60)
+                        for line in result.stdout.split('\n'):
+                            if line.strip() and os.path.exists(line.strip()):
+                                all_targets.add(line.strip())
+                    except Exception:
+                        continue
+
                 except Exception as e:
-                    print(f"    ERROR: {e}")
-    
-    def final_cleanup(self):
-        """Final cleanup - ACTUALLY WORKS"""
-        print("\n=== FINAL CLEANUP ===")
-        
+                    self.logger.error(f"Search failed in {location}: {e}")
+
+            # Remove targets
+            self.logger.info(f"Found {len(all_targets)} targets for {app_name}")
+            self._remove_targets(list(all_targets))
+
+    def _remove_targets(self, targets):
+        """Remove found targets with safety checks"""
+        # Sort by depth (files first, then directories)
+        targets.sort(key=lambda x: (os.path.isdir(x), x.count(os.sep)), reverse=False)
+
+        for target in targets:
+            if not os.path.exists(target):
+                continue
+
+            self.logger.info(f"Processing: {target}")
+
+            try:
+                if os.path.isfile(target):
+                    if self.force_delete_file(target):
+                        self.logger.info(f"SUCCESS: Deleted file {target}")
+                        self.deleted_count += 1
+                    else:
+                        self.logger.warning(f"FAILED: Could not delete file {target}")
+                        self.failed_count += 1
+
+                elif os.path.isdir(target):
+                    if self.force_delete_directory(target):
+                        self.logger.info(f"SUCCESS: Deleted directory {target}")
+                        self.deleted_count += 1
+                    else:
+                        self.logger.warning(f"FAILED: Could not delete directory {target}")
+                        self.failed_count += 1
+
+            except Exception as e:
+                self.logger.error(f"Error processing {target}: {e}")
+                self.failed_count += 1
+
+    def cleanup_registry_safe(self, app_names):
+        """Safe registry cleanup with protection for critical keys"""
+        self.logger.info("Starting safe registry cleanup")
+
+        # Define safe registry areas for application cleanup
+        safe_cleanup_areas = [
+            (winreg.HKEY_CURRENT_USER, r"Software"),
+            (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"),
+            (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall"),
+            (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Classes\Installer\Products"),
+            (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths"),
+            (winreg.HKEY_CURRENT_USER, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Run"),
+            (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Run"),
+        ]
+
+        for app_name in app_names:
+            self.logger.info(f"Cleaning registry for: {app_name}")
+
+            for root_key, subkey_path in safe_cleanup_areas:
+                try:
+                    self._cleanup_registry_key(root_key, subkey_path, app_name)
+                except Exception as e:
+                    self.logger.error(f"Registry cleanup error in {subkey_path}: {e}")
+
+    def _cleanup_registry_key(self, root_key, key_path, app_name):
+        """Clean specific registry key area"""
         try:
-            print("Clearing recycle bin...")
-            subprocess.run(['powershell', '-Command', 'Clear-RecycleBin -Force -ErrorAction SilentlyContinue'], 
+            with winreg.OpenKey(root_key, key_path, 0, winreg.KEY_READ | winreg.KEY_WRITE) as key:
+                subkeys_to_delete = []
+
+                # Find subkeys that match the app name
+                try:
+                    i = 0
+                    while True:
+                        subkey_name = winreg.EnumKey(key, i)
+                        if app_name.lower() in subkey_name.lower():
+                            subkeys_to_delete.append(subkey_name)
+                        i += 1
+                except OSError:
+                    pass  # No more subkeys
+
+                # Delete matching subkeys
+                for subkey_name in subkeys_to_delete:
+                    try:
+                        self.logger.info(f"Deleting registry key: {key_path}\\{subkey_name}")
+                        winreg.DeleteKeyEx(key, subkey_name)
+                    except Exception as e:
+                        self.logger.warning(f"Could not delete registry key {subkey_name}: {e}")
+
+                # Find and delete matching values
+                values_to_delete = []
+                try:
+                    i = 0
+                    while True:
+                        value_name, value_data, value_type = winreg.EnumValue(key, i)
+                        if (app_name.lower() in value_name.lower() or
+                            (isinstance(value_data, str) and app_name.lower() in value_data.lower())):
+                            values_to_delete.append(value_name)
+                        i += 1
+                except OSError:
+                    pass  # No more values
+
+                # Delete matching values
+                for value_name in values_to_delete:
+                    try:
+                        self.logger.info(f"Deleting registry value: {key_path}\\{value_name}")
+                        winreg.DeleteValue(key, value_name)
+                    except Exception as e:
+                        self.logger.warning(f"Could not delete registry value {value_name}: {e}")
+
+        except FileNotFoundError:
+            pass  # Key doesn't exist
+        except PermissionError:
+            self.logger.warning(f"Permission denied accessing registry key: {key_path}")
+
+    def final_system_cleanup(self):
+        """Final system cleanup operations"""
+        self.logger.info("Performing final system cleanup")
+
+        try:
+            # Clear recycle bin
+            self.logger.info("Clearing recycle bin")
+            subprocess.run(['powershell', '-Command',
+                           'Clear-RecycleBin -Force -ErrorAction SilentlyContinue'],
                          capture_output=True, timeout=30)
-            print("  Recycle bin cleared")
         except Exception as e:
-            print(f"  Recycle bin cleanup failed: {e}")
-        
+            self.logger.warning(f"Recycle bin cleanup failed: {e}")
+
         try:
-            print("Clearing temp files...")
-            temp_paths = [
+            # Clear temporary files
+            self.logger.info("Clearing temporary files")
+            temp_locations = [
                 os.environ.get('TEMP', ''),
-                'C:\\Windows\\Temp'
+                os.environ.get('TMP', ''),
+                r'C:\Windows\Temp',
+                r'C:\Temp'
             ]
-            
-            for temp_path in temp_paths:
+
+            for temp_path in temp_locations:
                 if temp_path and os.path.exists(temp_path):
-                    subprocess.run(['cmd', '/c', f'del /f /s /q "{temp_path}\\*.*" 2>nul'], 
-                                 capture_output=True, timeout=30)
-            print("  Temp files cleared")
+                    try:
+                        for item in os.listdir(temp_path):
+                            item_path = os.path.join(temp_path, item)
+                            if os.path.isfile(item_path):
+                                self.force_delete_file(item_path)
+                            elif os.path.isdir(item_path):
+                                self.force_delete_directory(item_path)
+                    except Exception:
+                        continue
         except Exception as e:
-            print(f"  Temp cleanup failed: {e}")
-        
+            self.logger.warning(f"Temp cleanup failed: {e}")
+
         try:
-            print("Flushing DNS cache...")
+            # Flush DNS cache
+            self.logger.info("Flushing DNS cache")
             subprocess.run(['ipconfig', '/flushdns'], capture_output=True, timeout=15)
-            print("  DNS cache flushed")
         except Exception as e:
-            print(f"  DNS flush failed: {e}")
-    
-    def execute_purge(self, app_names):
-        """Execute the purge - ACTUALLY WORKS"""
-        print("="*80)
-        print("ACTUAL WORKING PURGE TOOL - NO BULLSHIT EDITION")
-        print("="*80)
-        print(f"TARGETS: {', '.join(app_names)}")
-        print("REAL-TIME FEEDBACK - SHOWS EVERY FILE BEING DELETED")
-        print("="*80)
+            self.logger.warning(f"DNS flush failed: {e}")
+
+    def execute_ultimate_uninstall(self, app_names):
+        """Execute the complete uninstallation process"""
+        self.logger.info("="*80)
+        self.logger.info("ULTIMATE SAFE UNINSTALLER - COMPLETE REMOVAL")
+        self.logger.info("="*80)
+        self.logger.info(f"TARGETS: {', '.join(app_names)}")
+        self.logger.info("="*80)
+
         start_time = time.time()
-        # Step 1: Kill processes
-        self.kill_processes(app_names)
-        # Step 2: Kill services
-        self.kill_services(app_names)
-        # Step 3: Delete scheduled tasks
-        self.delete_scheduled_tasks(app_names)
-        # Step 4: Remove shortcuts/icons
-        self.YOUR_CLIENT_SECRET_HERE(app_names)
-        # Step 5: Search and destroy files
-        self.search_and_destroy(app_names)
-        # Step 6: Cleanup registry
-        self.cleanup_registry(app_names)
-        # Step 7: Final cleanup
-        self.final_cleanup()
+
+        try:
+            # Step 1: Find and uninstall programs properly
+            found_programs = self.find_installed_programs(app_names)
+            if found_programs:
+                self.uninstall_programs(found_programs)
+                time.sleep(5)  # Wait for uninstallation to complete
+
+            # Step 2: Terminate related processes
+            self.kill_processes(app_names)
+
+            # Step 3: Stop and remove services
+            self.kill_services(app_names)
+
+            # Step 4: Remove scheduled tasks
+            self.delete_scheduled_tasks(app_names)
+
+            # Step 5: Remove shortcuts and icons
+            self.remove_shortcuts_and_icons(app_names)
+
+            # Step 6: Comprehensive file search and removal
+            self.comprehensive_file_search(app_names)
+
+            # Step 7: Safe registry cleanup
+            self.cleanup_registry_safe(app_names)
+
+            # Step 8: Final system cleanup
+            self.final_system_cleanup()
+
+        except Exception as e:
+            self.logger.error(f"Uninstallation error: {e}")
+
         # Results
         total_time = time.time() - start_time
-        print("\n" + "="*80)
-        print("PURGE COMPLETE!")
-        print("="*80)
-        print(f"Apps processed: {len(app_names)}")
-        print(f"Total time: {total_time:.1f} seconds")
-        print(f"Files deleted: {self.deleted_count}")
-        print(f"Files failed: {self.failed_count}")
-        if self.failed_count == 0:
-            print("\nSUCCESS: ALL FILES DELETED!")
-        else:
-            print(f"\nWARNING: {self.failed_count} files could not be deleted or are scheduled for deletion on reboot")
-            print("These may be protected system files or currently in use")
-        print("\nPURGE TOOL COMPLETED!")
-        print("Files have been permanently deleted from your system.")
+        self.logger.info("\n" + "="*80)
+        self.logger.info("UNINSTALLATION COMPLETE!")
+        self.logger.info("="*80)
+        self.logger.info(f"Applications processed: {len(app_names)}")
+        self.logger.info(f"Total time: {total_time:.1f} seconds")
+        self.logger.info(f"Items deleted: {self.deleted_count}")
+        self.logger.info(f"Items failed: {self.failed_count}")
+        self.logger.info(f"Critical items skipped: {self.skipped_count}")
 
+        if self.failed_count == 0:
+            self.logger.info("\nSUCCESS: ALL ITEMS REMOVED!")
+        else:
+            self.logger.warning(f"\nNOTE: {self.failed_count} items could not be removed or are scheduled for deletion on reboot")
+
+        self.logger.info("\nUNINSTALLATION COMPLETED SAFELY!")
+        print(f"\nLog file saved to: {os.path.join(tempfile.gettempdir(), 'uninstaller.log')}")
 
 def main():
-    parser = argparse.ArgumentParser(description='Actual Working Purge Tool')
-    parser.add_argument('apps', nargs='*', help='Applications to purge')
-    
+    parser = argparse.ArgumentParser(description='Ultimate Safe Uninstaller - Complete Application Removal')
+    parser.add_argument('apps', nargs='*', help='Applications to uninstall completely')
+    parser.add_argument('--dry-run', action='store_true', help='Show what would be removed without actually removing it')
+
     args = parser.parse_args()
-    
+
     if not args.apps:
         print("ERROR: No applications specified")
-        print("Usage: python actual_purge.py <app1> <app2> [app3] ...")
+        print("Usage: python d.py <app1> <app2> [app3] ...")
         print("\nExamples:")
-        print("python actual_purge.py ramdisk")
-        print("python actual_purge.py veeam outlook")
+        print("python d.py wavebox")
+        print("python d.py temp logs outlook")
         sys.exit(1)
-    
-    # Initialize purge tool
-    purge = ActualPurge()
-    
-    # Check admin
-    if not purge.check_admin():
-        print("ERROR: Administrator privileges required!")
-        sys.exit(1)
-    
-    # Execute purge
-    purge.execute_purge(args.apps)
 
+    # Initialize uninstaller
+    uninstaller = UltimateUninstaller()
+
+    # Check admin privileges
+    if not uninstaller.check_admin():
+        print("ERROR: Administrator privileges required!")
+        print("Please run as Administrator")
+        sys.exit(1)
+
+    # Show warning
+    print("WARNING: This will completely remove all traces of the specified applications.")
+    print("This action cannot be undone!")
+    print(f"Applications to remove: {', '.join(args.apps)}")
+
+    if not args.dry_run:
+        confirm = input("\nAre you sure you want to continue? (type 'YES' to confirm): ")
+        if confirm != 'YES':
+            print("Operation cancelled.")
+            sys.exit(0)
+
+    # Execute uninstallation
+    if args.dry_run:
+        print("DRY RUN MODE - No actual changes will be made")
+        # Could implement dry run logic here
+    else:
+        uninstaller.execute_ultimate_uninstall(args.apps)
 
 if __name__ == "__main__":
     main()

@@ -4071,3 +4071,4 @@ alias tovpu='cd /mnt/f/tovplay/tovplay-frontend; git add .; git commit --allow-e
 alias sshtov='sshpass -p EbTyNkfJG6LM ssh -t admin@193.181.213.220 "sudo su"'
 alias sshtov='update && apt install  sshpass -y && sshpass -p EbTyNkfJG6LM ssh -t admin@193.181.213.220 "sudo su"'
 alias term='update && bash /mnt/f/study/shells/bash/scripts/ngrokTerminal.sh'
+alias gitlog="echo "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" | gh auth login --with-token --git-protocol https && gh auth setup-git"

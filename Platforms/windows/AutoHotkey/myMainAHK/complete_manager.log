@@ -24431,3 +24431,162 @@ Source:	SWbemObjectEx
 2025-09-17 13:58:08 - CLEANUP: Completed, 0 entries removed
 2025-09-17 14:03:08 - CLEANUP: Starting suspended list cleanup
 2025-09-17 14:03:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:08:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 14:08:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:13:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 14:13:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:13:33 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 14:13:33 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 14:13:33 - CLAU: clau command launched in PowerShell
+2025-09-17 14:16:59 - FULLSIZE: Triple-tap E detected
+2025-09-17 14:16:59 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 14:16:59 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 14:16:59 - FULLSIZE: Applied windowed style with borders
+2025-09-17 14:16:59 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 14:16:59 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 14:18:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 14:18:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:23:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 14:23:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:23:21 - FULLSIZE: Triple-tap E detected
+2025-09-17 14:23:21 - FULLSIZE: Processing window - WindowsTerminal.exe (? Credential Persistence)
+2025-09-17 14:23:21 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 14:23:21 - FULLSIZE: Applied windowed style with borders
+2025-09-17 14:23:21 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 14:23:21 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 14:27:44 - TEXT_SHORTCUT: Triggered 'ubu2' -> 'UBUNTU2_WSL'
+2025-09-17 14:27:44 - UBUNTU2: Opening terminal and running WSL Ubuntu2
+2025-09-17 14:27:44 - UBUNTU2: Ubuntu2 WSL launched in PowerShell
+2025-09-17 14:28:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 14:28:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:33:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 14:33:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:37:59 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 14:37:59 - TERMINAL: Attempting to open floating terminal
+2025-09-17 14:38:00 - TERMINAL: PowerShell opened
+2025-09-17 14:38:03 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 14:38:03 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 14:38:03 - REBOOT: Initiating immediate system reboot
+2025-09-17 14:38:04 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 14:38:04 - SHUTDOWN: All processes resumed before exit
+2025-09-17 14:39:05 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 14:40:29 - TEXT_SHORTCUT: Triggered 'logout' -> 'refresh2'
+2025-09-17 14:40:29 - TERMINAL_CMD: Executing command - refresh2
+2025-09-17 14:40:30 - TERMINAL_CMD: Executed 'refresh2' with self-terminating PowerShell
+2025-09-17 14:40:30 - SHUTDOWN: Script exiting - Reason: Logoff
+2025-09-17 14:40:30 - SHUTDOWN: All processes resumed before exit
+2025-09-17 14:40:42 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 14:41:00 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 14:41:00 - TERMINAL: Attempting to open floating terminal
+2025-09-17 14:41:01 - TERMINAL: PowerShell opened
+2025-09-17 14:42:30 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 14:42:30 - SHUTDOWN: All processes resumed before exit
+2025-09-17 14:45:23 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 14:46:55 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 14:46:55 - TERMINAL: Attempting to open floating terminal
+2025-09-17 14:46:55 - TERMINAL: PowerShell opened
+2025-09-17 14:47:46 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 14:47:46 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 14:47:46 - CLAU: clau command launched in PowerShell
+2025-09-17 14:50:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 14:50:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:55:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 14:55:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 14:55:33 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-17 14:55:33 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-17 14:55:35 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-17 14:55:35 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-17 14:56:07 - TEXT_SHORTCUT: Triggered 'allit' -> '& "F:\backup\windowsapps\installed\Everything\Everything.exe"'
+2025-09-17 14:56:07 - TERMINAL_CMD: Executing command - & "F:\backup\windowsapps\installed\Everything\Everything.exe"
+2025-09-17 14:56:08 - TERMINAL_CMD: Executed '& "F:\backup\windowsapps\installed\Everything\Everything.exe"' with self-terminating PowerShell
+2025-09-17 14:56:52 - TEXT_SHORTCUT: Triggered 'ffff' -> 'FIREFOX_APP'
+2025-09-17 14:56:52 - LAUNCHER: Attempting to launch Firefox
+2025-09-17 14:56:52 - LAUNCHER: Firefox launched successfully
+2025-09-17 14:56:54 - LAUNCHER: Firefox window activated
+2025-09-17 14:57:41 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-17 14:57:41 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-17 14:57:44 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-17 14:57:44 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-17 15:00:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:00:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 15:02:08 - TEXT_SHORTCUT: Triggered 'ffff' -> 'FIREFOX_APP'
+2025-09-17 15:02:08 - LAUNCHER: Attempting to launch Firefox
+2025-09-17 15:02:08 - LAUNCHER: Firefox launched successfully
+2025-09-17 15:02:09 - LAUNCHER: Firefox window activated
+2025-09-17 15:04:18 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 15:04:18 - TERMINAL: Attempting to open floating terminal
+2025-09-17 15:04:18 - TERMINAL: PowerShell opened
+2025-09-17 15:05:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:05:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 15:07:31 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-17 15:07:31 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-17 15:08:15 - TEXT_SHORTCUT: Triggered 'slack' -> 'slack'
+2025-09-17 15:08:15 - TERMINAL_CMD: Executing command - slack
+2025-09-17 15:08:16 - TERMINAL_CMD: Executed 'slack' with self-terminating PowerShell
+2025-09-17 15:10:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:10:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 15:15:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:15:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 15:18:17 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-17 15:18:17 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-17 15:18:17 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-17 15:20:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:20:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 15:22:17 - TEXT_SHORTCUT: Triggered 'refresh' -> 'refresh'
+2025-09-17 15:22:17 - TERMINAL_CMD: Executing command - refresh
+2025-09-17 15:22:17 - FULLSIZE: Triple-tap E detected
+2025-09-17 15:22:17 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-17 15:22:17 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 15:22:17 - FULLSIZE: Applied windowed style with borders
+2025-09-17 15:22:17 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 15:22:17 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 15:22:18 - TERMINAL_CMD: Executed 'refresh' with self-terminating PowerShell
+2025-09-17 15:25:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:25:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 15:28:30 - FULLSIZE: Triple-tap E detected
+2025-09-17 15:28:30 - FULLSIZE: Processing window - WindowsTerminal.exe (? Uninstall Command)
+2025-09-17 15:28:30 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 15:28:30 - FULLSIZE: Applied windowed style with borders
+2025-09-17 15:28:31 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 15:28:31 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 15:28:46 - FULLSIZE: Triple-tap E detected
+2025-09-17 15:28:46 - FULLSIZE: Processing window - WindowsTerminal.exe (? Uninstall Command)
+2025-09-17 15:28:46 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 15:28:46 - FULLSIZE: Applied windowed style with borders
+2025-09-17 15:28:47 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 15:28:47 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 15:29:24 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 15:29:24 - TERMINAL: Attempting to open floating terminal
+2025-09-17 15:29:25 - TERMINAL: PowerShell opened
+2025-09-17 15:29:30 - FULLSIZE: Triple-tap E detected
+2025-09-17 15:29:30 - FULLSIZE: Processing window - WindowsTerminal.exe (? Python Installation)
+2025-09-17 15:29:30 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 15:29:30 - FULLSIZE: Applied windowed style with borders
+2025-09-17 15:29:30 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 15:29:30 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 15:30:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:30:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 15:35:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:35:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 15:39:19 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 15:39:19 - TERMINAL: Attempting to open floating terminal
+2025-09-17 15:39:20 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-17 15:39:20 - FULLSIZE: Processing window - WindowsTerminal.exe (Terminal)
+2025-09-17 15:39:20 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 15:39:20 - FULLSIZE: Applied windowed style with borders
+2025-09-17 15:39:21 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 15:39:21 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 15:39:22 - WARNING: No terminal application could be opened
+2025-09-17 15:40:23 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:40:23 - CLEANUP: Completed, 0 entries removed
+2025-09-17 15:40:40 - TEXT_SHORTCUT: Triggered 'logout' -> 'refresh2'
+2025-09-17 15:40:40 - TERMINAL_CMD: Executing command - refresh2
+2025-09-17 15:40:41 - TERMINAL_CMD: Executed 'refresh2' with self-terminating PowerShell
+2025-09-17 15:40:41 - SHUTDOWN: Script exiting - Reason: Logoff
+2025-09-17 15:40:41 - SHUTDOWN: All processes resumed before exit
+2025-09-17 15:51:40 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 15:55:40 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 15:55:40 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 15:55:40 - CLAU: clau command launched in PowerShell
+2025-09-17 15:56:40 - CLEANUP: Starting suspended list cleanup
+2025-09-17 15:56:40 - CLEANUP: Completed, 0 entries removed
