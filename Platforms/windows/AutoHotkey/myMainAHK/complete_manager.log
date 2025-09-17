@@ -25064,3 +25064,16 @@ Source:	SWbemObjectEx
 2025-09-18 00:35:54 - FULLSIZE: Applied windowed style with borders
 2025-09-18 00:35:54 - FULLSIZE: Positioned window at full screen size with borders
 2025-09-18 00:35:54 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 00:36:29 - CLEANUP: Starting suspended list cleanup
+2025-09-18 00:36:29 - CLEANUP: Completed, 0 entries removed
+2025-09-18 00:37:53 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-18 00:37:53 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-18 00:37:58 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-18 00:38:58 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-18 00:38:58 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-18 00:38:58 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-18 00:40:05 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-18 00:40:05 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-18 00:40:05 - REBOOT: Initiating immediate system reboot
+2025-09-18 00:40:06 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 00:40:06 - SHUTDOWN: All processes resumed before exit
