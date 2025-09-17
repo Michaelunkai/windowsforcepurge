@@ -24882,3 +24882,6 @@ Source:	SWbemObjectEx
 2025-09-17 20:43:16 - MYGAMES: myg command launched in PowerShell
 2025-09-17 20:48:00 - CLEANUP: Starting suspended list cleanup
 2025-09-17 20:48:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 20:51:29 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 20:51:29 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 20:51:29 - CLAU: clau command launched in PowerShell
