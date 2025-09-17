@@ -240,3 +240,553 @@ at <ScriptBlock>, <No file>: line 1
 [2025-09-13 13:22:08] Continuing with scheduled restart to ensure upgrade process continues...
 [2025-09-13 13:22:08] Scheduling system restart in 30 seconds to continue Windows 11 upgrade...
 [2025-09-13 13:22:08] Unmounting ISO...
+[2025-09-17 16:46:19] Starting automated Windows 11 upgrade process
+[2025-09-17 16:46:19] Checking Windows 11 system requirements...
+[2025-09-17 16:46:20] System meets Windows 11 upgrade requirements
+[2025-09-17 16:46:20] ISO file found: F:\isos\windows.iso
+[2025-09-17 16:46:20] Mounting ISO using multiple fallback methods...
+[2025-09-17 16:46:20] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-17 16:46:23] Method 1 failed: Invalid property 
+[2025-09-17 16:46:23] Method 2: Using Shell.Application COM object
+[2025-09-17 16:46:25] Mounting windows.iso from F:\isos
+[2025-09-17 16:46:30] Checking drive: H:\
+[2025-09-17 16:46:30] Found Windows setup at drive: H
+[2025-09-17 16:46:30] ISO successfully available at drive: H:
+[2025-09-17 16:46:30] Found setup.exe at: H:\setup.exe
+[2025-09-17 16:46:30] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-17 16:46:30] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-17 16:46:31] Scheduled task created successfully
+[2025-09-17 16:46:31] Applying comprehensive system optimizations and bypasses...
+[2025-09-17 16:46:31] Set high performance power plan
+[2025-09-17 16:46:31] Could not fully disable Windows Defender: The term 'Set-MpPreference' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2025-09-17 16:46:31] Disabled User Account Control
+[2025-09-17 16:46:31] Disabled Windows Error Reporting
+[2025-09-17 16:46:31] Disabled all notifications
+[2025-09-17 16:46:32] Stopped and disabled service: wuauserv
+[2025-09-17 16:46:32] Stopped and disabled service: BITS
+[2025-09-17 16:46:33] Stopped and disabled service: CryptSvc
+[2025-09-17 16:46:33] Stopped and disabled service: TrustedInstaller
+[2025-09-17 16:46:33] Stopped and disabled service: WinDefend
+[2025-09-17 16:46:33] Stopped and disabled service: WdNisSvc
+[2025-09-17 16:46:33] Stopped and disabled service: SecurityHealthService
+[2025-09-17 16:46:33] Stopped and disabled service: wscsvc
+[2025-09-17 16:46:33] Stopped and disabled service: WerSvc
+[2025-09-17 16:46:33] Stopped and disabled service: DiagTrack
+[2025-09-17 16:46:33] Stopped and disabled service: dmwappushservice
+[2025-09-17 16:46:33] Stopped and disabled service: MapsBroker
+[2025-09-17 16:46:33] Stopped and disabled service: lfsvc
+[2025-09-17 16:46:35] Stopped and disabled service: SharedAccess
+[2025-09-17 16:46:35] Stopped and disabled service: TabletInputService
+[2025-09-17 16:46:35] Stopped and disabled service: WbioSrvc
+[2025-09-17 16:46:35] Stopped and disabled service: WMPNetworkSvc
+[2025-09-17 16:49:25] Starting automated Windows 11 upgrade process
+[2025-09-17 16:49:25] Checking Windows 11 system requirements...
+[2025-09-17 16:49:26] System meets Windows 11 upgrade requirements
+[2025-09-17 16:49:26] ISO file found: F:\isos\windows.iso
+[2025-09-17 16:49:26] Mounting ISO using multiple fallback methods...
+[2025-09-17 16:49:26] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-17 16:49:29] Method 1 failed: Invalid property 
+[2025-09-17 16:49:29] Method 2: Using Shell.Application COM object
+[2025-09-17 16:49:31] Mounting windows.iso from F:\isos
+[2025-09-17 16:49:36] Checking drive: H:\
+[2025-09-17 16:49:36] Found Windows setup at drive: H
+[2025-09-17 16:49:36] ISO successfully available at drive: H:
+[2025-09-17 16:49:36] Found setup.exe at: H:\setup.exe
+[2025-09-17 16:49:36] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-17 16:49:36] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-17 16:49:36] Scheduled task created successfully
+[2025-09-17 16:49:36] Applying comprehensive system optimizations and bypasses...
+[2025-09-17 16:49:36] Set high performance power plan
+[2025-09-17 16:49:36] Could not fully disable Windows Defender: The term 'Set-MpPreference' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2025-09-17 16:49:36] Disabled User Account Control
+[2025-09-17 16:49:36] Disabled Windows Error Reporting
+[2025-09-17 16:49:36] Disabled all notifications
+[2025-09-17 16:49:36] Stopped and disabled service: wuauserv
+[2025-09-17 16:49:37] Stopped and disabled service: BITS
+[2025-09-17 16:49:37] Stopped and disabled service: CryptSvc
+[2025-09-17 16:49:37] Stopped and disabled service: TrustedInstaller
+[2025-09-17 16:49:37] Stopped and disabled service: WinDefend
+[2025-09-17 16:49:37] Stopped and disabled service: WdNisSvc
+[2025-09-17 16:49:37] Stopped and disabled service: SecurityHealthService
+[2025-09-17 16:49:37] Stopped and disabled service: wscsvc
+[2025-09-17 16:49:37] Stopped and disabled service: WerSvc
+[2025-09-17 16:49:37] Stopped and disabled service: DiagTrack
+[2025-09-17 16:49:37] Stopped and disabled service: dmwappushservice
+[2025-09-17 16:49:37] Stopped and disabled service: MapsBroker
+[2025-09-17 16:49:37] Stopped and disabled service: lfsvc
+[2025-09-17 16:49:39] Stopped and disabled service: SharedAccess
+[2025-09-17 16:49:39] Stopped and disabled service: TabletInputService
+[2025-09-17 16:49:39] Stopped and disabled service: WbioSrvc
+[2025-09-17 16:49:39] Stopped and disabled service: WMPNetworkSvc
+[2025-09-17 16:49:39] Stopped and disabled service: WSearch
+[2025-09-17 16:49:39] Stopped and disabled service: XblAuthManager
+[2025-09-17 16:49:39] Stopped and disabled service: XblGameSave
+[2025-09-17 16:49:39] Stopped and disabled service: XboxNetApiSvc
+[2025-09-17 16:49:39] Terminated process: explorer
+[2025-09-17 16:49:39] Terminated process: dwm
+[2025-09-17 16:49:39] Terminated process: winlogon
+[2025-09-17 16:49:39] Terminated process: csrss
+[2025-09-17 16:49:39] Terminated process: wininit
+[2025-09-17 16:49:39] Terminated process: services
+[2025-09-17 16:49:39] Terminated process: lsass
+[2025-09-17 16:50:37] Starting automated Windows 11 upgrade process
+[2025-09-17 16:50:37] Checking Windows 11 system requirements...
+[2025-09-17 16:50:39] System meets Windows 11 upgrade requirements
+[2025-09-17 16:50:39] ISO file found: F:\isos\windows.iso
+[2025-09-17 16:50:39] Mounting ISO using multiple fallback methods...
+[2025-09-17 16:50:39] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-17 16:50:41] Method 1 failed: Invalid property 
+[2025-09-17 16:50:41] Method 2: Using Shell.Application COM object
+[2025-09-17 16:50:43] Mounting windows.iso from F:\isos
+[2025-09-17 16:50:49] Checking drive: H:\
+[2025-09-17 16:50:49] Found Windows setup at drive: H
+[2025-09-17 16:50:49] ISO successfully available at drive: H:
+[2025-09-17 16:50:49] Found setup.exe at: H:\setup.exe
+[2025-09-17 16:50:49] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-17 16:50:49] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-17 16:50:49] Scheduled task created successfully
+[2025-09-17 16:50:49] Applying comprehensive system optimizations and bypasses...
+[2025-09-17 16:50:49] Set high performance power plan
+[2025-09-17 16:50:49] Could not fully disable Windows Defender: The term 'Set-MpPreference' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2025-09-17 16:50:49] Disabled User Account Control
+[2025-09-17 16:50:49] Disabled Windows Error Reporting
+[2025-09-17 16:50:49] Disabled all notifications
+[2025-09-17 16:50:49] Stopped and disabled service: wuauserv
+[2025-09-17 16:50:49] Stopped and disabled service: BITS
+[2025-09-17 16:50:50] Stopped and disabled service: CryptSvc
+[2025-09-17 16:50:50] Stopped and disabled service: TrustedInstaller
+[2025-09-17 16:50:50] Stopped and disabled service: WinDefend
+[2025-09-17 16:50:50] Stopped and disabled service: WdNisSvc
+[2025-09-17 16:50:50] Stopped and disabled service: SecurityHealthService
+[2025-09-17 16:50:50] Stopped and disabled service: wscsvc
+[2025-09-17 16:50:50] Stopped and disabled service: WerSvc
+[2025-09-17 16:50:50] Stopped and disabled service: DiagTrack
+[2025-09-17 16:50:50] Stopped and disabled service: dmwappushservice
+[2025-09-17 16:50:50] Stopped and disabled service: MapsBroker
+[2025-09-17 16:50:50] Stopped and disabled service: lfsvc
+[2025-09-17 16:50:52] Stopped and disabled service: SharedAccess
+[2025-09-17 16:50:52] Stopped and disabled service: TabletInputService
+[2025-09-17 16:50:52] Stopped and disabled service: WbioSrvc
+[2025-09-17 16:50:52] Stopped and disabled service: WMPNetworkSvc
+[2025-09-17 16:50:53] Stopped and disabled service: WSearch
+[2025-09-17 16:50:53] Stopped and disabled service: XblAuthManager
+[2025-09-17 16:50:53] Stopped and disabled service: XblGameSave
+[2025-09-17 16:50:53] Stopped and disabled service: XboxNetApiSvc
+[2025-09-17 16:50:53] Terminated process: explorer
+[2025-09-17 16:50:53] Terminated process: dwm
+[2025-09-17 16:50:53] Terminated process: winlogon
+[2025-09-17 16:50:53] Terminated process: csrss
+[2025-09-17 16:50:53] Terminated process: wininit
+[2025-09-17 16:50:53] Terminated process: services
+[2025-09-17 16:50:53] Terminated process: lsass
+[2025-09-17 16:55:48] Starting automated Windows 11 upgrade process
+[2025-09-17 16:55:48] Checking Windows 11 system requirements...
+[2025-09-17 16:55:49] System meets Windows 11 upgrade requirements
+[2025-09-17 16:55:49] ISO file found: F:\isos\windows.iso
+[2025-09-17 16:55:49] Mounting ISO using multiple fallback methods...
+[2025-09-17 16:55:49] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-17 16:55:52] Method 1 failed: Invalid property 
+[2025-09-17 16:55:52] Method 2: Using Shell.Application COM object
+[2025-09-17 16:55:54] Mounting windows.iso from F:\isos
+[2025-09-17 16:55:59] Checking drive: H:\
+[2025-09-17 16:55:59] Found Windows setup at drive: H
+[2025-09-17 16:55:59] ISO successfully available at drive: H:
+[2025-09-17 16:55:59] Found setup.exe at: H:\setup.exe
+[2025-09-17 16:55:59] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-17 16:55:59] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-17 16:55:59] Scheduled task created successfully
+[2025-09-17 16:55:59] Applying comprehensive system optimizations and bypasses...
+[2025-09-17 16:56:00] Set high performance power plan
+[2025-09-17 16:56:00] Could not fully disable Windows Defender: The term 'Set-MpPreference' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2025-09-17 16:56:00] Disabled User Account Control
+[2025-09-17 16:56:00] Disabled Windows Error Reporting
+[2025-09-17 16:56:00] Disabled all notifications
+[2025-09-17 16:56:00] Stopped and disabled service: WinDefend
+[2025-09-17 16:56:00] Stopped and disabled service: WdNisSvc
+[2025-09-17 16:56:00] Stopped and disabled service: SecurityHealthService
+[2025-09-17 16:56:00] Stopped and disabled service: WerSvc
+[2025-09-17 16:56:00] Stopped and disabled service: DiagTrack
+[2025-09-17 16:56:00] Stopped and disabled service: dmwappushservice
+[2025-09-17 16:56:00] Stopped and disabled service: MapsBroker
+[2025-09-17 16:56:00] Stopped and disabled service: lfsvc
+[2025-09-17 16:56:00] Stopped and disabled service: TabletInputService
+[2025-09-17 16:56:00] Stopped and disabled service: WbioSrvc
+[2025-09-17 16:56:00] Stopped and disabled service: WMPNetworkSvc
+[2025-09-17 16:56:01] Stopped and disabled service: WSearch
+[2025-09-17 16:56:01] Stopped and disabled service: XblAuthManager
+[2025-09-17 16:56:01] Stopped and disabled service: XblGameSave
+[2025-09-17 16:56:01] Stopped and disabled service: XboxNetApiSvc
+[2025-09-17 16:56:01] Safely terminated process: MsMpEng
+[2025-09-17 16:56:01] Safely terminated process: NisSrv
+[2025-09-17 16:56:01] Safely terminated process: SecurityHealthSystray
+[2025-09-17 16:56:01] Safely terminated process: SecurityHealthService
+[2025-09-17 16:56:01] Skipping critical system processes to prevent BSOD
+[2025-09-17 16:56:01] Created unattend.xml for fully automated setup: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\unattend.xml
+[2025-09-17 16:56:01] Disabling Windows Update and compatibility checks during upgrade...
+[2025-09-17 16:56:01] Registry modifications applied to bypass all checks
+[2025-09-17 16:56:01] Starting Windows 11 setup with maximum automation...
+[2025-09-17 16:56:01] Created setup logs directory
+[2025-09-17 16:56:01] Preparing to launch Windows 11 setup...
+[2025-09-17 16:56:01] Executing setup with arguments: /Auto Upgrade /Quiet /NoReboot /Compat IgnoreWarning /MigrateDrivers All /ShowOOBE None /Telemetry Disable /DynamicUpdate Disable /CopyLogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs /Unattend F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\unattend.xml
+[2025-09-17 16:56:01] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-17 16:56:01] Setup will run completely in the background with no user interaction required.
+[2025-09-17 16:56:01] Launching Windows 11 setup with arguments: /Auto Upgrade /Quiet /NoReboot /Compat IgnoreWarning /MigrateDrivers All /ShowOOBE None /Telemetry Disable /DynamicUpdate Disable /CopyLogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs /Unattend F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\unattend.xml
+[2025-09-17 16:56:01] Setup process started with PID: 11588
+[2025-09-17 16:56:01] Windows 11 upgrade is now running in the background.
+[2025-09-17 16:56:01] The system will automatically restart when needed to continue the upgrade process.
+[2025-09-17 16:56:11] Warning: Setup process may have already taken over the system.
+[2025-09-17 16:56:11] Continuing with scheduled restart to ensure upgrade process continues...
+[2025-09-17 16:56:11] Applied final registry bypasses
+[2025-09-17 16:56:11] Skipping process termination to prevent CRITICAL_PROCESS_DIED BSOD
+[2025-09-17 16:56:11] Windows 11 setup will handle process management safely
+[2025-09-17 16:56:11] Scheduling SAFE system restart to continue Windows 11 upgrade...
+[2025-09-17 16:56:11] Using gentle restart to prevent system corruption
+[2025-09-17 16:56:11] Safe restart scheduled successfully
+[2025-09-17 16:56:11] Unmounting ISO...
+[2025-09-17 16:56:11] ISO unmounted using Shell.Application
+[2025-09-17 16:56:13] === FULLY AUTOMATED UPGRADE INITIATED ===
+[2025-09-17 16:56:13] System will restart IMMEDIATELY to continue the upgrade process
+[2025-09-17 16:56:13] NO USER INTERACTION REQUIRED OR EXPECTED
+[2025-09-17 16:56:13] After restart: Windows 11 setup will continue automatically
+[2025-09-17 16:56:13] After upgrade: System will auto-restart and run DISM cleanup + Windows Updates
+[2025-09-17 16:56:13] TOTAL PROCESS: 100% AUTOMATED - DO NOT INTERRUPT
+[2025-09-17 16:56:13] Expected completion time: 1-3 hours depending on system speed
+[2025-09-17 16:56:13] Log files will be available in: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\
+[2025-09-17 16:56:13] Created system restore point as final safety measure
+[2025-09-17 16:56:13] === SCRIPT EXECUTION COMPLETE - SYSTEM RESTART IMMINENT ===
+[2025-09-17 16:57:49] Starting automated Windows 11 upgrade process
+[2025-09-17 16:57:49] Checking Windows 11 system requirements...
+[2025-09-17 16:57:51] System meets Windows 11 upgrade requirements
+[2025-09-17 16:57:51] ISO file found: F:\isos\windows.iso
+[2025-09-17 16:57:51] Mounting ISO using multiple fallback methods...
+[2025-09-17 16:57:51] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-17 16:57:53] Method 1 failed: Invalid property 
+[2025-09-17 16:57:53] Method 2: Using Shell.Application COM object
+[2025-09-17 16:57:55] Mounting windows.iso from F:\isos
+[2025-09-17 17:00:50] Starting automated Windows 11 upgrade process
+[2025-09-17 17:00:50] Checking Windows 11 system requirements...
+[2025-09-17 17:00:51] System meets Windows 11 upgrade requirements
+[2025-09-17 17:00:51] ISO file found: F:\isos\windows.iso
+[2025-09-17 17:00:51] Mounting ISO using multiple fallback methods...
+[2025-09-17 17:00:51] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-17 17:00:53] Method 1 failed: Invalid property 
+[2025-09-17 17:00:53] Method 2: Using Shell.Application COM object
+[2025-09-17 17:00:55] Mounting windows.iso from F:\isos
+[2025-09-17 17:01:01] Checking drive: H:\
+[2025-09-17 17:01:01] Found Windows setup at drive: H
+[2025-09-17 17:01:01] ISO successfully available at drive: H:
+[2025-09-17 17:01:01] Found setup.exe at: H:\setup.exe
+[2025-09-17 17:01:01] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-17 17:01:01] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-17 17:01:01] Scheduled task created successfully
+[2025-09-17 17:01:01] Applying comprehensive system optimizations and bypasses...
+[2025-09-17 17:01:01] Set high performance power plan
+[2025-09-17 17:01:01] Could not fully disable Windows Defender: The term 'Set-MpPreference' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2025-09-17 17:01:01] Disabled User Account Control
+[2025-09-17 17:01:01] Disabled Windows Error Reporting
+[2025-09-17 17:01:01] Disabled all notifications
+[2025-09-17 17:01:01] Stopped and disabled service: WinDefend
+[2025-09-17 17:01:01] Stopped and disabled service: WdNisSvc
+[2025-09-17 17:01:01] Stopped and disabled service: SecurityHealthService
+[2025-09-17 17:01:01] Stopped and disabled service: WerSvc
+[2025-09-17 17:01:01] Stopped and disabled service: DiagTrack
+[2025-09-17 17:01:01] Stopped and disabled service: dmwappushservice
+[2025-09-17 17:01:01] Stopped and disabled service: MapsBroker
+[2025-09-17 17:01:01] Stopped and disabled service: lfsvc
+[2025-09-17 17:01:01] Stopped and disabled service: TabletInputService
+[2025-09-17 17:01:01] Stopped and disabled service: WbioSrvc
+[2025-09-17 17:01:01] Stopped and disabled service: WMPNetworkSvc
+[2025-09-17 17:01:01] Stopped and disabled service: WSearch
+[2025-09-17 17:01:01] Stopped and disabled service: XblAuthManager
+[2025-09-17 17:01:01] Stopped and disabled service: XblGameSave
+[2025-09-17 17:01:01] Stopped and disabled service: XboxNetApiSvc
+[2025-09-17 17:01:01] Safely terminated process: MsMpEng
+[2025-09-17 17:01:01] Safely terminated process: NisSrv
+[2025-09-17 17:01:01] Safely terminated process: SecurityHealthSystray
+[2025-09-17 17:01:01] Safely terminated process: SecurityHealthService
+[2025-09-17 17:01:01] Skipping critical system processes to prevent BSOD
+[2025-09-17 17:01:01] Created unattend.xml for fully automated setup: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\unattend.xml
+[2025-09-17 17:01:01] Disabling Windows Update and compatibility checks during upgrade...
+[2025-09-17 17:01:01] Registry modifications applied to bypass all checks
+[2025-09-17 17:01:01] Starting Windows 11 setup with maximum automation...
+[2025-09-17 17:01:01] Created setup logs directory
+[2025-09-17 17:01:01] Preparing to launch Windows 11 setup...
+[2025-09-17 17:01:01] Executing setup with arguments: /Auto Upgrade /Quiet /NoReboot /Compat IgnoreWarning /MigrateDrivers All /ShowOOBE None /Telemetry Disable /DynamicUpdate Disable /CopyLogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs /Unattend F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\unattend.xml
+[2025-09-17 17:01:01] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-17 17:01:01] Setup will run completely in the background with no user interaction required.
+[2025-09-17 17:01:01] Launching Windows 11 setup with arguments: /Auto Upgrade /Quiet /NoReboot /Compat IgnoreWarning /MigrateDrivers All /ShowOOBE None /Telemetry Disable /DynamicUpdate Disable /CopyLogs F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\setup_logs /Unattend F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\unattend.xml
+[2025-09-17 17:01:02] Setup process started with PID: 20324
+[2025-09-17 17:01:02] Windows 11 upgrade is now running in the background.
+[2025-09-17 17:01:02] The system will automatically restart when needed to continue the upgrade process.
+[2025-09-17 17:01:02] Waiting for Windows 11 setup to initialize properly...
+[2025-09-17 17:01:32] ERROR: Setup process did not start properly - will try alternative method
+[2025-09-17 17:01:32] Applied final registry bypasses
+[2025-09-17 17:01:32] Skipping process termination to prevent CRITICAL_PROCESS_DIED BSOD
+[2025-09-17 17:01:32] Windows 11 setup will handle process management safely
+[2025-09-17 17:01:32] WARNING: Windows 11 setup did not start properly
+[2025-09-17 17:01:32] This could be due to:
+[2025-09-17 17:01:32]   1. ISO is corrupted or not a valid Windows 11 ISO
+[2025-09-17 17:01:32]   2. System incompatibility
+[2025-09-17 17:01:32]   3. Setup files are missing or damaged
+[2025-09-17 17:01:32] 
+[2025-09-17 17:01:32] MANUAL ACTION REQUIRED:
+[2025-09-17 17:01:32]   1. Verify the ISO file is a valid Windows 11 installation ISO
+[2025-09-17 17:01:32]   2. Try running setup manually: H:\setup.exe
+[2025-09-17 17:01:32]   3. Check the setup logs in: F:\\study\\shells\\powershell\\scripts\\InPlaceUpgradeWIN11\\setup_logs
+[2025-09-17 17:01:32] 
+[2025-09-17 17:01:32] Script completed - NO automatic restart since setup didn't start
+[2025-09-17 17:01:32] Unmounting ISO...
+[2025-09-17 17:01:32] ISO unmounted using Shell.Application
+[2025-09-17 17:01:34] === FULLY AUTOMATED UPGRADE INITIATED ===
+[2025-09-17 17:01:34] System will restart IMMEDIATELY to continue the upgrade process
+[2025-09-17 17:01:34] NO USER INTERACTION REQUIRED OR EXPECTED
+[2025-09-17 17:01:34] After restart: Windows 11 setup will continue automatically
+[2025-09-17 17:01:34] After upgrade: System will auto-restart and run DISM cleanup + Windows Updates
+[2025-09-17 17:01:34] TOTAL PROCESS: 100% AUTOMATED - DO NOT INTERRUPT
+[2025-09-17 17:01:34] Expected completion time: 1-3 hours depending on system speed
+[2025-09-17 17:01:34] Log files will be available in: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\
+[2025-09-17 17:01:34] Created system restore point as final safety measure
+[2025-09-17 17:01:34] === SCRIPT EXECUTION COMPLETE - SYSTEM RESTART IMMINENT ===
+[2025-09-17 17:04:46] Starting automated Windows 11 upgrade process
+[2025-09-17 17:04:46] Checking Windows 11 system requirements...
+[2025-09-17 17:04:47] System meets Windows 11 upgrade requirements
+[2025-09-17 17:04:47] ISO file found: F:\isos\windows.iso
+[2025-09-17 17:04:47] Mounting ISO using multiple fallback methods...
+[2025-09-17 17:04:47] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-17 17:04:50] Method 1 failed: Invalid property 
+[2025-09-17 17:04:50] Method 2: Using Shell.Application COM object
+[2025-09-17 17:04:52] Mounting windows.iso from F:\isos
+[2025-09-17 17:04:57] Checking drive: H:\
+[2025-09-17 17:04:57] Found Windows setup at drive: H
+[2025-09-17 17:04:57] ISO successfully available at drive: H:
+[2025-09-17 17:04:57] Found setup.exe at: H:\setup.exe
+[2025-09-17 17:04:57] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-17 17:04:57] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-17 17:04:58] Scheduled task created successfully
+[2025-09-17 17:04:58] Applying comprehensive system optimizations and bypasses...
+[2025-09-17 17:04:58] Set high performance power plan
+[2025-09-17 17:04:58] Could not fully disable Windows Defender: The term 'Set-MpPreference' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2025-09-17 17:04:58] Disabled User Account Control
+[2025-09-17 17:04:58] Disabled Windows Error Reporting
+[2025-09-17 17:04:58] Disabled all notifications
+[2025-09-17 17:04:58] Stopped and disabled service: WinDefend
+[2025-09-17 17:04:58] Stopped and disabled service: WdNisSvc
+[2025-09-17 17:04:58] Stopped and disabled service: SecurityHealthService
+[2025-09-17 17:04:58] Stopped and disabled service: WerSvc
+[2025-09-17 17:04:58] Stopped and disabled service: DiagTrack
+[2025-09-17 17:04:58] Stopped and disabled service: dmwappushservice
+[2025-09-17 17:04:58] Stopped and disabled service: MapsBroker
+[2025-09-17 17:04:58] Stopped and disabled service: lfsvc
+[2025-09-17 17:04:58] Stopped and disabled service: TabletInputService
+[2025-09-17 17:04:58] Stopped and disabled service: WbioSrvc
+[2025-09-17 17:04:58] Stopped and disabled service: WMPNetworkSvc
+[2025-09-17 17:04:58] Stopped and disabled service: WSearch
+[2025-09-17 17:04:58] Stopped and disabled service: XblAuthManager
+[2025-09-17 17:04:58] Stopped and disabled service: XblGameSave
+[2025-09-17 17:04:58] Stopped and disabled service: XboxNetApiSvc
+[2025-09-17 17:04:58] Safely terminated process: MsMpEng
+[2025-09-17 17:04:58] Safely terminated process: NisSrv
+[2025-09-17 17:04:58] Safely terminated process: SecurityHealthSystray
+[2025-09-17 17:04:58] Safely terminated process: SecurityHealthService
+[2025-09-17 17:04:58] Skipping critical system processes to prevent BSOD
+[2025-09-17 17:04:58] Created unattend.xml for fully automated setup: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\unattend.xml
+[2025-09-17 17:04:58] Disabling Windows Update and compatibility checks during upgrade...
+[2025-09-17 17:04:58] Registry modifications applied to bypass all checks
+[2025-09-17 17:04:58] Starting Windows 11 setup with maximum automation...
+[2025-09-17 17:04:58] Created setup logs directory
+[2025-09-17 17:04:58] Preparing to launch Windows 11 setup...
+[2025-09-17 17:04:58] Executing setup with arguments: /Auto Upgrade /Quiet /Compat IgnoreWarning
+[2025-09-17 17:04:58] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-17 17:04:58] Setup will run completely in the background with no user interaction required.
+[2025-09-17 17:04:58] Launching Windows 11 setup with arguments: /Auto Upgrade /Quiet /Compat IgnoreWarning
+[2025-09-17 17:04:58] Starting Windows 11 upgrade with simplified approach...
+[2025-09-17 17:04:58] Setup process started with PID: 19660
+[2025-09-17 17:04:58] Windows 11 upgrade is now running in the background.
+[2025-09-17 17:04:58] The system will automatically restart when needed to continue the upgrade process.
+[2025-09-17 17:04:58] Giving setup 60 seconds to initialize and begin upgrade process...
+[2025-09-17 17:05:58] FAILED: Setup process exited immediately - trying alternative method
+[2025-09-17 17:05:58] Applied final registry bypasses
+[2025-09-17 17:05:58] Skipping process termination to prevent CRITICAL_PROCESS_DIED BSOD
+[2025-09-17 17:05:58] Windows 11 setup will handle process management safely
+[2025-09-17 17:05:58] WARNING: Windows 11 setup did not start properly
+[2025-09-17 17:05:58] This could be due to:
+[2025-09-17 17:05:58]   1. ISO is corrupted or not a valid Windows 11 ISO
+[2025-09-17 17:05:58]   2. System incompatibility
+[2025-09-17 17:05:58]   3. Setup files are missing or damaged
+[2025-09-17 17:05:58] 
+[2025-09-17 17:05:58] MANUAL ACTION REQUIRED:
+[2025-09-17 17:05:58]   1. Verify the ISO file is a valid Windows 11 installation ISO
+[2025-09-17 17:05:58]   2. Try running setup manually: H:\setup.exe
+[2025-09-17 17:05:58]   3. Check the setup logs in: F:\\study\\shells\\powershell\\scripts\\InPlaceUpgradeWIN11\\setup_logs
+[2025-09-17 17:05:58] 
+[2025-09-17 17:05:58] Script completed - NO automatic restart since setup didn't start
+[2025-09-17 17:05:58] Unmounting ISO...
+[2025-09-17 17:05:58] ISO unmounted using Shell.Application
+[2025-09-17 17:06:00] === FULLY AUTOMATED UPGRADE INITIATED ===
+[2025-09-17 17:06:00] System will restart IMMEDIATELY to continue the upgrade process
+[2025-09-17 17:06:00] NO USER INTERACTION REQUIRED OR EXPECTED
+[2025-09-17 17:06:00] After restart: Windows 11 setup will continue automatically
+[2025-09-17 17:06:00] After upgrade: System will auto-restart and run DISM cleanup + Windows Updates
+[2025-09-17 17:06:00] TOTAL PROCESS: 100% AUTOMATED - DO NOT INTERRUPT
+[2025-09-17 17:06:00] Expected completion time: 1-3 hours depending on system speed
+[2025-09-17 17:06:00] Log files will be available in: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\
+[2025-09-17 17:06:00] Created system restore point as final safety measure
+[2025-09-17 17:06:00] === SCRIPT EXECUTION COMPLETE - SYSTEM RESTART IMMINENT ===
+[2025-09-17 17:14:36] Starting automated Windows 11 upgrade process
+[2025-09-17 17:14:36] Checking Windows 11 system requirements...
+[2025-09-17 17:14:37] System meets Windows 11 upgrade requirements
+[2025-09-17 17:14:37] ISO file found: F:\isos\windows.iso
+[2025-09-17 17:14:37] Mounting ISO using multiple fallback methods...
+[2025-09-17 17:14:37] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-17 17:14:40] Method 1 failed: Invalid property 
+[2025-09-17 17:14:40] Method 2: Using Shell.Application COM object
+[2025-09-17 17:14:42] Mounting windows.iso from F:\isos
+[2025-09-17 17:14:47] Checking drive: H:\
+[2025-09-17 17:14:47] Found Windows setup at drive: H
+[2025-09-17 17:14:47] ISO successfully available at drive: H:
+[2025-09-17 17:14:47] Found setup.exe at: H:\setup.exe
+[2025-09-17 17:14:47] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-17 17:14:47] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-17 17:14:47] Scheduled task created successfully
+[2025-09-17 17:14:47] Applying comprehensive system optimizations and bypasses...
+[2025-09-17 17:14:47] Set high performance power plan
+[2025-09-17 17:14:47] Could not fully disable Windows Defender: The term 'Set-MpPreference' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2025-09-17 17:14:47] Disabled User Account Control
+[2025-09-17 17:14:47] Disabled Windows Error Reporting
+[2025-09-17 17:14:47] Disabled all notifications
+[2025-09-17 17:14:47] Stopped and disabled service: WinDefend
+[2025-09-17 17:14:47] Stopped and disabled service: WdNisSvc
+[2025-09-17 17:14:47] Stopped and disabled service: SecurityHealthService
+[2025-09-17 17:14:47] Stopped and disabled service: WerSvc
+[2025-09-17 17:14:47] Stopped and disabled service: DiagTrack
+[2025-09-17 17:14:47] Stopped and disabled service: dmwappushservice
+[2025-09-17 17:14:47] Stopped and disabled service: MapsBroker
+[2025-09-17 17:14:47] Stopped and disabled service: lfsvc
+[2025-09-17 17:14:47] Stopped and disabled service: TabletInputService
+[2025-09-17 17:14:47] Stopped and disabled service: WbioSrvc
+[2025-09-17 17:14:47] Stopped and disabled service: WMPNetworkSvc
+[2025-09-17 17:14:47] Stopped and disabled service: WSearch
+[2025-09-17 17:14:47] Stopped and disabled service: XblAuthManager
+[2025-09-17 17:14:47] Stopped and disabled service: XblGameSave
+[2025-09-17 17:14:47] Stopped and disabled service: XboxNetApiSvc
+[2025-09-17 17:14:47] Safely terminated process: MsMpEng
+[2025-09-17 17:14:47] Safely terminated process: NisSrv
+[2025-09-17 17:14:47] Safely terminated process: SecurityHealthSystray
+[2025-09-17 17:14:47] Safely terminated process: SecurityHealthService
+[2025-09-17 17:14:47] Skipping critical system processes to prevent BSOD
+[2025-09-17 17:14:47] Created unattend.xml for fully automated setup: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\unattend.xml
+[2025-09-17 17:14:47] Disabling Windows Update and compatibility checks during upgrade...
+[2025-09-17 17:14:47] Registry modifications applied to bypass all checks
+[2025-09-17 17:14:47] Starting Windows 11 setup with maximum automation...
+[2025-09-17 17:14:47] Created setup logs directory
+[2025-09-17 17:14:47] Preparing to launch Windows 11 setup...
+[2025-09-17 17:14:47] Executing setup with arguments: /Auto Upgrade /Quiet /Compat IgnoreWarning
+[2025-09-17 17:14:47] This process will take 30-60 minutes. Please be patient and do not interrupt it.
+[2025-09-17 17:14:47] Setup will run completely in the background with no user interaction required.
+[2025-09-17 17:14:47] Launching Windows 11 setup with arguments: /Auto Upgrade /Quiet /Compat IgnoreWarning
+[2025-09-17 17:14:47] Starting Windows 11 upgrade with simplified approach...
+[2025-09-17 17:14:48] Setup process started with PID: 21500
+[2025-09-17 17:14:48] Windows 11 upgrade is now running in the background.
+[2025-09-17 17:14:48] The system will automatically restart when needed to continue the upgrade process.
+[2025-09-17 17:14:48] Giving setup 60 seconds to initialize and begin upgrade process...
+[2025-09-17 17:15:48] FAILED: Setup process exited immediately - trying alternative method
+[2025-09-17 17:15:48] Applied final registry bypasses
+[2025-09-17 17:15:48] Skipping process termination to prevent CRITICAL_PROCESS_DIED BSOD
+[2025-09-17 17:15:48] Windows 11 setup will handle process management safely
+[2025-09-17 17:15:48] WARNING: Windows 11 setup did not start properly
+[2025-09-17 17:15:48] This could be due to:
+[2025-09-17 17:15:48]   1. ISO is corrupted or not a valid Windows 11 ISO
+[2025-09-17 17:15:48]   2. System incompatibility
+[2025-09-17 17:15:48]   3. Setup files are missing or damaged
+[2025-09-17 17:15:48] 
+[2025-09-17 17:15:48] MANUAL ACTION REQUIRED:
+[2025-09-17 17:15:48]   1. Verify the ISO file is a valid Windows 11 installation ISO
+[2025-09-17 17:15:48]   2. Try running setup manually: H:\setup.exe
+[2025-09-17 17:15:48]   3. Check the setup logs in: F:\\study\\shells\\powershell\\scripts\\InPlaceUpgradeWIN11\\setup_logs
+[2025-09-17 17:15:48] 
+[2025-09-17 17:15:48] Script completed - NO automatic restart since setup didn't start
+[2025-09-17 17:15:48] Unmounting ISO...
+[2025-09-17 17:15:48] ISO unmounted using Shell.Application
+[2025-09-17 17:15:50] === FULLY AUTOMATED UPGRADE INITIATED ===
+[2025-09-17 17:15:50] System will restart IMMEDIATELY to continue the upgrade process
+[2025-09-17 17:15:50] NO USER INTERACTION REQUIRED OR EXPECTED
+[2025-09-17 17:15:50] After restart: Windows 11 setup will continue automatically
+[2025-09-17 17:15:50] After upgrade: System will auto-restart and run DISM cleanup + Windows Updates
+[2025-09-17 17:15:50] TOTAL PROCESS: 100% AUTOMATED - DO NOT INTERRUPT
+[2025-09-17 17:15:50] Expected completion time: 1-3 hours depending on system speed
+[2025-09-17 17:15:50] Log files will be available in: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\
+[2025-09-17 17:15:50] Created system restore point as final safety measure
+[2025-09-17 17:15:50] === SCRIPT EXECUTION COMPLETE - SYSTEM RESTART IMMINENT ===
+[2025-09-17 17:18:49] Starting automated Windows 11 upgrade process
+[2025-09-17 17:18:49] Checking Windows 11 system requirements...
+[2025-09-17 17:18:50] System meets Windows 11 upgrade requirements
+[2025-09-17 17:18:50] ISO file found: F:\isos\windows.iso (Size: 5.15 GB)
+[2025-09-17 17:18:50] Mounting ISO using multiple fallback methods...
+[2025-09-17 17:18:50] Method 1: Using Mount-DiskImage with volume detection
+[2025-09-17 17:18:53] Method 1 failed: Invalid property 
+[2025-09-17 17:18:53] Method 2: Using Shell.Application COM object
+[2025-09-17 17:18:55] Mounting windows.iso from F:\isos
+[2025-09-17 17:19:00] Checking drive: H:\
+[2025-09-17 17:19:00] Found Windows setup at drive: H
+[2025-09-17 17:19:00] ISO successfully available at drive: H:
+[2025-09-17 17:19:00] WARNING: Some expected Windows installation files are missing:
+[2025-09-17 17:19:00]   - Missing: sources\install.wim
+[2025-09-17 17:19:00] This may not be a valid Windows 11 installation ISO
+[2025-09-17 17:19:00] Setup.exe version: 10.0.26100.1
+[2025-09-17 17:19:00] WARNING: Setup version '10.0.26100.1' may not be Windows 11 (expected 10.0.22xxx)
+[2025-09-17 17:19:00] Found setup.exe at: H:\setup.exe
+[2025-09-17 17:19:00] Created post-reboot script: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\PostRebootCleanup.ps1
+[2025-09-17 17:19:00] Creating scheduled task for post-reboot cleanup and Windows Updates
+[2025-09-17 17:19:00] Scheduled task created successfully
+[2025-09-17 17:19:00] Applying comprehensive system optimizations and bypasses...
+[2025-09-17 17:19:00] Set high performance power plan
+[2025-09-17 17:19:00] Could not fully disable Windows Defender: The term 'Set-MpPreference' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2025-09-17 17:19:01] Disabled User Account Control
+[2025-09-17 17:19:01] Disabled Windows Error Reporting
+[2025-09-17 17:19:01] Disabled all notifications
+[2025-09-17 17:19:01] Stopped and disabled service: WinDefend
+[2025-09-17 17:19:01] Stopped and disabled service: WdNisSvc
+[2025-09-17 17:19:01] Stopped and disabled service: SecurityHealthService
+[2025-09-17 17:19:01] Stopped and disabled service: WerSvc
+[2025-09-17 17:19:01] Stopped and disabled service: DiagTrack
+[2025-09-17 17:19:01] Stopped and disabled service: dmwappushservice
+[2025-09-17 17:19:01] Stopped and disabled service: MapsBroker
+[2025-09-17 17:19:01] Stopped and disabled service: lfsvc
+[2025-09-17 17:19:01] Stopped and disabled service: TabletInputService
+[2025-09-17 17:19:01] Stopped and disabled service: WbioSrvc
+[2025-09-17 17:19:01] Stopped and disabled service: WMPNetworkSvc
+[2025-09-17 17:19:01] Stopped and disabled service: WSearch
+[2025-09-17 17:19:01] Stopped and disabled service: XblAuthManager
+[2025-09-17 17:19:01] Stopped and disabled service: XblGameSave
+[2025-09-17 17:19:01] Stopped and disabled service: XboxNetApiSvc
+[2025-09-17 17:19:01] Safely terminated process: MsMpEng
+[2025-09-17 17:19:01] Safely terminated process: NisSrv
+[2025-09-17 17:19:01] Safely terminated process: SecurityHealthSystray
+[2025-09-17 17:19:01] Safely terminated process: SecurityHealthService
+[2025-09-17 17:19:01] Skipping critical system processes to prevent BSOD
+[2025-09-17 17:19:01] Created unattend.xml for fully automated setup: F:\study\shells\powershell\scripts\InPlaceUpgradeWIN11\unattend.xml
+[2025-09-17 17:19:01] Disabling Windows Update and compatibility checks during upgrade...
+[2025-09-17 17:19:01] Registry modifications applied to bypass all checks
+[2025-09-17 17:19:01] Starting Windows 11 setup with maximum automation...
+[2025-09-17 17:19:01] Created setup logs directory
+[2025-09-17 17:19:01] Preparing to launch Windows 11 setup with multiple method attempts...
+[2025-09-17 17:19:01] === ATTEMPT 1 of 8 ===
+[2025-09-17 17:19:01] Testing setup with arguments: /Auto Upgrade /Quiet /DynamicUpdate Disable /Compat IgnoreWarning
+[2025-09-17 17:19:01] Setup process started with PID: 22240
+[2025-09-17 17:19:01] Monitoring setup process for 90 seconds...
+[2025-09-17 17:19:11] Setup process still running after 10 seconds
+[2025-09-17 17:19:11] CONFIRMED: Windows setup UI processes are running!
+[2025-09-17 17:19:11]   - Process: setup (PID: 22240) Title: ''
+[2025-09-17 17:19:11]   - Process: SetupHost (PID: 12464) Title: ''
+[2025-09-17 17:19:11]   - Process: SetupPrep (PID: 1784) Title: ''
+[2025-09-17 17:19:11]   - Process: WindowsTerminal (PID: 16692) Title: '? Windows 11 Upgrade'
+[2025-09-17 17:19:11] SUCCESS: Method 1 worked! Setup is running with arguments: /Auto Upgrade /Quiet /DynamicUpdate Disable /Compat IgnoreWarning
+[2025-09-17 17:19:11] === SETUP SUCCESSFULLY STARTED ===
+[2025-09-17 17:19:11] Successful method: /Auto Upgrade /Quiet /DynamicUpdate Disable /Compat IgnoreWarning
+[2025-09-17 17:19:11] Windows 11 upgrade is now running in the background
+[2025-09-17 17:19:11] The system will automatically restart when needed to continue the upgrade process
+[2025-09-17 17:19:11] Expected upgrade time: 30-90 minutes
+[2025-09-17 17:19:11] DO NOT INTERRUPT THE PROCESS
+[2025-09-17 17:19:11] Created upgrade status marker file
+[2025-09-17 17:19:11] Unmounting ISO...
+[2025-09-17 17:19:11] ISO unmounted using Shell.Application

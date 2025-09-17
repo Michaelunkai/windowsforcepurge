@@ -24592,3 +24592,293 @@ Source:	SWbemObjectEx
 2025-09-17 15:56:40 - CLEANUP: Completed, 0 entries removed
 2025-09-17 16:01:40 - CLEANUP: Starting suspended list cleanup
 2025-09-17 16:01:40 - CLEANUP: Completed, 0 entries removed
+2025-09-17 16:03:38 - TEXT_SHORTCUT: Triggered 'mygames' -> 'MYGAMES_TERMINAL'
+2025-09-17 16:03:38 - MYGAMES: Opening PowerShell terminal and running myg command
+2025-09-17 16:03:38 - MYGAMES: myg command launched in PowerShell
+2025-09-17 16:05:00 - TEXT_SHORTCUT: Triggered 'refresh' -> 'refresh'
+2025-09-17 16:05:00 - TERMINAL_CMD: Executing command - refresh
+2025-09-17 16:05:01 - TERMINAL_CMD: Executed 'refresh' with self-terminating PowerShell
+2025-09-17 16:05:15 - TEXT_SHORTCUT: Triggered 'mygames' -> 'MYGAMES_TERMINAL'
+2025-09-17 16:05:15 - MYGAMES: Opening PowerShell terminal and running myg command
+2025-09-17 16:05:15 - MYGAMES: myg command launched in PowerShell
+2025-09-17 16:05:47 - TEXT_SHORTCUT: Triggered 'mygames' -> 'MYGAMES_TERMINAL'
+2025-09-17 16:05:47 - MYGAMES: Opening PowerShell terminal and running myg command
+2025-09-17 16:05:47 - MYGAMES: myg command launched in PowerShell
+2025-09-17 16:06:40 - CLEANUP: Starting suspended list cleanup
+2025-09-17 16:06:40 - CLEANUP: Completed, 0 entries removed
+2025-09-17 16:06:40 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 16:06:40 - TERMINAL: Attempting to open floating terminal
+2025-09-17 16:06:41 - TERMINAL: PowerShell opened
+2025-09-17 16:06:51 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 16:06:51 - TERMINAL: Attempting to open floating terminal
+2025-09-17 16:06:52 - TERMINAL: PowerShell opened
+2025-09-17 16:07:19 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 16:07:19 - TERMINAL: Attempting to open floating terminal
+2025-09-17 16:07:19 - TERMINAL: PowerShell opened
+2025-09-17 16:07:26 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 16:07:26 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 16:07:26 - CLAU: clau command launched in PowerShell
+2025-09-17 16:08:33 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 16:08:33 - TERMINAL: Attempting to open floating terminal
+2025-09-17 16:08:33 - TERMINAL: PowerShell opened
+2025-09-17 16:09:48 - FULLSIZE: Triple-tap E detected
+2025-09-17 16:09:48 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 16:09:48 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 16:09:48 - FULLSIZE: Applied windowed style with borders
+2025-09-17 16:09:48 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 16:09:48 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 16:09:50 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 16:09:50 - TERMINAL: Attempting to open floating terminal
+2025-09-17 16:09:50 - TERMINAL: PowerShell opened
+2025-09-17 16:10:55 - FULLSIZE: Triple-tap E detected
+2025-09-17 16:10:55 - FULLSIZE: Processing window - WindowsTerminal.exe (? PowerShell Profile)
+2025-09-17 16:10:55 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 16:10:55 - FULLSIZE: Applied windowed style with borders
+2025-09-17 16:10:55 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 16:10:55 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 16:11:00 - FULLSIZE: Triple-tap E detected
+2025-09-17 16:11:00 - FULLSIZE: Processing window - WindowsTerminal.exe (? PowerShell Profile)
+2025-09-17 16:11:00 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 16:11:00 - FULLSIZE: Applied windowed style with borders
+2025-09-17 16:11:00 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 16:11:00 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 16:11:40 - CLEANUP: Starting suspended list cleanup
+2025-09-17 16:11:40 - CLEANUP: Completed, 0 entries removed
+2025-09-17 16:15:40 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 16:15:40 - TERMINAL: Attempting to open floating terminal
+2025-09-17 16:15:41 - TERMINAL: PowerShell opened
+2025-09-17 16:15:50 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 16:15:50 - TERMINAL: Attempting to open floating terminal
+2025-09-17 16:15:51 - TERMINAL: PowerShell opened
+2025-09-17 16:16:40 - CLEANUP: Starting suspended list cleanup
+2025-09-17 16:16:40 - CLEANUP: Completed, 0 entries removed
+2025-09-17 16:17:12 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-17 16:17:12 - FULLSIZE: Processing window - Notepad.exe (Microsoft.PowerShell_profile.ps1 - Notepad)
+2025-09-17 16:17:12 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 16:17:12 - FULLSIZE: Applied windowed style with borders
+2025-09-17 16:17:13 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 16:17:13 - FULLSIZE: Successfully applied full size mode to Notepad.exe
+2025-09-17 16:21:40 - CLEANUP: Starting suspended list cleanup
+2025-09-17 16:21:40 - CLEANUP: Completed, 0 entries removed
+2025-09-17 16:23:16 - TEXT_SHORTCUT: Triggered 'updater' -> 'SOFTWARE_UPDATER_APP'
+2025-09-17 16:23:16 - LAUNCHER: Attempting to launch Software Updater
+2025-09-17 16:23:16 - ERROR: Software Updater not found at: F:\backup\windowsapps\installed\Software Updater\SoftwareUpdater.exe
+2025-09-17 16:23:23 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 16:23:23 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 16:23:23 - REBOOT: Initiating immediate system reboot
+2025-09-17 16:23:23 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 16:23:23 - SHUTDOWN: All processes resumed before exit
+2025-09-17 16:24:22 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 16:24:38 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-17 16:24:38 - FOLDER: Opening installed apps folder
+2025-09-17 16:24:38 - FOLDER: Successfully opened installed apps folder
+2025-09-17 16:25:40 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 16:25:40 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 16:25:40 - CLAU: clau command launched in PowerShell
+2025-09-17 16:25:51 - TEXT_SHORTCUT: Triggered 'mygames' -> 'MYGAMES_TERMINAL'
+2025-09-17 16:25:51 - MYGAMES: Opening PowerShell terminal and running myg command
+2025-09-17 16:25:51 - MYGAMES: myg command launched in PowerShell
+2025-09-17 16:29:22 - CLEANUP: Starting suspended list cleanup
+2025-09-17 16:29:22 - CLEANUP: Completed, 0 entries removed
+2025-09-17 16:34:22 - CLEANUP: Starting suspended list cleanup
+2025-09-17 16:34:22 - CLEANUP: Completed, 0 entries removed
+2025-09-17 16:39:22 - CLEANUP: Starting suspended list cleanup
+2025-09-17 16:39:22 - CLEANUP: Completed, 0 entries removed
+2025-09-17 16:41:30 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 16:41:30 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 16:41:30 - REBOOT: Initiating immediate system reboot
+2025-09-17 16:41:30 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 16:41:30 - SHUTDOWN: All processes resumed before exit
+2025-09-17 16:42:40 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 16:45:25 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 16:45:25 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 16:45:25 - CLAU: clau command launched in PowerShell
+2025-09-17 16:47:40 - CLEANUP: Starting suspended list cleanup
+2025-09-17 16:47:40 - CLEANUP: Completed, 0 entries removed
+2025-09-17 16:50:36 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 16:52:05 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 16:52:29 - TEXT_SHORTCUT: Triggered 'gmail' -> 'GMAIL_WEB'
+2025-09-17 16:52:29 - WEB: Opening Gmail Account 0 in Chrome
+2025-09-17 16:52:29 - WEB: Gmail Account 0 opened in Chrome
+2025-09-17 16:56:26 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 16:56:26 - SHUTDOWN: All processes resumed before exit
+2025-09-17 16:57:14 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 16:57:24 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-17 16:57:24 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-17 16:57:24 - CLAU: clau command launched in PowerShell
+2025-09-17 17:02:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:02:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:06:58 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-17 17:06:58 - FOLDER: Opening installed apps folder
+2025-09-17 17:06:58 - FOLDER: Successfully opened installed apps folder
+2025-09-17 17:06:58 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-17 17:06:58 - FOLDER: Opening installed apps folder
+2025-09-17 17:06:58 - FOLDER: Successfully opened installed apps folder
+2025-09-17 17:06:59 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-17 17:06:59 - FOLDER: Opening installed apps folder
+2025-09-17 17:06:59 - FOLDER: Successfully opened installed apps folder
+2025-09-17 17:07:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:07:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:12:09 - TEXT_SHORTCUT: Triggered 'downloads' -> 'DOWNLOADS_FOLDER'
+2025-09-17 17:12:09 - FOLDER: Opening Downloads folder
+2025-09-17 17:12:09 - FOLDER: Successfully opened Downloads folder
+2025-09-17 17:12:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:12:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:17:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:17:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:22:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:22:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:27:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:27:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:32:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:32:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:37:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:37:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:42:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:42:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:47:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:47:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:51:20 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-17 17:51:21 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-17 17:52:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:52:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 17:54:46 - FULLSIZE: Triple-tap E detected
+2025-09-17 17:54:46 - FULLSIZE: Processing window - Code.exe (? TestMount2.ps1 - upgrade - Visual Studio Code [Administrator])
+2025-09-17 17:54:46 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 17:54:46 - FULLSIZE: Applied windowed style with borders
+2025-09-17 17:54:46 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 17:54:46 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-17 17:54:48 - TEXT_SHORTCUT: Triggered 'allit' -> '& "F:\backup\windowsapps\installed\Everything\Everything.exe"'
+2025-09-17 17:54:48 - TERMINAL_CMD: Executing command - & "F:\backup\windowsapps\installed\Everything\Everything.exe"
+2025-09-17 17:54:49 - TERMINAL_CMD: Executed '& "F:\backup\windowsapps\installed\Everything\Everything.exe"' with self-terminating PowerShell
+2025-09-17 17:56:30 - TEXT_SHORTCUT: Triggered 'slack' -> 'slack'
+2025-09-17 17:56:30 - TERMINAL_CMD: Executing command - slack
+2025-09-17 17:56:31 - TERMINAL_CMD: Executed 'slack' with self-terminating PowerShell
+2025-09-17 17:57:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 17:57:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:01:14 - FULLSIZE: Triple-tap E detected
+2025-09-17 18:01:14 - FULLSIZE: Processing window - Code.exe (upgrade - Visual Studio Code [Administrator])
+2025-09-17 18:01:14 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 18:01:14 - FULLSIZE: Applied windowed style with borders
+2025-09-17 18:01:14 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 18:01:14 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-17 18:02:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:02:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:07:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:07:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:08:49 - FULLSIZE: Triple-tap E detected
+2025-09-17 18:08:49 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-17 18:08:49 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 18:08:49 - FULLSIZE: Applied windowed style with borders
+2025-09-17 18:08:49 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 18:08:49 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 18:12:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:12:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:17:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:17:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:21:31 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-17 18:21:31 - FULLSIZE: Processing window - WindowsTerminal.exe (? Task Progress)
+2025-09-17 18:21:31 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 18:21:31 - FULLSIZE: Applied windowed style with borders
+2025-09-17 18:21:32 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 18:21:32 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 18:22:14 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:22:14 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:23:38 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 18:23:38 - SHUTDOWN: All processes resumed before exit
+2025-09-17 18:24:27 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 18:28:41 - TEXT_SHORTCUT: Triggered 'ffff' -> 'FIREFOX_APP'
+2025-09-17 18:28:41 - LAUNCHER: Attempting to launch Firefox
+2025-09-17 18:28:41 - LAUNCHER: Firefox launched successfully
+2025-09-17 18:28:43 - LAUNCHER: Firefox window activated
+2025-09-17 18:29:27 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:29:27 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:34:27 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:34:27 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:39:27 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:39:27 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:40:13 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-17 18:40:13 - FOLDER: Opening installed apps folder
+2025-09-17 18:40:13 - FOLDER: Successfully opened installed apps folder
+2025-09-17 18:41:39 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-17 18:41:39 - FOLDER: Opening installed apps folder
+2025-09-17 18:41:39 - FOLDER: Successfully opened installed apps folder
+2025-09-17 18:44:27 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:44:27 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:49:27 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:49:27 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:54:27 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:54:27 - CLEANUP: Completed, 0 entries removed
+2025-09-17 18:59:27 - CLEANUP: Starting suspended list cleanup
+2025-09-17 18:59:27 - CLEANUP: Completed, 0 entries removed
+2025-09-17 19:04:27 - CLEANUP: Starting suspended list cleanup
+2025-09-17 19:04:27 - CLEANUP: Completed, 0 entries removed
+2025-09-17 19:09:27 - CLEANUP: Starting suspended list cleanup
+2025-09-17 19:09:27 - CLEANUP: Completed, 0 entries removed
+2025-09-17 19:11:41 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 19:11:41 - SHUTDOWN: All processes resumed before exit
+2025-09-17 19:25:15 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 19:30:15 - CLEANUP: Starting suspended list cleanup
+2025-09-17 19:30:15 - CLEANUP: Completed, 0 entries removed
+2025-09-17 19:35:15 - CLEANUP: Starting suspended list cleanup
+2025-09-17 19:35:15 - CLEANUP: Completed, 0 entries removed
+2025-09-17 19:40:15 - CLEANUP: Starting suspended list cleanup
+2025-09-17 19:40:15 - CLEANUP: Completed, 0 entries removed
+2025-09-17 19:45:15 - CLEANUP: Starting suspended list cleanup
+2025-09-17 19:45:15 - CLEANUP: Completed, 0 entries removed
+2025-09-17 19:50:15 - CLEANUP: Starting suspended list cleanup
+2025-09-17 19:50:15 - CLEANUP: Completed, 0 entries removed
+2025-09-17 19:55:15 - CLEANUP: Starting suspended list cleanup
+2025-09-17 19:55:15 - CLEANUP: Completed, 0 entries removed
+2025-09-17 20:00:15 - CLEANUP: Starting suspended list cleanup
+2025-09-17 20:00:15 - CLEANUP: Completed, 0 entries removed
+2025-09-17 20:04:17 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 20:04:17 - SHUTDOWN: All processes resumed before exit
+2025-09-17 20:07:56 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 20:08:08 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-17 20:08:08 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-17 20:08:09 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-17 20:12:49 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 20:12:49 - SHUTDOWN: All processes resumed before exit
+2025-09-17 20:15:08 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 20:20:08 - CLEANUP: Starting suspended list cleanup
+2025-09-17 20:20:08 - CLEANUP: Completed, 0 entries removed
+2025-09-17 20:21:15 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 20:21:15 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 20:21:15 - REBOOT: Initiating immediate system reboot
+2025-09-17 20:21:16 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 20:21:16 - SHUTDOWN: All processes resumed before exit
+2025-09-17 20:22:34 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 20:23:15 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 20:23:15 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 20:23:15 - REBOOT: Initiating immediate system reboot
+2025-09-17 20:23:15 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 20:23:15 - SHUTDOWN: All processes resumed before exit
+2025-09-17 20:25:28 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 20:30:28 - CLEANUP: Starting suspended list cleanup
+2025-09-17 20:30:28 - CLEANUP: Completed, 0 entries removed
+2025-09-17 20:35:19 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-17 20:35:19 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-17 20:35:19 - REBOOT: Initiating immediate system reboot
+2025-09-17 20:35:19 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 20:35:19 - SHUTDOWN: All processes resumed before exit
+2025-09-17 20:36:14 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 20:36:49 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-17 20:36:49 - SHUTDOWN: All processes resumed before exit
+2025-09-17 20:38:00 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-17 20:38:02 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-17 20:38:02 - TERMINAL: Attempting to open floating terminal
+2025-09-17 20:38:02 - TERMINAL: PowerShell opened
+2025-09-17 20:41:45 - FULLSIZE: Triple-tap E detected
+2025-09-17 20:41:45 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-17 20:41:45 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-17 20:41:45 - FULLSIZE: Applied windowed style with borders
+2025-09-17 20:41:46 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-17 20:41:46 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-17 20:43:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 20:43:00 - CLEANUP: Completed, 0 entries removed
+2025-09-17 20:43:16 - TEXT_SHORTCUT: Triggered 'mygames' -> 'MYGAMES_TERMINAL'
+2025-09-17 20:43:16 - MYGAMES: Opening PowerShell terminal and running myg command
+2025-09-17 20:43:16 - MYGAMES: myg command launched in PowerShell
+2025-09-17 20:48:00 - CLEANUP: Starting suspended list cleanup
+2025-09-17 20:48:00 - CLEANUP: Completed, 0 entries removed
