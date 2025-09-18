@@ -26491,3 +26491,45 @@ Source:	SWbemObjectEx
 2025-09-18 21:54:34 - DISABLE_ON_TOP: Disabled always on top for Ferdium.exe - Ferdium - YouTube study - (31) Streamline Your Workflow: Install Ferdium on Dockge Now - YouTube
 2025-09-18 21:54:37 - DISABLE_ON_TOP: Disabled always on top for SetupHost.exe - Windows Server Setup
 2025-09-18 21:57:07 - DISABLE_ON_TOP: Disabled always on top for WindowsTerminal.exe - Administrator: Windows PowerShell
+2025-09-18 21:59:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:59:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 22:04:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 22:04:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 22:06:15 - TEXT_SHORTCUT: Triggered 'sdesktop' -> 'sdesktop'
+2025-09-18 22:06:15 - TERMINAL_CMD: Executing command - sdesktop
+2025-09-18 22:06:23 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-18 22:06:23 - TERMINAL: Attempting to open floating terminal
+2025-09-18 22:06:24 - TERMINAL: Windows Terminal opened
+2025-09-18 22:06:30 - TERMINAL_CMD: Executed 'sdesktop' with self-terminating PowerShell
+2025-09-18 22:09:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 22:09:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 22:13:58 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 22:13:58 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 22:13:58 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 22:22:00 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 22:22:29 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-18 22:22:29 - FOLDER: Opening installed apps folder
+2025-09-18 22:22:29 - FOLDER: Successfully opened installed apps folder
+2025-09-18 22:25:17 - ALWAYS_ON_TOP: Enabled always on top for Flyo.exe - Flyoobe
+2025-09-18 22:26:54 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-18 22:26:54 - FOLDER: Opening installed apps folder
+2025-09-18 22:26:54 - FOLDER: Successfully opened installed apps folder
+2025-09-18 22:26:55 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-18 22:26:55 - FOLDER: Opening installed apps folder
+2025-09-18 22:26:55 - FOLDER: Successfully opened installed apps folder
+2025-09-18 22:27:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 22:27:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 22:28:17 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 22:28:17 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 22:28:17 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 22:30:34 - TEXT_SHORTCUT: Triggered 'sdesktop' -> 'sdesktop'
+2025-09-18 22:30:34 - TERMINAL_CMD: Executing command - sdesktop
+2025-09-18 22:31:00 - TERMINAL_CMD: Executed 'sdesktop' with self-terminating PowerShell
+2025-09-18 22:32:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 22:32:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 22:37:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 22:37:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 22:37:28 - ALWAYS_ON_TOP: Enabled always on top for SetupHost.exe - Windows 11 Setup
+2025-09-18 22:41:25 - ALWAYS_ON_TOP: Enabled always on top for SetupHost.exe - Windows 11 Setup
+2025-09-18 22:42:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 22:42:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
