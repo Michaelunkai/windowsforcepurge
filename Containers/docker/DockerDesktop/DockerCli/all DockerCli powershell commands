@@ -1,0 +1,26 @@
+
+  To switch to Windows containers:
+
+   1 & "C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchWindowsEngine
+
+  To switch to Linux containers:
+
+   1 & "C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchLinuxEngine
+
+  Other useful Docker CLI commands:
+
+   1. List shared drives:
+
+   1 & "C:\Program Files\Docker\Docker\DockerCli.exe" -SharedDrives
+
+   2. Shutdown Docker Desktop:
+
+   1 & "C:\Program Files\Docker\Docker\DockerCli.exe" -Shutdown
+
+   3. Switch engine (toggle between Windows and Linux):
+
+   1 & "C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchDaemon
+
+   4. Enable verbose logging:
+
+   1 & "C:\Program Files\Docker\Docker\DockerCli.exe" -Verbose
