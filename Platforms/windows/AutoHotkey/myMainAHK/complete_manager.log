@@ -25975,3 +25975,58 @@ Source:	SWbemObjectEx
 2025-09-18 14:57:28 - FOLDER: Successfully opened Downloads folder
 2025-09-18 14:59:15 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-18 14:59:15 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 15:03:35 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 15:03:35 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 15:03:35 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 15:04:15 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 15:04:15 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 15:09:15 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 15:09:15 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 15:09:25 - FULLSIZE: Triple-tap E detected
+2025-09-18 15:09:25 - FULLSIZE: Processing window - WindowsTerminal.exe (? Script Safety)
+2025-09-18 15:09:25 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 15:09:25 - FULLSIZE: Applied windowed style with borders
+2025-09-18 15:09:25 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 15:09:25 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 15:10:56 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-18 15:10:56 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-18 15:10:56 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-18 15:12:14 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 15:12:14 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 15:12:14 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 15:14:15 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 15:14:15 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 15:18:28 - FULLSIZE: Triple-tap E detected
+2025-09-18 15:18:28 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-18 15:18:28 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 15:18:28 - FULLSIZE: Applied windowed style with borders
+2025-09-18 15:18:28 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 15:18:28 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 15:18:52 - FULLSIZE: Triple-tap E detected
+2025-09-18 15:18:52 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-18 15:18:52 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 15:18:52 - FULLSIZE: Applied windowed style with borders
+2025-09-18 15:18:52 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 15:18:52 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 15:19:15 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 15:19:15 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 15:20:03 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 15:20:03 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-18 15:20:03 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 15:20:03 - FULLSIZE: Applied windowed style with borders
+2025-09-18 15:20:04 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 15:20:04 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-18 15:20:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 15:20:04 - FULLSIZE: Applied windowed style with borders
+2025-09-18 15:20:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 15:20:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 15:20:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 15:20:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 15:20:53 - FULLSIZE: Triple-tap E detected
+2025-09-18 15:20:53 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-18 15:20:53 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 15:20:53 - FULLSIZE: Applied windowed style with borders
+2025-09-18 15:20:53 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 15:20:53 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 15:24:15 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 15:24:15 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
