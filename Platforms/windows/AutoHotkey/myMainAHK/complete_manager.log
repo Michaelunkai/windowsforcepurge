@@ -26481,3 +26481,13 @@ Source:	SWbemObjectEx
 2025-09-18 21:47:57 - DISABLE_ON_TOP: Disabled always on top for Code.exe - BBBBBBB.AHK - myMainAHK - Visual Studio Code [Administrator]
 2025-09-18 21:48:11 - TEXT_SHORTCUT: Triggered 'cahk' -> 'closeahk'
 2025-09-18 21:48:11 - TERMINAL_CMD: Executing command - closeahk
+2025-09-18 21:49:34 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 21:49:37 - ALWAYS_ON_TOP: Enabled always on top for WindowsTerminal.exe - Administrator: Windows PowerShell
+2025-09-18 21:49:40 - DISABLE_ON_TOP: Disabled always on top for WindowsTerminal.exe - Administrator: Windows PowerShell
+2025-09-18 21:49:53 - ALWAYS_ON_TOP: Enabled always on top for SetupHost.exe - Windows Server Setup
+2025-09-18 21:50:20 - ALWAYS_ON_TOP: Enabled always on top for WindowsTerminal.exe - Administrator: Windows PowerShell
+2025-09-18 21:54:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:54:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:54:34 - DISABLE_ON_TOP: Disabled always on top for Ferdium.exe - Ferdium - YouTube study - (31) Streamline Your Workflow: Install Ferdium on Dockge Now - YouTube
+2025-09-18 21:54:37 - DISABLE_ON_TOP: Disabled always on top for SetupHost.exe - Windows Server Setup
+2025-09-18 21:57:07 - DISABLE_ON_TOP: Disabled always on top for WindowsTerminal.exe - Administrator: Windows PowerShell
