@@ -3011,8 +3011,8 @@ HotkeyFreeze() {
 
         ; Attempt to freeze the process
         if (FreezeProcess(procName)) {
-            TrayTip("💥 RAM ANNIHILATED!", procName . " CRUSHED to <20MB RAM (from ~GB), minimized, single CPU core!", 4000)
-            LogMessage("FREEZE: " . procName . " RAM ANNIHILATED with EXTREME minimal resource usage")
+            TrayTip("FROZEN", procName . " frozen with minimal resources!", 2000)
+            LogMessage("FREEZE: " . procName . " frozen and optimized for minimal resource usage")
         } else {
             TrayTip("Freeze Failed", "Failed to freeze " . procName, 1000)
         }
@@ -3054,7 +3054,7 @@ HotkeyUnfreezeAll() {
             toUnfreeze.Push(procName)
         }
 
-        TrayTip("⚡ INSTANTLY UNFREEZING ALL", "INSTANTLY restoring " . toUnfreeze.Length . " processes with MAXIMUM resources...", 2000)
+        TrayTip("Unfreezing All", "Restoring " . toUnfreeze.Length . " processes with full resources...", 2000)
 
         for procName in toUnfreeze {
             if (UnfreezeProcess(procName)) {
@@ -3066,7 +3066,7 @@ HotkeyUnfreezeAll() {
             Sleep(100) ; Small delay between operations
         }
 
-        TrayTip("⚡ INSTANT UNFREEZE COMPLETE", "INSTANTLY Unfrozen: " . unfreezeCount . " with MAXIMUM resources, Failed: " . failCount, 3000)
+        TrayTip("Unfreeze All Complete", "Unfrozen: " . unfreezeCount . " with full resources, Failed: " . failCount, 3000)
         LogMessage("UNFREEZE_ALL: Completed - Success: " . unfreezeCount . ", Failed: " . failCount)
 
     } catch Error as e {
@@ -3099,16 +3099,13 @@ FreezeProcess(procName) {
             }
         }
 
-        ; INSTANT resource minimization BEFORE suspension for immediate effect
-        OptimizeProcessResourcesForFreeze(procName)
-
         ; Use RunWait with pssuspend to freeze
         cmd := '"F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "' . procName . '"'
         LogMessage("FREEZE: Executing " . cmd)
 
         RunWait(cmd, "", "Hide")
 
-        ; SECOND PASS - Additional resource crushing after suspension
+        ; AGGRESSIVE RESOURCE MINIMIZATION - Even more aggressive than suspend
         OptimizeProcessResourcesForFreeze(procName)
 
         ; Store both process name and window handle for unfreezing
@@ -3145,11 +3142,10 @@ UnfreezeProcess(procName) {
 
         RunWait(cmd, "", "Hide")
 
-        ; INSTANT RESOURCE RESTORATION - No delay for immediate full power
-        OptimizeProcessResourcesForUnfreeze(procName)
+        ; Brief pause to let process resume
+        Sleep(300)
 
-        ; SECOND PASS - Additional resource boost after brief pause
-        Sleep(200)
+        ; IMMEDIATE RESOURCE RESTORATION - Full power back
         OptimizeProcessResourcesForUnfreeze(procName)
 
         ; Restore and activate the window
@@ -3200,240 +3196,109 @@ UnfreezeProcess(procName) {
     }
 }
 
-; INSTANT ULTRA-AGGRESSIVE resource minimization for frozen processes
+; ULTRA-AGGRESSIVE resource minimization for frozen processes
 OptimizeProcessResourcesForFreeze(procName) {
     try {
-        LogMessage("FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for " . procName)
+        LogMessage("FREEZE_OPTIMIZE: Starting ultra-aggressive resource minimization for " . procName)
         
-        ; IMMEDIATE ACTIONS - No delays between steps for instant resource reduction
-        
-        ; 1. INSTANT lowest priority (Idle) - Happens immediately
+        ; 1. Set to absolute lowest priority (Idle)
         SetProcessPriority(procName, "Idle")
         
-        ; 2. INSTANT EXTREME RAM ANNIHILATION - 50MB MAX ABSOLUTE MINIMUM!!
-        TrayTip("💥 INSTANT RAM ANNIHILATION", "CRUSHING " . procName . " to ABSOLUTE MINIMUM <50MB RAM!", 2000)
+        ; 2. ULTRA-AGGRESSIVE 200MB RAM ENFORCEMENT!!
+        TrayTip("RAM CRUSHING", "FORCING " . procName . " below 200MB RAM!", 2000)
         
         try {
             for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
                 hProcess := DllCall("OpenProcess", "UInt", 0x1F0FFF, "Int", 0, "UInt", proc.ProcessId, "Ptr")
                 if (hProcess) {
-                    LogMessage("FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for " . procName . " (PID: " . proc.ProcessId . ")")
+                    LogMessage("FREEZE_OPTIMIZE: Starting ULTRA RAM crushing for " . procName . " (PID: " . proc.ProcessId . ")")
                     
-                    ; STEP 1: BRUTAL MEMORY ANNIHILATION (25 aggressive passes)
-                    Loop 25 {
+                    ; STEP 1: EXTREME MEMORY TRIMMING (10 passes for frozen)
+                    Loop 10 {
                         DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)  ; Force immediate swap
+                        Sleep(25)
                         TrimProcessWorkingSet(procName)
+                        Sleep(25)
                     }
                     
-                    ; STEP 2: SET ABSOLUTE MINIMUM WORKING SET (50MB max, 2MB min)
-                    minWorkingSet := 2 * 1024 * 1024       ; 2MB minimum (ABSOLUTE MINIMUM)
-                    maxWorkingSet := 50 * 1024 * 1024      ; 50MB maximum (EXTREME REDUCTION)
+                    ; STEP 2: ULTRA-LOW WORKING SET (200MB max, 16MB min)
+                    minWorkingSet := 16 * 1024 * 1024      ; 16MB minimum (ultra low)
+                    maxWorkingSet := 200 * 1024 * 1024     ; 200MB maximum (frozen limit)
                     
-                    ; Apply with maximum force
                     result := DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", minWorkingSet, "Ptr", maxWorkingSet)
                     
-                    ; STEP 3: ULTRA-BRUTAL COMPRESSION (20 passes)
-                    Loop 20 {
+                    ; STEP 3: FINAL ULTRA COMPRESSION
+                    Loop 5 {
                         DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                    }
-                    
-                    ; STEP 4: FORCE EVERYTHING TO PAGE FILE (Multiple methods)
-                    Loop 5 {
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", minWorkingSet, "Ptr", minWorkingSet)  ; Force to minimum
-                    }
-                    
-                    ; STEP 5: NUCLEAR MEMORY COMPRESSION
-                    Loop 5 {
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", minWorkingSet, "Ptr", maxWorkingSet)
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                    }
-                    
-                    ; STEP 6: FINAL ANNIHILATION - Set to theoretical minimum
-                    ultraMinWorkingSet := 1 * 1024 * 1024  ; 1MB (theoretical minimum)
-                    DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", ultraMinWorkingSet, "Ptr", maxWorkingSet)
-                    
-                    ; STEP 7: EXTREME PAGE FILE FORCING (10 passes)
-                    Loop 10 {
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
+                        Sleep(100)
                     }
                     
                     DllCall("CloseHandle", "Ptr", hProcess)
                     
                     if (result) {
-                        LogMessage("FREEZE_OPTIMIZE: 💥✅ RAM ANNIHILATED! " . procName . " CRUSHED TO <50MB! (Min: 2MB)")
-                        TrayTip("💥 RAM ANNIHILATED!", procName . " CRUSHED to ABSOLUTE MINIMUM <50MB!", 3000)
+                        LogMessage("FREEZE_OPTIMIZE: ✅ CRUSHED " . procName . " RAM TO 200MB LIMIT! (Min: 16MB)")
+                        TrayTip("RAM ULTRA-CRUSHED!", procName . " FROZEN below 200MB!", 3000)
                     }
                 }
                 break
             }
         } catch Error as e {
-            LogMessage("FREEZE_OPTIMIZE: Instant RAM crushing failed for " . procName . " - " . e.message)
+            LogMessage("FREEZE_OPTIMIZE: Ultra RAM crushing failed for " . procName . " - " . e.message)
         }
         
-        ; 3. INSTANT CPU limitation to single lowest-performance core
+        ; 3. Limit to single lowest-performance CPU core
         try {
             for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Use direct WMI for instant execution
-                proc.ProcessorAffinity := 1  ; Single core instantly
-                proc.Put_()
-                LogMessage("FREEZE_OPTIMIZE: INSTANTLY limited " . procName . " to single CPU core")
-                break
-            }
-        } catch {
-            ; Fallback to PowerShell if WMI fails
-            try {
                 RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { $_.ProcessorAffinity = 1 }"', "", "Hide")
-                LogMessage("FREEZE_OPTIMIZE: Limited " . procName . " to single CPU core (fallback)")
-            } catch {
-                LogMessage("FREEZE_OPTIMIZE: CPU affinity limitation failed for " . procName)
-            }
-        }
-        
-        ; 4. INSTANT I/O priority reduction
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                proc.Priority := 64  ; IDLE_PRIORITY_CLASS instantly
-                proc.Put_()
-                LogMessage("FREEZE_OPTIMIZE: INSTANTLY set " . procName . " to idle I/O priority")
+                LogMessage("FREEZE_OPTIMIZE: Limited " . procName . " to single CPU core")
                 break
             }
         } catch {
-            LogMessage("FREEZE_OPTIMIZE: I/O priority reduction failed for " . procName)
+            LogMessage("FREEZE_OPTIMIZE: CPU affinity limitation failed for " . procName)
         }
         
-        ; 5. NUCLEAR MEMORY COMPRESSION AND ANNIHILATION
+        ; 4. Force memory compression and cleanup
         try {
-            ; EXTREME multi-pass memory compression
-            RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { [System.GC]::Collect(2, [System.GCCollectionMode]::Forced); [System.GC]::WaitForPendingFinalizers(); [System.GC]::Collect(2, [System.GCCollectionMode]::Forced); [System.GC]::Collect(2, [System.GCCollectionMode]::Forced) }"', "", "Hide")
-            LogMessage("FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to " . procName)
-            
-            ; ADDITIONAL EXTREME MEMORY REDUCTION METHODS
-            try {
-                ; Force process to release all possible memory handles
-                RunWait('powershell.exe -Command "$proc = Get-Process -Name ' . StrReplace(procName, ".exe", "") . '; $proc | ForEach-Object { $_.WorkingSet64 = [math]::Min($_.WorkingSet64, 52428800) }"', "", "Hide")  ; Force to 50MB max
-                LogMessage("FREEZE_OPTIMIZE: Applied working set size enforcement to " . procName)
-            } catch {
-                LogMessage("FREEZE_OPTIMIZE: Working set enforcement failed for " . procName)
-            }
-            
-            ; BRUTAL MEMORY HANDLE REDUCTION
-            try {
-                RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { [System.Runtime.GCSettings]::LargeObjectHeapCompactionMode = [System.Runtime.GCLargeObjectHeapCompactionMode]::CompactOnce; [System.GC]::Collect() }"', "", "Hide")
-                LogMessage("FREEZE_OPTIMIZE: Applied large object heap compression to " . procName)
-            } catch {
-                LogMessage("FREEZE_OPTIMIZE: Large object heap compression failed for " . procName)
-            }
-            
+            RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { [System.GC]::Collect(); [System.GC]::WaitForPendingFinalizers(); [System.GC]::Collect() }"', "", "Hide")
+            LogMessage("FREEZE_OPTIMIZE: Applied ultra memory compression to " . procName)
         } catch {
-            LogMessage("FREEZE_OPTIMIZE: Nuclear memory compression failed for " . procName)
+            LogMessage("FREEZE_OPTIMIZE: Memory compression failed for " . procName)
         }
-        
-        ; 6. INSTANT thread suspension (additional CPU reduction)
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Set process to background mode for minimal CPU scheduling
-                RunWait('wmic process where "ProcessId=' . proc.ProcessId . '" CALL SetPriority "Idle"', "", "Hide")
-                LogMessage("FREEZE_OPTIMIZE: INSTANTLY set " . procName . " to background CPU scheduling")
-                break
-            }
-        } catch {
-            LogMessage("FREEZE_OPTIMIZE: Background scheduling failed for " . procName)
-        }
-        
-        ; 7. FINAL NUCLEAR RAM ANNIHILATION - System-level memory reclamation
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                hProcess := DllCall("OpenProcess", "UInt", 0x1F0FFF, "Int", 0, "UInt", proc.ProcessId, "Ptr")
-                if (hProcess) {
-                    ; FINAL BRUTAL ASSAULT - Force absolute minimum (30 passes)
-                    Loop 30 {
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", 1048576, "Ptr", 52428800)  ; 1MB min, 50MB max
-                    }
-                    
-                    ; NUCLEAR OPTION - Try to force to theoretical minimum
-                    DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", 524288, "Ptr", 20971520)  ; 512KB min, 20MB max
-                    
-                    ; FINAL MEMORY PURGE
-                    Loop 10 {
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                    }
-                    
-                    DllCall("CloseHandle", "Ptr", hProcess)
-                    LogMessage("FREEZE_OPTIMIZE: 💥 FINAL NUCLEAR RAM ANNIHILATION applied to " . procName)
-                }
-                break
-            }
-        } catch {
-            LogMessage("FREEZE_OPTIMIZE: Final nuclear annihilation failed for " . procName)
-        }
-        
-        LogMessage("FREEZE_OPTIMIZE: 💥 RAM ANNIHILATION COMPLETE for " . procName . "! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle")
-        TrayTip("💥 RAM ANNIHILATED!", procName . " CRUSHED to ABSOLUTE MINIMUM RAM!", 2000)
         
     } catch Error as e {
         LogMessage("ERROR in OptimizeProcessResourcesForFreeze(" . procName . "): " . e.message)
     }
 }
 
-; INSTANT MAXIMUM resource restoration for unfrozen processes
+; IMMEDIATE full resource restoration for unfrozen processes
 OptimizeProcessResourcesForUnfreeze(procName) {
     try {
-        LogMessage("UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for " . procName)
+        LogMessage("UNFREEZE_OPTIMIZE: Starting immediate full resource restoration for " . procName)
         
-        ; IMMEDIATE ACTIONS - No delays for instant resource restoration
+        ; 1. Restore to high priority for immediate responsiveness
+        SetProcessPriority(procName, "High")
+        LogMessage("UNFREEZE_OPTIMIZE: Set " . procName . " priority to High")
         
-        ; 1. INSTANT maximum priority boost (RealTime if possible, High otherwise)
-        try {
-            SetProcessPriority(procName, "RealTime")
-            LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY set " . procName . " priority to RealTime")
-        } catch {
-            SetProcessPriority(procName, "High")
-            LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY set " . procName . " priority to High")
-        }
-        
-        ; 2. INSTANT full CPU affinity restoration (ALL cores)
+        ; 2. Restore full CPU affinity (all cores)
         try {
             for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Use direct WMI for instant execution - Set to use ALL CPU cores
-                proc.ProcessorAffinity := 255  ; All cores instantly (covers up to 8 cores)
-                proc.Put_()
-                LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY restored full CPU affinity (all cores) for " . procName)
+                RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { $_.ProcessorAffinity = 255 }"', "", "Hide")
+                LogMessage("UNFREEZE_OPTIMIZE: Restored full CPU affinity for " . procName)
                 break
             }
         } catch {
-            ; Fallback to PowerShell if WMI fails
-            try {
-                RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { $_.ProcessorAffinity = 255 }"', "", "Hide")
-                LogMessage("UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for " . procName)
-            } catch {
-                LogMessage("UNFREEZE_OPTIMIZE: CPU affinity restoration failed for " . procName)
-            }
+            LogMessage("UNFREEZE_OPTIMIZE: CPU affinity restoration failed for " . procName)
         }
         
-        ; 3. INSTANT memory limits removal and MAXIMUM working set boost
+        ; 3. Remove memory limitations and boost working set
         try {
             for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
                 hProcess := DllCall("OpenProcess", "UInt", 0x1F0FFF, "Int", 0, "UInt", proc.ProcessId, "Ptr")
                 if (hProcess) {
-                    ; INSTANT removal of ALL memory restrictions
+                    ; Remove working set size limits
                     DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                    
-                    ; INSTANT working set boost - Allow up to 4GB if needed
-                    maxWorkingSet := 4 * 1024 * 1024 * 1024  ; 4GB maximum
-                    minWorkingSet := 512 * 1024 * 1024       ; 512MB minimum guaranteed
-                    DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", minWorkingSet, "Ptr", maxWorkingSet)
-                    
-                    ; INSTANT memory preload to prevent paging
-                    Loop 3 {
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                    }
-                    
                     DllCall("CloseHandle", "Ptr", hProcess)
-                    LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY removed memory limits and boosted working set for " . procName)
+                    LogMessage("UNFREEZE_OPTIMIZE: Removed memory limits for " . procName)
                 }
                 break
             }
@@ -3441,50 +3306,13 @@ OptimizeProcessResourcesForUnfreeze(procName) {
             LogMessage("UNFREEZE_OPTIMIZE: Working set restoration failed for " . procName)
         }
         
-        ; 4. INSTANT I/O priority boost and optimization
+        ; 4. Boost I/O priority
         try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Set to high priority class instantly
-                proc.Priority := 128  ; HIGH_PRIORITY_CLASS instantly
-                proc.Put_()
-                LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY set " . procName . " to high I/O priority")
-                break
-            }
-        } catch {
-            LogMessage("UNFREEZE_OPTIMIZE: I/O priority boost failed for " . procName)
-        }
-        
-        ; 5. INSTANT priority boost and turbo mode enable
-        try {
-            RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { $_.PriorityBoostEnabled = $true; $_.PriorityClass = `"High`" }"', "", "Hide")
-            LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for " . procName)
+            RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { $_.PriorityBoostEnabled = $true }"', "", "Hide")
+            LogMessage("UNFREEZE_OPTIMIZE: Enabled priority boost for " . procName)
         } catch {
             LogMessage("UNFREEZE_OPTIMIZE: Priority boost failed for " . procName)
         }
-        
-        ; 6. INSTANT foreground process boost
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Set to foreground application priority
-                RunWait('wmic process where "ProcessId=' . proc.ProcessId . '" CALL SetPriority "High Priority"', "", "Hide")
-                LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY set " . procName . " to foreground priority")
-                break
-            }
-        } catch {
-            LogMessage("UNFREEZE_OPTIMIZE: Foreground priority failed for " . procName)
-        }
-        
-        ; 7. INSTANT memory optimization for performance
-        try {
-            ; Force immediate memory optimization for speed
-            RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { [System.GC]::Collect(0, [System.GCCollectionMode]::Optimized) }"', "", "Hide")
-            LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for " . procName)
-        } catch {
-            LogMessage("UNFREEZE_OPTIMIZE: Memory optimization failed for " . procName)
-        }
-        
-        LogMessage("UNFREEZE_OPTIMIZE: ⚡ INSTANT maximum resource restoration COMPLETE for " . procName . "! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High")
-        TrayTip("⚡ FULL POWER RESTORED!", procName . " has INSTANT access to ALL resources!", 2000)
         
     } catch Error as e {
         LogMessage("ERROR in OptimizeProcessResourcesForUnfreeze(" . procName . "): " . e.message)
@@ -4896,21 +4724,13 @@ SetProcessPriority(procName, priorityLevel := "Normal") {
 TrimProcessWorkingSet(procName) {
     try {
         for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-            hProcess := DllCall("OpenProcess", "UInt", 0x1F0FFF, "Int", 0, "UInt", proc.ProcessId, "Ptr")
+            hProcess := DllCall("OpenProcess", "UInt", 0x0010, "Int", 0, "UInt", proc.ProcessId, "Ptr")
             if (hProcess) {
-                ; EXTREME TRIMMING - Multiple methods for maximum RAM reduction
                 DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)  ; Double trim
-                
-                ; Force to absolute minimum working set
-                DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", 524288, "Ptr", 10485760)  ; 512KB min, 10MB max
-                DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)  ; Final trim
-                
                 DllCall("CloseHandle", "Ptr", hProcess)
             }
         }
-        LogMessage("TRIM: EXTREME trimmed working set for " . procName)
+        LogMessage("TRIM: Trimmed working set for " . procName)
     } catch Error as e {
         LogMessage("ERROR in TrimProcessWorkingSet(" . procName . "): " . e.message)
     }

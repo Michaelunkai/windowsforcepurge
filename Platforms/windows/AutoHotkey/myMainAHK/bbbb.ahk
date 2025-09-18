@@ -44,7 +44,6 @@ downloadsPath := "F:\Downloads"
 samsungNotesPath := "C:\Program Files\WindowsApps\SAMSUNGELECTRONICSCoLtd.SamsungNotes_4.3.418.0_x64__wyx1vj98g3asy\SamsungNotes.exe"
 installedPath := "F:\backup\windowsapps\installed"
 suspended := Map()
-frozen := Map()  ; Track frozen processes separately
 lastCleanup := A_TickCount
 errorCount := 0
 maxErrors := 50
@@ -2935,16 +2934,14 @@ ResumeProcess(procName) {
 ; ╔══════════════════════════════ MAINTENANCE & CLEANUP ══════════════════════════════╗
 CleanupSuspendedList() {
     try {
-        LogMessage("CLEANUP: Starting suspended and frozen list cleanup")
-        toRemoveSuspended := []
-        toRemoveFrozen := []
+        LogMessage("CLEANUP: Starting suspended list cleanup")
+        toRemove := []
 
-        ; Cleanup suspended processes
         for procName, suspendTime in suspended {
             ; Check if process still exists
             if (!ValidateProcess(procName)) {
-                toRemoveSuspended.Push(procName)
-                LogMessage("CLEANUP: Removing dead suspended process " . procName)
+                toRemove.Push(procName)
+                LogMessage("CLEANUP: Removing dead process " . procName)
                 continue
             }
 
@@ -2955,539 +2952,17 @@ CleanupSuspendedList() {
             }
         }
 
-        ; Cleanup frozen processes
-        for procName, frozenData in frozen {
-            ; Check if process still exists
-            if (!ValidateProcess(procName)) {
-                toRemoveFrozen.Push(procName)
-                LogMessage("CLEANUP: Removing dead frozen process " . procName)
-                continue
-            }
-
-            ; Extract freeze time from data structure
-            freezeTime := Type(frozenData) = "Object" ? frozenData.time : frozenData
-
-            ; Check for extremely old freezes (over 24 hours)
-            if ((A_TickCount - freezeTime) > 86400000) {
-                LogMessage("CLEANUP: Found 24+ hour freeze for " . procName . ", attempting unfreeze")
-                UnfreezeProcess(procName)
-            }
-        }
-
         ; Remove dead processes from tracking
-        for procName in toRemoveSuspended {
+        for procName in toRemove {
             suspended.Delete(procName)
-        }
-        for procName in toRemoveFrozen {
-            frozen.Delete(procName)
         }
 
         lastCleanup := A_TickCount
-        LogMessage("CLEANUP: Completed, " . toRemoveSuspended.Length . " suspended and " . toRemoveFrozen.Length . " frozen entries removed")
+        LogMessage("CLEANUP: Completed, " . toRemove.Length . " entries removed")
 
     } catch Error as e {
         LogMessage("ERROR in CleanupSuspendedList: " . e.message)
         IncrementError()
-    }
-}
-
-; ╔══════════════════════════════ FREEZE/UNFREEZE SYSTEM ══════════════════════════════╗
-; NEW FREEZE FUNCTIONALITY - Ctrl+Z: Freeze current app with minimal resources
-HotkeyFreeze() {
-    try {
-        procName := GetActiveProcess()
-        if (procName == "" || skipMap.Has(procName)) {
-            if (procName != "")
-                TrayTip("Skipped", "Cannot freeze protected process: " . procName, 1000)
-            return
-        }
-
-        ; Check if already frozen
-        if (frozen.Has(procName)) {
-            TrayTip("Already Frozen", procName . " is already frozen", 1000)
-            LogMessage("INFO: " . procName . " already frozen")
-            return
-        }
-
-        ; Attempt to freeze the process
-        if (FreezeProcess(procName)) {
-            TrayTip("💥 RAM ANNIHILATED!", procName . " CRUSHED to <20MB RAM (from ~GB), minimized, single CPU core!", 4000)
-            LogMessage("FREEZE: " . procName . " RAM ANNIHILATED with EXTREME minimal resource usage")
-        } else {
-            TrayTip("Freeze Failed", "Failed to freeze " . procName, 1000)
-        }
-
-    } catch Error as e {
-        LogMessage("ERROR in HotkeyFreeze: " . e.message)
-        IncrementError()
-        TrayTip("Error", "Freeze operation failed", 1000)
-    }
-}
-
-; NEW UNFREEZE FUNCTIONALITY - Ctrl+D: Show GUI to select frozen app to unfreeze
-HotkeyUnfreeze() {
-    try {
-        ; Show GUI to select which frozen app to unfreeze
-        ShowFrozenProcessesGUI()
-
-    } catch Error as e {
-        LogMessage("ERROR in HotkeyUnfreeze: " . e.message)
-        IncrementError()
-        TrayTip("Error", "Unfreeze selection failed", 1000)
-    }
-}
-
-; NEW UNFREEZE ALL FUNCTIONALITY - Ctrl+R: Unfreeze all frozen apps
-HotkeyUnfreezeAll() {
-    try {
-        if (frozen.Count == 0) {
-            TrayTip("No Frozen Processes", "No processes are frozen", 1000)
-            return
-        }
-
-        unfreezeCount := 0
-        failCount := 0
-
-        ; Create array to avoid modifying map during iteration
-        toUnfreeze := []
-        for procName, _ in frozen {
-            toUnfreeze.Push(procName)
-        }
-
-        TrayTip("⚡ INSTANTLY UNFREEZING ALL", "INSTANTLY restoring " . toUnfreeze.Length . " processes with MAXIMUM resources...", 2000)
-
-        for procName in toUnfreeze {
-            if (UnfreezeProcess(procName)) {
-                unfreezeCount++
-                LogMessage("UNFREEZE_ALL: Restored " . procName . " with full resources")
-            } else {
-                failCount++
-            }
-            Sleep(100) ; Small delay between operations
-        }
-
-        TrayTip("⚡ INSTANT UNFREEZE COMPLETE", "INSTANTLY Unfrozen: " . unfreezeCount . " with MAXIMUM resources, Failed: " . failCount, 3000)
-        LogMessage("UNFREEZE_ALL: Completed - Success: " . unfreezeCount . ", Failed: " . failCount)
-
-    } catch Error as e {
-        LogMessage("ERROR in HotkeyUnfreezeAll: " . e.message)
-        IncrementError()
-        TrayTip("Error", "Unfreeze all operation failed", 1000)
-    }
-}
-
-; Core freeze function - Suspend process, minimize window, and minimize resources
-FreezeProcess(procName) {
-    try {
-        ; Double-check process exists before freezing
-        if (!ValidateProcess(procName)) {
-            LogMessage("WARNING: Cannot freeze " . procName . " - process not found")
-            return false
-        }
-
-        ; Get the active window handle before freezing
-        activeHwnd := WinGetID("A")
-        
-        ; Minimize the window BEFORE freezing the process
-        if (activeHwnd) {
-            try {
-                WinMinimize(activeHwnd)
-                LogMessage("FREEZE: Minimized window for " . procName)
-                Sleep(200) ; Brief pause to let minimize complete
-            } catch Error as e {
-                LogMessage("FREEZE: Failed to minimize window for " . procName . " - " . e.message)
-            }
-        }
-
-        ; INSTANT resource minimization BEFORE suspension for immediate effect
-        OptimizeProcessResourcesForFreeze(procName)
-
-        ; Use RunWait with pssuspend to freeze
-        cmd := '"F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "' . procName . '"'
-        LogMessage("FREEZE: Executing " . cmd)
-
-        RunWait(cmd, "", "Hide")
-
-        ; SECOND PASS - Additional resource crushing after suspension
-        OptimizeProcessResourcesForFreeze(procName)
-
-        ; Store both process name and window handle for unfreezing
-        frozen[procName] := {time: A_TickCount, hwnd: activeHwnd}
-        LogMessage("SUCCESS: Frozen and minimized " . procName . " with minimal resource usage")
-        return true
-
-    } catch Error as e {
-        LogMessage("ERROR in FreezeProcess(" . procName . "): " . e.message)
-        IncrementError()
-        return false
-    }
-}
-
-; Core unfreeze function - Resume process, restore window, and restore full resources
-UnfreezeProcess(procName) {
-    try {
-        ; Check if we think it's frozen
-        if (!frozen.Has(procName)) {
-            LogMessage("WARNING: " . procName . " not in frozen list")
-            return false
-        }
-
-        ; Get stored window handle
-        frozenData := frozen[procName]
-        storedHwnd := ""
-        if (Type(frozenData) = "Object" && frozenData.HasProp("hwnd")) {
-            storedHwnd := frozenData.hwnd
-        }
-
-        ; Use RunWait to resume/unfreeze
-        cmd := '"F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "' . procName . '"'
-        LogMessage("UNFREEZE: Executing " . cmd)
-
-        RunWait(cmd, "", "Hide")
-
-        ; INSTANT RESOURCE RESTORATION - No delay for immediate full power
-        OptimizeProcessResourcesForUnfreeze(procName)
-
-        ; SECOND PASS - Additional resource boost after brief pause
-        Sleep(200)
-        OptimizeProcessResourcesForUnfreeze(procName)
-
-        ; Restore and activate the window
-        if (storedHwnd) {
-            try {
-                ; First restore from minimized state
-                WinRestore(storedHwnd)
-                Sleep(200)
-                ; Then activate the window
-                WinActivate(storedHwnd)
-                LogMessage("UNFREEZE: Restored and activated window for " . procName)
-            } catch Error as e {
-                LogMessage("UNFREEZE: Failed to restore window for " . procName . " - " . e.message)
-                ; Try to find and activate any window of this process
-                try {
-                    if WinExist("ahk_exe " . procName) {
-                        WinActivate("ahk_exe " . procName)
-                        LogMessage("UNFREEZE: Activated fallback window for " . procName)
-                    }
-                } catch {
-                    LogMessage("UNFREEZE: Could not activate any window for " . procName)
-                }
-            }
-        } else {
-            ; Try to find and activate any window of this process
-            try {
-                if WinExist("ahk_exe " . procName) {
-                    WinActivate("ahk_exe " . procName)
-                    LogMessage("UNFREEZE: Activated window for " . procName)
-                }
-            } catch {
-                LogMessage("UNFREEZE: Could not find window for " . procName)
-            }
-        }
-
-        ; Remove from frozen list
-        frozen.Delete(procName)
-        LogMessage("SUCCESS: Unfrozen and restored " . procName . " with full resources")
-        return true
-
-    } catch Error as e {
-        LogMessage("ERROR in UnfreezeProcess(" . procName . "): " . e.message)
-        IncrementError()
-        ; Still remove from list to prevent stuck entries
-        if (frozen.Has(procName))
-            frozen.Delete(procName)
-        return false
-    }
-}
-
-; INSTANT ULTRA-AGGRESSIVE resource minimization for frozen processes
-OptimizeProcessResourcesForFreeze(procName) {
-    try {
-        LogMessage("FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for " . procName)
-        
-        ; IMMEDIATE ACTIONS - No delays between steps for instant resource reduction
-        
-        ; 1. INSTANT lowest priority (Idle) - Happens immediately
-        SetProcessPriority(procName, "Idle")
-        
-        ; 2. INSTANT EXTREME RAM ANNIHILATION - 50MB MAX ABSOLUTE MINIMUM!!
-        TrayTip("💥 INSTANT RAM ANNIHILATION", "CRUSHING " . procName . " to ABSOLUTE MINIMUM <50MB RAM!", 2000)
-        
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                hProcess := DllCall("OpenProcess", "UInt", 0x1F0FFF, "Int", 0, "UInt", proc.ProcessId, "Ptr")
-                if (hProcess) {
-                    LogMessage("FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for " . procName . " (PID: " . proc.ProcessId . ")")
-                    
-                    ; STEP 1: BRUTAL MEMORY ANNIHILATION (25 aggressive passes)
-                    Loop 25 {
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)  ; Force immediate swap
-                        TrimProcessWorkingSet(procName)
-                    }
-                    
-                    ; STEP 2: SET ABSOLUTE MINIMUM WORKING SET (50MB max, 2MB min)
-                    minWorkingSet := 2 * 1024 * 1024       ; 2MB minimum (ABSOLUTE MINIMUM)
-                    maxWorkingSet := 50 * 1024 * 1024      ; 50MB maximum (EXTREME REDUCTION)
-                    
-                    ; Apply with maximum force
-                    result := DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", minWorkingSet, "Ptr", maxWorkingSet)
-                    
-                    ; STEP 3: ULTRA-BRUTAL COMPRESSION (20 passes)
-                    Loop 20 {
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                    }
-                    
-                    ; STEP 4: FORCE EVERYTHING TO PAGE FILE (Multiple methods)
-                    Loop 5 {
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", minWorkingSet, "Ptr", minWorkingSet)  ; Force to minimum
-                    }
-                    
-                    ; STEP 5: NUCLEAR MEMORY COMPRESSION
-                    Loop 5 {
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", minWorkingSet, "Ptr", maxWorkingSet)
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                    }
-                    
-                    ; STEP 6: FINAL ANNIHILATION - Set to theoretical minimum
-                    ultraMinWorkingSet := 1 * 1024 * 1024  ; 1MB (theoretical minimum)
-                    DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", ultraMinWorkingSet, "Ptr", maxWorkingSet)
-                    
-                    ; STEP 7: EXTREME PAGE FILE FORCING (10 passes)
-                    Loop 10 {
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                    }
-                    
-                    DllCall("CloseHandle", "Ptr", hProcess)
-                    
-                    if (result) {
-                        LogMessage("FREEZE_OPTIMIZE: 💥✅ RAM ANNIHILATED! " . procName . " CRUSHED TO <50MB! (Min: 2MB)")
-                        TrayTip("💥 RAM ANNIHILATED!", procName . " CRUSHED to ABSOLUTE MINIMUM <50MB!", 3000)
-                    }
-                }
-                break
-            }
-        } catch Error as e {
-            LogMessage("FREEZE_OPTIMIZE: Instant RAM crushing failed for " . procName . " - " . e.message)
-        }
-        
-        ; 3. INSTANT CPU limitation to single lowest-performance core
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Use direct WMI for instant execution
-                proc.ProcessorAffinity := 1  ; Single core instantly
-                proc.Put_()
-                LogMessage("FREEZE_OPTIMIZE: INSTANTLY limited " . procName . " to single CPU core")
-                break
-            }
-        } catch {
-            ; Fallback to PowerShell if WMI fails
-            try {
-                RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { $_.ProcessorAffinity = 1 }"', "", "Hide")
-                LogMessage("FREEZE_OPTIMIZE: Limited " . procName . " to single CPU core (fallback)")
-            } catch {
-                LogMessage("FREEZE_OPTIMIZE: CPU affinity limitation failed for " . procName)
-            }
-        }
-        
-        ; 4. INSTANT I/O priority reduction
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                proc.Priority := 64  ; IDLE_PRIORITY_CLASS instantly
-                proc.Put_()
-                LogMessage("FREEZE_OPTIMIZE: INSTANTLY set " . procName . " to idle I/O priority")
-                break
-            }
-        } catch {
-            LogMessage("FREEZE_OPTIMIZE: I/O priority reduction failed for " . procName)
-        }
-        
-        ; 5. NUCLEAR MEMORY COMPRESSION AND ANNIHILATION
-        try {
-            ; EXTREME multi-pass memory compression
-            RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { [System.GC]::Collect(2, [System.GCCollectionMode]::Forced); [System.GC]::WaitForPendingFinalizers(); [System.GC]::Collect(2, [System.GCCollectionMode]::Forced); [System.GC]::Collect(2, [System.GCCollectionMode]::Forced) }"', "", "Hide")
-            LogMessage("FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to " . procName)
-            
-            ; ADDITIONAL EXTREME MEMORY REDUCTION METHODS
-            try {
-                ; Force process to release all possible memory handles
-                RunWait('powershell.exe -Command "$proc = Get-Process -Name ' . StrReplace(procName, ".exe", "") . '; $proc | ForEach-Object { $_.WorkingSet64 = [math]::Min($_.WorkingSet64, 52428800) }"', "", "Hide")  ; Force to 50MB max
-                LogMessage("FREEZE_OPTIMIZE: Applied working set size enforcement to " . procName)
-            } catch {
-                LogMessage("FREEZE_OPTIMIZE: Working set enforcement failed for " . procName)
-            }
-            
-            ; BRUTAL MEMORY HANDLE REDUCTION
-            try {
-                RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { [System.Runtime.GCSettings]::LargeObjectHeapCompactionMode = [System.Runtime.GCLargeObjectHeapCompactionMode]::CompactOnce; [System.GC]::Collect() }"', "", "Hide")
-                LogMessage("FREEZE_OPTIMIZE: Applied large object heap compression to " . procName)
-            } catch {
-                LogMessage("FREEZE_OPTIMIZE: Large object heap compression failed for " . procName)
-            }
-            
-        } catch {
-            LogMessage("FREEZE_OPTIMIZE: Nuclear memory compression failed for " . procName)
-        }
-        
-        ; 6. INSTANT thread suspension (additional CPU reduction)
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Set process to background mode for minimal CPU scheduling
-                RunWait('wmic process where "ProcessId=' . proc.ProcessId . '" CALL SetPriority "Idle"', "", "Hide")
-                LogMessage("FREEZE_OPTIMIZE: INSTANTLY set " . procName . " to background CPU scheduling")
-                break
-            }
-        } catch {
-            LogMessage("FREEZE_OPTIMIZE: Background scheduling failed for " . procName)
-        }
-        
-        ; 7. FINAL NUCLEAR RAM ANNIHILATION - System-level memory reclamation
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                hProcess := DllCall("OpenProcess", "UInt", 0x1F0FFF, "Int", 0, "UInt", proc.ProcessId, "Ptr")
-                if (hProcess) {
-                    ; FINAL BRUTAL ASSAULT - Force absolute minimum (30 passes)
-                    Loop 30 {
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", 1048576, "Ptr", 52428800)  ; 1MB min, 50MB max
-                    }
-                    
-                    ; NUCLEAR OPTION - Try to force to theoretical minimum
-                    DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", 524288, "Ptr", 20971520)  ; 512KB min, 20MB max
-                    
-                    ; FINAL MEMORY PURGE
-                    Loop 10 {
-                        DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                    }
-                    
-                    DllCall("CloseHandle", "Ptr", hProcess)
-                    LogMessage("FREEZE_OPTIMIZE: 💥 FINAL NUCLEAR RAM ANNIHILATION applied to " . procName)
-                }
-                break
-            }
-        } catch {
-            LogMessage("FREEZE_OPTIMIZE: Final nuclear annihilation failed for " . procName)
-        }
-        
-        LogMessage("FREEZE_OPTIMIZE: 💥 RAM ANNIHILATION COMPLETE for " . procName . "! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle")
-        TrayTip("💥 RAM ANNIHILATED!", procName . " CRUSHED to ABSOLUTE MINIMUM RAM!", 2000)
-        
-    } catch Error as e {
-        LogMessage("ERROR in OptimizeProcessResourcesForFreeze(" . procName . "): " . e.message)
-    }
-}
-
-; INSTANT MAXIMUM resource restoration for unfrozen processes
-OptimizeProcessResourcesForUnfreeze(procName) {
-    try {
-        LogMessage("UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for " . procName)
-        
-        ; IMMEDIATE ACTIONS - No delays for instant resource restoration
-        
-        ; 1. INSTANT maximum priority boost (RealTime if possible, High otherwise)
-        try {
-            SetProcessPriority(procName, "RealTime")
-            LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY set " . procName . " priority to RealTime")
-        } catch {
-            SetProcessPriority(procName, "High")
-            LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY set " . procName . " priority to High")
-        }
-        
-        ; 2. INSTANT full CPU affinity restoration (ALL cores)
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Use direct WMI for instant execution - Set to use ALL CPU cores
-                proc.ProcessorAffinity := 255  ; All cores instantly (covers up to 8 cores)
-                proc.Put_()
-                LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY restored full CPU affinity (all cores) for " . procName)
-                break
-            }
-        } catch {
-            ; Fallback to PowerShell if WMI fails
-            try {
-                RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { $_.ProcessorAffinity = 255 }"', "", "Hide")
-                LogMessage("UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for " . procName)
-            } catch {
-                LogMessage("UNFREEZE_OPTIMIZE: CPU affinity restoration failed for " . procName)
-            }
-        }
-        
-        ; 3. INSTANT memory limits removal and MAXIMUM working set boost
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                hProcess := DllCall("OpenProcess", "UInt", 0x1F0FFF, "Int", 0, "UInt", proc.ProcessId, "Ptr")
-                if (hProcess) {
-                    ; INSTANT removal of ALL memory restrictions
-                    DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                    
-                    ; INSTANT working set boost - Allow up to 4GB if needed
-                    maxWorkingSet := 4 * 1024 * 1024 * 1024  ; 4GB maximum
-                    minWorkingSet := 512 * 1024 * 1024       ; 512MB minimum guaranteed
-                    DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", minWorkingSet, "Ptr", maxWorkingSet)
-                    
-                    ; INSTANT memory preload to prevent paging
-                    Loop 3 {
-                        DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                    }
-                    
-                    DllCall("CloseHandle", "Ptr", hProcess)
-                    LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY removed memory limits and boosted working set for " . procName)
-                }
-                break
-            }
-        } catch {
-            LogMessage("UNFREEZE_OPTIMIZE: Working set restoration failed for " . procName)
-        }
-        
-        ; 4. INSTANT I/O priority boost and optimization
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Set to high priority class instantly
-                proc.Priority := 128  ; HIGH_PRIORITY_CLASS instantly
-                proc.Put_()
-                LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY set " . procName . " to high I/O priority")
-                break
-            }
-        } catch {
-            LogMessage("UNFREEZE_OPTIMIZE: I/O priority boost failed for " . procName)
-        }
-        
-        ; 5. INSTANT priority boost and turbo mode enable
-        try {
-            RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { $_.PriorityBoostEnabled = $true; $_.PriorityClass = `"High`" }"', "", "Hide")
-            LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for " . procName)
-        } catch {
-            LogMessage("UNFREEZE_OPTIMIZE: Priority boost failed for " . procName)
-        }
-        
-        ; 6. INSTANT foreground process boost
-        try {
-            for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-                ; Set to foreground application priority
-                RunWait('wmic process where "ProcessId=' . proc.ProcessId . '" CALL SetPriority "High Priority"', "", "Hide")
-                LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY set " . procName . " to foreground priority")
-                break
-            }
-        } catch {
-            LogMessage("UNFREEZE_OPTIMIZE: Foreground priority failed for " . procName)
-        }
-        
-        ; 7. INSTANT memory optimization for performance
-        try {
-            ; Force immediate memory optimization for speed
-            RunWait('powershell.exe -Command "Get-Process -Name ' . StrReplace(procName, ".exe", "") . ' | ForEach-Object { [System.GC]::Collect(0, [System.GCCollectionMode]::Optimized) }"', "", "Hide")
-            LogMessage("UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for " . procName)
-        } catch {
-            LogMessage("UNFREEZE_OPTIMIZE: Memory optimization failed for " . procName)
-        }
-        
-        LogMessage("UNFREEZE_OPTIMIZE: ⚡ INSTANT maximum resource restoration COMPLETE for " . procName . "! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High")
-        TrayTip("⚡ FULL POWER RESTORED!", procName . " has INSTANT access to ALL resources!", 2000)
-        
-    } catch Error as e {
-        LogMessage("ERROR in OptimizeProcessResourcesForUnfreeze(" . procName . "): " . e.message)
     }
 }
 
@@ -3767,70 +3242,6 @@ OptimizeProcessResources(procName, restore := false) {
     }
 }
 
-; NEW: Frozen processes selection GUI for Ctrl+D
-ShowFrozenProcessesGUI() {
-    try {
-        if (frozen.Count == 0) {
-            TrayTip("No Frozen Processes", "No processes are currently frozen", 2000)
-            return
-        }
-        
-        LogMessage("GUI: Creating frozen processes selection GUI")
-        
-        ; Create GUI for frozen process selection
-        unfreezeGui := Gui("+Resize +MaximizeBox", "🧊 UNFREEZE FROZEN APPS - " . frozen.Count . " Frozen")
-        unfreezeGui.MarginX := 20
-        unfreezeGui.MarginY := 20
-        unfreezeGui.SetFont("s12", "Segoe UI")
-        
-        ; Title
-        titleText := unfreezeGui.Add("Text", "x20 y20 w500 h35 Center", "❄️ SELECT FROZEN APP TO UNFREEZE ❄️")
-        titleText.SetFont("s15 Bold", "Segoe UI")
-        
-        ; Process list
-        frozenList := unfreezeGui.Add("ListBox", "x20 y65 w500 h300 VScroll")
-        
-        ; Populate the list with frozen processes
-        frozenArray := []
-        for procName, frozenData in frozen {
-            ; Calculate how long the process has been frozen
-            freezeTime := Type(frozenData) = "Object" ? frozenData.time : frozenData
-            freezeDuration := Round((A_TickCount - freezeTime) / 1000, 1)
-            displayText := "🧊 " . procName . " (frozen " . freezeDuration . "s ago)"
-            frozenList.Add([displayText])
-            frozenArray.Push(procName)
-        }
-        
-        ; Buttons
-        unfreezeBtn := unfreezeGui.Add("Button", "x20 y380 w140 h40", "🔓 Unfreeze Selected")
-        unfreezeAllBtn := unfreezeGui.Add("Button", "x180 y380 w140 h40", "🔓 Unfreeze All")  
-        cancelBtn := unfreezeGui.Add("Button", "x380 y380 w120 h40", "❌ Cancel")
-        
-        ; Status text
-        statusText := unfreezeGui.Add("Text", "x20 y430 w500 h30", "Select a frozen app and click Unfreeze, or Unfreeze All to restore all apps")
-        statusText.SetFont("s10")
-        
-        ; Store global references for the event handlers
-        global currentFrozenList := frozenList
-        global currentFrozenArray := frozenArray
-        global currentUnfreezeGui := unfreezeGui
-        
-        ; Event handlers
-        unfreezeBtn.OnEvent("Click", UnfreezeSelectedProcess)
-        unfreezeAllBtn.OnEvent("Click", UnfreezeAllProcesses)
-        cancelBtn.OnEvent("Click", CancelProcessUnfreeze)
-        
-        ; Show the GUI
-        unfreezeGui.Show("w540 h480")
-        LogMessage("GUI: Frozen processes selection GUI displayed")
-        
-    } catch Error as e {
-        LogMessage("ERROR in ShowFrozenProcessesGUI: " . e.message)
-        IncrementError()
-        TrayTip("GUI Error", "Failed to show frozen process selection GUI", 2000)
-    }
-}
-
 ; Enhanced individual process resume with GUI selection
 ShowSuspendedProcessesGUI() {
     try {
@@ -3891,59 +3302,6 @@ ShowSuspendedProcessesGUI() {
         LogMessage("ERROR in ShowSuspendedProcessesGUI: " . e.message)
         IncrementError()
         TrayTip("GUI Error", "Failed to show process selection GUI", 2000)
-    }
-}
-
-; GUI Event handler functions for frozen process unfreeze
-UnfreezeSelectedProcess(*)
-{
-    try {
-        global currentFrozenList, currentFrozenArray, currentUnfreezeGui
-        
-        selectedIndex := currentFrozenList.Value
-        if (selectedIndex > 0 && selectedIndex <= currentFrozenArray.Length) {
-            selectedProcess := currentFrozenArray[selectedIndex]
-            LogMessage("GUI: User selected to unfreeze " . selectedProcess)
-            
-            if (UnfreezeProcess(selectedProcess)) {
-                TrayTip("🔓 Process Unfrozen", selectedProcess . " unfrozen and restored!", 2000)
-                LogMessage("GUI: Successfully unfrozen " . selectedProcess . " with window restoration")
-            } else {
-                TrayTip("Unfreeze Failed", "Failed to unfreeze " . selectedProcess, 2000)
-                LogMessage("GUI: Failed to unfreeze " . selectedProcess)
-            }
-            
-            currentUnfreezeGui.Close()
-        } else {
-            TrayTip("No Selection", "Please select a frozen app to unfreeze", 1500)
-        }
-    } catch Error as e {
-        LogMessage("ERROR in UnfreezeSelectedProcess: " . e.message)
-    }
-}
-
-UnfreezeAllProcesses(*)
-{
-    try {
-        global currentUnfreezeGui
-        
-        LogMessage("GUI: User selected to unfreeze all frozen processes")
-        HotkeyUnfreezeAll()
-        currentUnfreezeGui.Close()
-    } catch Error as e {
-        LogMessage("ERROR in UnfreezeAllProcesses: " . e.message)
-    }
-}
-
-CancelProcessUnfreeze(*)
-{
-    try {
-        global currentUnfreezeGui
-        
-        LogMessage("GUI: User cancelled process unfreeze")
-        currentUnfreezeGui.Close()
-    } catch Error as e {
-        LogMessage("ERROR in CancelProcessUnfreeze: " . e.message)
     }
 }
 
@@ -4251,52 +3609,9 @@ MaintenanceTimer() {
     }
 }
 
-; ••• PROCESS FREEZE/UNFREEZE •••
-; NEW FREEZE SYSTEM - Primary hotkeys with error recovery
+; ••• PROCESS SUSPENSION •••
+; Primary hotkeys with error recovery
 ^z:: {
-    try {
-        HotkeyFreeze()
-    } catch {
-        ; Fallback - try again once
-        Sleep(100)
-        try {
-            HotkeyFreeze()
-        } catch {
-            LogMessage("CRITICAL: Freeze hotkey completely failed")
-        }
-    }
-}
-
-^d:: {
-    try {
-        HotkeyUnfreeze()
-    } catch {
-        ; Fallback - try again once
-        Sleep(100)
-        try {
-            HotkeyUnfreeze()
-        } catch {
-            LogMessage("CRITICAL: Unfreeze hotkey completely failed")
-        }
-    }
-}
-
-^r:: {
-    try {
-        HotkeyUnfreezeAll()
-    } catch {
-        ; Fallback - try again once
-        Sleep(100)
-        try {
-            HotkeyUnfreezeAll()
-        } catch {
-            LogMessage("CRITICAL: Unfreeze all hotkey completely failed")
-        }
-    }
-}
-
-; ••• LEGACY PROCESS SUSPENSION (keeping old suspend system) •••
-^!z:: {
     try {
         HotkeySuspend()
     } catch {
@@ -4324,7 +3639,7 @@ MaintenanceTimer() {
     }
 }
 
-^!d:: {
+^d:: {
     try {
         HotkeyResumeAll()
     } catch {
@@ -4333,13 +3648,13 @@ MaintenanceTimer() {
         try {
             HotkeyResumeAll()
         } catch {
-            LogMessage("CRITICAL: Legacy resume all hotkey completely failed")
+            LogMessage("CRITICAL: Resume all hotkey completely failed")
         }
     }
 }
 
-; Individual process resume with GUI selection: Ctrl+Shift+R
-^+r:: {
+; NEW: Individual process resume with selection GUI: Ctrl + R
+^r:: {
     try {
         HotkeyIndividualResume()
     } catch {
@@ -4353,7 +3668,9 @@ MaintenanceTimer() {
     }
 }
 
-; Legacy alternative hotkeys removed - now part of main hotkey definitions above
+; Alternative hotkeys for redundancy
+^!z:: HotkeySuspend
+^!d:: HotkeyResumeAll
 
 ; ••• MOUSE TRIPLE-CLICK COPY/PASTE •••
 ~LButton::
@@ -4470,8 +3787,7 @@ TrayTip("Complete Manager Ready - LATEST VERSION",
     "Win+K: Close Window (Keep Running) | Alt+A: WhatsApp`n" .
     "Alt+C: Cheat Engine | Alt+W: WeMod | Win+G: Games Folder`n" .
     "Shift+S: Switch Desktops | Alt+T: Terminal | Alt+R: Close Terminal`n" .
-    "••• FREEZE SYSTEM ••• Ctrl+Z: FREEZE (minimize + minimal resources) | Ctrl+D: SELECT UNFREEZE | Ctrl+R: UNFREEZE ALL`n" .
-    "Legacy: Ctrl+Alt+Z: Suspend | Ctrl+Alt+R: Resume | Ctrl+Alt+D: Resume All`n" .
+    "Ctrl+Z: Suspend | Ctrl+Alt+R: Resume | Ctrl+D: Resume All`n" .
     "Triple Middle-Click: Window Screenshot to Clipboard`n`n" .
     "••• KEY TEXT SHORTCUTS •••`n" .
     "mymail→Email Copy | mailmy→Email Copy 2 | pass→Password 1 | myp→Password 2`n" .
@@ -4494,20 +3810,9 @@ ExitHandler(ExitReason, ExitCode) {
             ResumeProcess(procName)
             Sleep(50)
         }
-        LogMessage("SHUTDOWN: All suspended processes resumed before exit")
+        LogMessage("SHUTDOWN: All processes resumed before exit")
     } catch {
-        LogMessage("ERROR: Failed to resume some suspended processes during shutdown")
-    }
-
-    ; Unfreeze all frozen processes before exit
-    try {
-        for procName, _ in frozen {
-            UnfreezeProcess(procName)
-            Sleep(50)
-        }
-        LogMessage("SHUTDOWN: All frozen processes unfrozen before exit")
-    } catch {
-        LogMessage("ERROR: Failed to unfreeze some processes during shutdown")
+        LogMessage("ERROR: Failed to resume some processes during shutdown")
     }
 }
 
@@ -4896,21 +4201,13 @@ SetProcessPriority(procName, priorityLevel := "Normal") {
 TrimProcessWorkingSet(procName) {
     try {
         for proc in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process where Name='" . procName . "'") {
-            hProcess := DllCall("OpenProcess", "UInt", 0x1F0FFF, "Int", 0, "UInt", proc.ProcessId, "Ptr")
+            hProcess := DllCall("OpenProcess", "UInt", 0x0010, "Int", 0, "UInt", proc.ProcessId, "Ptr")
             if (hProcess) {
-                ; EXTREME TRIMMING - Multiple methods for maximum RAM reduction
                 DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)
-                DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", -1, "Ptr", -1)
-                DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)  ; Double trim
-                
-                ; Force to absolute minimum working set
-                DllCall("kernel32.dll\\SetProcessWorkingSetSize", "Ptr", hProcess, "Ptr", 524288, "Ptr", 10485760)  ; 512KB min, 10MB max
-                DllCall("psapi.dll\\EmptyWorkingSet", "Ptr", hProcess)  ; Final trim
-                
                 DllCall("CloseHandle", "Ptr", hProcess)
             }
         }
-        LogMessage("TRIM: EXTREME trimmed working set for " . procName)
+        LogMessage("TRIM: Trimmed working set for " . procName)
     } catch Error as e {
         LogMessage("ERROR in TrimProcessWorkingSet(" . procName . "): " . e.message)
     }

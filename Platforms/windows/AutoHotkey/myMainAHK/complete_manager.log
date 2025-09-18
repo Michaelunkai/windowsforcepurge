@@ -25174,3 +25174,396 @@ Source:	SWbemObjectEx
 2025-09-18 10:11:53 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
 2025-09-18 10:11:54 - CLAU: Opening Windows Terminal and running 'clau' command
 2025-09-18 10:11:54 - CLAU: clau command launched in PowerShell
+2025-09-18 10:13:06 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-18 10:13:06 - LAUNCHER: WeMod launched successfully
+2025-09-18 10:13:18 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-18 10:13:18 - LAUNCHER: WeMod launched successfully
+2025-09-18 10:13:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 10:13:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 10:14:23 - TEXT_SHORTCUT: Triggered 'swemod' -> 'swemod'
+2025-09-18 10:14:23 - TERMINAL_CMD: Executing command - swemod
+2025-09-18 10:14:26 - TERMINAL_CMD: Executed 'swemod' with self-terminating PowerShell
+2025-09-18 10:14:38 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:14:38 - DESKTOP: Switched to Desktop 1
+2025-09-18 10:14:39 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:14:48 - DESKTOP: Switched to Desktop 1
+2025-09-18 10:15:20 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:15:29 - DESKTOP: Switched to Desktop 1
+2025-09-18 10:15:38 - INDIVIDUAL_RESUME: Ctrl+R pressed - showing process selection GUI
+2025-09-18 10:18:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 10:18:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 10:18:56 - FULLSIZE: Triple-tap E detected
+2025-09-18 10:18:56 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-18 10:18:56 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 10:18:56 - FULLSIZE: Applied windowed style with borders
+2025-09-18 10:18:57 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 10:18:57 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-18 10:19:09 - FULLSIZE: Triple-tap E detected
+2025-09-18 10:19:09 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-18 10:19:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 10:19:09 - FULLSIZE: Applied windowed style with borders
+2025-09-18 10:19:09 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 10:19:09 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-18 10:19:50 - FULLSIZE: Triple-tap E detected
+2025-09-18 10:19:50 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-18 10:19:50 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 10:19:50 - FULLSIZE: Applied windowed style with borders
+2025-09-18 10:19:51 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 10:19:51 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-18 10:20:05 - INDIVIDUAL_RESUME: Ctrl+R pressed - showing process selection GUI
+2025-09-18 10:20:09 - FULLSIZE: Triple-tap E detected
+2025-09-18 10:20:09 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-18 10:20:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 10:20:09 - FULLSIZE: Applied windowed style with borders
+2025-09-18 10:20:10 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 10:20:10 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-18 10:23:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 10:23:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 10:28:12 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-18 10:28:12 - SHUTDOWN: All processes resumed before exit
+2025-09-18 10:28:12 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 10:31:54 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-18 10:31:54 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 10:31:54 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 10:31:54 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 10:32:38 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "WindowsTerminal.exe"
+2025-09-18 10:32:39 - FREEZE_OPTIMIZE: Starting ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-18 10:32:39 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:32:39 - FREEZE_OPTIMIZE: Starting ULTRA RAM crushing for WindowsTerminal.exe (PID: 13420)
+2025-09-18 10:32:39 - FREEZE_OPTIMIZE: Ultra RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-18 10:32:41 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core
+2025-09-18 10:32:42 - FREEZE_OPTIMIZE: Applied ultra memory compression to WindowsTerminal.exe
+2025-09-18 10:32:42 - SUCCESS: Frozen WindowsTerminal.exe with minimal resource usage
+2025-09-18 10:32:42 - FREEZE: WindowsTerminal.exe frozen and optimized for minimal resource usage
+2025-09-18 10:32:42 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "WindowsTerminal.exe"
+2025-09-18 10:32:42 - UNFREEZE_OPTIMIZE: Starting immediate full resource restoration for WindowsTerminal.exe
+2025-09-18 10:32:42 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:32:42 - UNFREEZE_OPTIMIZE: Set WindowsTerminal.exe priority to High
+2025-09-18 10:32:44 - UNFREEZE_OPTIMIZE: Restored full CPU affinity for WindowsTerminal.exe
+2025-09-18 10:32:44 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-18 10:32:46 - UNFREEZE_OPTIMIZE: Enabled priority boost for WindowsTerminal.exe
+2025-09-18 10:32:46 - SUCCESS: Unfrozen WindowsTerminal.exe with full resources
+2025-09-18 10:32:46 - UNFREEZE: WindowsTerminal.exe unfrozen with full resource restoration
+2025-09-18 10:34:40 - TEXT_SHORTCUT: Triggered 'ffff' -> 'FIREFOX_APP'
+2025-09-18 10:34:40 - LAUNCHER: Attempting to launch Firefox
+2025-09-18 10:34:40 - LAUNCHER: Firefox launched successfully
+2025-09-18 10:34:42 - LAUNCHER: Firefox window activated
+2025-09-18 10:34:43 - TEXT_SHORTCUT: Triggered 'slack' -> 'slack'
+2025-09-18 10:34:43 - TERMINAL_CMD: Executing command - slack
+2025-09-18 10:34:47 - TERMINAL_CMD: Executed 'slack' with self-terminating PowerShell
+2025-09-18 10:35:05 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-18 10:35:05 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-18 10:36:01 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:36:06 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-18 10:36:06 - FREEZE_OPTIMIZE: Starting ultra-aggressive resource minimization for DaysGone.exe
+2025-09-18 10:36:06 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:36:06 - FREEZE_OPTIMIZE: Starting ULTRA RAM crushing for DaysGone.exe (PID: 17188)
+2025-09-18 10:36:06 - FREEZE_OPTIMIZE: Ultra RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-18 10:36:08 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core
+2025-09-18 10:36:09 - DESKTOP: Switched to Desktop 1
+2025-09-18 10:36:09 - FREEZE_OPTIMIZE: Applied ultra memory compression to DaysGone.exe
+2025-09-18 10:36:09 - SUCCESS: Frozen DaysGone.exe with minimal resource usage
+2025-09-18 10:36:09 - FREEZE: DaysGone.exe frozen and optimized for minimal resource usage
+2025-09-18 10:36:10 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:36:11 - DESKTOP: Switched to Desktop 1
+2025-09-18 10:36:20 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:36:21 - ERROR in GetActiveProcess: Target window not found.
+2025-09-18 10:36:23 - ERROR in GetActiveProcess: Target window not found.
+2025-09-18 10:36:23 - ERROR in GetActiveProcess: Target window not found.
+2025-09-18 10:36:23 - ERROR in GetActiveProcess: Target window not found.
+2025-09-18 10:36:23 - ERROR in GetActiveProcess: Target window not found.
+2025-09-18 10:36:24 - ERROR in GetActiveProcess: Target window not found.
+2025-09-18 10:36:24 - ERROR in GetActiveProcess: Target window not found.
+2025-09-18 10:36:24 - ERROR in GetActiveProcess: Target window not found.
+2025-09-18 10:36:24 - ERROR in GetActiveProcess: Target window not found.
+2025-09-18 10:36:25 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-18 10:36:25 - UNFREEZE_OPTIMIZE: Starting immediate full resource restoration for DaysGone.exe
+2025-09-18 10:36:25 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:36:25 - UNFREEZE_OPTIMIZE: Set DaysGone.exe priority to High
+2025-09-18 10:36:27 - UNFREEZE_OPTIMIZE: Restored full CPU affinity for DaysGone.exe
+2025-09-18 10:36:27 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-18 10:36:28 - UNFREEZE_OPTIMIZE: Enabled priority boost for DaysGone.exe
+2025-09-18 10:36:28 - SUCCESS: Unfrozen DaysGone.exe with full resources
+2025-09-18 10:36:28 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-18 10:36:28 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-18 10:36:29 - DESKTOP: Switched to Desktop 1
+2025-09-18 10:36:54 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 10:36:54 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 10:41:54 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 10:41:54 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 10:42:13 - FULLSIZE: Triple-tap E detected
+2025-09-18 10:42:13 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-18 10:42:13 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 10:42:13 - FULLSIZE: Applied windowed style with borders
+2025-09-18 10:42:13 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 10:42:13 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-18 10:42:53 - FULLSIZE: Triple-tap E detected
+2025-09-18 10:42:53 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-18 10:42:53 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 10:42:53 - FULLSIZE: Applied windowed style with borders
+2025-09-18 10:42:53 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 10:42:53 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-18 10:45:38 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:45:38 - DESKTOP: Switched to Desktop 1
+2025-09-18 10:46:54 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 10:46:54 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 10:47:37 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-18 10:47:37 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 10:47:37 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 10:47:37 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 10:47:39 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:47:42 - FREEZE: Minimized window for DaysGone.exe
+2025-09-18 10:47:42 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-18 10:47:43 - FREEZE_OPTIMIZE: Starting ultra-aggressive resource minimization for DaysGone.exe
+2025-09-18 10:47:43 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:47:43 - FREEZE_OPTIMIZE: Starting ULTRA RAM crushing for DaysGone.exe (PID: 17188)
+2025-09-18 10:47:43 - FREEZE_OPTIMIZE: Ultra RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-18 10:47:44 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core
+2025-09-18 10:47:44 - DESKTOP: Switched to Desktop 1
+2025-09-18 10:47:45 - FREEZE_OPTIMIZE: Applied ultra memory compression to DaysGone.exe
+2025-09-18 10:47:45 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-18 10:47:45 - FREEZE: DaysGone.exe frozen and optimized for minimal resource usage
+2025-09-18 10:47:58 - GUI: Creating frozen processes selection GUI
+2025-09-18 10:47:58 - GUI: Frozen processes selection GUI displayed
+2025-09-18 10:47:59 - GUI: Creating frozen processes selection GUI
+2025-09-18 10:47:59 - GUI: Frozen processes selection GUI displayed
+2025-09-18 10:48:00 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-18 10:48:01 - UNFREEZE_OPTIMIZE: Starting immediate full resource restoration for DaysGone.exe
+2025-09-18 10:48:01 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:48:01 - UNFREEZE_OPTIMIZE: Set DaysGone.exe priority to High
+2025-09-18 10:48:02 - UNFREEZE_OPTIMIZE: Restored full CPU affinity for DaysGone.exe
+2025-09-18 10:48:02 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-18 10:48:04 - UNFREEZE_OPTIMIZE: Enabled priority boost for DaysGone.exe
+2025-09-18 10:48:04 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-18 10:48:04 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-18 10:48:04 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-18 10:48:04 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-18 10:48:09 - FREEZE: Minimized window for DaysGone.exe
+2025-09-18 10:48:09 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-18 10:48:09 - FREEZE_OPTIMIZE: Starting ultra-aggressive resource minimization for DaysGone.exe
+2025-09-18 10:48:09 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:48:09 - FREEZE_OPTIMIZE: Starting ULTRA RAM crushing for DaysGone.exe (PID: 17188)
+2025-09-18 10:48:09 - FREEZE_OPTIMIZE: Ultra RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-18 10:48:11 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core
+2025-09-18 10:48:12 - FREEZE_OPTIMIZE: Applied ultra memory compression to DaysGone.exe
+2025-09-18 10:48:12 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-18 10:48:12 - FREEZE: DaysGone.exe frozen and optimized for minimal resource usage
+2025-09-18 10:48:14 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-18 10:48:15 - UNFREEZE_OPTIMIZE: Starting immediate full resource restoration for DaysGone.exe
+2025-09-18 10:48:16 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:48:16 - UNFREEZE_OPTIMIZE: Set DaysGone.exe priority to High
+2025-09-18 10:48:17 - UNFREEZE_OPTIMIZE: Restored full CPU affinity for DaysGone.exe
+2025-09-18 10:48:17 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-18 10:48:18 - INFO: DaysGone.exe already frozen
+2025-09-18 10:48:19 - UNFREEZE_OPTIMIZE: Enabled priority boost for DaysGone.exe
+2025-09-18 10:48:19 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-18 10:48:19 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-18 10:48:19 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-18 10:48:19 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-18 10:48:21 - FREEZE: Minimized window for DaysGone.exe
+2025-09-18 10:48:22 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-18 10:48:23 - FREEZE_OPTIMIZE: Starting ultra-aggressive resource minimization for DaysGone.exe
+2025-09-18 10:48:23 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:48:23 - FREEZE_OPTIMIZE: Starting ULTRA RAM crushing for DaysGone.exe (PID: 17188)
+2025-09-18 10:48:23 - FREEZE_OPTIMIZE: Ultra RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-18 10:48:25 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core
+2025-09-18 10:48:26 - FREEZE_OPTIMIZE: Applied ultra memory compression to DaysGone.exe
+2025-09-18 10:48:26 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-18 10:48:26 - FREEZE: DaysGone.exe frozen and optimized for minimal resource usage
+2025-09-18 10:48:48 - TEXT_SHORTCUT: Triggered 'zzzzz' -> 'freeram'
+2025-09-18 10:48:48 - TERMINAL_CMD: Executing command - freeram
+2025-09-18 10:48:58 - TERMINAL_CMD: Executed 'freeram' with self-terminating PowerShell
+2025-09-18 10:49:22 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:49:30 - GUI: Creating frozen processes selection GUI
+2025-09-18 10:49:30 - GUI: Frozen processes selection GUI displayed
+2025-09-18 10:49:36 - GUI: User selected to unfreeze DaysGone.exe
+2025-09-18 10:49:36 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-18 10:49:37 - UNFREEZE_OPTIMIZE: Starting immediate full resource restoration for DaysGone.exe
+2025-09-18 10:49:38 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:49:38 - UNFREEZE_OPTIMIZE: Set DaysGone.exe priority to High
+2025-09-18 10:49:39 - UNFREEZE_OPTIMIZE: Restored full CPU affinity for DaysGone.exe
+2025-09-18 10:49:39 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-18 10:49:41 - UNFREEZE_OPTIMIZE: Enabled priority boost for DaysGone.exe
+2025-09-18 10:49:42 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-18 10:49:42 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-18 10:49:42 - GUI: Successfully unfrozen DaysGone.exe with window restoration
+2025-09-18 10:49:42 - ERROR in UnfreezeSelectedProcess: This value of type "Gui" has no method named "Close".
+2025-09-18 10:50:31 - FREEZE: Minimized window for DaysGone.exe
+2025-09-18 10:50:31 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-18 10:50:32 - FREEZE_OPTIMIZE: Starting ultra-aggressive resource minimization for DaysGone.exe
+2025-09-18 10:50:32 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:50:32 - FREEZE_OPTIMIZE: Starting ULTRA RAM crushing for DaysGone.exe (PID: 17188)
+2025-09-18 10:50:32 - FREEZE_OPTIMIZE: Ultra RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-18 10:50:33 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core
+2025-09-18 10:50:34 - FREEZE_OPTIMIZE: Applied ultra memory compression to DaysGone.exe
+2025-09-18 10:50:34 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-18 10:50:34 - FREEZE: DaysGone.exe frozen and optimized for minimal resource usage
+2025-09-18 10:50:34 - DESKTOP: Switched to Desktop 1
+2025-09-18 10:50:36 - DESKTOP: Switched to Desktop 2
+2025-09-18 10:50:39 - GUI: Creating frozen processes selection GUI
+2025-09-18 10:50:39 - GUI: Frozen processes selection GUI displayed
+2025-09-18 10:50:44 - GUI: Creating frozen processes selection GUI
+2025-09-18 10:50:44 - GUI: Frozen processes selection GUI displayed
+2025-09-18 10:50:44 - GUI: Creating frozen processes selection GUI
+2025-09-18 10:50:44 - GUI: Frozen processes selection GUI displayed
+2025-09-18 10:50:45 - GUI: Creating frozen processes selection GUI
+2025-09-18 10:50:45 - GUI: Frozen processes selection GUI displayed
+2025-09-18 10:50:45 - GUI: Creating frozen processes selection GUI
+2025-09-18 10:50:45 - GUI: Frozen processes selection GUI displayed
+2025-09-18 10:50:46 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-18 10:50:46 - UNFREEZE_OPTIMIZE: Starting immediate full resource restoration for DaysGone.exe
+2025-09-18 10:50:46 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:50:46 - UNFREEZE_OPTIMIZE: Set DaysGone.exe priority to High
+2025-09-18 10:50:48 - UNFREEZE_OPTIMIZE: Restored full CPU affinity for DaysGone.exe
+2025-09-18 10:50:48 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-18 10:50:49 - UNFREEZE_OPTIMIZE: Enabled priority boost for DaysGone.exe
+2025-09-18 10:50:49 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-18 10:50:49 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-18 10:50:49 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-18 10:50:49 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-18 10:50:53 - FREEZE: Minimized window for DaysGone.exe
+2025-09-18 10:50:53 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-18 10:50:54 - FREEZE_OPTIMIZE: Starting ultra-aggressive resource minimization for DaysGone.exe
+2025-09-18 10:50:54 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 10:50:54 - FREEZE_OPTIMIZE: Starting ULTRA RAM crushing for DaysGone.exe (PID: 17188)
+2025-09-18 10:50:54 - FREEZE_OPTIMIZE: Ultra RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-18 10:50:55 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core
+2025-09-18 10:50:57 - FREEZE_OPTIMIZE: Applied ultra memory compression to DaysGone.exe
+2025-09-18 10:50:57 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-18 10:50:57 - FREEZE: DaysGone.exe frozen and optimized for minimal resource usage
+2025-09-18 10:51:06 - TEXT_SHORTCUT: Triggered 'zzzzz' -> 'freeram'
+2025-09-18 10:51:06 - TERMINAL_CMD: Executing command - freeram
+2025-09-18 10:51:29 - TERMINAL_CMD: Executed 'freeram' with self-terminating PowerShell
+2025-09-18 10:52:04 - TEXT_SHORTCUT: Triggered 'vvvvvv' -> 'volume'
+2025-09-18 10:52:04 - TERMINAL_CMD: Executing command - volume
+2025-09-18 10:52:08 - TERMINAL_CMD: Executed 'volume' with self-terminating PowerShell
+2025-09-18 10:52:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 10:52:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 10:53:42 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 10:53:42 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Slack - Montsarj Alex - Montsarj Alex (DM) - TovTech - Slack)
+2025-09-18 10:53:42 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 10:53:42 - FULLSIZE: Applied windowed style with borders
+2025-09-18 10:53:42 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 10:53:42 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Slack - Montsarj Alex - Montsarj Alex (DM) - TovTech - Slack)
+2025-09-18 10:53:42 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 10:53:42 - FULLSIZE: Applied windowed style with borders
+2025-09-18 10:53:43 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 10:53:43 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Slack - Montsarj Alex - Montsarj Alex (DM) - TovTech - Slack)
+2025-09-18 10:53:43 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 10:53:43 - FULLSIZE: Applied windowed style with borders
+2025-09-18 10:53:43 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 10:53:43 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-18 10:53:43 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 10:53:43 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-18 10:53:43 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 10:53:43 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-18 10:57:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 10:57:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 11:00:35 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-18 11:00:35 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 11:00:35 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-18 11:00:35 - UNFREEZE_OPTIMIZE: Starting immediate full resource restoration for DaysGone.exe
+2025-09-18 11:00:35 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 11:00:35 - UNFREEZE_OPTIMIZE: Set DaysGone.exe priority to High
+2025-09-18 11:00:37 - UNFREEZE_OPTIMIZE: Restored full CPU affinity for DaysGone.exe
+2025-09-18 11:00:37 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-18 11:00:38 - UNFREEZE_OPTIMIZE: Enabled priority boost for DaysGone.exe
+2025-09-18 11:00:39 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-18 11:00:39 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-18 11:00:39 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 11:00:47 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 11:00:50 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-18 11:00:50 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 11:00:50 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 11:00:50 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 11:00:55 - DESKTOP: Switched to Desktop 2
+2025-09-18 11:00:58 - FREEZE: Minimized window for DaysGone.exe
+2025-09-18 11:00:59 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-18 11:00:59 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 11:00:59 - FREEZE_OPTIMIZE: Starting INSTANT ULTRA RAM crushing for DaysGone.exe (PID: 17188)
+2025-09-18 11:00:59 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-18 11:01:00 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-18 11:01:01 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-18 11:01:02 - FREEZE_OPTIMIZE: INSTANTLY applied ultra memory compression to DaysGone.exe
+2025-09-18 11:01:02 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-18 11:01:02 - FREEZE_OPTIMIZE: ? INSTANT resource minimization COMPLETE for DaysGone.exe! RAM<150MB, CPU=SingleCore, Priority=Idle
+2025-09-18 11:01:02 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-18 11:01:03 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-18 11:01:03 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-18 11:01:03 - FREEZE_OPTIMIZE: Starting INSTANT ULTRA RAM crushing for DaysGone.exe (PID: 17188)
+2025-09-18 11:01:03 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-18 11:01:04 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-18 11:01:04 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-18 11:01:06 - FREEZE_OPTIMIZE: INSTANTLY applied ultra memory compression to DaysGone.exe
+2025-09-18 11:01:06 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-18 11:01:06 - FREEZE_OPTIMIZE: ? INSTANT resource minimization COMPLETE for DaysGone.exe! RAM<150MB, CPU=SingleCore, Priority=Idle
+2025-09-18 11:01:06 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-18 11:01:06 - FREEZE: DaysGone.exe INSTANTLY frozen with ultra-minimal resource usage
+2025-09-18 11:01:19 - DESKTOP: Switched to Desktop 1
+2025-09-18 11:05:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 11:05:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 11:10:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 11:10:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 11:15:43 - TEXT_SHORTCUT: Triggered 'gmail' -> 'GMAIL_WEB'
+2025-09-18 11:15:43 - WEB: Opening Gmail Account 0 in Chrome
+2025-09-18 11:15:43 - WEB: Gmail Account 0 opened in Chrome
+2025-09-18 11:15:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 11:15:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 11:20:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 11:20:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 11:24:28 - FULLSIZE: Triple-tap E detected
+2025-09-18 11:24:28 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Slack - Sean Grace - Sean Grace (DM) - TovTech - Slack)
+2025-09-18 11:24:28 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 11:24:28 - FULLSIZE: Applied windowed style with borders
+2025-09-18 11:24:29 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 11:24:29 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-18 11:25:11 - FULLSIZE: Triple-tap E detected
+2025-09-18 11:25:11 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Slack - Sean Grace - Sean Grace (DM) - TovTech - Slack)
+2025-09-18 11:25:11 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 11:25:11 - FULLSIZE: Applied windowed style with borders
+2025-09-18 11:25:11 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 11:25:11 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-18 11:25:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 11:25:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 11:28:35 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-18 11:28:35 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-18 11:28:45 - FULLSIZE: Triple-tap E detected
+2025-09-18 11:28:45 - FULLSIZE: Processing window - WindowsTerminal.exe (? Admin Rights)
+2025-09-18 11:28:45 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 11:28:45 - FULLSIZE: Applied windowed style with borders
+2025-09-18 11:28:45 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 11:28:45 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 11:30:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 11:30:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
