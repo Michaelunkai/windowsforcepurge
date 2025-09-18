@@ -25708,3 +25708,38 @@ Source:	SWbemObjectEx
 2025-09-18 11:37:37 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
 2025-09-18 11:37:37 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
 2025-09-18 11:37:37 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-18 11:38:43 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 11:38:43 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 11:38:43 - CLAU: clau command launched in PowerShell
+2025-09-18 11:40:40 - FULLSIZE: Triple-tap E detected
+2025-09-18 11:40:40 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-18 11:40:40 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 11:40:40 - FULLSIZE: Applied windowed style with borders
+2025-09-18 11:40:40 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 11:40:40 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-18 11:41:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 11:41:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 11:42:03 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 11:42:03 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-18 11:42:03 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 11:42:03 - FULLSIZE: Applied windowed style with borders
+2025-09-18 11:42:04 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 11:42:04 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-18 11:42:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 11:42:04 - FULLSIZE: Applied windowed style with borders
+2025-09-18 11:42:04 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 11:42:04 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-18 11:42:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 11:42:04 - FULLSIZE: Applied windowed style with borders
+2025-09-18 11:42:04 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 11:42:04 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-18 11:42:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 11:42:04 - FULLSIZE: Applied windowed style with borders
+2025-09-18 11:42:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 11:42:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 11:42:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 11:42:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 11:42:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 11:42:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 11:42:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 11:42:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe

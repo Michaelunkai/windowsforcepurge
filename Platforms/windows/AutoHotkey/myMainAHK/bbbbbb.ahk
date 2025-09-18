@@ -4910,7 +4910,7 @@ TrimProcessWorkingSet(procName) {
                 DllCall("CloseHandle", "Ptr", hProcess)
             }
         }
-        LogMessage("TRIM: Trimmed working set for " . procName)
+        LogMessage("TRIM: EXTREME trimmed working set for " . procName)
     } catch Error as e {
         LogMessage("ERROR in TrimProcessWorkingSet(" . procName . "): " . e.message)
     }
