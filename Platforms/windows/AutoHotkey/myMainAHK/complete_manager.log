@@ -25970,3 +25970,8 @@ Source:	SWbemObjectEx
 2025-09-18 14:51:06 - QWE: qwe command launched in Windows Terminal (PowerShell)
 2025-09-18 14:54:15 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-18 14:54:15 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 14:57:28 - TEXT_SHORTCUT: Triggered 'downloads' -> 'DOWNLOADS_FOLDER'
+2025-09-18 14:57:28 - FOLDER: Opening Downloads folder
+2025-09-18 14:57:28 - FOLDER: Successfully opened Downloads folder
+2025-09-18 14:59:15 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 14:59:15 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
