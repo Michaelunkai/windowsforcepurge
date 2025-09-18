@@ -4564,6 +4564,7 @@ TrayTip("Complete Manager Ready - LATEST VERSION",
     "Win+K: Close Window (Keep Running) | Alt+A: WhatsApp`n" .
     "Alt+C: Cheat Engine | Alt+W: WeMod | Win+G: Games Folder`n" .
     "Shift+S: Switch Desktops | Alt+T: Terminal | Alt+R: Close Terminal`n" .
+    "Ctrl+Alt+T: Always On Top | Ctrl+Alt+Y: Disable Always On Top`n" .
     "••• FREEZE SYSTEM ••• Ctrl+Z: FREEZE (minimize + minimal resources) | Ctrl+D: SELECT UNFREEZE | Ctrl+R: UNFREEZE ALL`n" .
     "Legacy: Ctrl+Alt+Z: Suspend | Ctrl+Alt+R: Resume | Ctrl+Alt+D: Resume All`n" .
     "Triple Middle-Click: Window Screenshot to Clipboard`n`n" .

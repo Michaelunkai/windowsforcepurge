@@ -4355,35 +4355,6 @@ MaintenanceTimer() {
 
 ; Legacy alternative hotkeys removed - now part of main hotkey definitions above
 
-; ••• ALWAYS ON TOP MANAGEMENT •••
-; Enable always on top: Ctrl + Alt + T
-^!t:: {
-    try {
-        SetAlwaysOnTop()
-    } catch {
-        Sleep(100)
-        try {
-            SetAlwaysOnTop()
-        } catch {
-            LogMessage("CRITICAL: Always on top enable hotkey completely failed")
-        }
-    }
-}
-
-; Disable always on top: Ctrl + Alt + Y
-^!y:: {
-    try {
-        DisableAlwaysOnTop()
-    } catch {
-        Sleep(100)
-        try {
-            DisableAlwaysOnTop()
-        } catch {
-            LogMessage("CRITICAL: Always on top disable hotkey completely failed")
-        }
-    }
-}
-
 ; ••• MOUSE TRIPLE-CLICK COPY/PASTE •••
 ~LButton::
 {
@@ -4465,71 +4436,6 @@ MButton:: {
         TrayTip("Screenshot Error", "Failed to capture screenshot: " . e.message, 2000)
     }
     return
-}
-
-; ╔══════════════════════════════ ALWAYS ON TOP FUNCTIONS ══════════════════════════════╗
-SetAlwaysOnTop() {
-    try {
-        ; Get the active window
-        activeHwnd := WinGetID("A")
-        if (!activeHwnd) {
-            TrayTip("Always On Top", "No active window found", 1000)
-            LogMessage("ALWAYS_ON_TOP: No active window found")
-            return
-        }
-
-        activeTitle := WinGetTitle(activeHwnd)
-        activeProcess := WinGetProcessName(activeHwnd)
-        
-        ; Check if it's a protected process
-        if (skipMap.Has(activeProcess)) {
-            TrayTip("Always On Top Blocked", "Cannot modify protected process: " . activeProcess, 2000)
-            LogMessage("ALWAYS_ON_TOP: Blocked attempt to modify protected process: " . activeProcess)
-            return
-        }
-
-        ; Set window to always on top
-        WinSetAlwaysOnTop(true, activeHwnd)
-        LogMessage("ALWAYS_ON_TOP: Enabled always on top for " . activeProcess . " - " . activeTitle)
-        TrayTip("✓ Always On Top Enabled", activeProcess . " will stay on top", 2000)
-        
-    } catch Error as e {
-        LogMessage("ERROR in SetAlwaysOnTop: " . e.message)
-        IncrementError()
-        TrayTip("Always On Top Error", "Failed to set always on top", 1000)
-    }
-}
-
-DisableAlwaysOnTop() {
-    try {
-        ; Get the active window
-        activeHwnd := WinGetID("A")
-        if (!activeHwnd) {
-            TrayTip("Always On Top", "No active window found", 1000)
-            LogMessage("DISABLE_ON_TOP: No active window found")
-            return
-        }
-
-        activeTitle := WinGetTitle(activeHwnd)
-        activeProcess := WinGetProcessName(activeHwnd)
-        
-        ; Check if it's a protected process
-        if (skipMap.Has(activeProcess)) {
-            TrayTip("Always On Top Blocked", "Cannot modify protected process: " . activeProcess, 2000)
-            LogMessage("DISABLE_ON_TOP: Blocked attempt to modify protected process: " . activeProcess)
-            return
-        }
-
-        ; Remove always on top
-        WinSetAlwaysOnTop(false, activeHwnd)
-        LogMessage("DISABLE_ON_TOP: Disabled always on top for " . activeProcess . " - " . activeTitle)
-        TrayTip("✗ Always On Top Disabled", activeProcess . " no longer stays on top", 2000)
-        
-    } catch Error as e {
-        LogMessage("ERROR in DisableAlwaysOnTop: " . e.message)
-        IncrementError()
-        TrayTip("Always On Top Error", "Failed to disable always on top", 1000)
-    }
 }
 
 ; ╔══════════════════════════════ STARTUP NOTIFICATIONS ══════════════════════════════╗

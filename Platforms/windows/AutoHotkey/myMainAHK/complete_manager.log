@@ -26118,3 +26118,366 @@ Source:	SWbemObjectEx
 2025-09-18 16:09:40 - CLAU: clau command launched in Windows Terminal (PowerShell)
 2025-09-18 16:10:44 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-18 16:10:44 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 16:15:44 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 16:15:44 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 16:16:58 - FULLSIZE: Triple-tap E detected
+2025-09-18 16:16:58 - FULLSIZE: Processing window - WindowsTerminal.exe (? Code Troubleshooting)
+2025-09-18 16:16:58 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 16:16:58 - FULLSIZE: Applied windowed style with borders
+2025-09-18 16:16:58 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 16:16:58 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 16:20:44 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 16:20:44 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 16:23:52 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 16:23:52 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 16:23:52 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 16:24:58 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 16:26:39 - TEXT_SHORTCUT: Triggered 'sdesktop' -> 'sdesktop'
+2025-09-18 16:26:39 - TERMINAL_CMD: Executing command - sdesktop
+2025-09-18 16:26:41 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 16:26:41 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 16:26:41 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 16:27:06 - TERMINAL_CMD: Executed 'sdesktop' with self-terminating PowerShell
+2025-09-18 16:28:27 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-18 16:28:27 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-18 16:28:27 - REBOOT: Initiating immediate system reboot
+2025-09-18 16:28:27 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 16:28:27 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 16:28:27 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 16:30:01 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 16:31:05 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-18 16:31:05 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-18 16:31:05 - REBOOT: Initiating immediate system reboot
+2025-09-18 16:31:05 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 16:31:05 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 16:31:05 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 16:32:04 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 16:32:10 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 16:32:10 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 16:32:10 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 16:36:09 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 16:36:09 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 16:36:09 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 16:39:18 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 16:41:02 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 16:41:02 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 16:41:02 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 16:44:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 16:44:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 16:45:58 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-18 16:45:58 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-18 16:49:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 16:49:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 16:53:48 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 16:53:48 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 16:53:48 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 16:54:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 16:54:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 16:59:09 - TEXT_SHORTCUT: Triggered 'ubu2' -> 'UBUNTU2_WSL'
+2025-09-18 16:59:09 - UBUNTU2: Opening terminal and running WSL Ubuntu2
+2025-09-18 16:59:09 - UBUNTU2: Ubuntu2 WSL launched in Windows Terminal
+2025-09-18 16:59:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 16:59:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:03:47 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-18 17:03:47 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-18 17:03:49 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-18 17:04:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:04:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:09:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:09:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:12:17 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 17:12:17 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 17:12:17 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 17:14:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:14:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:16:10 - FULLSIZE: Triple-tap E detected
+2025-09-18 17:16:10 - FULLSIZE: Processing window - WindowsTerminal.exe (? Command Request)
+2025-09-18 17:16:10 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 17:16:10 - FULLSIZE: Applied windowed style with borders
+2025-09-18 17:16:11 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 17:16:11 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 17:19:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:19:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:24:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:24:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:29:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:29:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:34:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:34:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:39:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:39:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:44:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:44:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:49:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:49:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:54:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:54:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 17:59:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 17:59:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 18:04:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 18:04:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 18:09:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 18:09:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 18:14:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 18:14:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 18:19:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 18:19:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 18:24:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 18:24:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 18:29:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 18:29:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 18:34:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 18:34:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 18:39:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 18:39:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 18:39:46 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 18:39:46 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 18:39:46 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 18:46:59 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 18:47:54 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 18:47:54 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 18:47:54 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 18:54:36 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 18:56:06 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 18:56:06 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 18:56:06 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 18:59:36 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 18:59:36 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 19:03:09 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 19:03:09 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:09 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:09 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:09 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:09 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:03:09 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:09 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:09 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:09 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:09 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 19:03:09 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:09 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:10 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:10 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:10 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:03:10 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:10 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:10 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:10 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:10 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:10 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 19:03:10 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:10 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:10 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:10 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:10 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:10 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:03:10 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:10 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:10 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:10 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:10 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:10 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 19:03:10 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:10 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:10 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:11 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:11 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:11 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:03:11 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:11 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:11 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:11 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:11 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:11 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 19:03:11 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:11 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:11 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:11 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:11 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:11 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:03:11 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:11 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:11 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:11 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:11 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:12 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 19:03:12 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:12 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:12 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:12 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:12 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:12 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:03:12 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:12 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:12 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:12 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:12 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:13 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-18 19:03:13 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:13 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:13 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:13 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:13 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:03:13 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:03:13 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-18 19:03:13 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:03:13 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:03:13 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:03:13 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:04:36 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 19:04:36 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 19:07:04 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 19:07:04 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 19:07:04 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 19:08:17 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 19:08:52 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 19:08:52 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 19:08:52 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 19:09:56 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 19:14:56 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 19:14:56 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 19:19:20 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 19:19:20 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 19:19:20 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 19:19:56 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 19:19:56 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 19:24:56 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 19:24:56 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 19:29:56 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 19:29:56 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 19:30:58 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:30:58 - FULLSIZE: Processing window - WindowsTerminal.exe (? Docker Container Error)
+2025-09-18 19:30:58 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:30:58 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:30:58 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:30:58 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:34:56 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 19:34:56 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 19:39:56 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 19:39:56 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 19:42:15 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:42:15 - FULLSIZE: Processing window - WindowsTerminal.exe (? Virtual Memory)
+2025-09-18 19:42:15 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:42:15 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:42:15 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:42:15 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:42:19 - FULLSIZE: Triple-tap E detected
+2025-09-18 19:42:19 - FULLSIZE: Processing window - WindowsTerminal.exe (? Virtual Memory)
+2025-09-18 19:42:19 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 19:42:19 - FULLSIZE: Applied windowed style with borders
+2025-09-18 19:42:19 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 19:42:19 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-18 19:43:32 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-18 19:43:32 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-18 19:43:32 - REBOOT: Initiating immediate system reboot
+2025-09-18 19:43:32 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 19:43:32 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 19:43:32 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 19:44:32 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 19:48:35 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 19:48:35 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 19:48:35 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 19:51:45 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 19:56:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 19:56:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 20:01:32 - TEXT_SHORTCUT: Triggered 'ffff' -> 'FIREFOX_APP'
+2025-09-18 20:01:32 - LAUNCHER: Attempting to launch Firefox
+2025-09-18 20:01:32 - LAUNCHER: Firefox launched successfully
+2025-09-18 20:01:33 - LAUNCHER: Firefox window activated
+2025-09-18 20:01:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 20:01:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 20:05:16 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 20:05:16 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 20:05:16 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 20:07:17 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 20:07:22 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 20:07:22 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 20:07:22 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 20:12:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 20:12:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 20:14:39 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-18 20:14:39 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-18 20:14:39 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-18 20:17:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 20:17:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 20:19:50 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 20:19:50 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 20:19:50 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 20:34:34 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 20:35:36 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 20:35:36 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 20:35:36 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 20:39:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 20:39:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 20:39:40 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 20:39:40 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 20:39:40 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 20:41:01 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 20:46:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 20:46:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 20:51:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 20:51:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 20:56:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 20:56:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 20:56:09 - FULLSIZE: Triple-tap E detected
+2025-09-18 20:56:09 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - Grok)
+2025-09-18 20:56:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-18 20:56:09 - FULLSIZE: Applied windowed style with borders
+2025-09-18 20:56:09 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-18 20:56:09 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-18 21:01:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:01:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:01:47 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 21:01:47 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 21:01:47 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 21:06:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:06:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:11:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:11:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:13:28 - TEXT_SHORTCUT: Triggered 'mreflect' -> 'MACRIUM_REFLECT_APP'
+2025-09-18 21:13:28 - LAUNCHER: Attempting to launch Macrium Reflect
+2025-09-18 21:13:28 - LAUNCHER: Macrium Reflect launched successfully from: F:\backup\windowsapps\installed\reflect\Reflect.exe
+2025-09-18 21:13:40 - WARNING: Macrium Reflect launched but window not detected within 10 seconds
+2025-09-18 21:16:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:16:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:19:36 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 21:19:36 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 21:19:36 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 21:20:46 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 21:23:24 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-18 21:23:24 - FOLDER: Opening installed apps folder
+2025-09-18 21:23:24 - FOLDER: Successfully opened installed apps folder
+2025-09-18 21:24:18 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 21:24:18 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 21:24:18 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 21:25:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:25:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:30:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:30:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:35:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:35:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:40:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:40:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:45:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 21:45:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 21:46:25 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-18 21:46:25 - FOLDER: Opening installed apps folder
+2025-09-18 21:46:25 - FOLDER: Successfully opened installed apps folder
+2025-09-18 21:46:58 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-18 21:46:58 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 21:46:58 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 21:46:58 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 21:47:06 - ALWAYS_ON_TOP: Enabled always on top for WindowsTerminal.exe - Administrator: Windows PowerShell
+2025-09-18 21:47:11 - DISABLE_ON_TOP: Disabled always on top for Ferdium.exe - Ferdium - YouTube study - (31) YouTube
+2025-09-18 21:47:14 - DISABLE_ON_TOP: Disabled always on top for WindowsTerminal.exe - Administrator: Windows PowerShell
+2025-09-18 21:47:48 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-18 21:47:48 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 21:47:48 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 21:47:48 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 21:47:51 - ALWAYS_ON_TOP: Enabled always on top for Code.exe - BBBBBBB.AHK - myMainAHK - Visual Studio Code [Administrator]
+2025-09-18 21:47:57 - DISABLE_ON_TOP: Disabled always on top for Code.exe - BBBBBBB.AHK - myMainAHK - Visual Studio Code [Administrator]
+2025-09-18 21:48:11 - TEXT_SHORTCUT: Triggered 'cahk' -> 'closeahk'
+2025-09-18 21:48:11 - TERMINAL_CMD: Executing command - closeahk
