@@ -25124,3 +25124,53 @@ Source:	SWbemObjectEx
 2025-09-18 01:41:00 - SHUTDOWN: Script exiting - Reason: Shutdown
 2025-09-18 01:41:01 - SHUTDOWN: All processes resumed before exit
 2025-09-18 01:41:54 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 01:46:54 - CLEANUP: Starting suspended list cleanup
+2025-09-18 01:46:54 - CLEANUP: Completed, 0 entries removed
+2025-09-18 01:49:02 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-18 01:49:02 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-18 01:49:04 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-18 01:51:54 - CLEANUP: Starting suspended list cleanup
+2025-09-18 01:51:54 - CLEANUP: Completed, 0 entries removed
+2025-09-18 01:53:12 - TEXT_SHORTCUT: Triggered 'sleep' -> 'ss'
+2025-09-18 01:53:12 - TERMINAL_CMD: Executing command - ss
+2025-09-18 01:53:15 - TERMINAL_CMD: Executed 'ss' with self-terminating PowerShell
+2025-09-18 08:57:54 - CLEANUP: Starting suspended list cleanup
+2025-09-18 08:57:55 - CLEANUP: Completed, 0 entries removed
+2025-09-18 09:02:54 - CLEANUP: Starting suspended list cleanup
+2025-09-18 09:02:54 - CLEANUP: Completed, 0 entries removed
+2025-09-18 09:28:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 09:28:50 - CLEANUP: Completed, 0 entries removed
+2025-09-18 09:30:58 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-18 09:30:58 - ERROR: WeMod not found at: C:\Users\\micha\AppData\Local\WeMod\WeMod.exe
+2025-09-18 09:32:37 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-18 09:32:37 - LAUNCHER: WeMod launched successfully
+2025-09-18 09:32:39 - LAUNCHER: WeMod window activated
+2025-09-18 09:32:48 - TEXT_SHORTCUT: Triggered 'swemod' -> 'swemod'
+2025-09-18 09:32:48 - TERMINAL_CMD: Executing command - swemod
+2025-09-18 09:33:24 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-18 09:33:24 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-18 09:33:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 09:33:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 09:34:44 - TERMINAL_CMD: Executed 'swemod' with self-terminating PowerShell
+2025-09-18 09:38:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 09:38:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 09:43:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 09:43:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 09:44:28 - SUSPEND: Executing "F:\backup\windowsapps\installed\PSTools\pssuspend64.exe" "DaysGone.exe"
+2025-09-18 09:44:32 - DESKTOP: Switched to Desktop 2
+2025-09-18 09:44:32 - DESKTOP: Switched to Desktop 1
+2025-09-18 09:47:19 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-18 09:47:19 - LAUNCHER: WeMod launched successfully
+2025-09-18 09:48:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 09:48:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 09:53:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 09:53:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 09:58:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 09:58:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 10:03:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 10:03:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 10:08:49 - CLEANUP: Starting suspended list cleanup
+2025-09-18 10:08:49 - CLEANUP: Completed, 0 entries removed
+2025-09-18 10:11:53 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-18 10:11:54 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-18 10:11:54 - CLAU: clau command launched in PowerShell
