@@ -26599,3 +26599,8 @@ Source:	SWbemObjectEx
 2025-09-19 00:35:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-19 00:40:47 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-19 00:40:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:42:24 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-19 00:42:24 - FOLDER: Opening installed apps folder
+2025-09-19 00:42:24 - FOLDER: Successfully opened installed apps folder
+2025-09-19 00:45:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:45:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
