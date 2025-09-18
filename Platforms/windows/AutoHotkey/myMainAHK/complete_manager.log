@@ -26071,3 +26071,5 @@ Source:	SWbemObjectEx
 2025-09-18 15:46:28 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
 2025-09-18 15:46:28 - CLAU: Opening Windows Terminal and running 'clau' command
 2025-09-18 15:46:28 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-18 15:49:15 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 15:49:15 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
