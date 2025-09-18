@@ -1577,14 +1577,21 @@ function Start-UltraSafeSystemCleanup {
     Write-Log ("=" * 80) -NoProgress
 
     try {
+        $pathCount = 0
+        $totalPaths = $Script:UltraSafeCleanupPaths.Count
+
         foreach ($cleanupPath in $Script:UltraSafeCleanupPaths) {
+            $pathCount++
+            $pathPercent = [math]::Round(($pathCount / $totalPaths) * 100, 1)
             $pathToClean = $ExecutionContext.InvokeCommand.ExpandString($cleanupPath.Path)
 
             if (-not (Test-Path $pathToClean)) {
+                Write-Progress -Activity "🧹 ULTRA-SAFE CLEANUP" -Status "$pathPercent% Complete" -PercentComplete $pathPercent -CurrentOperation "Skipping: $($cleanupPath.Description)"
                 Write-Log "⏭️  Skipping non-existent path: $pathToClean" -Level WARNING
                 continue
             }
 
+            Write-Progress -Activity "🧹 ULTRA-SAFE CLEANUP" -Status "$pathPercent% Complete" -PercentComplete $pathPercent -CurrentOperation "Scanning: $($cleanupPath.Description)"
             Write-Log "🔍 SCANNING: $($cleanupPath.Description) -> $pathToClean" -Level PROGRESS
 
             try {
@@ -1744,9 +1751,12 @@ function Start-UltimateUninstall {
 
     $startTime = Get-Date
 
-    # Calculate total operations for progress tracking
-    $Script:TotalOperations = $Script:ProgressSteps.Count * 15 # More operations with enhanced safety checks
+    # Initialize progress tracking with visible progress bar
+    $Script:TotalOperations = 100  # Use 100 for easy percentage calculation
     $Script:CurrentOperation = 0
+
+    # Show initial progress bar
+    Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "0% Complete" -PercentComplete 0 -CurrentOperation "Initializing..."
 
     Write-Log ("=" * 80) -NoProgress
     Write-Log "🚀 ULTIMATE UNINSTALLER - ZERO LEFTOVERS MODE" -Level 'SUCCESS' -NoProgress
@@ -1762,7 +1772,8 @@ function Start-UltimateUninstall {
 
     try {
         # Step 1: Find and uninstall programs properly
-        Write-Log "📍 STEP 1/12: Finding and uninstalling programs" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "8% Complete" -PercentComplete 8 -CurrentOperation "STEP 1/12: Finding and uninstalling programs"
+        Write-Log "📍 STEP 1/12: Finding and uninstalling programs" -Level PROGRESS -NoProgress
         $foundPrograms = Find-InstalledPrograms -AppNames $AppNames
         if ($foundPrograms.Count -gt 0) {
             Uninstall-Programs -FoundPrograms $foundPrograms
@@ -1771,56 +1782,60 @@ function Start-UltimateUninstall {
         }
 
         # Step 2: Terminate related processes
-        Write-Log "📍 STEP 2/12: Terminating ALL related processes" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "17% Complete" -PercentComplete 17 -CurrentOperation "STEP 2/12: Terminating ALL related processes"
+        Write-Log "📍 STEP 2/12: Terminating ALL related processes" -Level PROGRESS -NoProgress
         Stop-RelatedProcesses -AppNames $AppNames
 
         # Step 3: Stop and remove services
-        Write-Log "📍 STEP 3/12: Stopping and removing ALL services" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "25% Complete" -PercentComplete 25 -CurrentOperation "STEP 3/12: Stopping and removing ALL services"
+        Write-Log "📍 STEP 3/12: Stopping and removing ALL services" -Level PROGRESS -NoProgress
         Stop-RelatedServices -AppNames $AppNames
 
         # Step 4: Remove scheduled tasks
-        Write-Log "📍 STEP 4/12: Removing ALL scheduled tasks" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "33% Complete" -PercentComplete 33 -CurrentOperation "STEP 4/12: Removing ALL scheduled tasks"
+        Write-Log "📍 STEP 4/12: Removing ALL scheduled tasks" -Level PROGRESS -NoProgress
         Remove-ScheduledTasks -AppNames $AppNames
 
         # Step 5: Remove shortcuts and icons
-        Write-Log "📍 STEP 5/12: Removing ALL shortcuts and icons" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "42% Complete" -PercentComplete 42 -CurrentOperation "STEP 5/12: Removing ALL shortcuts and icons"
+        Write-Log "📍 STEP 5/12: Removing ALL shortcuts and icons" -Level PROGRESS -NoProgress
         Remove-ShortcutsAndIcons -AppNames $AppNames
 
         # Step 6: Comprehensive file search and removal
-        Write-Log "📍 STEP 6/12: DEEP file search and removal" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "50% Complete" -PercentComplete 50 -CurrentOperation "STEP 6/12: DEEP file search and removal"
+        Write-Log "📍 STEP 6/12: DEEP file search and removal" -Level PROGRESS -NoProgress
         Start-ComprehensiveFileSearch -AppNames $AppNames
 
         # Step 7: EXHAUSTIVE registry cleanup
-        Write-Log "📍 STEP 7/12: EXHAUSTIVE registry cleanup (ZERO leftovers)" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "58% Complete" -PercentComplete 58 -CurrentOperation "STEP 7/12: EXHAUSTIVE registry cleanup (ZERO leftovers)"
+        Write-Log "📍 STEP 7/12: EXHAUSTIVE registry cleanup (ZERO leftovers)" -Level PROGRESS -NoProgress
         Clear-RegistryExhaustive -AppNames $AppNames
 
         # Step 8: Remove Windows Optional Features
-        Write-Log "📍 STEP 8/12: Removing Windows Optional Features" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "67% Complete" -PercentComplete 67 -CurrentOperation "STEP 8/12: Removing Windows Optional Features"
+        Write-Log "📍 STEP 8/12: Removing Windows Optional Features" -Level PROGRESS -NoProgress
         Remove-WindowsOptionalFeatures -AppNames $AppNames
 
         # Step 9: Remove deep system integration
-        Write-Log "📍 STEP 9/12: Removing DEEP system integration" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "75% Complete" -PercentComplete 75 -CurrentOperation "STEP 9/12: Removing DEEP system integration"
+        Write-Log "📍 STEP 9/12: Removing DEEP system integration" -Level PROGRESS -NoProgress
         Remove-SystemIntegration -AppNames $AppNames
 
         # Step 10: Group Policy cleanup
-        Write-Log "📍 STEP 10/12: Cleaning Group Policy settings" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "83% Complete" -PercentComplete 83 -CurrentOperation "STEP 10/12: Cleaning Group Policy settings"
+        Write-Log "📍 STEP 10/12: Cleaning Group Policy settings" -Level PROGRESS -NoProgress
         Remove-GroupPolicySettings -AppNames $AppNames
 
         # Step 11: Windows telemetry and crash reporting cleanup
-        Write-Log "📍 STEP 11/12: Cleaning telemetry and crash reports" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "92% Complete" -PercentComplete 92 -CurrentOperation "STEP 11/12: Cleaning telemetry and crash reports"
+        Write-Log "📍 STEP 11/12: Cleaning telemetry and crash reports" -Level PROGRESS -NoProgress
         Remove-TelemetryAndCrashReports -AppNames $AppNames
 
         # Step 12: Final system cleanup
-        Write-Log "📍 STEP 12/12: Final system cleanup and optimization" -Level PROGRESS
+        Write-Progress -Activity "🚀 ULTIMATE UNINSTALLER" -Status "100% Complete" -PercentComplete 100 -CurrentOperation "STEP 12/12: Final system cleanup and optimization"
+        Write-Log "📍 STEP 12/12: Final system cleanup and optimization" -Level PROGRESS -NoProgress
         Start-FinalSystemCleanup
 
-        # Step 10: Windows telemetry and crash reporting cleanup
-        Write-Log "📍 STEP 10/11: Cleaning telemetry and crash reports" -Level PROGRESS
-        Remove-TelemetryAndCrashReports -AppNames $AppNames
-
-        # Step 11: Final system cleanup
-        Write-Log "📍 STEP 11/11: Final system cleanup and optimization" -Level PROGRESS
-        Start-FinalSystemCleanup
 
     } catch {
         Write-Log "❌ CRITICAL ERROR: $($_.Exception.Message)" -Level ERROR
