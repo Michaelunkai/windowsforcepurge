@@ -26533,3 +26533,69 @@ Source:	SWbemObjectEx
 2025-09-18 22:41:25 - ALWAYS_ON_TOP: Enabled always on top for SetupHost.exe - Windows 11 Setup
 2025-09-18 22:42:00 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-18 22:42:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 22:42:49 - ALWAYS_ON_TOP: Enabled always on top for SetupHost.exe - Windows 11 Setup
+2025-09-18 22:43:53 - ALWAYS_ON_TOP: Enabled always on top for SetupHost.exe - Windows 11 Setup
+2025-09-18 22:47:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 22:47:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 22:52:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 22:52:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 22:57:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 22:57:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 23:02:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 23:02:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 23:07:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 23:07:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 23:11:18 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 23:11:18 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 23:11:18 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 23:15:23 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 23:20:23 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 23:20:23 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 23:25:23 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 23:25:23 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 23:28:08 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-18 23:28:08 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-18 23:28:08 - REBOOT: Initiating immediate system reboot
+2025-09-18 23:28:08 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-18 23:28:08 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-18 23:28:08 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-18 23:47:01 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-18 23:52:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 23:52:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-18 23:57:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-18 23:57:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:02:01 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:02:01 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:02:40 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-19 00:02:40 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 00:02:40 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 00:05:47 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 00:06:33 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-19 00:06:33 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-19 00:06:33 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-19 00:10:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:10:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:15:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:15:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:16:52 - TEXT_SHORTCUT: Triggered 'xcccc' -> 'CHROME_APP'
+2025-09-19 00:16:52 - LAUNCHER: Attempting to launch Chrome
+2025-09-19 00:16:52 - LAUNCHER: Chrome already running, activated window
+2025-09-19 00:20:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:20:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:25:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:25:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:30:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:30:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:31:52 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-19 00:31:52 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-19 00:31:52 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-19 00:33:16 - FULLSIZE: Triple-tap E detected
+2025-09-19 00:33:16 - FULLSIZE: Processing window - WindowsTerminal.exe (? Docker Container Backup)
+2025-09-19 00:33:16 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-19 00:33:16 - FULLSIZE: Applied windowed style with borders
+2025-09-19 00:33:16 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-19 00:33:16 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-19 00:35:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:35:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:40:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:40:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
