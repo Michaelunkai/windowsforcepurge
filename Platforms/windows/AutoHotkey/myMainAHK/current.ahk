@@ -25,7 +25,7 @@ if !A_IsAdmin {
 
 ; Initialize core variables
 SetWorkingDir("F:\backup\windowsapps\installed\PSTools")
-psSuspend := A_WorkingDir . "\pssuspend64.exe"
+psSuspend := "F:\backup\windowsapps\installed\pstools\pssuspend64.exe"
 cheatEngine := "F:\backup\windowsapps\installed\Cheat Engine 7.5\Cheat Engine.exe"
 weMod := "C:\Users\\micha\AppData\Local\WeMod\WeMod.exe"
 wallPaperApp := "C:\Users\\micha\Desktop\WallPaper.lnk"
@@ -1296,8 +1296,8 @@ ShowHelpShortcuts() {
         rightColumnText .= "Alt+W: WeMod | Win+G: Games Folder`n"
         rightColumnText .= "Shift+S: Switch Desktops`n"
         rightColumnText .= "Alt+T: Terminal | Alt+R: Close Terminal`n"
-        rightColumnText .= "Ctrl+Z: Suspend | Ctrl+Alt+R: Resume`n"
-        rightColumnText .= "Ctrl+D: Resume All`n`n"
+        rightColumnText .= "Ctrl+Z: FORCE FREEZE current app | Ctrl+D: Unfreeze ALL`n"
+        rightColumnText .= "Ctrl+R: Choose which frozen app to unfreeze`n`n"
         
         rightColumnText .= "••• ADVANCED FEATURES •••`n"
         rightColumnText .= "• Clipboard Integration: Auto-copy credentials`n"
@@ -4253,6 +4253,7 @@ MaintenanceTimer() {
 
 ; ••• PROCESS FREEZE/UNFREEZE •••
 ; NEW FREEZE SYSTEM - Primary hotkeys with error recovery
+; Ctrl+Z: Force freeze current running app
 ^z:: {
     try {
         HotkeyFreeze()
@@ -4267,21 +4268,8 @@ MaintenanceTimer() {
     }
 }
 
+; Ctrl+D: Unfreeze all frozen apps
 ^d:: {
-    try {
-        HotkeyUnfreeze()
-    } catch {
-        ; Fallback - try again once
-        Sleep(100)
-        try {
-            HotkeyUnfreeze()
-        } catch {
-            LogMessage("CRITICAL: Unfreeze hotkey completely failed")
-        }
-    }
-}
-
-^r:: {
     try {
         HotkeyUnfreezeAll()
     } catch {
@@ -4291,6 +4279,21 @@ MaintenanceTimer() {
             HotkeyUnfreezeAll()
         } catch {
             LogMessage("CRITICAL: Unfreeze all hotkey completely failed")
+        }
+    }
+}
+
+; Ctrl+R: Show GUI to choose which frozen app to unfreeze
+^r:: {
+    try {
+        HotkeyUnfreeze()
+    } catch {
+        ; Fallback - try again once
+        Sleep(100)
+        try {
+            HotkeyUnfreeze()
+        } catch {
+            LogMessage("CRITICAL: Unfreeze selection hotkey completely failed")
         }
     }
 }

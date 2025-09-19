@@ -26604,3 +26604,1188 @@ Source:	SWbemObjectEx
 2025-09-19 00:42:24 - FOLDER: Successfully opened installed apps folder
 2025-09-19 00:45:47 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-19 00:45:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:49:23 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-19 00:49:23 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-19 00:49:23 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-19 00:50:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:50:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:52:26 - TEXT_SHORTCUT: Triggered 'downloads' -> 'DOWNLOADS_FOLDER'
+2025-09-19 00:52:26 - FOLDER: Opening Downloads folder
+2025-09-19 00:52:26 - FOLDER: Successfully opened Downloads folder
+2025-09-19 00:55:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 00:55:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 00:59:53 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-19 00:59:53 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-19 00:59:53 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-19 01:00:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:00:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 01:05:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:05:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 01:08:45 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-19 01:08:45 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-19 01:08:45 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-19 01:10:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:10:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 01:13:47 - FULLSIZE: Triple-tap E detected
+2025-09-19 01:13:47 - FULLSIZE: Processing window - WindowsTerminal.exe (? File Configuration)
+2025-09-19 01:13:47 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-19 01:13:47 - FULLSIZE: Applied windowed style with borders
+2025-09-19 01:13:47 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-19 01:13:47 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-19 01:14:31 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-19 01:14:31 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 01:14:31 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 01:21:12 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 01:26:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:26:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 01:28:29 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-19 01:28:29 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-19 01:28:29 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-19 01:31:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:31:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 01:34:44 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-19 01:34:44 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-19 01:34:44 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-19 01:36:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:36:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 01:37:36 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-19 01:37:36 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-19 01:37:36 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-19 01:38:31 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-19 01:38:31 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-19 01:40:08 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-19 01:40:08 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-19 01:41:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:41:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 01:46:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:46:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 01:50:46 - FULLSIZE: Triple-tap E detected
+2025-09-19 01:50:46 - FULLSIZE: Processing window - WindowsTerminal.exe (? Profile Loading)
+2025-09-19 01:50:46 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-19 01:50:46 - FULLSIZE: Applied windowed style with borders
+2025-09-19 01:50:46 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-19 01:50:46 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-19 01:50:47 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-19 01:50:47 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-19 01:50:47 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-19 01:51:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:51:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 01:56:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 01:56:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:01:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 02:01:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:05:37 - FULLSIZE: Triple-tap E detected
+2025-09-19 02:05:37 - FULLSIZE: Processing window - WindowsTerminal.exe (? Docker Container Backup)
+2025-09-19 02:05:37 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-19 02:05:37 - FULLSIZE: Applied windowed style with borders
+2025-09-19 02:05:37 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-19 02:05:37 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-19 02:05:43 - FULLSIZE: Triple-tap E detected
+2025-09-19 02:05:43 - FULLSIZE: Processing window - WindowsTerminal.exe (? Docker Container Backup)
+2025-09-19 02:05:43 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-19 02:05:43 - FULLSIZE: Applied windowed style with borders
+2025-09-19 02:05:43 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-19 02:05:43 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-19 02:06:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 02:06:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:08:37 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-19 02:08:38 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-19 02:08:38 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-19 02:11:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 02:11:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:16:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 02:16:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:21:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 02:21:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:26:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 02:26:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:31:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 02:31:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:36:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 02:36:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:37:12 - DESKTOP: Switched to Desktop 2
+2025-09-19 02:39:04 - FREEZE: Minimized window for DaysGone.exe
+2025-09-19 02:39:04 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-19 02:39:04 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:39:04 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 5504)
+2025-09-19 02:39:04 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-19 02:39:07 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-19 02:39:07 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-19 02:39:08 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-19 02:39:10 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-19 02:39:13 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-19 02:39:13 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-19 02:39:13 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-19 02:39:13 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:39:13 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-19 02:39:13 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-19 02:39:13 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:39:14 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 5504)
+2025-09-19 02:39:14 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-19 02:39:15 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-19 02:39:15 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-19 02:39:16 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-19 02:39:18 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-19 02:39:19 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-19 02:39:20 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-19 02:39:20 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-19 02:39:20 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:39:20 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-19 02:39:20 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:39:21 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-19 02:39:22 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-19 02:39:22 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:39:22 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-19 02:39:23 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-19 02:39:23 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-19 02:39:23 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-19 02:39:25 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-19 02:39:25 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-19 02:39:27 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-19 02:39:27 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:39:27 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-19 02:39:27 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:39:27 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-19 02:39:29 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-19 02:39:29 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-19 02:39:29 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-19 02:39:30 - INFO: DaysGone.exe already frozen
+2025-09-19 02:39:31 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-19 02:39:31 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-19 02:39:33 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-19 02:39:33 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:39:33 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-19 02:39:33 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-19 02:39:33 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-19 02:39:33 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 02:39:33 - FREEZE: Minimized window for DaysGone.exe
+2025-09-19 02:39:33 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-19 02:39:34 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:39:34 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 5504)
+2025-09-19 02:39:34 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-19 02:39:35 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-19 02:39:35 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-19 02:39:37 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-19 02:39:38 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-19 02:39:40 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-19 02:39:40 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-19 02:39:40 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-19 02:39:40 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:39:40 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-19 02:39:40 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-19 02:39:41 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:39:41 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 5504)
+2025-09-19 02:39:41 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-19 02:39:42 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-19 02:39:42 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-19 02:39:44 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-19 02:39:45 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-19 02:39:46 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-19 02:39:47 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-19 02:39:47 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-19 02:39:47 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:39:47 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-19 02:39:47 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:39:53 - INFO: DaysGone.exe already frozen
+2025-09-19 02:39:57 - GUI: Creating frozen processes selection GUI
+2025-09-19 02:39:57 - GUI: Frozen processes selection GUI displayed
+2025-09-19 02:40:09 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-19 02:40:09 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-19 02:40:09 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:40:09 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-19 02:40:10 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-19 02:40:10 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-19 02:40:11 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-19 02:40:12 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-19 02:40:12 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-19 02:40:13 - GUI: User selected to unfreeze all frozen processes
+2025-09-19 02:40:13 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-19 02:40:13 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-19 02:40:13 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:40:13 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-19 02:40:15 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-19 02:40:15 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-19 02:40:15 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-19 02:40:17 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-19 02:40:17 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-19 02:40:18 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-19 02:40:18 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:40:19 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-19 02:40:19 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:40:19 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-19 02:40:20 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-19 02:40:21 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-19 02:40:21 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-19 02:40:22 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-19 02:40:22 - INFO: DaysGone.exe already frozen
+2025-09-19 02:40:23 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-19 02:40:24 - INFO: DaysGone.exe already frozen
+2025-09-19 02:40:24 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-19 02:40:24 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:40:24 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-19 02:40:24 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-19 02:40:24 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-19 02:40:25 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 02:40:25 - ERROR in UnfreezeAllProcesses: This value of type "Gui" has no method named "Close".
+2025-09-19 02:40:25 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-19 02:40:25 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:40:25 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-19 02:40:25 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:40:25 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-19 02:40:26 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-19 02:40:26 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-19 02:40:27 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-19 02:40:27 - FREEZE: Minimized window for DaysGone.exe
+2025-09-19 02:40:27 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-19 02:40:27 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:40:27 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 5504)
+2025-09-19 02:40:27 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-19 02:40:29 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-19 02:40:29 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-19 02:40:30 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-19 02:40:32 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-19 02:40:33 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-19 02:40:33 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-19 02:40:33 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-19 02:40:33 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:40:33 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-19 02:40:34 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-19 02:40:34 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:40:34 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 5504)
+2025-09-19 02:40:34 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-19 02:40:35 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-19 02:40:35 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-19 02:40:36 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-19 02:40:38 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-19 02:40:39 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-19 02:40:40 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-19 02:40:40 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-19 02:40:40 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:40:40 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-19 02:40:40 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:40:40 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-19 02:40:40 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-19 02:40:41 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-19 02:40:41 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:40:41 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-19 02:40:41 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-19 02:40:41 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-19 02:40:42 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 02:41:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 02:41:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 02:42:00 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-19 02:42:00 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 02:42:00 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 02:42:00 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 02:42:09 - FREEZE: Minimized window for WindowsTerminal.exe
+2025-09-19 02:42:09 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 02:42:09 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:42:09 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 25692)
+2025-09-19 02:42:09 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 02:42:11 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 02:42:11 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 02:42:12 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 02:42:13 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 02:42:15 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 02:42:15 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 02:42:15 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 02:42:15 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:42:15 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "WindowsTerminal.exe"
+2025-09-19 02:42:15 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 02:42:15 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:42:15 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 25692)
+2025-09-19 02:42:15 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 02:42:17 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 02:42:17 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 02:42:18 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 02:42:19 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 02:42:20 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 02:42:21 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 02:42:21 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 02:42:21 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:42:21 - SUCCESS: Frozen and minimized WindowsTerminal.exe with minimal resource usage
+2025-09-19 02:42:21 - FREEZE: WindowsTerminal.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:42:39 - FREEZE: Minimized window for chrome.exe
+2025-09-19 02:42:39 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for chrome.exe
+2025-09-19 02:42:39 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:42:39 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for chrome.exe (PID: 21080)
+2025-09-19 02:42:39 - FREEZE_OPTIMIZE: Instant RAM crushing failed for chrome.exe - Failed to load DLL.
+2025-09-19 02:42:40 - FREEZE_OPTIMIZE: Limited chrome.exe to single CPU core (fallback)
+2025-09-19 02:42:40 - FREEZE_OPTIMIZE: I/O priority reduction failed for chrome.exe
+2025-09-19 02:42:42 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to chrome.exe
+2025-09-19 02:42:42 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "WindowsTerminal.exe"
+2025-09-19 02:42:43 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 02:42:43 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:42:43 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 02:42:44 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 02:42:44 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 02:42:44 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 02:42:45 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 02:42:46 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 02:42:47 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 02:42:47 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:42:47 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 02:42:47 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:42:47 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 02:42:48 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 02:42:49 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 02:42:49 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 02:42:49 - GUI: Creating frozen processes selection GUI
+2025-09-19 02:42:49 - GUI: Frozen processes selection GUI displayed
+2025-09-19 02:42:50 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 02:42:50 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 02:42:51 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 02:42:51 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:42:52 - UNFREEZE: Restored and activated window for WindowsTerminal.exe
+2025-09-19 02:42:52 - SUCCESS: Unfrozen and restored WindowsTerminal.exe with full resources
+2025-09-19 02:42:52 - UNFREEZE_ALL: Restored WindowsTerminal.exe with full resources
+2025-09-19 02:42:52 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 02:42:52 - FREEZE_OPTIMIZE: Applied working set size enforcement to chrome.exe
+2025-09-19 02:42:53 - FREEZE_OPTIMIZE: Applied large object heap compression to chrome.exe
+2025-09-19 02:42:53 - FREEZE_OPTIMIZE: INSTANTLY set chrome.exe to background CPU scheduling
+2025-09-19 02:42:53 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for chrome.exe
+2025-09-19 02:42:53 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for chrome.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:42:53 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "chrome.exe"
+2025-09-19 02:42:54 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for chrome.exe
+2025-09-19 02:42:54 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:42:54 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for chrome.exe (PID: 21080)
+2025-09-19 02:42:54 - FREEZE_OPTIMIZE: Instant RAM crushing failed for chrome.exe - Failed to load DLL.
+2025-09-19 02:42:55 - FREEZE_OPTIMIZE: Limited chrome.exe to single CPU core (fallback)
+2025-09-19 02:42:55 - FREEZE_OPTIMIZE: I/O priority reduction failed for chrome.exe
+2025-09-19 02:42:57 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to chrome.exe
+2025-09-19 02:42:58 - FREEZE_OPTIMIZE: Applied working set size enforcement to chrome.exe
+2025-09-19 02:42:59 - FREEZE_OPTIMIZE: Applied large object heap compression to chrome.exe
+2025-09-19 02:43:00 - FREEZE_OPTIMIZE: INSTANTLY set chrome.exe to background CPU scheduling
+2025-09-19 02:43:00 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for chrome.exe
+2025-09-19 02:43:00 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for chrome.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:43:00 - SUCCESS: Frozen and minimized chrome.exe with minimal resource usage
+2025-09-19 02:43:00 - FREEZE: chrome.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:43:02 - GUI: User selected to unfreeze all frozen processes
+2025-09-19 02:43:02 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "chrome.exe"
+2025-09-19 02:43:02 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:02 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:02 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:04 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:04 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:04 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:05 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:06 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:43:06 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "chrome.exe"
+2025-09-19 02:43:06 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:06 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:06 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:07 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:08 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:08 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:08 - GUI: Creating frozen processes selection GUI
+2025-09-19 02:43:08 - GUI: Frozen processes selection GUI displayed
+2025-09-19 02:43:09 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:09 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:43:11 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:43:11 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:43:11 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:11 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:11 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:12 - GUI: User selected to unfreeze all frozen processes
+2025-09-19 02:43:12 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "chrome.exe"
+2025-09-19 02:43:12 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:12 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:12 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:13 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:13 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:13 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:14 - GUI: Creating frozen processes selection GUI
+2025-09-19 02:43:14 - GUI: Frozen processes selection GUI displayed
+2025-09-19 02:43:15 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:15 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:43:17 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:43:17 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:43:17 - GUI: User selected to unfreeze all frozen processes
+2025-09-19 02:43:17 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "chrome.exe"
+2025-09-19 02:43:17 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:17 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:17 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:18 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:18 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:18 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:19 - GUI: User selected to unfreeze chrome.exe
+2025-09-19 02:43:19 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "chrome.exe"
+2025-09-19 02:43:19 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:19 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:19 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:20 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:20 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:20 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:22 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:22 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:43:23 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:43:23 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:43:23 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:24 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:24 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:25 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:25 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:25 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:26 - GUI: Creating frozen processes selection GUI
+2025-09-19 02:43:26 - GUI: Frozen processes selection GUI displayed
+2025-09-19 02:43:27 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:27 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:43:28 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:43:28 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:43:28 - UNFREEZE: Restored and activated window for chrome.exe
+2025-09-19 02:43:28 - SUCCESS: Unfrozen and restored chrome.exe with full resources
+2025-09-19 02:43:28 - GUI: Successfully unfrozen chrome.exe with window restoration
+2025-09-19 02:43:28 - ERROR in UnfreezeSelectedProcess: This value of type "Gui" has no method named "Close".
+2025-09-19 02:43:28 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:28 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:43:30 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:43:30 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:43:30 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:30 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:30 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:31 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:31 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:31 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:33 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:33 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:43:33 - FREEZE: Minimized window for chrome.exe
+2025-09-19 02:43:34 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for chrome.exe
+2025-09-19 02:43:34 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:34 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for chrome.exe (PID: 21080)
+2025-09-19 02:43:34 - FREEZE_OPTIMIZE: Instant RAM crushing failed for chrome.exe - Failed to load DLL.
+2025-09-19 02:43:35 - FREEZE_OPTIMIZE: Limited chrome.exe to single CPU core (fallback)
+2025-09-19 02:43:35 - FREEZE_OPTIMIZE: I/O priority reduction failed for chrome.exe
+2025-09-19 02:43:37 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to chrome.exe
+2025-09-19 02:43:38 - FREEZE_OPTIMIZE: Applied working set size enforcement to chrome.exe
+2025-09-19 02:43:39 - FREEZE_OPTIMIZE: Applied large object heap compression to chrome.exe
+2025-09-19 02:43:39 - FREEZE_OPTIMIZE: INSTANTLY set chrome.exe to background CPU scheduling
+2025-09-19 02:43:39 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for chrome.exe
+2025-09-19 02:43:39 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for chrome.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:43:39 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "chrome.exe"
+2025-09-19 02:43:40 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for chrome.exe
+2025-09-19 02:43:40 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:40 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for chrome.exe (PID: 21080)
+2025-09-19 02:43:40 - FREEZE_OPTIMIZE: Instant RAM crushing failed for chrome.exe - Failed to load DLL.
+2025-09-19 02:43:41 - FREEZE_OPTIMIZE: Limited chrome.exe to single CPU core (fallback)
+2025-09-19 02:43:41 - FREEZE_OPTIMIZE: I/O priority reduction failed for chrome.exe
+2025-09-19 02:43:43 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to chrome.exe
+2025-09-19 02:43:44 - FREEZE_OPTIMIZE: Applied working set size enforcement to chrome.exe
+2025-09-19 02:43:45 - FREEZE_OPTIMIZE: Applied large object heap compression to chrome.exe
+2025-09-19 02:43:46 - FREEZE_OPTIMIZE: INSTANTLY set chrome.exe to background CPU scheduling
+2025-09-19 02:43:46 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for chrome.exe
+2025-09-19 02:43:46 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for chrome.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:43:46 - SUCCESS: Frozen and minimized chrome.exe with minimal resource usage
+2025-09-19 02:43:46 - FREEZE: chrome.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:43:46 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:43:46 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:43:46 - UNFREEZE: Restored and activated window for chrome.exe
+2025-09-19 02:43:46 - SUCCESS: Unfrozen and restored chrome.exe with full resources
+2025-09-19 02:43:46 - UNFREEZE_ALL: Restored chrome.exe with full resources
+2025-09-19 02:43:46 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 02:43:46 - ERROR in UnfreezeAllProcesses: This value of type "Gui" has no method named "Close".
+2025-09-19 02:43:46 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:46 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:46 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:48 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:48 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:48 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:50 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:50 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:43:51 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:43:51 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:43:51 - UNFREEZE: Restored and activated window for chrome.exe
+2025-09-19 02:43:51 - ERROR in UnfreezeProcess(chrome.exe): Item has no value.
+2025-09-19 02:43:52 - UNFREEZE_ALL: Completed - Success: 0, Failed: 1
+2025-09-19 02:43:52 - ERROR in UnfreezeAllProcesses: This value of type "Gui" has no method named "Close".
+2025-09-19 02:43:52 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:52 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:52 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:53 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:54 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:43:55 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:43:55 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:43:55 - UNFREEZE: Restored and activated window for chrome.exe
+2025-09-19 02:43:55 - ERROR in UnfreezeProcess(chrome.exe): Item has no value.
+2025-09-19 02:43:55 - UNFREEZE_ALL: Completed - Success: 0, Failed: 1
+2025-09-19 02:43:55 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:43:55 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:43:55 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for chrome.exe
+2025-09-19 02:43:55 - ERROR in SetProcessPriority(chrome.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:43:55 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe priority to RealTime
+2025-09-19 02:43:57 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for chrome.exe
+2025-09-19 02:43:57 - UNFREEZE_OPTIMIZE: Working set restoration failed for chrome.exe
+2025-09-19 02:43:57 - UNFREEZE_OPTIMIZE: I/O priority boost failed for chrome.exe
+2025-09-19 02:43:58 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for chrome.exe
+2025-09-19 02:43:59 - UNFREEZE_OPTIMIZE: INSTANTLY set chrome.exe to foreground priority
+2025-09-19 02:44:00 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for chrome.exe
+2025-09-19 02:44:00 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for chrome.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:44:00 - UNFREEZE: Restored and activated window for chrome.exe
+2025-09-19 02:44:00 - ERROR in UnfreezeProcess(chrome.exe): Item has no value.
+2025-09-19 02:44:00 - UNFREEZE_ALL: Completed - Success: 0, Failed: 1
+2025-09-19 02:44:00 - ERROR in UnfreezeAllProcesses: This value of type "Gui" has no method named "Close".
+2025-09-19 02:44:26 - FULLSIZE: Triple-tap E detected
+2025-09-19 02:44:26 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-19 02:44:26 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-19 02:44:26 - FULLSIZE: Applied windowed style with borders
+2025-09-19 02:44:27 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-19 02:44:27 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-19 02:44:46 - FULLSIZE: Triple-tap E detected
+2025-09-19 02:44:46 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-19 02:44:46 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-19 02:44:46 - FULLSIZE: Applied windowed style with borders
+2025-09-19 02:44:46 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-19 02:44:46 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-19 02:46:46 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-19 02:46:46 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 02:46:46 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 02:46:47 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 02:46:48 - FREEZE: Minimized window for WindowsTerminal.exe
+2025-09-19 02:46:49 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 02:46:49 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:46:49 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 25692)
+2025-09-19 02:46:49 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 02:46:50 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 02:46:50 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 02:46:51 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 02:46:53 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 02:46:54 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 02:46:54 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 02:46:54 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 02:46:54 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:46:54 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "WindowsTerminal.exe"
+2025-09-19 02:46:55 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 02:46:55 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:46:55 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 25692)
+2025-09-19 02:46:55 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 02:46:56 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 02:46:56 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 02:46:57 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 02:46:59 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 02:47:00 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 02:47:00 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 02:47:00 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 02:47:00 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:47:00 - SUCCESS: Frozen and minimized WindowsTerminal.exe with minimal resource usage
+2025-09-19 02:47:00 - FREEZE: WindowsTerminal.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:48:48 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-19 02:48:48 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-19 02:48:48 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-19 02:49:29 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-19 02:49:29 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 02:49:29 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "WindowsTerminal.exe"
+2025-09-19 02:49:29 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 02:49:29 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:49:29 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 02:49:30 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 02:49:30 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 02:49:30 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 02:49:31 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 02:49:32 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 02:49:33 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 02:49:33 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:49:33 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 02:49:33 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:49:33 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 02:49:34 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 02:49:34 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 02:49:34 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 02:49:36 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 02:49:36 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 02:49:37 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 02:49:37 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:49:37 - UNFREEZE: Failed to restore window for WindowsTerminal.exe - Target window not found.
+2025-09-19 02:49:37 - UNFREEZE: Activated fallback window for WindowsTerminal.exe
+2025-09-19 02:49:37 - SUCCESS: Unfrozen and restored WindowsTerminal.exe with full resources
+2025-09-19 02:49:37 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 02:49:37 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 02:49:45 - FREEZE: Minimized window for Everything.exe
+2025-09-19 02:49:45 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Everything.exe
+2025-09-19 02:49:45 - ERROR in SetProcessPriority(Everything.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:49:45 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Everything.exe (PID: 11628)
+2025-09-19 02:49:45 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Everything.exe - Failed to load DLL.
+2025-09-19 02:49:47 - FREEZE_OPTIMIZE: Limited Everything.exe to single CPU core (fallback)
+2025-09-19 02:49:47 - FREEZE_OPTIMIZE: I/O priority reduction failed for Everything.exe
+2025-09-19 02:49:48 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Everything.exe
+2025-09-19 02:49:49 - FREEZE_OPTIMIZE: Applied working set size enforcement to Everything.exe
+2025-09-19 02:49:50 - FREEZE_OPTIMIZE: Applied large object heap compression to Everything.exe
+2025-09-19 02:49:50 - FREEZE_OPTIMIZE: INSTANTLY set Everything.exe to background CPU scheduling
+2025-09-19 02:49:50 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Everything.exe
+2025-09-19 02:49:50 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Everything.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:49:50 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "Everything.exe"
+2025-09-19 02:49:51 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Everything.exe
+2025-09-19 02:49:51 - ERROR in SetProcessPriority(Everything.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:49:51 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Everything.exe (PID: 11628)
+2025-09-19 02:49:51 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Everything.exe - Failed to load DLL.
+2025-09-19 02:49:52 - FREEZE_OPTIMIZE: Limited Everything.exe to single CPU core (fallback)
+2025-09-19 02:49:52 - FREEZE_OPTIMIZE: I/O priority reduction failed for Everything.exe
+2025-09-19 02:49:53 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Everything.exe
+2025-09-19 02:49:54 - FREEZE_OPTIMIZE: Applied working set size enforcement to Everything.exe
+2025-09-19 02:49:55 - FREEZE_OPTIMIZE: Applied large object heap compression to Everything.exe
+2025-09-19 02:49:55 - FREEZE_OPTIMIZE: INSTANTLY set Everything.exe to background CPU scheduling
+2025-09-19 02:49:55 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Everything.exe
+2025-09-19 02:49:55 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Everything.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:49:55 - SUCCESS: Frozen and minimized Everything.exe with minimal resource usage
+2025-09-19 02:49:55 - FREEZE: Everything.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:49:56 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "Everything.exe"
+2025-09-19 02:49:56 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for Everything.exe
+2025-09-19 02:49:56 - ERROR in SetProcessPriority(Everything.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:49:56 - UNFREEZE_OPTIMIZE: INSTANTLY set Everything.exe priority to RealTime
+2025-09-19 02:49:57 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for Everything.exe
+2025-09-19 02:49:57 - UNFREEZE_OPTIMIZE: Working set restoration failed for Everything.exe
+2025-09-19 02:49:57 - UNFREEZE_OPTIMIZE: I/O priority boost failed for Everything.exe
+2025-09-19 02:49:59 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for Everything.exe
+2025-09-19 02:49:59 - UNFREEZE_OPTIMIZE: INSTANTLY set Everything.exe to foreground priority
+2025-09-19 02:50:00 - GUI: Creating frozen processes selection GUI
+2025-09-19 02:50:00 - GUI: Frozen processes selection GUI displayed
+2025-09-19 02:50:00 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for Everything.exe
+2025-09-19 02:50:00 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for Everything.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:50:00 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for Everything.exe
+2025-09-19 02:50:00 - ERROR in SetProcessPriority(Everything.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:50:00 - UNFREEZE_OPTIMIZE: INSTANTLY set Everything.exe priority to RealTime
+2025-09-19 02:50:01 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for Everything.exe
+2025-09-19 02:50:01 - UNFREEZE_OPTIMIZE: Working set restoration failed for Everything.exe
+2025-09-19 02:50:01 - UNFREEZE_OPTIMIZE: I/O priority boost failed for Everything.exe
+2025-09-19 02:50:03 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for Everything.exe
+2025-09-19 02:50:03 - UNFREEZE_OPTIMIZE: INSTANTLY set Everything.exe to foreground priority
+2025-09-19 02:50:04 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for Everything.exe
+2025-09-19 02:50:04 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for Everything.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:50:04 - UNFREEZE: Restored and activated window for Everything.exe
+2025-09-19 02:50:04 - SUCCESS: Unfrozen and restored Everything.exe with full resources
+2025-09-19 02:50:04 - UNFREEZE_ALL: Restored Everything.exe with full resources
+2025-09-19 02:50:04 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 02:50:07 - FREEZE: Minimized window for WindowsTerminal.exe
+2025-09-19 02:50:07 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 02:50:07 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:50:08 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 12320)
+2025-09-19 02:50:08 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 02:50:09 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 02:50:09 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 02:50:10 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 02:50:11 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 02:50:12 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 02:50:12 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 02:50:12 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 02:50:12 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:50:12 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "WindowsTerminal.exe"
+2025-09-19 02:50:13 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 02:50:13 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:50:13 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 12320)
+2025-09-19 02:50:13 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 02:50:14 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 02:50:14 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 02:50:15 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 02:50:16 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 02:50:17 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 02:50:18 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 02:50:18 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 02:50:18 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:50:18 - SUCCESS: Frozen and minimized WindowsTerminal.exe with minimal resource usage
+2025-09-19 02:50:18 - FREEZE: WindowsTerminal.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:50:29 - FULLSIZE: Triple-tap E detected
+2025-09-19 02:50:29 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-19 02:50:29 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-19 02:50:29 - FULLSIZE: Applied windowed style with borders
+2025-09-19 02:50:30 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-19 02:50:30 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-19 02:51:08 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "WindowsTerminal.exe"
+2025-09-19 02:51:08 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 02:51:08 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:51:08 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 02:51:09 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 02:51:09 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 02:51:09 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 02:51:10 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 02:51:11 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 02:51:12 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 02:51:12 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:51:12 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 02:51:12 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:51:12 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 02:51:13 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 02:51:13 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 02:51:13 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 02:51:14 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 02:51:15 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 02:51:16 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 02:51:16 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:51:16 - UNFREEZE: Restored and activated window for WindowsTerminal.exe
+2025-09-19 02:51:16 - SUCCESS: Unfrozen and restored WindowsTerminal.exe with full resources
+2025-09-19 02:51:16 - UNFREEZE_ALL: Restored WindowsTerminal.exe with full resources
+2025-09-19 02:51:16 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 02:54:30 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-19 02:54:30 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 02:54:30 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 02:54:31 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 02:54:37 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 02:54:37 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:54:37 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 12320)
+2025-09-19 02:54:37 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 02:54:38 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 02:54:38 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 02:54:39 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 02:54:41 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 02:54:42 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 02:54:42 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 02:54:42 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 02:54:42 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:54:42 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "WindowsTerminal.exe"
+2025-09-19 02:54:42 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 02:54:42 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:54:43 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 12320)
+2025-09-19 02:54:43 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 02:54:44 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 02:54:44 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 02:54:45 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 02:54:46 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 02:54:47 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 02:54:48 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 02:54:48 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 02:54:48 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:55:36 - ERROR in GetActiveProcess: Target window not found.
+2025-09-19 02:55:36 - ERROR in GetActiveProcess: Target window not found.
+2025-09-19 02:55:36 - FREEZE: Minimized window for WindowsTerminal.exe
+2025-09-19 02:55:36 - SUCCESS: Frozen and minimized WindowsTerminal.exe with minimal resource usage
+2025-09-19 02:55:36 - FREEZE: WindowsTerminal.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:56:26 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:56:26 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:56:26 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 6884)
+2025-09-19 02:56:26 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:56:28 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:56:28 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:56:29 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:56:30 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "WindowsTerminal.exe"
+2025-09-19 02:56:30 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 02:56:30 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:56:30 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 02:56:31 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 02:56:31 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 02:56:31 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 02:56:33 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 02:56:33 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 02:56:34 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 02:56:34 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:56:34 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 02:56:35 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:56:35 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 02:56:36 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 02:56:36 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 02:56:36 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 02:56:37 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 02:56:37 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 02:56:39 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 02:56:39 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:56:39 - UNFREEZE: Failed to restore window for WindowsTerminal.exe - Target window not found.
+2025-09-19 02:56:39 - UNFREEZE: Activated fallback window for WindowsTerminal.exe
+2025-09-19 02:56:39 - SUCCESS: Unfrozen and restored WindowsTerminal.exe with full resources
+2025-09-19 02:56:39 - UNFREEZE_ALL: Restored WindowsTerminal.exe with full resources
+2025-09-19 02:56:39 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 02:56:39 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:56:40 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:56:40 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:56:40 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:56:40 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:56:40 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "Code.exe"
+2025-09-19 02:56:41 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:56:41 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:56:41 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 6884)
+2025-09-19 02:56:41 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:56:42 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:56:42 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:56:43 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:56:45 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:56:46 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:56:46 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:56:46 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:56:46 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:57:08 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-19 02:57:08 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 02:57:08 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 02:57:11 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 02:57:17 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:57:17 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:57:17 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 20524)
+2025-09-19 02:57:17 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:57:19 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:57:19 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:57:20 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:57:22 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:57:23 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:57:23 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:57:23 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:57:23 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:57:23 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "Code.exe"
+2025-09-19 02:57:24 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:57:24 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:57:24 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 20524)
+2025-09-19 02:57:24 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:57:25 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:57:25 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:57:27 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:57:28 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:57:29 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:57:29 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:57:29 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:57:29 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:57:29 - FREEZE: Minimized window for Code.exe
+2025-09-19 02:57:30 - SUCCESS: Frozen and minimized Code.exe with minimal resource usage
+2025-09-19 02:57:30 - FREEZE: Code.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:57:31 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "Code.exe"
+2025-09-19 02:57:32 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for Code.exe
+2025-09-19 02:57:32 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:57:32 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe priority to RealTime
+2025-09-19 02:57:33 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for Code.exe
+2025-09-19 02:57:33 - UNFREEZE_OPTIMIZE: Working set restoration failed for Code.exe
+2025-09-19 02:57:33 - UNFREEZE_OPTIMIZE: I/O priority boost failed for Code.exe
+2025-09-19 02:57:35 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for Code.exe
+2025-09-19 02:57:35 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe to foreground priority
+2025-09-19 02:57:36 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for Code.exe
+2025-09-19 02:57:36 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for Code.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:57:36 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for Code.exe
+2025-09-19 02:57:36 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:57:36 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe priority to RealTime
+2025-09-19 02:57:38 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for Code.exe
+2025-09-19 02:57:38 - UNFREEZE_OPTIMIZE: Working set restoration failed for Code.exe
+2025-09-19 02:57:38 - UNFREEZE_OPTIMIZE: I/O priority boost failed for Code.exe
+2025-09-19 02:57:39 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for Code.exe
+2025-09-19 02:57:40 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe to foreground priority
+2025-09-19 02:57:41 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for Code.exe
+2025-09-19 02:57:41 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for Code.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:57:41 - UNFREEZE: Restored and activated window for Code.exe
+2025-09-19 02:57:41 - SUCCESS: Unfrozen and restored Code.exe with full resources
+2025-09-19 02:57:41 - UNFREEZE_ALL: Restored Code.exe with full resources
+2025-09-19 02:57:41 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 02:57:42 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:57:42 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:57:42 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 20524)
+2025-09-19 02:57:42 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:57:43 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:57:43 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:57:44 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:57:46 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:57:47 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:57:47 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:57:47 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:57:47 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:57:47 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "Code.exe"
+2025-09-19 02:57:48 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:57:48 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:57:48 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 20524)
+2025-09-19 02:57:48 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:57:49 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:57:49 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:57:50 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:57:52 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:57:53 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:57:53 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:57:53 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:57:53 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:58:28 - FREEZE: Minimized window for Code.exe
+2025-09-19 02:58:29 - SUCCESS: Frozen and minimized Code.exe with minimal resource usage
+2025-09-19 02:58:29 - FREEZE: Code.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:58:49 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-19 02:58:49 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 02:58:49 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "Code.exe"
+2025-09-19 02:58:49 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for Code.exe
+2025-09-19 02:58:49 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:58:50 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe priority to RealTime
+2025-09-19 02:58:51 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for Code.exe
+2025-09-19 02:58:51 - UNFREEZE_OPTIMIZE: Working set restoration failed for Code.exe
+2025-09-19 02:58:51 - UNFREEZE_OPTIMIZE: I/O priority boost failed for Code.exe
+2025-09-19 02:58:53 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for Code.exe
+2025-09-19 02:58:53 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe to foreground priority
+2025-09-19 02:58:54 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for Code.exe
+2025-09-19 02:58:54 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for Code.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:58:54 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for Code.exe
+2025-09-19 02:58:54 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:58:54 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe priority to RealTime
+2025-09-19 02:58:55 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for Code.exe
+2025-09-19 02:58:55 - UNFREEZE_OPTIMIZE: Working set restoration failed for Code.exe
+2025-09-19 02:58:55 - UNFREEZE_OPTIMIZE: I/O priority boost failed for Code.exe
+2025-09-19 02:58:57 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for Code.exe
+2025-09-19 02:58:57 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe to foreground priority
+2025-09-19 02:58:58 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for Code.exe
+2025-09-19 02:58:58 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for Code.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 02:58:58 - UNFREEZE: Failed to restore window for Code.exe - Target window not found.
+2025-09-19 02:58:58 - UNFREEZE: Activated fallback window for Code.exe
+2025-09-19 02:58:58 - SUCCESS: Unfrozen and restored Code.exe with full resources
+2025-09-19 02:58:58 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:58:58 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:58:58 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 20524)
+2025-09-19 02:58:58 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:59:00 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:59:00 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:59:01 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:59:02 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:59:03 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:59:04 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:59:04 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:59:04 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:59:04 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "Code.exe"
+2025-09-19 02:59:04 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:59:04 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:59:04 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 20524)
+2025-09-19 02:59:04 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:59:05 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:59:05 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:59:07 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:59:08 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:59:09 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:59:09 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:59:10 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:59:10 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:59:21 - FREEZE: Minimized window for Code.exe
+2025-09-19 02:59:21 - SUCCESS: Frozen and minimized Code.exe with minimal resource usage
+2025-09-19 02:59:21 - FREEZE: Code.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 02:59:21 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 02:59:27 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 02:59:36 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:59:36 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:59:36 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 20524)
+2025-09-19 02:59:36 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:59:38 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:59:38 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:59:39 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:59:41 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:59:42 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:59:42 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:59:42 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:59:42 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:59:42 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "Code.exe"
+2025-09-19 02:59:43 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for Code.exe
+2025-09-19 02:59:43 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 02:59:43 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for Code.exe (PID: 20524)
+2025-09-19 02:59:43 - FREEZE_OPTIMIZE: Instant RAM crushing failed for Code.exe - Failed to load DLL.
+2025-09-19 02:59:44 - FREEZE_OPTIMIZE: Limited Code.exe to single CPU core (fallback)
+2025-09-19 02:59:44 - FREEZE_OPTIMIZE: I/O priority reduction failed for Code.exe
+2025-09-19 02:59:45 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to Code.exe
+2025-09-19 02:59:46 - FREEZE_OPTIMIZE: Applied working set size enforcement to Code.exe
+2025-09-19 02:59:48 - FREEZE_OPTIMIZE: Applied large object heap compression to Code.exe
+2025-09-19 02:59:48 - FREEZE_OPTIMIZE: INSTANTLY set Code.exe to background CPU scheduling
+2025-09-19 02:59:48 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for Code.exe
+2025-09-19 02:59:48 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for Code.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 02:59:55 - FREEZE: Minimized window for Code.exe
+2025-09-19 02:59:55 - SUCCESS: Frozen and minimized Code.exe with minimal resource usage
+2025-09-19 02:59:55 - FREEZE: Code.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 03:00:29 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-19 03:00:29 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 03:00:29 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "Code.exe"
+2025-09-19 03:00:29 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for Code.exe
+2025-09-19 03:00:29 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 03:00:29 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe priority to RealTime
+2025-09-19 03:00:30 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for Code.exe
+2025-09-19 03:00:30 - UNFREEZE_OPTIMIZE: Working set restoration failed for Code.exe
+2025-09-19 03:00:30 - UNFREEZE_OPTIMIZE: I/O priority boost failed for Code.exe
+2025-09-19 03:00:32 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for Code.exe
+2025-09-19 03:00:32 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe to foreground priority
+2025-09-19 03:00:33 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for Code.exe
+2025-09-19 03:00:33 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for Code.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 03:00:34 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for Code.exe
+2025-09-19 03:00:34 - ERROR in SetProcessPriority(Code.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 03:00:34 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe priority to RealTime
+2025-09-19 03:00:35 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for Code.exe
+2025-09-19 03:00:35 - UNFREEZE_OPTIMIZE: Working set restoration failed for Code.exe
+2025-09-19 03:00:35 - UNFREEZE_OPTIMIZE: I/O priority boost failed for Code.exe
+2025-09-19 03:00:37 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for Code.exe
+2025-09-19 03:00:37 - UNFREEZE_OPTIMIZE: INSTANTLY set Code.exe to foreground priority
+2025-09-19 03:00:39 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 03:00:43 - SHUTDOWN: Script exiting - Reason: Menu
+2025-09-19 03:00:43 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 03:00:43 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 03:00:48 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 03:00:50 - FREEZE: Minimized window for WindowsTerminal.exe
+2025-09-19 03:00:50 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 03:00:50 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 03:00:50 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 28340)
+2025-09-19 03:00:50 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 03:00:52 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 03:00:52 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 03:00:53 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 03:00:54 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 03:00:55 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 03:00:55 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 03:00:55 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 03:00:55 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 03:00:55 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "WindowsTerminal.exe"
+2025-09-19 03:00:56 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-19 03:00:56 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 03:00:56 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 28340)
+2025-09-19 03:00:56 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-19 03:00:57 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-19 03:00:57 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-19 03:00:58 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-19 03:00:59 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-19 03:01:00 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-19 03:01:00 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-19 03:01:00 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-19 03:01:00 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-19 03:01:00 - SUCCESS: Frozen and minimized WindowsTerminal.exe with minimal resource usage
+2025-09-19 03:01:00 - FREEZE: WindowsTerminal.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-19 03:01:01 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "WindowsTerminal.exe"
+2025-09-19 03:01:01 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 03:01:01 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 03:01:01 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 03:01:03 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 03:01:03 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 03:01:03 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 03:01:04 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 03:01:04 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 03:01:05 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 03:01:05 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 03:01:05 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-19 03:01:05 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-19 03:01:05 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-19 03:01:07 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-19 03:01:07 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-19 03:01:07 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-19 03:01:08 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-19 03:01:08 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-19 03:01:09 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-19 03:01:09 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-19 03:01:09 - UNFREEZE: Restored and activated window for WindowsTerminal.exe
+2025-09-19 03:01:09 - SUCCESS: Unfrozen and restored WindowsTerminal.exe with full resources
+2025-09-19 03:01:09 - UNFREEZE_ALL: Restored WindowsTerminal.exe with full resources
+2025-09-19 03:01:10 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-19 03:05:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 03:05:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 03:10:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 03:10:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 03:15:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 03:15:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 03:16:28 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-19 03:16:28 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-19 03:16:30 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-19 03:17:40 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-19 03:17:40 - FOLDER: Opening installed apps folder
+2025-09-19 03:17:40 - FOLDER: Successfully opened installed apps folder
