@@ -27865,3 +27865,21 @@ Source:	SWbemObjectEx
 2025-09-19 03:28:20 - TEXT_SHORTCUT: Triggered 'zzzzz' -> 'freeram'
 2025-09-19 03:28:20 - TERMINAL_CMD: Executing command - freeram
 2025-09-19 03:28:23 - TERMINAL_CMD: Executed 'freeram' with self-terminating PowerShell
+2025-09-19 03:30:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 03:30:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 03:35:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 03:35:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 03:40:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 03:40:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 03:42:55 - FULLSIZE: Triple-tap E detected
+2025-09-19 03:42:55 - FULLSIZE: Processing window - WindowsTerminal.exe (? RAM Optimization)
+2025-09-19 03:42:55 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-19 03:42:55 - FULLSIZE: Applied windowed style with borders
+2025-09-19 03:42:55 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-19 03:42:55 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-19 03:45:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 03:45:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 03:50:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 03:50:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 03:55:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 03:55:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
