@@ -27883,3 +27883,19 @@ Source:	SWbemObjectEx
 2025-09-19 03:50:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-19 03:55:48 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-19 03:55:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-19 03:58:15 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-19 03:58:15 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-19 03:58:18 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-19 04:00:28 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-19 04:00:28 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-19 04:00:28 - REBOOT: Initiating immediate system reboot
+2025-09-19 04:00:28 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-19 04:00:28 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 04:00:28 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 04:01:35 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 04:03:47 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-19 04:03:47 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-19 04:03:47 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-19 04:07:11 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-19 04:12:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-19 04:12:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
