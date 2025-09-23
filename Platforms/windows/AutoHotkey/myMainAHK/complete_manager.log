@@ -27934,3 +27934,10 @@ Source:	SWbemObjectEx
 2025-09-21 00:36:29 - SAVEGG: Ludusavi launched successfully from: F:\\backup\\windowsapps\\installed\\Ludosavi\\ludusavi.exe
 2025-09-21 00:41:09 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-21 00:41:09 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-21 00:46:09 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-21 00:46:09 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 20:17:08 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 20:17:09 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 20:18:12 - TEXT_SHORTCUT: Triggered 'updater' -> 'SOFTWARE_UPDATER_APP'
+2025-09-23 20:18:12 - LAUNCHER: Attempting to launch Software Updater
+2025-09-23 20:18:12 - ERROR: Software Updater not found at: F:\backup\windowsapps\installed\Software Updater\SoftwareUpdater.exe
