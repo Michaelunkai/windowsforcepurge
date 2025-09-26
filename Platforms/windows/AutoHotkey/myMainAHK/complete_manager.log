@@ -28543,3 +28543,5 @@ Source:	SWbemObjectEx
 2025-09-26 23:57:07 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
 2025-09-26 23:57:07 - RECYCLE_BIN: Attempting to empty recycle bin
 2025-09-26 23:57:09 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-27 00:00:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 00:00:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
