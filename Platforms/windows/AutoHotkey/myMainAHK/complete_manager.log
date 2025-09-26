@@ -27941,3 +27941,605 @@ Source:	SWbemObjectEx
 2025-09-23 20:18:12 - TEXT_SHORTCUT: Triggered 'updater' -> 'SOFTWARE_UPDATER_APP'
 2025-09-23 20:18:12 - LAUNCHER: Attempting to launch Software Updater
 2025-09-23 20:18:12 - ERROR: Software Updater not found at: F:\backup\windowsapps\installed\Software Updater\SoftwareUpdater.exe
+2025-09-23 20:19:05 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-23 20:19:05 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-23 20:19:05 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-23 20:20:00 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-23 20:25:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 20:25:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 20:30:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 20:30:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 20:35:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 20:35:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 20:40:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 20:40:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 20:45:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 20:45:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 20:50:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 20:50:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 20:55:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 20:55:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 21:00:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 21:00:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 21:05:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 21:05:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 21:10:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 21:10:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 21:15:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 21:15:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 21:20:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 21:20:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 21:25:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-23 21:25:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-23 21:27:24 - FREEZE: Minimized window for DaysGone.exe
+2025-09-23 21:27:25 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-23 21:27:26 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-23 21:27:26 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 16940)
+2025-09-23 21:27:26 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-23 21:27:29 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-23 21:27:29 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-23 21:27:31 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-23 21:27:33 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-23 21:27:35 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-23 21:27:35 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-23 21:27:35 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-23 21:27:35 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-23 21:27:35 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-23 21:27:35 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-23 21:27:35 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-23 21:27:35 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 16940)
+2025-09-23 21:27:35 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-23 21:27:37 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-23 21:27:37 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-23 21:27:38 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-23 21:27:40 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-23 21:27:41 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-23 21:27:41 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-23 21:27:41 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-23 21:27:41 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-23 21:27:41 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-23 21:27:41 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-23 21:27:45 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-23 21:27:45 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-23 21:27:46 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-23 21:27:46 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-23 21:27:47 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-23 21:27:47 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-23 21:27:47 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-23 21:27:49 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-23 21:27:49 - INFO: DaysGone.exe already frozen
+2025-09-23 21:27:49 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-23 21:27:51 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-23 21:27:51 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-23 21:27:51 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-23 21:27:51 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-23 21:27:51 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-23 21:27:53 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-23 21:27:53 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-23 21:27:53 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-23 21:27:54 - INFO: DaysGone.exe already frozen
+2025-09-23 21:27:55 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-23 21:27:55 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-23 21:27:57 - INFO: DaysGone.exe already frozen
+2025-09-23 21:27:57 - INFO: DaysGone.exe already frozen
+2025-09-23 21:27:57 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-23 21:27:57 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-23 21:27:58 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-23 21:27:58 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-23 21:27:58 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-23 21:27:58 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-23 21:27:59 - FREEZE: Minimized window for DaysGone.exe
+2025-09-23 21:27:59 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-23 21:27:59 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-23 21:27:59 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 16940)
+2025-09-23 21:27:59 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-23 21:28:01 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-23 21:28:01 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-23 21:28:03 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-23 21:28:05 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-23 21:28:06 - TEXT_SHORTCUT: Triggered 'zzzzz' -> 'freeram'
+2025-09-23 21:28:06 - TERMINAL_CMD: Executing command - freeram
+2025-09-23 21:28:09 - TERMINAL_CMD: Executed 'freeram' with self-terminating PowerShell
+2025-09-23 21:28:09 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-23 21:28:09 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-23 21:28:09 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-23 21:28:09 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-23 21:28:09 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-23 21:28:09 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-23 21:28:09 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-23 21:28:09 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 16940)
+2025-09-23 21:28:09 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-23 21:28:11 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-23 21:28:11 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-23 21:28:13 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-23 21:28:14 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-23 21:28:16 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-23 21:28:16 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-23 21:28:16 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-23 21:28:16 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-23 21:28:16 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-23 21:28:16 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-23 21:28:28 - TEXT_SHORTCUT: Triggered 'sleep' -> 'ss'
+2025-09-23 21:28:28 - TERMINAL_CMD: Executing command - ss
+2025-09-23 21:28:31 - TERMINAL_CMD: Executed 'ss' with self-terminating PowerShell
+2025-09-23 21:29:25 - TEXT_SHORTCUT: Triggered 'savegg' -> 'SAVEG_TERMINAL'
+2025-09-23 21:29:25 - SAVEGG: Launching Ludusavi backup tool
+2025-09-23 21:29:26 - SAVEGG: Ludusavi launched successfully from: F:\\backup\\windowsapps\\installed\\Ludosavi\\ludusavi.exe
+2025-09-23 21:29:49 - TEXT_SHORTCUT: Triggered 'sleep' -> 'ss'
+2025-09-23 21:29:49 - TERMINAL_CMD: Executing command - ss
+2025-09-23 21:29:57 - TERMINAL_CMD: Executed 'ss' with self-terminating PowerShell
+2025-09-24 20:12:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:12:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 20:13:06 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-24 20:13:06 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-24 20:13:06 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:13:06 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-24 20:13:07 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-24 20:13:07 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-24 20:13:07 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-24 20:13:08 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-24 20:13:10 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-24 20:13:11 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-24 20:13:11 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-24 20:13:11 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-24 20:13:11 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:13:11 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-24 20:13:12 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-24 20:13:12 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-24 20:13:13 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-24 20:13:13 - INFO: DaysGone.exe already frozen
+2025-09-24 20:13:13 - INFO: DaysGone.exe already frozen
+2025-09-24 20:13:14 - INFO: DaysGone.exe already frozen
+2025-09-24 20:13:14 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-24 20:13:14 - INFO: DaysGone.exe already frozen
+2025-09-24 20:13:14 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-24 20:13:14 - INFO: DaysGone.exe already frozen
+2025-09-24 20:13:15 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-24 20:13:15 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-24 20:13:16 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-24 20:13:16 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-24 20:13:16 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-24 20:13:16 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-24 20:13:17 - FREEZE: Minimized window for DaysGone.exe
+2025-09-24 20:13:17 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-24 20:13:17 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:13:17 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 16940)
+2025-09-24 20:13:17 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-24 20:13:19 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-24 20:13:19 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-24 20:13:20 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-24 20:13:21 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-24 20:13:22 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-24 20:13:22 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-24 20:13:22 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-24 20:13:22 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-24 20:13:22 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-24 20:13:23 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-24 20:13:23 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:13:23 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 16940)
+2025-09-24 20:13:23 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-24 20:13:24 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-24 20:13:24 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-24 20:13:25 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-24 20:13:26 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-24 20:13:27 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-24 20:13:27 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-24 20:13:27 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-24 20:13:27 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-24 20:13:27 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-24 20:13:27 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-24 20:17:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:17:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 20:22:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:22:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 20:27:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:27:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 20:30:40 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-24 20:30:40 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-24 20:30:40 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:30:40 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-24 20:30:41 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-24 20:30:41 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-24 20:30:41 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-24 20:30:43 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-24 20:30:44 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-24 20:30:45 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-24 20:30:45 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-24 20:30:45 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-24 20:30:45 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:30:45 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-24 20:30:47 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-24 20:30:47 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-24 20:30:47 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-24 20:30:49 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-24 20:30:49 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-24 20:30:50 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-24 20:30:50 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-24 20:30:50 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-24 20:30:50 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-24 20:30:50 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-24 20:30:50 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-24 20:32:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:32:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 20:37:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:37:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 20:41:13 - FREEZE: Minimized window for DaysGone.exe
+2025-09-24 20:41:13 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-24 20:41:14 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:41:14 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 18492)
+2025-09-24 20:41:14 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-24 20:41:17 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-24 20:41:17 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-24 20:41:19 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-24 20:41:21 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-24 20:41:23 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-24 20:41:23 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-24 20:41:23 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-24 20:41:23 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-24 20:41:23 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-24 20:41:24 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-24 20:41:24 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:41:24 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 18492)
+2025-09-24 20:41:24 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-24 20:41:25 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-24 20:41:25 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-24 20:41:27 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-24 20:41:29 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-24 20:41:30 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-24 20:41:30 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-24 20:41:30 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-24 20:41:30 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-24 20:41:30 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-24 20:41:30 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-24 20:41:55 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-24 20:41:55 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-24 20:41:55 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:41:55 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-24 20:41:57 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-24 20:41:57 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-24 20:41:57 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-24 20:41:58 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-24 20:41:59 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-24 20:42:00 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-24 20:42:00 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-24 20:42:00 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-24 20:42:00 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 20:42:00 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-24 20:42:02 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-24 20:42:02 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-24 20:42:02 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-24 20:42:04 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-24 20:42:04 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-24 20:42:05 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-24 20:42:05 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-24 20:42:05 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-24 20:42:05 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-24 20:42:05 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-24 20:42:06 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-24 20:42:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:42:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 20:47:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:47:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 20:52:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:52:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 20:57:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 20:57:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 21:02:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-24 21:02:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-24 21:05:04 - FREEZE: Minimized window for DaysGone.exe
+2025-09-24 21:05:04 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-24 21:05:05 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 21:05:05 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 18492)
+2025-09-24 21:05:05 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-24 21:05:07 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-24 21:05:07 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-24 21:05:09 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-24 21:05:11 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-24 21:05:13 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-24 21:05:13 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-24 21:05:13 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-24 21:05:13 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-24 21:05:13 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-24 21:05:13 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-24 21:05:13 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 21:05:13 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 18492)
+2025-09-24 21:05:13 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-24 21:05:15 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-24 21:05:15 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-24 21:05:16 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-24 21:05:18 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-24 21:05:19 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-24 21:05:20 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-24 21:05:20 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-24 21:05:20 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-24 21:05:20 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-24 21:05:20 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-24 21:05:27 - TEXT_SHORTCUT: Triggered 'savegg' -> 'SAVEG_TERMINAL'
+2025-09-24 21:05:27 - SAVEGG: Launching Ludusavi backup tool
+2025-09-24 21:05:27 - SAVEGG: Ludusavi already running, activated window
+2025-09-24 21:05:34 - FREEZE: Minimized window for ludusavi.exe
+2025-09-24 21:05:34 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for ludusavi.exe
+2025-09-24 21:05:34 - ERROR in SetProcessPriority(ludusavi.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 21:05:34 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for ludusavi.exe (PID: 3552)
+2025-09-24 21:05:34 - FREEZE_OPTIMIZE: Instant RAM crushing failed for ludusavi.exe - Failed to load DLL.
+2025-09-24 21:05:35 - FREEZE_OPTIMIZE: Limited ludusavi.exe to single CPU core (fallback)
+2025-09-24 21:05:35 - FREEZE_OPTIMIZE: I/O priority reduction failed for ludusavi.exe
+2025-09-24 21:05:37 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to ludusavi.exe
+2025-09-24 21:05:38 - FREEZE_OPTIMIZE: Applied working set size enforcement to ludusavi.exe
+2025-09-24 21:05:39 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "DaysGone.exe"
+2025-09-24 21:05:39 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-24 21:05:39 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 21:05:39 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-24 21:05:41 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-24 21:05:41 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-24 21:05:41 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-24 21:05:43 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-24 21:05:43 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-24 21:05:45 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-24 21:05:45 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-24 21:05:45 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for DaysGone.exe
+2025-09-24 21:05:45 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 21:05:45 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe priority to RealTime
+2025-09-24 21:05:46 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for DaysGone.exe
+2025-09-24 21:05:47 - UNFREEZE_OPTIMIZE: Working set restoration failed for DaysGone.exe
+2025-09-24 21:05:47 - UNFREEZE_OPTIMIZE: I/O priority boost failed for DaysGone.exe
+2025-09-24 21:05:48 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for DaysGone.exe
+2025-09-24 21:05:49 - UNFREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to foreground priority
+2025-09-24 21:05:50 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for DaysGone.exe
+2025-09-24 21:05:50 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for DaysGone.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-24 21:05:51 - UNFREEZE: Restored and activated window for DaysGone.exe
+2025-09-24 21:05:51 - SUCCESS: Unfrozen and restored DaysGone.exe with full resources
+2025-09-24 21:05:51 - UNFREEZE_ALL: Restored DaysGone.exe with full resources
+2025-09-24 21:05:51 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-24 21:05:51 - FREEZE_OPTIMIZE: Applied large object heap compression to ludusavi.exe
+2025-09-24 21:05:51 - FREEZE_OPTIMIZE: INSTANTLY set ludusavi.exe to background CPU scheduling
+2025-09-24 21:05:51 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for ludusavi.exe
+2025-09-24 21:05:51 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for ludusavi.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-24 21:05:51 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "ludusavi.exe"
+2025-09-24 21:05:51 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for ludusavi.exe
+2025-09-24 21:05:51 - ERROR in SetProcessPriority(ludusavi.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 21:05:51 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for ludusavi.exe (PID: 3552)
+2025-09-24 21:05:51 - FREEZE_OPTIMIZE: Instant RAM crushing failed for ludusavi.exe - Failed to load DLL.
+2025-09-24 21:05:53 - FREEZE_OPTIMIZE: Limited ludusavi.exe to single CPU core (fallback)
+2025-09-24 21:05:53 - FREEZE_OPTIMIZE: I/O priority reduction failed for ludusavi.exe
+2025-09-24 21:05:54 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to ludusavi.exe
+2025-09-24 21:05:56 - FREEZE_OPTIMIZE: Applied working set size enforcement to ludusavi.exe
+2025-09-24 21:05:57 - FREEZE_OPTIMIZE: Applied large object heap compression to ludusavi.exe
+2025-09-24 21:05:58 - FREEZE_OPTIMIZE: INSTANTLY set ludusavi.exe to background CPU scheduling
+2025-09-24 21:05:58 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for ludusavi.exe
+2025-09-24 21:05:58 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for ludusavi.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-24 21:05:58 - SUCCESS: Frozen and minimized ludusavi.exe with minimal resource usage
+2025-09-24 21:05:58 - FREEZE: ludusavi.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-24 21:06:00 - FREEZE: Minimized window for DaysGone.exe
+2025-09-24 21:06:00 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-24 21:06:00 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-24 21:06:00 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 18492)
+2025-09-24 21:06:00 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-24 21:06:02 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-24 21:06:02 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-24 21:06:04 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-24 21:06:05 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-24 21:06:07 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-24 21:06:07 - FREEZE_OPTIMIZE: INSTANTLY set DaysGone.exe to background CPU scheduling
+2025-09-24 21:06:07 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for DaysGone.exe
+2025-09-24 21:06:07 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-24 21:06:07 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "DaysGone.exe"
+2025-09-24 21:06:07 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for DaysGone.exe
+2025-09-24 21:06:07 - TEXT_SHORTCUT: Triggered 'zzzzz' -> 'freeram'
+2025-09-24 21:06:07 - TERMINAL_CMD: Executing command - freeram
+2025-09-24 21:06:13 - TEXT_SHORTCUT: Triggered 'sleep' -> 'ss'
+2025-09-24 21:06:13 - TERMINAL_CMD: Executing command - ss
+2025-09-24 21:06:15 - TERMINAL_CMD: Executed 'ss' with self-terminating PowerShell
+2025-09-25 14:10:44 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:10:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 14:10:54 - TERMINAL_CMD: Executed 'freeram' with self-terminating PowerShell
+2025-09-25 14:10:54 - ERROR in SetProcessPriority(DaysGone.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-25 14:10:54 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for DaysGone.exe (PID: 18492)
+2025-09-25 14:10:54 - FREEZE_OPTIMIZE: Instant RAM crushing failed for DaysGone.exe - Failed to load DLL.
+2025-09-25 14:10:55 - FREEZE_OPTIMIZE: Limited DaysGone.exe to single CPU core (fallback)
+2025-09-25 14:10:55 - FREEZE_OPTIMIZE: I/O priority reduction failed for DaysGone.exe
+2025-09-25 14:10:57 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to DaysGone.exe
+2025-09-25 14:10:57 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "ludusavi.exe"
+2025-09-25 14:10:58 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for ludusavi.exe
+2025-09-25 14:10:58 - ERROR in SetProcessPriority(ludusavi.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-25 14:10:58 - UNFREEZE_OPTIMIZE: INSTANTLY set ludusavi.exe priority to RealTime
+2025-09-25 14:10:59 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for ludusavi.exe
+2025-09-25 14:10:59 - UNFREEZE_OPTIMIZE: Working set restoration failed for ludusavi.exe
+2025-09-25 14:10:59 - UNFREEZE_OPTIMIZE: I/O priority boost failed for ludusavi.exe
+2025-09-25 14:11:01 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for ludusavi.exe
+2025-09-25 14:11:01 - UNFREEZE_OPTIMIZE: INSTANTLY set ludusavi.exe to foreground priority
+2025-09-25 14:11:03 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for ludusavi.exe
+2025-09-25 14:11:03 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for ludusavi.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-25 14:11:03 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for ludusavi.exe
+2025-09-25 14:11:03 - ERROR in SetProcessPriority(ludusavi.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-25 14:11:03 - UNFREEZE_OPTIMIZE: INSTANTLY set ludusavi.exe priority to RealTime
+2025-09-25 14:11:04 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for ludusavi.exe
+2025-09-25 14:11:04 - UNFREEZE_OPTIMIZE: Working set restoration failed for ludusavi.exe
+2025-09-25 14:11:04 - UNFREEZE_OPTIMIZE: I/O priority boost failed for ludusavi.exe
+2025-09-25 14:10:58 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for ludusavi.exe
+2025-09-25 14:11:01 - UNFREEZE_OPTIMIZE: INSTANTLY set ludusavi.exe to foreground priority
+2025-09-25 14:11:03 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for ludusavi.exe
+2025-09-25 14:11:03 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for ludusavi.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-25 14:11:03 - UNFREEZE: Restored and activated window for ludusavi.exe
+2025-09-25 14:11:03 - SUCCESS: Unfrozen and restored ludusavi.exe with full resources
+2025-09-25 14:11:03 - UNFREEZE_ALL: Restored ludusavi.exe with full resources
+2025-09-25 14:11:03 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-25 14:11:03 - FREEZE_OPTIMIZE: Applied working set size enforcement to DaysGone.exe
+2025-09-25 14:11:04 - FREEZE_OPTIMIZE: Applied large object heap compression to DaysGone.exe
+2025-09-25 14:11:04 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for DaysGone.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-25 14:11:04 - SUCCESS: Frozen and minimized DaysGone.exe with minimal resource usage
+2025-09-25 14:11:04 - FREEZE: DaysGone.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-25 14:11:21 - TEXT_SHORTCUT: Triggered 'gmail' -> 'GMAIL_WEB'
+2025-09-25 14:11:21 - WEB: Opening Gmail Account 0 in Chrome
+2025-09-25 14:11:21 - WEB: Gmail Account 0 opened in Chrome
+2025-09-25 14:15:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:15:33 - CLEANUP: Removing dead frozen process DaysGone.exe
+2025-09-25 14:15:33 - CLEANUP: Completed, 0 suspended and 1 frozen entries removed
+2025-09-25 14:20:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:20:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 14:25:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:25:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 14:30:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:30:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 14:35:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:35:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 14:40:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:40:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 14:45:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:45:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 14:50:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:50:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 14:55:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 14:55:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 15:00:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 15:00:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 15:05:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 15:05:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 15:10:33 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-25 15:10:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-25 15:11:44 - TEXT_SHORTCUT: Triggered 'sleep' -> 'ss'
+2025-09-25 15:11:44 - TERMINAL_CMD: Executing command - ss
+2025-09-25 15:11:48 - TERMINAL_CMD: Executed 'ss' with self-terminating PowerShell
+2025-09-26 21:50:32 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 21:50:33 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 21:55:50 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-26 22:00:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:00:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:05:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:05:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:10:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:10:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:15:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:15:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:20:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:20:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:25:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:25:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:30:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:30:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:35:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:35:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:40:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:40:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:45:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:45:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:50:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:50:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 22:55:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 22:55:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:00:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:00:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:05:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:05:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:10:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:10:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:15:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:15:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:20:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:20:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:24:06 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-09-26 23:24:06 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 19612) - Days Gone
+2025-09-26 23:24:06 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-09-26 23:24:08 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-09-26 23:24:10 - TEXT_SHORTCUT: Triggered 'savegg' -> 'SAVEG_TERMINAL'
+2025-09-26 23:24:10 - SAVEGG: Launching Ludusavi backup tool
+2025-09-26 23:24:11 - SAVEGG: Ludusavi launched successfully from: F:\\backup\\windowsapps\\installed\\Ludosavi\\ludusavi.exe
+2025-09-26 23:24:52 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-26 23:24:52 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-26 23:24:54 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-26 23:25:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:25:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:30:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:30:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:35:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:35:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:38:26 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-26 23:38:26 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-26 23:39:00 - TEXT_SHORTCUT: Triggered 'kjkjkj' -> 'FORCE_KILL_AND_RELAUNCH'
+2025-09-26 23:39:00 - FORCE_KILL: Attempting to force kill SearchHost.exe (PID: 13172) - Search
+2025-09-26 23:39:00 - FORCE_KILL: Successfully killed SearchHost.exe using ProcessClose
+2025-09-26 23:39:00 - FORCE_KILL: Attempted to stop/delete service: searchhost
+2025-09-26 23:39:00 - FORCE_KILL: Killed by window title match: SearchIndexer.exe (PID: 6792)
+2025-09-26 23:39:00 - FORCE_KILL: Killed by window title match: msedgewebview2.exe (PID: 4140)
+2025-09-26 23:39:01 - FORCE_KILL: Killed by window title match: msedgewebview2.exe (PID: 19216)
+2025-09-26 23:39:01 - FORCE_KILL: Killed by window title match: msedgewebview2.exe (PID: 6228)
+2025-09-26 23:39:01 - FORCE_KILL: Killed by window title match: msedgewebview2.exe (PID: 2876)
+2025-09-26 23:39:01 - FORCE_KILL: Killed by window title match: msedgewebview2.exe (PID: 6524)
+2025-09-26 23:39:02 - FORCE_KILL_AND_RELAUNCH: Relaunched C:\WINDOWS\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe
+2025-09-26 23:39:39 - TEXT_SHORTCUT: Triggered 'gmail' -> 'GMAIL_WEB'
+2025-09-26 23:39:39 - WEB: Opening Gmail Account 0 in Chrome
+2025-09-26 23:39:39 - WEB: Gmail Account 0 opened in Chrome
+2025-09-26 23:40:29 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-26 23:40:29 - LAUNCHER: WeMod is running, attempting to close
+2025-09-26 23:40:29 - LAUNCHER: Sent close signal to WeMod window
+2025-09-26 23:40:30 - LAUNCHER: WeMod launched successfully
+2025-09-26 23:40:32 - LAUNCHER: WeMod window activated
+2025-09-26 23:40:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:40:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:45:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:45:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:50:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:50:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:55:41 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-26 23:55:41 - LAUNCHER: WeMod launched successfully
+2025-09-26 23:55:43 - LAUNCHER: WeMod window activated
+2025-09-26 23:55:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-26 23:55:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-26 23:56:32 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-26 23:56:32 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-26 23:56:32 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-26 23:57:07 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-26 23:57:07 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-26 23:57:09 - RECYCLE_BIN: Successfully emptied using PowerShell
