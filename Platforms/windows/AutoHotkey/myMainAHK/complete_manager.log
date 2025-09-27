@@ -28545,3 +28545,219 @@ Source:	SWbemObjectEx
 2025-09-26 23:57:09 - RECYCLE_BIN: Successfully emptied using PowerShell
 2025-09-27 00:00:50 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-27 00:00:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 00:05:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 00:05:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 00:07:27 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-27 00:07:27 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-27 00:07:27 - REBOOT: Initiating immediate system reboot
+2025-09-27 00:07:27 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-27 00:07:27 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-27 00:07:27 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-27 00:08:11 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-27 00:08:25 - TEXT_SHORTCUT: Triggered 'dddesk' -> 'ps7run dddesk'
+2025-09-27 00:08:25 - TERMINAL_CMD: Executing command - ps7run dddesk
+2025-09-27 00:08:32 - TERMINAL_CMD: Executed 'ps7run dddesk' with self-terminating PowerShell
+2025-09-27 00:08:36 - TEXT_SHORTCUT: Triggered 'wall' -> 'WALLPAPER_APP'
+2025-09-27 00:08:36 - LAUNCHER: Attempting to launch WallPaper app
+2025-09-27 00:08:36 - ERROR: WallPaper app not found at: C:\Users\\micha\Desktop\WallPaper.lnk
+2025-09-27 00:13:04 - TEXT_SHORTCUT: Triggered 'mreflect' -> 'MACRIUM_REFLECT_APP'
+2025-09-27 00:13:04 - LAUNCHER: Attempting to launch Macrium Reflect
+2025-09-27 00:13:04 - LAUNCHER: Macrium Reflect launched successfully from: F:\backup\windowsapps\installed\reflect\Reflect.exe
+2025-09-27 00:13:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 00:13:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 00:13:16 - WARNING: Macrium Reflect launched but window not detected within 10 seconds
+2025-09-27 01:22:30 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 01:22:31 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 01:22:44 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-27 01:22:44 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-27 01:22:44 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-27 01:23:37 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-27 01:28:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 01:28:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 01:33:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 01:33:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 01:38:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 01:38:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 01:43:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 01:43:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 01:48:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 01:48:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 01:53:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 01:53:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 01:58:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 01:58:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 02:03:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 02:03:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 02:08:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 02:08:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 02:13:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 02:13:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 02:15:40 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-27 02:15:40 - LAUNCHER: WeMod launched successfully
+2025-09-27 02:15:43 - LAUNCHER: WeMod window activated
+2025-09-27 02:17:32 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-27 02:17:32 - LAUNCHER: WeMod is running, attempting to close
+2025-09-27 02:17:32 - LAUNCHER: Sent close signal to WeMod window
+2025-09-27 02:17:37 - LAUNCHER: Force terminated WeMod process
+2025-09-27 02:17:38 - LAUNCHER: WeMod launched successfully
+2025-09-27 02:17:40 - LAUNCHER: WeMod window activated
+2025-09-27 02:18:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 02:18:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 02:23:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 02:23:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 02:25:22 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-09-27 02:25:22 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 9688) - Days Gone
+2025-09-27 02:25:22 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-09-27 02:25:25 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-09-27 02:26:01 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-27 02:26:01 - LAUNCHER: WeMod launched successfully
+2025-09-27 02:26:03 - LAUNCHER: WeMod window activated
+2025-09-27 02:26:54 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-09-27 02:26:54 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 2604) - Days Gone
+2025-09-27 02:26:54 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-09-27 02:26:55 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-09-27 02:27:58 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-09-27 02:27:58 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 8740) - Days Gone
+2025-09-27 02:27:58 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-09-27 02:27:59 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-09-27 02:28:16 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-27 02:28:16 - LAUNCHER: WeMod launched successfully
+2025-09-27 02:28:18 - LAUNCHER: WeMod window activated
+2025-09-27 02:28:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 02:28:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 02:30:01 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-27 02:30:01 - LAUNCHER: WeMod is running, attempting to close
+2025-09-27 02:30:01 - LAUNCHER: Sent close signal to WeMod window
+2025-09-27 02:30:06 - LAUNCHER: Force terminated WeMod process
+2025-09-27 02:30:07 - LAUNCHER: WeMod launched successfully
+2025-09-27 02:30:09 - LAUNCHER: WeMod window activated
+2025-09-27 02:30:45 - TEXT_SHORTCUT: Triggered 'logout' -> 'refresh2'
+2025-09-27 02:30:45 - TERMINAL_CMD: Executing command - refresh2
+2025-09-27 02:30:47 - TERMINAL_CMD: Executed 'refresh2' with self-terminating PowerShell
+2025-09-27 02:30:47 - SHUTDOWN: Script exiting - Reason: Logoff
+2025-09-27 02:30:47 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-27 02:30:47 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-27 02:30:59 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-27 02:31:51 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-27 02:31:51 - LAUNCHER: WeMod launched successfully
+2025-09-27 02:31:53 - LAUNCHER: WeMod window activated
+2025-09-27 02:35:59 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 02:35:59 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 02:40:06 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-09-27 02:40:06 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 12772) - Days Gone
+2025-09-27 02:40:06 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-09-27 02:40:07 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-09-27 02:40:14 - TEXT_SHORTCUT: Triggered 'savegg' -> 'SAVEG_TERMINAL'
+2025-09-27 02:40:14 - SAVEGG: Launching Ludusavi backup tool
+2025-09-27 02:40:15 - SAVEGG: Ludusavi launched successfully from: F:\\backup\\windowsapps\\installed\\Ludosavi\\ludusavi.exe
+2025-09-27 02:40:59 - TEXT_SHORTCUT: Triggered 'sleep' -> 'ss'
+2025-09-27 02:40:59 - TERMINAL_CMD: Executing command - ss
+2025-09-27 02:40:59 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 02:40:59 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 02:41:02 - TERMINAL_CMD: Executed 'ss' with self-terminating PowerShell
+2025-09-27 20:29:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 20:29:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 20:29:46 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-27 20:29:46 - LAUNCHER: WeMod is running, attempting to close
+2025-09-27 20:29:46 - LAUNCHER: Force terminated WeMod process
+2025-09-27 20:29:47 - LAUNCHER: WeMod launched successfully
+2025-09-27 20:29:49 - LAUNCHER: WeMod window activated
+2025-09-27 20:34:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 20:34:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 20:39:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 20:39:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 20:44:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 20:44:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 20:49:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 20:49:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 20:54:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 20:54:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 20:59:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 20:59:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 21:04:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 21:04:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 21:09:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 21:09:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 21:14:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 21:14:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 21:19:11 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 21:19:11 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 21:19:20 - TEXT_SHORTCUT: Triggered 'sleep' -> 'ss'
+2025-09-27 21:19:20 - TERMINAL_CMD: Executing command - ss
+2025-09-27 21:19:24 - TERMINAL_CMD: Executed 'ss' with self-terminating PowerShell
+2025-09-27 21:30:41 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 21:30:41 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 23:30:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 23:30:39 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 23:35:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 23:35:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 23:40:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 23:40:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 23:45:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 23:45:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 23:50:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 23:50:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-27 23:55:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-27 23:55:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:00:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:00:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:05:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:05:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:10:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:10:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:15:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:15:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:20:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:20:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:25:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:25:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:30:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:30:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:35:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:35:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:40:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:40:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:45:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:45:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:50:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:50:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 00:55:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 00:55:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:00:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:00:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:05:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:05:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:10:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:10:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:15:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:15:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:20:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:20:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:25:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:25:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:30:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:30:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:35:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:35:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:40:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:40:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:45:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:45:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:50:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:50:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 01:55:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 01:55:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 02:00:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 02:00:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 02:05:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 02:05:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 02:10:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 02:10:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 02:14:59 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-09-28 02:14:59 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 7992) - Days Gone
+2025-09-28 02:14:59 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-09-28 02:15:00 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-09-28 02:15:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 02:15:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 02:20:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 02:20:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
