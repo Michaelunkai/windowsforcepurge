@@ -13,7 +13,7 @@ detect_ubuntu_version() {
         echo "$VERSION_CODENAME"
     else
         echo "jammy"  # fallback
-    fi
+    
 }
 
 # Function to fix DNS issues

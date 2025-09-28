@@ -29558,3 +29558,303 @@ Source:	SWbemObjectEx
 2025-09-28 20:28:51 - FERDIUM: Second Ferdium instance launched after 2 second delay
 2025-09-28 20:29:57 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-28 20:29:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:32:53 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 20:32:53 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 20:32:53 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 20:34:17 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 20:34:17 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 20:34:17 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 20:34:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:34:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:35:22 - FULLSIZE: Triple-tap E detected
+2025-09-28 20:35:22 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - DevOps internship preparation tools - Claude)
+2025-09-28 20:35:22 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 20:35:22 - FULLSIZE: Applied windowed style with borders
+2025-09-28 20:35:23 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 20:35:23 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 20:37:07 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-28 20:37:07 - TERMINAL: Attempting to open floating terminal
+2025-09-28 20:37:08 - TERMINAL: Windows Terminal opened
+2025-09-28 20:37:20 - ERROR in GetActiveProcess: Target window not found.
+2025-09-28 20:37:33 - FULLSIZE: Triple-tap E detected
+2025-09-28 20:37:33 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - DevOps internship preparation tools - Claude)
+2025-09-28 20:37:33 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 20:37:33 - FULLSIZE: Applied windowed style with borders
+2025-09-28 20:37:33 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 20:37:33 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 20:39:49 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 20:39:49 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 20:39:49 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 20:39:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:39:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:44:41 - TEXT_SHORTCUT: Triggered 'zzzzzz' -> 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'
+2025-09-28 20:44:41 - TEXT_SHORTCUT: Launched executable directly: F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe
+2025-09-28 20:44:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:44:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:47:50 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-28 20:47:50 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-28 20:47:50 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-28 20:49:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:49:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:54:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:54:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:57:35 - TEXT_SHORTCUT: Triggered 'sdesktop' -> 'sdesktop'
+2025-09-28 20:57:35 - TERMINAL_CMD: Executing command - sdesktop
+2025-09-28 20:57:50 - TERMINAL_CMD: Executed 'sdesktop' with self-terminating PowerShell
+2025-09-28 20:59:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:59:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:04:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:04:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:09:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:09:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:14:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:14:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:19:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:19:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:23:46 - FULLSIZE: Triple-tap E detected
+2025-09-28 21:23:46 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - lmsys - LMArena)
+2025-09-28 21:23:46 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 21:23:46 - FULLSIZE: Applied windowed style with borders
+2025-09-28 21:23:46 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 21:23:46 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 21:24:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:24:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:27:51 - FULLSIZE: Triple-tap E detected
+2025-09-28 21:27:51 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - lmsys - LMArena)
+2025-09-28 21:27:51 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 21:27:51 - FULLSIZE: Applied windowed style with borders
+2025-09-28 21:27:51 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 21:27:51 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 21:27:53 - FULLSIZE: Triple-tap E detected
+2025-09-28 21:27:53 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - lmsys - LMArena)
+2025-09-28 21:27:53 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 21:27:53 - FULLSIZE: Applied windowed style with borders
+2025-09-28 21:27:53 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 21:27:53 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 21:29:33 - FULLSIZE: Triple-tap E detected
+2025-09-28 21:29:33 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - lmsys - LMArena)
+2025-09-28 21:29:33 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 21:29:33 - FULLSIZE: Applied windowed style with borders
+2025-09-28 21:29:33 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 21:29:33 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 21:29:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:29:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:34:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:34:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:35:09 - FULLSIZE: Triple-tap E detected
+2025-09-28 21:35:09 - FULLSIZE: Processing window - Code.exe (c.sh - GetDocker - Visual Studio Code [Administrator])
+2025-09-28 21:35:09 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 21:35:09 - FULLSIZE: Applied windowed style with borders
+2025-09-28 21:35:10 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 21:35:10 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 21:35:19 - FULLSIZE: Triple-tap E detected
+2025-09-28 21:35:19 - FULLSIZE: Processing window - Code.exe (c.sh - GetDocker - Visual Studio Code [Administrator])
+2025-09-28 21:35:19 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 21:35:19 - FULLSIZE: Applied windowed style with borders
+2025-09-28 21:35:19 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 21:35:19 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 21:39:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:39:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:44:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:44:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:46:28 - DESKTOP: Switched to Desktop 2
+2025-09-28 21:46:32 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-28 21:46:33 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-28 21:46:33 - ERROR in GetActiveProcess: Target window not found.
+2025-09-28 21:46:51 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-28 21:46:51 - LAUNCHER: WeMod launched successfully
+2025-09-28 21:46:53 - LAUNCHER: WeMod window activated
+2025-09-28 21:47:58 - DESKTOP: Switched to Desktop 1
+2025-09-28 21:48:07 - DESKTOP: Switched to Desktop 2
+2025-09-28 21:48:20 - TEXT_SHORTCUT: Triggered 'muteit' -> 'F:\backup\windowsapps\installed\NirCmd\nircmdMute.lnk'
+2025-09-28 21:48:20 - TEXT_SHORTCUT: Launched (background/silent) for shortcut: muteit -> F:\backup\windowsapps\installed\NirCmd\nircmdMute.lnk
+2025-09-28 21:48:26 - TEXT_SHORTCUT: Triggered 'unmute' -> 'F:\backup\windowsapps\installed\NirCmd\UnMute.lnk'
+2025-09-28 21:48:26 - TEXT_SHORTCUT: Launched (background/silent) for shortcut: unmute -> F:\backup\windowsapps\installed\NirCmd\UnMute.lnk
+2025-09-28 21:48:29 - DESKTOP: Switched to Desktop 1
+2025-09-28 21:48:51 - DESKTOP: Switched to Desktop 2
+2025-09-28 21:49:08 - TEXT_SHORTCUT: Triggered 'zzzzzz' -> 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'
+2025-09-28 21:49:08 - TEXT_SHORTCUT: Launched executable directly: F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe
+2025-09-28 21:49:16 - TEXT_SHORTCUT: Triggered 'zzzzzz' -> 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'
+2025-09-28 21:49:16 - TEXT_SHORTCUT: Launched executable directly: F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe
+2025-09-28 21:49:17 - TEXT_SHORTCUT: Triggered 'zzzzzz' -> 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'
+2025-09-28 21:49:17 - TEXT_SHORTCUT: Launched executable directly: F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe
+2025-09-28 21:49:53 - TEXT_SHORTCUT: Triggered 'muteit' -> 'F:\backup\windowsapps\installed\NirCmd\nircmdMute.lnk'
+2025-09-28 21:49:53 - TEXT_SHORTCUT: Launched (background/silent) for shortcut: muteit -> F:\backup\windowsapps\installed\NirCmd\nircmdMute.lnk
+2025-09-28 21:49:56 - DESKTOP: Switched to Desktop 1
+2025-09-28 21:49:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:49:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:50:25 - TEXT_SHORTCUT: Triggered 'zzzzzz' -> 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'
+2025-09-28 21:50:25 - TEXT_SHORTCUT: Launched executable directly: F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe
+2025-09-28 21:50:26 - TEXT_SHORTCUT: Triggered 'zzzzzz' -> 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'
+2025-09-28 21:50:26 - TEXT_SHORTCUT: Launched executable directly: F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe
+2025-09-28 21:50:27 - TEXT_SHORTCUT: Triggered 'zzzzzz' -> 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'
+2025-09-28 21:50:27 - TEXT_SHORTCUT: Launched executable directly: F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe
+2025-09-28 21:54:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:54:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 21:58:31 - FULLSIZE: Triple-tap E detected
+2025-09-28 21:58:31 - FULLSIZE: Processing window - Code.exe (Welcome - Visual Studio Code [Administrator])
+2025-09-28 21:58:31 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 21:58:31 - FULLSIZE: Applied windowed style with borders
+2025-09-28 21:58:31 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 21:58:31 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 21:59:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 21:59:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:04:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:04:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:09:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:09:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:10:23 - DESKTOP: Switched to Desktop 2
+2025-09-28 22:10:55 - DESKTOP: Switched to Desktop 1
+2025-09-28 22:13:13 - TEXT_SHORTCUT: Triggered 'downloads' -> 'DOWNLOADS_FOLDER'
+2025-09-28 22:13:13 - FOLDER: Opening Downloads folder
+2025-09-28 22:13:13 - FOLDER: Successfully opened Downloads folder
+2025-09-28 22:14:20 - TEXT_SHORTCUT: Triggered 'downloads' -> 'DOWNLOADS_FOLDER'
+2025-09-28 22:14:20 - FOLDER: Opening Downloads folder
+2025-09-28 22:14:20 - FOLDER: Successfully opened Downloads folder
+2025-09-28 22:14:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:14:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:15:01 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-28 22:15:01 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-28 22:15:01 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-28 22:15:04 - FULLSIZE: Triple-tap E detected
+2025-09-28 22:15:04 - FULLSIZE: Processing window - Code.exe (Welcome - Visual Studio Code [Administrator])
+2025-09-28 22:15:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 22:15:04 - FULLSIZE: Applied windowed style with borders
+2025-09-28 22:15:05 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 22:15:05 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 22:19:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:19:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:24:45 - FULLSIZE: Triple-tap E detected
+2025-09-28 22:24:45 - FULLSIZE: Processing window - Code.exe (Welcome - Visual Studio Code [Administrator])
+2025-09-28 22:24:45 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 22:24:45 - FULLSIZE: Applied windowed style with borders
+2025-09-28 22:24:46 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 22:24:46 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 22:24:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:24:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:29:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:29:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:33:22 - FULLSIZE: Triple-tap E detected
+2025-09-28 22:33:22 - FULLSIZE: Processing window - Code.exe (Welcome - Visual Studio Code [Administrator])
+2025-09-28 22:33:22 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 22:33:22 - FULLSIZE: Applied windowed style with borders
+2025-09-28 22:33:23 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 22:33:23 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 22:33:25 - FULLSIZE: Triple-tap E detected
+2025-09-28 22:33:25 - FULLSIZE: Processing window - Code.exe (Welcome - Visual Studio Code [Administrator])
+2025-09-28 22:33:25 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 22:33:25 - FULLSIZE: Applied windowed style with borders
+2025-09-28 22:33:26 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 22:33:26 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 22:34:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:34:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:39:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:39:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:44:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:44:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:46:21 - DESKTOP: Switched to Desktop 2
+2025-09-28 22:46:26 - DESKTOP: Switched to Desktop 1
+2025-09-28 22:46:50 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 22:46:50 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 22:46:50 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 22:49:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:49:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:50:23 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 22:50:23 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 22:50:23 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 22:53:22 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-28 22:53:22 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-28 22:54:15 - TEXT_SHORTCUT: Triggered 'gkeep' -> 'gkeep'
+2025-09-28 22:54:15 - TERMINAL_CMD: Executing command - gkeep
+2025-09-28 22:54:16 - TERMINAL_CMD: Executed 'gkeep' with self-terminating PowerShell
+2025-09-28 22:54:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:54:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 22:59:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 22:59:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:00:19 - FULLSIZE: Triple-tap E detected
+2025-09-28 23:00:19 - FULLSIZE: Processing window - Code.exe (Visual Studio Code [Administrator])
+2025-09-28 23:00:19 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 23:00:19 - FULLSIZE: Applied windowed style with borders
+2025-09-28 23:00:20 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 23:00:20 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 23:04:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:04:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:09:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:09:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:11:59 - FULLSIZE: Triple-tap E detected
+2025-09-28 23:11:59 - FULLSIZE: Processing window - claude.exe (Claude)
+2025-09-28 23:11:59 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 23:11:59 - FULLSIZE: Applied windowed style with borders
+2025-09-28 23:11:59 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 23:11:59 - FULLSIZE: Successfully applied full size mode to claude.exe
+2025-09-28 23:12:15 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-28 23:12:15 - TERMINAL: Attempting to open floating terminal
+2025-09-28 23:12:15 - TERMINAL: Windows Terminal opened
+2025-09-28 23:12:28 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-28 23:12:28 - TERMINAL: Attempting to open floating terminal
+2025-09-28 23:12:29 - TERMINAL: Windows Terminal opened
+2025-09-28 23:14:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:14:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:17:21 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 23:17:21 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 23:17:21 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 23:19:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:19:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:21:07 - TEXT_SHORTCUT: Triggered 'xcccc' -> 'CHROME_APP'
+2025-09-28 23:21:07 - LAUNCHER: Attempting to launch Chrome
+2025-09-28 23:21:07 - LAUNCHER: Chrome already running, activated window
+2025-09-28 23:24:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:24:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:29:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:29:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:34:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:34:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:37:54 - FULLSIZE: Triple-tap E detected
+2025-09-28 23:37:54 - FULLSIZE: Processing window - WindowsTerminal.exe (? App Stability)
+2025-09-28 23:37:54 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 23:37:54 - FULLSIZE: Applied windowed style with borders
+2025-09-28 23:37:54 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 23:37:54 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 23:39:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:39:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:44:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:44:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:47:27 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-28 23:47:27 - TERMINAL: Attempting to open floating terminal
+2025-09-28 23:47:27 - TERMINAL: Windows Terminal opened
+2025-09-28 23:49:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:49:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:54:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 23:54:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 23:59:56 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-28 23:59:56 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-28 23:59:56 - REBOOT: Initiating immediate system reboot
+2025-09-28 23:59:56 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-28 23:59:56 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 23:59:56 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 00:00:38 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 00:05:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 00:05:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 00:06:02 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-29 00:06:02 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-29 00:06:02 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 00:06:50 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 00:11:05 - FULLSIZE: Triple-tap E detected
+2025-09-29 00:11:05 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-29 00:11:05 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 00:11:05 - FULLSIZE: Applied windowed style with borders
+2025-09-29 00:11:05 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 00:11:05 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 00:11:28 - DESKTOP: Switched to Desktop 2
+2025-09-29 00:11:31 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-29 00:11:32 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-29 00:11:42 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-29 00:11:42 - LAUNCHER: WeMod launched successfully
+2025-09-29 00:11:44 - LAUNCHER: WeMod window activated
+2025-09-29 00:11:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 00:11:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 00:12:21 - DESKTOP: Switched to Desktop 1
+2025-09-29 00:13:37 - DESKTOP: Switched to Desktop 2
+2025-09-29 00:13:55 - DESKTOP: Switched to Desktop 1
+2025-09-29 00:16:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 00:16:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
