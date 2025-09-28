@@ -29544,3 +29544,17 @@ Source:	SWbemObjectEx
 2025-09-28 20:04:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-28 20:09:57 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-28 20:09:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:14:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:14:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:19:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:19:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:24:44 - TEXT_SHORTCUT: Triggered 'zzzzzz' -> 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'
+2025-09-28 20:24:44 - TEXT_SHORTCUT: Launched executable directly: F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe
+2025-09-28 20:24:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:24:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:28:46 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-28 20:28:46 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-28 20:28:49 - FERDIUM: First Ferdium instance launched
+2025-09-28 20:28:51 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-28 20:29:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:29:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
