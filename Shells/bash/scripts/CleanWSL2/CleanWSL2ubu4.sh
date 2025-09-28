@@ -12,8 +12,8 @@ export DEBCONF_NONINTERACTIVE_SEEN=true
 export DEBCONF_NOWARNINGS=yes
 
 # Disable all interactive prompts system-wide
-echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
-echo 'debconf debconf/priority select critical' | sudo debconf-set-selections
+echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections 2>/dev/null || true
+echo 'debconf debconf/priority select critical' | sudo debconf-set-selections 2>/dev/null || true
 
 # Enhanced WSL2 Ubuntu Cleanup Script - Maximum Space Reduction
 # This script aggressively removes all non-essential components to minimize WSL2 distro size

@@ -29271,3 +29271,125 @@ Source:	SWbemObjectEx
 2025-09-28 17:41:03 - QWE: qwe command launched in Windows Terminal (PowerShell)
 2025-09-28 17:41:22 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-28 17:41:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 17:46:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 17:46:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 17:51:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 17:51:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 17:56:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 17:56:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:01:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:01:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:02:37 - TEXT_SHORTCUT: Triggered 'vvvvvv' -> 'volume'
+2025-09-28 18:02:37 - TERMINAL_CMD: Executing command - volume
+2025-09-28 18:02:41 - TERMINAL_CMD: Executed 'volume' with self-terminating PowerShell
+2025-09-28 18:06:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:06:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:07:34 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-28 18:07:34 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-28 18:07:37 - FERDIUM: First Ferdium instance launched
+2025-09-28 18:07:39 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-28 18:09:23 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:09:23 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Claude)
+2025-09-28 18:09:23 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:09:23 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:09:24 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:09:24 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 18:10:32 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:10:32 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Claude)
+2025-09-28 18:10:32 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:10:32 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:10:32 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:10:32 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 18:11:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:11:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:12:27 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:12:27 - FULLSIZE: Processing window - WindowsTerminal.exe (? App Launch)
+2025-09-28 18:12:27 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:12:27 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:12:27 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:12:27 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 18:12:32 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:12:32 - FULLSIZE: Processing window - WindowsTerminal.exe (? App Launch)
+2025-09-28 18:12:32 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:12:32 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:12:32 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:12:32 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 18:13:39 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:13:39 - FULLSIZE: Processing window - Code.exe (main.py - LaptopDrivers - Visual Studio Code [Administrator])
+2025-09-28 18:13:39 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:13:39 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:13:39 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:13:39 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 18:16:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:16:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:16:33 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-28 18:16:33 - TERMINAL: Attempting to open floating terminal
+2025-09-28 18:16:33 - TERMINAL: Windows Terminal opened
+2025-09-28 18:17:38 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:17:38 - FULLSIZE: Processing window - WindowsTerminal.exe (? File Deletion)
+2025-09-28 18:17:38 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:17:38 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:17:38 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:17:38 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 18:19:40 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:19:40 - FULLSIZE: Processing window - Code.exe (main.py - LaptopDrivers - Visual Studio Code [Administrator])
+2025-09-28 18:19:40 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:19:40 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:19:40 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:19:40 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 18:21:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:21:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:22:19 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:22:19 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Claude)
+2025-09-28 18:22:19 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:22:19 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:22:19 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:22:19 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 18:23:01 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:23:01 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Claude)
+2025-09-28 18:23:01 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:23:01 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:23:02 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:23:02 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 18:26:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:26:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:31:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:31:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:33:54 - DESKTOP: Switched to Desktop 2
+2025-09-28 18:33:54 - DESKTOP: Switched to Desktop 1
+2025-09-28 18:36:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:36:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:40:40 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:40:40 - FULLSIZE: Processing window - WindowsTerminal.exe (? File Path)
+2025-09-28 18:40:40 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:40:40 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:40:40 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:40:40 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 18:41:13 - TEXT_SHORTCUT: Triggered 'ubu2' -> 'UBUNTU2_WSL'
+2025-09-28 18:41:13 - UBUNTU2: Opening terminal and running WSL Ubuntu2
+2025-09-28 18:41:13 - UBUNTU2: Ubuntu2 WSL launched in Windows Terminal
+2025-09-28 18:41:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:41:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:46:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:46:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:47:46 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-28 18:47:46 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-28 18:47:46 - REBOOT: Initiating immediate system reboot
+2025-09-28 18:47:46 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-28 18:47:46 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 18:47:47 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 18:48:32 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 18:49:49 - DESKTOP: Switched to Desktop 2
+2025-09-28 18:49:52 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-28 18:49:53 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-28 18:50:30 - DESKTOP: Switched to Desktop 1
+2025-09-28 18:50:44 - DESKTOP: Switched to Desktop 2
+2025-09-28 18:50:45 - DESKTOP: Switched to Desktop 1
+2025-09-28 18:53:32 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:53:32 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:54:06 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:54:06 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 18:54:06 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:54:06 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:54:07 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:54:07 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
