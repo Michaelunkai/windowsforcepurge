@@ -29077,3 +29077,172 @@ Source:	SWbemObjectEx
 2025-09-28 15:09:55 - QWE: qwe command launched in Windows Terminal (PowerShell)
 2025-09-28 15:11:17 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-28 15:11:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:13:46 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:13:46 - FULLSIZE: Processing window - WindowsTerminal.exe (? File Path)
+2025-09-28 15:13:46 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:13:46 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:13:47 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:13:47 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 15:14:34 - DESKTOP: Switched to Desktop 2
+2025-09-28 15:14:36 - DESKTOP: Switched to Desktop 1
+2025-09-28 15:16:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:16:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:20:32 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-28 15:20:32 - TERMINAL: Attempting to open floating terminal
+2025-09-28 15:20:33 - TERMINAL: Windows Terminal opened
+2025-09-28 15:20:43 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-28 15:20:43 - TERMINAL: Attempting to open floating terminal
+2025-09-28 15:20:44 - TERMINAL: Windows Terminal opened
+2025-09-28 15:21:08 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:21:08 - FULLSIZE: Processing window - WindowsTerminal.exe (? Software Troubleshooting)
+2025-09-28 15:21:08 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:21:08 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:21:09 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:21:09 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 15:21:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:21:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:26:05 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 15:26:05 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 15:26:05 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 15:26:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:26:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:27:24 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:27:24 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-28 15:27:24 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:27:24 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:27:24 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:27:24 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 15:27:50 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:27:50 - FULLSIZE: Processing window - WindowsTerminal.exe (? Pause Mode)
+2025-09-28 15:27:50 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:27:50 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:27:50 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:27:50 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 15:27:54 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:27:54 - FULLSIZE: Processing window - WindowsTerminal.exe (? Pause Mode)
+2025-09-28 15:27:54 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:27:54 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:27:54 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:27:54 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 15:28:14 - TEXT_SHORTCUT: Triggered 'rmod' -> 'rmod'
+2025-09-28 15:28:14 - TERMINAL_CMD: Executing command - rmod
+2025-09-28 15:28:15 - TERMINAL_CMD: Executed 'rmod' with self-terminating PowerShell
+2025-09-28 15:30:50 - TEXT_SHORTCUT: Triggered 'wall' -> 'WALLPAPER_APP'
+2025-09-28 15:30:50 - LAUNCHER: Attempting to launch WallPaper app
+2025-09-28 15:30:50 - ERROR: WallPaper app not found at: C:\Users\\micha\Desktop\WallPaper.lnk
+2025-09-28 15:31:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:31:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:36:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:36:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:40:37 - TEXT_SHORTCUT: Triggered 'mygames' -> 'MYGAMES_TERMINAL'
+2025-09-28 15:40:37 - MYGAMES: Opening PowerShell terminal and running myg command
+2025-09-28 15:40:37 - MYGAMES: myg command launched in Windows Terminal (PowerShell)
+2025-09-28 15:41:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:41:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:42:57 - TEXT_SHORTCUT: Triggered 'pipip' -> 'pipip'
+2025-09-28 15:42:57 - TERMINAL_CMD: Executing command - pipip
+2025-09-28 15:43:13 - TERMINAL_CMD: Executed 'pipip' with self-terminating PowerShell
+2025-09-28 15:45:16 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:45:16 - FULLSIZE: Processing window - Code.exe (main.py - LaptopDrivers - Visual Studio Code [Administrator])
+2025-09-28 15:45:16 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:45:16 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:45:16 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:45:16 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 15:46:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:46:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:46:19 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 15:46:19 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 15:46:19 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 15:49:31 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:49:31 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-28 15:49:31 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:49:31 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:49:32 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:49:32 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 15:50:24 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:50:24 - FULLSIZE: Processing window - WindowsTerminal.exe ( F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro.exe)
+2025-09-28 15:50:24 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:50:24 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:50:24 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:50:24 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 15:51:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:51:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:55:56 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 15:55:56 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 15:55:56 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 15:56:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:56:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:59:22 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:59:22 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-28 15:59:22 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:59:22 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:59:22 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:59:22 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 16:01:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 16:01:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 16:02:40 - FULLSIZE: Triple-tap E detected
+2025-09-28 16:02:40 - FULLSIZE: Processing window - WindowsTerminal.exe ( F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro.exe)
+2025-09-28 16:02:40 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 16:02:40 - FULLSIZE: Applied windowed style with borders
+2025-09-28 16:02:41 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 16:02:41 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 16:03:56 - FULLSIZE: Triple-tap E detected
+2025-09-28 16:03:56 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-28 16:03:56 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 16:03:56 - FULLSIZE: Applied windowed style with borders
+2025-09-28 16:03:57 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 16:03:57 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 16:04:04 - FULLSIZE: Triple-tap E detected
+2025-09-28 16:04:04 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-28 16:04:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 16:04:04 - FULLSIZE: Applied windowed style with borders
+2025-09-28 16:04:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 16:04:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 16:06:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 16:06:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 16:09:06 - TEXT_SHORTCUT: Triggered 'pipip' -> 'pipip'
+2025-09-28 16:09:06 - TERMINAL_CMD: Executing command - pipip
+2025-09-28 16:09:08 - TERMINAL_CMD: Executed 'pipip' with self-terminating PowerShell
+2025-09-28 16:10:12 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-28 16:10:12 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-28 16:11:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 16:11:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 16:12:21 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 16:12:21 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 16:12:21 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 16:16:06 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-28 16:16:06 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-28 16:16:09 - FERDIUM: First Ferdium instance launched
+2025-09-28 16:16:11 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-28 16:16:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 16:16:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 16:20:18 - FULLSIZE: Triple-tap E detected
+2025-09-28 16:20:18 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Powershell snipping tool full screen capture - Claude)
+2025-09-28 16:20:18 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 16:20:18 - FULLSIZE: Applied windowed style with borders
+2025-09-28 16:20:18 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 16:20:18 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 16:20:20 - FULLSIZE: Triple-tap E detected
+2025-09-28 16:20:20 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Powershell snipping tool full screen capture - Claude)
+2025-09-28 16:20:20 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 16:20:20 - FULLSIZE: Applied windowed style with borders
+2025-09-28 16:20:20 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 16:20:20 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-28 16:21:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 16:21:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 16:22:36 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-28 16:22:36 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-28 16:22:36 - REBOOT: Initiating immediate system reboot
+2025-09-28 16:22:36 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-28 16:22:36 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 16:22:36 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 16:48:22 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 16:50:06 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 16:50:06 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 16:50:06 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 16:53:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 16:53:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 16:58:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 16:58:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 17:03:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 17:03:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
