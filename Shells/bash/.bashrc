@@ -139,30 +139,6 @@ alias pdata="cd /mnt/f/study/Dev_Toolchain/programming/python/datascience"
 alias smicro="cd /mnt/f/study/microservices"
 alias getprom="sudo apt update && sudo apt install prometheus -y && sudo systemctl start prometheus"
 alias sone="cd /mnt/f/study/Devops/automation/oneliners"
-alias getdocker='
-sudo apt-get update &&
-sudo apt-get install -y -qq ca-certificates curl gnupg lsb-release acl &&
-sudo mkdir -p /etc/apt/keyrings &&
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg --yes &&
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null &&
-sudo apt-get update -y &&
-sudo apt-get install -y -qq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin &&
-sudo systemctl start docker &&
-sudo systemctl enable docker &&
-sudo groupadd docker 2>/dev/null || true &&
-sudo usermod -aG docker $USER &&
-sudo setfacl -m user:$USER:rw /var/run/docker.sock &&
-export DOCKER_HOST=unix:///var/run/docker.sock &&
-if [ ! -f ~/.docker/config.json ]; then
-  mkdir -p ~/.docker &&
-  echo "{\"credsStore\": \"desktop\", \"stackOrchestrator\": \"swarm\", \"detachKeys\": \"ctrl-p,ctrl-q\"}" > ~/.docker/config.json
-fi &&
-sudo rm -f /usr/local/bin/docker-compose &&
-sudo ln -s /usr/libexec/docker/cli-plugins/docker-compose /usr/local/bin/docker-compose &&
-echo "Docker and Docker Compose installation complete. Please log out and log back in for the group changes to take effect." &&
-echo "Docker version: $(docker --version)" &&
-echo "Docker Compose version: $(docker-compose --version)"
-'
 alias sapps="cd /mnt/f/study/Dev_Toolchain/programming/python/apps"
 alias sssl="cd /mnt/f/study/security/SSL"
 alias svb="cd /mnt/f/study/virtualmachines/VirtualBox"
@@ -1284,7 +1260,6 @@ alias summ="venv && cd /mnt/f/study/Dev_Toolchain/programming/python/apps/youtub
 alias clean="bash /mnt/f/study/shells/bash/scripts/CleanWSL2ubu.sh"
 
 alias plexkey="cat /mnt/f/backup/windowsapps/Credentials/plex/token.txt"
-alias getdocker="bash /mnt/f/study/shells/bash/scripts/getdocker.sh"
 alias swinget="cd /mnt/f/study/Shells/powershell/winget"
 alias rmn='f() { rm "$1" && n "$1"; }; f'
 
@@ -1427,7 +1402,6 @@ alias game='py /mnt/f/backup/windowsapps/installed/myapps/compiled_python/howlon
 alias 20000='apt install python3-pip -y && pip install pandas PyQt5 && cd ~ && cp /mnt/f/study/projects/data_analysis/top1000imdbMovies/10000/tv/b.py ~/a.py && cp /mnt/f/study/projects/data_analysis/top1000imdbMovies/10000/tv/watched_tv_shows.db ~/watched_tv_shows.db && wget -q https://datasets.imdbws.com/title.basics.tsv.gz && wget -q https://datasets.imdbws.com/title.ratings.tsv.gz && wget -q https://datasets.imdbws.com/title.crew.tsv.gz && wget -q https://datasets.imdbws.com/title.principals.tsv.gz && wget -q https://datasets.imdbws.com/name.basics.tsv.gz && wget -q https://datasets.imdbws.com/title.episode.tsv.gz && wget -q https://datasets.imdbws.com/title.akas.tsv.gz && python3 a.py'
 alias 10000='cd && apt install python3-pip -y && cp /mnt/f/study/projects/data_analysis/top1000imdbMovies/10000/j.py /root/a.py && cp /mnt/f/study/projects/data_analysis/top1000imdbMovies/10000/watched_movies.db /root && cd && wget https://datasets.imdbws.com/title.basics.tsv.gz && wget https://datasets.imdbws.com/title.ratings.tsv.gz && wget https://datasets.imdbws.com/title.crew.tsv.gz && wget https://datasets.imdbws.com/title.principals.tsv.gz && wget https://datasets.imdbws.com/name.basics.tsv.gz && wget https://datasets.imdbws.com/title.episode.tsv.gz && wget https://datasets.imdbws.com/title.akas.tsv.gz && pip install pandas PyQt5 && pya'
 alias rmdocker='sudo mount -o remount,rw /mnt/wslg/distro && lsof +D /var/lib/docker && systemctl stop docker && rm -rf /var/lib/docker && sudo rm -rf /mnt/wslg/distro/var/lib/docker/layout2 &&  sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli docker-compose-plugin && sudo apt-get autoremove -y --purge && sudo rm -rf /var/lib/docker /etc/docker && sudo rm /etc/apparmor.d/docker && sudo groupdel docker && sudo rm -rf /var/run/docker.sock'
-alias getdocker='bash /mnt/f/study/shells/bash/scripts/getdocker.sh && gcompose'
 alias rprox="rmn /mnt/f/study/virtualmachines/proxmox/bashrc.txt"
 alias snlp="cd /mnt/f/study/AI_and_Machine_Learning/Machine_Learning/NLP"
 
@@ -2196,8 +2170,6 @@ alias crack="n '/mnt/f/study/Hacking/Piracy/Cracked software, games, movies, tv 
 alias spiracy="cd /mnt/f/study/Hacking/Piracy"
 alias ser="cd /mnt/f/study/Dev_Toolchain/programming/Erlang"
 
-alias clean3="bash /mnt/f/study/shells/bash/scripts/CleanWSL2ubu3.sh"
-alias clean3="bash /mnt/f/study/shells/bash/scripts/CleanWSL2ubu3.sh"
 alias movies='gc "https://chatgpt.com/g/g-p-67687a51e9fc8191bc0be1ffe1128ddc-media/c/684c5021-3758-8004-a598-35c6785f1ad5" && gc https://2ecbbd610840-trakt.baby-beamup.club/eyJsaXN0cyI6WyJ0cmFrdF9wb3B1bGFyIiwidHJha3RfdHJlbmRpbmciLCJ0cmFrdF9zZWFyY2giXSwiaWRzIjpbIm1pY2hhZWxvdnNreTU6dG8td2F0Y2g6cmFuayxhc2MiXSwiYWNjZXNzX3Rva2VuIjoiYjViZThlZDk3MzM0ZDQ5YWEwNTU0N2QzNjJmZmIwNzU1ZDg1MmQzMDBlYjI3NjgyMGNkMTkyYTg3Y2Y1ZTk4ZiIsInJlZnJlc2hfdG9rZW4iOiIxYmVmMWE3NzA4OWZkOTQwMmU2NTU3ZTU0YWU2OGU2YjEzODIxNzQwYWE1OGQ4MzdlYTQzNzFmMDNkZGQzNmQxIiwiZXhwaXJlcyI6MTc0OTkxMDg2OCwicmVtb3ZlUHJlZml4IjpmYWxzZX0=/configure && gc "https://trakt.tv/users/michaelovsky5/lists" && n /mnt/f/backup/windowsapps/Credentials/trakt/uploadtolist/TV/a.sh && bash /mnt/f/backup/windowsapps/Credentials/trakt/uploadtolist/movies/b.sh'
 alias tv='gc "https://chatgpt.com/g/g-p-67687a51e9fc8191bc0be1ffe1128ddc-media/c/684c5021-3758-8004-a598-35c6785f1ad5" && gc https://2ecbbd610840-trakt.baby-beamup.club/eyJsaXN0cyI6WyJ0cmFrdF9wb3B1bGFyIiwidHJha3RfdHJlbmRpbmciLCJ0cmFrdF9zZWFyY2giXSwiaWRzIjpbIm1pY2hhZWxvdnNreTU6dG8td2F0Y2g6cmFuayxhc2MiXSwiYWNjZXNzX3Rva2VuIjoiYjViZThlZDk3MzM0ZDQ5YWEwNTU0N2QzNjJmZmIwNzU1ZDg1MmQzMDBlYjI3NjgyMGNkMTkyYTg3Y2Y1ZTk4ZiIsInJlZnJlc2hfdG9rZW4iOiIxYmVmMWE3NzA4OWZkOTQwMmU2NTU3ZTU0YWU2OGU2YjEzODIxNzQwYWE1OGQ4MzdlYTQzNzFmMDNkZGQzNmQxIiwiZXhwaXJlcyI6MTc0OTkxMDg2OCwicmVtb3ZlUHJlZml4IjpmYWxzZX0=/configure && gc "https://trakt.tv/users/michaelovsky5/lists" && n /mnt/f/backup/windowsapps/Credentials/trakt/uploadtolist/TV/a.sh && bash /mnt/f/backup/windowsapps/Credentials/trakt/uploadtolist/TV/a.sh'
 alias trakt="cat '/mnt/f/study/networking/aggregating_web_content/Video_Aggregators/stremio/tutorial how to add trakt to stremio with my own lists and use it in samsung tv'"
@@ -2246,7 +2218,6 @@ alias sprog="cd /mnt/f/study/Dev_Toolchain/programming/"
 
 alias myg="psw myg"
 alias changepath='f(){ OLD_ESC=$(echo "$1" | sed "s/[[\.*^$()+{}|]/\\\\&/g"); NEW_ESC=$(echo "$2" | sed "s/[[\.*^$()+{}|]/\\\\&/g"); if grep -q "$OLD_ESC" ~/.bashrc; then sed -i "s|$OLD_ESC|$NEW_ESC|g" ~/.bashrc; else echo "export PATH=\"$2:\$PATH\"" >> ~/.bashrc; fi && echo -e "\033[32mSuccessfully updated path from '\''$1'\'' to '\''$2'\'' in bash profile\033[0m" && source ~/.bashrc; }; f'
-alias clean3='bash /mnt/f/study/shells/bash/scripts/CleanWSL2ubu4.sh'
 alias scon="cd /mnt/f/study/containers"
 
 alias recents="gc https://claude.ai/recents"
@@ -2271,7 +2242,6 @@ alias mvcmd="mv /mnt/f/downloads/*.cmd* /mnt/f/study/shells/CMD"
 alias sahk="cd /mnt/f/study/Platforms/windows/autohotkey/mymainahk"
 alias redocker2="sudo rm -f /usr/local/lib/docker/cli-plugins/docker-buildx && sudo apt update && sudo apt install -y docker-buildx-plugin && unset DOCKER_BUILDKIT && sed -i '/export DOCKER_BUILDKIT=0/d' ~/.bashrc && sudo systemctl restart docker"
 alias cpyt="cp /mnt/f/backup/windowsapps/Credentials/youtube/client_secret.json ."
-alias clean3="bash /mnt/f/study/shells/bash/scripts/CleanWSL2ubu3.sh"
 export PATH="/mnt/c/Users/micha:$PATH"
 alias cc4="t(clean3 && redocker && check && gg)"
 alias redocker='sudo apt-get remove -y docker docker-engine docker.io containerd runc docker-compose docker-compose-plugin docker-buildx-plugin 2>/dev/null || true && sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg lsb-release && sudo mkdir -p /etc/apt/keyrings && sudo rm -f /etc/apt/keyrings/docker.gpg && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-buildx-plugin && sudo usermod -aG docker $USER && sudo service docker start && newgrp docker && apt install docker-buildx-plugin -y'
@@ -2311,7 +2281,6 @@ alias gjira="bash /mnt/f/study/Enterprise_Apps/management/Workflow_Management/ji
 alias ccwsl="bash /mnt/f/study/shells/bash/scripts/cleanWSL2/cleanWSL2reinstalldocker.sh"
 alias ggemini='sudo apt remove --purge nodejs npm libnode-dev node-* -y 2>/dev/null; sudo apt autoremove -y 2>/dev/null; curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt-get install -y nodejs && sudo npm install -g @google/gemini-cli && gemini --yolo'
 alias ggenv='f(){ echo "GEMINI_API_KEY=$1" > .env && echo "✓ Created .env with Gemini API key in $(pwd) $1"; }; f'
-alias clean3="bash /mnt/f/study/shells/bash/scripts/CleanWSL2/CleanWSL2ubu3.sh"
 alias cpenv="cp /root/.env ."
 alias glama3='update && cd && curl -fsSL https://ollama.com/install.sh | sh && sleep 5 && ollama run llama3.3 && docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main && gc http://localhost:8080'
 alias term='update && sudo apt-get install --reinstall libicu70 && bash /mnt/f/study/shells/bash/scripts/ngrokTerminal.sh && gmail'
@@ -4071,8 +4040,11 @@ alias tovpu='cd /mnt/f/tovplay/tovplay-frontend; git add .; git commit --allow-e
 alias sshtov='sshpass -p EbTyNkfJG6LM ssh -t admin@193.181.213.220 "sudo su"'
 alias sshtov='update && apt install  sshpass -y && sshpass -p EbTyNkfJG6LM ssh -t admin@193.181.213.220 "sudo su"'
 alias term='update && bash /mnt/f/study/shells/bash/scripts/ngrokTerminal.sh'
-alias gitlog="echo "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" | gh auth login --with-token --git-protocol https && gh auth setup-git"
+alias gitlog="echo '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' | gh auth login --with-token --git-protocol https && gh auth setup-git"
 alias tovp="gitlog && cd /mnt/f/tovplay/tovplay-backend; git pull; cd /mnt/f/tovplay/tovplay-frontend; git pull"
 alias getc2="sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" g++-mingw-w64 portaudio19-dev libportaudio2 libportaudiocpp0 build-essential qtbase5-dev qt5-qmake autoconf automake libtool-bin gettext gperf intltool libtool libxml-parser-perl python3 wget g++ git && sudo rm -rf /var/lib/dpkg/info.bak && sudo mv /var/lib/dpkg/info /var/lib/dpkg/info.bak && sudo mkdir /var/lib/dpkg/info && sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -o Dpkg::Options::=\"--force-overwrite\" -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" --reinstall -y \$(dpkg -l | awk '/^ii/{print \$2}') && sudo DEBIAN_FRONTEND=noninteractive apt-get install -f -y && sudo dpkg --configure -a && sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" build-essential gcc g++ clang mono-devel mono-complete mono-mcs mono-xbuild mono-runtime mono-utils mono-dmcs mono-csharp-shell mono-vbnc mono-4.0-gac mono-4.0-service mono-dbg mono-reference-assemblies-4.0 mono-reference-assemblies-2.0 mono-reference-assemblies-3.5 libmono-cil-dev libmono-system-web4.0-cil libmono-system-net4.0-cil libmono-system-data4.0-cil libmono-system-runtime4.0-cil libmono-winforms2.0-cil libmono-system-windows-forms4.0-cil libmono-system-xml4.0-cil libmono-system-core4.0-cil libmono-system-configuration4.0-cil libmono-system-drawing4.0-cil libmono-system-web-extensions4.0-cil libmono-system-servicemodel4.0a-cil libmono-wcf3.0a-cil cmake gdb valgrind make automake libtool autoconf pkg-config ninja-build git qtchooser qtbase5-dev qt5-qmake qtbase5-dev-tools libssh-dev libgtest-dev libboost-all-dev libevent-dev libdouble-conversion-dev libgoogle-glog-dev libgflags-dev libiberty-dev liblz4-dev liblzma-dev libsnappy-dev libjemalloc-dev libunwind-dev libfmt-dev libboost-context-dev clang-format lldb cppcheck lcov libcurl4-openssl-dev doxygen cscope strace ltrace linux-tools-common linux-tools-generic ccache meson splint flex bison clang-tidy check re2c gcovr exuberant-ctags gdb-multiarch llvm systemtap ddd binutils astyle uncrustify indent clang-tools coccinelle libcppunit-dev graphviz gnuplot openocd global gdbserver checkinstall fakeroot autotools-dev libclang-dev llvm-dev make-doc mercurial meld cmake-curses-gui libopencv-dev libpoco-dev libsfml-dev libcereal-dev libprotobuf-dev protobuf-compiler libspdlog-dev libhdf5-dev libarmadillo-dev libsoci-dev libsqlite3-dev libcapnp-dev libtclap-dev libxerces-c-dev nlohmann-json3-dev qtcreator libqt5core5a libqt5gui5 qtbase5-dev drumstick-data drumstick-tools libdrumstick-dev libdrumstick-file2 libdrumstick-plugins libdrumstick-rt-backends libdrumstick-rt2 libdrumstick-widgets2 libcgal-dev libcgal-qt5-dev qcoro-doc qcoro-qt5-dev libjreen-qt5-dev libquotient-dev libqscintilla2-qt5-dev libqwt-qt5-dev libqwtmathml-qt5-dev libqwtplot3d-qt5-dev libsingleapplication-dev libsoqt520-dev libtelepathy-qt5-dev libudisks2-qt5-dev libqt6core5compat6-dev mingw-w64 mingw-w64-tools mingw-w64-i686-dev mingw-w64-x86-64-dev gcc-mingw-w64 g++-mingw-w64 gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 g++-mingw-w64-i686 g++-mingw-w64-x86-64 binutils-mingw-w64 binutils-mingw-w64-i686 binutils-mingw-w64-x86-64 wine wine32 wine64 winetricks winbind libgtk-3-0 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon-x11-0 libasound2 libnss3 libssl-dev libffi-dev libbz2-dev libreadline-dev libsqlite3-dev libncurses5-dev libncursesw5-dev libgdbm-dev zlib1g-dev libdb-dev uuid-dev libxml2-dev libxslt1-dev libgmp-dev libx11-xcb-dev libxcb1-dev libxcb-render0-dev libxcb-shm0-dev libxcb-dri3-dev libxcomposite1 libxdamage1 libxrandr2 libxtst6 libxss1 libwayland-client0 libwayland-cursor0 libwayland-egl1-mesa libxkbcommon0 libjpeg-dev libpng-dev libtiff-dev libfreetype6-dev libharfbuzz-dev libpixman-1-dev libqt6bodymovin6-dev libqt6charts6-dev libqt6datavisualization6-dev libqt6networkauth6-dev libqt6opengl6-dev libqt6quicktimeline6-dev libqt6sensors6-dev libqt6serialbus6-dev libqt6serialport6-dev libqt6shadertools6-dev libqt6svg6-dev libqt6virtualkeyboard6-dev libqt6webchannel6-dev libqt6websockets6-dev qcoro-qt6-dev qt6-3d-dev qt6-base-dev qt6-base-dev-tools qt6-base-private-dev qt6-connectivity-dev qt6-declarative-dev qt6-declarative-dev-tools qt6-declarative-private-dev qt6-multimedia-dev qt6-pdf-dev qt6-positioning-dev qt6-quick3d-dev qt6-quick3d-dev-tools qt6-remoteobjects-dev qt6-scxml-dev qt6-tools-dev qt6-tools-dev-tools qt6-tools-private-dev qt6-wayland-dev qt6-wayland-dev-tools qt6-webengine-dev qt6-webengine-dev-tools qt6-webengine-private-dev qt6-webview-dev qtkeychain-qt6-dev dos2unix ca-certificates gnupg lsb-release software-properties-common apt-transport-https curl wget && sudo dpkg --add-architecture i386 && sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y wine32:i386 && sudo winetricks -q corefonts vcrun2005 vcrun2008 vcrun2010 vcrun2012 vcrun2013 vcrun2015 vcrun2017 vcrun2019 vcrun2022 dotnet20 dotnet35 dotnet40 dotnet45 dotnet46 dotnet47 dotnet48 dotnet6 dotnet7 dotnet8 msxml3 msxml4 msxml6 && sudo DEBIAN_FRONTEND=noninteractive apt-get purge -y \"dotnet-*\" \"aspnetcore-*\" \"netstandard-targeting-pack-2.1*\" 2>/dev/null || true && sudo rm -rf /usr/share/dotnet && sudo mkdir -p /usr/lib/dotnet && curl -sSL https://dot.net/v1/dotnet-install.sh | sudo bash -s -- --channel 5.0 --install-dir /usr/lib/dotnet --skip-non-versioned-files --no-path && curl -sSL https://dot.net/v1/dotnet-install.sh | sudo bash -s -- --channel 6.0 --install-dir /usr/lib/dotnet --skip-non-versioned-files --no-path && curl -sSL https://dot.net/v1/dotnet-install.sh | sudo bash -s -- --channel 7.0 --install-dir /usr/lib/dotnet --skip-non-versioned-files --no-path && curl -sSL https://dot.net/v1/dotnet-install.sh | sudo bash -s -- --channel 8.0 --install-dir /usr/lib/dotnet --skip-non-versioned-files --no-path && curl -sSL https://dot.net/v1/dotnet-install.sh | sudo bash -s -- --channel 9.0 --quality preview --install-dir /usr/lib/dotnet --skip-non-versioned-files --no-path && sudo ln -sf /usr/lib/dotnet/dotnet /usr/local/bin/dotnet && echo 'export DOTNET_ROOT=/usr/lib/dotnet' >> ~/.bashrc && echo 'export PATH=\$PATH:\$DOTNET_ROOT:\$DOTNET_ROOT/tools:/usr/bin/mingw-w64' >> ~/.bashrc && echo 'export CC_FOR_TARGET=x86_64-w64-mingw32-gcc' >> ~/.bashrc && echo 'export CXX_FOR_TARGET=x86_64-w64-mingw32-g++' >> ~/.bashrc && echo 'export AR_FOR_TARGET=x86_64-w64-mingw32-ar' >> ~/.bashrc && echo 'export STRIP_FOR_TARGET=x86_64-w64-mingw32-strip' >> ~/.bashrc && source ~/.bashrc && yes N | sudo dpkg --configure -a && echo \"alias winmake='make CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++'\" >> ~/.bashrc && echo \"alias wincmake='cmake -DCMAKE_TOOLCHAIN_FILE=/usr/share/mingw-w64/toolchain-x86_64-w64-mingw32.cmake'\" >> ~/.bashrc && echo \"alias dotnetwin='dotnet publish -r win-x64 --self-contained'\" >> ~/.bashrc"
 alias ccwsl="bash /mnt/f/study/shells/bash/scripts/CleanWSL2/CleanWSL2ubu4.sh"
+
+alias getdocker="bash /mnt/f/study/shells/bash/scripts/getdocker/b.sh"
+alias clean3="bash /mnt/f/study/shells/bash/scripts/CleanWSL2/CleanWSL2ubu5.sh"
 

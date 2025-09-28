@@ -29393,3 +29393,154 @@ Source:	SWbemObjectEx
 2025-09-28 18:54:06 - FULLSIZE: Applied windowed style with borders
 2025-09-28 18:54:07 - FULLSIZE: Positioned window at full screen size with borders
 2025-09-28 18:54:07 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 18:58:32 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 18:58:32 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 18:58:44 - FULLSIZE: Triple-tap E detected
+2025-09-28 18:58:44 - FULLSIZE: Processing window - Code.exe (main_window.py - LaptopDrivers - Visual Studio Code [Administrator])
+2025-09-28 18:58:44 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 18:58:44 - FULLSIZE: Applied windowed style with borders
+2025-09-28 18:58:44 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 18:58:44 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 19:03:32 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 19:03:32 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 19:05:06 - FULLSIZE: Triple-tap E detected
+2025-09-28 19:05:06 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 19:05:06 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 19:05:06 - FULLSIZE: Applied windowed style with borders
+2025-09-28 19:05:06 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 19:05:06 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 19:06:35 - FULLSIZE: Triple-tap E detected
+2025-09-28 19:06:35 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 19:06:35 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 19:06:35 - FULLSIZE: Applied windowed style with borders
+2025-09-28 19:06:35 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 19:06:35 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 19:07:56 - DESKTOP: Switched to Desktop 2
+2025-09-28 19:08:02 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-28 19:08:03 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-28 19:08:32 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 19:08:32 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 19:09:02 - DESKTOP: Switched to Desktop 1
+2025-09-28 19:09:14 - FULLSIZE: Triple-tap E detected
+2025-09-28 19:09:14 - FULLSIZE: Processing window - WindowsTerminal.exe (? App Crash)
+2025-09-28 19:09:14 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 19:09:14 - FULLSIZE: Applied windowed style with borders
+2025-09-28 19:09:14 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 19:09:14 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 19:13:32 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 19:13:32 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 19:15:55 - DESKTOP: Switched to Desktop 2
+2025-09-28 19:15:59 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-28 19:15:59 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-28 19:16:12 - DESKTOP: Switched to Desktop 1
+2025-09-28 19:16:13 - DESKTOP: Switched to Desktop 2
+2025-09-28 19:18:16 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-28 19:18:16 - TERMINAL: Attempting to open floating terminal
+2025-09-28 19:18:16 - TERMINAL: Windows Terminal opened
+2025-09-28 19:18:32 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 19:18:32 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 19:22:51 - DESKTOP: Switched to Desktop 1
+2025-09-28 19:22:52 - DESKTOP: Switched to Desktop 2
+2025-09-28 19:23:00 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-09-28 19:23:00 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 18984) - Days Gone
+2025-09-28 19:23:00 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-09-28 19:23:00 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-09-28 19:23:11 - DESKTOP: Switched to Desktop 1
+2025-09-28 19:23:32 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 19:23:32 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 19:24:39 - TEXT_SHORTCUT: Triggered 'vscode' -> 'VSCODE_APP'
+2025-09-28 19:24:39 - LAUNCHER: Attempting to launch VSCode
+2025-09-28 19:24:39 - LAUNCHER: VSCode already running, activated window
+2025-09-28 19:24:47 - SHUTDOWN: Script exiting - Reason: Single
+2025-09-28 19:24:47 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:24:47 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:24:47 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:29:15 - FULLSIZE: Triple-tap E detected
+2025-09-28 19:29:15 - FULLSIZE: Processing window - WindowsTerminal.exe (? Docker Setup Script)
+2025-09-28 19:29:15 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 19:29:15 - FULLSIZE: Applied windowed style with borders
+2025-09-28 19:29:16 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 19:29:16 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 19:29:19 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-28 19:29:19 - TERMINAL: Attempting to open floating terminal
+2025-09-28 19:29:20 - TERMINAL: Windows Terminal opened
+2025-09-28 19:29:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 19:29:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 19:34:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 19:34:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 19:37:11 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 19:37:11 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:37:11 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:37:11 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:37:29 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 19:37:29 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:37:29 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:37:29 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:38:25 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 19:38:25 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:38:25 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:38:26 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:39:41 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 19:39:41 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:39:41 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:39:41 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:42:25 - DESKTOP: Switched to Desktop 2
+2025-09-28 19:42:27 - DESKTOP: Switched to Desktop 1
+2025-09-28 19:43:34 - FULLSIZE: Triple-tap E detected
+2025-09-28 19:43:34 - FULLSIZE: Processing window - WindowsTerminal.exe (? Technical Troubleshooting)
+2025-09-28 19:43:34 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 19:43:34 - FULLSIZE: Applied windowed style with borders
+2025-09-28 19:43:34 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 19:43:34 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 19:43:43 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 19:43:43 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:43:43 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:43:43 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:44:37 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 19:44:37 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:44:37 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:44:37 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:44:57 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 19:44:57 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:44:57 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:44:57 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:46:07 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 19:46:07 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:46:07 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:46:07 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:50:23 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 19:50:23 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 19:50:23 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 19:51:07 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 19:51:07 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 19:51:08 - FULLSIZE: Triple-tap E detected
+2025-09-28 19:51:08 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-28 19:51:08 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 19:51:08 - FULLSIZE: Applied windowed style with borders
+2025-09-28 19:51:08 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 19:51:08 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 19:52:00 - FULLSIZE: Triple-tap E detected
+2025-09-28 19:52:00 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-28 19:52:00 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 19:52:00 - FULLSIZE: Applied windowed style with borders
+2025-09-28 19:52:00 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 19:52:00 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 19:52:22 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 19:52:22 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:52:22 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:52:22 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 19:52:25 - TEXT_SHORTCUT: Triggered 'zzzzzz' -> 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'
+2025-09-28 19:52:25 - TEXT_SHORTCUT: Launched executable directly: F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe
+2025-09-28 19:57:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 19:57:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 19:59:13 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-28 19:59:13 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-28 19:59:13 - REBOOT: Initiating immediate system reboot
+2025-09-28 19:59:13 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-28 19:59:13 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 19:59:13 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 19:59:57 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 20:04:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:04:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 20:09:57 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 20:09:57 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
