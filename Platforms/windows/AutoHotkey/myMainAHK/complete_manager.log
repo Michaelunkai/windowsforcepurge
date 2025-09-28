@@ -29858,3 +29858,15 @@ Source:	SWbemObjectEx
 2025-09-29 00:13:55 - DESKTOP: Switched to Desktop 1
 2025-09-29 00:16:50 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 00:16:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 00:19:04 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-29 00:19:04 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-29 00:19:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 00:19:04 - FULLSIZE: Applied windowed style with borders
+2025-09-29 00:19:04 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-29 00:19:04 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-29 00:19:04 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 00:19:04 - FULLSIZE: Applied windowed style with borders
+2025-09-29 00:19:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 00:19:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 00:19:04 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 00:19:04 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
