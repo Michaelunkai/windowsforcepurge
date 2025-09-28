@@ -153,6 +153,7 @@ textShortcuts := Map(
     "reeee", "FORCE_KILL_AND_RELAUNCH",
     "dddesk", "ps7run dddesk",
     "slack", "slack",
+    "zzzzz", "freeram",
     "screenit", "screenit",
     "ccyber", "ccyber",
     "rrrrrr", "F:\backup\windowsapps\installed\Rambox\Rambox.exe",
@@ -160,9 +161,7 @@ textShortcuts := Map(
     "clautest", "CLAU_TERMINAL",
     "clau", "CLAU_TERMINAL",
     "qwe", "QWE_TERMINAL",
-    "ggem", "GGEM_TERMINAL",
-    "lgame", "C:\Users\micha\Desktop\games\Daysgone.lnk",
-    "fferd", "FERDIUM_APP"
+    "ggem", "GGEM_TERMINAL"
     )
 
 ; Game process detection (common game engines and launchers)
@@ -650,8 +649,6 @@ ProcessTextBuffer(newChar) {
                     LaunchQweTerminal()
                 } else if (command = "GGEM_TERMINAL") {
                     LaunchGgemTerminal()
-                } else if (command = "FERDIUM_APP") {
-                    LaunchFerdium()
                 } else if (command = "PS7RUN_DDDESK") {
                     try {
                         Run('powershell.exe -NoExit -Command "ps7run dddesk"')
@@ -801,50 +798,6 @@ LaunchGgemTerminal() {
         LogMessage("ERROR in LaunchGgemTerminal: " . e.message)
         IncrementError()
         TrayTip("GGEM Critical Error", "Error launching terminal: " . e.message, 3000)
-    }
-}
-
-LaunchFerdium() {
-    try {
-        LogMessage("FERDIUM: Launching Ferdium twice with 2 second delay")
-        
-        ferdiumPath := "F:\backup\windowsapps\installed\Ferdium\Ferdium.exe"
-        
-        ; Check if Ferdium executable exists
-        if !FileExist(ferdiumPath) {
-            LogMessage("ERROR: Ferdium not found at: " . ferdiumPath)
-            TrayTip("Ferdium Error", "Ferdium.exe not found at specified path", 3000)
-            return
-        }
-        
-        ; Launch Ferdium first time
-        try {
-            Run('"' . ferdiumPath . '"')
-            LogMessage("FERDIUM: First Ferdium instance launched")
-            TrayTip("Ferdium", "First instance launched", 1500)
-        } catch Error as launchError {
-            LogMessage("ERROR: Failed to launch first Ferdium instance: " . launchError.message)
-            TrayTip("Ferdium Error", "Failed to launch first instance: " . launchError.message, 3000)
-            return
-        }
-        
-        ; Wait 2 seconds
-        Sleep(2000)
-        
-        ; Launch Ferdium second time
-        try {
-            Run('"' . ferdiumPath . '"')
-            LogMessage("FERDIUM: Second Ferdium instance launched after 2 second delay")
-            TrayTip("Ferdium", "Second instance launched", 1500)
-        } catch Error as launchError2 {
-            LogMessage("ERROR: Failed to launch second Ferdium instance: " . launchError2.message)
-            TrayTip("Ferdium Error", "Failed to launch second instance: " . launchError2.message, 3000)
-        }
-        
-    } catch Error as e {
-        LogMessage("ERROR in LaunchFerdium: " . e.message)
-        IncrementError()
-        TrayTip("Ferdium Critical Error", "Critical error: " . e.message, 3000)
     }
 }
 

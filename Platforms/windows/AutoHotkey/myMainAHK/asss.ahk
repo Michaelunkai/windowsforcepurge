@@ -153,6 +153,7 @@ textShortcuts := Map(
     "reeee", "FORCE_KILL_AND_RELAUNCH",
     "dddesk", "ps7run dddesk",
     "slack", "slack",
+    "zzzzz", "freeram",
     "screenit", "screenit",
     "ccyber", "ccyber",
     "rrrrrr", "F:\backup\windowsapps\installed\Rambox\Rambox.exe",

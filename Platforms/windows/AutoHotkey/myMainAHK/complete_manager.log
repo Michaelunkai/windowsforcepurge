@@ -28761,3 +28761,291 @@ Source:	SWbemObjectEx
 2025-09-28 02:15:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-28 02:20:38 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-28 02:20:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 02:25:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 02:25:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 02:30:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 02:30:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 02:33:59 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-28 02:33:59 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-28 02:34:00 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-28 12:57:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 12:57:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:02:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:02:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:07:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:07:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:12:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:12:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:17:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:17:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:17:46 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-28 13:17:46 - LAUNCHER: WeMod launched successfully
+2025-09-28 13:17:48 - LAUNCHER: WeMod window activated
+2025-09-28 13:19:17 - FULLSIZE: Triple-tap E detected
+2025-09-28 13:19:17 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 13:19:17 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 13:19:17 - FULLSIZE: Applied windowed style with borders
+2025-09-28 13:19:18 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 13:19:18 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 13:19:29 - FULLSIZE: Triple-tap E detected
+2025-09-28 13:19:29 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 13:19:29 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 13:19:29 - FULLSIZE: Applied windowed style with borders
+2025-09-28 13:19:30 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 13:19:30 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 13:19:40 - FULLSIZE: Triple-tap E detected
+2025-09-28 13:19:40 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 13:19:40 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 13:19:40 - FULLSIZE: Applied windowed style with borders
+2025-09-28 13:19:40 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 13:19:40 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 13:21:56 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 13:21:56 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 13:21:56 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 13:22:26 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-28 13:22:26 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-28 13:22:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:22:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:27:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:27:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:32:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:32:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:37:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:37:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:42:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:42:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:47:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:47:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:47:51 - TEXT_SHORTCUT: Triggered 'ppprof' -> 'brc'
+2025-09-28 13:47:51 - TERMINAL_CMD: Executing command - brc
+2025-09-28 13:47:53 - TERMINAL_CMD: Executed 'brc' with self-terminating PowerShell
+2025-09-28 13:48:23 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 13:48:23 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 13:48:23 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 13:49:17 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 13:49:17 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 13:49:17 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 13:52:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:52:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:55:52 - TEXT_SHORTCUT: Triggered 'ppprof' -> 'brc'
+2025-09-28 13:55:52 - TERMINAL_CMD: Executing command - brc
+2025-09-28 13:55:54 - TERMINAL_CMD: Executed 'brc' with self-terminating PowerShell
+2025-09-28 13:57:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 13:57:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 13:57:47 - TEXT_SHORTCUT: Triggered 'zzzzz' -> 'freeram'
+2025-09-28 13:57:47 - TERMINAL_CMD: Executing command - freeram
+2025-09-28 13:57:50 - TERMINAL_CMD: Executed 'freeram' with self-terminating PowerShell
+2025-09-28 13:58:07 - TEXT_SHORTCUT: Triggered 'vscode' -> 'VSCODE_APP'
+2025-09-28 13:58:07 - LAUNCHER: Attempting to launch VSCode
+2025-09-28 13:58:08 - LAUNCHER: VSCode launched successfully
+2025-09-28 13:58:10 - LAUNCHER: VSCode window activated
+2025-09-28 13:58:23 - TEXT_SHORTCUT: Triggered 'zzzzz' -> 'freeram'
+2025-09-28 13:58:23 - TERMINAL_CMD: Executing command - freeram
+2025-09-28 13:58:25 - TERMINAL_CMD: Executed 'freeram' with self-terminating PowerShell
+2025-09-28 14:00:10 - TEXT_SHORTCUT: Triggered 'ppprof' -> 'brc'
+2025-09-28 14:00:10 - TERMINAL_CMD: Executing command - brc
+2025-09-28 14:00:12 - TERMINAL_CMD: Executed 'brc' with self-terminating PowerShell
+2025-09-28 14:01:14 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-28 14:01:14 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-28 14:01:14 - REBOOT: Initiating immediate system reboot
+2025-09-28 14:01:14 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-28 14:01:14 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:01:14 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:02:13 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:05:02 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-28 14:05:02 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-28 14:05:04 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-28 14:06:58 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 14:06:58 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 14:06:58 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 14:07:13 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 14:07:13 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 14:07:24 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:07:24 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-28 14:07:24 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:07:24 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:07:24 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:07:24 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:07:59 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:07:59 - FULLSIZE: Processing window - WindowsTerminal.exe (Qwen - Downloads)
+2025-09-28 14:07:59 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:07:59 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:07:59 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:07:59 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:09:19 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-28 14:09:19 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-28 14:09:22 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-28 14:09:26 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-28 14:09:26 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-28 14:09:28 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-28 14:10:12 - TEXT_SHORTCUT: Triggered 'vscode' -> 'VSCODE_APP'
+2025-09-28 14:10:12 - LAUNCHER: Attempting to launch VSCode
+2025-09-28 14:10:19 - LAUNCHER: VSCode launched successfully
+2025-09-28 14:10:21 - LAUNCHER: VSCode window activated
+2025-09-28 14:12:13 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 14:12:13 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 14:13:22 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-28 14:13:22 - LAUNCHER: WeMod launched successfully
+2025-09-28 14:13:24 - LAUNCHER: WeMod window activated
+2025-09-28 14:16:54 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 14:16:54 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:16:54 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:16:55 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:17:15 - TEXT_SHORTCUT: Triggered 'lgame' -> 'LAUNCH_DAYSGONE_GAME'
+2025-09-28 14:17:15 - TERMINAL_CMD: Executing command - LAUNCH_DAYSGONE_GAME
+2025-09-28 14:17:16 - TERMINAL_CMD: Executed 'LAUNCH_DAYSGONE_GAME' with self-terminating PowerShell
+2025-09-28 14:17:37 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:17:37 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-28 14:17:37 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:17:37 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:17:37 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:17:37 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 14:19:10 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:19:10 - FULLSIZE: Processing window - Todoist.exe (Today)
+2025-09-28 14:19:10 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:19:10 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:19:10 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:19:10 - FULLSIZE: Successfully applied full size mode to Todoist.exe
+2025-09-28 14:19:48 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 14:19:48 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:19:48 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:19:49 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:19:51 - TEXT_SHORTCUT: Triggered 'lgame' -> 'LAUNCH_DAYSGONE_GAME'
+2025-09-28 14:19:51 - TERMINAL_CMD: Executing command - LAUNCH_DAYSGONE_GAME
+2025-09-28 14:19:52 - TERMINAL_CMD: Executed 'LAUNCH_DAYSGONE_GAME' with self-terminating PowerShell
+2025-09-28 14:19:55 - TEXT_SHORTCUT: Triggered 'lgame' -> 'LAUNCH_DAYSGONE_GAME'
+2025-09-28 14:19:55 - TERMINAL_CMD: Executing command - LAUNCH_DAYSGONE_GAME
+2025-09-28 14:19:56 - TERMINAL_CMD: Executed 'LAUNCH_DAYSGONE_GAME' with self-terminating PowerShell
+2025-09-28 14:20:05 - TEXT_SHORTCUT: Triggered 'lgame' -> 'LAUNCH_DAYSGONE_GAME'
+2025-09-28 14:20:05 - TERMINAL_CMD: Executing command - LAUNCH_DAYSGONE_GAME
+2025-09-28 14:20:07 - TERMINAL_CMD: Executed 'LAUNCH_DAYSGONE_GAME' with self-terminating PowerShell
+2025-09-28 14:23:17 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 14:23:17 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 14:23:17 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 14:23:37 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 14:23:37 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:23:37 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:23:37 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:23:40 - TEXT_SHORTCUT: Triggered 'lgame' -> 'LAUNCH_DAYSGONE_GAME'
+2025-09-28 14:23:40 - TERMINAL_CMD: Executing command - LAUNCH_DAYSGONE_GAME
+2025-09-28 14:23:42 - TERMINAL_CMD: Executed 'LAUNCH_DAYSGONE_GAME' with self-terminating PowerShell
+2025-09-28 14:24:23 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:24:23 - FULLSIZE: Processing window - Code.exe (current.ahk - myMainAHK - Visual Studio Code [Administrator])
+2025-09-28 14:24:23 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:24:23 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:24:23 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:24:23 - FULLSIZE: Successfully applied full size mode to Code.exe
+2025-09-28 14:26:20 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:26:20 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 14:26:20 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:26:20 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:26:20 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:26:20 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:26:28 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:26:28 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 14:26:28 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:26:28 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:26:29 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:26:29 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:26:39 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:26:39 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 14:26:39 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:26:39 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:26:39 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:26:39 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:26:56 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:26:56 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 14:26:56 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:26:56 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:26:57 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:26:57 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:27:05 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:27:05 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 14:27:05 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:27:05 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:27:05 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:27:05 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:27:46 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:27:46 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 14:27:46 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:27:46 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:27:46 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:27:46 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:28:28 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:28:28 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 14:28:28 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:28:28 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:28:29 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:28:29 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:28:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 14:28:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 14:30:48 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 14:30:48 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:30:48 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:30:48 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:30:51 - TEXT_SHORTCUT: Triggered 'lgame' -> 'LAUNCH_DAYSGONE_GAME'
+2025-09-28 14:30:51 - TERMINAL_CMD: Executing command - LAUNCH_DAYSGONE_GAME
+2025-09-28 14:30:52 - TERMINAL_CMD: Executed 'LAUNCH_DAYSGONE_GAME' with self-terminating PowerShell
+2025-09-28 14:32:22 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 14:32:22 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:32:22 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:32:22 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:32:25 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-28 14:32:26 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-28 14:33:22 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-28 14:33:22 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-28 14:36:37 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-28 14:36:37 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-28 14:36:37 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-28 14:37:22 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 14:37:22 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 14:38:45 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 14:38:45 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 14:38:45 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 14:39:14 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 14:39:14 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:39:14 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:39:14 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:39:51 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 14:39:51 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:39:51 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:39:51 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:39:53 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-28 14:39:53 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-28 14:39:53 - FERDIUM: First Ferdium instance launched
+2025-09-28 14:39:55 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-28 14:40:06 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-28 14:40:06 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-28 14:40:06 - FERDIUM: First Ferdium instance launched
+2025-09-28 14:40:08 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-28 14:41:22 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 14:41:22 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:41:22 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:41:22 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:41:26 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-28 14:41:26 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-28 14:41:26 - FERDIUM: First Ferdium instance launched
+2025-09-28 14:41:28 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-28 14:41:42 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-28 14:41:42 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-28 14:44:10 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-28 14:44:10 - LAUNCHER: WeMod launched successfully
+2025-09-28 14:44:12 - LAUNCHER: WeMod window activated
+2025-09-28 14:45:38 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:45:38 - FULLSIZE: Processing window - WindowsTerminal.exe (? Safety Confirmation)
+2025-09-28 14:45:38 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:45:38 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:45:39 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:45:39 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:46:16 - SHUTDOWN: Script exiting - Reason: Reload
+2025-09-28 14:46:16 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-28 14:46:16 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-28 14:46:16 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-28 14:46:41 - TEXT_SHORTCUT: Triggered 'ssss' -> 'ssss'
+2025-09-28 14:46:41 - TERMINAL_CMD: Executing command - ssss
+2025-09-28 14:46:44 - TERMINAL_CMD: Executed 'ssss' with self-terminating PowerShell
+2025-09-28 14:47:53 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-28 14:47:53 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-28 14:47:54 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-28 14:47:54 - LAUNCHER: WeMod launched successfully
+2025-09-28 14:47:56 - LAUNCHER: WeMod window activated
