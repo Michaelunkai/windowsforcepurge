@@ -29906,3 +29906,11 @@ Source:	SWbemObjectEx
 2025-09-29 00:40:24 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-29 00:45:24 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 00:45:24 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 00:50:24 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 00:50:24 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 00:51:25 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-29 00:51:25 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-29 00:51:25 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 00:52:07 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 00:57:07 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 00:57:07 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
