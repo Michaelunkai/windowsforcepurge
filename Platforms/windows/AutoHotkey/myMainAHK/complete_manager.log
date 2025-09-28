@@ -29049,3 +29049,31 @@ Source:	SWbemObjectEx
 2025-09-28 14:47:54 - LAUNCHER: Attempting to close and relaunch WeMod
 2025-09-28 14:47:54 - LAUNCHER: WeMod launched successfully
 2025-09-28 14:47:56 - LAUNCHER: WeMod window activated
+2025-09-28 14:51:16 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 14:51:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 14:52:09 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-28 14:52:09 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-28 14:52:12 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-28 14:53:42 - FULLSIZE: Triple-tap E detected
+2025-09-28 14:53:42 - FULLSIZE: Processing window - WindowsTerminal.exe (? Edge Uninstall)
+2025-09-28 14:53:42 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 14:53:42 - FULLSIZE: Applied windowed style with borders
+2025-09-28 14:53:42 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 14:53:42 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 14:56:16 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 14:56:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:01:16 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:01:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:04:17 - FULLSIZE: Triple-tap E detected
+2025-09-28 15:04:17 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-28 15:04:17 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-28 15:04:17 - FULLSIZE: Applied windowed style with borders
+2025-09-28 15:04:17 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-28 15:04:17 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-28 15:06:16 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:06:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-28 15:09:55 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-28 15:09:55 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-28 15:09:55 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-28 15:11:17 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-28 15:11:17 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
