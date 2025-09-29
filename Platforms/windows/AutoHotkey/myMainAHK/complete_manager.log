@@ -30313,3 +30313,32 @@ Source:	SWbemObjectEx
 2025-09-29 05:47:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-29 05:52:42 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 05:52:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:57:16 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-29 05:57:16 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-29 05:57:18 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-29 05:57:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 05:57:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:57:57 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-29 05:57:57 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-29 05:57:58 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-29 05:59:00 - TEXT_SHORTCUT: Triggered 'mreflect' -> 'MACRIUM_REFLECT_APP'
+2025-09-29 05:59:00 - LAUNCHER: Attempting to launch Macrium Reflect
+2025-09-29 05:59:01 - LAUNCHER: Macrium Reflect launched successfully from: F:\backup\windowsapps\installed\reflect\Reflect.exe
+2025-09-29 05:59:13 - WARNING: Macrium Reflect launched but window not detected within 10 seconds
+2025-09-29 06:00:52 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-29 06:00:52 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe)
+2025-09-29 06:00:52 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 06:00:52 - FULLSIZE: Applied windowed style with borders
+2025-09-29 06:00:52 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-29 06:00:52 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe)
+2025-09-29 06:00:52 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 06:00:52 - FULLSIZE: Applied windowed style with borders
+2025-09-29 06:00:52 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 06:00:52 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 06:00:52 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 06:00:52 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 06:02:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 06:02:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 06:02:56 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-29 06:02:56 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-29 06:02:56 - CLAU: clau command launched in Windows Terminal (PowerShell)
