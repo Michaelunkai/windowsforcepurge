@@ -30378,3 +30378,68 @@ Source:	SWbemObjectEx
 2025-09-29 08:02:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-29 08:07:50 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 08:07:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 08:26:23 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 08:26:24 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 08:27:28 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-29 08:27:28 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-29 08:27:28 - REBOOT: Initiating immediate system reboot
+2025-09-29 08:27:28 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-29 08:27:28 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-29 08:27:28 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 08:28:18 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 08:33:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 08:33:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 08:35:46 - FULLSIZE: Triple-tap E detected
+2025-09-29 08:35:46 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-29 08:35:46 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 08:35:46 - FULLSIZE: Applied windowed style with borders
+2025-09-29 08:35:46 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 08:35:46 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 08:35:53 - FULLSIZE: Triple-tap E detected
+2025-09-29 08:35:53 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-29 08:35:53 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 08:35:53 - FULLSIZE: Applied windowed style with borders
+2025-09-29 08:35:54 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 08:35:54 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 08:35:58 - FULLSIZE: Triple-tap E detected
+2025-09-29 08:35:58 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-29 08:35:58 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 08:35:58 - FULLSIZE: Applied windowed style with borders
+2025-09-29 08:35:59 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 08:35:59 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 08:38:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 08:38:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 08:43:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 08:43:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 08:48:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 08:48:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 08:51:22 - FULLSIZE: Triple-tap E detected
+2025-09-29 08:51:22 - FULLSIZE: Processing window - WindowsTerminal.exe (? Project Cleanup)
+2025-09-29 08:51:22 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 08:51:22 - FULLSIZE: Applied windowed style with borders
+2025-09-29 08:51:23 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 08:51:23 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 08:53:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 08:53:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 08:54:30 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-29 08:54:30 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-29 08:54:30 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 08:54:30 - FULLSIZE: Applied windowed style with borders
+2025-09-29 08:54:30 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 08:54:30 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 08:58:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 08:58:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 09:00:06 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-29 09:00:06 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-29 09:00:06 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 09:03:31 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 09:08:31 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 09:08:31 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 09:12:08 - FULLSIZE: Triple-tap E detected
+2025-09-29 09:12:08 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-29 09:12:08 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 09:12:08 - FULLSIZE: Applied windowed style with borders
+2025-09-29 09:12:08 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 09:12:08 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 09:13:31 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 09:13:31 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
