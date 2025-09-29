@@ -31285,3 +31285,134 @@ Source:	SWbemObjectEx
 2025-09-29 19:31:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-29 19:36:53 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 19:36:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 19:41:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 19:41:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 19:46:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 19:46:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 19:51:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 19:51:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 19:56:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 19:56:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:01:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:01:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:06:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:06:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:11:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:11:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:16:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:16:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:21:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:21:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:26:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:26:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:31:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:31:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:33:18 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-29 20:33:18 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-29 20:33:22 - FERDIUM: First Ferdium instance launched
+2025-09-29 20:33:24 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-29 20:35:24 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-29 20:35:24 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-29 20:35:24 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-29 20:36:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:36:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:39:40 - FOLDER: Attempting to open Games folder at: C:\\Users\\micha\\Desktop\\games
+2025-09-29 20:39:40 - FOLDER: Successfully opened Games folder at: C:\\Users\\micha\\Desktop\\games
+2025-09-29 20:41:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:41:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:46:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:46:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:51:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:51:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 20:52:38 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-29 20:52:38 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-29 20:52:38 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-29 20:56:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 20:56:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:01:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:01:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:06:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:06:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:10:40 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-29 21:10:40 - TERMINAL: Attempting to open floating terminal
+2025-09-29 21:10:40 - TERMINAL: Windows Terminal opened
+2025-09-29 21:11:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:11:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:12:20 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-29 21:12:20 - TERMINAL: Attempting to open floating terminal
+2025-09-29 21:12:21 - TERMINAL: Windows Terminal opened
+2025-09-29 21:13:29 - FULLSIZE: Triple-tap E detected
+2025-09-29 21:13:29 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - Smallest Windows Container Recommendation - Grok)
+2025-09-29 21:13:29 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 21:13:29 - FULLSIZE: Applied windowed style with borders
+2025-09-29 21:13:30 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 21:13:30 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 21:16:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:16:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:19:21 - FULLSIZE: Triple-tap E detected
+2025-09-29 21:19:21 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Le Chat by Mistral - Le Chat)
+2025-09-29 21:19:21 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 21:19:21 - FULLSIZE: Applied windowed style with borders
+2025-09-29 21:19:21 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 21:19:21 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 21:19:24 - FULLSIZE: Triple-tap E detected
+2025-09-29 21:19:24 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Le Chat by Mistral - Le Chat)
+2025-09-29 21:19:24 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 21:19:24 - FULLSIZE: Applied windowed style with borders
+2025-09-29 21:19:25 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 21:19:25 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 21:21:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:21:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:26:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:26:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:31:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:31:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:36:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:36:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:41:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:41:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:46:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:46:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:51:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:51:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 21:55:05 - FULLSIZE: Triple-tap E detected
+2025-09-29 21:55:05 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - claude.ai - Claude)
+2025-09-29 21:55:05 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 21:55:05 - FULLSIZE: Applied windowed style with borders
+2025-09-29 21:55:05 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 21:55:05 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 21:56:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 21:56:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:01:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:01:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:05:24 - TEXT_SHORTCUT: Triggered 'refresh' -> 'refresh'
+2025-09-29 22:05:24 - TERMINAL_CMD: Executing command - refresh
+2025-09-29 22:05:24 - FULLSIZE: Triple-tap E detected
+2025-09-29 22:05:24 - FULLSIZE: Processing window - WindowsTerminal.exe (Windows PowerShell)
+2025-09-29 22:05:24 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 22:05:24 - FULLSIZE: Applied windowed style with borders
+2025-09-29 22:05:25 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 22:05:25 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 22:05:26 - TERMINAL_CMD: Executed 'refresh' with self-terminating PowerShell
+2025-09-29 22:06:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:06:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:07:00 - TEXT_SHORTCUT: Triggered 'nvc' -> 'nvc'
+2025-09-29 22:07:00 - TERMINAL_CMD: Executing command - nvc
+2025-09-29 22:07:02 - TERMINAL_CMD: Executed 'nvc' with self-terminating PowerShell
+2025-09-29 22:11:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:11:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:16:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:16:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:17:14 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-29 22:17:14 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-29 22:17:16 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-29 22:21:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:21:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:26:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:26:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:31:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:31:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:36:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:36:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:41:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:41:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
