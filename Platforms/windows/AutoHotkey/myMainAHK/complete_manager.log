@@ -31467,3 +31467,61 @@ Source:	SWbemObjectEx
 2025-09-29 23:57:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-30 00:02:45 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-30 00:02:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:06:40 - FULLSIZE: Triple-tap E detected
+2025-09-30 00:06:40 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-30 00:06:40 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-30 00:06:40 - FULLSIZE: Applied windowed style with borders
+2025-09-30 00:06:40 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-30 00:06:40 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-30 00:07:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:07:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:12:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:12:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:17:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:17:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:22:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:22:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:27:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:27:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:32:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:32:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:37:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:37:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:42:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:42:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:47:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:47:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:50:37 - TEXT_SHORTCUT: Triggered 'vscode' -> 'VSCODE_APP'
+2025-09-30 00:50:37 - LAUNCHER: Attempting to launch VSCode
+2025-09-30 00:50:38 - LAUNCHER: VSCode launched successfully
+2025-09-30 00:50:40 - LAUNCHER: VSCode window activated
+2025-09-30 00:52:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:52:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 00:54:47 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-30 00:54:47 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-30 00:54:58 - FERDIUM: First Ferdium instance launched
+2025-09-30 00:55:01 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-30 00:57:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 00:57:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:01:31 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 01:01:31 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 01:01:31 - REBOOT: Initiating immediate system reboot
+2025-09-30 01:01:31 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 01:01:31 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 01:01:31 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 01:03:06 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 01:03:40 - TEXT_SHORTCUT: Triggered 'sdesktop' -> 'sdesktop'
+2025-09-30 01:03:40 - TERMINAL_CMD: Executing command - sdesktop
+2025-09-30 01:04:06 - TERMINAL_CMD: Executed 'sdesktop' with self-terminating PowerShell
+2025-09-30 01:04:12 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-30 01:04:12 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-30 01:04:14 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-30 01:05:12 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 01:05:12 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 01:05:12 - REBOOT: Initiating immediate system reboot
+2025-09-30 01:05:12 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 01:05:12 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 01:05:12 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 01:06:16 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 01:11:16 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 01:11:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
