@@ -1,8 +1,8 @@
 #Requires -RunAsAdministrator
 
 <#
-.SYNOPSIS
-    ULTIMATE UNINSTALLER v2.0 - THE WORLD'S MOST COMPREHENSIVE APPLICATION REMOVAL TOOL
+    try {
+        Write-Log "Scanning for portable installations of: $appName" -Level 'INFO'
     Zero-residue guaranteed complete application removal with real-time progress
 
 .DESCRIPTION
@@ -12,7 +12,8 @@
     3. Process Termination              4. Service Removal & Cleanup
     5. Driver Removal                   6. Scheduled Task Cleanup
     7. Startup Entry Removal            8. Registry Deep Clean
-    9. File System Deep Scan            10. User Profile Cleanup
+            $patterns = Get-AppNamePatterns -AppName $appName
+            $directories = Get-ChildItem -Path $location -Directory -ErrorAction SilentlyContinue | Where-Object { $n=$_.Name; ($patterns | Where-Object { $n -like $_ }).Count -gt 0 }
     11. Windows Store App Cleanup       12. Shortcut & Icon Removal
     13. Font & Resource Cleanup         14. Cache & Temp Cleanup
     15. System Verification & Report
@@ -56,6 +57,13 @@ param(
 
 # Bypass execution policy for this session
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force -ErrorAction SilentlyContinue
+
+# Enforce fully non-interactive execution by default
+$global:ConfirmPreference = 'None'
+$global:WhatIfPreference = $false
+$global:ErrorActionPreference = 'Stop'
+# Always run in Force mode to avoid any prompts
+$Force = $true
 
 # Global variables for comprehensive tracking
 $Script:DeletedCount = 0
@@ -419,6 +427,64 @@ function Write-Log {
     if ($Level -eq 'SUCCESS' -and $Message -like "*Deleted*") {
         $Script:RemovedItemsList += $Message
     }
+}
+
+function Get-AppNameVariants {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$AppName
+    )
+
+    $variants = New-Object System.Collections.Generic.HashSet[string]
+    $add = { param($s) if ($s) { [void]$variants.Add($s) } }
+
+    $name = ($AppName + '').Trim()
+    if (-not $name) { return @() }
+
+    $lower = $name.ToLower()
+    $upper = $name.ToUpper()
+    $nodots = $name -replace '[\.]',''
+    $nospaces = $name -replace '\s+',''
+    $nohyphens = $name -replace '-',''
+    $nounders = $name -replace '_',''
+    $alnum = [regex]::Replace($name, '[^a-zA-Z0-9]', '')
+    $nodigits = $name -replace '\d',''
+
+    & $add $name
+    & $add $lower
+    & $add $upper
+    & $add $nodots
+    & $add $nospaces
+    & $add $nohyphens
+    & $add $nounders
+    & $add $alnum
+    & $add $nodigits
+
+    # Token-based recombinations
+    $tokens = ($lower -replace '[^a-z0-9]+', ' ').Trim() -split '\s+'
+    if ($tokens.Length -gt 1) {
+        $joiners = @('', '_', '-', '.', ' ')
+        foreach ($j in $joiners) {
+            & $add ($tokens -join $j)
+        }
+    }
+
+    return $variants.ToArray()
+}
+
+function Get-AppNamePatterns {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$AppName
+    )
+
+    $patterns = New-Object System.Collections.Generic.HashSet[string]
+    foreach ($v in (Get-AppNameVariants -AppName $AppName)) {
+        if (-not [string]::IsNullOrWhiteSpace($v)) {
+            [void]$patterns.Add("*${v}*")
+        }
+    }
+    return $patterns.ToArray()
 }
 
 function Start-Stage {
@@ -1706,7 +1772,8 @@ function Start-ComprehensiveFileSearch {
 
         Write-Progress-Enhanced -Activity "File System Deep Scan" -Status "FAST scanning for: $appName (max 60s)" -PercentComplete $appProgress -Id 6
 
-        Write-Log "[SCAN] FAST scanning for: $appName ($currentAppIndex/$totalApps) - 60s limit" -Level 'PROGRESS'
+    Write-Log "[SCAN] FAST scanning for: $appName ($currentAppIndex/$totalApps) - 60s limit" -Level 'PROGRESS'
+    $patterns = Get-AppNamePatterns -AppName $appName
 
         $allTargets = @()
         $totalLocations = $searchLocations.Count
@@ -1732,13 +1799,8 @@ function Start-ComprehensiveFileSearch {
             Write-Log "   [SCAN] Deep scanning location ($currentLocationIndex/$totalLocations): $location (Priority: $($locationInfo.Priority), MaxDepth: $($locationInfo.MaxDepth))" -Level 'PROGRESS'
 
             try {
-                # Optimized pattern matching - combine similar patterns to reduce iterations
-                $combinedPatterns = @(
-                    "*$appName*",
-                    "*$($appName.Replace(' ', ''))*",
-                    "*$($appName.Replace(' ', '_'))*",
-                    "*$($appName.Replace(' ', '-'))*"
-                )
+                # Optimized pattern matching from expanded patterns
+                $combinedPatterns = $patterns
 
                 # Remove case variations for performance - PowerShell is case-insensitive by default
                 $locationMatches = 0
@@ -1749,8 +1811,8 @@ function Start-ComprehensiveFileSearch {
                     $locationTimeout = [System.Diagnostics.Stopwatch]::StartNew()
                     Write-Log "     FAST search in $location (max 10s)..." -Level 'INFO' -Detailed
 
-                    # Reduced max depth for speed
-                    $maxDepth = [Math]::Min($locationInfo.MaxDepth, 2)
+                    # Slightly increase max depth for thoroughness, still bounded
+                    $maxDepth = [Math]::Min([int]$locationInfo.MaxDepth + 1, 3)
 
                     # FAST search with timeout
                     $foundItems = @()
@@ -1770,7 +1832,7 @@ function Start-ComprehensiveFileSearch {
                             }
                             
                             return $matchFound -and -not (Test-CriticalSystemFile -FilePath $_.FullName)
-                        } | Select-Object -First 100  # Limit results for speed
+                        }
                     }
                     $locationTimeout.Stop()
 
@@ -2287,6 +2349,71 @@ function Start-FinalSystemCleanup {
     Write-Log "[SUCCESS] STAGE 14 COMPLETED: Cache & temp cleanup finished" -Level 'SUCCESS'
 }
 
+function Invoke-AggressiveResidualCleanup {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string[]]$AppNames
+    )
+
+    Write-Log "[STAGE] Aggressive residual cleanup (similar names)" -Level 'STAGE'
+    $uninstallRoots = @(
+        'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall',
+        'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall',
+        'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall'
+    )
+
+    foreach ($app in $AppNames) {
+        $patterns = Get-AppNamePatterns -AppName $app
+
+        # Registry uninstall keys
+        foreach ($root in $uninstallRoots) {
+            try {
+                if (Test-Path $root) {
+                    Get-ChildItem $root -ErrorAction SilentlyContinue | ForEach-Object {
+                        try {
+                            $dn = (Get-ItemProperty $_.PSPath -Name DisplayName -ErrorAction SilentlyContinue).DisplayName
+                            if ($dn) {
+                                $match = ($patterns | Where-Object { $dn -like $_ })
+                                if ($match) {
+                                    Write-Log "[CLEANUP] Removing uninstall key: $dn ($($_.PSChildName))" -Level 'PROGRESS'
+                                    Remove-Item -Path $_.PSPath -Recurse -Force -ErrorAction SilentlyContinue
+                                    $Script:RegistryKeysRemoved++
+                                }
+                            }
+                        } catch { }
+                    }
+                }
+            } catch { }
+        }
+
+        # Common leftover folders
+        $folders = @(
+            'C:\\Program Files',
+            'C:\\Program Files (x86)',
+            'C:\\ProgramData',
+            "$env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs"
+        )
+        foreach ($f in $folders) {
+            if (Test-Path $f) {
+                foreach ($pat in $patterns) {
+                    try {
+                        Get-ChildItem -Path $f -Filter $pat -ErrorAction SilentlyContinue | ForEach-Object {
+                            if ($_.PSIsContainer) {
+                                Write-Log "[CLEANUP] Removing leftover folder: $($_.FullName)" -Level 'PROGRESS'
+                                if (Remove-DirectoryForced -DirPath $_.FullName) { $Script:DeletedCount++ } else { $Script:FailedCount++ }
+                            } else {
+                                Write-Log "[CLEANUP] Removing leftover file: $($_.FullName)" -Level 'PROGRESS'
+                                if (Remove-FileForced -FilePath $_.FullName) { $Script:DeletedCount++ } else { $Script:FailedCount++ }
+                            }
+                        }
+                    } catch { }
+                }
+            }
+        }
+    }
+    Write-Log "[SUCCESS] Aggressive residual cleanup completed" -Level 'SUCCESS'
+}
+
 function Start-UltimateUninstall {
     param(
         [Parameter(Mandatory=$true)]
@@ -2455,6 +2582,13 @@ function Start-UltimateUninstall {
             Start-FinalSystemCleanup
         } catch {
             Write-Log "[ERROR] Stage 14 failed: $($_.Exception.Message)" -Level 'ERROR'
+        }
+
+        # EXTRA: Aggressive residual cleanup for similar-name leftovers
+        try {
+            Invoke-AggressiveResidualCleanup -AppNames $AppNames
+        } catch {
+            Write-Log "[WARNING] Aggressive residual cleanup encountered issues: $($_.Exception.Message)" -Level 'WARNING'
         }
 
         # STAGE 15: System Verification & Report
@@ -2819,12 +2953,12 @@ function Remove-StartupEntries {
                         $regItems = Get-ItemProperty -Path $location.Path -ErrorAction SilentlyContinue
 
                         if ($regItems) {
+                            $patterns = Get-AppNamePatterns -AppName $appName
                             $properties = $regItems.PSObject.Properties | Where-Object {
-                                $_.Name -notlike "PS*" -and
-                                ($_.Name -like "*$appName*" -or
-                                 $_.Value -like "*$appName*" -or
-                                 $_.Name -like "*$($appName.Replace(' ', ''))*" -or
-                                 $_.Value -like "*$($appName.Replace(' ', ''))*")
+                                $_.Name -notlike "PS*" -and (
+                                    ($patterns | Where-Object { $_.Name -like $_ }).Count -gt 0 -or
+                                    ($patterns | Where-Object { ("" + $_.Value) -like $_ }).Count -gt 0
+                                )
                             }
 
                             foreach ($prop in $properties) {
@@ -2855,12 +2989,7 @@ function Remove-StartupEntries {
                     }
                 } elseif ($location.Type -eq "Folder") {
                     if (Test-Path $location.Path) {
-                        $searchPatterns = @(
-                            "*$appName*",
-                            "*$($appName.Replace(' ', ''))*",
-                            "*$($appName.Replace(' ', '_'))*",
-                            "*$($appName.Replace(' ', '-'))*"
-                        )
+                        $searchPatterns = Get-AppNamePatterns -AppName $appName
 
                         foreach ($pattern in $searchPatterns) {
                             $files = Get-ChildItem -Path $location.Path -Filter "$pattern.*" -ErrorAction SilentlyContinue
@@ -3055,14 +3184,7 @@ function Clear-UserProfileData {
             }
 
             try {
-                $searchPatterns = @(
-                    "*$appName*",
-                    "*$($appName.Replace(' ', ''))*",
-                    "*$($appName.Replace(' ', '_'))*",
-                    "*$($appName.Replace(' ', '-'))*",
-                    "*$($appName.ToLower())*",
-                    "*$($appName.ToUpper())*"
-                )
+                $searchPatterns = Get-AppNamePatterns -AppName $appName
 
                 foreach ($pattern in $searchPatterns) {
                     # Search for folders
@@ -3142,10 +3264,7 @@ function Clear-UserProfileData {
         foreach ($cacheLocation in $cacheLocations) {
             if (Test-Path $cacheLocation) {
                 try {
-                    $searchPatterns = @(
-                        "*$appName*",
-                        "*$($appName.Replace(' ', ''))*"
-                    )
+                    $searchPatterns = Get-AppNamePatterns -AppName $appName
 
                     foreach ($pattern in $searchPatterns) {
                         $cacheItems = Get-ChildItem -Path $cacheLocation -Filter $pattern -Recurse -ErrorAction SilentlyContinue
@@ -3560,13 +3679,7 @@ function Remove-FontsAndResources {
             }
 
             try {
-                $searchPatterns = @(
-                    "*$appName*",
-                    "*$($appName.Replace(' ', ''))*",
-                    "*$($appName.Replace(' ', '_'))*",
-                    "*$($appName.Replace(' ', '-'))*",
-                    "*$($appName.ToLower())*"
-                )
+                $searchPatterns = Get-AppNamePatterns -AppName $appName
 
                 foreach ($pattern in $searchPatterns) {
                     $items = Get-ChildItem -Path $location.Path -Filter $pattern -Recurse -ErrorAction SilentlyContinue
@@ -4180,18 +4293,10 @@ try {
 
     # System readiness validation
     Write-Host ""
-    if (-not $Force) {
-        $systemReady = Test-SystemReadiness -AppNames $Apps
-        if (-not $systemReady) {
-            Write-Host ""
-            $proceedAnyway = Read-Host "Critical issues detected. Proceed anyway? (type 'FORCE' to continue, anything else to cancel)"
-            if ($proceedAnyway -ne 'FORCE') {
-                Write-Host "Operation cancelled due to system readiness issues." -ForegroundColor Yellow
-                exit 0
-            }
-        }
-    } else {
-        Write-Host "FORCE MODE: Skipping system readiness validation" -ForegroundColor Yellow
+    # Always skip interactive readiness confirmation; continue automatically
+    $systemReady = Test-SystemReadiness -AppNames $Apps
+    if (-not $systemReady) {
+        Write-Host "FORCE MODE: Continuing despite readiness warnings" -ForegroundColor Yellow
     }
 
     # Check if running as administrator
@@ -4199,8 +4304,8 @@ try {
         Write-Host "ERROR: Administrator privileges required!" -ForegroundColor Red
         Write-Host "Please run PowerShell as Administrator and try again." -ForegroundColor Yellow
         Write-Host "Right-click PowerShell and select 'Run as Administrator'" -ForegroundColor Cyan
-        Read-Host "Press Enter to exit"
-        exit 1
+    # Non-interactive: exit immediately
+    exit 1
     }
 
     # Validate input parameters
@@ -4243,14 +4348,7 @@ try {
         Write-Host "========================================" -ForegroundColor Green
         Write-Host ""
     } else {
-        if (-not $Force) {
-            Write-Host "Are you sure you want to proceed? This cannot be undone!" -ForegroundColor Red
-            $confirmation = Read-Host "Type 'YES' to continue, or anything else to cancel"
-            if ($confirmation -ne 'YES') {
-                Write-Host "Operation cancelled by user." -ForegroundColor Yellow
-                exit 0
-            }
-        }
+        # Non-interactive execution
         Write-Host "EXECUTING removal process..." -ForegroundColor Green
     }
 
@@ -4277,9 +4375,7 @@ try {
     
     Write-Host ""
     Write-Host "Please check the error details above and try again." -ForegroundColor Yellow
-    if (-not $Force) {
-        Read-Host "Press Enter to exit"
-    }
+    # Non-interactive: exit immediately
     exit 1
 } finally {
     # Cleanup progress indicators

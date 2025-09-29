@@ -31416,3 +31416,36 @@ Source:	SWbemObjectEx
 2025-09-29 22:36:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-29 22:41:53 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 22:41:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:46:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:46:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:51:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:51:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 22:56:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 22:56:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 23:01:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 23:01:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 23:06:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 23:06:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 23:11:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 23:11:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 23:16:53 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 23:16:53 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 23:19:12 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-29 23:19:13 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-29 23:19:13 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 23:25:25 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 23:30:25 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 23:30:25 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 23:35:25 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 23:35:25 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 23:40:25 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 23:40:25 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 23:42:16 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-29 23:42:16 - FOLDER: Opening installed apps folder
+2025-09-29 23:42:16 - FOLDER: Successfully opened installed apps folder
+2025-09-29 23:42:30 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-29 23:42:30 - FOLDER: Opening installed apps folder
+2025-09-29 23:42:30 - FOLDER: Successfully opened installed apps folder
+2025-09-29 23:42:31 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-29 23:42:31 - FOLDER: Opening installed apps folder
+2025-09-29 23:42:31 - FOLDER: Successfully opened installed apps folder
