@@ -30141,3 +30141,159 @@ Source:	SWbemObjectEx
 2025-09-29 03:28:27 - QWE: qwe command launched in Windows Terminal (PowerShell)
 2025-09-29 03:30:37 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 03:30:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 03:33:35 - DESKTOP: Switched to Desktop 2
+2025-09-29 03:33:40 - DESKTOP: Switched to Desktop 1
+2025-09-29 03:35:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 03:35:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 03:40:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 03:40:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 03:45:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 03:45:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 03:50:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 03:50:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 03:55:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 03:55:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:00:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:00:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:05:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:05:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:09:00 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-29 04:09:00 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-29 04:10:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:10:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:14:59 - TEXT_SHORTCUT: Triggered 'ide' -> 'CURSOR_APP'
+2025-09-29 04:14:59 - LAUNCHER: Attempting to launch Cursor IDE
+2025-09-29 04:14:59 - ERROR: Cursor not found at: F:\backup\windowsapps\installed\cursor\Cursor.exe
+2025-09-29 04:15:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:15:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:20:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:20:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:25:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:25:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:26:54 - FULLSIZE: Triple-tap E detected
+2025-09-29 04:26:54 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-29 04:26:54 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 04:26:54 - FULLSIZE: Applied windowed style with borders
+2025-09-29 04:26:55 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 04:26:55 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 04:30:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:30:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:32:21 - FULLSIZE: Triple-tap E detected
+2025-09-29 04:32:21 - FULLSIZE: Processing window - WindowsTerminal.exe (? Docker Container)
+2025-09-29 04:32:21 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 04:32:21 - FULLSIZE: Applied windowed style with borders
+2025-09-29 04:32:22 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 04:32:22 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 04:35:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:35:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:40:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:40:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:45:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:45:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:50:23 - TEXT_SHORTCUT: Triggered 'nvc' -> 'nvc'
+2025-09-29 04:50:23 - TERMINAL_CMD: Executing command - nvc
+2025-09-29 04:50:25 - TERMINAL_CMD: Executed 'nvc' with self-terminating PowerShell
+2025-09-29 04:50:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:50:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 04:53:28 - TEXT_SHORTCUT: Triggered 'refresh' -> 'refresh'
+2025-09-29 04:53:28 - TERMINAL_CMD: Executing command - refresh
+2025-09-29 04:53:29 - TERMINAL_CMD: Executed 'refresh' with self-terminating PowerShell
+2025-09-29 04:55:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 04:55:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:00:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 05:00:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:02:43 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-29 05:02:43 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-29 05:05:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 05:05:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:10:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 05:10:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:12:00 - FULLSIZE: Triple-tap E detected
+2025-09-29 05:12:00 - FULLSIZE: Processing window - WindowsTerminal.exe (? Uninstaller Path)
+2025-09-29 05:12:00 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 05:12:00 - FULLSIZE: Applied windowed style with borders
+2025-09-29 05:12:00 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 05:12:00 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 05:15:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 05:15:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:20:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 05:20:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:23:25 - FREEZE: Minimized window for WindowsTerminal.exe
+2025-09-29 05:23:25 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-29 05:23:25 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-29 05:23:25 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 14828)
+2025-09-29 05:23:25 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-29 05:23:26 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-29 05:23:26 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-29 05:23:27 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-29 05:23:29 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-29 05:23:30 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-29 05:23:30 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-29 05:23:30 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-29 05:23:30 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-29 05:23:30 - FREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" "WindowsTerminal.exe"
+2025-09-29 05:23:30 - FREEZE_OPTIMIZE: Starting INSTANT ultra-aggressive resource minimization for WindowsTerminal.exe
+2025-09-29 05:23:31 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-29 05:23:31 - FREEZE_OPTIMIZE: Starting INSTANT EXTREME RAM ANNIHILATION for WindowsTerminal.exe (PID: 14828)
+2025-09-29 05:23:31 - FREEZE_OPTIMIZE: Instant RAM crushing failed for WindowsTerminal.exe - Failed to load DLL.
+2025-09-29 05:23:32 - FREEZE_OPTIMIZE: Limited WindowsTerminal.exe to single CPU core (fallback)
+2025-09-29 05:23:32 - FREEZE_OPTIMIZE: I/O priority reduction failed for WindowsTerminal.exe
+2025-09-29 05:23:33 - FREEZE_OPTIMIZE: Applied NUCLEAR memory compression to WindowsTerminal.exe
+2025-09-29 05:23:34 - FREEZE_OPTIMIZE: Applied working set size enforcement to WindowsTerminal.exe
+2025-09-29 05:23:35 - FREEZE_OPTIMIZE: Applied large object heap compression to WindowsTerminal.exe
+2025-09-29 05:23:35 - FREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to background CPU scheduling
+2025-09-29 05:23:35 - FREEZE_OPTIMIZE: Final nuclear annihilation failed for WindowsTerminal.exe
+2025-09-29 05:23:35 - FREEZE_OPTIMIZE: ?? RAM ANNIHILATION COMPLETE for WindowsTerminal.exe! RAM<20MB TARGET, CPU=SingleCore, Priority=Idle
+2025-09-29 05:23:35 - SUCCESS: Frozen and minimized WindowsTerminal.exe with minimal resource usage
+2025-09-29 05:23:35 - FREEZE: WindowsTerminal.exe RAM ANNIHILATED with EXTREME minimal resource usage
+2025-09-29 05:23:38 - UNFREEZE: Executing "F:\backup\windowsapps\installed\pstools\pssuspend64.exe" -r "WindowsTerminal.exe"
+2025-09-29 05:23:38 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-29 05:23:38 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-29 05:23:38 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-29 05:23:39 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-29 05:23:41 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-29 05:23:42 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-29 05:23:42 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-29 05:23:42 - UNFREEZE_OPTIMIZE: Starting INSTANT maximum resource restoration for WindowsTerminal.exe
+2025-09-29 05:23:42 - ERROR in SetProcessPriority(WindowsTerminal.exe): (0x80041024) 
+Provider is not capable of the attempted operation 
+Source:	SWbemObjectEx
+2025-09-29 05:23:42 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe priority to RealTime
+2025-09-29 05:23:43 - UNFREEZE_OPTIMIZE: Restored full CPU affinity (fallback) for WindowsTerminal.exe
+2025-09-29 05:23:43 - UNFREEZE_OPTIMIZE: Working set restoration failed for WindowsTerminal.exe
+2025-09-29 05:23:43 - UNFREEZE_OPTIMIZE: I/O priority boost failed for WindowsTerminal.exe
+2025-09-29 05:23:44 - UNFREEZE_OPTIMIZE: INSTANTLY enabled priority boost and turbo mode for WindowsTerminal.exe
+2025-09-29 05:23:45 - UNFREEZE_OPTIMIZE: INSTANTLY set WindowsTerminal.exe to foreground priority
+2025-09-29 05:23:46 - UNFREEZE_OPTIMIZE: INSTANTLY optimized memory for performance for WindowsTerminal.exe
+2025-09-29 05:23:46 - UNFREEZE_OPTIMIZE: ? INSTANT maximum resource restoration COMPLETE for WindowsTerminal.exe! RAM=4GB Max, CPU=AllCores, Priority=RealTime/High
+2025-09-29 05:23:46 - UNFREEZE: Failed to restore window for WindowsTerminal.exe - Target window not found.
+2025-09-29 05:23:46 - UNFREEZE: Activated fallback window for WindowsTerminal.exe
+2025-09-29 05:23:46 - SUCCESS: Unfrozen and restored WindowsTerminal.exe with full resources
+2025-09-29 05:23:46 - UNFREEZE_ALL: Restored WindowsTerminal.exe with full resources
+2025-09-29 05:23:46 - UNFREEZE_ALL: Completed - Success: 1, Failed: 0
+2025-09-29 05:25:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 05:25:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:27:22 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-29 05:27:22 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-29 05:27:24 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-29 05:27:26 - FULLSIZE: Triple-tap E detected
+2025-09-29 05:27:26 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-29 05:27:26 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 05:27:26 - FULLSIZE: Applied windowed style with borders
+2025-09-29 05:27:26 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 05:27:26 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-29 05:28:09 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-29 05:28:09 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-29 05:28:09 - REBOOT: Initiating immediate system reboot
+2025-09-29 05:28:09 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-29 05:28:09 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-29 05:28:09 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 05:29:00 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 05:34:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 05:34:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
