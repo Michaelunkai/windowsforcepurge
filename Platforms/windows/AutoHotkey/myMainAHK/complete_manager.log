@@ -30297,3 +30297,11 @@ Source:	SWbemObjectEx
 2025-09-29 05:29:00 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
 2025-09-29 05:34:00 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 05:34:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:39:00 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 05:39:00 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 05:39:47 - FULLSIZE: Triple-tap E detected
+2025-09-29 05:39:47 - FULLSIZE: Processing window - Todoist.exe (Today)
+2025-09-29 05:39:47 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 05:39:47 - FULLSIZE: Applied windowed style with borders
+2025-09-29 05:39:47 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 05:39:47 - FULLSIZE: Successfully applied full size mode to Todoist.exe
