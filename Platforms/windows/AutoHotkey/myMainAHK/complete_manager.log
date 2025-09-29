@@ -31449,3 +31449,17 @@ Source:	SWbemObjectEx
 2025-09-29 23:42:31 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
 2025-09-29 23:42:31 - FOLDER: Opening installed apps folder
 2025-09-29 23:42:31 - FOLDER: Successfully opened installed apps folder
+2025-09-29 23:45:25 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 23:45:25 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 23:46:42 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-29 23:46:42 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-29 23:46:42 - REBOOT: Initiating immediate system reboot
+2025-09-29 23:46:42 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-29 23:46:42 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-29 23:46:42 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 23:47:45 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 23:51:30 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-29 23:51:30 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-29 23:51:32 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-29 23:52:45 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 23:52:45 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
