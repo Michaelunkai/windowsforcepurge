@@ -163,7 +163,7 @@ textShortcuts := Map(
     "ggem", "GGEM_TERMINAL",
     "lgame", "C:\Users\micha\Desktop\games\Daysgone.lnk",
     "fferd", "FERDIUM_APP",
-    "zzzzzz", "F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe"
+    "zzzzzz", "F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_BULLETPROOF_FINAL.exe"
     )
 
 ; Game process detection (common game engines and launchers)
@@ -5064,7 +5064,7 @@ TrimProcessWorkingSet(procName) {
 ; RAM Cleaner Pro hotstring - type "zzzzz" to run in background
 ::zzzzz::
 {
-    Run("powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -Command `"Start-Process 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_WORKING.exe'`"", , "Hide")
+    Run("powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -Command `"Start-Process 'F:\backup\windowsapps\installed\myapps\compiled_python\RamOptimzer\dist\RAMCleanerPro_BULLETPROOF_FINAL.exe'`"", , "Hide")
 }
 
 
