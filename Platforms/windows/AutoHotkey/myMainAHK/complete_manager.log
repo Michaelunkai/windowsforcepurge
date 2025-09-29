@@ -30346,3 +30346,35 @@ Source:	SWbemObjectEx
 2025-09-29 06:07:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-29 06:12:42 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 06:12:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 06:17:42 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 06:17:42 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 07:18:06 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 07:18:06 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 07:22:57 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-29 07:22:57 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-29 07:22:57 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-29 07:23:05 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 07:23:05 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 07:28:05 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 07:28:05 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 07:33:05 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 07:33:05 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 07:38:05 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 07:38:05 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 07:43:05 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 07:43:05 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 07:48:05 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 07:48:05 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 07:53:05 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 07:53:05 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 07:56:47 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-29 07:56:47 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-29 07:56:47 - REBOOT: Initiating immediate system reboot
+2025-09-29 07:56:47 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-29 07:56:47 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-29 07:56:47 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 07:57:50 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 08:02:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 08:02:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 08:07:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 08:07:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
