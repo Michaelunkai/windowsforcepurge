@@ -31080,3 +31080,121 @@ Source:	SWbemObjectEx
 2025-09-29 16:49:13 - FERDIUM: Second Ferdium instance launched after 2 second delay
 2025-09-29 16:50:38 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-29 16:50:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 16:55:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 16:55:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:00:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:00:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:01:20 - FULLSIZE: Triple-tap E detected
+2025-09-29 17:01:20 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - grok.com)
+2025-09-29 17:01:20 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 17:01:20 - FULLSIZE: Applied windowed style with borders
+2025-09-29 17:01:20 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 17:01:20 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 17:05:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:05:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:10:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:10:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:15:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:15:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:15:50 - FULLSIZE: Triple-tap E detected
+2025-09-29 17:15:50 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - ChatGPT - Silent uninstallation script)
+2025-09-29 17:15:50 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 17:15:50 - FULLSIZE: Applied windowed style with borders
+2025-09-29 17:15:50 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 17:15:50 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 17:20:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:20:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:25:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:25:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:30:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:30:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:32:02 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-29 17:32:02 - FOLDER: Opening installed apps folder
+2025-09-29 17:32:02 - FOLDER: Successfully opened installed apps folder
+2025-09-29 17:35:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:35:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:37:56 - FULLSIZE: Triple-tap E detected
+2025-09-29 17:37:56 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - ChatGPT - Unzip with password)
+2025-09-29 17:37:56 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 17:37:56 - FULLSIZE: Applied windowed style with borders
+2025-09-29 17:37:56 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 17:37:56 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 17:39:38 - FULLSIZE: Triple-tap E detected
+2025-09-29 17:39:38 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - ChatGPT - Unzip with password)
+2025-09-29 17:39:38 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 17:39:38 - FULLSIZE: Applied windowed style with borders
+2025-09-29 17:39:38 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 17:39:38 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 17:40:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:40:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:41:10 - TEXT_SHORTCUT: Triggered 'refresh' -> 'refresh'
+2025-09-29 17:41:10 - TERMINAL_CMD: Executing command - refresh
+2025-09-29 17:41:12 - TERMINAL_CMD: Executed 'refresh' with self-terminating PowerShell
+2025-09-29 17:42:08 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-29 17:42:08 - FOLDER: Opening installed apps folder
+2025-09-29 17:42:08 - FOLDER: Successfully opened installed apps folder
+2025-09-29 17:44:17 - FULLSIZE: Triple-tap E detected
+2025-09-29 17:44:17 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - ChatGPT - Unzip with password)
+2025-09-29 17:44:17 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 17:44:18 - FULLSIZE: Applied windowed style with borders
+2025-09-29 17:44:18 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 17:44:18 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 17:45:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:45:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:46:23 - FULLSIZE: Triple-tap E detected
+2025-09-29 17:46:23 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - ChatGPT - Unzip with password)
+2025-09-29 17:46:23 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 17:46:23 - FULLSIZE: Applied windowed style with borders
+2025-09-29 17:46:23 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 17:46:23 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 17:49:06 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-29 17:49:06 - TERMINAL: Attempting to open floating terminal
+2025-09-29 17:49:06 - TERMINAL: Windows Terminal opened
+2025-09-29 17:49:27 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-29 17:49:27 - TERMINAL: Attempting to open floating terminal
+2025-09-29 17:49:28 - TERMINAL: Windows Terminal opened
+2025-09-29 17:50:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:50:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:55:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 17:55:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 17:58:33 - FULLSIZE: Triple-tap E detected
+2025-09-29 17:58:33 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - New conversation - Grok)
+2025-09-29 17:58:33 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 17:58:33 - FULLSIZE: Applied windowed style with borders
+2025-09-29 17:58:33 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 17:58:33 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 18:00:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 18:00:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 18:05:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 18:05:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 18:06:13 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-29 18:06:13 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-29 18:06:13 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-29 18:10:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 18:10:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 18:13:33 - FULLSIZE: Triple-tap E detected
+2025-09-29 18:13:33 - FULLSIZE: Processing window - Ferdium.exe (Ferdium - Grok - Grok)
+2025-09-29 18:13:33 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-29 18:13:33 - FULLSIZE: Applied windowed style with borders
+2025-09-29 18:13:33 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-29 18:13:33 - FULLSIZE: Successfully applied full size mode to Ferdium.exe
+2025-09-29 18:15:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 18:15:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 18:17:45 - TEXT_SHORTCUT: Triggered 'myp' -> 'COPY_PASS2'
+2025-09-29 18:17:45 - CLIPBOARD: Copied text to clipboard (length: 14)
+2025-09-29 18:20:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 18:20:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 18:23:28 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-29 18:23:28 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-29 18:23:28 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-29 18:25:16 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-29 18:25:28 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-29 18:25:29 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-29 18:25:29 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-29 18:25:41 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-29 18:25:41 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-29 18:25:44 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-29 18:30:16 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 18:30:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-29 18:35:16 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-29 18:35:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
