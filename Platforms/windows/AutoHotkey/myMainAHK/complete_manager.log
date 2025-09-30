@@ -32086,3 +32086,71 @@ Source:	SWbemObjectEx
 2025-09-30 22:45:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-30 22:50:34 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-30 22:50:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:55:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:55:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:57:36 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 22:57:36 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 22:57:36 - REBOOT: Initiating immediate system reboot
+2025-09-30 22:57:36 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 22:57:36 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 22:57:36 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 22:59:31 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 22:59:36 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-30 22:59:36 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-30 22:59:38 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-30 23:01:15 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 23:01:15 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 23:01:15 - REBOOT: Initiating immediate system reboot
+2025-09-30 23:01:15 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 23:01:15 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 23:01:15 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 23:02:43 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 23:03:39 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 23:03:39 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 23:03:39 - REBOOT: Initiating immediate system reboot
+2025-09-30 23:03:39 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 23:03:39 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 23:03:39 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 23:05:25 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 23:08:32 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 23:08:32 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 23:08:32 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 23:10:25 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 23:10:25 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 23:15:25 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 23:15:25 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 23:20:25 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 23:20:25 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 23:24:06 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 23:24:06 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 23:24:06 - REBOOT: Initiating immediate system reboot
+2025-09-30 23:24:06 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 23:24:06 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 23:24:06 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 23:25:51 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 23:28:46 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 23:28:46 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 23:28:46 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 23:33:20 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 23:38:20 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 23:38:20 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 23:40:13 - TEXT_SHORTCUT: Triggered 'mreflect' -> 'MACRIUM_REFLECT_APP'
+2025-09-30 23:40:13 - LAUNCHER: Attempting to launch Macrium Reflect
+2025-09-30 23:40:13 - LAUNCHER: Macrium Reflect launched successfully from: F:\backup\windowsapps\installed\reflect\Reflect.exe
+2025-09-30 23:40:25 - WARNING: Macrium Reflect launched but window not detected within 10 seconds
+2025-09-30 23:42:45 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 23:42:45 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 23:42:45 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 23:46:46 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 23:48:57 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-30 23:48:57 - TERMINAL: Attempting to open floating terminal
+2025-09-30 23:48:58 - TERMINAL: Windows Terminal opened
+2025-09-30 23:49:04 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 23:49:04 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 23:49:04 - REBOOT: Initiating immediate system reboot
+2025-09-30 23:49:04 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 23:49:04 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 23:49:04 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 23:50:39 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 23:55:39 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 23:55:39 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
