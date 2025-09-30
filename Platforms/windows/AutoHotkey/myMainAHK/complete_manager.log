@@ -32035,3 +32035,18 @@ Source:	SWbemObjectEx
 2025-09-30 21:05:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-09-30 21:10:12 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-30 21:10:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 21:11:53 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 21:11:53 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 21:11:53 - REBOOT: Initiating immediate system reboot
+2025-09-30 21:11:53 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 21:11:53 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 21:11:53 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 21:40:34 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 21:45:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 21:45:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 21:49:28 - TEXT_SHORTCUT: Triggered 'mreflect' -> 'MACRIUM_REFLECT_APP'
+2025-09-30 21:49:28 - LAUNCHER: Attempting to launch Macrium Reflect
+2025-09-30 21:49:28 - LAUNCHER: Macrium Reflect launched successfully from: F:\backup\windowsapps\installed\reflect\Reflect.exe
+2025-09-30 21:49:40 - WARNING: Macrium Reflect launched but window not detected within 10 seconds
+2025-09-30 21:50:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 21:50:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
