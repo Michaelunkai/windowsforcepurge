@@ -31823,3 +31823,56 @@ Source:	SWbemObjectEx
 2025-09-30 15:22:56 - TERMINAL: Windows Terminal opened
 2025-09-30 15:23:50 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-30 15:23:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:28:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:28:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:33:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:33:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:38:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:38:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:43:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:43:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:48:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:48:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:51:36 - FOLDER: Attempting to open Games folder at: C:\\Users\\micha\\Desktop\\games
+2025-09-30 15:51:36 - FOLDER: Successfully opened Games folder at: C:\\Users\\micha\\Desktop\\games
+2025-09-30 15:53:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:53:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:58:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:58:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:03:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:03:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:08:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:08:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:13:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:13:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:18:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:18:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:22:22 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-30 16:22:22 - TERMINAL: Attempting to open floating terminal
+2025-09-30 16:22:23 - TERMINAL: Windows Terminal opened
+2025-09-30 16:23:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:23:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:25:15 - TEXT_SHORTCUT: Triggered 'gmail' -> 'GMAIL_WEB'
+2025-09-30 16:25:15 - WEB: Opening Gmail Account 0 in Chrome
+2025-09-30 16:25:15 - WEB: Gmail Account 0 opened in Chrome
+2025-09-30 16:25:25 - TEXT_SHORTCUT: Triggered 'mymail' -> 'COPY_EMAIL'
+2025-09-30 16:25:25 - CLIPBOARD: Copied text to clipboard (length: 23)
+2025-09-30 16:28:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:28:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:33:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:33:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:38:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:38:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:39:55 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 16:39:55 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 16:39:55 - REBOOT: Initiating immediate system reboot
+2025-09-30 16:39:55 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 16:39:56 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 16:39:56 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 16:42:46 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 16:47:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:47:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:48:49 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-30 16:48:49 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-30 16:48:53 - FERDIUM: First Ferdium instance launched
+2025-09-30 16:48:55 - FERDIUM: Second Ferdium instance launched after 2 second delay
