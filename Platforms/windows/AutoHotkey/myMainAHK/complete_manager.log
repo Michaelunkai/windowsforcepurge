@@ -32154,3 +32154,114 @@ Source:	SWbemObjectEx
 2025-09-30 23:50:39 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
 2025-09-30 23:55:39 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-30 23:55:39 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:00:39 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:00:39 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:05:39 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:05:39 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:10:39 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:10:40 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:15:39 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:15:39 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:18:51 - TEXT_SHORTCUT: Triggered 'dddesk' -> 'ps7run dddesk'
+2025-10-01 00:18:51 - TERMINAL_CMD: Executing command - ps7run dddesk
+2025-10-01 00:19:01 - TERMINAL_CMD: Executed 'ps7run dddesk' with self-terminating PowerShell
+2025-10-01 00:20:39 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:20:39 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:25:39 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:25:39 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:29:29 - DESKTOP: Switched to Desktop 2
+2025-10-01 00:29:32 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-10-01 00:29:32 - TERMINAL_CMD: Executing command - C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-10-01 00:29:34 - TERMINAL_CMD: Executed 'C:\Users\micha\Desktop\games\Daysgone.lnk' with self-terminating PowerShell
+2025-10-01 00:29:44 - DESKTOP: Switched to Desktop 1
+2025-10-01 00:29:45 - DESKTOP: Switched to Desktop 2
+2025-10-01 00:29:50 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-10-01 00:29:50 - TERMINAL_CMD: Executing command - C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-10-01 00:29:52 - TERMINAL_CMD: Executed 'C:\Users\micha\Desktop\games\Daysgone.lnk' with self-terminating PowerShell
+2025-10-01 00:30:28 - DESKTOP: Switched to Desktop 1
+2025-10-01 00:30:28 - DESKTOP: Switched to Desktop 2
+2025-10-01 00:30:31 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-10-01 00:30:34 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-10-01 00:30:35 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-10-01 00:30:35 - LAUNCHER: WeMod launched successfully
+2025-10-01 00:30:37 - LAUNCHER: WeMod window activated
+2025-10-01 00:30:39 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:30:39 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:31:08 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-10-01 00:31:09 - LAUNCHER: WeMod is running, attempting to close
+2025-10-01 00:31:09 - LAUNCHER: Force terminated WeMod process
+2025-10-01 00:31:11 - LAUNCHER: WeMod launched successfully
+2025-10-01 00:31:15 - LAUNCHER: WeMod window activated
+2025-10-01 00:32:31 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-10-01 00:32:31 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 13928) - Days Gone
+2025-10-01 00:32:32 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-10-01 00:32:38 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-10-01 00:33:07 - DESKTOP: Switched to Desktop 1
+2025-10-01 00:35:39 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:35:40 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:38:53 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-10-01 00:38:53 - SHUTDOWN: All suspended processes resumed before exit
+2025-10-01 00:38:53 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-10-01 00:43:06 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-10-01 00:47:08 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-10-01 00:47:08 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-10-01 00:47:08 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-10-01 00:48:06 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:48:06 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:53:06 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 00:53:06 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 00:57:13 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-10-01 00:57:13 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-10-01 00:57:13 - REBOOT: Initiating immediate system reboot
+2025-10-01 00:57:13 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-10-01 00:57:13 - SHUTDOWN: All suspended processes resumed before exit
+2025-10-01 00:57:13 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-10-01 00:58:48 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-10-01 00:58:56 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-10-01 00:58:56 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-10-01 00:58:56 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-10-01 01:00:21 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-10-01 01:00:21 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-10-01 01:00:23 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-10-01 01:02:17 - TEXT_SHORTCUT: Triggered 'tototo' -> 'TODOIST_APP'
+2025-10-01 01:02:17 - LAUNCHER: Attempting to launch Todoist
+2025-10-01 01:02:18 - TEXT_SHORTCUT: Triggered 'tttt' -> 'SPLIT_TOP_APPS'
+2025-10-01 01:02:18 - SPLIT_APPS: Starting horizontal split of top applications
+2025-10-01 01:02:18 - SPLIT_APPS: Positioned Code.exe on left half
+2025-10-01 01:02:19 - SPLIT_APPS: Positioned WindowsTerminal.exe on right half
+2025-10-01 01:02:19 - SPLIT_APPS: Successfully split Code.exe and WindowsTerminal.exe horizontally
+2025-10-01 01:02:19 - LAUNCHER: Todoist launched via direct path: F:\backup\windowsapps\installed\todoist\Todoist.exe
+2025-10-01 01:02:21 - LAUNCHER: Todoist window activated (Todoist.exe)
+2025-10-01 01:03:48 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:03:48 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:07:11 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-10-01 01:07:11 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-10-01 01:07:11 - REBOOT: Initiating immediate system reboot
+2025-10-01 01:07:12 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-10-01 01:07:12 - SHUTDOWN: All suspended processes resumed before exit
+2025-10-01 01:07:12 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-10-01 01:08:26 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-10-01 01:09:20 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-10-01 01:09:20 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-10-01 01:09:20 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-10-01 01:11:04 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-10-01 01:11:04 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-10-01 01:11:08 - FERDIUM: First Ferdium instance launched
+2025-10-01 01:11:10 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-10-01 01:13:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:13:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:15:46 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-10-01 01:15:46 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-10-01 01:15:49 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-10-01 01:15:55 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-10-01 01:15:55 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-10-01 01:15:57 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-10-01 01:16:55 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-10-01 01:16:55 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-10-01 01:16:55 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-10-01 01:18:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:18:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:23:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:23:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:28:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:28:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
