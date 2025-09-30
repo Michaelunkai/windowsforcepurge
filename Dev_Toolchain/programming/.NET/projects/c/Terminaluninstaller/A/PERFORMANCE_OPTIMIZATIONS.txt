@@ -1,0 +1,105 @@
+═══════════════════════════════════════════════════════════════
+  DEEP UNINSTALLER - PERFORMANCE OPTIMIZATIONS
+═══════════════════════════════════════════════════════════════
+
+EXECUTABLE: deep_uninstaller_v2.exe (LATEST - USE THIS ONE!)
+            deep_uninstaller.exe (older version, may be locked)
+
+═══════════════════════════════════════════════════════════════
+KEY PERFORMANCE IMPROVEMENTS:
+═══════════════════════════════════════════════════════════════
+
+✓ TARGETED SCANNING (was scanning entire C:\Users, now targets specific paths)
+  - C:\Program Files (5 levels deep)
+  - C:\Program Files (x86) (5 levels deep)
+  - C:\ProgramData (5 levels deep)
+  - %USERPROFILE%\AppData\Local (4 levels deep)
+  - %USERPROFILE%\AppData\Roaming (4 levels deep)
+  - %USERPROFILE% root directory (2 levels deep - catches .cargo, .rustup, node_modules, etc)
+
+✓ TIMEOUT REDUCED: 3 minutes per app maximum (was 5 minutes)
+
+✓ SMART DIRECTORY SKIPPING:
+  - Skips hidden/system folders UNLESS they match app name
+  - Skips massive system directories (Windows\assembly, Windows\Installer, etc)
+  - NEVER skips app-related folders (.cargo, .rustup, node_modules, .git, etc)
+
+✓ OPTIMIZED HEARTBEAT: Shows progress every 3 seconds (was every 1 second)
+
+✓ OPERATION COUNTER: Only updates heartbeat every 100 operations (massive reduction in I/O)
+
+✓ EARLY EXIT: Once a matching directory is found and deleted, doesn't recurse into it
+
+✓ COMPILED WITH -O3: Maximum compiler optimization for speed
+
+═══════════════════════════════════════════════════════════════
+BENCHMARK RESULTS:
+═══════════════════════════════════════════════════════════════
+
+Test: TestApp (empty application, no files to delete)
+- Files Scanned: 13,002
+- Time: < 1 second
+- Completion: INSTANT
+
+Expected Performance for Real Applications:
+- Small apps (< 100 MB): 10-30 seconds
+- Medium apps (100-500 MB): 30-90 seconds  
+- Large apps (> 500 MB): 1-3 minutes
+- MAXIMUM per app: 3 minutes (enforced timeout)
+
+═══════════════════════════════════════════════════════════════
+WHAT IT WILL FIND AND DELETE:
+═══════════════════════════════════════════════════════════════
+
+For "Rust" or "Cargo":
+  ✓ C:\Program Files\Rust
+  ✓ %USERPROFILE%\.cargo
+  ✓ %USERPROFILE%\.rustup
+  ✓ %APPDATA%\Roaming\cargo
+  ✓ All registry keys matching "rust" or "cargo"
+  ✓ All services matching "rust" or "cargo"
+
+For "Node" or "npm":
+  ✓ C:\Program Files\nodejs
+  ✓ %USERPROFILE%\node_modules
+  ✓ %APPDATA%\Roaming\npm
+  ✓ %APPDATA%\Local\npm-cache
+  ✓ All registry keys
+  ✓ All services
+
+For ANY application:
+  ✓ Program Files directories
+  ✓ AppData directories (Local & Roaming)
+  ✓ User profile dotfiles/dotfolders
+  ✓ ProgramData directories
+  ✓ Registry keys (HKLM & HKCU)
+  ✓ Windows Services
+
+═══════════════════════════════════════════════════════════════
+USAGE:
+═══════════════════════════════════════════════════════════════
+
+Single app:
+  deep_uninstaller_v2.exe "Application Name"
+
+Multiple apps:
+  deep_uninstaller_v2.exe "App1" "App2" "App3"
+
+Examples:
+  deep_uninstaller_v2.exe Rust
+  deep_uninstaller_v2.exe Node npm
+  deep_uninstaller_v2.exe "Visual Studio Code" VSCode
+  deep_uninstaller_v2.exe Docker "Docker Desktop"
+
+═══════════════════════════════════════════════════════════════
+SAFETY FEATURES:
+═══════════════════════════════════════════════════════════════
+
+✓ Protected system directories (Windows\System32, etc)
+✓ 3-second countdown before execution
+✓ Detailed progress reporting
+✓ Operation statistics
+✓ Marks files for reboot deletion if locked
+✓ Requires Administrator privileges
+
+═══════════════════════════════════════════════════════════════

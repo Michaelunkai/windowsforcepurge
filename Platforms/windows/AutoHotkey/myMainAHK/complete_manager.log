@@ -31876,3 +31876,160 @@ Source:	SWbemObjectEx
 2025-09-30 16:48:49 - FERDIUM: Launching Ferdium twice with 2 second delay
 2025-09-30 16:48:53 - FERDIUM: First Ferdium instance launched
 2025-09-30 16:48:55 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-30 16:52:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:52:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 16:57:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 16:57:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:02:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:02:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:03:57 - TEXT_SHORTCUT: Triggered 'downloads' -> 'DOWNLOADS_FOLDER'
+2025-09-30 17:03:57 - FOLDER: Opening Downloads folder
+2025-09-30 17:03:57 - FOLDER: Successfully opened Downloads folder
+2025-09-30 17:07:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:07:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:12:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:12:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:17:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:17:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:22:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:22:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:27:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:27:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:32:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:32:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:37:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:37:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:42:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:42:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:47:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:47:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:52:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:52:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 17:57:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 17:57:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:02:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:02:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:07:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:07:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:12:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:12:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:17:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:17:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:20:46 - TEXT_SHORTCUT: Triggered 'logout' -> 'refresh2'
+2025-09-30 18:20:46 - TERMINAL_CMD: Executing command - refresh2
+2025-09-30 18:20:48 - TERMINAL_CMD: Executed 'refresh2' with self-terminating PowerShell
+2025-09-30 18:20:48 - SHUTDOWN: Script exiting - Reason: Logoff
+2025-09-30 18:20:48 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 18:20:48 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 18:21:38 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 18:26:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:26:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:31:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:31:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:32:16 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-30 18:32:16 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-30 18:32:18 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-30 18:34:08 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 18:34:08 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 18:34:08 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 18:35:31 - FULLSIZE: Triple-tap E detected
+2025-09-30 18:35:31 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-30 18:35:31 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-30 18:35:31 - FULLSIZE: Applied windowed style with borders
+2025-09-30 18:35:31 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-30 18:35:31 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-30 18:36:20 - DESKTOP: Switched to Desktop 2
+2025-09-30 18:36:22 - DESKTOP: Switched to Desktop 1
+2025-09-30 18:36:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:36:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:41:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:41:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:46:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:46:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:51:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:51:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 18:56:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 18:56:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:01:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:01:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:01:55 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-09-30 19:01:55 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-09-30 19:01:56 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-09-30 19:06:10 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-30 19:06:10 - FOLDER: Opening installed apps folder
+2025-09-30 19:06:10 - FOLDER: Successfully opened installed apps folder
+2025-09-30 19:06:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:06:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:11:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:11:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:12:12 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 19:12:12 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 19:12:12 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 19:16:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:16:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:21:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:21:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:26:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:26:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:31:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:31:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:36:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:36:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:41:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:41:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:46:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:46:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:51:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:51:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 19:56:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 19:56:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:01:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:01:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:06:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:06:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:11:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:11:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:16:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:16:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:21:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:21:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:23:12 - FULLSIZE: Triple-tap E detected
+2025-09-30 20:23:12 - FULLSIZE: Processing window - WindowsTerminal.exe (npm exec mcp-server-blender)
+2025-09-30 20:23:12 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-30 20:23:12 - FULLSIZE: Applied windowed style with borders
+2025-09-30 20:23:12 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-30 20:23:12 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-30 20:26:38 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:26:38 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:27:11 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 20:27:11 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 20:27:11 - REBOOT: Initiating immediate system reboot
+2025-09-30 20:27:12 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 20:27:12 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 20:27:12 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 20:29:00 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 20:29:37 - TEXT_SHORTCUT: Triggered 'logout' -> 'refresh2'
+2025-09-30 20:29:37 - TERMINAL_CMD: Executing command - refresh2
+2025-09-30 20:29:38 - SHUTDOWN: Script exiting - Reason: Logoff
+2025-09-30 20:29:38 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 20:29:38 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 20:31:47 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 20:36:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:36:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:41:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:41:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:46:47 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:46:47 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 20:48:31 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 20:48:31 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 20:48:31 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 20:50:12 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 20:52:06 - TEXT_SHORTCUT: Triggered 'dddesk' -> 'ps7run dddesk'
+2025-09-30 20:52:06 - TERMINAL_CMD: Executing command - ps7run dddesk
+2025-09-30 20:52:13 - TERMINAL_CMD: Executed 'ps7run dddesk' with self-terminating PowerShell
+2025-09-30 20:55:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 20:55:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 21:00:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 21:00:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 21:05:12 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 21:05:12 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
