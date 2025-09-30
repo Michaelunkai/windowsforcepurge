@@ -31525,3 +31525,301 @@ Source:	SWbemObjectEx
 2025-09-30 01:06:16 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
 2025-09-30 01:11:16 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-30 01:11:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:16:16 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 01:16:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:21:16 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 01:21:16 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:23:02 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 01:23:02 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 01:23:02 - REBOOT: Initiating immediate system reboot
+2025-09-30 01:23:02 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 01:23:02 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 01:23:02 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 01:24:29 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 01:29:29 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 01:29:29 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:34:29 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 01:34:29 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:39:29 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 01:39:29 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:40:47 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-30 01:40:47 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-30 01:41:00 - FERDIUM: First Ferdium instance launched
+2025-09-30 01:41:02 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-30 01:44:29 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 01:44:29 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:49:29 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 01:49:29 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:54:29 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 01:54:29 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 01:59:20 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 01:59:20 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 01:59:20 - REBOOT: Initiating immediate system reboot
+2025-09-30 01:59:20 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 01:59:20 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 01:59:20 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 02:00:45 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 02:03:31 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-09-30 02:03:31 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-09-30 02:03:31 - REBOOT: Initiating immediate system reboot
+2025-09-30 02:03:31 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-09-30 02:03:31 - SHUTDOWN: All suspended processes resumed before exit
+2025-09-30 02:03:31 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-09-30 02:04:18 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-09-30 02:09:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:09:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:14:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:14:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:19:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:19:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:24:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:24:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:29:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:29:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:34:15 - DESKTOP: Switched to Desktop 2
+2025-09-30 02:34:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:34:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:34:21 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-30 02:34:22 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-30 02:34:27 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-30 02:34:27 - LAUNCHER: WeMod launched successfully
+2025-09-30 02:34:29 - LAUNCHER: WeMod window activated
+2025-09-30 02:36:32 - DESKTOP: Switched to Desktop 1
+2025-09-30 02:39:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:39:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:44:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:44:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:49:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:49:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:54:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:54:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 02:59:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 02:59:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:04:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:04:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:06:02 - DESKTOP: Switched to Desktop 2
+2025-09-30 03:06:02 - DESKTOP: Switched to Desktop 1
+2025-09-30 03:09:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:09:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:14:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:14:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:19:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:19:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:24:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:24:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:24:55 - DESKTOP: Switched to Desktop 2
+2025-09-30 03:29:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:29:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:30:04 - DESKTOP: Switched to Desktop 1
+2025-09-30 03:32:08 - DESKTOP: Switched to Desktop 2
+2025-09-30 03:34:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:34:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:39:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:39:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:41:26 - DESKTOP: Switched to Desktop 1
+2025-09-30 03:41:44 - DESKTOP: Switched to Desktop 2
+2025-09-30 03:44:14 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-09-30 03:44:14 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 14780) - Days Gone
+2025-09-30 03:44:14 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-09-30 03:44:15 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-09-30 03:44:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:44:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:44:51 - DESKTOP: Switched to Desktop 1
+2025-09-30 03:44:53 - DESKTOP: Switched to Desktop 2
+2025-09-30 03:44:59 - DESKTOP: Switched to Desktop 1
+2025-09-30 03:49:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:49:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:54:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:54:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 03:59:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 03:59:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 04:04:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 04:04:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 04:09:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 04:09:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 04:14:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 04:14:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 04:19:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 04:19:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 04:24:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 04:24:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 04:29:18 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 04:29:18 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 04:30:49 - TEXT_SHORTCUT: Triggered 'sleep' -> 'ss'
+2025-09-30 04:30:49 - TERMINAL_CMD: Executing command - ss
+2025-09-30 04:30:53 - TERMINAL_CMD: Executed 'ss' with self-terminating PowerShell
+2025-09-30 12:13:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:13:51 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 12:18:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:18:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 12:22:11 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 12:22:11 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 12:22:11 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 12:23:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:23:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 12:28:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:28:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 12:29:22 - DESKTOP: Switched to Desktop 2
+2025-09-30 12:29:33 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-09-30 12:29:35 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-09-30 12:30:40 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-09-30 12:30:40 - LAUNCHER: WeMod launched successfully
+2025-09-30 12:30:43 - LAUNCHER: WeMod window activated
+2025-09-30 12:31:14 - DESKTOP: Switched to Desktop 1
+2025-09-30 12:33:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:33:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 12:37:41 - DESKTOP: Switched to Desktop 2
+2025-09-30 12:38:31 - DESKTOP: Switched to Desktop 1
+2025-09-30 12:38:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:38:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 12:43:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:43:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 12:48:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:48:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 12:52:32 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-30 12:52:32 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-30 12:52:32 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-30 12:53:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:53:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 12:57:07 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-30 12:57:07 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-30 12:57:07 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-30 12:58:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 12:58:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:03:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:03:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:08:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:08:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:13:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:13:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:18:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:18:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:20:31 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 13:20:31 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 13:20:31 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 13:21:29 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-30 13:21:29 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-30 13:21:29 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-30 13:23:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:23:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:24:32 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 13:24:32 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 13:24:32 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 13:24:38 - FULLSIZE: Triple-tap E detected
+2025-09-30 13:24:38 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator:  C:\WINDOWS\system32\cmd.exe )
+2025-09-30 13:24:38 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-30 13:24:38 - FULLSIZE: Applied windowed style with borders
+2025-09-30 13:24:38 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-30 13:24:38 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-30 13:25:39 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-30 13:25:39 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-30 13:25:40 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-30 13:28:05 - TEXT_SHORTCUT: Triggered 'qwe' -> 'QWE_TERMINAL'
+2025-09-30 13:28:05 - QWE: Opening Windows Terminal and running 'qwe' command
+2025-09-30 13:28:05 - QWE: qwe command launched in Windows Terminal (PowerShell)
+2025-09-30 13:28:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:28:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:33:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:33:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:38:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:38:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:43:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:43:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:46:59 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-30 13:46:59 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-30 13:47:03 - FERDIUM: First Ferdium instance launched
+2025-09-30 13:47:05 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-30 13:48:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:48:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:53:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:53:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 13:57:22 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 13:57:22 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 13:57:22 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 13:58:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 13:58:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:00:34 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 14:00:34 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 14:00:34 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 14:01:27 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 14:01:27 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 14:01:27 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 14:01:37 - FULLSIZE: Triple-tap E detected
+2025-09-30 14:01:37 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: powershell)
+2025-09-30 14:01:37 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-30 14:01:37 - FULLSIZE: Applied windowed style with borders
+2025-09-30 14:01:37 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-30 14:01:37 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-30 14:03:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:03:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:08:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:08:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:10:11 - TEXT_SHORTCUT: Triggered 'clau' -> 'CLAU_TERMINAL'
+2025-09-30 14:10:11 - CLAU: Opening Windows Terminal and running 'clau' command
+2025-09-30 14:10:11 - CLAU: clau command launched in Windows Terminal (PowerShell)
+2025-09-30 14:11:19 - DESKTOP: Switched to Desktop 2
+2025-09-30 14:11:21 - DESKTOP: Switched to Desktop 1
+2025-09-30 14:13:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:13:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:16:44 - DESKTOP: Switched to Desktop 2
+2025-09-30 14:16:45 - DESKTOP: Switched to Desktop 1
+2025-09-30 14:18:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:18:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:23:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:23:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:28:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:28:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:33:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:33:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:38:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:38:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:43:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:43:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:48:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:48:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:53:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:53:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 14:58:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 14:58:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:03:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:03:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:08:35 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-30 15:08:35 - TERMINAL: Attempting to open floating terminal
+2025-09-30 15:08:35 - TERMINAL: Windows Terminal opened
+2025-09-30 15:08:37 - TEXT_SHORTCUT: Triggered 'www' -> ForceWindowedMode()
+2025-09-30 15:08:37 - WINDOWED: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-30 15:08:37 - WINDOWED: Regular application, using 80% screen size
+2025-09-30 15:08:37 - WINDOWED: Applied windowed style and removed topmost
+2025-09-30 15:08:37 - WINDOWED: Positioned window at 256.0,160.0 size 2048.0x1280.0
+2025-09-30 15:08:37 - WINDOWED: Successfully applied windowed mode to WindowsTerminal.exe
+2025-09-30 15:08:37 - WINDOWED: Triple-tap W detected
+2025-09-30 15:08:37 - WINDOWED: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-30 15:08:37 - WINDOWED: Regular application, using 80% screen size
+2025-09-30 15:08:37 - WINDOWED: Applied windowed style and removed topmost
+2025-09-30 15:08:37 - WINDOWED: Positioned window at 256.0,160.0 size 2048.0x1280.0
+2025-09-30 15:08:37 - WINDOWED: Successfully applied windowed mode to WindowsTerminal.exe
+2025-09-30 15:08:38 - TEXT_SHORTCUT: Triggered 'eee' -> ForceFullSizeMode()
+2025-09-30 15:08:38 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-30 15:08:38 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-30 15:08:38 - FULLSIZE: Applied windowed style with borders
+2025-09-30 15:08:38 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-30 15:08:38 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-30 15:08:38 - FULLSIZE: Triple-tap E detected
+2025-09-30 15:08:38 - FULLSIZE: Processing window - WindowsTerminal.exe (Administrator: Windows PowerShell)
+2025-09-30 15:08:38 - FULLSIZE: Using full resolution: 2560x1600
+2025-09-30 15:08:38 - FULLSIZE: Applied windowed style with borders
+2025-09-30 15:08:38 - FULLSIZE: Positioned window at full screen size with borders
+2025-09-30 15:08:38 - FULLSIZE: Successfully applied full size mode to WindowsTerminal.exe
+2025-09-30 15:08:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:08:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:13:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:13:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:16:06 - DESKTOP: Switched to Desktop 2
+2025-09-30 15:16:26 - DESKTOP: Switched to Desktop 1
+2025-09-30 15:18:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:18:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 15:22:56 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-30 15:22:56 - TERMINAL: Attempting to open floating terminal
+2025-09-30 15:22:56 - TERMINAL: Windows Terminal opened
+2025-09-30 15:23:50 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 15:23:50 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
