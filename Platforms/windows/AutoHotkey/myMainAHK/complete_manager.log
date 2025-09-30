@@ -32050,3 +32050,39 @@ Source:	SWbemObjectEx
 2025-09-30 21:49:40 - WARNING: Macrium Reflect launched but window not detected within 10 seconds
 2025-09-30 21:50:34 - CLEANUP: Starting suspended and frozen list cleanup
 2025-09-30 21:50:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 21:55:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 21:55:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 21:59:25 - TEXT_SHORTCUT: Triggered 'iuiuiu' -> 'INSTALLED_FOLDER'
+2025-09-30 21:59:25 - FOLDER: Opening installed apps folder
+2025-09-30 21:59:25 - FOLDER: Successfully opened installed apps folder
+2025-09-30 22:00:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:00:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:04:03 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-09-30 22:04:03 - TERMINAL: Attempting to open floating terminal
+2025-09-30 22:04:04 - TERMINAL: Windows Terminal opened
+2025-09-30 22:05:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:05:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:06:29 - DESKTOP: Switched to Desktop 2
+2025-09-30 22:06:31 - DESKTOP: Switched to Desktop 1
+2025-09-30 22:07:31 - TEXT_SHORTCUT: Triggered 'fferd' -> 'FERDIUM_APP'
+2025-09-30 22:07:31 - FERDIUM: Launching Ferdium twice with 2 second delay
+2025-09-30 22:07:35 - FERDIUM: First Ferdium instance launched
+2025-09-30 22:07:37 - FERDIUM: Second Ferdium instance launched after 2 second delay
+2025-09-30 22:10:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:10:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:15:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:15:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:20:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:20:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:25:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:25:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:30:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:30:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:35:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:35:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:40:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:40:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:45:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:45:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-09-30 22:50:34 - CLEANUP: Starting suspended and frozen list cleanup
+2025-09-30 22:50:34 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
