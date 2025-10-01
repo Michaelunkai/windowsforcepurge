@@ -32265,3 +32265,91 @@ Source:	SWbemObjectEx
 2025-10-01 01:23:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
 2025-10-01 01:28:26 - CLEANUP: Starting suspended and frozen list cleanup
 2025-10-01 01:28:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:33:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:33:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:38:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:38:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:43:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:43:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:48:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:48:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:53:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:53:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 01:58:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 01:58:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:03:14 - TEXT_SHORTCUT: Triggered 'bin' -> 'EMPTY_RECYCLE_BIN'
+2025-10-01 02:03:16 - RECYCLE_BIN: Attempting to empty recycle bin
+2025-10-01 02:03:25 - RECYCLE_BIN: Successfully emptied using PowerShell
+2025-10-01 02:03:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:03:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:03:40 - DESKTOP: Switched to Desktop 2
+2025-10-01 02:03:44 - TEXT_SHORTCUT: Triggered 'lgame' -> 'C:\Users\micha\Desktop\games\Daysgone.lnk'
+2025-10-01 02:03:50 - TEXT_SHORTCUT: Launched executable directly: C:\Users\micha\Desktop\games\Daysgone.lnk
+2025-10-01 02:08:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:08:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:13:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:13:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:15:31 - DESKTOP: Switched to Desktop 1
+2025-10-01 02:18:19 - DESKTOP: Switched to Desktop 2
+2025-10-01 02:18:23 - LAUNCHER: Attempting to close and relaunch WeMod
+2025-10-01 02:18:23 - LAUNCHER: WeMod launched successfully
+2025-10-01 02:18:25 - LAUNCHER: WeMod window activated
+2025-10-01 02:18:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:18:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:21:34 - HOTKEY: Alt+C - Opened PowerShell and ran OpenSpeedy.exe
+2025-10-01 02:22:15 - DESKTOP: Switched to Desktop 1
+2025-10-01 02:22:17 - DESKTOP: Switched to Desktop 2
+2025-10-01 02:23:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:23:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:28:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:28:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:31:33 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-10-01 02:31:33 - FORCE_KILL: Attempting to force kill DaysGone.exe (PID: 30252) - Days Gone
+2025-10-01 02:31:33 - FORCE_KILL: Successfully killed DaysGone.exe using ProcessClose
+2025-10-01 02:31:34 - FORCE_KILL: Attempted to stop/delete service: daysgone
+2025-10-01 02:31:36 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-10-01 02:31:36 - FORCE_KILL: Blocked attempt to kill protected process: explorer.exe
+2025-10-01 02:31:39 - TEXT_SHORTCUT: Triggered 'kkkkkkkk' -> 'FORCE_KILL_APP'
+2025-10-01 02:31:39 - FORCE_KILL: Attempting to force kill WeMod.exe (PID: 31872) - WeMod
+2025-10-01 02:31:39 - FORCE_KILL: Successfully killed WeMod.exe using ProcessClose
+2025-10-01 02:31:40 - FORCE_KILL: Aggressively killed related process: WeMod.exe (PID: 19108)
+2025-10-01 02:31:41 - FORCE_KILL: Aggressively killed related process: WeMod.exe (PID: 31364)
+2025-10-01 02:31:41 - FORCE_KILL: Aggressively killed related process: WeMod.exe (PID: 20460)
+2025-10-01 02:31:41 - FORCE_KILL: Aggressively killed related process: WeModAuxiliaryService.exe (PID: 16420)
+2025-10-01 02:31:42 - FORCE_KILL: Aggressively killed related process: WeMod.exe (PID: 32308)
+2025-10-01 02:31:42 - FORCE_KILL: Aggressively killed related process: WeMod.exe (PID: 3416)
+2025-10-01 02:31:42 - FORCE_KILL: Aggressively killed related process: WeMod.exe (PID: 27080)
+2025-10-01 02:31:43 - FORCE_KILL: Attempted to stop/delete service: wemod
+2025-10-01 02:32:17 - DESKTOP: Switched to Desktop 1
+2025-10-01 02:33:26 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:33:26 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:34:35 - TEXT_SHORTCUT: Triggered 'rebootit' -> 'REBOOT_SYSTEM'
+2025-10-01 02:34:35 - TERMINAL_CMD: Executing command - REBOOT_SYSTEM
+2025-10-01 02:34:35 - REBOOT: Initiating immediate system reboot
+2025-10-01 02:34:36 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-10-01 02:34:38 - SHUTDOWN: All suspended processes resumed before exit
+2025-10-01 02:36:57 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-10-01 02:37:47 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-10-01 02:37:47 - SHUTDOWN: All suspended processes resumed before exit
+2025-10-01 02:37:47 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-10-01 02:38:46 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-10-01 02:43:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:43:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:48:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:48:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:53:46 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 02:53:46 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 02:54:35 - SHUTDOWN: Script exiting - Reason: Shutdown
+2025-10-01 02:54:35 - SHUTDOWN: All suspended processes resumed before exit
+2025-10-01 02:54:35 - SHUTDOWN: All frozen processes unfrozen before exit
+2025-10-01 02:58:37 - STARTUP: Complete Desktop, Terminal & Process Manager started successfully (Admin mode)
+2025-10-01 02:59:38 - ERROR in GetActiveProcess: Target window not found.
+2025-10-01 02:59:38 - TEXT_SHORTCUT: Triggered 'rer' -> 'OPEN_TERMINAL'
+2025-10-01 02:59:38 - TERMINAL: Attempting to open floating terminal
+2025-10-01 02:59:39 - TERMINAL: Windows Terminal opened
+2025-10-01 03:03:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 03:03:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 03:08:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 03:08:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
+2025-10-01 03:13:37 - CLEANUP: Starting suspended and frozen list cleanup
+2025-10-01 03:13:37 - CLEANUP: Completed, 0 suspended and 0 frozen entries removed
