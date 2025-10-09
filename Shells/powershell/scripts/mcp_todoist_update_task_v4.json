@@ -1,0 +1,15 @@
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "todoist_api_request_beta",
+    "arguments": {
+      "instructions": "Update task due date to tomorrow",
+      "url": "https://api.todoist.com/rest/v2/tasks/9487738791",
+      "method": "POST",
+      "headers": "Content-Type: application/json",
+      "body": "{\"due\":{\"date\":\"2025-08-30\"}}"
+    }
+  },
+  "id": 1
+}

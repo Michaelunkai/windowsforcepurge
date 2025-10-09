@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "F:\\study\\Platforms\\windows\\AutoHotkey\\myMainAHK\\logs\\.4c2a1cea098e9486b1c3ed1a141ce2ac5216c10a-audit.json",
+    "files": [
+        {
+            "date": 1757844003251,
+            "name": "F:\\study\\Platforms\\windows\\AutoHotkey\\myMainAHK\\logs\\mcp-puppeteer-2025-09-14.log",
+            "hash": "ba9c1f081947ad78d15f74dbdf6c889a0d5610123548cfb82a1a6d6fb5b08ec6"
+        }
+    ],
+    "hashType": "sha256"
+}

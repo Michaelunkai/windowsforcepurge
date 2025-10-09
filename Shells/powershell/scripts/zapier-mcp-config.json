@@ -1,0 +1,6 @@
+{
+  "name": "zapier",
+  "description": "Zapier MCP server",
+  "command": "F:\\study\\shells\\powershell\\scripts\\zapier-mcp-bridge.cmd",
+  "type": "stdio"
+}

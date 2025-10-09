@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "test-echo": {
+      "command": "echo",
+      "args": []
+    },
+    "zapier": {
+      "command": "C:\\Users\\micha\\.qwen\\tools\\zapier-node-bridge-v2.cmd",
+      "args": []
+    }
+  }
+}

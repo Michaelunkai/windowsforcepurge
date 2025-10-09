@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "F:\\study\\Shells\\powershell\\scripts\\CodeBerg\\logs\\.8495dc56dfac8acb66123391310e0a25be288a5f-audit.json",
+    "files": [
+        {
+            "date": 1759357794336,
+            "name": "F:\\study\\Shells\\powershell\\scripts\\CodeBerg\\logs\\mcp-puppeteer-2025-10-02.log",
+            "hash": "034fb742e5a1c1a09a4f78562f0e8c5a719a69267b701aa65e512495e7a4f78c"
+        }
+    ],
+    "hashType": "sha256"
+}

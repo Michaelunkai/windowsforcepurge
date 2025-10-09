@@ -1,0 +1,14 @@
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "todoist_update_task",
+    "arguments": {
+      "instructions": "Move the 'mcp' task to tomorrow",
+      "id": "9487743454",
+      "content": "mcp",
+      "date_string": "Aug 30"
+    }
+  },
+  "id": 1
+}

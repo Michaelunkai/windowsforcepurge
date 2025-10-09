@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "F:\\study\\Dev_Toolchain\\programming\\python\\apps\\Uninstaller\\logs\\.c16396dfb65443ae5317c60bda41ec656522eaa5-audit.json",
+    "files": [
+        {
+            "date": 1759164640022,
+            "name": "F:\\study\\Dev_Toolchain\\programming\\python\\apps\\Uninstaller\\logs\\mcp-puppeteer-2025-09-29.log",
+            "hash": "850416f3bd10019a1cf578b1b5ba0c4466a8ab57b1f4270c0b80f15e5a9c8a94"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth:*)",
+      "Bash(unalias:*)",
+      "Bash(true)",
+      "Bash(git config:*)",
+      "Bash(gitt)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

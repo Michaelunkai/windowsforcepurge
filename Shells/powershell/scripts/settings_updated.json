@@ -1,0 +1,162 @@
+{
+  "selectedAuthType": "qwen-oauth",
+  "dockerModels": {
+    "enabled": true,
+    "proxyPort": 3001,
+    "models": {
+      "deepseek-r1": {
+        "dockerImage": "ai/deepseek-r1-distill-llama:latest",
+        "description": "DeepSeek R1 Distilled Llama model",
+        "parameters": "8.03B",
+        "quantization": "IQ2_XXS/Q4_K_M"
+      }
+    }
+  },
+  "forceModel": "docker-deepseek-r1",
+  "customModelEndpoint": "http://localhost:3001/v1/chat/completions",
+  "mcpServers": {
+    "git": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\git-mcp-server.cmd"
+    },
+    "docker": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-server-docker.cmd"
+    },
+    "duckduckgo": {
+      "args": [],
+      "command": "duckduckgo-mcp-server",
+      "description": "DuckDuckGo search MCP server"
+    },
+    "thinking": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-server-sequential-thinking.cmd"
+    },
+    "deepwiki": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\deepwiki-mcp.cmd"
+    },
+    "filesystem": {
+      "args": [
+        "C:\\Users\\micha"
+      ],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-server-filesystem.cmd"
+    },
+    "terraform": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\terraform-mcp-server.cmd"
+    },
+    "screenshot": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-screenshot.cmd"
+    },
+    "ssh": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\ssh-mcp.cmd"
+    },
+    "browser-tools": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\browser-tools-mcp.cmd"
+    },
+    "fetch": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\fetcher-mcp.cmd"
+    },
+    "calc": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\calculator-mcp.cmd"
+    },
+    "browser": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-server-browser.cmd"
+    },
+    "puppeteer": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-server-puppeteer.cmd"
+    },
+    "github": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-server-github.cmd"
+    },
+    "windows-notify": {
+      "args": [],
+      "command": "mcp-windows-notify",
+      "description": "Windows notifications MCP server"
+    },
+    "json": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\json-mcp-server.cmd"
+    },
+    "filesystem-tools": {
+      "args": [
+        "C:\\Users\\micha\\AppData\\Roaming\\npm\\node_modules\\@modelcontextprotocol\\server-filesystem\\dist\\index.js",
+        "F:\\study\\shells\\powershell\\scripts"
+      ],
+      "command": "node",
+      "description": "Filesystem tools for path operations"
+    },
+    "wait": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-wait.cmd"
+    },
+    "playwright": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-server-playwright.cmd",
+      "description": "Playwright web automation MCP server"
+    },
+    "runner": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-server-code-runner.cmd"
+    },
+    "task-manager": {
+      "args": [],
+      "command": "mcp-shrimp-task-manager",
+      "description": "Task manager MCP server"
+    },
+    "powershell": {
+      "args": [],
+      "command": "otak-mcp-shell",
+      "description": "PowerShell MCP server"
+    },
+    "syscc": {
+      "args": [],
+      "command": "C:\\users\\micha\\.qwen\\tools\\syscc-mcp.cmd",
+      "description": "Comprehensive system cleanup tool"
+    },
+    "context7": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\context7-mcp.cmd",
+      "description": "Enhanced context management with Upstash Context7"
+    },
+    "notion": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\notion-mcp-server.cmd",
+      "description": "Official Notion API MCP server"
+    },
+    "mongodb": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mongodb-mcp-server.cmd",
+      "description": "MongoDB database MCP server"
+    },
+    "ollama": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\ollama-mcp-server.cmd",
+      "description": "Ollama local LLM integration for custom Docker models"
+    },
+    "graphlit": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\graphlit-mcp-server.cmd",
+      "description": "Advanced AI/LLM integration with RAG and knowledge graph capabilities"
+    },
+    "mcp-hello": {
+      "args": [],
+      "command": "C:\\Users\\micha\\AppData\\Roaming\\npm\\mcp-hello-world.cmd",
+      "description": "MCP Hello World server for testing custom model integrations"
+    },
+    "zapier": {
+      "args": [],
+      "command": "F:\\study\\shells\\powershell\\scripts\\zapier-mcp-bridge.cmd",
+      "description": "Zapier MCP server"
+    }
+  }
+}

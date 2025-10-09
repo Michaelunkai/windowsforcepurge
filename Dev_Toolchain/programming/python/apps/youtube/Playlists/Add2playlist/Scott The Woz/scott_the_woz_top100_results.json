@@ -1,0 +1,1188 @@
+{
+  "timestamp": "2025-07-30T00:07:13.355693",
+  "quota_used": 5026,
+  "channel": "Scott The Woz",
+  "total_videos_found": 287,
+  "top_videos_selected": 100,
+  "videos_added": 47,
+  "top_100_videos": [
+    {
+      "video_id": "Z2GMV4yNyfg",
+      "title": "Game Controllers - Scott The Woz",
+      "published_at": "2018-09-17T00:30:00Z",
+      "view_count": 11693590,
+      "like_count": 174126,
+      "comment_count": 15776
+    },
+    {
+      "video_id": "JxvmrmOHRsU",
+      "title": "The Dark Age of Nintendo (Complete Series) - Scott The Woz",
+      "published_at": "2020-10-10T00:00:04Z",
+      "view_count": 11482237,
+      "like_count": 139747,
+      "comment_count": 8762
+    },
+    {
+      "video_id": "RMq2sEIlY3o",
+      "title": "Game Packaging - Scott The Woz",
+      "published_at": "2020-08-31T01:00:07Z",
+      "view_count": 8015747,
+      "like_count": 158281,
+      "comment_count": 11092
+    },
+    {
+      "video_id": "1shtj40kjQw",
+      "title": "Console Redesigns - Scott The Woz",
+      "published_at": "2018-11-26T02:00:00Z",
+      "view_count": 7358767,
+      "like_count": 134888,
+      "comment_count": 8158
+    },
+    {
+      "video_id": "fJ7_gsuVdp0",
+      "title": "New Super Mario Bros. (Series) | What's New is Old - Scott The Woz",
+      "published_at": "2018-04-30T00:00:01Z",
+      "view_count": 7187477,
+      "like_count": 102822,
+      "comment_count": 7620
+    },
+    {
+      "video_id": "42peQWG9hy0",
+      "title": "Wii Accessories - Scott The Woz",
+      "published_at": "2020-04-20T02:00:00Z",
+      "view_count": 6776116,
+      "like_count": 148121,
+      "comment_count": 7955
+    },
+    {
+      "video_id": "Ibi0XcyvxXg",
+      "title": "The Childhood Game Collection - Scott The Woz",
+      "published_at": "2023-08-03T00:00:10Z",
+      "view_count": 6682737,
+      "like_count": 102974,
+      "comment_count": 8725
+    },
+    {
+      "video_id": "lArNlnFVrp4",
+      "title": "Toys to Life - Scott The Woz",
+      "published_at": "2021-12-13T02:00:17Z",
+      "view_count": 6574454,
+      "like_count": 167465,
+      "comment_count": 9354
+    },
+    {
+      "video_id": "zmpfs7mWeq8",
+      "title": "Limited Edition Consoles - Scott The Woz",
+      "published_at": "2019-04-01T01:00:03Z",
+      "view_count": 6500582,
+      "like_count": 134931,
+      "comment_count": 7835
+    },
+    {
+      "video_id": "zhRx-FHiIvc",
+      "title": "Super Smash Bros. Brawl | The Worst One, Apparently - Scott The Woz",
+      "published_at": "2018-07-30T01:30:00Z",
+      "view_count": 6376221,
+      "like_count": 112593,
+      "comment_count": 16589
+    },
+    {
+      "video_id": "QQEutrGhoqI",
+      "title": "Game Stores - Scott The Woz",
+      "published_at": "2018-11-19T01:00:01Z",
+      "view_count": 6162946,
+      "like_count": 119602,
+      "comment_count": 10101
+    },
+    {
+      "video_id": "xNewd0IF2gI",
+      "title": "Nintendo GameCube: Shaping a Generation - Scott The Woz",
+      "published_at": "2022-08-05T01:15:01Z",
+      "view_count": 6107262,
+      "like_count": 120526,
+      "comment_count": 7174
+    },
+    {
+      "video_id": "Weot_dSRrn8",
+      "title": "Game Boy Advance: Power to the Pocket - Scott The Woz",
+      "published_at": "2019-04-22T00:00:02Z",
+      "view_count": 6092632,
+      "like_count": 108944,
+      "comment_count": 7401
+    },
+    {
+      "video_id": "hCjlhLxXAq0",
+      "title": "Third Party Controllers - Scott The Woz",
+      "published_at": "2019-09-09T00:00:06Z",
+      "view_count": 6076763,
+      "like_count": 124440,
+      "comment_count": 8350
+    },
+    {
+      "video_id": "59O4q_SLk4E",
+      "title": "Wii U: Birth of a Death (Part I) - Scott The Woz",
+      "published_at": "2023-06-02T00:00:01Z",
+      "view_count": 5692668,
+      "like_count": 118380,
+      "comment_count": 8690
+    },
+    {
+      "video_id": "Jljy8KtoXOU",
+      "title": "Game Collecting - Scott The Woz",
+      "published_at": "2020-04-09T02:00:04Z",
+      "view_count": 5655570,
+      "like_count": 145308,
+      "comment_count": 11597
+    },
+    {
+      "video_id": "3BqCWBbkvy8",
+      "title": "Nintendo Switch: Four Years In - Scott The Woz",
+      "published_at": "2021-03-22T00:00:00Z",
+      "view_count": 5628236,
+      "like_count": 131294,
+      "comment_count": 13835
+    },
+    {
+      "video_id": "F_qW4_b4RhY",
+      "title": "Nintendo 64: Nintendo's Best Mistake - Scott The Woz",
+      "published_at": "2020-09-14T04:30:01Z",
+      "view_count": 5605821,
+      "like_count": 132150,
+      "comment_count": 10365
+    },
+    {
+      "video_id": "v_XYwd1TeH0",
+      "title": "Super Mario 3D World + Bowser's Fury | A Critical Third Look - Scott The Woz",
+      "published_at": "2021-08-03T00:00:11Z",
+      "view_count": 5564481,
+      "like_count": 112725,
+      "comment_count": 5267
+    },
+    {
+      "video_id": "H9bK0z37O3Q",
+      "title": "Mario Kart 8 | Newton's Worst Nightmare - Scott The Woz",
+      "published_at": "2020-05-11T03:00:07Z",
+      "view_count": 5495990,
+      "like_count": 122787,
+      "comment_count": 7023
+    },
+    {
+      "video_id": "92F46l6vpRs",
+      "title": "Nintendo Switch: Five Years In - Scott The Woz",
+      "published_at": "2022-06-08T00:00:02Z",
+      "view_count": 5483476,
+      "like_count": 102602,
+      "comment_count": 7310
+    },
+    {
+      "video_id": "L5MxyOqdcEE",
+      "title": "Xbox 360 vs. PlayStation 3 | Battle of a Generation - Scott The Woz",
+      "published_at": "2020-07-07T01:30:01Z",
+      "view_count": 5267547,
+      "like_count": 130637,
+      "comment_count": 11828
+    },
+    {
+      "video_id": "EWrpwqRl1oc",
+      "title": "Nintendo Switch: Three Years In - Scott The Woz",
+      "published_at": "2020-03-02T05:15:00Z",
+      "view_count": 5062149,
+      "like_count": 82278,
+      "comment_count": 6457
+    },
+    {
+      "video_id": "g5TSGw1RXqY",
+      "title": "Console Games on Mobile - Scott The Woz",
+      "published_at": "2019-05-20T00:00:04Z",
+      "view_count": 5012162,
+      "like_count": 109067,
+      "comment_count": 7537
+    },
+    {
+      "video_id": "Hc56wH76M_k",
+      "title": "Cancelled Games - Scott The Woz",
+      "published_at": "2019-07-22T02:30:02Z",
+      "view_count": 4998483,
+      "like_count": 110778,
+      "comment_count": 5715
+    },
+    {
+      "video_id": "4jxu34z6Svc",
+      "title": "The Game Room - Scott The Woz",
+      "published_at": "2019-04-08T00:00:00Z",
+      "view_count": 4997684,
+      "like_count": 114759,
+      "comment_count": 8024
+    },
+    {
+      "video_id": "lUhojbTomOo",
+      "title": "Console Gaming on the Go - Scott The Woz",
+      "published_at": "2020-05-18T00:00:15Z",
+      "view_count": 4974386,
+      "like_count": 129746,
+      "comment_count": 8168
+    },
+    {
+      "video_id": "02gys42cYmk",
+      "title": "Nintendo DS: Touched at First Sight - Scott The Woz",
+      "published_at": "2018-10-15T00:00:00Z",
+      "view_count": 4897806,
+      "like_count": 86602,
+      "comment_count": 7425
+    },
+    {
+      "video_id": "pI-O9v5Qtio",
+      "title": "The WiiWare Chronicles (Complete Series) - Scott The Woz",
+      "published_at": "2019-05-22T00:00:03Z",
+      "view_count": 4862236,
+      "like_count": 65915,
+      "comment_count": 3224
+    },
+    {
+      "video_id": "_NJ7vSbDvwg",
+      "title": "Best of Scott The Woz 2020",
+      "published_at": "2020-12-29T01:00:05Z",
+      "view_count": 4839718,
+      "like_count": 50979,
+      "comment_count": 5228
+    },
+    {
+      "video_id": "MEI5xGbX6LA",
+      "title": "Club Nintendo - Scott The Woz",
+      "published_at": "2019-07-01T00:00:00Z",
+      "view_count": 4814141,
+      "like_count": 102850,
+      "comment_count": 6589
+    },
+    {
+      "video_id": "wJenNSid1_Y",
+      "title": "Nintendo DS Accessories - Scott The Woz",
+      "published_at": "2021-06-28T00:00:23Z",
+      "view_count": 4763062,
+      "like_count": 145041,
+      "comment_count": 6315
+    },
+    {
+      "video_id": "WK2JDPZbu1Q",
+      "title": "Rated E for Irrelevant - Scott The Woz",
+      "published_at": "2018-07-23T00:00:02Z",
+      "view_count": 4622711,
+      "like_count": 108733,
+      "comment_count": 8818
+    },
+    {
+      "video_id": "7tBvbNHp6Co",
+      "title": "History of Nintendo 3DS Rumors and Leaks - Scott The Woz",
+      "published_at": "2020-02-17T04:00:01Z",
+      "view_count": 4613424,
+      "like_count": 93905,
+      "comment_count": 4317
+    },
+    {
+      "video_id": "wG88GpI2hF0",
+      "title": "The Great Mysteries of Gaming - Scott The Woz",
+      "published_at": "2019-10-28T01:00:10Z",
+      "view_count": 4606327,
+      "like_count": 135878,
+      "comment_count": 6274
+    },
+    {
+      "video_id": "g_NrnWD9wVw",
+      "title": "Cheat Codes - Scott The Woz",
+      "published_at": "2018-11-05T01:00:02Z",
+      "view_count": 4504097,
+      "like_count": 85888,
+      "comment_count": 4327
+    },
+    {
+      "video_id": "8yPSzTuXRW0",
+      "title": "Game Foods - Scott The Woz",
+      "published_at": "2018-06-04T00:00:00Z",
+      "view_count": 4490338,
+      "like_count": 101555,
+      "comment_count": 9037
+    },
+    {
+      "video_id": "FGVBulcASCc",
+      "title": "Mario Kart Wii | Motion Sickness - Scott The Woz",
+      "published_at": "2019-10-21T02:00:00Z",
+      "view_count": 4452397,
+      "like_count": 97383,
+      "comment_count": 7990
+    },
+    {
+      "video_id": "rEE5G3O-LyA",
+      "title": "The Best Selling Games of All Time - Scott The Woz",
+      "published_at": "2018-09-24T01:00:01Z",
+      "view_count": 4419645,
+      "like_count": 89934,
+      "comment_count": 5912
+    },
+    {
+      "video_id": "paIZdrKEwuM",
+      "title": "It Came from the Nintendo eShop - Scott The Woz",
+      "published_at": "2022-11-09T01:00:15Z",
+      "view_count": 4412828,
+      "like_count": 87824,
+      "comment_count": 4112
+    },
+    {
+      "video_id": "8KzLqkqR-8s",
+      "title": "Super Smash Bros. for Nintendo 3DS / Wii U | For Here or To Go? - Scott The Woz",
+      "published_at": "2018-11-12T03:30:01Z",
+      "view_count": 4385866,
+      "like_count": 74158,
+      "comment_count": 4949
+    },
+    {
+      "video_id": "OXeC0EzNA-c",
+      "title": "Most Wanted Video Game Sequels - Scott The Woz",
+      "published_at": "2019-02-25T01:00:00Z",
+      "view_count": 4161976,
+      "like_count": 88596,
+      "comment_count": 11677
+    },
+    {
+      "video_id": "_6mT9DJZ6FU",
+      "title": "Cross Generation Games - Scott The Woz",
+      "published_at": "2020-11-10T02:30:01Z",
+      "view_count": 4116128,
+      "like_count": 125475,
+      "comment_count": 7337
+    },
+    {
+      "video_id": "n02R4rxBCQM",
+      "title": "The Rarest of Games - Scott The Woz",
+      "published_at": "2019-09-16T01:30:00Z",
+      "view_count": 4050986,
+      "like_count": 106113,
+      "comment_count": 6999
+    },
+    {
+      "video_id": "waS_vEA2aAE",
+      "title": "Backwards Compatibility - Scott The Woz",
+      "published_at": "2020-10-19T03:45:03Z",
+      "view_count": 3949504,
+      "like_count": 118460,
+      "comment_count": 7032
+    },
+    {
+      "video_id": "FoNOwY_1ewE",
+      "title": "Eek! Emulation! - Scott The Woz",
+      "published_at": "2021-10-23T00:00:03Z",
+      "view_count": 3944879,
+      "like_count": 138783,
+      "comment_count": 10348
+    },
+    {
+      "video_id": "wvtuRan042k",
+      "title": "Launch Titles - Scott The Woz",
+      "published_at": "2018-02-05T02:54:29Z",
+      "view_count": 3944594,
+      "like_count": 75590,
+      "comment_count": 3926
+    },
+    {
+      "video_id": "QdZjSU1FYt4",
+      "title": "Call of Duty on Nintendo DS - Scott The Woz",
+      "published_at": "2019-12-16T01:00:05Z",
+      "view_count": 3941497,
+      "like_count": 110229,
+      "comment_count": 5345
+    },
+    {
+      "video_id": "Tt5ShaI5hW8",
+      "title": "Used Games - Scott The Woz",
+      "published_at": "2020-09-21T01:30:03Z",
+      "view_count": 3934846,
+      "like_count": 128774,
+      "comment_count": 8980
+    },
+    {
+      "video_id": "ScPX26pdQik",
+      "title": "Mobile Games on Console - Scott The Woz",
+      "published_at": "2021-09-20T00:00:13Z",
+      "view_count": 3916858,
+      "like_count": 128555,
+      "comment_count": 5436
+    },
+    {
+      "video_id": "vk1g8ufIO-o",
+      "title": "Mario Kart: Double Dash!! | Double Trouble - Scott The Woz",
+      "published_at": "2019-07-29T00:00:03Z",
+      "view_count": 3911342,
+      "like_count": 86667,
+      "comment_count": 5189
+    },
+    {
+      "video_id": "wZ6WGqogiik",
+      "title": "Dollar Store Gaming - Scott The Woz",
+      "published_at": "2021-11-25T01:00:25Z",
+      "view_count": 3903474,
+      "like_count": 119438,
+      "comment_count": 7255
+    },
+    {
+      "video_id": "HJMg2Dg-51A",
+      "title": "Collector's Editions - Scott The Woz",
+      "published_at": "2018-12-10T01:30:00Z",
+      "view_count": 3895326,
+      "like_count": 90398,
+      "comment_count": 3818
+    },
+    {
+      "video_id": "lYxtMXDz9nU",
+      "title": "A Look Back at Virtual Console - Scott The Woz",
+      "published_at": "2019-08-07T00:00:06Z",
+      "view_count": 3848368,
+      "like_count": 89503,
+      "comment_count": 6081
+    },
+    {
+      "video_id": "nPKB1HsLC80",
+      "title": "Remakes, Remasters and Rereleases - Scott The Woz",
+      "published_at": "2020-05-05T00:00:09Z",
+      "view_count": 3839912,
+      "like_count": 101772,
+      "comment_count": 6147
+    },
+    {
+      "video_id": "v9sheGfrFWs",
+      "title": "False Advertising - Scott The Woz",
+      "published_at": "2021-06-14T00:00:10Z",
+      "view_count": 3781801,
+      "like_count": 132957,
+      "comment_count": 5428
+    },
+    {
+      "video_id": "6wbhaGDAwvU",
+      "title": "Special Edition Controllers - Scott The Woz",
+      "published_at": "2020-03-11T00:00:00Z",
+      "view_count": 3775121,
+      "like_count": 106127,
+      "comment_count": 4671
+    },
+    {
+      "video_id": "NxrrNwUeLV0",
+      "title": "The Worst Games of All Time - Scott The Woz",
+      "published_at": "2017-09-18T00:00:00Z",
+      "view_count": 3772180,
+      "like_count": 78206,
+      "comment_count": 3580
+    },
+    {
+      "video_id": "5TLA7F_rVbM",
+      "title": "Virtual Boy: I've Seen Better - Scott The Woz",
+      "published_at": "2021-04-15T00:00:01Z",
+      "view_count": 3766932,
+      "like_count": 104099,
+      "comment_count": 8299
+    },
+    {
+      "video_id": "o2QfTmKm7Wk",
+      "title": "Game of the Year Throughout the Years - Scott The Woz",
+      "published_at": "2019-02-04T02:00:01Z",
+      "view_count": 3722466,
+      "like_count": 90899,
+      "comment_count": 10130
+    },
+    {
+      "video_id": "ilaJtPQsPvk",
+      "title": "Wii U: Downfall of a Downfall (Part II) - Scott The Woz",
+      "published_at": "2024-02-01T01:00:16Z",
+      "view_count": 3713480,
+      "like_count": 60960,
+      "comment_count": 3907
+    },
+    {
+      "video_id": "5iGsWMwlpm4",
+      "title": "Memory Cards - Scott The Woz",
+      "published_at": "2020-10-31T02:00:00Z",
+      "view_count": 3700668,
+      "like_count": 132603,
+      "comment_count": 7456
+    },
+    {
+      "video_id": "mhbVUf3yyB0",
+      "title": "Borderline Forever - Scott The Woz",
+      "published_at": "2021-05-24T00:00:15Z",
+      "view_count": 3625607,
+      "like_count": 186320,
+      "comment_count": 23465
+    },
+    {
+      "video_id": "6fRsrK8VppQ",
+      "title": "Wii Channels - Scott The Woz",
+      "published_at": "2020-09-28T02:15:01Z",
+      "view_count": 3614417,
+      "like_count": 121929,
+      "comment_count": 7382
+    },
+    {
+      "video_id": "RxAoCgkvsL0",
+      "title": "The Best Games of All Time - Scott The Woz",
+      "published_at": "2017-09-11T00:00:01Z",
+      "view_count": 3591338,
+      "like_count": 76134,
+      "comment_count": 6658
+    },
+    {
+      "video_id": "6B8EcM_cHGs",
+      "title": "Call of Duty on Wii - Scott The Woz",
+      "published_at": "2017-11-27T01:00:00Z",
+      "view_count": 3585597,
+      "like_count": 76082,
+      "comment_count": 3509
+    },
+    {
+      "video_id": "2kVos9KsURc",
+      "title": "Mario Party (N64) | Party Hard - Scott The Woz",
+      "published_at": "2020-10-15T02:00:01Z",
+      "view_count": 3585560,
+      "like_count": 98437,
+      "comment_count": 6410
+    },
+    {
+      "video_id": "EqtSdlCA1wc",
+      "title": "Subscription Boxes - Scott The Woz",
+      "published_at": "2019-06-03T00:00:01Z",
+      "view_count": 3569793,
+      "like_count": 109007,
+      "comment_count": 6632
+    },
+    {
+      "video_id": "itWFfuFFoSI",
+      "title": "The Best Selling Consoles of All Time - Scott The Woz",
+      "published_at": "2021-10-01T00:00:24Z",
+      "view_count": 3555726,
+      "like_count": 102324,
+      "comment_count": 6214
+    },
+    {
+      "video_id": "zyZNmniqrCM",
+      "title": "Player's Choice - Scott The Woz",
+      "published_at": "2018-01-22T01:00:02Z",
+      "view_count": 3496571,
+      "like_count": 73727,
+      "comment_count": 4727
+    },
+    {
+      "video_id": "CNqzl92f5FY",
+      "title": "You're Not an RPG Guy: A Scott The Woz Christmas - Scott The Woz",
+      "published_at": "2020-12-24T01:00:11Z",
+      "view_count": 3492644,
+      "like_count": 174974,
+      "comment_count": 17566
+    },
+    {
+      "video_id": "Pi6LM1EASMg",
+      "title": "Chibi-Robo! Zip Lash | The Darkest Age of Nintendo - Scott The Woz",
+      "published_at": "2020-07-16T02:15:11Z",
+      "view_count": 3492234,
+      "like_count": 135086,
+      "comment_count": 12852
+    },
+    {
+      "video_id": "UbBlYAt71Og",
+      "title": "Mario Kart 7 | Burnin' Rubber and Retinas - Scott The Woz",
+      "published_at": "2020-03-30T01:00:05Z",
+      "view_count": 3491057,
+      "like_count": 89662,
+      "comment_count": 5677
+    },
+    {
+      "video_id": "NEvp8yVWMxs",
+      "title": "Plug and Play Games - Scott The Woz",
+      "published_at": "2020-06-22T02:00:02Z",
+      "view_count": 3469118,
+      "like_count": 96753,
+      "comment_count": 6601
+    },
+    {
+      "video_id": "sW7vSvmMeFY",
+      "title": "Retro Gaming Merchandise - Scott The Woz",
+      "published_at": "2019-12-09T01:00:08Z",
+      "view_count": 3404914,
+      "like_count": 85627,
+      "comment_count": 4186
+    },
+    {
+      "video_id": "9LhN8GepBEQ",
+      "title": "Mario Kart DS | On the Road Again - Scott The Woz",
+      "published_at": "2019-09-30T01:00:00Z",
+      "view_count": 3386766,
+      "like_count": 92921,
+      "comment_count": 6473
+    },
+    {
+      "video_id": "ImWgZyXy4D0",
+      "title": "Viral Games - Scott The Woz",
+      "published_at": "2018-09-10T00:00:01Z",
+      "view_count": 3380687,
+      "like_count": 102376,
+      "comment_count": 8522
+    },
+    {
+      "video_id": "Lc5OGf6tlms",
+      "title": "Nintendo Switch: Two Years In - Scott The Woz",
+      "published_at": "2019-03-04T04:15:46Z",
+      "view_count": 3345775,
+      "like_count": 53935,
+      "comment_count": 5599
+    },
+    {
+      "video_id": "7L-rDDGpYs0",
+      "title": "Demakes - Scott The Woz",
+      "published_at": "2021-05-31T00:00:02Z",
+      "view_count": 3341019,
+      "like_count": 116214,
+      "comment_count": 5664
+    },
+    {
+      "video_id": "7TgAwdfmjhU",
+      "title": "Console Bundles - Scott The Woz",
+      "published_at": "2021-11-29T02:00:01Z",
+      "view_count": 3271077,
+      "like_count": 108049,
+      "comment_count": 4721
+    },
+    {
+      "video_id": "Rh_mIhLpAnA",
+      "title": "Value Pack Games - Scott The Woz",
+      "published_at": "2021-03-29T00:00:03Z",
+      "view_count": 3267070,
+      "like_count": 119768,
+      "comment_count": 6030
+    },
+    {
+      "video_id": "jv0a8Kqwt3k",
+      "title": "Pre-Orders - Scott The Woz",
+      "published_at": "2020-11-28T01:00:06Z",
+      "view_count": 3249233,
+      "like_count": 110392,
+      "comment_count": 6505
+    },
+    {
+      "video_id": "M7SjD8kdHA4",
+      "title": "Game Boy Color: It Just Sorta Happened - Scott The Woz",
+      "published_at": "2020-04-13T00:00:03Z",
+      "view_count": 3235682,
+      "like_count": 95524,
+      "comment_count": 5351
+    },
+    {
+      "video_id": "moj2wnzvQjY",
+      "title": "Digital Only Physical Games - Scott The Woz",
+      "published_at": "2021-06-07T00:00:07Z",
+      "view_count": 3235624,
+      "like_count": 117510,
+      "comment_count": 5915
+    },
+    {
+      "video_id": "LAo4dNsk-DI",
+      "title": "Mario Kart 8 Deluxe | Newton's Worst Nightmare Again - Scott The Woz",
+      "published_at": "2020-06-29T02:30:01Z",
+      "view_count": 3227611,
+      "like_count": 106427,
+      "comment_count": 5628
+    },
+    {
+      "video_id": "Ttqdx0H4r7A",
+      "title": "From Reveal to Release - Scott The Woz",
+      "published_at": "2019-06-10T02:00:00Z",
+      "view_count": 3214062,
+      "like_count": 81873,
+      "comment_count": 3293
+    },
+    {
+      "video_id": "PE9-ya3Fo3U",
+      "title": "Old Series, New Developer - Scott The Woz",
+      "published_at": "2020-03-23T00:00:09Z",
+      "view_count": 3200430,
+      "like_count": 90298,
+      "comment_count": 4282
+    },
+    {
+      "video_id": "8rsvyJahn7k",
+      "title": "Donkey Kong: Barrel Blast | The Curse - Scott The Woz",
+      "published_at": "2022-05-23T01:45:00Z",
+      "view_count": 3194022,
+      "like_count": 131031,
+      "comment_count": 11425
+    },
+    {
+      "video_id": "TtoarLb73tY",
+      "title": "Death of a Franchise - Scott The Woz",
+      "published_at": "2018-03-12T00:00:00Z",
+      "view_count": 3140521,
+      "like_count": 66163,
+      "comment_count": 5433
+    },
+    {
+      "video_id": "fsF7-CTKnNs",
+      "title": "A Console's Last Game - Scott The Woz",
+      "published_at": "2017-10-09T00:00:01Z",
+      "view_count": 3128175,
+      "like_count": 68006,
+      "comment_count": 3769
+    },
+    {
+      "video_id": "LsUtq7qDYJI",
+      "title": "Kinect for Xbox 360 - Scott The Woz",
+      "published_at": "2019-10-14T02:30:00Z",
+      "view_count": 3067389,
+      "like_count": 75214,
+      "comment_count": 4889
+    },
+    {
+      "video_id": "tFtlo1oE290",
+      "title": "Game Titles - Scott The Woz",
+      "published_at": "2022-08-27T01:00:12Z",
+      "view_count": 3055517,
+      "like_count": 98744,
+      "comment_count": 4597
+    },
+    {
+      "video_id": "g9gY-SdILg8",
+      "title": "The Art of Box Art - Scott The Woz",
+      "published_at": "2019-05-06T00:00:09Z",
+      "view_count": 3054107,
+      "like_count": 82386,
+      "comment_count": 4459
+    },
+    {
+      "video_id": "IVKUZz4t1w4",
+      "title": "Budget Gaming - Scott The Woz",
+      "published_at": "2024-04-01T00:00:09Z",
+      "view_count": 3051290,
+      "like_count": 94090,
+      "comment_count": 5696
+    },
+    {
+      "video_id": "y8qhSduN6sk",
+      "title": "PC Games on Console - Scott The Woz",
+      "published_at": "2022-10-13T00:00:28Z",
+      "view_count": 3026391,
+      "like_count": 95404,
+      "comment_count": 4072
+    },
+    {
+      "video_id": "5-RJlpVAcmc",
+      "title": "Desert Island Gaming - Scott The Woz",
+      "published_at": "2019-07-08T00:00:02Z",
+      "view_count": 2987030,
+      "like_count": 80668,
+      "comment_count": 10484
+    },
+    {
+      "video_id": "virbhp8DFzk",
+      "title": "Ex-Exclusives - Scott The Woz",
+      "published_at": "2022-09-14T00:00:29Z",
+      "view_count": 2982486,
+      "like_count": 95411,
+      "comment_count": 3575
+    },
+    {
+      "video_id": "Dz31FfclzBI",
+      "title": "Microconsoles - Scott The Woz",
+      "published_at": "2017-04-09T13:00:00Z",
+      "view_count": 2980576,
+      "like_count": 71431,
+      "comment_count": 2987
+    },
+    {
+      "video_id": "vxD-XO4jjLc",
+      "title": "The Rise and Fall and Rise of Amiibo - Scott The Woz",
+      "published_at": "2017-09-04T00:00:03Z",
+      "view_count": 2970728,
+      "like_count": 59023,
+      "comment_count": 2837
+    },
+    {
+      "video_id": "0TEZHOkhQ9I",
+      "title": "E3 2019 - Scott The Woz",
+      "published_at": "2019-06-17T03:15:00Z",
+      "view_count": 2966718,
+      "like_count": 71269,
+      "comment_count": 6660
+    }
+  ],
+  "added_videos": [
+    {
+      "video_id": "Z2GMV4yNyfg",
+      "title": "Game Controllers - Scott The Woz",
+      "published_at": "2018-09-17T00:30:00Z",
+      "view_count": 11693590,
+      "like_count": 174126,
+      "comment_count": 15776
+    },
+    {
+      "video_id": "JxvmrmOHRsU",
+      "title": "The Dark Age of Nintendo (Complete Series) - Scott The Woz",
+      "published_at": "2020-10-10T00:00:04Z",
+      "view_count": 11482237,
+      "like_count": 139747,
+      "comment_count": 8762
+    },
+    {
+      "video_id": "RMq2sEIlY3o",
+      "title": "Game Packaging - Scott The Woz",
+      "published_at": "2020-08-31T01:00:07Z",
+      "view_count": 8015747,
+      "like_count": 158281,
+      "comment_count": 11092
+    },
+    {
+      "video_id": "1shtj40kjQw",
+      "title": "Console Redesigns - Scott The Woz",
+      "published_at": "2018-11-26T02:00:00Z",
+      "view_count": 7358767,
+      "like_count": 134888,
+      "comment_count": 8158
+    },
+    {
+      "video_id": "fJ7_gsuVdp0",
+      "title": "New Super Mario Bros. (Series) | What's New is Old - Scott The Woz",
+      "published_at": "2018-04-30T00:00:01Z",
+      "view_count": 7187477,
+      "like_count": 102822,
+      "comment_count": 7620
+    },
+    {
+      "video_id": "42peQWG9hy0",
+      "title": "Wii Accessories - Scott The Woz",
+      "published_at": "2020-04-20T02:00:00Z",
+      "view_count": 6776116,
+      "like_count": 148121,
+      "comment_count": 7955
+    },
+    {
+      "video_id": "Ibi0XcyvxXg",
+      "title": "The Childhood Game Collection - Scott The Woz",
+      "published_at": "2023-08-03T00:00:10Z",
+      "view_count": 6682737,
+      "like_count": 102974,
+      "comment_count": 8725
+    },
+    {
+      "video_id": "lArNlnFVrp4",
+      "title": "Toys to Life - Scott The Woz",
+      "published_at": "2021-12-13T02:00:17Z",
+      "view_count": 6574454,
+      "like_count": 167465,
+      "comment_count": 9354
+    },
+    {
+      "video_id": "zmpfs7mWeq8",
+      "title": "Limited Edition Consoles - Scott The Woz",
+      "published_at": "2019-04-01T01:00:03Z",
+      "view_count": 6500582,
+      "like_count": 134931,
+      "comment_count": 7835
+    },
+    {
+      "video_id": "zhRx-FHiIvc",
+      "title": "Super Smash Bros. Brawl | The Worst One, Apparently - Scott The Woz",
+      "published_at": "2018-07-30T01:30:00Z",
+      "view_count": 6376221,
+      "like_count": 112593,
+      "comment_count": 16589
+    },
+    {
+      "video_id": "QQEutrGhoqI",
+      "title": "Game Stores - Scott The Woz",
+      "published_at": "2018-11-19T01:00:01Z",
+      "view_count": 6162946,
+      "like_count": 119602,
+      "comment_count": 10101
+    },
+    {
+      "video_id": "xNewd0IF2gI",
+      "title": "Nintendo GameCube: Shaping a Generation - Scott The Woz",
+      "published_at": "2022-08-05T01:15:01Z",
+      "view_count": 6107262,
+      "like_count": 120526,
+      "comment_count": 7174
+    },
+    {
+      "video_id": "Weot_dSRrn8",
+      "title": "Game Boy Advance: Power to the Pocket - Scott The Woz",
+      "published_at": "2019-04-22T00:00:02Z",
+      "view_count": 6092632,
+      "like_count": 108944,
+      "comment_count": 7401
+    },
+    {
+      "video_id": "hCjlhLxXAq0",
+      "title": "Third Party Controllers - Scott The Woz",
+      "published_at": "2019-09-09T00:00:06Z",
+      "view_count": 6076763,
+      "like_count": 124440,
+      "comment_count": 8350
+    },
+    {
+      "video_id": "59O4q_SLk4E",
+      "title": "Wii U: Birth of a Death (Part I) - Scott The Woz",
+      "published_at": "2023-06-02T00:00:01Z",
+      "view_count": 5692668,
+      "like_count": 118380,
+      "comment_count": 8690
+    },
+    {
+      "video_id": "Jljy8KtoXOU",
+      "title": "Game Collecting - Scott The Woz",
+      "published_at": "2020-04-09T02:00:04Z",
+      "view_count": 5655570,
+      "like_count": 145308,
+      "comment_count": 11597
+    },
+    {
+      "video_id": "3BqCWBbkvy8",
+      "title": "Nintendo Switch: Four Years In - Scott The Woz",
+      "published_at": "2021-03-22T00:00:00Z",
+      "view_count": 5628236,
+      "like_count": 131294,
+      "comment_count": 13835
+    },
+    {
+      "video_id": "F_qW4_b4RhY",
+      "title": "Nintendo 64: Nintendo's Best Mistake - Scott The Woz",
+      "published_at": "2020-09-14T04:30:01Z",
+      "view_count": 5605821,
+      "like_count": 132150,
+      "comment_count": 10365
+    },
+    {
+      "video_id": "v_XYwd1TeH0",
+      "title": "Super Mario 3D World + Bowser's Fury | A Critical Third Look - Scott The Woz",
+      "published_at": "2021-08-03T00:00:11Z",
+      "view_count": 5564481,
+      "like_count": 112725,
+      "comment_count": 5267
+    },
+    {
+      "video_id": "H9bK0z37O3Q",
+      "title": "Mario Kart 8 | Newton's Worst Nightmare - Scott The Woz",
+      "published_at": "2020-05-11T03:00:07Z",
+      "view_count": 5495990,
+      "like_count": 122787,
+      "comment_count": 7023
+    },
+    {
+      "video_id": "92F46l6vpRs",
+      "title": "Nintendo Switch: Five Years In - Scott The Woz",
+      "published_at": "2022-06-08T00:00:02Z",
+      "view_count": 5483476,
+      "like_count": 102602,
+      "comment_count": 7310
+    },
+    {
+      "video_id": "L5MxyOqdcEE",
+      "title": "Xbox 360 vs. PlayStation 3 | Battle of a Generation - Scott The Woz",
+      "published_at": "2020-07-07T01:30:01Z",
+      "view_count": 5267547,
+      "like_count": 130637,
+      "comment_count": 11828
+    },
+    {
+      "video_id": "EWrpwqRl1oc",
+      "title": "Nintendo Switch: Three Years In - Scott The Woz",
+      "published_at": "2020-03-02T05:15:00Z",
+      "view_count": 5062149,
+      "like_count": 82278,
+      "comment_count": 6457
+    },
+    {
+      "video_id": "g5TSGw1RXqY",
+      "title": "Console Games on Mobile - Scott The Woz",
+      "published_at": "2019-05-20T00:00:04Z",
+      "view_count": 5012162,
+      "like_count": 109067,
+      "comment_count": 7537
+    },
+    {
+      "video_id": "Hc56wH76M_k",
+      "title": "Cancelled Games - Scott The Woz",
+      "published_at": "2019-07-22T02:30:02Z",
+      "view_count": 4998483,
+      "like_count": 110778,
+      "comment_count": 5715
+    },
+    {
+      "video_id": "4jxu34z6Svc",
+      "title": "The Game Room - Scott The Woz",
+      "published_at": "2019-04-08T00:00:00Z",
+      "view_count": 4997684,
+      "like_count": 114759,
+      "comment_count": 8024
+    },
+    {
+      "video_id": "lUhojbTomOo",
+      "title": "Console Gaming on the Go - Scott The Woz",
+      "published_at": "2020-05-18T00:00:15Z",
+      "view_count": 4974386,
+      "like_count": 129746,
+      "comment_count": 8168
+    },
+    {
+      "video_id": "02gys42cYmk",
+      "title": "Nintendo DS: Touched at First Sight - Scott The Woz",
+      "published_at": "2018-10-15T00:00:00Z",
+      "view_count": 4897806,
+      "like_count": 86602,
+      "comment_count": 7425
+    },
+    {
+      "video_id": "pI-O9v5Qtio",
+      "title": "The WiiWare Chronicles (Complete Series) - Scott The Woz",
+      "published_at": "2019-05-22T00:00:03Z",
+      "view_count": 4862236,
+      "like_count": 65915,
+      "comment_count": 3224
+    },
+    {
+      "video_id": "_NJ7vSbDvwg",
+      "title": "Best of Scott The Woz 2020",
+      "published_at": "2020-12-29T01:00:05Z",
+      "view_count": 4839718,
+      "like_count": 50979,
+      "comment_count": 5228
+    },
+    {
+      "video_id": "MEI5xGbX6LA",
+      "title": "Club Nintendo - Scott The Woz",
+      "published_at": "2019-07-01T00:00:00Z",
+      "view_count": 4814141,
+      "like_count": 102850,
+      "comment_count": 6589
+    },
+    {
+      "video_id": "wJenNSid1_Y",
+      "title": "Nintendo DS Accessories - Scott The Woz",
+      "published_at": "2021-06-28T00:00:23Z",
+      "view_count": 4763062,
+      "like_count": 145041,
+      "comment_count": 6315
+    },
+    {
+      "video_id": "WK2JDPZbu1Q",
+      "title": "Rated E for Irrelevant - Scott The Woz",
+      "published_at": "2018-07-23T00:00:02Z",
+      "view_count": 4622711,
+      "like_count": 108733,
+      "comment_count": 8818
+    },
+    {
+      "video_id": "7tBvbNHp6Co",
+      "title": "History of Nintendo 3DS Rumors and Leaks - Scott The Woz",
+      "published_at": "2020-02-17T04:00:01Z",
+      "view_count": 4613424,
+      "like_count": 93905,
+      "comment_count": 4317
+    },
+    {
+      "video_id": "wG88GpI2hF0",
+      "title": "The Great Mysteries of Gaming - Scott The Woz",
+      "published_at": "2019-10-28T01:00:10Z",
+      "view_count": 4606327,
+      "like_count": 135878,
+      "comment_count": 6274
+    },
+    {
+      "video_id": "g_NrnWD9wVw",
+      "title": "Cheat Codes - Scott The Woz",
+      "published_at": "2018-11-05T01:00:02Z",
+      "view_count": 4504097,
+      "like_count": 85888,
+      "comment_count": 4327
+    },
+    {
+      "video_id": "8yPSzTuXRW0",
+      "title": "Game Foods - Scott The Woz",
+      "published_at": "2018-06-04T00:00:00Z",
+      "view_count": 4490338,
+      "like_count": 101555,
+      "comment_count": 9037
+    },
+    {
+      "video_id": "FGVBulcASCc",
+      "title": "Mario Kart Wii | Motion Sickness - Scott The Woz",
+      "published_at": "2019-10-21T02:00:00Z",
+      "view_count": 4452397,
+      "like_count": 97383,
+      "comment_count": 7990
+    },
+    {
+      "video_id": "rEE5G3O-LyA",
+      "title": "The Best Selling Games of All Time - Scott The Woz",
+      "published_at": "2018-09-24T01:00:01Z",
+      "view_count": 4419645,
+      "like_count": 89934,
+      "comment_count": 5912
+    },
+    {
+      "video_id": "paIZdrKEwuM",
+      "title": "It Came from the Nintendo eShop - Scott The Woz",
+      "published_at": "2022-11-09T01:00:15Z",
+      "view_count": 4412828,
+      "like_count": 87824,
+      "comment_count": 4112
+    },
+    {
+      "video_id": "8KzLqkqR-8s",
+      "title": "Super Smash Bros. for Nintendo 3DS / Wii U | For Here or To Go? - Scott The Woz",
+      "published_at": "2018-11-12T03:30:01Z",
+      "view_count": 4385866,
+      "like_count": 74158,
+      "comment_count": 4949
+    },
+    {
+      "video_id": "OXeC0EzNA-c",
+      "title": "Most Wanted Video Game Sequels - Scott The Woz",
+      "published_at": "2019-02-25T01:00:00Z",
+      "view_count": 4161976,
+      "like_count": 88596,
+      "comment_count": 11677
+    },
+    {
+      "video_id": "_6mT9DJZ6FU",
+      "title": "Cross Generation Games - Scott The Woz",
+      "published_at": "2020-11-10T02:30:01Z",
+      "view_count": 4116128,
+      "like_count": 125475,
+      "comment_count": 7337
+    },
+    {
+      "video_id": "n02R4rxBCQM",
+      "title": "The Rarest of Games - Scott The Woz",
+      "published_at": "2019-09-16T01:30:00Z",
+      "view_count": 4050986,
+      "like_count": 106113,
+      "comment_count": 6999
+    },
+    {
+      "video_id": "waS_vEA2aAE",
+      "title": "Backwards Compatibility - Scott The Woz",
+      "published_at": "2020-10-19T03:45:03Z",
+      "view_count": 3949504,
+      "like_count": 118460,
+      "comment_count": 7032
+    },
+    {
+      "video_id": "FoNOwY_1ewE",
+      "title": "Eek! Emulation! - Scott The Woz",
+      "published_at": "2021-10-23T00:00:03Z",
+      "view_count": 3944879,
+      "like_count": 138783,
+      "comment_count": 10348
+    },
+    {
+      "video_id": "ScPX26pdQik",
+      "title": "Mobile Games on Console - Scott The Woz",
+      "published_at": "2021-09-20T00:00:13Z",
+      "view_count": 3916858,
+      "like_count": 128555,
+      "comment_count": 5436
+    }
+  ]
+}

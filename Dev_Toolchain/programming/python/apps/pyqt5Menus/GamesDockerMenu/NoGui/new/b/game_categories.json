@@ -1,0 +1,95 @@
+{
+  "categories": {
+    "all": {
+      "name": "All",
+      "description": "All games",
+      "color": "white"
+    },
+    "finished": {
+      "name": "Finished",
+      "description": "Completed games",
+      "color": "green"
+    },
+    "mybackup": {
+      "name": "MyBackup",
+      "description": "Personal backups",
+      "color": "blue"
+    },
+    "not_for_me": {
+      "name": "meh",
+      "description": "Not interested",
+      "color": "red"
+    },
+    "soulslike": {
+      "name": "SoulsLike",
+      "description": "Souls-like games",
+      "color": "magenta"
+    },
+    "localcoop": {
+      "name": "LocalCoop",
+      "description": "Local co-op games",
+      "color": "yellow"
+    },
+    "oporationsystems": {
+      "name": "OporationSystems",
+      "description": "Operating system games",
+      "color": "cyan"
+    },
+    "music": {
+      "name": "music",
+      "description": "Music games",
+      "color": "green"
+    },
+    "simulators": {
+      "name": "simulators",
+      "description": "Simulation games",
+      "color": "blue"
+    },
+    "tvshows": {
+      "name": "repeat",
+      "description": "TV show games",
+      "color": "magenta"
+    },
+    "bulkgames": {
+      "name": "BulkGames",
+      "description": "Bulk game collections",
+      "color": "yellow"
+    },
+    "nintendo/switch": {
+      "name": "Nintendo/Switch",
+      "description": "Nintendo Switch games",
+      "color": "red"
+    },
+    "shooters": {
+      "name": "shooters",
+      "description": "Shooter games",
+      "color": "cyan"
+    },
+    "openworld": {
+      "name": "OpenWorld",
+      "description": "Open world games",
+      "color": "green"
+    },
+    "hacknslash": {
+      "name": "HackNslash",
+      "description": "Hack and slash games",
+      "color": "blue"
+    },
+    "chill": {
+      "name": "Chill",
+      "description": "Chill/relaxing games",
+      "color": "magenta"
+    },
+    "storydriven": {
+      "name": "StoryDriven",
+      "description": "Story-driven games",
+      "color": "yellow"
+    },
+    "platformers": {
+      "name": "platformers",
+      "description": "Platformer games",
+      "color": "cyan"
+    }
+  },
+  "game_assignments": {}
+}

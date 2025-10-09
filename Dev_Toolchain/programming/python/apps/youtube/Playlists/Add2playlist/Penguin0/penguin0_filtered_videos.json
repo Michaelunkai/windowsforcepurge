@@ -1,0 +1,58 @@
+{
+  "videos": [
+    {
+      "video_id": "w-DDu8TRYs8",
+      "title": "Injustice: Gods Among Us (FULL GAME)",
+      "published_at": "2025-07-10T14:01:24Z",
+      "duration_minutes": 12.4
+    },
+    {
+      "video_id": "Hd8OHHdOMjI",
+      "title": "Rainbow Six: Vegas (FULL GAME)",
+      "published_at": "2025-07-07T01:00:26Z",
+      "duration_minutes": 14.2
+    },
+    {
+      "video_id": "QXN0FizMw8E",
+      "title": "Resident Evil HD Remaster (FULL GAME)",
+      "published_at": "2025-07-05T16:20:33Z",
+      "duration_minutes": 14.6
+    },
+    {
+      "video_id": "2ldQKT3S1us",
+      "title": "Resident Evil (FULL GAME)",
+      "published_at": "2025-07-03T17:06:46Z",
+      "duration_minutes": 5.0
+    },
+    {
+      "video_id": "ZrZkZg2y39o",
+      "title": "Power Stone 2 (FULL GAME)",
+      "published_at": "2025-07-02T15:36:57Z",
+      "duration_minutes": 5.9
+    },
+    {
+      "video_id": "y89jGufA8As",
+      "title": "Death Stranding 2 PART 1",
+      "published_at": "2025-06-26T17:50:04Z",
+      "duration_minutes": 8.9
+    },
+    {
+      "video_id": "cMuFB4Mk3T8",
+      "title": "Rematch PART 1",
+      "published_at": "2025-06-23T00:02:30Z",
+      "duration_minutes": 12.4
+    },
+    {
+      "video_id": "i0CRbviAuMg",
+      "title": "Battlefield Bad Company 2 (FULL GAME)",
+      "published_at": "2025-06-20T20:00:36Z",
+      "duration_minutes": 14.8
+    }
+  ],
+  "filter_criteria": {
+    "min_duration": 2,
+    "max_duration": 15,
+    "channel": "penguin0"
+  },
+  "cached_date": "2025-07-15T14:25:49.501609"
+}

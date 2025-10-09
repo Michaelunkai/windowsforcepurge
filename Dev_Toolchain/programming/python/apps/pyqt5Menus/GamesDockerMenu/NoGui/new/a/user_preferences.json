@@ -1,0 +1,9 @@
+{
+  "default_destination": "~/Games",
+  "auto_save": true,
+  "show_sizes": true,
+  "games_per_row": 4,
+  "theme": "default",
+  "notifications": true,
+  "auto_refresh": true
+}
