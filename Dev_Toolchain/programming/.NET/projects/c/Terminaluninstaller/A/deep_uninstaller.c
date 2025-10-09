@@ -9,10 +9,12 @@
 #include <wchar.h>
 #include <shlwapi.h>
 #include <userenv.h>
+#include <tlhelp32.h>
 
 #pragma comment(lib, "shlwapi.lib")
 #pragma comment(lib, "advapi32.lib")
 #pragma comment(lib, "userenv.lib")
+#pragma comment(lib, "kernel32.lib")
 
 // Progress tracking
 typedef struct {
@@ -65,6 +67,10 @@ const wchar_t* SKIP_DIRS[] = {
 
 // Forward declaration
 BOOL MatchesAppName(const wchar_t* path, const wchar_t* appName);
+
+BOOL MatchesAppInFile(const wchar_t* filePath, const wchar_t* appName);
+
+void KillProcessesByNamePattern(const wchar_t* appName);
 
 BOOL ShouldSkipDirectory(const wchar_t* path, const wchar_t* appName) {
     wchar_t upperPath[MAX_PATH * 2];
@@ -294,12 +300,19 @@ void ScanRegistryKeys(HKEY hRootKey, const wchar_t* subKey, const wchar_t* appNa
 void CleanRegistry(const wchar_t* appName) {
     wprintf(L"\n=== REGISTRY CLEANUP ===\n");
 
-    // Only scan specific, targeted registry locations
+    // Extended registry locations to scan for thorough cleanup
     const wchar_t* registryPaths[] = {
         L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
         L"SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
         L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
         L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        L"SOFTWARE\\Classes",
+        L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths",
+        L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run",
+        L"SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run",
+        L"SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        L"SYSTEM\\CurrentControlSet\\Services",
         NULL
     };
 
@@ -307,8 +320,327 @@ void CleanRegistry(const wchar_t* appName) {
         ScanRegistryKeys(HKEY_LOCAL_MACHINE, registryPaths[i], appName, 2);
         ScanRegistryKeys(HKEY_CURRENT_USER, registryPaths[i], appName, 2);
     }
+    
+    // Additionally check for user-specific locations
+    const wchar_t* userRegistryPaths[] = {
+        L"Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        L"Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+        NULL
+    };
+    
+    for (int i = 0; userRegistryPaths[i] != NULL; i++) {
+        ScanRegistryKeys(HKEY_CURRENT_USER, userRegistryPaths[i], appName, 2);
+    }
 
     wprintf(L"Registry scan complete.\n");
+}
+
+BOOL ForceCloseProcessByImageName(const wchar_t* imageName) {
+    wprintf(L"Attempting to force close processes matching: %s\n", imageName);
+    
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    if (hSnapshot == INVALID_HANDLE_VALUE) {
+        return FALSE;
+    }
+
+    PROCESSENTRY32W pe32;
+    pe32.dwSize = sizeof(PROCESSENTRY32W);
+
+    if (!Process32FirstW(hSnapshot, &pe32)) {
+        CloseHandle(hSnapshot);
+        return FALSE;
+    }
+
+    BOOL processesClosed = FALSE;
+    do {
+        if (MatchesAppName(pe32.szExeFile, imageName)) {
+            if (pe32.th32ProcessID != GetCurrentProcessId()) { // Don't kill self
+                HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, pe32.th32ProcessID);
+                if (hProcess != NULL) {
+                    if (TerminateProcess(hProcess, 1)) {
+                        wprintf(L"Force closed process: %s (PID: %lu)\n", pe32.szExeFile, pe32.th32ProcessID);
+                        processesClosed = TRUE;
+                    } else {
+                        wprintf(L"Failed to terminate process: %s (PID: %lu, Error: %lu)\n", pe32.szExeFile, pe32.th32ProcessID, GetLastError());
+                    }
+                    CloseHandle(hProcess);
+                }
+            }
+        }
+    } while (Process32NextW(hSnapshot, &pe32));
+
+    CloseHandle(hSnapshot);
+    return processesClosed;
+}
+
+void ForceStopService(const wchar_t* serviceName) {
+    wprintf(L"Attempting to stop service: %s\n", serviceName);
+    
+    SC_HANDLE scManager = OpenSCManagerW(NULL, NULL, SC_MANAGER_ALL_ACCESS); // Changed to ALL_ACCESS for more control
+    if (!scManager) {
+        wprintf(L"Could not open service manager (error: %lu)\n", GetLastError());
+        return;
+    }
+
+    SC_HANDLE service = OpenServiceW(scManager, serviceName, SERVICE_ALL_ACCESS);
+    if (service) {
+        SERVICE_STATUS_PROCESS status;
+        DWORD bytesNeeded;
+        
+        // First, try to get the current status of the service
+        if (QueryServiceStatusEx(service, SC_STATUS_PROCESS_INFO, (LPBYTE)&status, sizeof(SERVICE_STATUS_PROCESS), &bytesNeeded)) {
+            if (status.dwCurrentState == SERVICE_STOPPED) {
+                wprintf(L"Service %s is already stopped\n", serviceName);
+                CloseServiceHandle(service);
+                CloseServiceHandle(scManager);
+                return;
+            }
+        }
+        
+        // Try to stop the service gracefully first
+        if (ControlService(service, SERVICE_CONTROL_STOP, (LPSERVICE_STATUS)&status)) {
+            wprintf(L"Sent stop command to service: %s\n", serviceName);
+            
+            // Wait for the service to stop gracefully
+            DWORD startTime = GetTickCount();
+            while (GetTickCount() - startTime < 5000) { // Wait up to 5 seconds
+                Sleep(500);
+                if (QueryServiceStatusEx(service, SC_STATUS_PROCESS_INFO, (LPBYTE)&status, sizeof(SERVICE_STATUS_PROCESS), &bytesNeeded)) {
+                    if (status.dwCurrentState == SERVICE_STOPPED) {
+                        wprintf(L"Service %s stopped successfully\n", serviceName);
+                        CloseServiceHandle(service);
+                        CloseServiceHandle(scManager);
+                        return;
+                    }
+                }
+            }
+        }
+        
+        // If the service did not stop gracefully, try to pause it first, then stop
+        if (status.dwCurrentState != SERVICE_STOPPED) {
+            wprintf(L"Service %s did not stop gracefully, attempting to pause first...\n", serviceName);
+            
+            // Some services respond to pause command before stopping
+            if (ControlService(service, SERVICE_CONTROL_PAUSE, (LPSERVICE_STATUS)&status)) {
+                Sleep(1000); // Wait 1 second after pause
+            }
+            
+            // Try to stop again after pause
+            ControlService(service, SERVICE_CONTROL_STOP, (LPSERVICE_STATUS)&status);
+            Sleep(2000); // Wait additional 2 seconds
+            
+            // Final check if service is stopped
+            if (QueryServiceStatusEx(service, SC_STATUS_PROCESS_INFO, (LPBYTE)&status, sizeof(SERVICE_STATUS_PROCESS), &bytesNeeded)) {
+                if (status.dwCurrentState == SERVICE_STOPPED) {
+                    wprintf(L"Service %s stopped after pause attempt\n", serviceName);
+                    CloseServiceHandle(service);
+                    CloseServiceHandle(scManager);
+                    return;
+                }
+            }
+        }
+        
+        // If still not stopped, try to interrogate the service (sometimes this helps)
+        if (status.dwCurrentState != SERVICE_STOPPED) {
+            wprintf(L"Service %s still running, attempting to interrogate...\n", serviceName);
+            ControlService(service, SERVICE_CONTROL_INTERROGATE, (LPSERVICE_STATUS)&status);
+            Sleep(1000);
+        }
+        
+        // If service is still not stopped, try to close the service handle and return
+        wprintf(L"Service %s could not be stopped gracefully\n", serviceName);
+        CloseServiceHandle(service);
+    } else {
+        wprintf(L"Could not open service %s (error: %lu)\n", serviceName, GetLastError());
+    }
+
+    CloseServiceHandle(scManager);
+}
+
+void ForceCloseAppServices(const wchar_t* appName) {
+    wprintf(L"\n=== FORCE CLOSING APP SERVICES AND PROCESSES ===\n");
+
+    SC_HANDLE scManager = OpenSCManagerW(NULL, NULL, SC_MANAGER_ALL_ACCESS);
+    if (!scManager) {
+        wprintf(L"No service access (may require admin, error: %lu).\n", GetLastError());
+        return;
+    }
+
+    DWORD bytesNeeded = 0;
+    DWORD servicesReturned = 0;
+    DWORD resumeHandle = 0;
+
+    // Get buffer size - try multiple times to ensure we get all services
+    DWORD attempts = 0;
+    while (attempts < 3) {
+        if (EnumServicesStatusExW(scManager, SC_ENUM_PROCESS_INFO, SERVICE_WIN32 | SERVICE_DRIVER,
+                              SERVICE_STATE_ALL, NULL, 0, &bytesNeeded,
+                              &servicesReturned, &resumeHandle, NULL)) {
+            break;  // No need to get buffer size, we'll try again with allocated buffer
+        }
+        if (GetLastError() != ERROR_MORE_DATA) {
+            wprintf(L"Error getting service list (error: %lu), attempt %d\n", GetLastError(), attempts + 1);
+            attempts++;
+            Sleep(500);
+            continue;
+        }
+        break;
+    }
+
+    BYTE* buffer = (BYTE*)malloc(bytesNeeded);
+    if (!buffer) {
+        wprintf(L"Could not allocate memory for service enumeration\n");
+        CloseServiceHandle(scManager);
+        return;
+    }
+
+    resumeHandle = 0; // Reset for actual enumeration
+    if (EnumServicesStatusExW(scManager, SC_ENUM_PROCESS_INFO, SERVICE_WIN32 | SERVICE_DRIVER,
+                              SERVICE_STATE_ALL, buffer, bytesNeeded,
+                              &bytesNeeded, &servicesReturned, &resumeHandle, NULL)) {
+
+        ENUM_SERVICE_STATUS_PROCESSW* services = (ENUM_SERVICE_STATUS_PROCESSW*)buffer;
+
+        // First pass: Stop services that match the app name directly
+        for (DWORD i = 0; i < servicesReturned && i < 2000; i++) { // Increased limit to 2000
+            if (i % 100 == 0) {
+                ShowHeartbeat(L"Scanning services for termination");
+            }
+
+            if (MatchesAppName(services[i].lpServiceName, appName) ||
+                MatchesAppName(services[i].lpDisplayName, appName)) {
+
+                wprintf(L"Found matching service: %s (Display: %s, Status: %lu)\n", 
+                        services[i].lpServiceName, services[i].lpDisplayName, services[i].ServiceStatusProcess.dwCurrentState);
+                ForceStopService(services[i].lpServiceName);
+            }
+        }
+        
+        // Second pass: Try to stop services that might be related even if not directly matching
+        // This can help with Fortect services that may have different naming patterns
+        for (DWORD i = 0; i < servicesReturned && i < 2000; i++) {
+            if (i % 100 == 0) {
+                ShowHeartbeat(L"Scanning services for termination");
+            }
+
+            // Additional check for related services (checking if service path contains app name)
+            if (services[i].ServiceStatusProcess.dwCurrentState != SERVICE_STOPPED) {
+                // Try to query the service configuration to get the binary path
+                SC_HANDLE hService = OpenServiceW(scManager, services[i].lpServiceName, SERVICE_QUERY_CONFIG);
+                if (hService) {
+                    // Get buffer size needed for service configuration
+                    DWORD needed = 0;
+                    QueryServiceConfigW(hService, NULL, 0, &needed);
+                    if (GetLastError() == ERROR_INSUFFICIENT_BUFFER) {
+                        LPQUERY_SERVICE_CONFIGW config = (LPQUERY_SERVICE_CONFIGW)malloc(needed);
+                        if (config) {
+                            if (QueryServiceConfigW(hService, config, needed, &needed)) {
+                                // Check if the binary path contains the app name (for Fortect-related services)
+                                if (config->lpBinaryPathName && 
+                                    (MatchesAppName(config->lpBinaryPathName, appName))) {
+                                    wprintf(L"Found related service by path: %s (Path: %s)\n", 
+                                            services[i].lpServiceName, config->lpBinaryPathName);
+                                    ForceStopService(services[i].lpServiceName);
+                                }
+                            }
+                            free(config);
+                        }
+                    }
+                    CloseServiceHandle(hService);
+                }
+            }
+        }
+    } else {
+        wprintf(L"Failed to enumerate services (error: %lu)\n", GetLastError());
+    }
+
+    free(buffer);
+    CloseServiceHandle(scManager);
+    
+    // Also force close any matching processes with more aggressive approach
+    ForceCloseProcessByImageName(appName);
+    
+    // Additional step: For Fortect-related services, try to kill processes by name pattern matching
+    wprintf(L"Performing additional process termination for %s\n", appName);
+    KillProcessesByNamePattern(appName);
+}
+
+// Additional function to kill processes by name pattern matching
+void KillProcessesByNamePattern(const wchar_t* appName) {
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    if (hSnapshot == INVALID_HANDLE_VALUE) {
+        return;
+    }
+
+    PROCESSENTRY32W pe32;
+    pe32.dwSize = sizeof(PROCESSENTRY32W);
+
+    if (!Process32FirstW(hSnapshot, &pe32)) {
+        CloseHandle(hSnapshot);
+        return;
+    }
+
+    do {
+        if (pe32.th32ProcessID != 0 && pe32.th32ProcessID != GetCurrentProcessId()) {
+            // Enhanced matching - check various patterns that might relate to Fortect
+            if (MatchesAppName(pe32.szExeFile, appName) ||
+                MatchesAppName(pe32.szExeFile, L"Fortect") ||  // Specifically look for Fortect
+                wcsstr(pe32.szExeFile, L"forti") ||  // Common pattern in Fortinet/Fortect
+                wcsstr(pe32.szExeFile, L"forti") ||
+                wcsstr(pe32.szExeFile, L"service") ||
+                wcsstr(pe32.szExeFile, L"agent") ||
+                wcsstr(pe32.szExeFile, L"daemon")) {
+                
+                HANDLE hProcess = OpenProcess(PROCESS_TERMINATE | PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, pe32.th32ProcessID);
+                if (hProcess != NULL) {
+                    // Get full image name to confirm it's related to the app
+                    wchar_t processPath[MAX_PATH];
+                    DWORD pathSize = MAX_PATH;
+                    if (QueryFullProcessImageNameW(hProcess, 0, processPath, &pathSize)) {
+                        // Create a temporary copy for case-insensitive comparison
+                        wchar_t tempPath[MAX_PATH];
+                        wcscpy_s(tempPath, MAX_PATH, processPath);
+                        CharUpperW(tempPath); // Convert to uppercase using Windows API
+                        
+                        if (MatchesAppName(processPath, appName) ||
+                            MatchesAppName(processPath, L"Fortect") ||
+                            wcsstr(tempPath, L"FORTI")) { // Check if path contains Forti-related strings
+                            
+                            wprintf(L"Force terminating process: %s (PID: %lu) at %s\n", 
+                                    pe32.szExeFile, pe32.th32ProcessID, processPath);
+                                    
+                            if (TerminateProcess(hProcess, 1)) {
+                                wprintf(L"Successfully terminated: %s\n", pe32.szExeFile);
+                                Sleep(100); // Brief pause to allow process to terminate
+                            } else {
+                                wprintf(L"Failed to terminate process: %s (Error: %lu)\n", pe32.szExeFile, GetLastError());
+                                
+                                // Try alternative termination methods
+                                HANDLE hToken = NULL;
+                                if (OpenProcessToken(hProcess, TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken)) {
+                                    TOKEN_PRIVILEGES tp;
+                                    LookupPrivilegeValueW(NULL, L"SeDebugPrivilege", &tp.Privileges[0].Luid);
+                                    tp.PrivilegeCount = 1;
+                                    tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+                                    AdjustTokenPrivileges(hToken, FALSE, &tp, sizeof(tp), NULL, NULL);
+                                    CloseHandle(hToken);
+                                    
+                                    // Try again with elevated privileges
+                                    if (TerminateProcess(hProcess, 1)) {
+                                        wprintf(L"Terminated after privilege escalation: %s\n", pe32.szExeFile);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    CloseHandle(hProcess);
+                }
+            }
+        }
+    } while (Process32NextW(hSnapshot, &pe32));
+
+    CloseHandle(hSnapshot);
 }
 
 void StopAndDeleteService(const wchar_t* appName) {
@@ -407,14 +739,9 @@ void ScanAndClean(const wchar_t* basePath, const wchar_t* appName, int maxDepth)
         }
 
         if (findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
-            // Skip hidden/system directories unless they match app name
-            if ((findData.dwFileAttributes & (FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_SYSTEM)) &&
-                !MatchesAppName(findData.cFileName, appName)) {
-                continue;
-            }
-            
-            if (ShouldSkipDirectory(fullPath, appName)) {
-                continue; // Skip only system directories
+            // Don't skip hidden/system directories if they match the app name - scan them too
+            if (ShouldSkipDirectory(fullPath, appName) && !MatchesAppName(findData.cFileName, appName)) {
+                continue; // Skip system directories that don't match app name
             }
             
             if (MatchesAppName(findData.cFileName, appName)) {
@@ -422,14 +749,31 @@ void ScanAndClean(const wchar_t* basePath, const wchar_t* appName, int maxDepth)
                 DeleteDirectoryRecursive(fullPath, appName);
                 // Don't recurse into deleted directory
             } else {
-                // Recurse into directory with depth limit
+                // Recurse into directory with depth limit - even if it's hidden or system
                 ScanAndClean(fullPath, appName, maxDepth - 1);
             }
         } else {
             g_stats.filesScanned++;
+            // Check for app name matches in filename
             if (MatchesAppName(findData.cFileName, appName)) {
                 PrintProgress(L"DELETE-FILE", fullPath);
                 ForceDeleteFile(fullPath);
+            } else {
+                // Also check file contents for app references in common text-based files
+                wchar_t* ext = wcsrchr(findData.cFileName, L'.');
+                if (ext != NULL) {
+                    // Check common config files that might contain app references
+                    if (wcsicmp(ext, L".ini") == 0 || wcsicmp(ext, L".cfg") == 0 || 
+                        wcsicmp(ext, L".txt") == 0 || wcsicmp(ext, L".log") == 0 ||
+                        wcsicmp(ext, L".xml") == 0 || wcsicmp(ext, L".json") == 0) {
+                        
+                        // Read a portion of the file to check if it contains app name
+                        if (MatchesAppInFile(fullPath, appName)) {
+                            PrintProgress(L"DELETE-CONFIG-FILE", fullPath);
+                            ForceDeleteFile(fullPath);
+                        }
+                    }
+                }
             }
         }
     } while (FindNextFileW(hFind, &findData));
@@ -437,9 +781,76 @@ void ScanAndClean(const wchar_t* basePath, const wchar_t* appName, int maxDepth)
     FindClose(hFind);
 }
 
+// Helper function to check if a text file contains app name
+BOOL MatchesAppInFile(const wchar_t* filePath, const wchar_t* appName) {
+    HANDLE hFile = CreateFileW(filePath, GENERIC_READ, FILE_SHARE_READ, NULL, 
+                               OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (hFile == INVALID_HANDLE_VALUE) {
+        return FALSE;
+    }
+
+    DWORD fileSize = GetFileSize(hFile, NULL);
+    if (fileSize == INVALID_FILE_SIZE || fileSize > 10 * 1024 * 1024) { // Limit to 10MB
+        CloseHandle(hFile);
+        return FALSE;
+    }
+
+    // Allocate buffer to read the beginning and end of the file
+    DWORD readSize = min(fileSize, 10240); // Read up to 10KB
+    char* buffer = (char*)malloc(readSize + 1);
+    if (buffer == NULL) {
+        CloseHandle(hFile);
+        return FALSE;
+    }
+
+    DWORD bytesRead;
+    BOOL found = FALSE;
+
+    // Read beginning of file
+    if (ReadFile(hFile, buffer, readSize, &bytesRead, NULL) && bytesRead > 0) {
+        buffer[bytesRead] = '\0';
+        
+        // Convert to wide char for comparison
+        wchar_t* wideBuffer = (wchar_t*)malloc((bytesRead + 1) * sizeof(wchar_t));
+        if (wideBuffer) {
+            MultiByteToWideChar(CP_UTF8, 0, buffer, bytesRead, wideBuffer, bytesRead);
+            wideBuffer[bytesRead] = L'\0';
+            
+            if (MatchesAppName(wideBuffer, appName)) {
+                found = TRUE;
+            }
+            free(wideBuffer);
+        }
+    }
+    
+    // If not found in beginning, also check end of file if it's large
+    if (!found && fileSize > readSize) {
+        SetFilePointer(hFile, fileSize - readSize, NULL, FILE_BEGIN);
+        if (ReadFile(hFile, buffer, readSize, &bytesRead, NULL) && bytesRead > 0) {
+            buffer[bytesRead] = '\0';
+            
+            // Convert to wide char for comparison
+            wchar_t* wideBuffer = (wchar_t*)malloc((bytesRead + 1) * sizeof(wchar_t));
+            if (wideBuffer) {
+                MultiByteToWideChar(CP_UTF8, 0, buffer, bytesRead, wideBuffer, bytesRead);
+                wideBuffer[bytesRead] = L'\0';
+                
+                if (MatchesAppName(wideBuffer, appName)) {
+                    found = TRUE;
+                }
+                free(wideBuffer);
+            }
+        }
+    }
+
+    free(buffer);
+    CloseHandle(hFile);
+    return found;
+}
+
 void DeepClean(const wchar_t* appName) {
     wprintf(L"\n========================================\n");
-    wprintf(L"DEEP UNINSTALL: %s\n", appName);
+    wprintf(L"DEEP UNINSTALL: %ls\n", appName);
     wprintf(L"========================================\n\n");
 
     DWORD appStartTime = GetTickCount();
@@ -514,7 +925,7 @@ void DeepClean(const wchar_t* appName) {
     DWORD appElapsed = (GetTickCount() - appStartTime) / 1000;
 
     wprintf(L"\n========================================\n");
-    wprintf(L"CLEANUP COMPLETE: %s (%lu seconds)\n", appName, appElapsed);
+    wprintf(L"CLEANUP COMPLETE: %ls (%lu seconds)\n", appName, appElapsed);
     wprintf(L"  Files Scanned: %lu\n", g_stats.filesScanned);
     wprintf(L"  Files Deleted: %lu\n", g_stats.filesDeleted);
     wprintf(L"  Directories Deleted: %lu\n", g_stats.directoriesDeleted);
@@ -541,7 +952,15 @@ BOOL IsRunningAsAdmin() {
     return isAdmin;
 }
 
-int wmain(int argc, wchar_t* argv[]) {
+int main(int argc, char* argv[]) {
+    // Convert ANSI args to wide chars for compatibility with existing code
+    wchar_t** wargv = (wchar_t**)malloc(argc * sizeof(wchar_t*));
+    for (int i = 0; i < argc; i++) {
+        size_t len = strlen(argv[i]);
+        wargv[i] = (wchar_t*)malloc((len + 1) * sizeof(wchar_t));
+        mbstowcs(wargv[i], argv[i], len + 1);
+    }
+
     SetConsoleOutputCP(CP_UTF8);
 
     wprintf(L"\n");
@@ -553,20 +972,30 @@ int wmain(int argc, wchar_t* argv[]) {
     if (!IsRunningAsAdmin()) {
         wprintf(L"[ERROR] This application requires Administrator privileges!\n");
         wprintf(L"Please run as Administrator.\n\n");
+        // Free allocated memory before returning
+        for (int i = 0; i < argc; i++) {
+            free(wargv[i]);
+        }
+        free(wargv);
         return 1;
     }
 
     if (argc < 2) {
-        wprintf(L"Usage: %s <AppName1> <AppName2> <AppName3> ...\n\n", argv[0]);
-        wprintf(L"Example: %s Firefox Chrome Discord\n\n", argv[0]);
+        wprintf(L"Usage: deep_uninstaller <AppName1> <AppName2> <AppName3> ...\n\n");
+        wprintf(L"Example: deep_uninstaller Firefox Chrome Discord\n\n");
         wprintf(L"This will deeply uninstall the specified applications from C: drive,\n");
         wprintf(L"removing ALL files, directories, registry entries, and services.\n\n");
+        // Free allocated memory before returning
+        for (int i = 0; i < argc; i++) {
+            free(wargv[i]);
+        }
+        free(wargv);
         return 1;
     }
 
     wprintf(L"WARNING: This will PERMANENTLY DELETE all traces of the following applications:\n");
     for (int i = 1; i < argc; i++) {
-        wprintf(L"  - %s\n", argv[i]);
+        wprintf(L"  - %ls\n", wargv[i]);  // Use wide string format specifier
     }
     wprintf(L"\nThis action CANNOT be undone!\n");
     wprintf(L"Starting in 3 seconds... Press Ctrl+C to cancel.\n\n");
@@ -575,7 +1004,7 @@ int wmain(int argc, wchar_t* argv[]) {
     DWORD startTime = GetTickCount();
 
     for (int i = 1; i < argc; i++) {
-        DeepClean(argv[i]);
+        DeepClean(wargv[i]);
     }
 
     DWORD endTime = GetTickCount();
@@ -592,5 +1021,12 @@ int wmain(int argc, wchar_t* argv[]) {
     }
 
     wprintf(L"\nAll specified applications have been purged from C: drive.\n\n");
+    
+    // Free allocated memory
+    for (int i = 0; i < argc; i++) {
+        free(wargv[i]);
+    }
+    free(wargv);
+    
     return 0;
 }

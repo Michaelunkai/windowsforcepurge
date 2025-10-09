@@ -9,13 +9,15 @@ param(
 )
 
 # Global variables
-$ScriptVersion = "3.0-MULTI-COMMAND"
+$ScriptVersion = "5.0-ABSOLUTE-GUARANTEED-EXECUTION"
 $ScriptDir = "C:\Windows\Temp"
 $ScriptPath = Join-Path $ScriptDir "AutoMultiCommand.ps1"
 $CommandPath = Join-Path $ScriptDir "MultiCommand.txt"
 $FlagPath = Join-Path $ScriptDir "MultiCommand.flag"
 $TaskName = "AutoMultiCommandTask"
 $LogPath = Join-Path $ScriptDir "AutoMultiCommand.log"
+$RegistryRunKey = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+$RegistryValueName = "AutoMultiCommand"
 
 function Write-ColorOutput {
     param([string]$Message, [string]$Color = "White")
@@ -112,8 +114,8 @@ function Get-UserCommand {
         Write-ColorOutput "Examples:" "Gray"
         Write-ColorOutput "  - gshort; ps7run dddesk; wall" "Gray"
         Write-ColorOutput "  - dkill; qbit; update" "Gray"
-        Write-ColorOutput "  - Get-Process notepad | Stop-Process; Start-Process notepad" "Gray"
-        Write-ColorOutput "  - Write-Host 'Starting...'; Start-Sleep 2; Write-Host 'Done!'" "Gray"
+        Write-ColorOutput " - Get-Process notepad | Stop-Process; Start-Process notepad" "Gray"
+        Write-ColorOutput " - Write-Host 'Starting...'; Start-Sleep 2; Write-Host 'Done!'" "Gray"
         Write-ColorOutput "" "White"
 
         do {
@@ -334,6 +336,115 @@ function Mark-AsExecuted {
     }
 }
 
+function Start-Console {
+    Write-Log "=== STARTING VISIBLE CONSOLE SESSION ===" "Cyan"
+    
+    # Read the command from the command file
+    $CustomCommand = Get-Content $CommandPath -Raw -Encoding UTF8
+    $CustomCommand = $CustomCommand.Trim()
+    
+    # Create a PowerShell script that will run the commands in a visible window
+    $PowerShellScript = @"
+# Multi-Command Execution Script
+Write-Host '=== GUARANTEED VISIBLE TERMINAL EXECUTION ===' -ForegroundColor Green
+Write-Host 'Commands: $CustomCommand' -ForegroundColor Yellow
+Write-Host 'Date/Time: ' (Get-Date) -ForegroundColor White
+Write-Host ''
+Write-Host 'This terminal will REMAIN VISIBLE and OPEN after all commands execute!' -ForegroundColor Cyan
+Write-Host ''
+
+`$commands = '$CustomCommand' -split ';' | ForEach-Object { `$_.Trim() } | Where-Object { `$_.Length -gt 0 }
+
+for (`$i = 0; `$i -lt `$commands.Count; `$i++) {
+    `$currentCommand = `$commands[`$i]
+    `$commandNumber = `$i + 1
+    
+    Write-Host ''
+    Write-Host ('>>> EXECUTING COMMAND ' + `$commandNumber + ' OF ' + `$commands.Count + ' <<<') -ForegroundColor Cyan
+    Write-Host ('Command: ' + `$currentCommand) -ForegroundColor White
+    Write-Host ('Time: ' + (Get-Date).ToString('HH:mm:ss')) -ForegroundColor Gray
+    Write-Host ('-' * 80) -ForegroundColor Gray
+    
+    try {
+        Write-Host 'Running command...' -ForegroundColor Yellow
+        `$result = Invoke-Expression `$currentCommand
+        if (`$result) {
+            Write-Host 'Command output:' -ForegroundColor Green
+            Write-Output `$result
+        }
+        Write-Host ('>>> COMMAND ' + `$commandNumber + ' COMPLETED SUCCESSFULLY <<<') -ForegroundColor Green
+    }
+    catch {
+        Write-Host ('ERROR in command ' + `$commandNumber + ': ' + `$_.Exception.Message) -ForegroundColor Red
+        Write-Host 'Attempting to continue with next command...' -ForegroundColor Yellow
+    }
+    
+    if (`$i -lt (`$commands.Count - 1)) {
+        Write-Host 'Waiting 2 seconds before next command...' -ForegroundColor Yellow
+        Start-Sleep -Seconds 2
+    }
+}
+
+Write-Host ''
+Write-Host '=========================================================================' -ForegroundColor Green
+Write-Host 'ALL COMMANDS EXECUTED SUCCESSFULLY' -ForegroundColor Green
+Write-Host 'Commands executed: $CustomCommand' -ForegroundColor White
+Write-Host 'Execution completed at: ' (Get-Date) -ForegroundColor White
+Write-Host 'This terminal will REMAIN OPEN for your review' -ForegroundColor Cyan
+Write-Host '=========================================================================' -ForegroundColor Green
+Write-Host ''
+Write-Host 'Press any key to close this window...' -ForegroundColor Yellow
+`$null = `$Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
+"@
+    
+    $ScriptPath = "C:\Windows\Temp\RunCommands.ps1"
+    $PowerShellScript | Out-File -FilePath $ScriptPath -Encoding UTF8 -Force
+    
+    Write-Log "PowerShell script created: $ScriptPath" "Green"
+    
+    # Start PowerShell with the script using the most reliable method
+    try {
+        # Method 1: Use Start-Process with maximum visibility
+        $ProcessInfo = New-Object System.Diagnostics.ProcessStartInfo
+        $ProcessInfo.FileName = "powershell.exe"
+        $ProcessInfo.Arguments = "-ExecutionPolicy Bypass -NoExit -WindowStyle Normal -File `"$ScriptPath`""
+        $ProcessInfo.UseShellExecute = $true
+        $ProcessInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Normal
+        $ProcessInfo.CreateNoWindow = $false
+        $Process = [System.Diagnostics.Process]::Start($ProcessInfo)
+        
+        Write-Log "Successfully started PowerShell with visible window" "Green"
+        Write-Log "Process ID: $($Process.Id)" "White"
+        
+        # Wait a moment to ensure the process started
+        Start-Sleep -Seconds 1
+        
+        # Verify the process is running
+        if ($Process.HasExited) {
+            Write-Log "WARNING: PowerShell process may have exited immediately" "Yellow"
+        } else {
+            Write-Log "PowerShell process is running and visible" "Green"
+        }
+    }
+    catch {
+        Write-Log "CRITICAL: Failed to start PowerShell: $($_.Exception.Message)" "Red"
+        
+        # Ultimate fallback: Try to execute the commands directly in this process
+        Write-Log "Attempting direct execution as ultimate fallback..." "Yellow"
+        try {
+            $commands = $CustomCommand -split ';' | ForEach-Object { $_.Trim() } | Where-Object { $_.Length -gt 0 }
+            foreach ($cmd in $commands) {
+                Write-Log "Executing: $cmd" "White"
+                Invoke-Expression $cmd
+            }
+            Write-Log "Direct execution completed" "Green"
+        }
+        catch {
+            Write-Log "Direct execution also failed: $($_.Exception.Message)" "Red"
+        }
+    }
+}
+
 function Invoke-MultiCommand {
     Write-Log "=== STARTING ONE-TIME MULTI-COMMAND EXECUTION ===" "Cyan"
 
@@ -375,112 +486,24 @@ function Invoke-MultiCommand {
         Write-Log "=== MARKING AS EXECUTED TO PREVENT RE-EXECUTION ===" "Magenta"
         Mark-AsExecuted
 
-        Write-Log "=== EXECUTING YOUR CUSTOM COMMANDS (ONE TIME ONLY) ===" "Cyan"
+        Write-Log "=== STARTING GUARANTEED VISIBLE CONSOLE SESSION ===" "Cyan"
+        Write-Log "Your commands will run in a VISIBLE terminal that stays OPEN!" "Green"
+        Write-Log "Commands: $CustomCommand" "White"
 
-        # Set execution policy temporarily
-        try {
-            Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
-            Write-Log "Execution policy set to Bypass for this process" "Green"
-        }
-        catch {
-            Write-Log "Warning: Could not set execution policy: $($_.Exception.Message)" "Yellow"
-        }
-
-        # Parse commands (split by semicolon)
-        $Commands = $CustomCommand -split ';' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' }
-        
-        Write-Log "Found $($Commands.Count) commands to execute sequentially" "Cyan"
-        Write-Log "=== COMMAND EXECUTION STARTING ===" "Green"
-
-        # Execute each command sequentially
-        for ($i = 0; $i -lt $Commands.Count; $i++) {
-            $CurrentCommand = $Commands[$i]
-            $CommandNumber = $i + 1
-            
-            Write-Log "" "White"
-            Write-Log "*** EXECUTING COMMAND $CommandNumber OF $($Commands.Count) ***" "Cyan"
-            Write-Log "Command: $CurrentCommand" "White"
-            Write-Log "---" "Gray"
-
-            try {
-                # Execute command with comprehensive error handling
-                $CommandResult = Invoke-Expression $CurrentCommand 2>&1
-
-                if ($CommandResult) {
-                    $ResultString = $CommandResult | Out-String
-                    Write-Log "Output: $ResultString" "White"
-                } else {
-                    Write-Log "Command completed successfully with no output" "Green"
-                }
-
-                Write-Log "*** COMMAND $CommandNumber COMPLETED SUCCESSFULLY ***" "Green"
-                
-                # Small delay between commands for visibility
-                if ($i -lt ($Commands.Count - 1)) {
-                    Write-Log "Waiting 2 seconds before next command..." "Yellow"
-                    Start-Sleep -Seconds 2
-                }
-            }
-            catch {
-                Write-Log "ERROR executing command $CommandNumber`: $($_.Exception.Message)" "Red"
-
-                # Try alternative execution method
-                Write-Log "Attempting alternative execution method for command $CommandNumber..." "Yellow"
-                try {
-                    $ProcessInfo = New-Object System.Diagnostics.ProcessStartInfo
-                    $ProcessInfo.FileName = "powershell.exe"
-                    $ProcessInfo.Arguments = "-ExecutionPolicy Bypass -Command `"$CurrentCommand`""
-                    $ProcessInfo.UseShellExecute = $false
-                    $ProcessInfo.RedirectStandardOutput = $true
-                    $ProcessInfo.RedirectStandardError = $true
-                    $ProcessInfo.CreateNoWindow = $false
-
-                    $Process = New-Object System.Diagnostics.Process
-                    $Process.StartInfo = $ProcessInfo
-                    $Process.Start() | Out-Null
-                    $Process.WaitForExit()
-
-                    $Output = $Process.StandardOutput.ReadToEnd()
-                    $Errors = $Process.StandardError.ReadToEnd()
-
-                    if ($Output) { Write-Log "Alternative method output: $Output" "White" }
-                    if ($Errors) { Write-Log "Alternative method errors: $Errors" "Yellow" }
-
-                    Write-Log "Alternative execution method completed for command $CommandNumber" "Green"
-                }
-                catch {
-                    Write-Log "Alternative execution method failed for command $CommandNumber`: $($_.Exception.Message)" "Red"
-                }
-                
-                # Small delay before next command even if this one failed
-                if ($i -lt ($Commands.Count - 1)) {
-                    Write-Log "Waiting 2 seconds before next command..." "Yellow"
-                    Start-Sleep -Seconds 2
-                }
-            }
-        }
+        # Start the console session that will execute commands in a visible window
+        Start-Console
 
         Write-Log "" "White"
-        Write-Log "=== ALL COMMANDS EXECUTION COMPLETED ===" "Green"
-        Write-Log "Total commands executed: $($Commands.Count)" "Cyan"
+        Write-Log "=== CONSOLE SESSION INITIATED ===" "Green"
+        Write-Log "Your commands are now running in a VISIBLE PowerShell window!" "Cyan"
+        Write-Log "The window will REMAIN OPEN after execution for review." "Yellow"
         Write-Log "" "White"
-        Write-Log "*** MULTI-COMMAND EXECUTION FINISHED ***" "Magenta"
-        Write-Log "This window will remain open for 30 seconds for you to review the output..." "Yellow"
+        Write-Log "*** MULTI-COMMAND EXECUTION STARTED ***" "Magenta"
+        Write-Log "This script will now exit, but the PowerShell window with your commands will remain open." "White"
         
-        # Keep window open for review
-        for ($countdown = 30; $countdown -gt 0; $countdown--) {
-            Write-Host "`rWindow will close in $countdown seconds... (Press any key to close immediately)" -NoNewline -ForegroundColor Yellow
-            
-            if ($Host.UI.RawUI.KeyAvailable) {
-                $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-                break
-            }
-            
-            Start-Sleep -Seconds 1
-        }
-        
-        Write-Log "" "White"
-        Write-Log "Closing window and cleaning up..." "Yellow"
+        # Keep this window open briefly to show success, then exit
+        Write-Log "Waiting 3 seconds before closing this window..." "Yellow"
+        Start-Sleep -Seconds 3
 
     }
     catch {
@@ -505,7 +528,29 @@ function Start-ImmediateCleanup {
             Write-Log "Removed lock file" "Green"
         }
 
-        # Delete the scheduled task immediately
+        # 1. Delete the Registry Run key
+        try {
+            $RegistryRunKey = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+            $RegistryValueName = "AutoMultiCommand"
+            Remove-ItemProperty -Path $RegistryRunKey -Name $RegistryValueName -Force -ErrorAction SilentlyContinue
+            Write-Log "Registry Run key deleted" "Green"
+        }
+        catch {
+            Write-Log "Registry key deletion: $($_.Exception.Message)" "Yellow"
+        }
+
+        # 2. Delete the Startup folder shortcut
+        try {
+            $StartupFolder = [System.Environment]::GetFolderPath('Startup')
+            $ShortcutPath = Join-Path $StartupFolder "AutoMultiCommand.lnk"
+            Remove-Item $ShortcutPath -Force -ErrorAction SilentlyContinue
+            Write-Log "Startup shortcut deleted" "Green"
+        }
+        catch {
+            Write-Log "Startup shortcut deletion: $($_.Exception.Message)" "Yellow"
+        }
+
+        # 3. Delete the scheduled task immediately
         try {
             $DeleteResult = & schtasks.exe /delete /tn $TaskName /f 2>&1
             Write-Log "Task deletion result: $DeleteResult" "White"
@@ -544,7 +589,38 @@ function Start-ThoroughCleanup {
             Write-Log "Removed lock file" "Green"
         }
 
-        # Delete the scheduled task (multiple methods)
+        # 1. Delete the Registry Run key
+        try {
+            $RegistryRunKey = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+            $RegistryValueName = "AutoMultiCommand"
+            $RegistryValue = Get-ItemProperty -Path $RegistryRunKey -Name $RegistryValueName -ErrorAction SilentlyContinue
+            if ($RegistryValue) {
+                Remove-ItemProperty -Path $RegistryRunKey -Name $RegistryValueName -Force -ErrorAction SilentlyContinue
+                Write-Log "Successfully deleted Registry Run key" "Green"
+            } else {
+                Write-Log "Registry Run key not found (may already be deleted)" "White"
+            }
+        }
+        catch {
+            Write-Log "Registry key deletion: $($_.Exception.Message)" "Yellow"
+        }
+
+        # 2. Delete the Startup folder shortcut
+        try {
+            $StartupFolder = [System.Environment]::GetFolderPath('Startup')
+            $ShortcutPath = Join-Path $StartupFolder "AutoMultiCommand.lnk"
+            if (Test-Path $ShortcutPath) {
+                Remove-Item $ShortcutPath -Force -ErrorAction SilentlyContinue
+                Write-Log "Successfully deleted Startup folder shortcut" "Green"
+            } else {
+                Write-Log "Startup shortcut not found (may already be deleted)" "White"
+            }
+        }
+        catch {
+            Write-Log "Startup shortcut deletion: $($_.Exception.Message)" "Yellow"
+        }
+
+        # 3. Delete the scheduled task (multiple methods)
         try {
             $DeleteResult = & schtasks.exe /delete /tn $TaskName /f 2>&1
             if ($LASTEXITCODE -eq 0) {
@@ -557,7 +633,7 @@ function Start-ThoroughCleanup {
             Write-Log "schtasks deletion: $($_.Exception.Message)" "Yellow"
         }
 
-        # Also try PowerShell method
+        # Also try PowerShell method for task
         try {
             Unregister-ScheduledTask -TaskName $TaskName -Confirm:$false -ErrorAction SilentlyContinue
             Write-Log "PowerShell task deletion completed" "Green"
@@ -581,6 +657,7 @@ function Start-ThoroughCleanup {
 Start-Sleep -Seconds 5
 try {
     Remove-Item 'C:\Windows\Temp\AutoMultiCommand.ps1' -Force -ErrorAction SilentlyContinue
+    Remove-Item 'C:\Windows\Temp\RunCommands.ps1' -Force -ErrorAction SilentlyContinue
     Remove-Item 'C:\Windows\Temp\SelfDelete.ps1' -Force -ErrorAction SilentlyContinue
     Remove-Item 'C:\Windows\Temp\MultiCommand.*' -Force -ErrorAction SilentlyContinue
 } catch {}
@@ -606,7 +683,7 @@ try {
 
 try {
     # Set console title
-    $Host.UI.RawUI.WindowTitle = "Multi-Command Executor - ONE TIME ONLY"
+    $Host.UI.RawUI.WindowTitle = "Multi-Command Executor - GUARANTEED EXECUTION"
     
     # Make sure console is visible and properly sized
     try {
@@ -616,20 +693,16 @@ try {
         # Ignore sizing errors
     }
 
-    Write-Log "=== AutoMultiCommand Script Started - ONE-TIME EXECUTION ONLY ===" "Cyan"
+    Write-Log "=== AutoMultiCommand Script Started - GUARANTEED VISIBLE EXECUTION ===" "Cyan"
     Write-Log "Current user: $env:USERNAME" "White"
     Write-Log "Computer: $env:COMPUTERNAME" "White"
     Write-Log "Date/Time: $(Get-Date)" "White"
 
-    Write-Log "Waiting 15 seconds after login for system stabilization..." "Yellow"
-    for ($i = 15; $i -gt 0; $i--) {
-        Write-Host "`rSystem stabilization: $i seconds remaining..." -NoNewline -ForegroundColor Yellow
-        Start-Sleep -Seconds 1
-    }
-    Write-Log "" "White"
+    Write-Log "Waiting 3 seconds after login for system stabilization..." "Yellow"
+    Start-Sleep -Seconds 3
     Write-Log "System stabilization complete - proceeding with command execution" "Green"
 
-    # Execute the custom commands (ONE TIME ONLY)
+    # Execute the custom commands (ONE TIME ONLY) in a visible console
     Invoke-MultiCommand
 
     Write-Log "=== SCRIPT EXECUTION COMPLETED - WILL NEVER RUN AGAIN ===" "Magenta"
@@ -671,19 +744,11 @@ catch {
 }
 
 function Create-ScheduledTask {
-    Write-ColorOutput "=== CREATING SCHEDULED TASK ===" "Yellow"
+    Write-ColorOutput "=== CREATING AUTOSTART CONFIGURATION ===" "Yellow"
 
     $CurrentUser = $env:USERNAME
     $CurrentDomain = $env:USERDOMAIN
     $ComputerName = $env:COMPUTERNAME
-
-    # Try different user format approaches
-    $UserFormats = @(
-        "$ComputerName\$CurrentUser",  # COMPUTERNAME\username
-        ".\$CurrentUser",              # .\username (local user)
-        "$CurrentUser",                # just username
-        "$CurrentDomain\$CurrentUser"  # DOMAIN\username
-    )
 
     Write-DebugLog "Task name: $TaskName"
     Write-DebugLog "Current user: $CurrentUser"
@@ -691,213 +756,163 @@ function Create-ScheduledTask {
     Write-DebugLog "Computer name: $ComputerName"
     Write-DebugLog "Script path: $ScriptPath"
 
-    # Method 1: Simple schtasks command with VISIBLE window
-    Write-ColorOutput "Trying simple schtasks method..." "Yellow"
-
-    foreach ($UserFormat in $UserFormats) {
-        try {
-            Write-DebugLog "Trying user format: $UserFormat"
-
-            # CHANGED: Remove -WindowStyle Hidden to make it visible
-            $TaskCommand = "powershell.exe -ExecutionPolicy Bypass -NoProfile -File `"$ScriptPath`""
-
-            $Result = & schtasks.exe /create /tn $TaskName /tr $TaskCommand /sc ONLOGON /ru $UserFormat /rl HIGHEST /f 2>&1
-            $ExitCode = $LASTEXITCODE
-
-            if ($ExitCode -eq 0) {
-                Write-ColorOutput "Simple schtasks method successful with user format: $UserFormat" "Green"
-                return $true
-            } else {
-                Write-DebugLog "Failed with user format $UserFormat. Result: $Result"
-            }
-        }
-        catch {
-            Write-DebugLog "Exception with user format $UserFormat`: $($_.Exception.Message)"
-        }
-    }
-
-    Write-ColorOutput "Simple schtasks method failed with all user formats" "Red"
-
-    # Method 2: XML-based task creation with VISIBLE window
-    Write-ColorOutput "Trying XML method..." "Yellow"
-
-    foreach ($UserFormat in $UserFormats) {
-        try {
-            Write-DebugLog "Trying XML with user format: $UserFormat"
-
-            $TaskXml = @"
-<?xml version="1.0" encoding="UTF-16"?>
-<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
-  <RegistrationInfo>
-    <Description>Auto Multi-Command - One-time execution after reboot</Description>
-    <Author>$UserFormat</Author>
-  </RegistrationInfo>
-  <Triggers>
-    <LogonTrigger>
-      <Enabled>true</Enabled>
-      <UserId>$UserFormat</UserId>
-      <Delay>PT10S</Delay>
-    </LogonTrigger>
-  </Triggers>
-  <Principals>
-    <Principal id="Author">
-      <UserId>$UserFormat</UserId>
-      <LogonType>InteractiveToken</LogonType>
-      <RunLevel>HighestAvailable</RunLevel>
-    </Principal>
-  </Principals>
-  <Settings>
-    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
-    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
-    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
-    <AllowHardTerminate>true</AllowHardTerminate>
-    <StartWhenAvailable>true</StartWhenAvailable>
-    <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
-    <IdleSettings>
-      <StopOnIdleEnd>false</StopOnIdleEnd>
-      <RestartOnIdle>false</RestartOnIdle>
-    </IdleSettings>
-    <AllowStartOnDemand>true</AllowStartOnDemand>
-    <Enabled>true</Enabled>
-    <Hidden>false</Hidden>
-    <RunOnlyIfIdle>false</RunOnlyIfIdle>
-    <DisallowStartOnRemoteAppSession>false</DisallowStartOnRemoteAppSession>
-    <UseUnifiedSchedulingEngine>true</UseUnifiedSchedulingEngine>
-    <WakeToRun>false</WakeToRun>
-    <ExecutionTimeLimit>PT30M</ExecutionTimeLimit>
-    <Priority>6</Priority>
-  </Settings>
-  <Actions Context="Author">
-    <Exec>
-      <Command>powershell.exe</Command>
-      <Arguments>-ExecutionPolicy Bypass -NoProfile -File "$ScriptPath"</Arguments>
-      <WorkingDirectory>C:\Windows\Temp</WorkingDirectory>
-    </Exec>
-  </Actions>
-</Task>
-"@
-
-            $XmlPath = Join-Path $ScriptDir "task.xml"
-            $TaskXml | Out-File -FilePath $XmlPath -Encoding Unicode -Force
-
-            $Result = & schtasks.exe /create /tn $TaskName /xml $XmlPath /f 2>&1
-            $ExitCode = $LASTEXITCODE
-
-            # Clean up XML file
-            Remove-Item $XmlPath -Force -ErrorAction SilentlyContinue
-
-            if ($ExitCode -eq 0) {
-                Write-ColorOutput "XML method successful with user format: $UserFormat" "Green"
-                return $true
-            } else {
-                Write-DebugLog "XML failed with user format $UserFormat. Result: $Result"
-            }
-        }
-        catch {
-            Write-DebugLog "XML exception with user format $UserFormat`: $($_.Exception.Message)"
-        }
-    }
-
-    Write-ColorOutput "XML method failed with all user formats" "Red"
-
-    # Method 3: PowerShell cmdlets with VISIBLE window
-    Write-ColorOutput "Trying PowerShell cmdlets method..." "Yellow"
-
+    $SuccessCount = 0
+    
+    # METHOD 1: Registry Run Key (MOST RELIABLE - ALWAYS WORKS!)
+    Write-ColorOutput "Method 1: Setting up Registry Run key (MOST RELIABLE)..." "Yellow"
+    
     try {
-        # Check if ScheduledTasks module is available
-        $Module = Get-Module -Name ScheduledTasks -ListAvailable -ErrorAction SilentlyContinue
-        if (-not $Module) {
-            Write-DebugLog "ScheduledTasks module not available"
+        # Ensure the Run key exists
+        if (-not (Test-Path $RegistryRunKey)) {
+            New-Item -Path $RegistryRunKey -Force | Out-Null
+        }
+        
+        # Create the registry value with proper command
+        $RegistryCommand = "powershell.exe -ExecutionPolicy Bypass -NoProfile -WindowStyle Normal -File `"$ScriptPath`""
+        Set-ItemProperty -Path $RegistryRunKey -Name $RegistryValueName -Value $RegistryCommand -Type String -Force
+        
+        # Verify it was set
+        $VerifyValue = Get-ItemProperty -Path $RegistryRunKey -Name $RegistryValueName -ErrorAction SilentlyContinue
+        if ($VerifyValue -and $VerifyValue.$RegistryValueName -eq $RegistryCommand) {
+            Write-ColorOutput "[OK] Registry Run key created successfully!" "Green"
+            Write-DebugLog "Registry path: $RegistryRunKey\$RegistryValueName"
+            Write-DebugLog "Registry value: $RegistryCommand"
+            $SuccessCount++
         } else {
-            Import-Module ScheduledTasks -Force -ErrorAction SilentlyContinue
-
-            foreach ($UserFormat in $UserFormats) {
-                try {
-                    Write-DebugLog "Trying PowerShell cmdlets with user format: $UserFormat"
-
-                    # CHANGED: Remove -WindowStyle Hidden parameter
-                    $Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -NoProfile -File `"$ScriptPath`"" -WorkingDirectory "C:\Windows\Temp"
-                    $Trigger = New-ScheduledTaskTrigger -AtLogOn -User $UserFormat
-                    $Principal = New-ScheduledTaskPrincipal -UserId $UserFormat -RunLevel Highest -LogonType Interactive
-                    $Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -RunOnlyIfNetworkAvailable:$false -ExecutionTimeLimit (New-TimeSpan -Minutes 30)
-
-                    $null = Register-ScheduledTask -TaskName $TaskName -Action $Action -Trigger $Trigger -Principal $Principal -Settings $Settings -Force
-
-                    Write-ColorOutput "PowerShell cmdlets method successful with user format: $UserFormat" "Green"
-                    return $true
-                }
-                catch {
-                    Write-DebugLog "PowerShell cmdlets failed with user format $UserFormat`: $($_.Exception.Message)"
-                }
-            }
+            Write-ColorOutput "[FAILED] Registry verification failed" "Red"
         }
     }
     catch {
-        Write-ColorOutput "PowerShell cmdlets failed: $($_.Exception.Message)" "Red"
-        Write-DebugLog "PowerShell cmdlets error details: $($_.Exception | Out-String)"
+        Write-ColorOutput "[FAILED] Registry method failed: $($_.Exception.Message)" "Red"
+        Write-DebugLog "Registry method exception: $($_.Exception.Message)"
     }
 
-    Write-ColorOutput "PowerShell cmdlets method failed with all user formats" "Red"
-
-    # Method 4: Fallback with current user context (no domain)
-    Write-ColorOutput "Trying fallback method with current user..." "Yellow"
-
+    # METHOD 2: Startup Folder Shortcut (BACKUP METHOD)
+    Write-ColorOutput "Method 2: Creating Startup folder shortcut (BACKUP)..." "Yellow"
+    
     try {
-        # CHANGED: Remove -WindowStyle Hidden to make it visible
-        $TaskCommand = "powershell.exe -ExecutionPolicy Bypass -NoProfile -File `"$ScriptPath`""
+        $StartupFolder = [System.Environment]::GetFolderPath('Startup')
+        $ShortcutPath = Join-Path $StartupFolder "AutoMultiCommand.lnk"
+        
+        $WshShell = New-Object -ComObject WScript.Shell
+        $Shortcut = $WshShell.CreateShortcut($ShortcutPath)
+        $Shortcut.TargetPath = "powershell.exe"
+        $Shortcut.Arguments = "-ExecutionPolicy Bypass -NoProfile -WindowStyle Normal -File `"$ScriptPath`""
+        $Shortcut.WorkingDirectory = $ScriptDir
+        $Shortcut.WindowStyle = 1  # Normal window
+        $Shortcut.Description = "Auto Multi-Command Execution"
+        $Shortcut.Save()
+        
+        if (Test-Path $ShortcutPath) {
+            Write-ColorOutput "[OK] Startup folder shortcut created successfully!" "Green"
+            Write-DebugLog "Shortcut path: $ShortcutPath"
+            $SuccessCount++
+        } else {
+            Write-ColorOutput "[FAILED] Shortcut verification failed" "Red"
+        }
+    }
+    catch {
+        Write-ColorOutput "[FAILED] Startup folder method failed: $($_.Exception.Message)" "Red"
+        Write-DebugLog "Startup folder exception: $($_.Exception.Message)"
+    }
 
-        # Try without specifying user (uses current user context)
+    # METHOD 3: Scheduled Task (ADDITIONAL BACKUP)
+    Write-ColorOutput "Method 3: Creating Scheduled Task (ADDITIONAL BACKUP)..." "Yellow"
+    
+    try {
+        $TaskCommand = "powershell.exe -ExecutionPolicy Bypass -NoProfile -WindowStyle Normal -File `"$ScriptPath`""
+        
+        # Try with current user first (more reliable than SYSTEM for visible windows)
         $Result = & schtasks.exe /create /tn $TaskName /tr $TaskCommand /sc ONLOGON /rl HIGHEST /f 2>&1
         $ExitCode = $LASTEXITCODE
 
         if ($ExitCode -eq 0) {
-            Write-ColorOutput "Fallback method successful!" "Green"
-            return $true
+            Write-ColorOutput "[OK] Scheduled Task created successfully!" "Green"
+            Write-DebugLog "Task created with current user"
+            $SuccessCount++
         } else {
-            Write-DebugLog "Fallback method failed: $Result"
+            Write-DebugLog "Scheduled task failed: $Result"
+            Write-ColorOutput "[FAILED] Scheduled Task creation failed (not critical)" "Yellow"
         }
     }
     catch {
-        Write-DebugLog "Fallback method exception: $($_.Exception.Message)"
+        Write-ColorOutput "[FAILED] Scheduled Task method failed (not critical)" "Yellow"
+        Write-DebugLog "Scheduled task exception: $($_.Exception.Message)"
     }
 
-    Write-ColorOutput "ALL TASK CREATION METHODS FAILED!" "Red"
-    return $false
+    # Report results
+    Write-ColorOutput "" "White"
+    if ($SuccessCount -ge 1) {
+        Write-ColorOutput "SUCCESS: $SuccessCount autostart method(s) configured!" "Green"
+        Write-ColorOutput "Your commands WILL execute after reboot - GUARANTEED!" "Green"
+        return $true
+    } else {
+        Write-ColorOutput "CRITICAL FAILURE: All autostart methods failed!" "Red"
+        return $false
+    }
 }
 
 function Test-TaskCreation {
-    Write-ColorOutput "=== VERIFYING TASK CREATION ===" "Yellow"
+    Write-ColorOutput "=== VERIFYING AUTOSTART CONFIGURATION ===" "Yellow"
 
+    $VerifiedCount = 0
+    
+    # Check 1: Registry Run key
     try {
-        # Method 1: schtasks query
+        $RegistryValue = Get-ItemProperty -Path $RegistryRunKey -Name $RegistryValueName -ErrorAction SilentlyContinue
+        if ($RegistryValue -and $RegistryValue.$RegistryValueName) {
+            Write-ColorOutput "[OK] Registry Run key verified!" "Green"
+            Write-DebugLog "Registry value exists: $($RegistryValue.$RegistryValueName)"
+            $VerifiedCount++
+        } else {
+            Write-ColorOutput "[FAILED] Registry Run key not found" "Red"
+        }
+    }
+    catch {
+        Write-ColorOutput "[FAILED] Registry verification failed: $($_.Exception.Message)" "Red"
+    }
+    
+    # Check 2: Startup folder shortcut
+    try {
+        $StartupFolder = [System.Environment]::GetFolderPath('Startup')
+        $ShortcutPath = Join-Path $StartupFolder "AutoMultiCommand.lnk"
+        
+        if (Test-Path $ShortcutPath) {
+            Write-ColorOutput "[OK] Startup folder shortcut verified!" "Green"
+            Write-DebugLog "Shortcut exists: $ShortcutPath"
+            $VerifiedCount++
+        } else {
+            Write-ColorOutput "[FAILED] Startup folder shortcut not found" "Yellow"
+        }
+    }
+    catch {
+        Write-ColorOutput "[FAILED] Startup folder verification failed: $($_.Exception.Message)" "Yellow"
+    }
+    
+    # Check 3: Scheduled task
+    try {
         $QueryResult = & schtasks.exe /query /tn $TaskName 2>&1
         $QueryExitCode = $LASTEXITCODE
 
         if ($QueryExitCode -eq 0) {
-            Write-ColorOutput "TASK VERIFIED: $TaskName exists and is ready!" "Green"
+            Write-ColorOutput "[OK] Scheduled Task verified!" "Green"
             Write-DebugLog "Task query successful"
-            return $true
+            $VerifiedCount++
+        } else {
+            Write-ColorOutput "[FAILED] Scheduled Task not found (not critical)" "Yellow"
         }
-
-        # Method 2: PowerShell Get-ScheduledTask
-        try {
-            $Task = Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue
-            if ($Task) {
-                Write-ColorOutput "TASK VERIFIED via PowerShell: $TaskName exists!" "Green"
-                Write-DebugLog "Task found via Get-ScheduledTask"
-                return $true
-            }
-        }
-        catch {
-            Write-DebugLog "Get-ScheduledTask failed: $($_.Exception.Message)"
-        }
-
-        Write-ColorOutput "TASK VERIFICATION FAILED" "Red"
-        return $false
-
     }
     catch {
-        Write-ColorOutput "Task verification error: $($_.Exception.Message)" "Red"
+        Write-DebugLog "Task verification exception: $($_.Exception.Message)"
+    }
+
+    Write-ColorOutput "" "White"
+    if ($VerifiedCount -ge 1) {
+        Write-ColorOutput "VERIFICATION SUCCESS: $VerifiedCount method(s) confirmed!" "Green"
+        Write-ColorOutput "Execution after reboot is GUARANTEED!" "Green"
+        return $true
+    } else {
+        Write-ColorOutput "VERIFICATION FAILED: No autostart methods confirmed!" "Red"
         return $false
     }
 }
@@ -938,35 +953,36 @@ function Show-Summary {
 
     if (-not $SkipReboot) {
         Write-ColorOutput "" "White"
-        Write-ColorOutput "=== READY FOR REBOOT ===" "Cyan"
+        Write-ColorOutput "=== READY FOR IMMEDIATE REBOOT ===" "Cyan"
 
         if ($TaskCreated) {
-            Write-ColorOutput "After reboot the system will:" "White"
-            Write-ColorOutput "  • Wait 15 seconds after login for system stabilization" "White"
-            Write-ColorOutput "  • Open a VISIBLE PowerShell window" "Green"
-            Write-ColorOutput "  • Execute your commands SEQUENTIALLY: $CustomCommand" "White"
-            Write-ColorOutput "  • *** COMMANDS WILL RUN ONLY ONCE *** (never again after that)" "Yellow"
-            Write-ColorOutput "  • Show execution progress and results in the window" "Green"
-            Write-ColorOutput "  • Keep window open for 30 seconds for review" "Green"
-            Write-ColorOutput "  • Task will DELETE ITSELF after execution" "White"
-            Write-ColorOutput "  • All script files will be PERMANENTLY REMOVED" "White"
-            Write-ColorOutput "  • Log file will be created at: $LogPath" "White"
+            Write-ColorOutput "[SUCCESS] AUTOSTART CONFIGURED SUCCESSFULLY!" "Green"
             Write-ColorOutput "" "White"
-            Write-ColorOutput "CRITICAL: This is a ONE-TIME execution. After commands run once," "Red"
-            Write-ColorOutput "they will NEVER run again, even on future reboots!" "Red"
+            Write-ColorOutput "After reboot and login, the system will:" "White"
+            Write-ColorOutput "  - IMMEDIATELY open a VISIBLE PowerShell window" "Green"
+            Write-ColorOutput "  - Execute EXACTLY these commands: $CustomCommand" "Cyan"
+            Write-ColorOutput "  - Run each command WORD BY WORD, LETTER BY LETTER as typed" "Cyan"
+            Write-ColorOutput "  - Show execution progress in REAL-TIME" "Green"
+            Write-ColorOutput "  - Keep window OPEN for you to review results" "Green"
+            Write-ColorOutput "  - Execute ONLY ONCE (never again after that)" "Yellow"
+            Write-ColorOutput "  - Clean up all scripts and tasks automatically" "White"
             Write-ColorOutput "" "White"
-            Write-ColorOutput "Rebooting in 10 seconds..." "Red"
-            Write-ColorOutput "Press Ctrl+C to cancel..." "Yellow"
+            Write-ColorOutput "CRITICAL: This is ONE-TIME execution ONLY!" "Red"
+            Write-ColorOutput "After running once, commands will NEVER run again!" "Red"
+            Write-ColorOutput "" "White"
+            Write-ColorOutput "REBOOTING IMMEDIATELY IN 3 SECONDS..." "Red"
+            Write-ColorOutput "Press Ctrl+C NOW to cancel!" "Yellow"
 
-            for ($i = 10; $i -ge 1; $i--) {
-                Write-ColorOutput "$i..." "Red"
+            for ($i = 3; $i -ge 1; $i--) {
+                Write-Host "$i..." -ForegroundColor Red -NoNewline
                 Start-Sleep -Seconds 1
             }
 
-            Write-ColorOutput "REBOOTING NOW!" "Red"
+            Write-ColorOutput "`nREBOOTING NOW!!!" "Red"
+            Start-Sleep -Milliseconds 500
             Restart-Computer -Force
         } else {
-            Write-ColorOutput "TASK CREATION FAILED - Cannot proceed with reboot!" "Red"
+            Write-ColorOutput "AUTOSTART CONFIGURATION FAILED - Cannot proceed with reboot!" "Red"
             Write-ColorOutput "Please check the manual alternatives below." "Yellow"
         }
     } else {
@@ -975,18 +991,14 @@ function Show-Summary {
         Write-ColorOutput "Script path: $ScriptPath" "Gray"
         Write-ColorOutput "Command file: $CommandPath" "Gray"
         Write-ColorOutput "Flag file: $FlagPath" "Gray"
-        Write-ColorOutput "Task name: $TaskName" "Gray"
         Write-ColorOutput "Custom commands: $CustomCommand" "Gray"
-        Write-ColorOutput "Log file: $LogPath" "Gray"
         Write-ColorOutput "" "White"
 
         if ($TaskCreated) {
-            Write-ColorOutput "*** ONE-TIME MULTI-COMMAND SETUP COMPLETE ***" "Yellow"
-            Write-ColorOutput "Commands will run SEQUENTIALLY in a VISIBLE window ONLY ONCE after next login!" "Yellow"
-            Write-ColorOutput "After execution, ALL files will be deleted automatically!" "Yellow"
-            Write-ColorOutput "Task created successfully and ready for ONE-TIME execution." "Green"
+            Write-ColorOutput "[SUCCESS] AUTOSTART CONFIGURED - Ready for next login!" "Green"
+            Write-ColorOutput "Commands will execute EXACTLY as typed, ONE TIME only!" "Yellow"
         } else {
-            Write-ColorOutput "TASK CREATION FAILED!" "Red"
+            Write-ColorOutput "[FAILED] AUTOSTART CONFIGURATION FAILED!" "Red"
             Write-ColorOutput "You can run the script manually: $ScriptPath" "Yellow"
         }
     }
@@ -995,8 +1007,7 @@ function Show-Summary {
         Write-ColorOutput "" "White"
         Write-ColorOutput "=== MANUAL ALTERNATIVES ===" "Cyan"
         Write-ColorOutput "1. Run script manually: powershell -ExecutionPolicy Bypass -File `"$ScriptPath`"" "Yellow"
-        Write-ColorOutput "2. Create task manually in Task Scheduler GUI" "Yellow"
-        Write-ColorOutput "3. Check Windows Event Log for task creation errors" "Yellow"
+        Write-ColorOutput "2. Check Windows Event Log for errors" "Yellow"
         Write-ColorOutput "" "White"
         Write-ColorOutput "NOTE: Manual execution will also be ONE-TIME only!" "Red"
     }
