@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "f:\\study\\Shells\\powershell\\projects\\DotnetPortable\\logs\\.8b64a22588234257221062088ee1a2fb753f5253-audit.json",
+    "files": [
+        {
+            "date": 1760006045431,
+            "name": "f:\\study\\Shells\\powershell\\projects\\DotnetPortable\\logs\\mcp-puppeteer-2025-10-09.log",
+            "hash": "baeb9b004157aef3dc017750d10ed54513ea42a96f97cfcb6835fbe9f067fc37"
+        }
+    ],
+    "hashType": "sha256"
+}
